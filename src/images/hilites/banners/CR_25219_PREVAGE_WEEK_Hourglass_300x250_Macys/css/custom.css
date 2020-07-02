@@ -1,0 +1,88 @@
+/*#copy01_01 > div, #copy01_02 > div, #copy01_03 > div {*/
+#Stage_copy01_01 > div, #Stage_copy01_02 > div, #Stage_copy01_03 > div,
+#Stage_copy02 > div, #Stage_copy02_ds > div {
+	display: inline-block !important;
+}
+
+
+/*//-------------------- HOURGLASS --------------------*/
+
+#Stage_hourglass02 {
+	mix-blend-mode: multiply;
+ }
+
+
+/*//-------------------- PARTICLES --------------------*/
+
+/*
+#emitter {
+#Stage_emitter {
+	position: absolute;
+	right: 20px;
+	bottom: 30px;
+}
+*/
+
+/*.particle {*/
+#Stage_emitter > div {
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	background: #faa61a;
+	opacity: 0.7;
+	border-radius: 50%;
+	z-index: -1;
+	visibility: hidden;
+	/*opacity: 0;*/
+	pointer-events: none;
+}
+
+
+/*//-------------------- MASKS --------------------*/
+/*
+#Stage_bottle01 {
+#Stage_hourglass01 {
+#Stage_bottle01Container {
+
+	mask-image: url(#Stage_mask);
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+
+	-webkit-mask-image: url(#Stage_mask);
+	mask-type: alpha;
+
+	mask: -webkit-linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0));
+	-webkit-mask: -webkit-linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 70%);
+
+
+-webkit-mask-image: -webkit-gradient(linear, left top, right bottom, 
+   color-stop(0.00,  rgba(0,0,0,1)),
+   color-stop(0.45,  rgba(0,0,0,1)),
+   color-stop(0.50,  rgba(0,0,0,0)),
+   color-stop(0.55,  rgba(0,0,0,0)),
+   color-stop(1.00,  rgba(0,0,0,0)));
+
+	background: url(images/bottle01.png);
+	-webkit-mask-image: url(images/maskUP.png);
+}
+*/
+
+
+/*//-------------------- Z-INDEX --------------------*/
+/*
+#Stage_copy03 {
+	position: absolute;
+ }
+*/
+
+
+/*//-------------------- SUPERSCRIPT --------------------*/
+sup{
+	font-size: 60%;
+
+	/*vertical-align: top;*/
+	/*baseline-shift: super;*/
+
+	vertical-align: baseline;
+	position: relative;
+	top: -0.5em;
+}

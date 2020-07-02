@@ -1,0 +1,44 @@
+[
+    {
+        "album_index": 3,
+        "album_id": "hearst",
+        "image_index": 0,
+        "src": "hearst00.jpg",
+        "caption": 2008,
+        "format": "flash",
+        "format_src": "img/0elements/badge_flash.svg",
+        "link": "flash/townhall/hearst_townhall.html",
+        "cta": "click image for Flash* presentation",
+        "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
+        "mwidth": 1280,
+        "mheight": 960
+    },
+    {
+        "album_index": 3,
+        "album_id": "hearst",
+        "image_index": 1,
+        "src": "hearst01.jpg",
+        "caption": 2008,
+        "format": "flash",
+        "format_src": "img/0elements/badge_flash.svg",
+        "link": "flash/cosmo/hearst_cosmo.html",
+        "cta": "click image for Flash* presentation",
+        "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
+        "mwidth": 980,
+        "mheight": 840
+    },
+    {
+        "album_index": 3,
+        "album_id": "hearst",
+        "image_index": 2,
+        "src": "hearst02.jpg",
+        "caption": 2008,
+        "format": "flash",
+        "format_src": "img/0elements/badge_flash.svg",
+        "link": "flash/seventeen/hearst_seventeen.html",
+        "cta": "click image for Flash* presentation",
+        "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
+        "mwidth": 980,
+        "mheight": 480
+    }
+]

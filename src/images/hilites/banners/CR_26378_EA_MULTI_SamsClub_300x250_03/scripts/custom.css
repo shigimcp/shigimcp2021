@@ -1,0 +1,30 @@
+/*#copy01_01 > div, #copy01_02 > div, #copy01_03 > div {*/
+
+#Stage_copy01 > div, #Stage_copy02 > div {
+	display:inline-block !important;
+}
+
+#Stage_copy01 > div, #Stage_copy02 > div {
+	letter-spacing: -0.25px;
+ }
+
+/*
+#Stage_bottle {
+	mix-blend-mode: multiply;
+ }
+*/ 
+
+
+/*//-------------------- PARTICLES --------------------*/
+#Stage_confetti > div {
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	background: #c1c1c1;
+	/*opacity: 0.7;*/
+	/*border-radius: 50%;*/
+	/*z-index: -1;*/
+	/*visibility: hidden;*/
+	/*opacity: 0;*/
+	/*pointer-events: none;*/
+}

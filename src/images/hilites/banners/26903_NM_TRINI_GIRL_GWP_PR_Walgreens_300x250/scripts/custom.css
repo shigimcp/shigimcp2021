@@ -1,0 +1,16 @@
+/*#copy01_01 > div, #copy01_02 > div, #copy01_03 > div {*/
+#Stage_copy01_01 > div, #Stage_copy01_02 > div, #Stage_copy01_03 > div, 
+#Stage_copy01_alt01 > div, #Stage_copy01_alt02 > div, 
+#Stage_copy02_01 > div, #Stage_copy02_02 > div, #Stage_copy02_03 > div {
+	display:inline-block !important;
+}
+/*
+#Stage_bottle {
+	mix-blend-mode: multiply;
+ }
+*/ 
+
+#Stage_LOGO_NMTG_ds {
+	overflow: visible !important;
+}
+ 

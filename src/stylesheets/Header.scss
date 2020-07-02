@@ -1,0 +1,402 @@
+/* #region ==================== VARIABLES ==================== */
+
+$body-width: 50vw;
+$body-min-width: 820px;
+// $body-max-width: 1200px;
+$body-max-width: 960px;
+
+// $workkNav-height: 80px;
+$workkNav-height: 100px;
+
+/* #endregion ==================== VARIABLES ==================== */
+
+
+/* #region ==================== HEADER ==================== */
+
+.header {
+    // border: 02px solid #FF0000;
+
+    background: #000000;
+
+    color: #FFFFFF;
+    line-height: 55px;
+    text-align: left;
+
+	width: 100%;
+	height: 60px;
+
+    margin: 0;
+    padding: 0;
+
+    position: fixed;
+    z-index: 99;
+
+    .hed {
+        // border: 02px solid #0000ff;
+
+        // width: 50%;
+        // min-width: 820px;
+        // max-width: 1200px;
+
+        width: $body-width;
+        min-width: $body-min-width;
+        max-width: $body-max-width;
+
+        height: inherit;
+
+        margin: 0 auto;
+        padding: inherit;
+
+        position: relative;
+
+        display: block;
+
+        .hed01 {
+            // border: 02px solid #ff00ff;
+
+            font-size: 30px;
+
+            width: auto;
+            height: inherit;
+
+            margin: 0;
+            padding: inherit;
+
+            position: inherit;
+            top: 10px;
+            // left: 125px;
+            left: 50px;
+
+            display: table-cell;
+        }
+
+        .hed02 {
+            font-size: 20px;
+
+            width: auto;
+            height: inherit;
+
+            margin: 0;
+            padding: inherit;
+
+            position: inherit;
+            top: 9.5px;
+            // left: 142.5px;
+            left: 60px;
+
+            display: table-cell;
+        }
+
+        .contact {
+
+            font-size: 18px;
+            letter-spacing: .025em;
+
+            position: inherit;
+            top: 9.5px;
+            // left: 159px;
+            left: 140px;
+
+            margin: 0;
+            padding: inherit;
+
+            display: table-cell;
+
+            a, a:visited {
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    .navBar {
+        // border: 2px solid #00ff00;
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
+
+        // background: #ffffff;
+
+        background: rgb(255,255,255);
+        background: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+
+        // color: #FFFFFF;
+        color: #000000;
+        font-size: 1.25em;
+        text-align: center;
+
+        // width: 50%;
+        // min-width: 820px;
+        // max-width: 1200px;
+
+        width: $body-width;
+        min-width: $body-min-width;
+        max-width: $body-max-width;
+
+        // height: inherit;
+        // height: 30px;
+
+        margin: 0 auto;
+        padding: 0;
+        // padding: 0 0 0 100px;
+        // padding: 20px 0;
+
+        // hr {
+        //     // border: #ff0000;
+        //     // background: #ff0000;
+
+        //     border: #aaaaaa;
+        //     background: #aaaaaa;
+
+        //     width: 80%;
+        //     height: 1px;
+
+        //     margin: 0 auto;
+        //     padding: 0;
+        // }
+
+        A {
+            // border: 2px solid #0000ff;
+
+            // background: #eeeeee;
+
+            color: inherit;
+            // color: #000000;
+            text-decoration: none;
+
+            margin: 0;
+            padding: 10px 20px;
+
+            // :link {
+            //     color: #00ff00;
+            // }
+
+            // :visited {
+            //     color: #ff00ff;
+            // }
+
+            // :hover {
+            //     color: #ff0000;
+            // }
+
+            // :active {
+            //     background: #eeeeee;
+            //     color: #00ff00;
+            // }
+        }
+    }
+
+    /* #region ==================== HEADER: LOGO ==================== */
+
+    #logoIcon {
+        // border: 02px solid #FF0000;
+
+        // width: 150px;
+        height: 125px;
+
+        margin: 0;
+        padding: 0;
+
+        position: relative;
+        top: -56px;
+        left: -100px;
+        z-index: 99;
+
+        display: block;
+        overflow: visible;
+
+        // cursor: pointer;
+    }
+
+    // -------------------- LOGO / afro --------------------
+
+    #shigeru_logo_afro_k {
+        // fill: #00FF00;
+
+        clip-path: url(#shigeru_logo_afro_k_mask);
+    }
+
+    #shigeru_logo_afro_w {
+        // fill: #0000FF;
+        fill: #FFFFFF;
+
+        clip-path: url(#shigeru_logo_afro_w_mask);
+    }
+
+    // -------------------- LOGO / glasses --------------------
+
+    #shigeru_logo_glasses_k {
+        // fill: #00FF00
+
+        clip-path: url(#shigeru_logo_glasses_k_mask);
+    }
+
+    #shigeru_logo_glasses_w {
+        // fill: #0000FF;
+        fill: #FFFFFF;
+
+        clip-path: url(#shigeru_logo_glasses_w_mask);
+    }
+
+    // -------------------- LOGO / kanji --------------------
+
+    #shigeru_logo_kanji_w {
+        // fill: #FF00FF;
+        fill: #FFFFFF;
+        clip-path: url(#shigeru_logo_kanji_w_mask);
+        // clip-path: url(#header_mask);
+    }
+
+    /* #endregion ==================== HEADER: LOGO ==================== */
+
+
+    /* #region ==================== HEADER: LOGO (reserves) ==================== */
+
+    // #logo {
+    //     // border: 02px solid #FF0000
+
+    //     margin: 0 auto;
+    //     padding: 0;
+
+    //     position: relative;
+    //     display: block;
+    //     z-index: 11;
+
+    //     overflow: visible;
+    //     box-shadow : 0px -0px 10000px transparent; /*trick for chrome*/
+
+    //     cursor: pointer;
+    // }
+
+    // #logo path, #logoIcon path {
+    //     fill: #FF0000;
+    // }
+
+
+    // -------------------- LOGO / afro --------------------
+
+    // #shigeru_logo_afro {
+    //     fill: #FF0000;
+
+    //     visibility: hidden
+    //     opacity: 0
+    // }
+
+
+    // -------------------- LOGO / glasses --------------------
+
+    // #shigeru_logo_glasses {
+    //     fill: #FF0000
+    // }
+
+
+    // -------------------- LOGO / kanji --------------------
+
+    // #shigeru_logo_kanji {
+    //     fill: #FFFFFF;
+    //     fill: #0000FF;
+    // }
+
+    // #shigeru_logo_kanji_k {
+    //     fill: #0000FF;
+    // }
+
+
+    // -------------------- LOGO / masks --------------------
+
+    // #shigeru_logo_afro_w_mask, #shigeru_logo_glasses_w_mask, #shigeru_logo_kanji_w_mask {
+    //     position: relative;
+    //     position: fixed;
+    //     display: block;
+    // }
+
+    /* #endregion ==================== HEADER: LOGO (reserves) ==================== */
+
+}
+
+/* #endregion ==================== HEADER ==================== */
+
+
+/* #region ==================== WORKNAV ==================== */
+
+.workNav {
+    // border: 1px solid #ff00ff;
+
+    // background: #eeeeee;
+    // background: #ffffff;
+
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+
+    text-align: center;
+
+    width: $body-width;
+    min-width: $body-min-width;
+    max-width: $body-max-width;
+
+    height: $workkNav-height;
+
+    margin: 0 auto;
+    padding: 0;
+
+    position: fixed;
+    top: -40px;
+    // top: 0;
+    // top: 115px;
+    left: 0;
+    right: 0;
+
+    .employerIcon {
+        // border: 1px solid #cccccc;
+        // border-right: 1px solid #cccccc;
+
+        width: 10.875%;
+        height: 100%;
+
+        display: inline-block;
+        vertical-align: middle;
+
+        margin: 0;
+        padding: 0;
+
+        position: relative;
+        z-index: 1;
+
+        img {
+            // border: 3px solid #ff0000;
+
+            max-width: 65%;
+            max-height: 85%;
+
+            margin: auto;
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    // ----- Ferda employerIcon separators... -----
+    .employerIcon:before {
+        border-left: 0.5px solid #cccccc;
+        border-right: 0.5px solid #cccccc;
+
+        content: "";
+        width: 100%;
+        height: 40%;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 30%;
+        bottom: 0;
+    }
+}
+
+/* #endregion ==================== WORKNAV ==================== */

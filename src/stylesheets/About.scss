@@ -1,0 +1,32 @@
+/* #region ==================== ABOUT ==================== */
+
+.aboutContainer {
+    border: 1px solid #ff00ff;
+
+    width: 50%;
+    margin: 100px auto;
+
+    .aboutLogo {
+        border: 1px solid #ff00ff;
+        // width: 100%;
+    }
+}
+
+.about {
+    display: flex;
+    margin-bottom: 20px;
+
+    .aboutSpan {
+        margin-right: 20px;
+    }
+}
+
+
+.AboutItem {
+    border: 1px solid #ff00ff;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* #endregion ==================== ABOUT ==================== */

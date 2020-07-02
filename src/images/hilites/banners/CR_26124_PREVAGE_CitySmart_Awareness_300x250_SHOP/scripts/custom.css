@@ -1,0 +1,15 @@
+/*#copy01_01 > div, #copy01_02 > div, #copy01_03 > div {*/
+#Stage_copy01 > div, #Stage_copy01_01 > div, #Stage_copy01_02 > div,
+#Stage_copy02 > div, #Stage_copy02_01 > div, #Stage_copy02_02 > div, #Stage_copy02_03 > div,
+#Stage_copy03 > div, 
+#Stage_prevage_prod_o > div 
+{
+	display:inline-block !important;
+	/*letter-spacing: -2px;*/
+}
+
+
+#Stage_logo {
+/*#Stage_bottle, #Stage_collection {*/
+	mix-blend-mode: multiply;
+}

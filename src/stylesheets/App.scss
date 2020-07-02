@@ -1,0 +1,56 @@
+/* #region ==================== VARIABLES ==================== */
+
+$body-width: 50vw;
+$body-min-width: 820px;
+// $body-max-width: 1200px;
+$body-max-width: 960px;
+
+// $workkNav-height: 80px;
+$workkNav-height: 100px;
+
+/* #endregion ==================== VARIABLES ==================== */
+
+
+/* #region ==================== GLOBAL ==================== */
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+body {
+    margin: 0;
+    // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: ChaleParNinSix, Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root, #rootContainer {
+    // border: 5px solid #ff0000;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* #endregion ==================== GLOBAL ==================== */
+
+
+/* #region ==================== FONTS ==================== */
+
+@font-face {
+	font-family: 'ChaleParNinSix';
+	src: url('../fonts/ChaleParNinSix.otf') format("opentype");
+	src: url('../fonts/ChaleParNinSix.eot');
+	src: url('../fonts/ChaleParNinSix.woff') format('woff'),
+	url('../fonts/ChaleParNinSix.svg#-GothaBoo') format('svg');
+}
+
+@font-face {
+	font-family: 'AnimeAceItalic';
+	src: url('../fonts/AnimeAceItalic.otf') format("opentype");
+	src: url('../fonts/AnimeAceItalic.eot');
+	src: url('../fonts/AnimeAceItalic.woff') format('woff'),
+	url('../fonts/AnimeAceItalic.svg#-Italic') format('svg');
+}
+
+/* #endregion ==================== FONTS ==================== */

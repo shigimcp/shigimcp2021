@@ -1,0 +1,137 @@
+/* #region ==================== VARIABLES ==================== */
+
+$body-width: 50vw;
+$body-min-width: 820px;
+// $body-max-width: 1200px;
+$body-max-width: 960px;
+
+// $workkNav-height: 80px;
+$workkNav-height: 100px;
+
+/* #endregion ==================== VARIABLES ==================== */
+
+
+/* #region ==================== RESUME ==================== */
+
+.employerList {
+    // border: 1px solid #000000;
+
+    text-align: left;
+
+    // width: 50%;
+    // width: 100%;
+    // max-width: 720px;
+    // max-width: 800px;
+    // max-width: 960px;
+    // max-width: 1024px;
+    // max-width: 1080px;
+
+    // margin: 100px auto;
+    // padding: 0;
+    margin: 0 auto;
+    // margin: 150px auto 0 auto;
+    // padding: 0 0 200px 100px;
+    padding: 0 0 150px 0;
+    // padding: 150px 0;
+
+    .employerItem {
+        // border: 2px solid #00ffff;
+
+        width: 100%;
+        height: auto;
+
+        margin: 0;
+        padding: 0 0 50px 0;
+
+        display: inline-block;
+
+        .logo {
+            // border: 2px solid #ff0000;
+
+            width: 15%;
+
+            float: left;
+
+            margin: inherit;
+            padding: 0;
+        }
+
+        .employerInfo {
+            // border: 2px solid #ff0000;
+
+            font-weight: bold;
+
+            width: 80%;
+            height: 100%;
+
+            margin: inherit;
+            padding: 0;
+
+            float: right;
+
+            h1 {
+                // border: 2px solid #ffff00;
+
+                font-size: 1.5em;
+                // font-weight: bold;
+                text-align: inherit;
+
+                margin: inherit;
+                padding: inherit;
+            }
+
+            h2 {
+                // border: 2px solid #ff00ff;
+
+                font-size: 1.125em;
+                // font-weight: bold;
+                text-align: inherit;
+
+                width: 50%;
+
+                margin: inherit;
+                padding: inherit;
+                // padding: 0 0 10px 0;
+
+                display: inline-block;
+            }
+
+            .employerDates {
+                // border: 2px solid #00ffff;
+
+                font-size: 1em;
+                // font-weight: bold;
+                text-align: right;
+                // letter-spacing: 0.025em;
+
+                width: 22.5%;
+
+                margin: inherit;
+                padding: inherit;
+
+                // display: inline-block;
+                float: right;
+            }
+
+            ul {
+                margin: inherit;
+                padding: 15px 0;
+
+                li {
+                    // font-weight: bold;
+                    list-style: none;
+                }
+            }
+
+            p {
+                // font-weight: bold;
+                // letter-spacing: 0.01em;
+
+                margin: inherit;
+                padding: 2.5px 0;
+            }
+        }
+    }
+}
+
+/* #endregion ==================== RESUME ==================== */

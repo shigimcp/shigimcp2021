@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 35" style="enable-background:new 0 0 100 35;" xml:space="preserve">
+<g id="new_x5F_SMcP">
+	<g>
+		<defs>
+			<rect id="SVGID_1_" width="100" height="35"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-565.8207" y1="411.6267" x2="-563.3736" y2="411.6267" gradientTransform="matrix(-78.8324 -84.5374 -84.5374 78.8324 -9670.9209 -80172.6562)">
+			<stop  offset="0" style="stop-color:#FAC926"/>
+			<stop  offset="0.0056" style="stop-color:#FAC926"/>
+			<stop  offset="0.25" style="stop-color:#FAE1A0"/>
+			<stop  offset="0.3089" style="stop-color:#FAEAC2"/>
+			<stop  offset="0.3353" style="stop-color:#F2E0B2"/>
+			<stop  offset="0.3873" style="stop-color:#E4C98C"/>
+			<stop  offset="0.4592" style="stop-color:#D0A756"/>
+			<stop  offset="0.5088" style="stop-color:#C2912E"/>
+			<stop  offset="0.824" style="stop-color:#E6CC7C"/>
+			<stop  offset="0.8708" style="stop-color:#EED688"/>
+			<stop  offset="1" style="stop-color:#FFFBCC"/>
+		</linearGradient>
+		<polygon style="clip-path:url(#SVGID_2_);fill:url(#SVGID_3_);" points="46.512,84.742 -17.389,16.216 53.488,-49.878 
+			117.389,18.648 		"/>
+	</g>
+	<polygon style="fill:#FFFFFF;" points="84.23,27.44 81.119,27.44 75.293,11.187 69.439,27.44 66.246,27.44 59.803,7.588 
+		62.801,7.588 67.954,24.318 74.062,7.588 76.556,7.588 82.632,24.234 87.788,7.588 90.756,7.588 	"/>
+	<polygon style="fill:#FFFFFF;" points="37.537,27.335 37.537,7.56 55.773,7.56 55.773,9.995 40.339,9.995 40.339,15.877 
+		55.381,15.877 55.381,18.231 40.339,18.231 40.339,24.897 56.502,24.897 56.502,27.335 	"/>
+	<path style="fill:#FFFFFF;" d="M27.367,27.335l-15.49-16.359c0,0,0.056,14.903,0.056,16.359H9.244V7.56h2.885l15.377,16.329
+		c0,0-0.083-15.321-0.083-16.329h2.689v19.775H27.367z"/>
+</g>
+<g id="Layer_1">
+</g>
+</svg>

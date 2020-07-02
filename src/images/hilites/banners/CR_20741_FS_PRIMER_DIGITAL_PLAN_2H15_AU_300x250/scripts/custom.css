@@ -1,0 +1,8 @@
+#Stage {
+	cursor: pointer;
+	cursor: hand;
+}
+
+svg, #roundel {
+	overflow: visible !important;
+}

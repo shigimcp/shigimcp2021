@@ -1,0 +1,41 @@
+svg, svg > * {
+	/*border: 2px #0000FF inset;*/
+
+	overflow: visible !important;
+}
+
+
+.particle {
+	position: absolute;
+/*
+	position: relative;
+	width: 2px;
+	height: 2px;
+	background: #faa61a;
+	opacity: 0.7;
+	border-radius: 50%;
+	z-index: -1;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+*/
+}
+
+.ds {
+	filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+	filter: url(#drop-shadow);
+	-webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
+	filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
+}
+
+.logoMask {
+	mask: url(#logo_mask_FF);
+}
+
+.bottleMask {
+	mask: url(#bottle_mask_FF);
+}
+
+.imageMask {
+	mask: url(#image_mask_FF);
+}

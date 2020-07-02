@@ -1,0 +1,5 @@
+/*#copy01_01 > div, #copy01_02 > div, #copy01_03 > div {*/
+/*#Stage_copy01 > div, #Stage_copy01_01 > div, #Stage_copy01_02 > div, #Stage_copy01_03 > div,
+#Stage_copy02 > div, #Stage_copy02_ds > div {
+	display:inline-block !important;
+}*/

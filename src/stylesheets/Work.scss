@@ -1,0 +1,160 @@
+/* #region ==================== VARIABLES ==================== */
+
+$body-width: 50vw;
+$body-min-width: 820px;
+// $body-max-width: 1200px;
+$body-max-width: 960px;
+
+// $workkNav-height: 80px;
+$workkNav-height: 100px;
+
+/* #endregion ==================== VARIABLES ==================== */
+
+
+/* #region ==================== WORK ==================== */
+
+.workPage {
+    // border: 2px solid #0000ff;
+    // background: #eeeeee;
+
+    width: 100%;
+    // width: $body-width;
+    // min-width: $body-min-width;
+    // max-width: $body-max-width;
+
+    margin: 0;
+    // margin: -20px 0 0 0;
+    // padding: 0;
+    padding: ($workkNav-height + 115px) 0 0 0;
+
+    .workList {
+        // border: 2px solid #ff0000;
+        // background: #eeeeee;
+
+        width: 100%;
+
+        // margin: 0;
+        // margin: ($workkNav-height + 20px) 0 0 0;
+        // margin: ($workkNav-height + 20px) auto 0 auto;
+        padding: 0;
+        // padding: 0 0 200px 0;
+
+        // * {
+        //     border: 2px solid #ff0000;
+        // }
+
+        .masonryImg {
+            // border: 2px solid #00ffff;
+
+            width: 100%;
+            // width: 95%;
+
+            // margin: 0 auto;
+            // padding: 2.5% 0;
+
+            display: block;
+        }
+
+        .workItem {
+            // border: 2px solid #00ffff;
+
+            // width: 100%;
+
+            margin: inherit;
+            padding: inherit;
+
+            table {
+                // border: 2px solid #ff00ff;
+
+                // width: 50%;
+                // width: inherit;
+
+                margin: 0 auto;
+                padding: 0;
+
+                // tr, td {
+                //     border: 2px solid #000000;
+                //     margin: 0 auto;
+                // }
+
+                // .workTableTR {
+                //     border: 2px solid #000000;
+                // }
+
+                .workImage {
+                    // border: 2px solid #0000ff;
+
+                    // width: 40%;
+                    // width: inherit;
+
+                    // margin: inherit;
+                    // padding: inherit;
+                    margin: 0 auto;
+                    padding: 0;
+
+                    .slide {
+                        // border: 1px solid #00ffff;
+
+                        // width: 95%;
+                        // width: inherit;
+
+                        display: table-cell;
+
+                        margin: 0 auto;
+                        padding: 0;
+                    }
+                }
+
+                .workProp {
+                    // border: 2px solid #ff0000;
+
+                    font-size: 0.875em;
+                    vertical-align: top;
+
+                    width: 12.5%;
+                }
+
+                .workValue {
+                    // border: 2px solid #ff0000;
+
+                    font-size: 0.875em;
+                    vertical-align: top;
+                }
+            }
+
+            // .workImage {
+            //     // border: 2px solid #0000ff;
+
+            //     width: 40%;
+
+            //     .slide {
+            //         // border: 1px solid #00ffff;
+
+            //         width: 95%;
+
+            //         margin: inherit;
+            //         padding: inherit;
+            //     }
+            // }
+
+            // .workProp {
+            //     // border: 2px solid #ff0000;
+
+            //     font-size: 0.875em;
+            //     vertical-align: top;
+
+            //     width: 12.5%;
+            // }
+
+            // .workValue {
+            //     // border: 2px solid #ff0000;
+
+            //     font-size: 0.875em;
+            //     vertical-align: top;
+            // }
+        }
+    }
+
+}
+
+/* #endregion ==================== WORK ==================== */

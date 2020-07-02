@@ -1,0 +1,30 @@
+/* #region ==================== VARIABLES ==================== */
+
+$body-width: 50vw;
+$body-min-width: 820px;
+// $body-max-width: 1200px;
+$body-max-width: 960px;
+
+// $workkNav-height: 80px;
+$workkNav-height: 100px;
+
+/* #endregion ==================== VARIABLES ==================== */
+
+
+.bodyContainer {
+    // border: 2px solid #ff0000;
+
+    // width: 50%;
+    // min-width: 820px;
+    // max-width: 1200px;
+
+    width: $body-width;
+    min-width: $body-min-width;
+    max-width: $body-max-width;
+
+    // height: 100%;
+
+    margin: 0 auto;
+    padding: 150px 0 0 0;
+    // padding: 0;
+}
