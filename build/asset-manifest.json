@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/shigimcp2020-react/static/css/main.6caa5af4.chunk.css",
-    "main.js": "/shigimcp2020-react/static/js/main.0c3b568f.chunk.js",
-    "main.js.map": "/shigimcp2020-react/static/js/main.0c3b568f.chunk.js.map",
-    "runtime-main.js": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js",
-    "runtime-main.js.map": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js.map",
-    "static/js/2.18aaccf8.chunk.js": "/shigimcp2020-react/static/js/2.18aaccf8.chunk.js",
-    "static/js/2.18aaccf8.chunk.js.map": "/shigimcp2020-react/static/js/2.18aaccf8.chunk.js.map",
-    "index.html": "/shigimcp2020-react/index.html",
-    "precache-manifest.49fa9343a4b4d0b89e06815968e5bb1d.js": "/shigimcp2020-react/precache-manifest.49fa9343a4b4d0b89e06815968e5bb1d.js",
-    "service-worker.js": "/shigimcp2020-react/service-worker.js",
-    "static/css/main.6caa5af4.chunk.css.map": "/shigimcp2020-react/static/css/main.6caa5af4.chunk.css.map",
-    "static/js/2.18aaccf8.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.18aaccf8.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/shigimcp2020-react/static/media/ChaleParNinSix.fc1bf3d8.svg"
+    "main.css": "/static/css/main.5fd678d0.chunk.css",
+    "main.js": "/static/js/main.2ac339bc.chunk.js",
+    "main.js.map": "/static/js/main.2ac339bc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7b8ff716.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7b8ff716.js.map",
+    "static/js/2.18aaccf8.chunk.js": "/static/js/2.18aaccf8.chunk.js",
+    "static/js/2.18aaccf8.chunk.js.map": "/static/js/2.18aaccf8.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b2eca1d012545f2766f2e8b472baf2a4.js": "/precache-manifest.b2eca1d012545f2766f2e8b472baf2a4.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5fd678d0.chunk.css.map": "/static/css/main.5fd678d0.chunk.css.map",
+    "static/js/2.18aaccf8.chunk.js.LICENSE.txt": "/static/js/2.18aaccf8.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/static/media/ChaleParNinSix.fc1bf3d8.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b6df552f.js",
+    "static/js/runtime-main.7b8ff716.js",
     "static/js/2.18aaccf8.chunk.js",
-    "static/css/main.6caa5af4.chunk.css",
-    "static/js/main.0c3b568f.chunk.js"
+    "static/css/main.5fd678d0.chunk.css",
+    "static/js/main.2ac339bc.chunk.js"
   ]
 }
