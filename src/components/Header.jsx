@@ -55,6 +55,8 @@ export function Header() {
             navTL.play();
         }
 
+        window.scrollTo(0, 0);
+
     }, [navShow, navTL, currentPath]);
 
     //#endregion -------------------- HOOKS (runs both after the first render *and* after every update): REF https://reactjs.org/docs/hooks-effect.html --------------------

@@ -100,7 +100,8 @@ function WorkList() {
     return (
         <div className='WorkList'>
             {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 3200: 3 }}> */}
-            <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2 }}>
+            {/* <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3 }}> */}
+            <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3, 2560: 4 }}>
                 <Masonry gutter='20px'>
                     {work.map((workImage, i) => (
                         <img
