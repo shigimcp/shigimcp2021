@@ -1,0 +1,122 @@
+.nmtg_26903 {
+    border: 1px inset #e6437b;
+
+    // background: #000000;
+    // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_01.jpg);
+    // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_02.jpg);
+    background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_03b.jpg);
+    background-size: contain;
+
+    // .bannerImg  {
+    //     // border: 2px inset #00ff00;
+    //     // border: 20px inset #00ff00;
+
+    //     // width: inherit;
+    //     // height: inherit;
+
+    //     opacity: 0.5;
+
+    //     // margin: 0;
+    //     // padding: 0;
+
+    //     // position: absolute;
+
+    //     // img {
+    //     //     margin: 0;
+    //     //     padding: 0;
+    //     // }
+    // }
+
+    .logo_NMTG_sp {
+        // border: 2px solid #ff00ff;
+        // background-color: #ff0000;
+
+        // mix-blend-mode: multiply;
+        // mix-blend-mode: hard-light;
+
+        margin: 0;
+        padding: 0;
+
+        // position: relative;
+
+        // g, .logo_NMTG_sp_ds, image {
+        //     border: 2px solid #0000ff;
+
+        //     // color: #ffffff;
+        //     // fill: #ffffff;
+        // }
+    }
+
+    .logo_bg {
+        // border: 2px solid #ff00ff;
+        background: #e6437b;
+
+        width: 300px;
+        height: 70px;
+
+        // position: absolute;
+        // top: 15px;
+    }
+
+    .bg02_svg {
+        // border: 2px solid #ff00ff;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .nmmn_bottle {
+        // border: 2px solid #ff00ff;
+
+        width: auto;
+        height: auto;
+    }
+
+    .vendorTag {
+        // border: 2px solid #ff00ff;
+        // background: #ff0000;
+        background: #ffffff;
+
+        // width: 70px;
+        // height: 15px;
+
+        width: 70px;
+        height: 15px;
+
+        // opacity: 0.5;
+
+        // margin: 0 auto;
+        // padding: 5px 10px;
+        // padding: 3px 10px 5px 10px;
+
+        margin: auto;
+        padding: 0;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        img {
+            width: 75%;
+            margin: 3.75% 12.75%;
+        }
+    }
+
+    .cta {
+        // border: 2px solid #ff00ff;
+
+        width: 160px;
+        height: 20px;
+
+        // margin: 0 auto;
+        // padding: 0;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}

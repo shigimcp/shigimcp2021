@@ -2,8 +2,9 @@
 
 import React from 'react';
 
-// import Masonry from "react-responsive-masonry"
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+// import Masonry from 'react-responsive-masonry'
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import Moment from 'react-moment';
 
 import '../stylesheets/Work.scss';
 
@@ -21,7 +22,7 @@ import work from '../data/json/work_json/work_ddb.json';
 const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
 
 
-//#region -------------------- PLACEHOLDER: WorkItem(props), WorkList() --------------------
+//#region -------------------- PLACEHOLDER: WorkItem(props), workList() --------------------
 
 // function WorkItem(props) {
 
@@ -84,13 +85,13 @@ const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
 //     );
 
 //     return (
-//         <div className='WorkList'>
+//         <div className='workList'>
 //             {workItems}
 //         </div>
 //     );
 // }
 
-//#endregion -------------------- PLACEHOLDER: WorkItem(props), WorkList() --------------------
+//#endregion -------------------- PLACEHOLDER: WorkItem(props), workList() --------------------
 
 
 //#region -------------------- MASONRY: REF https://cedricdelpoux.github.io/react-responsive-masonry/ --------------------
@@ -98,19 +99,50 @@ const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
 function WorkList() {
 
     return (
-        <div className='WorkList'>
+        <div className='workList'>
             {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 3200: 3 }}> */}
             {/* <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3 }}> */}
             <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3, 2560: 4 }}>
-                <Masonry gutter='20px'>
+                <Masonry gutter='50px'>
                     {work.map((workImage, i) => (
-                        <img
-                            key={i}
-                            src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
-                            className='masonryImg'
-                            // style={{ width: "100%", display: "block" }}
-                            alt={'album_id: ' + workImage.album_id + i}
-                        />
+                        <div className='workItem' key={workImage.album_id + workImage.image_index}>
+
+                            <img
+                                // key={workImage.album_id + workImage.image_index}
+                                className='masonryImg'
+                                src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
+                                alt={'album_id: ' + workImage.album_id + workImage.image_index}
+                            // onClick={() => navShow.reverse()}
+                            />
+
+                            {/* <BSPS_26897 /> */}
+
+                            <p>
+                                {/* <p key={'descr' + workImage.album_id + workImage.image_index}> */}
+                                {workImage.caption}<br />
+                                <Moment format="MMM YYYY">{workImage.date}</Moment><br />
+                                {/* {workImage.link} */}
+{/* 
+                                <br />
+
+                                album_index = {workImage.album_index}<br />
+                                album_id = {workImage.album_id}<br />
+                                image_index = {workImage.image_index}<br />
+                                src = {workImage.src}<br />
+                                caption = {workImage.caption}<br />
+                                date = {workImage.date}<br />
+                                format = {workImage.format}<br />
+                                format_src = {workImage.format_src}<br />
+                                link = {workImage.link}<br />
+                                link2 = {workImage.link2}<br />
+                                cta = {workImage.cta}<br />
+                                alert = {workImage.alert}<br />
+                                mwidth = {workImage.mwidth}<br />
+                                mheight = {workImage.mheight}
+ */}
+                            </p>
+
+                        </div>
                     ))}
                 </Masonry>
             </ResponsiveMasonry>

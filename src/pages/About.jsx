@@ -68,28 +68,55 @@ function AboutItem(props) {
         <div className='AboutItem'>
             <table>
                 <tbody>
+
                     <tr>
-                        <td>
-                            key[Proxy] = <br />
-                            brain = <br />
-                            thought = <br />
-                            format = <br />
-                            format_src = <br />
-                            link = <br />
-                            aWidth = <br />
-                            aHeight = <br />
-                        </td>
-                        <td>
-                            {props.keyProxy}<br />
-                            {props.brain}<br />
-                            {props.props}<br />
-                            {props.format}<br />
-                            {props.format_src}<br />
-                            {props.link}<br />
-                            {props.aWidth}<br />
-                            {props.aHeight}<br />
-                        </td>
+                        <td colSpan='2'><hr /></td>
                     </tr>
+
+                    <tr>
+                        <td className='tdKey'>key[Proxy] = </td>
+                        <td className='tdValue'>{props.keyProxy}</td>
+                    </tr>
+
+                    <tr>
+                        <td className='tdKey'>brain = </td>
+                        <td className='tdValue'>{props.brain}</td>
+                    </tr>
+
+                    <tr>
+                        <td className='tdKey'>thought = </td>
+                        <td className='tdValue'>{props.thought}</td>
+                    </tr>
+
+                    <tr>
+                        <td className='tdKey'>format = </td>
+                        <td className='tdValue'>{props.format}</td>
+                    </tr>
+
+                    <tr>
+                        <td className='tdKey'>format_src = </td>
+                        <td className='tdValue'>{props.format_src}</td>
+                    </tr>
+
+                    <tr>
+                        <td className='tdKey'>link = </td>
+                        <td className='tdValue'>{props.link}</td>
+                    </tr>
+
+                    <tr>
+                        <td className='tdKey'>aWidth = </td>
+                        <td className='tdValue'>{props.aWidth}</td>
+                    </tr>
+
+                    <tr>
+                        <td className='tdKey'>aHeight = </td>
+                        <td className='tdValue'>{props.aHeight}</td>
+                    </tr>
+
+                    <tr>
+                        <td colSpan='2'><hr /></td>
+                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -752,10 +779,14 @@ function AboutLogo() {
 
 export const About = () => {
     return (
+        // <FullPage title="About">
         <BodyContainer title="About">
+
             <AboutLogo />
-            About Page
+            <h1>About Page</h1>
             <AboutList />
+
         </BodyContainer>
+        // </FullPage>
     )
 }

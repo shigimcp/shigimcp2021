@@ -23,10 +23,47 @@
 
 
 .AboutItem {
-    border: 1px solid #ff00ff;
+    // border: 1px solid #666666;
 
     margin: 0;
     padding: 0;
+
+    table {
+
+        width: 100%;
+
+        tbody {
+
+            width: inherit;
+
+            tr {
+                // border: 1px solid #00ff00;
+
+                width: inherit;
+
+                td {
+                    // border: 1px solid #999999;
+
+                    vertical-align: text-top;
+
+                    // width: 100%;
+                    padding: 5px;
+                }
+
+                .tdKey {
+                    // border: 1px solid #00ffff;
+
+                    width: 12.5%;
+                }
+
+                // .tdValue {
+                //     // border: 1px solid #00ffff;
+
+                //     width: 85%;
+                // }
+            }
+        }
+    }
 }
 
 /* #endregion ==================== ABOUT ==================== */

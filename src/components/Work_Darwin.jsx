@@ -72,7 +72,7 @@ function WorkList() {
     );
 
     return (
-        <div className='WorkList'>
+        <div className='workList'>
             {workItems}
         </div>
     );

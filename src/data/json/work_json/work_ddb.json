@@ -1,30 +1,34 @@
 [
-    {
-        "album_index": 4,
-        "album_id": "ddb",
-        "image_index": 0,
-        "src": "ddb00.jpg",
-        "caption": 2007,
-        "format": "flash",
-        "format_src": "img/0elements/badge_flash.svg",
-        "link": "flash/site/index.html",
-        "cta": "click image for Flash* presentation",
-        "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
-        "mwidth": 1350,
-        "mheight": 952.5
-    },
-    {
-        "album_index": 4,
-        "album_id": "ddb",
-        "image_index": 1,
-        "src": "ddb01.jpg",
-        "caption": 2007,
-        "format": "flash",
-        "format_src": "img/0elements/badge_flash.svg",
-        "link": "flash/cs3training/index.html",
-        "cta": "click image for Flash* presentation",
-        "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
-        "mwidth": 960,
-        "mheight": 720
-    }
+ {
+   "album_index": 4,
+   "album_id": "ddb",
+   "image_index": 0,
+   "src": "ddb00.jpg",
+   "caption": "DDB Studio 8 Agency Portfolio",
+   "date": "2007-09-01T00:00:00.00Z",
+   "format": "website",
+   "format_src": "flash",
+   "link": "flash/site/index.html",
+   "link2": "#",
+   "cta": "click image for Flash* presentation",
+   "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
+   "mwidth": 1350,
+   "mheight": 952.5
+ },
+ {
+   "album_index": 4,
+   "album_id": "ddb",
+   "image_index": 1,
+   "src": "ddb01.jpg",
+   "caption": "Adobe CS3 Training Seminar Invitation",
+   "date": "2007-10-01T00:00:00.00Z",
+   "format": "website",
+   "format_src": "flash",
+   "link": "flash/cs3training/index.html",
+   "link2": "#",
+   "cta": "click image for Flash* presentation",
+   "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
+   "mwidth": 960,
+   "mheight": 720
+ }
 ]

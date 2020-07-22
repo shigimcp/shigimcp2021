@@ -11,6 +11,27 @@ $workkNav-height: 100px;
 /* #endregion ==================== VARIABLES ==================== */
 
 
+/* #region ==================== FONTS ==================== */
+
+@font-face {
+	font-family: 'ChaleParNinSix';
+	src: url('../fonts/ChaleParNinSix.otf') format("opentype");
+	src: url('../fonts/ChaleParNinSix.eot');
+	src: url('../fonts/ChaleParNinSix.woff') format('woff'),
+	url('../fonts/ChaleParNinSix.svg#-GothaBoo') format('svg');
+}
+
+@font-face {
+	font-family: 'AnimeAceItalic';
+	src: url('../fonts/AnimeAceItalic.otf') format("opentype");
+	src: url('../fonts/AnimeAceItalic.eot');
+	src: url('../fonts/AnimeAceItalic.woff') format('woff'),
+	url('../fonts/AnimeAceItalic.svg#-Italic') format('svg');
+}
+
+/* #endregion ==================== FONTS ==================== */
+
+
 /* #region ==================== GLOBAL ==================== */
 
 code {
@@ -35,22 +56,11 @@ html, body, #root, #rootContainer {
 /* #endregion ==================== GLOBAL ==================== */
 
 
-/* #region ==================== FONTS ==================== */
+.sampleAnimate {
+    border: 2px solid #ff0000;
 
-@font-face {
-	font-family: 'ChaleParNinSix';
-	src: url('../fonts/ChaleParNinSix.otf') format("opentype");
-	src: url('../fonts/ChaleParNinSix.eot');
-	src: url('../fonts/ChaleParNinSix.woff') format('woff'),
-	url('../fonts/ChaleParNinSix.svg#-GothaBoo') format('svg');
+    width: 300px;
+    height: 250px;
+
+    display: block;
 }
-
-@font-face {
-	font-family: 'AnimeAceItalic';
-	src: url('../fonts/AnimeAceItalic.otf') format("opentype");
-	src: url('../fonts/AnimeAceItalic.eot');
-	src: url('../fonts/AnimeAceItalic.woff') format('woff'),
-	url('../fonts/AnimeAceItalic.svg#-Italic') format('svg');
-}
-
-/* #endregion ==================== FONTS ==================== */
