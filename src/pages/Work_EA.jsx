@@ -112,8 +112,70 @@ function WorkList() {
             <hr />
             <h2>testing 1, 2, 3...</h2>
             <hr />
-            <ResponsiveMasonry className='testing123' columnsCountBreakPoints={{ 360: 1, 640: 2, 768: 2, 940: 3, 1640: 4, 1920: 5, 3000: 6 }}>
+            {/* <ResponsiveMasonry className='testing123' columnsCountBreakPoints={{ 360: 1, 640: 2, 768: 2, 940: 3, 1640: 4, 1920: 5, 3000: 6 }}> */}
+            <ResponsiveMasonry className='testing123' columnsCountBreakPoints={{ 300: 1, 600: 2, 900: 2, 1200: 3, 1500: 4, 1800: 5, 2100: 6 }}>
                 <Masonry gutter='50px'>
+                {/* <Masonry gutter='120px'> */}
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={bsps_26897Ref}><BSPS_26897 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmtg_26903Ref}><NMTG_26903 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmmn_11155Ref}><NMMN_11155 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={bsps_26897Ref}><BSPS_26897 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmtg_26903Ref}><NMTG_26903 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmmn_11155Ref}><NMMN_11155 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={bsps_26897Ref}><BSPS_26897 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmtg_26903Ref}><NMTG_26903 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmmn_11155Ref}><NMMN_11155 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={bsps_26897Ref}><BSPS_26897 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmtg_26903Ref}><NMTG_26903 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmmn_11155Ref}><NMMN_11155 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={bsps_26897Ref}><BSPS_26897 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmtg_26903Ref}><NMTG_26903 /></div>
+                    </div>
+
+                    <div className='workItem'>
+                        <div className='masonryBanner' ref={nmmn_11155Ref}><NMMN_11155 /></div>
+                    </div>
 
                     <div className='workItem'>
                         <div className='masonryBanner' ref={bsps_26897Ref}><BSPS_26897 /></div>

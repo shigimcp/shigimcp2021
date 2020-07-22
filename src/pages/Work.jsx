@@ -9,17 +9,17 @@ import { FullPage } from '../components/FullPage';
 // import { BodyContainer } from '../components/BodyContainer';
 
 // import { WorkEmployer } from '../components/WorkEmployer';
-import { WorkMiMi } from '../components/Work_MiMi';
-import { WorkEA } from '../components/Work_EA';
-import { WorkAX } from '../components/Work_AX';
-import { WorkHearst } from '../components/Work_Hearst';
-import { WorkDDB } from '../components/Work_DDB';
-import { WorkMRM } from '../components/Work_MRM';
-import { WorkHeeb } from '../components/Work_Heeb';
-import { WorkHB } from '../components/Work_HB'
-import { WorkLuminant } from '../components/Work_Luminant';
-import { WorkDarwin } from '../components/Work_Darwin';
-import { WorkOther } from '../components/Work_Other';
+import { WorkMiMi } from './Work_MiMi';
+import { WorkEA } from './Work_EA';
+import { WorkAX } from './Work_AX';
+import { WorkHearst } from './Work_Hearst';
+import { WorkDDB } from './Work_DDB';
+import { WorkMRM } from './Work_MRM';
+import { WorkHeeb } from './Work_Heeb';
+import { WorkHB } from './Work_HB'
+import { WorkLuminant } from './Work_Luminant';
+import { WorkDarwin } from './Work_Darwin';
+import { WorkOther } from './Work_Other';
 
 import { NotFound } from './NotFound';
 

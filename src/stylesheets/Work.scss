@@ -68,7 +68,7 @@ $workkNav-height: 100px;
         }
 
         .workItem {
-            // border: 2px solid #ff0000;
+            border: 2px solid #ff0000;
 
             // width: 100%;
 
@@ -79,7 +79,7 @@ $workkNav-height: 100px;
             padding: 0;
 
             .masonryImg {
-                // border: 2px solid #00ffff;
+                border: 2px solid #00ffff;
 
                 width: 100%;
                 // width: 95%;
@@ -88,6 +88,14 @@ $workkNav-height: 100px;
                 // padding: 2.5% 0;
 
                 display: block;
+            }
+
+            .masonryBanner {
+                border: 2px solid #00ffff;
+
+                height: 400px;
+
+                overflow: hidden;
             }
 
             /* #region ===== dead code ===== */
@@ -186,39 +194,39 @@ $workkNav-height: 100px;
         }
     }
 
-    .bannerList {
-        // border: 2px solid #ff0000;
+    // .bannerList {
+    //     // border: 2px solid #ff0000;
 
-        // width: 60%;
+    //     // width: 60%;
 
-        margin: 0 auto;
-        padding: 0 50px;
+    //     margin: 0 auto;
+    //     padding: 0 50px;
 
-        img {
-            // border: 2px solid #00ff00;
+    //     img {
+    //         // border: 2px solid #00ff00;
 
-            // max-width: 300px;
+    //         // max-width: 300px;
 
-            margin: 0 auto;
-        }
-    }
+    //         margin: 0 auto;
+    //     }
+    // }
 
-    .webList {
-        // border: 2px solid #ff0000;
+    // .webList {
+    //     // border: 2px solid #ff0000;
 
-        // width: 60%;
+    //     // width: 60%;
 
-        margin: 0 auto;
-        padding: 0 50px;
+    //     margin: 0 auto;
+    //     padding: 0 50px;
 
-        img {
-            // border: 2px solid #00ff00;
+    //     img {
+    //         // border: 2px solid #00ff00;
 
-            // max-width: 300px;
+    //         // max-width: 300px;
 
-            margin: 0 auto;
-        }
-    }
+    //         margin: 0 auto;
+    //     }
+    // }
 }
 
 
