@@ -11,23 +11,14 @@ $workkNav-height: 100px;
 /* #endregion ==================== VARIABLES ==================== */
 
 
-/* #region ==================== WORK ==================== */
-
 .workPage {
     // border: 2px solid #0000ff;
     // background: #eeeeee;
 
     width: 100%;
-    // width: $body-width;
-    // min-width: $body-min-width;
-    // max-width: $body-max-width;
 
     margin: 0;
-    // margin: -20px 0 0 0;
-    // padding: 0;
-    // padding: ($workkNav-height + 115px) 0 0 0;
     padding: ($workkNav-height + 140px) 0 0 0;
-    // padding: ($workkNav-height + 165px) 0 0 0;
 
     .workList {
         // border: 2px solid #ff0000;
@@ -35,15 +26,7 @@ $workkNav-height: 100px;
 
         width: 100%;
 
-        // margin: 0;
-        // margin: ($workkNav-height + 20px) 0 0 0;
-        // margin: ($workkNav-height + 20px) auto 0 auto;
         padding: 0;
-        // padding: 0 0 200px 0;
-
-        // * {
-        //     border: 2px solid #ff0000;
-        // }
 
         p {
             // border: 2px solid #00ffff;
@@ -52,181 +35,56 @@ $workkNav-height: 100px;
             letter-spacing: .025em;
 
             margin: 0;
-            // padding: 15px 0 0 0;
             padding: 15px;
         }
-
 
         hr {
             margin: 10px 35%;
         }
 
-        .testing123 * {
+        .importContainer {
             // border: 2px solid #ff0000;
+            // background-color: #00ff00;
+            // opacity: 0.25;
 
-            z-index: -100;
+            color: #ff00ff;
+            // font-size: 2em;
+            font-weight: bolder;
+            // line-height: 1em;
+            // text-align: center;
+
+            margin: 0;
+            padding: 0;
+
+            position: absolute;
+            // top: 0;
+            // left: 0;
+            // right: 0;
+            // bottom: 0;
+
+            .importedContent {
+                // border: 2px solid #00ff00;
+
+                margin: 0 auto;
+                padding: 0;
+            }
         }
 
         .workItem {
-            border: 2px solid #ff0000;
-
-            // width: 100%;
-
-            // margin: inherit;
-            // padding: inherit;
+            // border: 2px solid #ff0000;
 
             margin: 0;
             padding: 0;
 
             .masonryImg {
-                border: 2px solid #00ffff;
+                // border: 2px solid #00ffff;
 
                 width: 100%;
-                // width: 95%;
-
-                // margin: 0 auto;
-                // padding: 2.5% 0;
 
                 display: block;
             }
-
-            .masonryBanner {
-                border: 2px solid #00ffff;
-
-                height: 400px;
-
-                overflow: hidden;
-            }
-
-            /* #region ===== dead code ===== */
-
-            // table {
-            //     // border: 2px solid #ff00ff;
-
-            //     // width: 50%;
-            //     // width: inherit;
-
-            //     margin: 0 auto;
-            //     padding: 0;
-
-            //     // tr, td {
-            //     //     border: 2px solid #000000;
-            //     //     margin: 0 auto;
-            //     // }
-
-            //     // .workTableTR {
-            //     //     border: 2px solid #000000;
-            //     // }
-
-            //     .workImage {
-            //         // border: 2px solid #0000ff;
-
-            //         // width: 40%;
-            //         // width: inherit;
-
-            //         // margin: inherit;
-            //         // padding: inherit;
-            //         margin: 0 auto;
-            //         padding: 0;
-
-            //         .slide {
-            //             // border: 1px solid #00ffff;
-
-            //             // width: 95%;
-            //             // width: inherit;
-
-            //             display: table-cell;
-
-            //             margin: 0 auto;
-            //             padding: 0;
-            //         }
-            //     }
-
-            //     .workProp {
-            //         // border: 2px solid #ff0000;
-
-            //         font-size: 0.875em;
-            //         vertical-align: top;
-
-            //         width: 12.5%;
-            //     }
-
-            //     .workValue {
-            //         // border: 2px solid #ff0000;
-
-            //         font-size: 0.875em;
-            //         vertical-align: top;
-            //     }
-            // }
-
-            // .workImage {
-            //     // border: 2px solid #0000ff;
-
-            //     width: 40%;
-
-            //     .slide {
-            //         // border: 1px solid #00ffff;
-
-            //         width: 95%;
-
-            //         margin: inherit;
-            //         padding: inherit;
-            //     }
-            // }
-
-            // .workProp {
-            //     // border: 2px solid #ff0000;
-
-            //     font-size: 0.875em;
-            //     vertical-align: top;
-
-            //     width: 12.5%;
-            // }
-
-            // .workValue {
-            //     // border: 2px solid #ff0000;
-
-            //     font-size: 0.875em;
-            //     vertical-align: top;
-            // }
-
-            /* #endregion ===== dead code ===== */
         }
     }
-
-    // .bannerList {
-    //     // border: 2px solid #ff0000;
-
-    //     // width: 60%;
-
-    //     margin: 0 auto;
-    //     padding: 0 50px;
-
-    //     img {
-    //         // border: 2px solid #00ff00;
-
-    //         // max-width: 300px;
-
-    //         margin: 0 auto;
-    //     }
-    // }
-
-    // .webList {
-    //     // border: 2px solid #ff0000;
-
-    //     // width: 60%;
-
-    //     margin: 0 auto;
-    //     padding: 0 50px;
-
-    //     img {
-    //         // border: 2px solid #00ff00;
-
-    //         // max-width: 300px;
-
-    //         margin: 0 auto;
-    //     }
-    // }
 }
 
 
@@ -240,5 +98,3 @@ $workkNav-height: 100px;
     margin: o;
     padding: 0;
 }
-
-/* #endregion ==================== WORK ==================== */

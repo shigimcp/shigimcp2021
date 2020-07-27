@@ -12,10 +12,10 @@ import '../stylesheets/Work.scss';
 
 import work from '../data/json/work_json/work_ax.json';
 
-console.log('');
-console.log('==========  Work_AX.jsx  ==========');
-console.log('work_ax:');
-console.log(work);
+// console.log('');
+// console.log('==========  Work_AX.jsx  ==========');
+// console.log('work_ax:');
+// console.log(work);
 
 //#endregion ==================== IMPORTS / DATA ====================
 

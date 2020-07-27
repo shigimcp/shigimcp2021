@@ -11,6 +11,7 @@ ReactDOM.render(
 
     // <React.StrictMode>
         <App />,
+        // <App bannersToShow={bannersToShow} />,
     // </React.StrictMode>,
 
     document.getElementById('root')

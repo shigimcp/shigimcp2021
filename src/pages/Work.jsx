@@ -8,18 +8,23 @@ import '../stylesheets/Work.scss';
 import { FullPage } from '../components/FullPage';
 // import { BodyContainer } from '../components/BodyContainer';
 
+
+import { Work000 } from '../work/Work_000';
+// import Work000 from '../work/Work_000';
+
 // import { WorkEmployer } from '../components/WorkEmployer';
-import { WorkMiMi } from './Work_MiMi';
-import { WorkEA } from './Work_EA';
-import { WorkAX } from './Work_AX';
-import { WorkHearst } from './Work_Hearst';
-import { WorkDDB } from './Work_DDB';
-import { WorkMRM } from './Work_MRM';
-import { WorkHeeb } from './Work_Heeb';
-import { WorkHB } from './Work_HB'
-import { WorkLuminant } from './Work_Luminant';
-import { WorkDarwin } from './Work_Darwin';
-import { WorkOther } from './Work_Other';
+
+import { WorkMiMi } from '../work/Work_MiMi';
+import { WorkEA } from '../work/Work_EA';
+import { WorkAX } from '../work/Work_AX';
+import { WorkHearst } from '../work/Work_Hearst';
+import { WorkDDB } from '../work/Work_DDB';
+import { WorkMRM } from '../work/Work_MRM';
+import { WorkHeeb } from '../work/Work_Heeb';
+import { WorkHB } from '../work/Work_HB'
+import { WorkLuminant } from '../work/Work_Luminant';
+import { WorkDarwin } from '../work/Work_Darwin';
+import { WorkOther } from '../work/Work_Other';
 
 import { NotFound } from './NotFound';
 
@@ -40,6 +45,8 @@ const routes = {
     '/lum': () => <WorkLuminant />,
     '/dar': () => <WorkDarwin />,
     '/other': () => <WorkOther />,
+
+    '/000': () => <Work000 />,
 }
 
 //#endregion ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================

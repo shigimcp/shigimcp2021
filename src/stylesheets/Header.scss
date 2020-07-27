@@ -29,7 +29,7 @@ $workkNav-height: 100px;
     padding: 0;
 
     position: fixed;
-    z-index: 99;
+    z-index: 999;
 
     .hed {
         // border: 02px solid #0000ff;
@@ -349,6 +349,7 @@ $workkNav-height: 100px;
     // top: 115px;
     left: 0;
     right: 0;
+    z-index: 1;
 
     .employerIcon {
         // border: 1px solid #cccccc;
@@ -383,6 +384,7 @@ $workkNav-height: 100px;
     }
 
     // ----- Ferda employerIcon separators... -----
+
     .employerIcon:before {
         border-left: 0.5px solid #cccccc;
         border-right: 0.5px solid #cccccc;

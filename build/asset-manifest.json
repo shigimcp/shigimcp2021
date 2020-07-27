@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/shigimcp2020-react/static/css/main.7c89758a.chunk.css",
-    "main.js": "/shigimcp2020-react/static/js/main.4b8d22fc.chunk.js",
-    "main.js.map": "/shigimcp2020-react/static/js/main.4b8d22fc.chunk.js.map",
+    "main.css": "/shigimcp2020-react/static/css/main.5be35dd6.chunk.css",
+    "main.js": "/shigimcp2020-react/static/js/main.b5c4183b.chunk.js",
+    "main.js.map": "/shigimcp2020-react/static/js/main.b5c4183b.chunk.js.map",
     "runtime-main.js": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js",
     "runtime-main.js.map": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js.map",
-    "static/js/2.3bb06741.chunk.js": "/shigimcp2020-react/static/js/2.3bb06741.chunk.js",
-    "static/js/2.3bb06741.chunk.js.map": "/shigimcp2020-react/static/js/2.3bb06741.chunk.js.map",
+    "static/js/2.5a4a222b.chunk.js": "/shigimcp2020-react/static/js/2.5a4a222b.chunk.js",
+    "static/js/2.5a4a222b.chunk.js.map": "/shigimcp2020-react/static/js/2.5a4a222b.chunk.js.map",
     "index.html": "/shigimcp2020-react/index.html",
-    "precache-manifest.bf2393a4ec71a984defe24223a4cf19a.js": "/shigimcp2020-react/precache-manifest.bf2393a4ec71a984defe24223a4cf19a.js",
+    "precache-manifest.26d684875717a46d1203c09c3671d11b.js": "/shigimcp2020-react/precache-manifest.26d684875717a46d1203c09c3671d11b.js",
     "service-worker.js": "/shigimcp2020-react/service-worker.js",
-    "static/css/main.7c89758a.chunk.css.map": "/shigimcp2020-react/static/css/main.7c89758a.chunk.css.map",
-    "static/js/2.3bb06741.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.3bb06741.chunk.js.LICENSE.txt",
+    "static/css/main.5be35dd6.chunk.css.map": "/shigimcp2020-react/static/css/main.5be35dd6.chunk.css.map",
+    "static/js/2.5a4a222b.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.5a4a222b.chunk.js.LICENSE.txt",
     "static/media/NMTG_26903.scss": "/shigimcp2020-react/static/media/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_03b.c53d9599.jpg",
     "static/media/App.scss": "/shigimcp2020-react/static/media/ChaleParNinSix.fc1bf3d8.svg",
     "static/media/BSPS_bottle.png": "/shigimcp2020-react/static/media/BSPS_bottle.dab95377.png",
@@ -43,8 +43,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b6df552f.js",
-    "static/js/2.3bb06741.chunk.js",
-    "static/css/main.7c89758a.chunk.css",
-    "static/js/main.4b8d22fc.chunk.js"
+    "static/js/2.5a4a222b.chunk.js",
+    "static/css/main.5be35dd6.chunk.css",
+    "static/js/main.b5c4183b.chunk.js"
   ]
 }

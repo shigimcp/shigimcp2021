@@ -8,14 +8,17 @@ import Moment from 'react-moment';
 
 import '../stylesheets/Work.scss';
 
-// -------------------- IMPORTS: DATA --------------------
+
+//#region -------------------- IMPORTS: DATA --------------------
 
 import work from '../data/json/work_json/work_mimi.json';
 
-console.log('');
-console.log('==========  Work_MiMi.jsx  ==========');
-console.log('work_mimi:');
-console.log(work);
+// console.log('');
+// console.log('==========  Work_MiMi.jsx  ==========');
+// console.log('work_mimi:');
+// console.log(work);
+
+//#endregion -------------------- IMPORTS: DATA --------------------
 
 //#endregion ==================== IMPORTS ====================
 
@@ -117,7 +120,7 @@ function WorkList() {
                                 className='masonryImg'
                                 src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
                                 alt={'album_id: ' + workImage.album_id + workImage.image_index}
-                            // onClick={() => navShow.reverse()}
+                                // onClick={() => navShow.reverse()}
                             />
 
                             {/* <BSPS_26897 /> */}
@@ -127,7 +130,7 @@ function WorkList() {
                                 {workImage.caption}<br />
                                 <Moment format="MMM YYYY">{workImage.date}</Moment><br />
                                 {/* {workImage.link} */}
-{/* 
+                        {/* 
                                 <br />
 
                                 album_index = {workImage.album_index}<br />
@@ -144,7 +147,7 @@ function WorkList() {
                                 alert = {workImage.alert}<br />
                                 mwidth = {workImage.mwidth}<br />
                                 mheight = {workImage.mheight}
- */}
+                        */}
                             </p>
 
                         </div>

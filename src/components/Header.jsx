@@ -9,10 +9,8 @@ import gsap from 'gsap';
 
 import '../stylesheets/Header.scss';
 
-//#endregion ==================== IMPORTS ====================
 
-
-//#region ==================== DATA ====================
+//#region -------------------- IMPORTS: DATA --------------------
 
 import myData from '../data/MyData';
 
@@ -20,7 +18,9 @@ const employerData = myData[0];
 // const workData = myData[1];
 // const aboutData = myData[2];
 
-//#endregion ==================== DATA ====================
+//#endregion -------------------- IMPORTS: DATA --------------------
+
+//#endregion ==================== IMPORTS ====================
 
 
 //#region ==================== EXPORT HEADER ====================
@@ -742,10 +742,13 @@ export function Header() {
 
                 <div className="navBar" id="navBarID">
                     <A href="/" onClick={() => navShow.reverse()}>Home</A>|
-                    <A href="/work/mimi" onClick={() => navShow.play()}>Work</A>|
+                    {/* <A href="/work/mimi" onClick={() => navShow.play()}>Work</A>| */}
+                    <A href="/work/000" onClick={() => navShow.play()}>Work</A>|
                     <A href="/about" onClick={() => navShow.reverse()}>About</A>|
                     <A href="/resume" onClick={() => navShow.reverse()}>Resume</A>|
                     <A href="/contact/Shigi" onClick={() => navShow.reverse()}>Contact</A>
+
+                    |<A href="/work/000" onClick={() => navShow.play()}>000</A>
                 </div>
 
             </div>

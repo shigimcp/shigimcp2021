@@ -1,4 +1,4 @@
-// ==================== WORK SWAP (TK: see Work.jsk that handles WorkNav): REF https://reactjs.org/docs/higher-order-components.html ====================
+// ==================== WORK SWAP (TK: see Work.jsx that handles WorkNav): REF https://reactjs.org/docs/higher-order-components.html ====================
 // ==================== (there *has* to be a better way to handle multiple pages/components that have identical structures...) ====================
 
 import React from 'react';

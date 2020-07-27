@@ -60,7 +60,6 @@ function App() {
     return (
         <Wrapper>
 
-
         {/* #region -   -   -   -   -   - react-adobe-animate: REF https://github.com/bibixx/react-adobe-animate#readme -   -   -   -   -   - */}
             {/*             
             <div className="sampleAnimate">
@@ -85,8 +84,10 @@ function App() {
             {/* <BSPS_26897 /> */}
 
             <Header />
+
             {/* {match || <NotFound />} */}
             {match || <Home />}
+
         </Wrapper>
     )
 }

@@ -65,7 +65,7 @@ const aboutData = myData[2];
 function AboutItem(props) {
 
     return (
-        <div className='AboutItem'>
+        <div className='aboutItem'>
             <table>
                 <tbody>
 
@@ -125,7 +125,7 @@ function AboutItem(props) {
 
 function AboutList() {
 
-    const employerItems = aboutData.map((thought) =>
+    const aboutItems = aboutData.map((thought) =>
         <AboutItem
             key={thought.about_index}
             keyProxy={thought.brain + '_' + thought.about_index}
@@ -141,7 +141,7 @@ function AboutList() {
 
     return (
         <div className='employerList'>
-            {employerItems}
+            {aboutItems}
         </div>
     );
 }
