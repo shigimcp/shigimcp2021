@@ -14,10 +14,10 @@ import '../stylesheets/Work.scss';
 
 
 //#region -------------------- IMPORTS: GSAP BANNERS --------------------
-
-import BSPS_26897 from '../images/ea/banners/assets/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
-import NMTG_26903 from '../images/ea/banners/assets/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
-import NMMN_11155 from '../images/ea/banners/assets/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
+import EAAR_18951 from '../images/ea/banners/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600/EAAR_18951';
+import BSPS_26897 from '../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
+import NMTG_26903 from '../images/ea/banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
+import NMMN_11155 from '../images/ea/banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
 
 //#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
 
@@ -52,6 +52,7 @@ function WorkList() {
     //#region -------------------- AVAILABLE GSAP BANNERS --------------------
 
     const banners = {
+        EAAR_18951: EAAR_18951,
         BSPS_26897: BSPS_26897,
         NMMN_11155: NMMN_11155,
         NMTG_26903: NMTG_26903
@@ -67,7 +68,7 @@ function WorkList() {
     const masonryImgRef = useRef(null);
 
     const importContainerRef = useRef(null);
-    const importedContentRef = useRef(null);
+    // const importedContentRef = useRef(null);
 
     //#endregion -------------------- ASSETS Ref --------------------
 
@@ -88,8 +89,11 @@ function WorkList() {
     // const [bannerKey, setBannerKey] = useState();
 
 
-    let [windwoWidth, setWindwoWidth] = useState(getWidth());
-    console.log('useState: windwoWidth = ' + windwoWidth);
+    let [windowWidth, setWindowWidth] = useState(getWidth());
+
+    console.log('');
+    console.log('------------------------- useState -------------------------');
+    console.log('windowWidth = ' + windowWidth);
 
     //#endregion ==================== useState ====================
 
@@ -107,19 +111,24 @@ function WorkList() {
 
             //#region ==================== INITIALIZE OBJECTS ====================
 
-            // -------------------- SET TRANSFORM ORIGiNS --------------------
+            //#region -------------------- SET TRANSFORM ORIGiNS --------------------
 
             // .set([bsps_26897Ref.current, nmtg_26903Ref.current, nmmn_11155Ref.current], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
             // .set(['.masonryBanner'], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
             .set(['.masonryImg'], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
 
-            // -------------------- FRAME01 --------------------
+            //#endregion -------------------- SET TRANSFORM ORIGiNS --------------------
+
+
+            //#region -------------------- FRAME01 --------------------
 
             // .set([bsps_26897Ref.current, nmtg_26903Ref.current], { autoAlpha: 0.5, scale: 1.25, rotation: 30 }, 'frame00')
             // .set([nmtg_26903Ref.current], { scale: 1.5 }, 'frame00')
             // .set([nmmn_11155Ref.current], { rotation: 30 }, 'frame00')
 
             // .set(['.masonryBanner'], { autoAlpha: 0.5, scale: 1.25, rotation: 30 }, 'frame00')
+
+            //#endregion -------------------- FRAME01 --------------------
 
             //#endregion ==================== INITIALIZE OBJECTS ====================
 
@@ -168,7 +177,7 @@ function WorkList() {
 
             if (!bannerKey) {
 
-                console.log('OOPS! No banner has been clicked yet.');
+                console.log('OOPS! No banner has been clicked yet OR you are clicking in the WEB/VIDEO section.');
 
             } else {
 
@@ -177,18 +186,26 @@ function WorkList() {
                 // console.log('document.getElementById(bannerKey).id = ' + document.getElementById(bannerKey).id);
 
 
-                let thisBannerX = document.getElementById(bannerKey).x;
+                //#region - - - - - - - - - - - - - CALCULATE NEW POSITION - - - - - - - - - - - - -
+
+                // let thisBannerX = document.getElementById(bannerKey).x;
                 // let thisBannerY = document.getElementById(bannerKey).y;
 
-                //#region ------------------------- position compensation for elements above importContainer -------------------------
+                let thisBannerX = document.getElementById(bannerKey).offsetLeft;
+                // let thisBannerY = document.getElementById(bannerKey).offsetTop;
+
+                //#region -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
 
                 // let thisBannerX = document.getElementById(thisWorkImage.link2).x + 1;
-                let thisBannerY = document.getElementById(bannerKey).y - 250;
+                // let thisBannerY = document.getElementById(bannerKey).y - 250;
 
-                //#endregion ------------------------- position compensation for elements above importContainer  -------------------------
+                // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft + 1;
+                let thisBannerY = document.getElementById(bannerKey).offsetTop - 250;
 
-                let thisBannerW = document.getElementById(bannerKey).offsetWidth;
-                let thisBannerH = document.getElementById(bannerKey).offsetHeight;
+                //#endregion -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
+
+                // let thisBannerW = document.getElementById(bannerKey).offsetWidth;
+                // let thisBannerH = document.getElementById(bannerKey).offsetHeight;
 
                 let thisBannerScale = document.getElementById(bannerKey).offsetWidth / 300;
 
@@ -199,11 +216,23 @@ function WorkList() {
                 // console.log('thisBannerH = ' + thisBannerH);
                 // console.log('thisBannerScale = ' + thisBannerScale);
 
-                gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '50% 0', immediateRender: true });
-                // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
-                gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
+                //#endregion - - - - - - - - - - - - - CALCULATE NEW POSITION - - - - - - - - - - - - -
 
-                gsap.set([importedContentRef.current], { scale: thisBannerScale, zIndex: -100 });
+
+                //#region - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
+
+                // gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '50% 0', immediateRender: true });
+                // // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
+                // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
+
+                // gsap.set([importedContentRef.current], { scale: thisBannerScale, zIndex: -100 });
+
+
+                // gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '0 0', immediateRender: true });
+                gsap.set([importContainerRef.current], { transformOrigin: '0 0', immediateRender: true });
+                gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale });
+
+                //#endregion - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
             }
         }
 
@@ -220,7 +249,7 @@ function WorkList() {
             clearTimeout(timeoutId);
 
             // change width from the state object after 150 milliseconds
-            timeoutId = setTimeout(() => setWindwoWidth(getWidth()), 150);
+            timeoutId = setTimeout(() => setWindowWidth(getWidth()), 150);
 
             // moveBanner: RELOCATE THE LOADED GSAP BANNER
             moveBanner();
@@ -252,21 +281,21 @@ function WorkList() {
 
     function handleClick(thisWorkImage) {
 
-        // console.log('');
-        // console.log('------------------------- handleClick(thisWorkImage) -------------------------');
+        console.log('');
+        console.log('------------------------- handleClick(thisWorkImage) -------------------------');
 
 
         //#region ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
 
-        // // console.log('handleClick: windwoWidth = ' + windwoWidth);
+        // console.log('handleClick: windowWidth = ' + windowWidth);
 
         // console.log('');
         // console.log('thisWorkImage.link = ' + thisWorkImage.link);
-        // console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
+        console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
         // console.log('thisWorkImage.link3 = ' + thisWorkImage.link3);
         // console.log('thisWorkImage.link4 = ' + thisWorkImage.link4);
 
-        // // console.log('document.getElementById(thisWorkImage.link2).className = ' + document.getElementById(thisWorkImage.link2).className);
+        // console.log('document.getElementById(thisWorkImage.link2).className = ' + document.getElementById(thisWorkImage.link2).className);
 
         // console.log('');
         // console.log('document.getElementById(thisWorkImage.link2).x = ' + document.getElementById(thisWorkImage.link2).x);
@@ -288,9 +317,14 @@ function WorkList() {
 
         //#region ------------------------- Tryin' out sh*t... -------------------------
 
+        //#region - - - - - - - - - - - - - ASSIGN NEW BANNER - - - - - - - - - - - - -
+
         if (banners[thisWorkImage.link2]) {
 
             const thisBanner = React.createElement(banners[thisWorkImage.link2]);
+
+            // console.log('');
+            // console.log('thisBanner = ' + thisBanner);
 
             setBannerShow(thisBanner);
 
@@ -306,28 +340,55 @@ function WorkList() {
             // setBannerKey(thisWorkImage.link2);
         }
 
+        //#endregion - - - - - - - - - - - - - ASSIGN NEW BANNER - - - - - - - - - - - - -
 
-        let thisBannerX = document.getElementById(thisWorkImage.link2).x;
+
+        //#region - - - - - - - - - - - - - CALCULATE NEW POSITION - - - - - - - - - - - - -
+
+        // let thisBannerX = document.getElementById(thisWorkImage.link2).x;
         // let thisBannerY = document.getElementById(thisWorkImage.link2).y;
 
-        //#region ------------------------- position compensation for elements above importContainer -------------------------
+        let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft;
+        // let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop;
+
+        //#region -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
 
         // let thisBannerX = document.getElementById(thisWorkImage.link2).x + 1;
-        let thisBannerY = document.getElementById(thisWorkImage.link2).y - 250;
+        // let thisBannerY = document.getElementById(thisWorkImage.link2).y - 250;
 
-        //#endregion ------------------------- position compensation for elements above importContainer  -------------------------
+        // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft + 1;
+        let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop - 250;
 
-        let thisBannerW = document.getElementById(thisWorkImage.link2).offsetWidth;
-        let thisBannerH = document.getElementById(thisWorkImage.link2).offsetHeight;
+        //#endregion -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
+
+        // let thisBannerW = document.getElementById(thisWorkImage.link2).offsetWidth;
+        // let thisBannerH = document.getElementById(thisWorkImage.link2).offsetHeight;
 
         let thisBannerScale = document.getElementById(thisWorkImage.link2).offsetWidth / 300;
 
+        //#endregion - - - - - - - - - - - - - CALCULATE NEW POSITION - - - - - - - - - - - - -
 
-        gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '50% 0', immediateRender: true });
-        // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
-        gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
 
-        gsap.set([importedContentRef.current], { scale: thisBannerScale, zIndex: -100 });
+        //#region - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
+
+        // gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '50% 0', immediateRender: true });
+        // // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
+        // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
+
+        // // gsap.set([importedContentRef.current], { scale: thisBannerScale, zIndex: -100 });
+
+
+        // gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '0 0', immediateRender: true });
+        gsap.set([importContainerRef.current], { transformOrigin: '0 0', immediateRender: true });
+
+        // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
+        gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale });
+
+        // gsap.set([importedContentRef.current], { width: thisBannerW, height: thisBannerH });
+        // gsap.set([importedContentRef.current.children[1]], { scale: thisBannerScale });
+        // gsap.set([importedContentRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
+
+        //#endregion - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
 
         //#endregion ------------------------- Tryin' out sh*t... -------------------------
 
@@ -347,9 +408,9 @@ function WorkList() {
             <div className='importContainer' id='importContainerID' ref={importContainerRef}>
             {/* <div className='importContainer' id='importContainerID' key={bannerShow} ref={importContainerRef}> */}
             {/* <div className='importContainer' id='importContainerID' key={bannerKey} ref={importContainerRef}> */}
-                <div className='importedContent' ref={importedContentRef}>
+                {/* <div className='importedContent' ref={importedContentRef}> */}
                     {bannerShow}
-                </div>
+                {/* </div> */}
             </div>
 
 
@@ -357,7 +418,7 @@ function WorkList() {
 
             <section>
                 <hr />
-                <h2>Banners 000</h2>
+                <h2>|*|*|*|*|*| &nbsp;&nbsp;&nbsp; Banners 000 &nbsp;&nbsp;&nbsp; |*|*|*|*|*|</h2>
                 {/* 
                 <p className='note'>
                     I want to eventually make these images clickable to trigger GSAP banners like the ones above that were [re]built in React (because I couldn't get react-adobe-animate or html-loader to work).<br />
@@ -392,7 +453,7 @@ function WorkList() {
                                 ref={masonryImgRef}
                             />
 
-                            <p title='masonryInfo'>
+                            <p className='masonryInfo' title='masonryInfoTitle'>
                                 {workImage.caption}<br />
                                 <Moment format="MMM YYYY">{workImage.date}</Moment><br />
 
@@ -444,7 +505,7 @@ function WorkList() {
 
                     {work.filter(isBanner => isBanner.format !== 'banner').map((workImage) => (
 
-                        <div className='workItem' key={'web' + workImage.album_id + workImage.image_index} ref={workItemRef}>
+                        < div className = 'workItem' key = { 'web' + workImage.album_id + workImage.image_index } ref = { workItemRef } >
 
                             <img
                                 // key={'WV' + workImage.album_id + workImage.image_index}
@@ -459,7 +520,7 @@ function WorkList() {
                                 ref={masonryImgRef}
                             />
 
-                            <p title='masonryInfo'>
+                            <p className='masonryInfo' title='masonryInfoTitle'>
                                 {workImage.caption}<br />
                                 <Moment format="MMM YYYY">{workImage.date}</Moment><br />
 

@@ -1,0 +1,146 @@
+.nmtg_26903 {
+    // border: 1px inset #e6437b;
+
+    // background: #000000;
+    // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_01.jpg);
+    // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_02.jpg);
+    // background-image: url(./images/Xframes/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250_retina_03b.jpg);
+    background-size: contain;
+
+    .bgDiv, 
+    .bg02_svg, 
+    .logo_bg, 
+    .logo_NMTG_sp, 
+    .copy01, 
+    .legal, 
+    .bottleDiv, 
+    .gwpDiv, 
+    .cta, 
+    .vendorTag
+    {
+        // border: 2px solid #ff00ff;
+
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+    }
+
+    .bg02_svg {
+        // border: 2px solid #ff00ff;
+
+        top: 0;
+        left: 0;
+    }
+
+    .logo_NMTG_sp {
+        // border: 2px solid #ff00ff;
+
+        top: 95px;
+        left: 37.5px;
+    }
+
+    .bottleDiv {
+        // border: 2px solid #ff00ff;
+
+        width: auto;
+        height: auto;
+
+        top: 95px;
+        left: 105px;
+    }
+
+    .logo_bg {
+        // border: 2px solid #ff00ff;
+        background: #e6437b;
+
+        width: 300px;
+        height: 70px;
+
+        top: 15px;
+    }
+
+    .copy01, .legal {
+        // border: 2px solid #ff00ff;
+
+        // width: 150px;
+
+        transform-origin: 100% 0;
+        transform: scale(0.5);
+
+        top: 120px;
+        right: 12.5px;
+    }
+
+    .copy01 {
+        // border: 2px solid #ff00ff;
+
+        top: 120px;
+        right: 12.5px;
+    }
+
+    .legal {
+        // border: 2px solid #ff00ff;
+
+        top: 150px;
+        right: 15px;
+    }
+
+    .gwpDiv {
+        // border: 2px solid #ff00ff;
+
+        top: 70px;
+        left: 5px;
+    }
+
+    .vendorTag {
+        // border: 2px solid #ff00ff;
+        // background: #ff0000;
+        background: #ffffff;
+
+        // width: 70px;
+        // height: 15px;
+
+        width: 70px;
+        height: 15px;
+
+        // opacity: 0.5;
+
+        // margin: 0 auto;
+        // padding: 5px 10px;
+        // padding: 3px 10px 5px 10px;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        img {
+            width: 75%;
+            margin: 3.75% 12.75%;
+        }
+    }
+
+    .cta {
+        // border: 2px solid #ff00ff;
+
+        width: 160px;
+        height: 20px;
+
+        // margin: 0 auto;
+        // padding: 0;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .clickTag {
+        border: 1px solid #e6437b !important;
+
+        width: calc(100% - 1.75px);
+        height: calc(100% - 1.5px);
+    }
+}

@@ -1,0 +1,43 @@
+
+.banner300x250, .banner300x600 {
+    // border: 2px solid #0000ff !important;
+
+    // background: #000000;
+    // background-image: url(../banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/images/Xframes/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250_retina_03.jpg);
+    // background-size: contain;
+
+    vertical-align: top;
+
+    margin: 0 auto;
+    padding: 0;
+
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.banner300x250 {
+    // border: 2px solid #0000ff !important;
+
+    width: 300px;
+    height: 250px;
+}
+
+
+.banner300x600 {
+    // border: 2px solid #ff00ff !important;
+
+    width: 300px;
+    height: 600px;
+}
+
+.clickTag {
+    // border: 2px solid #ff00ff !important;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    cursor: pointer;
+}

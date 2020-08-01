@@ -1,0 +1,71 @@
+.bsps_26897 {
+    // border: 1px inset #ee70bc;
+
+    // background: #000000;
+    // background-image: url(./images/Xframes/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250_retina_01.jpg);
+    // background-image: url(./images/Xframes/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250_retina_02.jpg);
+    // background-image: url(./images/Xframes/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250_retina_03.jpg);
+    background-size: contain;
+
+    .bgDiv, 
+    .imageDiv, 
+    .bottleDiv, 
+    .logoBSPS, 
+    .vendorTag
+    {
+        // border: 2px solid #ff00ff;
+
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+    }
+
+    .logoBSPS {
+        // border: 2px solid #ff0000;
+
+        top: 85px;
+        left: 35px;
+    }
+
+    .bottleDiv {
+        // border: 2px solid #ff0000;
+
+        top: 84px;
+        left: 70px;
+    }
+
+    .vendorTag {
+        // border: 2px solid #ff00ff;
+        // background: #ff0000;
+        background: #ffffff;
+
+        width: 90px;
+        height: 20px;
+
+        // opacity: 0.5;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        img {
+            // border: 2px solid #ff00ff;
+
+            width: 66.666666666666667%;
+
+            margin: 3.75% 16.666666666666667%;
+            padding: 0;
+        }
+    }
+
+    .clickTag {
+        border: 1px solid #ee70bc !important;
+
+        width: calc(100% - 1.75px);
+        height: calc(100% - 1.5px);
+    }
+}

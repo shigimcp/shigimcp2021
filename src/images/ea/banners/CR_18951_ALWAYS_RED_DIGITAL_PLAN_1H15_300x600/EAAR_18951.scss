@@ -1,0 +1,243 @@
+.eaar_18951 {
+    // border: 1px inset #ee70bc;
+
+    // background: #000000;
+    // background-image: url(./images/Xframes/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600_retina_01.jpg);
+    // background-image: url(./images/Xframes/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600_retina_02.jpg);
+    background-image: url(./images/Xframes/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600_retina_03.jpg);
+    background-size: contain;
+
+    .bgDiv, 
+    .modelDiv, 
+    .bottleDiv, 
+    // .logo_EAAR, 
+    .particleContainer 
+    {
+        // border: 2px solid #ff00ff;
+
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+    }
+
+    .particleContainer {
+        // border: 2px solid #00ff00;
+
+        color: #ffffff;
+
+        width: inherit;
+        height: inherit;
+
+        position: absolute;
+
+        // img {
+        .particle {
+            // border: 2px inset #ee70bc;
+
+            mix-blend-mode: screen;
+
+            // width: 50%;
+
+            position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+    }
+
+    .logo_EAAR {
+        // border: 2px solid #ff0000;
+
+        width: 220px;
+        // height: auto;
+        // height: 100px;
+
+        margin: 0 auto;
+        padding: 0;
+
+        position: relative;
+
+        .logo_EAARbase {
+            // border: 2px solid #00ff00;
+
+            width: inherit;
+            // height: auto;
+
+            margin: inherit;
+            padding: inherit;
+
+            img {
+                // border: 2px solid #0000ff;
+
+                width: 100%;
+
+                // margin: inherit;
+                // padding: inherit;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .logo_EAARds {
+            // border: 2px solid #ff00ff;
+
+            width: 300px;
+            // height: auto;
+
+            margin: 0;
+            padding: 0;
+
+            position: absolute;
+            top: -50px;
+            left: -40px;
+
+            img {
+                // border: 2px solid #00ffff;
+
+                // mix-blend-mode: screen;
+                // mix-blend-mode: hard-light;
+
+                // margin: 0;
+                // padding: 0;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                // #logo_RED_ds_wID {
+                //     mix-blend-mode: screen;
+                // }
+
+                // #logo_RED_ds_rID {
+                //     mix-blend-mode: hard-light;
+                // }
+            }
+        }
+    }
+
+    .bgDiv {
+        // border: 2px solid #ff0000;
+
+        width: 100%;
+        // transform-origin: center;
+
+        // top: 0;
+        // left: 0;
+
+        img {
+            // border: 2px solid #00ff00;
+
+            width: inherit;
+
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+    }
+
+    .modelDiv {
+        // border: 2px solid #ff0000;
+
+        width: 350px;
+
+        top: -50px;
+        left: -25px;
+    }
+
+    .bottleDiv {
+        // border: 2px solid #ff0000;
+
+        // opacity: 0.5;
+
+        width: 170px;
+        height: auto;
+
+        margin: 0 auto;
+        // padding: 0;
+
+        position: relative;
+        // overflow: hidden;
+
+        img {
+            // border: 2px solid #00ff00;
+
+            width: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .bottleFlash {
+        // border: 2px inset #00ff00;
+
+        // opacity: 0.5;
+
+        position: absolute;
+    }
+
+    .copy01, .copy02 {
+        // border: 2px solid #ff00ff;
+
+        color: #ffffff;
+        // color: #00ff00;
+
+        font-family: Didot_Regular;
+        // font-weight: bold;
+        text-align: center;
+        // letter-spacing: 0.025em;
+
+        width: 100%;
+
+        margin: 0 auto;
+        padding: 0;
+
+        position: absolute;
+        // display: inline-block;
+
+        .char01, .char02 {
+            // border: 1px solid #ff00ff;
+
+            margin: 0 -.0025em;
+            padding: 0;
+
+            display: inline-block;
+
+        }
+    }
+
+    .copy01 {
+        // font-size: 1.625em;
+        font-size: 1.5625em;
+        letter-spacing: -0.005em;
+
+        top: 15px;
+    }
+
+    .copy02 {
+        // font-size: 0.8625em;
+        font-size: 0.875em;
+
+        letter-spacing: 0.025em;
+        top: 520px;
+    }
+
+    .cta {
+        // border: 2px solid #ff00ff;
+
+        width: 90px;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+        top: 560px;
+        left: 105px;
+    }
+}

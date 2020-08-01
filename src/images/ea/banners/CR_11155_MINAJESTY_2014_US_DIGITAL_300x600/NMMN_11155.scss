@@ -1,0 +1,65 @@
+.nmmn_11155 {
+    // border: 2px solid #ff00ff;
+
+    // background: #000000;
+    // background-image: url(./images/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600_walgreens.jpg);
+    background-size: contain;
+
+    // width: inherit;
+
+    .bgDiv, 
+    .modelDiv, 
+    .bottleDiv, 
+    .logo_NM_Minajesty, 
+    // .logo_NM_Minajesty_sultry, 
+    .cta
+    {
+        // border: 2px solid #ff00ff;
+
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+    }
+
+    .bottleDiv {
+        // border: 2px solid #ff00ff;
+
+        top: 465px;
+        left: 12px;
+    }
+
+    .logo_NM_Minajesty {
+        // border: 2px solid #ff00ff;
+
+        mix-blend-mode: overlay;
+
+        top: 37px;
+        left: 26px;
+
+        // .logo_NM_Minajesty_sultry {
+        //     border: 2px solid #ff00ff;
+
+        //     // width: 100%;
+        //     // top: 520px;
+        //     margin-top: 400px;
+        // }
+    }
+
+    .cta {
+        // border: 2px solid #ff00ff;
+
+        width: 140px;
+        height: 20px;
+
+        // margin: 0 auto;
+        // padding: 0;
+
+        // position: absolute;
+        top: 550px;
+        left: 80px;
+    }
+}
