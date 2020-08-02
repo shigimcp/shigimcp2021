@@ -278,8 +278,8 @@ export default function NMTG_26903() {
 
                 <defs>
 
-                    {/* <linearGradient id='maskGrad' gradientUnits='userSpaceOnUse' x1='0' y1='250' x2='300' y2='250' gradientTransform='rotate(90)'> */}
-                    <linearGradient id='maskGrad' gradientUnits='userSpaceOnUse' x1='300' y1='0' x2='300' y2='250'>
+                    {/* <linearGradient id='maskGrad_NMTG_26903' gradientUnits='userSpaceOnUse' x1='0' y1='250' x2='300' y2='250' gradientTransform='rotate(90)'> */}
+                    <linearGradient id='maskGrad_NMTG_26903' gradientUnits='userSpaceOnUse' x1='300' y1='0' x2='300' y2='250'>
                         <stop offset='.125' style={{stopColor: '#000000'}} />
                         <stop offset='0.4875' style={{stopColor: '#FFFFFF'}} />
                         <stop offset='0.5625' style={{stopColor: '#FFFFFF'}} />
@@ -287,7 +287,7 @@ export default function NMTG_26903() {
                     </linearGradient>
 
                     <mask id='mask_bg'>
-                        <rect className='class_mask' fill='url(#maskGrad)' x='0' y='0' width='300' height='250' />
+                        <rect className='class_mask' fill='url(#maskGrad_NMTG_26903)' x='0' y='0' width='300' height='250' />
                     </mask>
 
                 </defs>

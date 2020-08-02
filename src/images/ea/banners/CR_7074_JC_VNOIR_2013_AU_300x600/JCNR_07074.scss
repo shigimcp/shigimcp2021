@@ -1,0 +1,216 @@
+.jcnr_07074 {
+    // border: 1px inset #ee70bc;
+
+    background: #000000;
+    // background-image: url(./images/Xframes/CR_7074_JC_VNOIR_2013_AU_300x600_retina_01.jpg);
+    // background-image: url(./images/Xframes/CR_7074_JC_VNOIR_2013_AU_300x600_retina_02.jpg);
+    // background-image: url(./images/Xframes/CR_7074_JC_VNOIR_2013_AU_300x600_retina_03.jpg);
+    // background-image: url(./images/Xframes/CR_7074_JC_VNOIR_2013_AU_300x600_retina_04.jpg);
+    // background-image: url(./images/Xframes/CR_7074_JC_VNOIR_2013_AU_300x600_retina_05.jpg);
+    background-size: contain;
+
+    .bgDiv, 
+    .modelDiv, 
+    .bottleDiv, 
+    // .logo_JCNR, 
+    .particleContainer 
+    {
+        // border: 2px solid #ff00ff;
+
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+    }
+
+    .particleContainer {
+        // border: 2px solid #00ff00;
+
+        color: #ffffff;
+
+        width: inherit;
+        height: inherit;
+
+        position: absolute;
+
+        // img {
+        .particle {
+            // border: 2px inset #ee70bc;
+
+            // mix-blend-mode: screen;
+
+            // width: 50%;
+
+            position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+    }
+
+    .logo_JCNR {
+        // border: 2px solid #ff0000;
+
+        width: 170px;
+        // height: auto;
+
+        margin: 0 auto;
+        padding: 0;
+
+        position: relative;
+        top: 160px;
+        // left: -0.75px;
+
+        img {
+            // border: 2px solid #0000ff;
+
+            width: 100%;
+
+            // margin: inherit;
+            // padding: inherit;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .bgDiv {
+        // border: 2px solid #ff0000;
+
+        width: 100%;
+        // transform-origin: center;
+
+        // top: 0;
+        // left: 0;
+
+        img {
+            // border: 2px solid #00ff00;
+
+            width: inherit;
+
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+    }
+
+    .modelDiv {
+        // border: 2px solid #ff0000;
+
+        // width: 350px;
+
+        top: 0;
+        left: 0;
+    }
+
+    .bottleDiv {
+        // border: 2px solid #ff0000;
+
+        // opacity: 0.5;
+
+        width: 215px;
+        height: auto;
+
+        margin: 0 auto;
+        // padding: 0;
+
+        position: relative;
+        // overflow: hidden;
+        top: 135px;
+        left: 5px;
+
+        img {
+            // border: 2px solid #00ff00;
+
+            width: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .bottleFlash {
+        // border: 2px inset #00ff00;
+
+        // opacity: 0.5;
+
+        position: absolute;
+    }
+
+    .copy01, .copy02 {
+        // border: 2px solid #ff00ff;
+
+        color: #ffffff;
+        // color: #00ff00;
+
+        font-family: 'at_sackers_english_scriptRg';
+        font-size: 2.8125em;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: -0.02em;
+        line-height: 1.125em;
+
+        width: 100%;
+
+        margin: 0 auto;
+        padding: 0;
+
+        position: absolute;
+        // display: inline-block;
+
+        // .char01, .char02 {
+        //     // border: 1px solid #ff00ff;
+
+        //     margin: 0 -.0025em;
+        //     padding: 0;
+
+        //     display: inline-block;
+
+        // }
+    }
+
+    .copy01 {
+        // border: 2px solid #ff00ff;
+
+        // font-size: 2.8125em;
+        // letter-spacing: 0.005em;
+
+        top: 255px;
+    }
+
+    .copy02 {
+        // border: 2px solid #ff00ff;
+
+        width: 60%;
+        // font-size: 2.8125em;
+        // letter-spacing: 0.005em;
+
+        margin: 0 20%;
+
+        top: 180px;
+    }
+
+    .cta {
+        // border: 2px solid #ff00ff;
+
+        width: 110px;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+        top: 548px;
+        left: 160px;
+    }
+
+    // .clickTag {
+    //     border: 1px solid #e6437b !important;
+
+    //     width: calc(100% - 1.75px);
+    //     height: calc(100% - 1.5px);
+    // }
+}

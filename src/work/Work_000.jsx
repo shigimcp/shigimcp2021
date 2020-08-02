@@ -15,9 +15,10 @@ import '../stylesheets/Work.scss';
 
 //#region -------------------- IMPORTS: GSAP BANNERS --------------------
 import EAAR_18951 from '../images/ea/banners/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600/EAAR_18951';
+import NMMN_11155 from '../images/ea/banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
+import JCNR_07074 from '../images/ea/banners/CR_7074_JC_VNOIR_2013_AU_300x600/JCNR_07074';
 import BSPS_26897 from '../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
 import NMTG_26903 from '../images/ea/banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
-import NMMN_11155 from '../images/ea/banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
 
 //#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
 
@@ -52,10 +53,11 @@ function WorkList() {
     //#region -------------------- AVAILABLE GSAP BANNERS --------------------
 
     const banners = {
-        EAAR_18951: EAAR_18951,
-        BSPS_26897: BSPS_26897,
-        NMMN_11155: NMMN_11155,
-        NMTG_26903: NMTG_26903
+        EAAR_18951: EAAR_18951, 
+        NMMN_11155: NMMN_11155, 
+        JCNR_07074: JCNR_07074, 
+        BSPS_26897: BSPS_26897, 
+        NMTG_26903: NMTG_26903, 
     };
 
     //#endregion -------------------- AVAILABLE GSAP BANNERS --------------------
@@ -281,8 +283,8 @@ function WorkList() {
 
     function handleClick(thisWorkImage) {
 
-        console.log('');
-        console.log('------------------------- handleClick(thisWorkImage) -------------------------');
+        // console.log('');
+        // console.log('------------------------- handleClick(thisWorkImage) -------------------------');
 
 
         //#region ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
@@ -291,7 +293,7 @@ function WorkList() {
 
         // console.log('');
         // console.log('thisWorkImage.link = ' + thisWorkImage.link);
-        console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
+        // console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
         // console.log('thisWorkImage.link3 = ' + thisWorkImage.link3);
         // console.log('thisWorkImage.link4 = ' + thisWorkImage.link4);
 
