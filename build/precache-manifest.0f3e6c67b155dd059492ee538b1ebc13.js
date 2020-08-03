@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4d525584888422448ded6ad8274dafa9",
+    "revision": "fe778b9b1a39aa1ad6f348d9e57a1ce8",
     "url": "/shigimcp2020-react/index.html"
   },
   {
-    "revision": "d1fc7136456795453140",
-    "url": "/shigimcp2020-react/static/css/main.3374e256.chunk.css"
+    "revision": "ad112710c46605b7cf19",
+    "url": "/shigimcp2020-react/static/css/main.80cd6176.chunk.css"
   },
   {
-    "revision": "d4f00805721957189ddd",
-    "url": "/shigimcp2020-react/static/js/2.9471a093.chunk.js"
+    "revision": "5d2096cba452e5f80b4a",
+    "url": "/shigimcp2020-react/static/js/2.49ea5040.chunk.js"
   },
   {
     "revision": "46cb57753471c9ce36d593afc9a575b5",
-    "url": "/shigimcp2020-react/static/js/2.9471a093.chunk.js.LICENSE.txt"
+    "url": "/shigimcp2020-react/static/js/2.49ea5040.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d1fc7136456795453140",
-    "url": "/shigimcp2020-react/static/js/main.28cd7fdd.chunk.js"
+    "revision": "ad112710c46605b7cf19",
+    "url": "/shigimcp2020-react/static/js/main.b7bc5d31.chunk.js"
   },
   {
     "revision": "9933caff28d300965291",
@@ -290,6 +290,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e51a353a30e2fdf987796e9ca62c8f89",
     "url": "/shigimcp2020-react/static/media/image.e51a353a.jpg"
+  },
+  {
+    "revision": "fdfc75127464bab3011ad514126fcbec",
+    "url": "/shigimcp2020-react/static/media/kawaii08_06_POSE_SingleLadies02.fdfc7512.mp4"
   },
   {
     "revision": "b76f2f8fc666f1390b3d6410df75076c",
