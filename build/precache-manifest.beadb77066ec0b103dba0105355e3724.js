@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1452896eaf56a4dabedf6de4c2d76a74",
+    "revision": "87032bcbc0ff1c9d3fbe0c28a9402ac8",
     "url": "/shigimcp2020-react/index.html"
   },
   {
-    "revision": "f6ea3c7ebe49ae664f6b",
-    "url": "/shigimcp2020-react/static/css/main.f52bbe52.chunk.css"
+    "revision": "b48a15c01cadd87d2e95",
+    "url": "/shigimcp2020-react/static/css/main.bd63c62b.chunk.css"
   },
   {
-    "revision": "280c6f91faf5fdd31537",
-    "url": "/shigimcp2020-react/static/js/2.d241e0d0.chunk.js"
+    "revision": "758112c545758facc209",
+    "url": "/shigimcp2020-react/static/js/2.2948529f.chunk.js"
   },
   {
     "revision": "46cb57753471c9ce36d593afc9a575b5",
-    "url": "/shigimcp2020-react/static/js/2.d241e0d0.chunk.js.LICENSE.txt"
+    "url": "/shigimcp2020-react/static/js/2.2948529f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f6ea3c7ebe49ae664f6b",
-    "url": "/shigimcp2020-react/static/js/main.145b61f1.chunk.js"
+    "revision": "b48a15c01cadd87d2e95",
+    "url": "/shigimcp2020-react/static/js/main.663ef1bc.chunk.js"
   },
   {
     "revision": "9933caff28d300965291",
@@ -124,6 +124,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/LOGO_BSPS_spears_ko.8ec23621.svg"
   },
   {
+    "revision": "3db269b4f07920505db8266ea4a0675b",
+    "url": "/shigimcp2020-react/static/media/LOGO_JC.3db269b4.svg"
+  },
+  {
     "revision": "8bade866f8de96f70d1b5117115c6659",
     "url": "/shigimcp2020-react/static/media/LOGO_NMTG_sp.8bade866.svg"
   },
@@ -196,6 +200,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/atsackersenglishscript-webfont.46653fb1.woff2"
   },
   {
+    "revision": "26446a0e20264eb4edc6fd508df4504b",
+    "url": "/shigimcp2020-react/static/media/bg.26446a0e.jpg"
+  },
+  {
     "revision": "3cb48ed9c63767ee846ff876d3de9544",
     "url": "/shigimcp2020-react/static/media/bg.3cb48ed9.jpg"
   },
@@ -230,6 +238,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "03c71fc5b65125e1e6bfeef77ff02c86",
     "url": "/shigimcp2020-react/static/media/bottle.03c71fc5.png"
+  },
+  {
+    "revision": "24b33a7b8016e40d8e93129ad3620717",
+    "url": "/shigimcp2020-react/static/media/bottle.24b33a7b.png"
   },
   {
     "revision": "509af13b2adb80cc56061979887a89c3",
@@ -268,8 +280,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/cta_sp.258c9ffc.svg"
   },
   {
+    "revision": "d33a9ee7e276aa77301ed35404080185",
+    "url": "/shigimcp2020-react/static/media/cta_sp.d33a9ee7.svg"
+  },
+  {
     "revision": "9fc53865b5cd19eb73489d47e55218cb",
     "url": "/shigimcp2020-react/static/media/flash01.9fc53865.jpg"
+  },
+  {
+    "revision": "b21173d488080fc2e793f8338676a116",
+    "url": "/shigimcp2020-react/static/media/flower01.b21173d4.png"
+  },
+  {
+    "revision": "d0e63a895cd1511d8c61dd20d11baa5a",
+    "url": "/shigimcp2020-react/static/media/flower03.d0e63a89.png"
   },
   {
     "revision": "8b2fd35250a8c3cd32431f9ecba51a9e",
@@ -292,6 +316,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/flower_05.948d0011.png"
   },
   {
+    "revision": "142211088ceecefb8aff5cf016b9aa54",
+    "url": "/shigimcp2020-react/static/media/gwp.14221108.png"
+  },
+  {
     "revision": "adf806316d63a72fc75c8e22dabff5db",
     "url": "/shigimcp2020-react/static/media/gwp.adf80631.png"
   },
@@ -306,6 +334,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fdfc75127464bab3011ad514126fcbec",
     "url": "/shigimcp2020-react/static/media/kawaii08_06_POSE_SingleLadies02.fdfc7512.mp4"
+  },
+  {
+    "revision": "2805be9d8011d98dc814c2c24a9357bb",
+    "url": "/shigimcp2020-react/static/media/logo.2805be9d.png"
   },
   {
     "revision": "111d938285a1f5532d473c8048de60ab",

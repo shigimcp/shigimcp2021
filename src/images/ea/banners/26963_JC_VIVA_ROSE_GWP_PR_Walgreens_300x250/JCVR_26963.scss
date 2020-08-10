@@ -1,0 +1,229 @@
+.jcvr_26963 {
+    // border: 1px solid #dd8ea3;
+
+    // background: ##ffecf7;
+    background: rgba(255,236,247,1.00);
+    // background-image: url(./images/Xframes/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250_retina_01.jpg);
+    // background-image: url(./images/Xframes/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250_retina_02.jpg);
+    // background-image: url(./images/Xframes/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250_retina_03.jpg);
+    // background-image: url(./images/bg.jpg);
+    background-size: contain;
+
+    .bgDiv, .bg, 
+    .modelDiv, 
+    .logoDiv, 
+    // .logo_JCVR, 
+    // .logo, 
+    .bottleDiv, .bottle, 
+    .gwp, 
+    .copy01, 
+    .legal, 
+    .cta, 
+    .vendorTag, 
+    .particleContainer 
+    {
+        // border: 2px solid #ff00ff;
+
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+    }
+
+    .particleContainer {
+        // border: 2px solid #00ff00;
+
+        color: #ffffff;
+
+        width: inherit;
+        height: inherit;
+
+        position: absolute;
+
+        // img {
+        .particle {
+            // border: 2px inset #ee70bc;
+
+            // mix-blend-mode: screen;
+
+            // width: 50%;
+
+            position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+    }
+
+    .logoDiv {
+        // border: 2px solid #ff0000;
+
+        width: 130px;
+
+        top: 20px;
+        left: 85px;
+
+        .logo_JCVR {
+            // border: 2px solid #0000ff;
+
+            width: 100%;
+        }
+
+        .logo_JC {
+            // border: 2px solid #0000ff;
+
+            width: 100px;
+        }
+    }
+
+    .bgDiv {
+        // border: 2px solid #ff0000;
+
+        width: 100%;
+        // transform-origin: center;
+
+        // top: 0;
+        // left: 0;
+
+        img {
+            // border: 2px solid #00ff00;
+
+            width: inherit;
+
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+    }
+
+    .bg {
+        // border: 2px solid #ff0000;
+
+        top: 0;
+        left: 0;
+    }
+
+    .modelDiv {
+        // border: 2px solid #ff0000;
+
+        // width: 350px;
+
+        top: 0;
+        left: 0;
+    }
+
+    .bottle {
+        // border: 2px solid #ff0000;
+
+        top: 10px;
+        left: 120px;
+    }
+
+    .bottleDiv {
+        // border: 2px solid #ff0000;
+
+        // opacity: 0.5;
+
+        width: 215px;
+        height: auto;
+
+        margin: 0 auto;
+        // padding: 0;
+
+        position: relative;
+        // overflow: hidden;
+        top: 135px;
+        left: 5px;
+
+        img {
+            // border: 2px solid #00ff00;
+
+            width: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .bottleFlash {
+        // border: 2px inset #00ff00;
+
+        // opacity: 0.5;
+
+        position: absolute;
+    }
+
+    .gwp {
+        // border: 2px solid #ff00ff;
+
+        top: 25px;
+        left: 135px;
+    }
+
+    .copy01 {
+        // border: 2px solid #ff00ff;
+
+        transform: scale(0.5);
+
+        top: 185px;
+        left: 110px;
+    }
+
+    .legal {
+        // border: 2px solid #ff00ff;
+
+        transform: scale(0.5);
+
+        top: 235px;
+        left: -100px;
+    }
+
+    .cta {
+        // border: 2px solid #ff00ff;
+
+        width: 150px;
+
+        top: 210px;
+        left: 75px;
+    }
+
+    .vendorTag {
+        // border: 2px solid #ff00ff;
+        // background: #ff0000;
+        background: #ffffff;
+
+        width: 90px;
+        height: 20px;
+
+        // opacity: 0.5;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        img {
+            // border: 2px solid #ff00ff;
+
+            width: 66.666666666666667%;
+
+            margin: 3.75% 16.666666666666667%;
+            padding: 0;
+        }
+    }
+
+    .clickTag {
+        border: 1px solid #dd8ea3 !important;
+
+        // width: calc(100% - 1.75px);
+        // height: calc(100% - 1.5px);
+
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+
+        top: 0;
+        left: 0;
+    }
+}
