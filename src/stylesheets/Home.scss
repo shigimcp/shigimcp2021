@@ -11,13 +11,13 @@ $workkNav-height: 100px;
 /* #endregion ==================== VARIABLES ==================== */
 
 
-.homeImgHolder {
-    // border: 2px solid #ffff00;
+// .homeImgHolder {
+//     // border: 2px solid #ffff00;
 
-    width: 100%;
-}
+//     width: 100%;
+// }
 
-video {
+video, .homeImgHolder {
     // border: 2px solid #ffff00;
     object-fit: cover;
 

@@ -14,7 +14,9 @@ import '../stylesheets/Work.scss';
 
 
 //#region -------------------- IMPORTS: GSAP BANNERS --------------------
+
 import EAAR_18951 from '../images/ea/banners/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600/EAAR_18951';
+import NMPF_04852 from '../images/ea/banners/CR_4852_NMPF_US_Walmart_300x250/NMPF_04852';
 import NMMN_11155 from '../images/ea/banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
 import JCNR_07074 from '../images/ea/banners/CR_7074_JC_VNOIR_2013_AU_300x600/JCNR_07074';
 import BSPS_26897 from '../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
@@ -54,6 +56,7 @@ function WorkList() {
 
     const banners = {
         EAAR_18951: EAAR_18951, 
+        NMPF_04852: NMPF_04852, 
         NMMN_11155: NMMN_11155, 
         JCNR_07074: JCNR_07074, 
         BSPS_26897: BSPS_26897, 

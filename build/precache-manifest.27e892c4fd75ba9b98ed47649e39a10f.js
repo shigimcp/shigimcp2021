@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fe778b9b1a39aa1ad6f348d9e57a1ce8",
+    "revision": "1452896eaf56a4dabedf6de4c2d76a74",
     "url": "/shigimcp2020-react/index.html"
   },
   {
-    "revision": "ad112710c46605b7cf19",
-    "url": "/shigimcp2020-react/static/css/main.80cd6176.chunk.css"
+    "revision": "f6ea3c7ebe49ae664f6b",
+    "url": "/shigimcp2020-react/static/css/main.f52bbe52.chunk.css"
   },
   {
-    "revision": "5d2096cba452e5f80b4a",
-    "url": "/shigimcp2020-react/static/js/2.49ea5040.chunk.js"
+    "revision": "280c6f91faf5fdd31537",
+    "url": "/shigimcp2020-react/static/js/2.d241e0d0.chunk.js"
   },
   {
     "revision": "46cb57753471c9ce36d593afc9a575b5",
-    "url": "/shigimcp2020-react/static/js/2.49ea5040.chunk.js.LICENSE.txt"
+    "url": "/shigimcp2020-react/static/js/2.d241e0d0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ad112710c46605b7cf19",
-    "url": "/shigimcp2020-react/static/js/main.b7bc5d31.chunk.js"
+    "revision": "f6ea3c7ebe49ae664f6b",
+    "url": "/shigimcp2020-react/static/js/main.145b61f1.chunk.js"
   },
   {
     "revision": "9933caff28d300965291",
@@ -200,6 +200,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/bg.3cb48ed9.jpg"
   },
   {
+    "revision": "6582c13607ce79e21588335a62c7dea3",
+    "url": "/shigimcp2020-react/static/media/bg.6582c136.jpg"
+  },
+  {
     "revision": "ab0bc347980b604961ab7c06dcc47f3d",
     "url": "/shigimcp2020-react/static/media/bg.ab0bc347.jpg"
   },
@@ -224,6 +228,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/bg_lt.9d696595.jpg"
   },
   {
+    "revision": "03c71fc5b65125e1e6bfeef77ff02c86",
+    "url": "/shigimcp2020-react/static/media/bottle.03c71fc5.png"
+  },
+  {
     "revision": "509af13b2adb80cc56061979887a89c3",
     "url": "/shigimcp2020-react/static/media/bottle.509af13b.png"
   },
@@ -238,6 +246,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c331993434a1ba1ed62f5dbf701dfcfa",
     "url": "/shigimcp2020-react/static/media/bottle_lt.c3319934.png"
+  },
+  {
+    "revision": "876acf500aa6cd6ec1edc799ea3d3b11",
+    "url": "/shigimcp2020-react/static/media/btn_buy.876acf50.svg"
   },
   {
     "revision": "eaf2aa03c265c1c3f9c752f08676153c",
@@ -296,6 +308,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/kawaii08_06_POSE_SingleLadies02.fdfc7512.mp4"
   },
   {
+    "revision": "111d938285a1f5532d473c8048de60ab",
+    "url": "/shigimcp2020-react/static/media/logo_PF.111d9382.png"
+  },
+  {
     "revision": "b76f2f8fc666f1390b3d6410df75076c",
     "url": "/shigimcp2020-react/static/media/logo_red_ds_k.b76f2f8f.png"
   },
@@ -314,5 +330,17 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f5a185fe944067796d945d9e13fcb9f1",
     "url": "/shigimcp2020-react/static/media/logo_walgreens.f5a185fe.svg"
+  },
+  {
+    "revision": "a5751aba0b66917ead33477160e4f009",
+    "url": "/shigimcp2020-react/static/media/model.a5751aba.png"
+  },
+  {
+    "revision": "3779ed2a75a0e33589fa67ad0f06f9ba",
+    "url": "/shigimcp2020-react/static/media/skyline.3779ed2a.png"
+  },
+  {
+    "revision": "110bbd6697d1b5fbe4f9e968e6a144a5",
+    "url": "/shigimcp2020-react/static/media/starspin.110bbd66.svg"
   }
 ]);

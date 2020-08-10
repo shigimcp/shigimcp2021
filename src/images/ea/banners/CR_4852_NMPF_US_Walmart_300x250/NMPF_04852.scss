@@ -1,0 +1,285 @@
+.nmpf_04852 {
+    // border: 1px inset #ee70bc;
+
+    background: #dd8ea3;
+    background-image: url(./images/bg.jpg);
+    // background-image: url(./images/CR_4852_NMPF_US_Walmart_300x250_retina.jpg);
+    background-size: contain;
+
+    .bgDiv, 
+    .bg_koDiv, 
+    .bg, 
+    .bg_ko, 
+    .skyline, 
+    .starspinDiv, 
+    .modelDiv, 
+    .model, 
+    .bottleDiv, 
+    .bottle, 
+    .logoDiv, 
+    .logo_NMPF, 
+    .tagDiv, 
+    .tag, 
+    .cta, 
+    .particleContainer 
+    {
+        // border: 2px solid #ff00ff;
+
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+    }
+
+    .bgDiv, .bg_koDiv, .bg, .bg_ko {
+        border: 2px solid #ff0000;
+
+        width: 100%;
+        height: 100%;
+
+        // top: 0;
+        // left: 0;
+
+        img {
+            // border: 2px solid #00ff00;
+
+            width: inherit;
+            height: inherit;
+
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+    }
+
+    .skyline {
+        width: 100%;
+
+        top: 140px;
+        left: 0;
+    }
+
+    .starspinDiv {
+        // border: 2px solid #00ff00;
+
+        // width: 100%;
+        // height: 100%;
+
+        // width: 512px;
+        // height: 551px;
+
+        // width: 256px;
+        // height: 275.5px;
+
+        // width: 300px;
+        // height: 322.8515625px;
+
+        // width: 350px;
+        // height: 376.66015625px;
+
+
+        // top: 14.5px;
+        // left: 18px;
+
+        // top: 7.5px;
+        // left: 22px;
+
+        top: 0;
+        left: 0;
+    }
+
+    .modelDiv, .model {
+        // border: 2px solid #ff0000;
+
+        // width: 92.5px;
+        width: 165px;
+        // height: 225px;
+        height: 240px;
+
+        // top: 25px;
+        // left: 100px;
+        top: 10px;
+        left: 67.5px;
+    }
+
+    .bottleDiv, .bottle {
+        // border: 2px solid #ff0000;
+
+        // opacity: 0.5;
+
+        width: 35px;
+        height: 70px;
+
+        // margin: 0 auto;
+        // padding: 0;
+
+        // position: relative;
+        // // overflow: hidden;
+        top: 177.5px;
+        left: 200px;
+
+        // img {
+        //     // border: 2px solid #00ff00;
+
+        //     width: 100%;
+
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        // }
+    }
+
+    .logoDiv, .logo_NMPF {
+        // border: 2px solid #ff0000;
+
+        width: 165px;
+        height: 50px;
+
+        // margin: 0 auto;
+        // padding: 0;
+
+        // position: relative;
+        top: 10px;
+        left: 67.5px;
+
+        // img {
+        //     // border: 2px solid #0000ff;
+
+        //     width: 100%;
+
+        //     // margin: inherit;
+        //     // padding: inherit;
+
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        // }
+    }
+
+    .tagDiv, .tag {
+        // border: 2px solid #ff0000;
+
+        width: 115px;
+        height: 7.5px;
+
+        top: 235px;
+        left: 92.5px;
+
+        // img {
+        //     // border: 2px solid #00ff00;
+
+        //     width: 100%;
+
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        // }
+    }
+
+    .cta {
+        // border: 2px solid #ff00ff;
+
+        // width: 72.5px;
+        height: 25px;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+        top: 217.5px;
+        left: 15px;
+    }
+
+    .copy01, .copy02 {
+        // border: 2px solid #ff00ff;
+
+        color: #ffffff;
+        // color: #00ff00;
+
+        font-family: 'at_sackers_english_scriptRg';
+        font-size: 2.8125em;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: -0.02em;
+        line-height: 1.125em;
+
+        width: 100%;
+
+        margin: 0 auto;
+        padding: 0;
+
+        position: absolute;
+        // display: inline-block;
+
+        // .char01, .char02 {
+        //     // border: 1px solid #ff00ff;
+
+        //     margin: 0 -.0025em;
+        //     padding: 0;
+
+        //     display: inline-block;
+
+        // }
+    }
+
+    .copy01 {
+        // border: 2px solid #ff00ff;
+
+        // font-size: 2.8125em;
+        // letter-spacing: 0.005em;
+
+        top: 255px;
+    }
+
+    .copy02 {
+        // border: 2px solid #ff00ff;
+
+        width: 60%;
+        // font-size: 2.8125em;
+        // letter-spacing: 0.005em;
+
+        margin: 0 20%;
+
+        top: 180px;
+    }
+
+    .particleContainer {
+        // border: 2px solid #00ff00;
+
+        color: #ffffff;
+
+        width: inherit;
+        height: inherit;
+
+        // width: 0;
+        // height: 0;
+
+        // top: 50%;
+        // left: 50%;
+
+        // img {
+        .particle {
+            // border: 0.5px solid #ee70bc;
+
+            // mix-blend-mode: screen;
+
+            // width: 50%;
+            // width: auto;
+
+            margin: 0;
+            padding: 0;
+
+            // margin: inherit;
+            // padding: inherit;
+
+            position: absolute;
+            // top: 0;
+            // left: 0;
+            // top: -50%;
+            // left: -50%;
+        }
+    }
+}

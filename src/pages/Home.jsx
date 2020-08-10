@@ -20,12 +20,13 @@ export const Home = () => {
         <FullPage title='Home'>
             {/* Home Page */}
 
-            {/* <img className='homeImgHolder' src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg' alt='SquirrelBit_Single_Ladies' /> */}
-            {/* <img className='homeImgHolder' src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/SquirrelBit_3D.jpg' alt='SquirrelBit_3D' /> */}
-
-            <video autoPlay muted poster='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg' alt='SquirrelBit_Single_Ladies'>
+            {/* <video autoPlay muted poster='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg' alt='SquirrelBit_Single_Ladies'> */}
+            <video autoPlay poster='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg' alt='SquirrelBit_Single_Ladies'>
                 <source src={SquirrelBitVid} type='video/mp4' ref={videoRef} />
             </video>
+
+            {/* <img className='homeImgHolder' src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg' alt='SquirrelBit_Single_Ladies' /> */}
+            {/* <img className='homeImgHolder' src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/SquirrelBit_3D.jpg' alt='SquirrelBit_3D' /> */}
 
         </FullPage>
     )
