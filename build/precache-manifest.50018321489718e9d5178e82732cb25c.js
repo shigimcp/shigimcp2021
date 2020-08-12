@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "46fe4a8cdb45ad4888fa902e9add21dc",
+    "revision": "c39316731a764b2d265297d54f840493",
     "url": "/shigimcp2020-react/index.html"
   },
   {
-    "revision": "ff0dad225ad3f0e32c0a",
-    "url": "/shigimcp2020-react/static/css/main.f747fecd.chunk.css"
+    "revision": "c9282fab68d6f7330646",
+    "url": "/shigimcp2020-react/static/css/main.3b98459d.chunk.css"
   },
   {
-    "revision": "59c2c48e4ca85df42f1b",
-    "url": "/shigimcp2020-react/static/js/2.0b2f2b8e.chunk.js"
+    "revision": "f6f931443a9b70406866",
+    "url": "/shigimcp2020-react/static/js/2.e0f9fb8c.chunk.js"
   },
   {
     "revision": "f6ffbd12b2f1aef0f8de05fae1592a25",
-    "url": "/shigimcp2020-react/static/js/2.0b2f2b8e.chunk.js.LICENSE.txt"
+    "url": "/shigimcp2020-react/static/js/2.e0f9fb8c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ff0dad225ad3f0e32c0a",
-    "url": "/shigimcp2020-react/static/js/main.55e658bd.chunk.js"
+    "revision": "c9282fab68d6f7330646",
+    "url": "/shigimcp2020-react/static/js/main.eb8eeb2d.chunk.js"
   },
   {
     "revision": "9933caff28d300965291",
@@ -220,6 +220,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/bg.ab0bc347.jpg"
   },
   {
+    "revision": "bea4500b174dc90e49606516b00f82c5",
+    "url": "/shigimcp2020-react/static/media/bg.bea4500b.jpg"
+  },
+  {
     "revision": "ccc2e448e5364d18e7e337903b0f8947",
     "url": "/shigimcp2020-react/static/media/bg.ccc2e448.jpg"
   },
@@ -262,6 +266,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "95435ca0dd9df2e55af54da45ee0f104",
     "url": "/shigimcp2020-react/static/media/bottle.95435ca0.png"
+  },
+  {
+    "revision": "b824df8268bd554dad2e369ab6a2f63f",
+    "url": "/shigimcp2020-react/static/media/bottle.b824df82.png"
   },
   {
     "revision": "c331993434a1ba1ed62f5dbf701dfcfa",
@@ -348,6 +356,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/logo.2805be9d.png"
   },
   {
+    "revision": "71199c888e3a92de619269351c55758c",
+    "url": "/shigimcp2020-react/static/media/logo_BCBG_BC.71199c88.png"
+  },
+  {
     "revision": "b528be7e6467af4a3a1f99e410683ebc",
     "url": "/shigimcp2020-react/static/media/logo_BCBG_MA.b528be7e.png"
   },
@@ -378,6 +390,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a5751aba0b66917ead33477160e4f009",
     "url": "/shigimcp2020-react/static/media/model.a5751aba.png"
+  },
+  {
+    "revision": "28e5e23e1ce48be7a2073b3ebd64bd4b",
+    "url": "/shigimcp2020-react/static/media/model_ctr.28e5e23e.jpg"
   },
   {
     "revision": "431ca7567d14e1ca036748892bc66c5a",

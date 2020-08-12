@@ -23,6 +23,7 @@ import BSPS_26897 from '../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgre
 import NMTG_26903 from '../images/ea/banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
 import JCVR_26963 from '../images/ea/banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250/JCVR_26963';
 import BCBG_02342 from '../images/ea/banners/BCBG_MAXAZRIA_CR00002342_AU_Digital_Plan/BCBG_02342';
+import BCBG_05500 from '../images/ea/banners/CR_5500_BCBG_BC_AU_Digital_Plan_2013/BCBG_05500';
 
 //#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
 
@@ -65,6 +66,7 @@ function WorkList() {
         NMTG_26903: NMTG_26903, 
         JCVR_26963: JCVR_26963, 
         BCBG_02342: BCBG_02342, 
+        BCBG_05500: BCBG_05500, 
     };
 
     //#endregion -------------------- AVAILABLE GSAP BANNERS --------------------

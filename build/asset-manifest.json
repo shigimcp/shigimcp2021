@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/shigimcp2020-react/static/css/main.f747fecd.chunk.css",
-    "main.js": "/shigimcp2020-react/static/js/main.55e658bd.chunk.js",
-    "main.js.map": "/shigimcp2020-react/static/js/main.55e658bd.chunk.js.map",
+    "main.css": "/shigimcp2020-react/static/css/main.3b98459d.chunk.css",
+    "main.js": "/shigimcp2020-react/static/js/main.eb8eeb2d.chunk.js",
+    "main.js.map": "/shigimcp2020-react/static/js/main.eb8eeb2d.chunk.js.map",
     "runtime-main.js": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js",
     "runtime-main.js.map": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js.map",
-    "static/js/2.0b2f2b8e.chunk.js": "/shigimcp2020-react/static/js/2.0b2f2b8e.chunk.js",
-    "static/js/2.0b2f2b8e.chunk.js.map": "/shigimcp2020-react/static/js/2.0b2f2b8e.chunk.js.map",
+    "static/js/2.e0f9fb8c.chunk.js": "/shigimcp2020-react/static/js/2.e0f9fb8c.chunk.js",
+    "static/js/2.e0f9fb8c.chunk.js.map": "/shigimcp2020-react/static/js/2.e0f9fb8c.chunk.js.map",
     "index.html": "/shigimcp2020-react/index.html",
-    "precache-manifest.cfd14e17ff310062c59695f39dd861fc.js": "/shigimcp2020-react/precache-manifest.cfd14e17ff310062c59695f39dd861fc.js",
+    "precache-manifest.50018321489718e9d5178e82732cb25c.js": "/shigimcp2020-react/precache-manifest.50018321489718e9d5178e82732cb25c.js",
     "service-worker.js": "/shigimcp2020-react/service-worker.js",
-    "static/css/main.f747fecd.chunk.css.map": "/shigimcp2020-react/static/css/main.f747fecd.chunk.css.map",
-    "static/js/2.0b2f2b8e.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.0b2f2b8e.chunk.js.LICENSE.txt",
+    "static/css/main.3b98459d.chunk.css.map": "/shigimcp2020-react/static/css/main.3b98459d.chunk.css.map",
+    "static/js/2.e0f9fb8c.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.e0f9fb8c.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/shigimcp2020-react/static/media/ChaleParNinSix.fc1bf3d8.svg",
     "static/media/BSPS_bottle.png": "/shigimcp2020-react/static/media/BSPS_bottle.dab95377.png",
     "static/media/BSPS_image.jpg": "/shigimcp2020-react/static/media/BSPS_image.6bc465a8.jpg",
@@ -48,7 +48,7 @@
     "static/media/bg02.jpg": "/shigimcp2020-react/static/media/bg02.59a4fd88.jpg",
     "static/media/bg_dk.jpg": "/shigimcp2020-react/static/media/bg_dk.87959a89.jpg",
     "static/media/bg_lt.jpg": "/shigimcp2020-react/static/media/bg_lt.9d696595.jpg",
-    "static/media/bottle.png": "/shigimcp2020-react/static/media/bottle.95435ca0.png",
+    "static/media/bottle.png": "/shigimcp2020-react/static/media/bottle.b824df82.png",
     "static/media/bottle_lt.png": "/shigimcp2020-react/static/media/bottle_lt.c3319934.png",
     "static/media/btn_buy.svg": "/shigimcp2020-react/static/media/btn_buy.876acf50.svg",
     "static/media/btn_walmart.svg": "/shigimcp2020-react/static/media/btn_walmart.eaf2aa03.svg",
@@ -66,6 +66,7 @@
     "static/media/image.jpg": "/shigimcp2020-react/static/media/image.e51a353a.jpg",
     "static/media/kawaii08_06_POSE_SingleLadies02.mp4": "/shigimcp2020-react/static/media/kawaii08_06_POSE_SingleLadies02.fdfc7512.mp4",
     "static/media/logo.png": "/shigimcp2020-react/static/media/logo.2805be9d.png",
+    "static/media/logo_BCBG_BC.png": "/shigimcp2020-react/static/media/logo_BCBG_BC.71199c88.png",
     "static/media/logo_BCBG_MA.png": "/shigimcp2020-react/static/media/logo_BCBG_MA.b528be7e.png",
     "static/media/logo_PF.png": "/shigimcp2020-react/static/media/logo_PF.111d9382.png",
     "static/media/logo_red_ds_k.png": "/shigimcp2020-react/static/media/logo_red_ds_k.b76f2f8f.png",
@@ -81,8 +82,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b6df552f.js",
-    "static/js/2.0b2f2b8e.chunk.js",
-    "static/css/main.f747fecd.chunk.css",
-    "static/js/main.55e658bd.chunk.js"
+    "static/js/2.e0f9fb8c.chunk.js",
+    "static/css/main.3b98459d.chunk.css",
+    "static/js/main.eb8eeb2d.chunk.js"
   ]
 }

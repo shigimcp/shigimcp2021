@@ -1,0 +1,133 @@
+.bcbg_05500 {
+    // border: 1px inset #ee70bc;
+
+    background: #e1bb7e;
+    // background-image: url(./images/bg.jpg);
+    // background-image: url(./images/CR_5500_BCBG_BC_AU_Digital_Plan_2013_300x250_retina.jpg);
+    background-size: contain;
+
+    .bg, 
+    .modelDiv, 
+    // .model, 
+    .model_ctr, .model_lf, .model_rt, 
+    .bottle, 
+    .logo, 
+    .mask, 
+    .cta, 
+    .particleContainer, 
+    .clickTag 
+    {
+        // border: 2px solid #ff00ff;
+
+        // mix-blend-mode: overlay;
+        // opacity: 0.5;
+
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+    }
+
+    .bg {
+        // border: 2px solid #ff0000;
+
+        width: 100%;
+        height: 100%;
+
+        top: 0;
+        left: 0;
+    }
+
+    .modelDiv {
+        // border: 2px solid #ff0000;
+
+        width: 100%;
+        height: 100%;
+
+        // top: -10px;
+        // left: -10px;
+
+        // mask: url('#maskID');
+
+        .model_ctr, .model_lf, .model_rt {
+            // border: 2px solid #00ff00;
+
+            height: 100%;
+
+            // filter: url('#turbulenceFilterID');
+        }
+
+        .model_lf {
+            left: 0;
+
+            filter: url('#turbulenceFilterID');
+        }
+
+        .model_ctr {
+            left: 85px;
+        }
+
+        .model_rt {
+            left: 180px;
+
+            filter: url('#turbulenceFilterID');
+        }
+    }
+
+    .bottle {
+        // border: 2px solid #ff0000;
+
+        width: 47.5px;
+        // height: 140px;
+
+        top: 87.5px;
+        left: 125px;
+    }
+
+    .logo {
+        // border: 2px solid #ff0000;
+
+        width: 200px;
+        // width: 260px;
+        // height: 50px;
+
+        top: 170px;
+        left: 50px;
+        // left: 20px;
+
+        // mask: url(#maskID);
+    }
+
+    .mask {
+        top: 0;
+        left: 0;
+    }
+
+    .cta {
+        // border: 2px solid #ff00ff;
+
+        width: 115px;
+        // height: 25px;
+
+        top: 225px;
+        left: 92.5px;
+    }
+
+    // .particleContainer {
+    //     // border: 2px solid #00ff00;
+
+    //     color: #ffffff;
+
+    //     width: inherit;
+    //     height: inherit;
+
+    //     .particle {
+    //         // border: 0.5px solid #ee70bc;
+
+    //         margin: 0;
+    //         padding: 0;
+
+    //         position: absolute;
+    //     }
+    // }
+}
