@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "87032bcbc0ff1c9d3fbe0c28a9402ac8",
+    "revision": "46fe4a8cdb45ad4888fa902e9add21dc",
     "url": "/shigimcp2020-react/index.html"
   },
   {
-    "revision": "b48a15c01cadd87d2e95",
-    "url": "/shigimcp2020-react/static/css/main.bd63c62b.chunk.css"
+    "revision": "ff0dad225ad3f0e32c0a",
+    "url": "/shigimcp2020-react/static/css/main.f747fecd.chunk.css"
   },
   {
-    "revision": "758112c545758facc209",
-    "url": "/shigimcp2020-react/static/js/2.2948529f.chunk.js"
+    "revision": "59c2c48e4ca85df42f1b",
+    "url": "/shigimcp2020-react/static/js/2.0b2f2b8e.chunk.js"
   },
   {
-    "revision": "46cb57753471c9ce36d593afc9a575b5",
-    "url": "/shigimcp2020-react/static/js/2.2948529f.chunk.js.LICENSE.txt"
+    "revision": "f6ffbd12b2f1aef0f8de05fae1592a25",
+    "url": "/shigimcp2020-react/static/js/2.0b2f2b8e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b48a15c01cadd87d2e95",
-    "url": "/shigimcp2020-react/static/js/main.663ef1bc.chunk.js"
+    "revision": "ff0dad225ad3f0e32c0a",
+    "url": "/shigimcp2020-react/static/js/main.55e658bd.chunk.js"
   },
   {
     "revision": "9933caff28d300965291",
@@ -212,6 +212,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/bg.6582c136.jpg"
   },
   {
+    "revision": "90f4b8be4f41743f957316af64b6d96c",
+    "url": "/shigimcp2020-react/static/media/bg.90f4b8be.jpg"
+  },
+  {
     "revision": "ab0bc347980b604961ab7c06dcc47f3d",
     "url": "/shigimcp2020-react/static/media/bg.ab0bc347.jpg"
   },
@@ -250,6 +254,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "60aef07dcd48c71cb97061c8b38cc9ea",
     "url": "/shigimcp2020-react/static/media/bottle.60aef07d.png"
+  },
+  {
+    "revision": "88ef19401a8ceafc18ece3b601a3a95d",
+    "url": "/shigimcp2020-react/static/media/bottle.88ef1940.png"
   },
   {
     "revision": "95435ca0dd9df2e55af54da45ee0f104",
@@ -340,6 +348,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shigimcp2020-react/static/media/logo.2805be9d.png"
   },
   {
+    "revision": "b528be7e6467af4a3a1f99e410683ebc",
+    "url": "/shigimcp2020-react/static/media/logo_BCBG_MA.b528be7e.png"
+  },
+  {
     "revision": "111d938285a1f5532d473c8048de60ab",
     "url": "/shigimcp2020-react/static/media/logo_PF.111d9382.png"
   },
@@ -366,6 +378,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a5751aba0b66917ead33477160e4f009",
     "url": "/shigimcp2020-react/static/media/model.a5751aba.png"
+  },
+  {
+    "revision": "431ca7567d14e1ca036748892bc66c5a",
+    "url": "/shigimcp2020-react/static/media/model_ctr.431ca756.jpg"
+  },
+  {
+    "revision": "d2d3c48fbc7a48924fb9dba2b8f4423e",
+    "url": "/shigimcp2020-react/static/media/model_lf.d2d3c48f.jpg"
+  },
+  {
+    "revision": "21174471e2f2d8fa50de435e6c4ccc32",
+    "url": "/shigimcp2020-react/static/media/model_rt.21174471.jpg"
   },
   {
     "revision": "3779ed2a75a0e33589fa67ad0f06f9ba",

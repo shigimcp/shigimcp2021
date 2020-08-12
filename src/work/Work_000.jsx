@@ -22,6 +22,7 @@ import JCNR_07074 from '../images/ea/banners/CR_7074_JC_VNOIR_2013_AU_300x600/JC
 import BSPS_26897 from '../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
 import NMTG_26903 from '../images/ea/banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
 import JCVR_26963 from '../images/ea/banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250/JCVR_26963';
+import BCBG_02342 from '../images/ea/banners/BCBG_MAXAZRIA_CR00002342_AU_Digital_Plan/BCBG_02342';
 
 //#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
 
@@ -63,6 +64,7 @@ function WorkList() {
         BSPS_26897: BSPS_26897, 
         NMTG_26903: NMTG_26903, 
         JCVR_26963: JCVR_26963, 
+        BCBG_02342: BCBG_02342, 
     };
 
     //#endregion -------------------- AVAILABLE GSAP BANNERS --------------------
@@ -343,7 +345,7 @@ function WorkList() {
             // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
 
         } else {
-            setBannerShow(thisWorkImage.link2 + ' THIS BANNER COMING SOON!');
+            setBannerShow(thisWorkImage.link2 + ' THIS CONTENT COMING SOON!');
             // setBannerKey(thisWorkImage.link2);
         }
 
