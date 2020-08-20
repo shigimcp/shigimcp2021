@@ -1,43 +1,27 @@
-/* #region ==================== VARIABLES ==================== */
-
-$body-width: 50vw;
-$body-min-width: 820px;
-// $body-max-width: 1200px;
-$body-max-width: 960px;
-
-// $workkNav-height: 80px;
-$workkNav-height: 100px;
-
-/* #endregion ==================== VARIABLES ==================== */
+@import './Global.scss';
 
 
 .workPage {
     // border: 2px solid #0000ff;
     // background: #eeeeee;
 
-    width: 100%;
+    // width: 100vw;
+    width: 97.5vw;
 
-    margin: 0;
-    padding: ($workkNav-height + 140px) 0 0 0;
+    margin: 0 auto;
+    // padding: ($header-height + $navBar-height + $workkNav-height) 0 0 0;
+    padding: ($header-height + $navBar-height + $workkNav-height + 10) 0 0 0;
 
     .workList {
         // border: 2px solid #ff0000;
         // background: #eeeeee;
 
         width: 100%;
+        // width: 98%;
 
+        margin: 0 auto;
         padding: 0;
-
-        // p {
-        .masonryInfo {
-            // border: 2px solid #00ffff;
-            background: #eeeeee;
-
-            letter-spacing: .025em;
-
-            margin: 0;
-            padding: 15px;
-        }
+        // padding: 0 1vw;
 
         hr {
             margin: 10px 35%;
@@ -72,21 +56,44 @@ $workkNav-height: 100px;
             }
         }
 
-        .workItem {
-            // border: 2px solid #ff0000;
+        .masonrySection {
+            // border: 2px solid #ff00ff;
 
             margin: 0;
-            padding: 0;
+            padding: 0 0 100px 0;
 
-            .masonryImg {
-                // border: 2px solid #00ffff;
+            .masonry {
+                // border: 2px solid #ff00ff;
 
-                width: 100%;
+                .workItem {
+                    // border: 2px solid #ff0000;
 
-                display: block;
+                    margin: 0;
+                    padding: 0;
 
-                // position: absolute;
-                // z-index: -999;
+                    .masonryImg {
+                        // border: 2px solid #00ffff;
+
+                        width: 100%;
+
+                        display: block;
+
+                        // position: absolute;
+                        // z-index: -999;
+                    }
+
+                    .masonryInfo {
+                        // border: 2px solid #00ffff;
+                        background: #eeeeee;
+
+                        // @include navbgGradient02();
+
+                        letter-spacing: .025em;
+
+                        margin: 0;
+                        padding: 15px;
+                    }
+                }
             }
         }
     }

@@ -1,0 +1,87 @@
+/* #region ========================= GLOBAL ========================= */
+
+/* #region -------------------- VARIABLES -------------------- */
+
+$body-width: 50vw;
+$body-min-width: 820px;
+// $body-max-width: 1200px;
+$body-max-width: 960px;
+
+$header-height: 60px;
+$navBar-height: 40px;
+$workkNav-height: 60px;
+// $workkNav-height: 80px;
+
+@mixin navbgGradient01() { 
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+    // mix-blend-mode: multiply;
+}
+
+@mixin navbgGradient02() { 
+    background: rgb(230,230,230);
+    background: -moz-linear-gradient(90deg, rgba(230,230,230,0) 0%, rgba(230,230,230,1) 20%, rgba(230,230,230,1) 80%, rgba(230,230,230,0) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(230,230,230,0) 0%, rgba(230,230,230,1) 20%, rgba(230,230,230,1) 80%, rgba(230,230,230,0) 100%);
+    background: linear-gradient(90deg, rgba(230,230,230,0) 0%, rgba(230,230,230,1) 20%, rgba(230,230,230,1) 80%, rgba(230,230,230,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e6e6e6",endColorstr="#e6e6e6",GradientType=1);
+    mix-blend-mode: multiply;
+}
+
+@mixin navbgGradient03() { 
+    background: rgb(230,230,230);
+    background: -moz-linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(230,230,230,0) 20%, rgba(230,230,230,0) 80%, rgba(230,230,230,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(230,230,230,0) 20%, rgba(230,230,230,0) 80%, rgba(230,230,230,1) 100%);
+    background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(230,230,230,0) 20%, rgba(230,230,230,0) 80%, rgba(230,230,230,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e6e6e6",endColorstr="#e6e6e6",GradientType=1);
+    mix-blend-mode: multiply;
+}
+
+
+// REF: https://til.hashrocket.com/posts/sxbrscjuqu-share-scss-variables-with-javascript
+// REF: https://medium.com/clover-platform-blog/modular-scss-and-why-you-need-it-6bb2d8c40fd8
+
+// @function remove-px($var) {
+//     @return $var / 1px - 1;
+// }
+
+// @function remove-vw($var) {
+//     @return $var / 1vw - 1;
+// }
+
+:export {
+    bodyWidth: $body-width;
+    bodyMinWidth: $body-min-width;
+    bodyMaxWidth: $body-max-width;
+
+    headerHeight: $header-height;
+    navBarHeight: $navBar-height;
+    workkNavHeight: $workkNav-height;
+
+    // bodyWidth: remove-vw($body-width);
+    // bodyMinWidth: remove-px($body-min-width);
+    // bodyMaxWidth: remove-px($body-max-width);
+
+    // headerHeight: remove-px($header-height);
+    // navBarHeight: remove-px($navBar-height);
+    // workkNavHeight: remove-px($workkNav-height);
+}
+
+/* #endregion -------------------- VARIABLES -------------------- */
+
+/* #region -------------------- BASICS -------------------- */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: 0;
+}
+
+/* #endregion -------------------- BASICS -------------------- */
+
+/* #endregion ========================= GLOBAL ========================= */

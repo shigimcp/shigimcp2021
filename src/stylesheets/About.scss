@@ -1,13 +1,18 @@
 /* #region ==================== ABOUT ==================== */
 
 .aboutContainer {
-    border: 1px solid #ff00ff;
+    // border: 1px solid #ff00ff;
 
-    width: 50%;
+    width: 80vw;
     margin: 100px auto;
+
+    position: absolute;
+    left: 10vw;
+    top: 5vh;
 
     .aboutLogo {
         border: 1px solid #ff00ff;
+
         // width: 100%;
     }
 }
@@ -24,46 +29,24 @@
 
 .aboutItem {
     // border: 1px solid #666666;
+    border-top: 1px solid #999999;
+    // border-bottom: 1px solid #999999;
 
     margin: 0;
-    padding: 0;
+    padding: 20px 0;
 
-    table {
+    display: grid;
+    grid-template-columns: 15% auto;
 
-        width: 100%;
+    .tdKey, .tdValue {
+        // border: 1px solid #00ffff;
 
-        tbody {
+        // width: 12.5%;
 
-            width: inherit;
-
-            tr {
-                // border: 1px solid #00ff00;
-
-                width: inherit;
-
-                td {
-                    // border: 1px solid #999999;
-
-                    vertical-align: text-top;
-
-                    // width: 100%;
-                    padding: 5px;
-                }
-
-                .tdKey {
-                    // border: 1px solid #00ffff;
-
-                    width: 12.5%;
-                }
-
-                // .tdValue {
-                //     // border: 1px solid #00ffff;
-
-                //     width: 85%;
-                // }
-            }
-        }
+        margin: 0;
+        padding: 5px 0;
     }
+
 }
 
 /* #endregion ==================== ABOUT ==================== */

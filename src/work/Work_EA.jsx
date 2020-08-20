@@ -417,7 +417,7 @@ function WorkList() {
                                 id={workImage.album_id + workImage.image_index}
                                 src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
                                 alt={'album_id: ' + workImage.album_id + workImage.image_index}
-                                // onClick={() => navShow.reverse()}
+                                // onClick={() => workNavShow.reverse()}
                                 // onClick={handleClick}
                                 onClick={() => handleClick(workImage)}
                                 // onClick={() => handleClick(this, workImage)}
@@ -435,7 +435,7 @@ function WorkList() {
                                     id={workImage.album_id + workImage.image_index + '_imgID'}
                                     src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
                                     alt={'album_id: ' + workImage.album_id + workImage.image_index}
-                                    // onClick={() => navShow.reverse()}
+                                    // onClick={() => workNavShow.reverse()}
                                     // onClick={handleClick}
                                     // onClick={() => handleClick(workImage)}
                                     // onClick={() => handleClick(this, workImage)}

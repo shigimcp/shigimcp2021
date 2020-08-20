@@ -10,7 +10,8 @@ import Moment from 'react-moment';
 
 import { gsap } from 'gsap';
 
-import '../stylesheets/Work.scss';
+// import '../stylesheets/Work.scss';
+// import scssVars from '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: GSAP BANNERS --------------------
@@ -38,6 +39,9 @@ import work from '../data/json/work_json/work_ea.json';
 //#endregion ==================== IMPORTS ====================
 
 
+// console.log('');
+// console.log('=========================  Work_000.jsx  =========================');
+
 
 //#region ==================== CONSTANTS ====================
 
@@ -46,6 +50,21 @@ const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
 const getWidth = () => window.innerWidth
     || document.documentElement.clientWidth
     || document.body.clientWidth;
+
+
+// console.log('');
+// console.log('------------------------- scssVars -------------------------');
+
+// const headerHeight = scssVars.headerHeight;
+// const navBarHeight = scssVars.navBarHeight;
+// const workkNavHeight = scssVars.workkNavHeight;
+
+// const headerHeight = parseInt(scssVars.headerHeight);
+// const navBarHeight = parseInt(scssVars.navBarHeight);
+// const workkNavHeight = parseInt(scssVars.workkNavHeight);
+
+// console.log('headerHeight = ' + headerHeight + '     navBarHeight = ' + navBarHeight + '     workkNavHeight = ' + workkNavHeight);
+// console.log('(headerHeight + navBarHeight + workkNavHeight) = ' + (headerHeight + navBarHeight + workkNavHeight));
 
 //#endregion ==================== CONSTANTS ====================
 
@@ -85,7 +104,7 @@ function WorkList() {
 
 
 
-    //#region ==================== useState ====================
+    //#region ==================== useState DEFs ====================
 
     const [bannerShow, setBannerShow] = useState();
 
@@ -102,11 +121,11 @@ function WorkList() {
 
     let [windowWidth, setWindowWidth] = useState(getWidth());
 
-    console.log('');
-    console.log('------------------------- useState -------------------------');
-    console.log('windowWidth = ' + windowWidth);
+    // console.log('');
+    // console.log('------------------------- useState -------------------------');
+    // console.log('windowWidth = ' + windowWidth);
 
-    //#endregion ==================== useState ====================
+    //#endregion ==================== useState DEFs ====================
 
 
 
@@ -202,7 +221,7 @@ function WorkList() {
                 // let thisBannerX = document.getElementById(bannerKey).x;
                 // let thisBannerY = document.getElementById(bannerKey).y;
 
-                let thisBannerX = document.getElementById(bannerKey).offsetLeft;
+                // let thisBannerX = document.getElementById(bannerKey).offsetLeft;
                 // let thisBannerY = document.getElementById(bannerKey).offsetTop;
 
                 //#region -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
@@ -211,7 +230,13 @@ function WorkList() {
                 // let thisBannerY = document.getElementById(bannerKey).y - 250;
 
                 // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft + 1;
-                let thisBannerY = document.getElementById(bannerKey).offsetTop - 250;
+                // let thisBannerY = document.getElementById(bannerKey).offsetTop - 250;
+
+                // let thisBannerX = document.getElementById(bannerKey).offsetLeft - 13;
+                let thisBannerY = document.getElementById(bannerKey).offsetTop - 170;
+
+                let thisBannerX = document.getElementById(bannerKey).offsetLeft - (0.0125 * windowWidth);
+                // let thisBannerY = document.getElementById(bannerKey).offsetTop - (headerHeight + navBarHeight + workkNavHeight);
 
                 //#endregion -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
 
@@ -281,7 +306,8 @@ function WorkList() {
             window.removeEventListener('resize', resizeListener);
         }
 
-    }, []);
+    // }, []);
+    }, [windowWidth]);
     // }, [animDuration02, animDuration04, animDuration05]);
 
     //#endregion ==================== useEffect ====================
@@ -341,6 +367,7 @@ function WorkList() {
 
             // setBannerKey(thisBanner);
             document.getElementById('importContainerID').key = thisWorkImage.link2;
+            // document.getElementById(thisWorkImage.link2).key = thisWorkImage.link2;
 
             // console.log('');
             // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
@@ -359,7 +386,7 @@ function WorkList() {
         // let thisBannerX = document.getElementById(thisWorkImage.link2).x;
         // let thisBannerY = document.getElementById(thisWorkImage.link2).y;
 
-        let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft;
+        // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft;
         // let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop;
 
         //#region -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
@@ -368,7 +395,13 @@ function WorkList() {
         // let thisBannerY = document.getElementById(thisWorkImage.link2).y - 250;
 
         // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft + 1;
-        let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop - 250;
+        // let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop - 250;
+
+        // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft - 13;
+        let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop - 170;
+
+        let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft - (0.0125 * windowWidth);
+        // let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop - (headerHeight + navBarHeight + workkNavHeight);
 
         //#endregion -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
 
@@ -425,84 +458,80 @@ function WorkList() {
             </div>
 
 
-        {/* #region ------------------------- Banners ------------------------- */}
-
+        {/* #region ------------------------- BANNERS ------------------------- */}
+            {/* 
             <section>
                 <hr />
                 <h2>|*|*|*|*|*| &nbsp;&nbsp;&nbsp; Banners 000 &nbsp;&nbsp;&nbsp; |*|*|*|*|*|</h2>
-                {/* 
-                <p className='note'>
-                    I want to eventually make these images clickable to trigger GSAP banners like the ones above that were [re]built in React (because I couldn't get react-adobe-animate or html-loader to work).<br />
-                    Ideally, the GSAP banners will play in place like they do on this page: <a href='https://www.shigimcp.com/hilites.html' target='_new'>https://www.shigimcp.com/hilites.html</a>.
-                </p>
-                */}
                 <hr />
             </section>
+            */}
+            <section className='masonrySection'>
 
-            <ResponsiveMasonry columnsCountBreakPoints={{ 360: 1, 640: 2, 768: 2, 940: 3, 1640: 4, 1920: 5, 3000: 6 }}>
-                <Masonry gutter='50px'>
+                <ResponsiveMasonry columnsCountBreakPoints={{ 360: 1, 640: 2, 768: 2, 940: 4, 1640: 4, 1920: 5, 3000: 6 }}>
+                    {/* <Masonry gutter='50px'> */}
+                    <Masonry className='masonry' gutter='1.25vw'>
 
-                    {work.filter(isBanner => isBanner.format === 'banner').map((workImage) => (
+                        {work.filter(isBanner => isBanner.format === 'banner').map((workImage) => (
 
-                        <div className='workItem' key={workImage.album_id + workImage.image_index} ref={workItemRef}>
+                            <div className='workItem' id={workImage.link2} key={workImage.album_id + workImage.image_index} ref={workItemRef}>
 
-                            <img
-                                // key={workImage.album_id + workImage.image_index}
-                                className='masonryImg'
-                                // id={workImage.album_id + workImage.image_index + '_imgID'}
-                                id={workImage.link2}
-                                src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
-                                alt={'album_id: ' + workImage.album_id + workImage.image_index}
+                                <img
+                                    // key={workImage.album_id + workImage.image_index}
+                                    className='masonryImg'
+                                    id={workImage.album_id + workImage.image_index + '_imgID'}
+                                    // id={workImage.link2}
+                                    src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
+                                    alt={'album_id: ' + workImage.album_id + workImage.image_index}
 
-                                onClick={() => handleClick(workImage)}
-                                // onClick={() => setBannerShow(workImage.link2)}
-                                // onClick={() => {
-                                //     handleClick(workImage);
-                                //     setBannerShow(workImage.link2);
-                                // }}
+                                    onClick={() => handleClick(workImage)}
+                                    // onClick={() => setBannerShow(workImage.link2)}
+                                    // onClick={() => {
+                                    //     handleClick(workImage);
+                                    //     setBannerShow(workImage.link2);
+                                    // }}
 
-                                ref={masonryImgRef}
-                            />
+                                    ref={masonryImgRef}
+                                />
 
-                            <p className='masonryInfo' title='masonryInfoTitle'>
-                                {workImage.caption}<br />
-                                <Moment format="MMM YYYY">{workImage.date}</Moment><br />
+                                <p className='masonryInfo' title='masonryInfoTitle'>
+                                    {workImage.caption}<br />
+                                    <Moment format="MMM YYYY">{workImage.date}</Moment><br />
 
-                            {/* 
-                                <br />
-                                album_index = {workImage.album_index}<br />
-                                album_id = {workImage.album_id}<br />
-                                image_index = {workImage.image_index}<br />
-                                src = {workImage.src}<br />
-                                caption = {workImage.caption}<br />
-                                date = {workImage.date}<br />
-                                format = {workImage.format}<br />
-                                format_src = {workImage.format_src}<br />
-                                link = {workImage.link}<br />
-                                link2 = {workImage.link2}<br />
-                                link3 = {workImage.link3}<br />
-                                link4 = {workImage.link4}<br />
-                                cta = {workImage.cta}<br />
-                                alert = {workImage.alert}<br />
-                                mwidth = {workImage.mwidth}<br />
-                                mheight = {workImage.mheight}
-                            */}
+                                {/* 
+                                    <br />
+                                    album_index = {workImage.album_index}<br />
+                                    album_id = {workImage.album_id}<br />
+                                    image_index = {workImage.image_index}<br />
+                                    src = {workImage.src}<br />
+                                    caption = {workImage.caption}<br />
+                                    date = {workImage.date}<br />
+                                    format = {workImage.format}<br />
+                                    format_src = {workImage.format_src}<br />
+                                    link = {workImage.link}<br />
+                                    link2 = {workImage.link2}<br />
+                                    link3 = {workImage.link3}<br />
+                                    link4 = {workImage.link4}<br />
+                                    cta = {workImage.cta}<br />
+                                    alert = {workImage.alert}<br />
+                                    mwidth = {workImage.mwidth}<br />
+                                    mheight = {workImage.mheight}
+                                */}
 
-                            </p>
+                                </p>
 
-                        </div>
-                    ))}
+                            </div>
+                        ))}
 
-                </Masonry>
-            </ResponsiveMasonry>
+                    </Masonry>
+                </ResponsiveMasonry>
+
+            </section>
+
+        {/* #endregion ------------------------- BANNERS ------------------------- */}
 
 
-            <br /><br /><br /><br /><br />
-
-        {/* #endregion ------------------------- Banners ------------------------- */}
-
-
-        {/* #region ------------------------- Web / Video ------------------------- */}
+        {/* #region ------------------------- WEB / VIDEO ------------------------- */}
 
             <section>
                 <hr />
@@ -510,61 +539,66 @@ function WorkList() {
                 <hr />
             </section>
 
-            {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 2040: 3 }}> */}
-            <ResponsiveMasonry columnsCountBreakPoints={{ 1024: 1, 1366: 2, 1920: 3, 3840: 4 }}>
-                <Masonry gutter='50px'>
+            <section className='masonrySection'>
 
-                    {work.filter(isBanner => isBanner.format !== 'banner').map((workImage) => (
+                {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 2040: 3 }}> */}
+                {/* <ResponsiveMasonry columnsCountBreakPoints={{ 1024: 1, 1366: 2, 1920: 3, 3840: 4 }}> */}
+                <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 960: 2, 1920: 3, 3840: 4 }}>
+                    <Masonry className='masonry' gutter='1.25vw'>
 
-                        < div className = 'workItem' key = { 'web' + workImage.album_id + workImage.image_index } ref = { workItemRef } >
+                        {work.filter(isBanner => isBanner.format !== 'banner').map((workImage) => (
 
-                            <img
-                                // key={'WV' + workImage.album_id + workImage.image_index}
-                                className='masonryImg'
-                                // id={workImage.album_id + workImage.image_index + '_imgID'}
-                                id={workImage.link2}
-                                src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
-                                alt={'album_id: ' + workImage.album_id + workImage.image_index}
+                            <div className='workItem' key={'web' + workImage.album_id + workImage.image_index} ref={workItemRef}>
 
-                                onClick={() => handleClick(workImage)}
+                                <img
+                                    // key={'WV' + workImage.album_id + workImage.image_index}
+                                    className='masonryImg'
+                                    // id={workImage.album_id + workImage.image_index + '_imgID'}
+                                    id={workImage.link2}
+                                    src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
+                                    alt={'album_id: ' + workImage.album_id + workImage.image_index}
 
-                                ref={masonryImgRef}
-                            />
+                                    onClick={() => handleClick(workImage)}
 
-                            <p className='masonryInfo' title='masonryInfoTitle'>
-                                {workImage.caption}<br />
-                                <Moment format="MMM YYYY">{workImage.date}</Moment><br />
+                                    ref={masonryImgRef}
+                                />
 
-                            {/* 
-                                <br />
+                                <p className='masonryInfo' title='masonryInfoTitle'>
+                                    {workImage.caption}<br />
+                                    <Moment format="MMM YYYY">{workImage.date}</Moment><br />
 
-                                album_index = {workImage.album_index}<br />
-                                album_id = {workImage.album_id}<br />
-                                image_index = {workImage.image_index}<br />
-                                src = {workImage.src}<br />
-                                caption = {workImage.caption}<br />
-                                date = {workImage.date}<br />
-                                format = {workImage.format}<br />
-                                format_src = {workImage.format_src}<br />
-                                link = {workImage.link}<br />
-                                link2 = {workImage.link2}<br />
-                                link3 = {workImage.link3}<br />
-                                link4 = {workImage.link4}<br />
-                                cta = {workImage.cta}<br />
-                                alert = {workImage.alert}<br />
-                                mwidth = {workImage.mwidth}<br />
-                                mheight = {workImage.mheight}
-                            */}
+                                {/* 
+                                    <br />
 
-                            </p>
+                                    album_index = {workImage.album_index}<br />
+                                    album_id = {workImage.album_id}<br />
+                                    image_index = {workImage.image_index}<br />
+                                    src = {workImage.src}<br />
+                                    caption = {workImage.caption}<br />
+                                    date = {workImage.date}<br />
+                                    format = {workImage.format}<br />
+                                    format_src = {workImage.format_src}<br />
+                                    link = {workImage.link}<br />
+                                    link2 = {workImage.link2}<br />
+                                    link3 = {workImage.link3}<br />
+                                    link4 = {workImage.link4}<br />
+                                    cta = {workImage.cta}<br />
+                                    alert = {workImage.alert}<br />
+                                    mwidth = {workImage.mwidth}<br />
+                                    mheight = {workImage.mheight}
+                                */}
 
-                        </div>
-                    ))}
+                                </p>
 
-                </Masonry>
-            </ResponsiveMasonry>
+                            </div>
+                        ))}
 
-        {/* #endregion ------------------------- Web / Video ------------------------- */}
+                    </Masonry>
+                </ResponsiveMasonry>
+
+            </section>
+
+        {/* #endregion ------------------------- WEB / VIDEO ------------------------- */}
 
         </div>
     )

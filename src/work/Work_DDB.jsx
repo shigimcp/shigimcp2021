@@ -1,4 +1,4 @@
-//#region ==================== IMPORTS / DATA ====================
+//#region ==================== IMPORTS ====================
 
 import React from 'react';
 
@@ -6,20 +6,32 @@ import React from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import Moment from 'react-moment';
 
-import '../stylesheets/Work.scss';
+// import '../stylesheets/Work.scss';
+// import scssVars from '../stylesheets/Global.scss';
 
-// -------------------- DATA --------------------
 
+//#region -------------------- IMPORTS: DATA --------------------
+
+// import work from '../data/MyData';
 import work from '../data/json/work_json/work_ddb.json';
 
-//#endregion ==================== IMPORTS / DATA ====================
+//#endregion -------------------- IMPORTS: DATA --------------------
+
+//#endregion ==================== IMPORTS ====================
 
 
-//#region ==================== WorkDDB ====================
+// console.log('');
+// console.log('=========================  Work_DDB.jsx  =========================');
+
+
+//#region ==================== CONSTANTS ====================
 
 // const remoteLoc = 'https://www.shigimcp.com/img/';
 // const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020/img/';
 const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
+
+//#endregion ==================== CONSTANTS ====================
+
 
 
 //#region -------------------- PLACEHOLDER: WorkItem(props), workList() --------------------
@@ -100,52 +112,55 @@ function WorkList() {
 
     return (
         <div className='workList'>
-            {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 3200: 3 }}> */}
-            {/* <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3 }}> */}
-            <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3, 2560: 4 }}>
-                <Masonry gutter='50px'>
-                    {work.map((workImage, i) => (
-                        <div className='workItem' key={workImage.album_id + workImage.image_index}>
+            <section className='masonrySection'>
+                {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 3200: 3 }}> */}
+                {/* <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3 }}> */}
+                <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3, 2560: 4 }}>
+                    {/* <Masonry gutter='50px'> */}
+                    <Masonry className='masonry' gutter='1.25vw'>
+                        {work.map((workImage, i) => (
+                            <div className='workItem' key={workImage.album_id + workImage.image_index}>
 
-                            <img
-                                // key={workImage.album_id + workImage.image_index}
-                                className='masonryImg'
-                                src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
-                                alt={'album_id: ' + workImage.album_id + workImage.image_index}
-                            // onClick={() => navShow.reverse()}
-                            />
+                                <img
+                                    // key={workImage.album_id + workImage.image_index}
+                                    className='masonryImg'
+                                    src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
+                                    alt={'album_id: ' + workImage.album_id + workImage.image_index}
+                                    // onClick={() => workNavShow.reverse()}
+                                />
 
-                            {/* <BSPS_26897 /> */}
+                                {/* <BSPS_26897 /> */}
 
-                            <p>
-                                {/* <p key={'descr' + workImage.album_id + workImage.image_index}> */}
-                                {workImage.caption}<br />
-                                <Moment format="MMM YYYY">{workImage.date}</Moment><br />
-                                {/* {workImage.link} */}
-{/* 
-                                <br />
+                                <p>
+                                    {/* <p key={'descr' + workImage.album_id + workImage.image_index}> */}
+                                    {workImage.caption}<br />
+                                    <Moment format="MMM YYYY">{workImage.date}</Moment><br />
+                                    {/* {workImage.link} */}
+                            {/* 
+                                    <br />
 
-                                album_index = {workImage.album_index}<br />
-                                album_id = {workImage.album_id}<br />
-                                image_index = {workImage.image_index}<br />
-                                src = {workImage.src}<br />
-                                caption = {workImage.caption}<br />
-                                date = {workImage.date}<br />
-                                format = {workImage.format}<br />
-                                format_src = {workImage.format_src}<br />
-                                link = {workImage.link}<br />
-                                link2 = {workImage.link2}<br />
-                                cta = {workImage.cta}<br />
-                                alert = {workImage.alert}<br />
-                                mwidth = {workImage.mwidth}<br />
-                                mheight = {workImage.mheight}
- */}
-                            </p>
+                                    album_index = {workImage.album_index}<br />
+                                    album_id = {workImage.album_id}<br />
+                                    image_index = {workImage.image_index}<br />
+                                    src = {workImage.src}<br />
+                                    caption = {workImage.caption}<br />
+                                    date = {workImage.date}<br />
+                                    format = {workImage.format}<br />
+                                    format_src = {workImage.format_src}<br />
+                                    link = {workImage.link}<br />
+                                    link2 = {workImage.link2}<br />
+                                    cta = {workImage.cta}<br />
+                                    alert = {workImage.alert}<br />
+                                    mwidth = {workImage.mwidth}<br />
+                                    mheight = {workImage.mheight}
+                            */}
+                                </p>
 
-                        </div>
-                    ))}
-                </Masonry>
-            </ResponsiveMasonry>
+                            </div>
+                        ))}
+                    </Masonry>
+                </ResponsiveMasonry>
+            </section>
         </div>
     )
 }
@@ -158,6 +173,8 @@ function WorkList() {
 export const WorkDDB = () => {
 
     return (
-        <WorkList />
+        <>
+            <WorkList />
+        </>
     )
 }

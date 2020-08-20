@@ -4,10 +4,14 @@ import React from 'react';
 import { useRoutes } from 'hookrouter';
 
 import '../stylesheets/Work.scss';
+// import scssVars from '../stylesheets/Global.scss';
+
 
 import { FullPage } from '../components/FullPage';
 // import { BodyContainer } from '../components/BodyContainer';
 
+
+//#region -------------------- IMPORTS: WORK PAGES --------------------
 
 import { Work000 } from '../work/Work_000';
 // import Work000 from '../work/Work_000';
@@ -28,8 +32,13 @@ import { WorkOther } from '../work/Work_Other';
 
 import { NotFound } from './NotFound';
 
+//#endregion -------------------- IMPORTS: WORK PAGES --------------------
+
 //#endregion ==================== IMPORTS ====================
 
+
+// console.log('');
+// console.log('=========================  Work.jsx  =========================');
 
 //#region ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
 
@@ -60,9 +69,9 @@ export const Work = () => {
         <FullPage title="Work">
 
             <div className='workPage'>
-                <div className='workList'>
+                {/* <div className='workList'> */}
                     {match || <NotFound />}
-                </div>
+                {/* </div> */}
             </div>
 
         </FullPage>
