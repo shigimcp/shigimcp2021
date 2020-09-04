@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { useRef } from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
+import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Moment from 'react-moment';
@@ -39,8 +40,10 @@ import work from '../data/json/work_json/work_ea.json';
 //#endregion ==================== IMPORTS ====================
 
 
+
 // console.log('');
 // console.log('=========================  Work_000.jsx  =========================');
+
 
 
 //#region ==================== CONSTANTS ====================
@@ -70,11 +73,11 @@ const getWidth = () => window.innerWidth
 
 
 
-//#region ==================== FUNCTION: workList() ====================
+//#region ==================== workList() => <WorkList /> ====================
 
 function WorkList() {
 
-    //#region -------------------- AVAILABLE GSAP BANNERS --------------------
+    //#region -------------------- AVAILABLE GSAP BANNERS: banners[] --------------------
 
     const banners = {
         EAAR_18951: EAAR_18951, 
@@ -88,19 +91,46 @@ function WorkList() {
         BCBG_05500: BCBG_05500, 
     };
 
-    //#endregion -------------------- AVAILABLE GSAP BANNERS --------------------
+    //#endregion -------------------- AVAILABLE GSAP BANNERS: banners[] --------------------
 
 
 
-    //#region -------------------- ASSETS Ref --------------------
+    //#region ==================== FUNCTIONS ====================
 
-    const workItemRef = useRef(null);
-    const masonryImgRef = useRef(null);
+    //#region -------------------- FUNCTION: checkBanners(thisMasonry) --------------------
 
-    const importContainerRef = useRef(null);
-    // const importedContentRef = useRef(null);
+    // function checkBanners(thisMasonry) {
 
-    //#endregion -------------------- ASSETS Ref --------------------
+    //     console.log('');
+    //     console.log('--------------------  checkBanners()  --------------------');
+
+    //     console.log('thisMasonry = ' + thisMasonry);
+    //     // console.log('thisMasonry.id = ' + thisMasonry.id);
+    //     // console.log('thisMasonry.children = ' + thisMasonry.children);
+
+    //     // for (let i = 0; i < thisMasonry.children.length; i++) {
+    //     //     console.log('thisMasonry.children[0] = ' + thisMasonry.children[0]);
+    //     // }
+    // }
+
+    //#endregion -------------------- FUNCTION: checkBanners(thisMasonry) --------------------
+
+    //#endregion ==================== FUNCTIONS ====================
+
+
+
+    //#region ==================== ASSETS _Ref ====================
+
+    const bannerMasonry_Ref = useRef(null);
+    const webMasonry_Ref = useRef(null);
+
+    const workItem_Ref = useRef(null);
+    const masonryImg_Ref = useRef(null);
+
+    const importContainer_Ref = useRef(null);
+    // const importedContent_Ref = useRef(null);
+
+    //#endregion ==================== ASSETS _Ref ====================
 
 
 
@@ -257,16 +287,16 @@ function WorkList() {
 
                 //#region - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
 
-                // gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '50% 0', immediateRender: true });
-                // // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
-                // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
+                // gsap.set([importContainer_Ref.current, importedContent_Ref.current], { transformOrigin: '50% 0', immediateRender: true });
+                // // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
+                // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
 
-                // gsap.set([importedContentRef.current], { scale: thisBannerScale, zIndex: -100 });
+                // gsap.set([importedContent_Ref.current], { scale: thisBannerScale, zIndex: -100 });
 
 
-                // gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '0 0', immediateRender: true });
-                gsap.set([importContainerRef.current], { transformOrigin: '0 0', immediateRender: true });
-                gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale });
+                // gsap.set([importContainer_Ref.current, importedContent_Ref.current], { transformOrigin: '0 0', immediateRender: true });
+                gsap.set([importContainer_Ref.current], { transformOrigin: '0 0', immediateRender: true });
+                gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale });
 
                 //#endregion - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
             }
@@ -312,6 +342,17 @@ function WorkList() {
 
     //#endregion ==================== useEffect ====================
 
+
+    useLayoutEffect(() => {
+
+        console.log('');
+        console.log('--------------------  useLayoutEffect  --------------------');
+
+        console.log('bannerMasonry_Ref.current = ' + bannerMasonry_Ref.current);
+        // checkBanners(bannerMasonry_Ref.current);
+        // checkBanners(document.getElementById('bannerMasonryID'));
+
+    }, []);
 
 
     //#region ==================== FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks - switch/case ====================
@@ -415,22 +456,22 @@ function WorkList() {
 
         //#region - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
 
-        // gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '50% 0', immediateRender: true });
-        // // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
-        // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
+        // gsap.set([importContainer_Ref.current, importedContent_Ref.current], { transformOrigin: '50% 0', immediateRender: true });
+        // // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
+        // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
 
-        // // gsap.set([importedContentRef.current], { scale: thisBannerScale, zIndex: -100 });
+        // // gsap.set([importedContent_Ref.current], { scale: thisBannerScale, zIndex: -100 });
 
 
-        // gsap.set([importContainerRef.current, importedContentRef.current], { transformOrigin: '0 0', immediateRender: true });
-        gsap.set([importContainerRef.current], { transformOrigin: '0 0', immediateRender: true });
+        // gsap.set([importContainer_Ref.current, importedContent_Ref.current], { transformOrigin: '0 0', immediateRender: true });
+        gsap.set([importContainer_Ref.current], { transformOrigin: '0 0', immediateRender: true });
 
-        // gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
-        gsap.set([importContainerRef.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale });
+        // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
+        gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale });
 
-        // gsap.set([importedContentRef.current], { width: thisBannerW, height: thisBannerH });
-        // gsap.set([importedContentRef.current.children[1]], { scale: thisBannerScale });
-        // gsap.set([importedContentRef.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
+        // gsap.set([importedContent_Ref.current], { width: thisBannerW, height: thisBannerH });
+        // gsap.set([importedContent_Ref.current.children[1]], { scale: thisBannerScale });
+        // gsap.set([importedContent_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
 
         //#endregion - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
 
@@ -449,10 +490,10 @@ function WorkList() {
 
             {/* width = {width}; */}
 
-            <div className='importContainer' id='importContainerID' ref={importContainerRef}>
-            {/* <div className='importContainer' id='importContainerID' key={bannerShow} ref={importContainerRef}> */}
-            {/* <div className='importContainer' id='importContainerID' key={bannerKey} ref={importContainerRef}> */}
-                {/* <div className='importedContent' ref={importedContentRef}> */}
+            <div className='importContainer' id='importContainerID' ref={importContainer_Ref}>
+            {/* <div className='importContainer' id='importContainerID' key={bannerShow} ref={importContainer_Ref}> */}
+            {/* <div className='importContainer' id='importContainerID' key={bannerKey} ref={importContainer_Ref}> */}
+                {/* <div className='importedContent' ref={importedContent_Ref}> */}
                     {bannerShow}
                 {/* </div> */}
             </div>
@@ -470,11 +511,11 @@ function WorkList() {
 
                 <ResponsiveMasonry columnsCountBreakPoints={{ 360: 1, 640: 2, 768: 2, 940: 4, 1640: 4, 1920: 5, 3000: 6 }}>
                     {/* <Masonry gutter='50px'> */}
-                    <Masonry className='masonry' gutter='1.25vw'>
+                    <Masonry className='masonry' id='bannerMasonryID' gutter='1.25vw' ref={bannerMasonry_Ref}>
 
                         {work.filter(isBanner => isBanner.format === 'banner').map((workImage) => (
 
-                            <div className='workItem' id={workImage.link2} key={workImage.album_id + workImage.image_index} ref={workItemRef}>
+                            <div className='workItem' id={workImage.link2} key={'banner' + workImage.album_id + workImage.image_index} ref={workItem_Ref}>
 
                                 <img
                                     // key={workImage.album_id + workImage.image_index}
@@ -491,7 +532,7 @@ function WorkList() {
                                     //     setBannerShow(workImage.link2);
                                     // }}
 
-                                    ref={masonryImgRef}
+                                    ref={masonryImg_Ref}
                                 />
 
                                 <p className='masonryInfo' title='masonryInfoTitle'>
@@ -544,11 +585,11 @@ function WorkList() {
                 {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 2040: 3 }}> */}
                 {/* <ResponsiveMasonry columnsCountBreakPoints={{ 1024: 1, 1366: 2, 1920: 3, 3840: 4 }}> */}
                 <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 960: 2, 1920: 3, 3840: 4 }}>
-                    <Masonry className='masonry' gutter='1.25vw'>
+                    <Masonry className='masonry' id='webMasonryID' gutter='1.25vw' ref={webMasonry_Ref}>
 
                         {work.filter(isBanner => isBanner.format !== 'banner').map((workImage) => (
 
-                            <div className='workItem' key={'web' + workImage.album_id + workImage.image_index} ref={workItemRef}>
+                            <div className='workItem' id={workImage.link2} key={'web' + workImage.album_id + workImage.image_index} ref={workItem_Ref}>
 
                                 <img
                                     // key={'WV' + workImage.album_id + workImage.image_index}
@@ -560,7 +601,7 @@ function WorkList() {
 
                                     onClick={() => handleClick(workImage)}
 
-                                    ref={masonryImgRef}
+                                    ref={masonryImg_Ref}
                                 />
 
                                 <p className='masonryInfo' title='masonryInfoTitle'>
@@ -607,7 +648,7 @@ function WorkList() {
 
 }
 
-//#endregion ==================== FUNCTION: workList() ====================
+//#endregion ==================== workList() => <WorkList /> ====================
 
 
 

@@ -65,8 +65,7 @@ const workkNavHeight = parseInt(scssVars.workkNavHeight);
 
 //#region ==================== EXPORT HEADER ====================
 
-// export function Header() {
-export const Header = () => {
+export function Header() {
 
     //#region ==================== ASSETS _Ref ====================
 
@@ -83,7 +82,7 @@ export const Header = () => {
     //#endregion ==================== ASSETS _Ref ====================
 
 
-    //#region ==================== use DEFs ====================
+    //#region ==================== useState DEFs ====================
 
     const [navLoc, setNavLoc] = useState();
     // const [navLoc, setNavLoc] = useState('homeID');
@@ -91,11 +90,11 @@ export const Header = () => {
     const [workNavShow, setWorkNavShow] = useState();
     const [workNavTL] = useState(new gsap.timeline({ paused: true }));
 
+    //#endregion ==================== useState DEFs ====================
+
+
     const currentPath = usePath();
     // console.log('currentPath = ' + currentPath);
-
-    //#endregion ==================== use DEFs ====================
-
 
 
     //#region -------------------- useLayoutEffect: [navLoc, setNavLoc] --------------------

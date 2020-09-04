@@ -11,6 +11,7 @@ $header-height: 60px;
 $navBar-height: 40px;
 $workkNav-height: 60px;
 // $workkNav-height: 80px;
+// $workkNav-height: 100px;
 
 @mixin navbgGradient01() { 
     background: rgb(255,255,255);
@@ -76,6 +77,17 @@ $workkNav-height: 60px;
 * {
 	margin: 0;
 	padding: 0;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -85,3 +97,61 @@ img {
 /* #endregion -------------------- BASICS -------------------- */
 
 /* #endregion ========================= GLOBAL ========================= */
+
+
+/* #region ========================= WRAPPER ========================= */
+
+.wrapper {
+    // border: 2px solid #00ff00;
+
+    width: 100vw;
+    // height: 100vh;
+    // height: auto;
+
+    // margin: 0;
+    // padding: 0;
+}
+
+/* #endregion ========================= WRAPPER ========================= */
+
+
+/* #region ========================= FULL PAGE ========================= */
+
+.fullPage {
+    // border: 2px solid #ff0000;
+
+    width: 100vw;
+    // height: 100vh;
+    // height: auto;
+
+    // margin: 0;
+    // padding: 0;
+
+    // margin: 0 auto;
+    // padding: 150px 0 0 0;
+}
+
+/* #endregion ========================= FULL PAGE ========================= */
+
+
+/* #region ========================= BODY CONATAINER ========================= */
+
+.bodyContainer {
+    // border: 2px solid #ff0000;
+
+    // width: 50%;
+    // min-width: 820px;
+    // max-width: 1200px;
+
+    width: $body-width;
+    min-width: $body-min-width;
+    max-width: $body-max-width;
+
+    // height: 100%;
+
+    margin: 0 auto;
+    padding: 150px 0 0 0;
+    // padding: 0;
+}
+
+/* #endregion ========================= BODY CONATAINER ========================= */

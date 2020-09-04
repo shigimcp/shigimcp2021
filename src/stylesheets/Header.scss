@@ -508,20 +508,16 @@
 
 
 
-/* #region ========================= RETINA LAPTOPS: 1025px+ ========================= */
+/* #region ========================= MOBILE: 375px ========================= */
 
-@media screen 
-    and (min-device-width: 1025px) 
-    // and (min-device-width: 1201px) 
-    // and (max-device-width: 1600px) 
-    // and (max-device-width: 2049px) 
-    // and (-webkit-min-device-pixel-ratio: 2) 
-    // and (min-resolution: 192dpi)
+@media  
+    only screen and (min-device-width: 375px) 
+    // only screen and (min-device-width: 375px), 
+    // only screen and (max-device-width: 767px) 
     { 
-
         /* #region -------------------- HEADER -------------------- */
 
-        // .header_md, .header_sm {
+        // .header_lg, .header_md {
         //     /* visibility: hidden; */
         //     display: none;
         // }
@@ -535,19 +531,16 @@
 
     }
 
-/* #endregion ========================= RETINA LAPTOPS: 1201px+ ========================= */
+/* #endregion ========================= MOBILE: 375px ========================= */
 
 
 
-/* #region ========================= TABLETS: 768px - 1024px ========================= */
+/* #region ========================= TABLETS: 768px ========================= */
 
-@media screen 
-    and (min-device-width: 768px) 
-    // and (min-device-width: 813px) 
-    and (max-device-width: 1024px)  
-    // and (max-device-width: 1200px) 
-    // and (max-device-width: 2048px) 
-    and (-webkit-min-device-pixel-ratio: 2) 
+@media  
+    only screen and (min-device-width: 768px) 
+    // only screen and (min-device-width: 768px), 
+    // only screen and (max-device-width: 991px) 
     { 
 
         // /* #region -------------------- HEADER -------------------- */
@@ -583,21 +576,64 @@
 
     }
 
-/* #endregion ========================= TABLETS: 813px - 1200px ========================= */
+/* #endregion ========================= TABLETS: 768px ========================= */
 
 
 
-/* #region ========================= MOBILE (iPHONE X): 375px - 767px ========================= */
+/* #region ========================= LAPTOPS: 992px+ ========================= */
 
-@media screen 
-    and (min-device-width: 375px) 
-    // and (max-device-width: 812px) 
-    and (max-device-width: 767px) 
-    // and (-webkit-min-device-pixel-ratio: 3)
+@media  
+    only screen and (min-device-width: 992px) 
+    // only screen and (min-device-width: 992px), 
+    // only screen and (min-device-width: 1440px) 
     { 
+
+        // /* #region -------------------- HEADER -------------------- */
+
+        // .header_lg, .header_sm {
+        //     /* visibility: hidden; */
+        //     display: none;
+        // }
+
+        .contact {
+            left: 110px !important;
+            // display: none !important;
+        }
+
+        /* #region - - - - - - - - - - - HEADER: LOGO - - - - - - - - - - - */
+
+        .hed {
+            left: -20px !important;
+        }
+
+        /* #endregion - - - - - - - - - - - HEADER: LOGO - - - - - - - - - - - */
+
+        // /* #endregion -------------------- HEADER -------------------- */
+
+
+        // /* #region -------------------- WORKNAV -------------------- */
+
+        // .workNav {
+        //     display: none;
+        // }
+
+        // /* #endregion -------------------- WORKNAV -------------------- */
+
+    }
+
+/* #endregion ========================= LAPTOPS: 992px+ ========================= */
+
+
+
+/* #region ========================= DESKTOPS: 1441px+ ========================= */
+
+@media  
+    only screen and (min-device-width: 1441px) 
+    { 
+
         /* #region -------------------- HEADER -------------------- */
 
-        // .header_lg, .header_md {
+        // .header_md, .header_sm {
         //     /* visibility: hidden; */
         //     display: none;
         // }
@@ -611,4 +647,4 @@
 
     }
 
-/* #endregion ========================= MOBILE (iPHONE X): 375px - 813px ========================= */
+/* #endregion ========================= DESKTOPS: 1441px+ ========================= */

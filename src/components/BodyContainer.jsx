@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../stylesheets/BodyContainer.scss';
+// import '../stylesheets/BodyContainer.scss';
 
 
 export const BodyContainer = ({title, children}) => {

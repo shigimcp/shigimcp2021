@@ -1,52 +1,615 @@
-/* #region ==================== ABOUT ==================== */
+@import './Global.scss';
+
+
+/* #region ==================== BASE ==================== */
 
 .aboutContainer {
-    // border: 1px solid #ff00ff;
+    // border: 2px solid #ff0000;
 
-    width: 80vw;
-    margin: 100px auto;
+    // width: 80vw;
+    width: 100vw;
+    // width: 100%;
+    // height: 100%;
+    height: auto;
+
+    margin: 120px auto 0 auto;
+    // margin: 11.25vh auto 0 auto;
 
     position: absolute;
-    left: 10vw;
-    top: 5vh;
+    // top: 1.25vh;
+    // left: 10vw;
+    // left: 0;
 
-    .aboutLogo {
-        border: 1px solid #ff00ff;
+    .afroContainer, .guideContainer, .curlContainer {
+        // border: 2px solid #ff00ff;
 
-        // width: 100%;
+        width: inherit;
+        // height: inherit;
+        // height: auto;
+
+        // position: absolute;
+        position: inherit;
     }
-}
 
-.about {
-    display: flex;
-    margin-bottom: 20px;
+    .afroContainer {
+        // border: 2px solid #00ff00;
 
-    .aboutSpan {
-        margin-right: 20px;
+        width: 100%;
     }
-}
 
+    .guideContainer {
+        // border: 2px solid #ff0000;
 
-.aboutItem {
-    // border: 1px solid #666666;
-    border-top: 1px solid #999999;
-    // border-bottom: 1px solid #999999;
+        // height: 100%;
+        // height: 100vh;
 
-    margin: 0;
-    padding: 20px 0;
+        visibility: hidden;
 
-    display: grid;
-    grid-template-columns: 15% auto;
+        .guideSVG {
+            // border: 2px solid #0000ff;
 
-    .tdKey, .tdValue {
-        // border: 1px solid #00ffff;
+            opacity: 0.5;
 
-        // width: 12.5%;
+            position: inherit;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+    }
 
+    .boingSvg {
+        // border: 2px solid #0000ff;
+
+        visibility: hidden;
+
+        width: 25%;
+        height: auto;
+
+        position: absolute;
+
+        .boingPath {
+            stroke: #000000;
+            stroke: #ff00ff;
+        }
+    }
+
+    .curlContainer {
+        // border: 2px solid #0000ff;
+
+        width: 100%;
+        height: auto;
+
+        .curlSvg {
+            // border: 2px solid #0000ff;
+
+            // width: 3.75vw;
+            // width: 3.75%;
+
+            position: absolute;
+            overflow: visible;
+
+            cursor: pointer;
+
+            .curlPath {
+                fill: #333333;
+                // fill: #ff00ff;
+                // pointer-events: visible;
+            }
+
+            .curlRect{
+                // fill: rgba(255,0,0,0.5);
+                fill: rgba(255,0,0,0);
+            }
+        }
+    }
+
+    .thoughtBubbleDiv * {
         margin: 0;
-        padding: 5px 0;
+        padding: 0;
     }
 
+    .thoughtBubbleDiv {
+        // border: 2px solid #0000ff;
+
+        visibility: hidden;
+        opacity: 0;
+
+        // width: 30%;
+        height: auto;
+
+        position: relative;
+
+        .thoughtBubbleSvg {
+            // border: 2px solid #0000ff;
+            // opacity: 0.25;
+
+            // width: 100%;
+            // height: 100%;
+            // width: 35%;
+            // height: auto;
+
+            position: inherit;
+
+            .thoughtBubblePath {
+
+                fill: #ffffff;
+                stroke: #000000;
+
+                // fill: #00ffff;
+                // stroke: #ffff00;
+            }
+        }
+
+        .thoughtBubbleText {
+            // border: 2px solid #00ff00;
+
+            font-family: AnimeAceItalic, Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            // font-size: 1.5em;
+            // line-height: 1.375em;
+            // text-align: center;
+
+            // width: 77.5%;
+            // height: 60%;
+
+            // margin: 0;
+            // padding: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            // top: 20%;
+            // left: 13.125%;
+
+            p {
+                padding: 1.125% 0;
+            }
+        }
+
+        .thoughtClose {
+            // border: 05px solid #000000;
+            border-radius: 10%;
+
+            // background-color: #FFFFFF;
+
+            font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+            font-size: 1.25em;
+            font-weight: 600;
+            line-height: 1.5em;
+            text-align: center;
+
+            width: 10%;
+            height: 10%;
+
+            position: absolute;
+            top: 17.5%;
+            right: 1.25%;
+
+            // overflow: visible;
+
+            cursor: pointer;
+
+            .thoughtClosePath {
+                // border: 02px solid #00ff00;
+
+                // fill: #ff0000;
+                fill: #ffffff;
+
+                // stroke: #00ff00;
+                stroke: #000000;
+                stroke-width: 12.5%;
+                // stroke-width: 0.2vw;
+
+                // paint-order: stroke;
+            }
+
+            .thoughtCloseX {
+                // border: 02px solid #0000ff;
+
+                font-size: 0.75em;
+
+                stroke: #000000;
+                stroke-width: 3.75%;
+            }
+        }
+    }
 }
 
-/* #endregion ==================== ABOUT ==================== */
+/* #endregion ==================== BASE ==================== */
+
+
+
+/* #region ========================= MOBILE: 375px ========================= */
+
+@media  
+    only screen and (min-device-width: 375px) 
+    // only screen and (min-device-width: 375px), 
+    // only screen and (max-device-width: 767px) 
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            // border: 1px solid #ff00ff;
+
+            width: 90vw;
+            left: 5vw;
+
+            .haiku {
+                // border: 2px solid #ff00ff;
+
+                text-align: center;
+                // letter-spacing: 0.0625em;
+                // line-height: 0.5em;
+
+                // padding: 0 0 10px 0;
+                padding: 0 0 5vh 0;
+
+                h1 {
+                    font-size: 1.5em;
+                    letter-spacing: -0.025em;
+                    line-height: 1em;
+                }
+
+                h2 {
+                    font-size: 1.375em;
+                    letter-spacing: -0.0375em;
+                }
+
+                h3 {
+                    font-size: 1.25em;
+                    letter-spacing: -0.025em;
+                    line-height: 1.125em;
+                }
+
+                .credit {
+                    font-size: 1em;
+                    letter-spacing: 0.025em;
+                    line-height: 1.375em;
+
+                    padding: 0.5vh 0 0 0;
+                }
+
+                .plea {
+                    font-size: 0.6875em;
+                    letter-spacing: 0.0375em;
+
+                    padding: 0.0625vh 0 1.25vh 0;
+                }
+            }
+
+            .curlContainer {
+                // border: 2px solid #0000ff;
+
+                .curlSvg {
+                    // border: 2px solid #0000ff;
+
+                    // width: 3.75vw;
+                    width: 5.5%;
+                }
+            }
+
+            .thoughtBubbleDiv {
+                // border: 2px solid #0000ff;
+
+                // visibility: hidden;
+
+                width: 90%;
+
+                .thoughtBubbleText {
+                    // border: 2px solid #00ff00;
+
+                    font-size: 0.625em;
+                    line-height: 1.375em;
+                    text-align: center;
+
+                    width: 77.5%;
+                    height: 60%;
+
+                    top: 20%;
+                    left: 13.125%;
+                }
+            }
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= MOBILE: 375px ========================= */
+
+
+
+/* #region ========================= TABLETS: 768px ========================= */
+
+@media  
+    only screen and (min-device-width: 768px) 
+    // only screen and (min-device-width: 768px), 
+    // only screen and (max-device-width: 991px) 
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            // border: 1px solid #ff00ff;
+
+            // width: 100vw;
+            // left: 0;
+
+            width: 90vw;
+            left: 5vw;
+
+            .haiku {
+                // border: 2px solid #0000ff;
+
+                text-align: center;
+                // letter-spacing: 0.0625em;
+                // line-height: 0.5em;
+
+                // padding: 0 0 10px 0;
+                padding: 0 0 0.5vh 0;
+
+                h1 {
+                    font-size: 2em;
+                    letter-spacing: -0.025em;
+                    line-height: 0.9375em;
+                }
+
+                h2 {
+                    font-size: 1.75em;
+                    letter-spacing: -0.0375em;
+                }
+
+                h3 {
+                    font-size: 1.625em;
+                    letter-spacing: -0.025em;
+                    line-height: 0.9375em;
+                }
+
+                .credit {
+                    font-size: 1.3125em;
+                    letter-spacing: 0.025em;
+                    line-height: 1.375em;
+
+                    padding: 0.5vh 0 0 0;
+                }
+
+                .plea {
+                    font-size: 1.125em;
+                    letter-spacing: 0.0375em;
+
+                    padding: 0.0625vh 0 1.25vh 0;
+                }
+            }
+
+            .curlContainer {
+                // border: 2px solid #0000ff;
+
+                .curlSvg {
+                    // border: 2px solid #0000ff;
+
+                    // width: 3.75vw;
+                    width: 5%;
+                }
+            }
+
+            .thoughtBubbleDiv {
+                // border: 2px solid #0000ff;
+
+                // visibility: hidden;
+
+                width: 50%;
+
+                .thoughtBubbleText {
+                    // border: 2px solid #00ff00;
+
+                    font-size: 0.75em;
+                    line-height: 1.4125em;
+                    text-align: center;
+
+                    width: 77.5%;
+                    height: 60%;
+
+                    top: 20%;
+                    left: 13.125%;
+                }
+            }
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= TABLETS: 813px - 1200px ========================= */
+
+
+
+/* #region ========================= LAPTOPS: 992px+ ========================= */
+
+@media  
+    only screen and (min-device-width: 992px) 
+    // only screen and (min-device-width: 992px), 
+    // only screen and (min-device-width: 1440px) 
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            // border: 1px solid #ff00ff;
+
+            width: 80vw;
+            left: 10vw;
+
+            .haiku {
+                // border: 2px solid #ff0000;
+
+                text-align: center;
+                letter-spacing: 0.0625em;
+
+                // padding: 0 0 10px 0;
+                padding: 0 0 0.5vh 0;
+
+                h1 {
+                    font-size: 2em;
+                    letter-spacing: 0.05em;
+                    line-height: 1em;
+                }
+
+                h2 {
+                    font-size: 1.75em;
+                    letter-spacing: 0.025em;
+                }
+
+                h3 {
+                    font-size: 1.625em;
+                    letter-spacing: 0.04125em;
+                    line-height: 1.25em;
+                }
+
+                .credit {
+                    font-size: 1.3125em;
+                    letter-spacing: 0.025em;
+                    line-height: 1.375em;
+
+                    padding: 0.5vh 0 0 0;
+                }
+
+                .plea {
+                    font-size: 1.125em;
+                    letter-spacing: 0.0375em;
+
+                    padding: 0.0625vh 0 1.25vh 0;
+                }
+            }
+
+            .curlContainer {
+                // border: 2px solid #0000ff;
+
+                .curlSvg {
+                    // border: 2px solid #0000ff;
+
+                    // width: 3.75vw;
+                    width: 4.5%;
+                }
+            }
+
+            .thoughtBubbleDiv {
+                // border: 2px solid #0000ff;
+
+                // visibility: hidden;
+
+                width: 50%;
+
+                .thoughtBubbleText {
+                    // border: 2px solid #00ff00;
+
+                    font-size: 1em;
+                    line-height: 1.375em;
+                    text-align: center;
+
+                    width: 77.5%;
+                    height: 60%;
+
+                    top: 20%;
+                    left: 13.125%;
+                }
+            }
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= LAPTOPS: 1201px+ ========================= */
+
+
+
+/* #region ========================= DESKTOPS: 1441px+ ========================= */
+
+@media  
+    only screen and (min-device-width: 1441px) 
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            // border: 1px solid #ff00ff;
+
+            width: 80vw;
+            left: 10vw;
+
+            .haiku {
+                // border: 2px solid #00ffff;
+
+                text-align: center;
+                letter-spacing: 0.0625em;
+
+                // padding: 0 0 10px 0;
+                padding: 0 0 0.5vh 0;
+
+                h1 {
+                    font-size: 2.5em;
+                    letter-spacing: 0.005em;
+                    line-height: 1.125em;
+                }
+
+                h2 {
+                    font-size: 1.875em;
+                    // letter-spacing: 0.025em;
+                }
+
+                h3 {
+                    font-size: 1.625em;
+                    letter-spacing: 0.025em;
+                }
+
+                .credit {
+                    font-size: 1.3125em;
+                    letter-spacing: 0.025em;
+                    line-height: 1.375em;
+
+                    padding: 0.5vh 0 0 0;
+                }
+
+                .plea {
+                    font-size: 1.125em;
+                    letter-spacing: 0.0375em;
+
+                    padding: 0.0625vh 0 1.25vh 0;
+                }
+            }
+
+            .curlContainer {
+                // border: 2px solid #0000ff;
+
+                .curlSvg {
+                    // border: 2px solid #0000ff;
+
+                    // width: 3.75vw;
+                    width: 3.75%;
+                }
+            }
+
+            .thoughtBubbleDiv {
+                // border: 2px solid #0000ff;
+
+                width: 30%;
+
+                .thoughtBubbleText {
+                    // border: 2px solid #00ff00;
+
+                    font-size: 1.375em;
+                    line-height: 1.375em;
+                    text-align: center;
+
+                    width: 80%;
+                    height: 60%;
+
+                    top: 20.625%;
+                    left: 11.25%;
+                }
+            }
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= DESKTOPS: 1201px+ ========================= */
