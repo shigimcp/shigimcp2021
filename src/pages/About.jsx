@@ -614,8 +614,8 @@ function addGuides(refContainer) {
 
 function disperseChildren(parentContainer) {
 
-    console.log('');
-    console.log('--------------------  disperseChildren(parentContainer)  --------------------');
+    // console.log('');
+    // console.log('--------------------  disperseChildren(parentContainer)  --------------------');
 
 
     //#region - - - - - - - - - - - SETUP - - - - - - - - - - -
@@ -638,9 +638,9 @@ function disperseChildren(parentContainer) {
     const outerRadius = outerSVGDims.width;
     const innerRadius = innerSVGDims.width;
 
-    console.log('');
-    console.log('disperseChildren(parentContainer) =>   outerRadius = ' + outerRadius);
-    console.log('disperseChildren(parentContainer) =>   innerRadius = ' + innerRadius);
+    // console.log('');
+    // console.log('disperseChildren(parentContainer) =>   outerRadius = ' + outerRadius);
+    // console.log('disperseChildren(parentContainer) =>   innerRadius = ' + innerRadius);
 
     //#endregion - - - - - - - - - - - SETUP - - - - - - - - - - -
 
@@ -710,12 +710,12 @@ let thoughtAnimTL = gsap.timeline({ delay: 0, paused: true });
 
 function handleThought(thisCurl) {
 
-    console.log('');
-    console.log('--------------------  handleThought(thisCurl)  --------------------');
+    // console.log('');
+    // console.log('--------------------  handleThought(thisCurl)  --------------------');
 
-    console.log('thisCurl = ' + thisCurl);
-    console.log('thisCurl.id = ' + thisCurl.id);
-    console.log('thisCurl.parentElement.id = ' + thisCurl.parentElement.id);
+    // console.log('thisCurl = ' + thisCurl);
+    // console.log('thisCurl.id = ' + thisCurl.id);
+    // console.log('thisCurl.parentElement.id = ' + thisCurl.parentElement.id);
     // console.log('thisCurl.parentElement.getAttribute(\'brain\') = ' + thisCurl.parentElement.getAttribute('brain'));
     // console.log('thisCurl.parentElement.getAttribute(\'thought\') = ' + thisCurl.parentElement.getAttribute('thought'));
 
@@ -932,11 +932,11 @@ export const About = () => {
     // useEffect(() => {
     useLayoutEffect(() => {
 
-        console.log('');
-        console.log('------------------------- useLayoutEffect -------------------------');
+        // console.log('');
+        // console.log('------------------------- useLayoutEffect -------------------------');
 
-        console.log('useLayoutEffect =>   window.innerWidth = ' + window.innerWidth);
-        console.log('');
+        // console.log('useLayoutEffect =>   window.innerWidth = ' + window.innerWidth);
+        // console.log('');
 
 
         //#region -------------------- ADD [AFRO] GUIDES --------------------
