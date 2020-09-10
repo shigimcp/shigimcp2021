@@ -93,6 +93,7 @@
             .curlPath {
                 fill: #333333;
                 // fill: #ff00ff;
+                // stroke-linejoin: round;
                 // pointer-events: visible;
             }
 
@@ -134,6 +135,7 @@
 
                 fill: #ffffff;
                 stroke: #000000;
+                stroke-linejoin: round;
 
                 // fill: #00ffff;
                 // stroke: #ffff00;
@@ -216,6 +218,57 @@
                 stroke: #000000;
                 stroke-width: 3.75%;
             }
+        }
+    }
+
+    .resetThoughtsDiv {
+        // border: 2px solid #0000ff;
+
+        font-family: AnimeAceItalic, Arial, Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 1.875em;
+        letter-spacing: 0.025em;
+        // color: #666666;
+
+        // width: 10vw;
+        // height: auto;
+
+        opacity: 0.625;
+
+        position: absolute;
+        // top: 0;
+        top: 15vh;
+        right: 0;
+        // top: 45vh;
+        // right: 12.5vw;
+
+        .resetThoughtsSvg {
+            // border: 2px solid #0000ff;
+
+            overflow: visible;
+
+            .resetThoughtsPath {
+                // border: 2px solid #0000ff;
+
+                // fill: #ff0000;
+                // fill: #eeeeee;
+                // fill: #efefef;
+                // fill: #fefefe;
+                fill: #ffffff;
+
+                stroke: #000000;
+                // stroke: #666666;
+                stroke-width: 2.5%;
+                stroke-opacity: 0.625;
+                // stroke-linejoin: round;
+                stroke-linejoin: miter;
+                stroke-miterlimit: 1;
+            }
+
+            // .resetThoughtsText {
+            //     // border: 2px solid #0000ff;
+            // }
         }
     }
 }
@@ -313,6 +366,13 @@
                     top: 20%;
                     left: 13.125%;
                 }
+            }
+
+            .resetThoughtsDiv {
+                // border: 2px solid #0000ff;
+
+                width: 20vw;
+                top: 16.25vh;
             }
         }
 
@@ -416,6 +476,12 @@
                     left: 13.125%;
                 }
             }
+
+            .resetThoughtsDiv {
+                // border: 2px solid #0000ff;
+
+                width: 15vw;
+            }
         }
 
         /* #endregion -------------------- aboutContainer -------------------- */
@@ -514,6 +580,12 @@
                     left: 13.125%;
                 }
             }
+
+            .resetThoughtsDiv {
+                // border: 2px solid #0000ff;
+
+                width: 10vw;
+            }
         }
 
         /* #endregion -------------------- aboutContainer -------------------- */
@@ -606,6 +678,12 @@
                     top: 20.625%;
                     left: 11.25%;
                 }
+            }
+
+            .resetThoughtsDiv {
+                // border: 2px solid #0000ff;
+
+                width: 10vw;
             }
         }
 

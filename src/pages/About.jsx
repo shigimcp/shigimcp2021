@@ -148,7 +148,8 @@ function CurlLB(props) {
     return (
         <svg className='curlSvg' id={props.curlSvgID} brain={props.brain} thought={props.thought} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100' enableBackground='0 0 50 100'>
             <path className='curlPath' id={props.curlPathID} d='M10.164 93.706c7.735 9.34 24.605 8.114 30.362-2.544 2.813-5.207 3.003-11.594.186-16.84-2.904-5.41-9.065-8.555-15.283-9.188-6.42-.654-13.07 1.684-16.955 6.63-3.9 4.967-4.607 12.137.127 16.854 4.535 4.52 11.862 4.53 17.812 3.054 6.502-1.612 12.996-5.167 17.53-9.865 4.63-4.8 7.284-11.432 4.872-17.805-2.334-6.168-8.464-10.812-15.243-12.04-7.614-1.38-15.903.72-22.15 4.97C5.73 60.8.578 67.626 3.315 74.5c2.442 6.14 9.84 8.83 16.37 8.567 6.803-.276 13.363-3.14 18.18-7.65 4.74-4.442 7.87-10.615 7.76-16.987-.11-6.344-3.21-12.58-8.088-16.92-5.093-4.53-11.966-6.99-18.977-6.173-7.487.872-14.26 5.337-16.427 12.352-2.057 6.655 1.092 13.196 7.015 16.996 5.61 3.6 13.084 4.383 19.476 2.346 12.553-4.002 21.796-17.54 16.672-29.843-4.598-11.04-18.768-18.508-31.07-14.477C7.755 24.835 1.95 29.95.402 36.403c-1.618 6.75 1.804 13.23 7.733 17.036 13.012 8.35 31.07-.39 36.818-12.777 2.867-6.175 3.01-13.057-.23-19.13-2.94-5.506-8.712-10.04-15.203-11.203C15.903 7.89 1.992 21.103 8.207 33.824c2.564 5.248 8.34 8.883 14.24 10.03 6.566 1.274 13.086-.264 18.328-4.177 10.726-8.007 12.62-23.19 2.918-32.612-9.492-9.22-25.55-9.655-34.78.106-4.303 4.55-7.036 10.72-6.447 16.883.608 6.364 4.23 11.872 9.602 15.683 5.374 3.812 11.683 4.92 18.234 4.07 1.675-.22 2.557-2.22 2.17-3.603-.474-1.693-2.168-2.26-3.823-2.045C19.87 39.3 10.05 32.028 9.307 23.75 8.565 15.478 15.746 6.9 24.715 6.412c8.967-.49 18.345 6.243 18.482 15.054.128 8.205-7.13 16.42-16.13 16.4-8.49-.02-17.22-7.44-11.98-15.537 2.38-3.68 6.917-6.18 11.535-5.852 4.436.314 8.528 3.002 10.93 6.45 5.758 8.263 1.267 18.96-7.085 23.972-4.61 2.766-10.65 4.208-15.927 2.308-4.212-1.516-7.828-5.308-7.577-9.743.25-4.418 3.944-8.158 8.02-9.97 4.015-1.786 8.713-1.543 12.785-.068C36 32.41 41.685 40.547 39.008 48.822c-2.68 8.275-12.49 14.607-21.66 12.234-4.223-1.092-8.56-4.08-8.876-8.52-.35-4.902 3.66-8.895 8.41-10.203 9.777-2.69 19.336 4.31 21.423 13.225 2.078 8.875-5.134 17.536-13.882 20.112-4.005 1.18-9.16 1.445-12.698-1.087-4.502-3.223-1.064-8.445 2.16-11.16 7.48-6.3 22.26-8.297 27.79 1.364 5.072 8.86-6.388 16.947-13.93 19.792-3.786 1.427-8.92 2.65-12.772.775-4.126-2.008-3.626-6.896-1.337-10.037 5.212-7.15 17.96-5.482 22.176 1.703 4.825 8.224-1.31 18.583-11.122 19.276-4.643.328-9.373-1.22-12.64-4.367-1.235-1.193-2.912.538-1.886 1.776z' fill='#0000ff' />
-            <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(255,0,255,0.5)' onClick={(e) => handleThought(e.target)}></rect>
+            {/* <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(255,0,255,0.5)' onClick={(e) => handleThought(e.target)}></rect> */}
+            <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(255,0,255,0.5)' onMouseOver={(e) => handleThought(e.target)}></rect>
         </svg>
     );
 }
@@ -157,7 +158,8 @@ function CurlRB(props) {
     return (
         <svg className='curlSvg' id={props.curlSvgID} brain={props.brain} thought={props.thought} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100' enableBackground='0 0 50 100'>
             <path className='curlPath' id={props.curlPathID} d='M39.836 93.706c-7.735 9.34-24.605 8.114-30.362-2.544-2.813-5.207-3.003-11.594-.186-16.84 2.904-5.41 9.065-8.555 15.283-9.188 6.42-.654 13.07 1.684 16.955 6.63 3.9 4.967 4.607 12.137-.127 16.854-4.535 4.52-11.862 4.53-17.812 3.054-6.502-1.612-12.996-5.167-17.53-9.865-4.63-4.8-7.284-11.432-4.872-17.805 2.334-6.168 8.464-10.812 15.243-12.04 7.614-1.38 15.903.72 22.15 4.97 5.692 3.87 10.844 10.695 8.108 17.57-2.442 6.14-9.84 8.83-16.37 8.567-6.803-.276-13.363-3.14-18.18-7.65-4.74-4.442-7.87-10.615-7.76-16.987.11-6.344 3.21-12.58 8.088-16.92 5.093-4.53 11.966-6.99 18.977-6.173 7.488.872 14.26 5.337 16.428 12.352 2.057 6.655-1.092 13.196-7.015 16.996-5.61 3.6-13.084 4.383-19.476 2.346-12.555-4-21.797-17.54-16.673-29.842 4.598-11.04 18.768-18.51 31.07-14.478 6.472 2.12 12.278 7.237 13.825 13.688 1.618 6.75-1.804 13.23-7.733 17.037-13.012 8.35-31.07-.39-36.818-12.777-2.867-6.175-3.01-13.057.23-19.13 2.94-5.506 8.712-10.04 15.203-11.203 13.615-2.44 27.526 10.774 21.31 23.495-2.564 5.248-8.34 8.883-14.24 10.03-6.566 1.274-13.086-.264-18.328-4.177C-1.5 31.668-3.395 16.486 6.307 7.065c9.492-9.22 25.55-9.655 34.78.106 4.303 4.55 7.036 10.72 6.447 16.883-.608 6.364-4.23 11.872-9.602 15.683-5.374 3.812-11.683 4.92-18.234 4.07-1.675-.22-2.557-2.22-2.17-3.603.474-1.693 2.168-2.26 3.823-2.045C30.13 39.3 39.95 32.028 40.693 23.75c.744-8.27-6.437-16.848-15.407-17.337-8.968-.49-18.345 6.24-18.483 15.053-.128 8.205 7.13 16.42 16.13 16.4 8.49-.02 17.22-7.44 11.98-15.537-2.38-3.68-6.917-6.18-11.535-5.852-4.436.314-8.528 3.002-10.93 6.45-5.757 8.264-1.266 18.96 7.086 23.972 4.61 2.766 10.65 4.208 15.927 2.308 4.212-1.516 7.828-5.308 7.577-9.743-.25-4.418-3.944-8.158-8.02-9.97-4.015-1.786-8.713-1.543-12.785-.068C14 32.41 8.315 40.547 10.992 48.822c2.68 8.275 12.49 14.607 21.66 12.234 4.223-1.092 8.56-4.08 8.876-8.52.35-4.902-3.66-8.895-8.41-10.203-9.777-2.69-19.336 4.31-21.423 13.225-2.078 8.875 5.134 17.536 13.882 20.112 4.005 1.18 9.16 1.445 12.698-1.087 4.502-3.223 1.064-8.445-2.16-11.16-7.48-6.3-22.26-8.297-27.79 1.364-5.072 8.86 6.388 16.947 13.93 19.792 3.786 1.427 8.92 2.65 12.772.775 4.126-2.008 3.626-6.896 1.337-10.037-5.212-7.15-17.96-5.482-22.176 1.703-4.825 8.224 1.31 18.583 11.122 19.276 4.643.328 9.373-1.22 12.64-4.367 1.235-1.193 2.912.538 1.886 1.776z' fill='#0000ff' />
-            <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(0,255,255,0.5)' onClick={(e) => handleThought(e.target)}></rect>
+            {/* <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(0,255,255,0.5)' onClick={(e) => handleThought(e.target)}></rect> */}
+            <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(0,255,255,0.5)' onMouseOver={(e) => handleThought(e.target)}></rect>
         </svg>
     );
 }
@@ -612,8 +614,8 @@ function addGuides(refContainer) {
 
 function disperseChildren(parentContainer) {
 
-    // console.log('');
-    // console.log('--------------------  disperseChildren(parentContainer)  --------------------');
+    console.log('');
+    console.log('--------------------  disperseChildren(parentContainer)  --------------------');
 
 
     //#region - - - - - - - - - - - SETUP - - - - - - - - - - -
@@ -671,6 +673,7 @@ function disperseChildren(parentContainer) {
             gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
             gsap.set([thisCurl.children[0]], { fill: 'rgba(255,255,0,0.5)' });
             // gsap.set([thisCurl.children[0].children[0]], { fill: 'rgba(255,255,0,0.5)' });
+            // gsap.set([thisCurl.children[0]], { autoAlpha: 1, fill: 'rgba(255,255,0,0.5)' });
 
         } else {
 
@@ -690,7 +693,11 @@ function disperseChildren(parentContainer) {
             gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
             gsap.set([thisCurl.children[0]], { fill: 'rgba(0,255,255,0.5)' });
             // gsap.set([thisCurl.children[0].children[0]], { fill: 'rgba(0,255,255,0.5)' });
+            // gsap.set([thisCurl.children[0]], { autoAlpha: 1, fill: 'rgba(0,255,255,0.5)' });
         }
+
+        // gsap.set([thisCurl, thisCurl.children[0]], { autoAlpha: 1 });
+
     }
 }
 
@@ -709,8 +716,8 @@ function handleThought(thisCurl) {
     console.log('thisCurl = ' + thisCurl);
     console.log('thisCurl.id = ' + thisCurl.id);
     console.log('thisCurl.parentElement.id = ' + thisCurl.parentElement.id);
-    console.log('thisCurl.parentElement.getAttribute(\'brain\') = ' + thisCurl.parentElement.getAttribute('brain'));
-    console.log('thisCurl.parentElement.getAttribute(\'thought\') = ' + thisCurl.parentElement.getAttribute('thought'));
+    // console.log('thisCurl.parentElement.getAttribute(\'brain\') = ' + thisCurl.parentElement.getAttribute('brain'));
+    // console.log('thisCurl.parentElement.getAttribute(\'thought\') = ' + thisCurl.parentElement.getAttribute('thought'));
 
 
     //#region -------------------- define objects --------------------
@@ -797,13 +804,11 @@ function handleThought(thisCurl) {
     if (thisBrain === 'right' && thoughtBubbleDims.x <= 0) {
 
         thisThoughtBubbleX = -outerEllipseDims.x * 0.75;
-
         gsap.set([thoughtBubble], { x: thisThoughtBubbleX });
 
     } else if (thisBrain === 'left' && (thoughtBubbleDims.x + thoughtBubbleDims.width) >= window.innerWidth) {
 
         thisThoughtBubbleX = outerEllipseDims.x + outerEllipseDims.width - thoughtBubbleDims.width - outerEllipseDims.x * 0.25;
-
         gsap.set([thoughtBubble], { x: thisThoughtBubbleX });
 
     }
@@ -818,10 +823,14 @@ function handleThought(thisCurl) {
     thoughtAnimTL
         .to([thisCurlPath], { motionPath: { path: boingPath, align: boingPath, alignOrigin: [0.5, 0.5], autoRotate: 90 }, duration: animDuration00_5, ease: 'power3.out' }, 'frame00')
 
-        .set([thisCurl.parentElement, thisCurlPath], { autoAlpha: 0 }, 'frame01 -=0.125')
+        .set([thisCurl.parentElement], { autoAlpha: 0 }, 'frame01 -=0.125')
+        // .set([thisCurl.parentElement, thisCurlPath], { autoAlpha: 0 }, 'frame01 -=0.125')
         // .set([thisCurl.parentElement], { x: window.innerWidth, y: window.innerHeight, autoAlpha: 0 }, 'frame01 -=0.125')
-        // .set([thisCurlPath], { autoAlpha: 0 }, 'frame01 -=0.125')
+        // .set([thisCurlPath], { motionPath: { path: boingPath, align: boingPath, alignOrigin: [0.5, 0.5], autoRotate: 90, start: 0 }}, 'frame01 -=0.125')
+        // .set([thisCurlPath], { transform: 'matrix(1, 0, 0, 1, 0, 0)', autoAlpha: 1 }, 'frame01 -=0.125')
         .fromTo([thoughtBubble], { scale: 0.875, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: animDuration00_5, ease: 'elastic.out(1, 0.75)' }, 'frame01 -=0.125')
+
+        .set([thisCurlPath], { transform: 'matrix(1, 0, 0, 1, 0, 0)' }, 'frame02')
     ;
 
     thoughtAnimTL.play();
@@ -834,17 +843,58 @@ function handleThought(thisCurl) {
 //#endregion -------------------- FUNCTION: handleThought(thisCurlPath) --------------------
 
 
-//#region -------------------- FUNCTION: closeThought(thisTrigger) --------------------
+//#region -------------------- FUNCTION: closeThought(thoughtBubble) --------------------
 
-function closeThought(thisTrigger) {
+function closeThought(thoughtBubble) {
 
-    console.log('');
-    console.log('--------------------  closeThought  --------------------');
+    // console.log('');
+    // console.log('--------------------  closeThought  --------------------');
 
-    gsap.to([thisTrigger], animDuration00_25, { autoAlpha: 0, ease: 'power1.out' });
+    // console.log('thoughtBubble = ' + thoughtBubble);
+    // console.log('thoughtBubble.id = ' + thoughtBubble.id);
+
+    gsap.to([thoughtBubble], animDuration00_25, { autoAlpha: 0, ease: 'power1.out' });
 }
 
 //#endregion -------------------- FUNCTION: handleThought(thisCurlPath) --------------------
+
+
+//#region -------------------- FUNCTION: resetThoughts(parentContainer, thoughtBubble) --------------------
+
+function resetThoughts(parentContainer, thoughtBubble) {
+
+    // console.log('');
+    // console.log('--------------------  resetThoughts  --------------------');
+
+    // console.log('resetThoughts(parentContainer) =>   parentContainer = ' + parentContainer);
+    // console.log('resetThoughts(parentContainer) =>   parentContainer.id = ' + parentContainer.id);
+    // console.log('resetThoughts(parentContainer) =>   thoughtBubble = ' + thoughtBubble);
+    // console.log('resetThoughts(parentContainer) =>   thoughtBubble.id = ' + thoughtBubble.id);
+
+    closeThought(thoughtBubble);
+
+
+    for (let p = 0; p < parentContainer.children.length; p++) {
+        // console.log('');
+        // console.log('resetThoughts(parentContainer) =>   p = ' + p);
+
+        let thisCurl = parentContainer.children[p];
+
+        // console.log('');
+        // console.log('disperseChildren(parentContainer) =>   thisCurl.id = ' + thisCurl.id);
+        // console.log('disperseChildren(parentContainer) =>   thisCurl.getAttribute(\'brain\') = ' + thisCurl.getAttribute('brain'));
+        // console.log('disperseChildren(parentContainer) =>   thisCurl.children[0].id = ' + thisCurl.children[0].id);
+
+        gsap.set([thisCurl], { autoAlpha: 1 });
+        // gsap.set([thisCurl.children[0]], { autoAlpha: 1 });
+    }
+
+    disperseChildren(parentContainer);
+
+    // gsap.to([thoughtBubble], animDuration00_25, { autoAlpha: 0, ease: 'power1.out' });
+}
+
+//#endregion -------------------- FUNCTION: resetThoughts(parentContainer, thoughtBubble) --------------------
 
 //#endregion ==================== FUNCTIONS ====================
 
@@ -870,6 +920,7 @@ export const About = () => {
 
     const haiku_Ref = useRef(null);
     // const completeThought_Ref = useRef(null);
+    const resetThoughts_Ref = useRef(null);
 
     //#endregion ==================== ASSETS _Ref ====================
 
@@ -936,6 +987,7 @@ export const About = () => {
                 <p className='plea'>(This isn't even haiku... Someone, *please* take her crayon away!)</p>
             </div>
 
+
         {/* #region ==================== SVG: AboutAfro ==================== */}
 
             <div className='afroContainer' id='afroContainerID' onClick={() => closeThought(thoughtBubble_Ref.current)} ref={afroContainer_Ref}>
@@ -996,7 +1048,29 @@ export const About = () => {
 
         {/* #endregion ==================== SVG: AboutAfro ==================== */}
 
+
             <div className='guideContainer' id='guideContainerID' onClick={() => closeThought(thoughtBubble_Ref.current)} ref={guideContainer_Ref}></div>
+
+
+        {/* #region ==================== RESET THOUGHTS ==================== */}
+
+            <div className='resetThoughtsDiv' id='resetThoughtsDivID' onClick={() => resetThoughts(curlContainer_Ref.current, thoughtBubble_Ref.current)} ref={resetThoughts_Ref}>
+
+                <svg className='resetThoughtsSvg' id='resetThoughtsSvgID' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 280' enableBackground='new 0 0 400 280'>
+                    <path className='resetThoughtsPath' id='resetThoughtsPathID' d='M135.83 277.5c-16.127 0-30.895-9.492-37.623-24.184l-.798-1.744-1.893.32c-2.897.49-5.853.738-8.784.738-28.848 0-52.317-23.49-52.317-52.362 0-2.02.12-4.077.357-6.118l.237-2.038-1.953-.63C14.78 185.59 2.5 168.708 2.5 149.476c0-19.473 12.477-36.418 31.047-42.165l2.31-.714-.638-2.333c-.876-3.198-1.32-6.494-1.32-9.794 0-20.406 16.586-37.006 36.973-37.006 2.43 0 4.873.242 7.264.718l2.672.533.3-2.708c2.997-26.96 25.725-47.293 52.868-47.293 17.95 0 34.572 8.973 44.462 24.003l.995 1.512 1.747-.474c3.335-.902 6.77-1.36 10.21-1.36.603 0 1.202.02 1.798.047l1.72.077.685-1.578C203.103 13.664 220.112 2.5 238.93 2.5c25.207 0 45.93 19.72 47.178 44.896l.14 2.807 2.77-.465c2.57-.43 5.19-.65 7.79-.65 12.06 0 23.512 4.583 32.242 12.903l1.26 1.2 1.562-.763c5.976-2.92 12.4-4.4 19.097-4.4 24.036 0 43.59 19.572 43.59 43.63 0 8.104-2.236 16.017-6.47 22.88l-.76 1.23.69 1.27c2.564 4.75 3.92 10.13 3.92 15.56 0 9.508-4.128 18.537-11.325 24.773l-2.273 1.97 2.353 1.875c10.68 8.512 16.807 21.22 16.807 34.865 0 24.562-19.966 44.545-44.507 44.545-6.286 0-12.365-1.287-18.067-3.825l-1.93-.86-1.17 1.762c-6.574 9.907-17.58 15.82-29.438 15.82-16.456 0-30.96-11.662-34.485-27.73l-.82-3.743-3.096 2.258c-6.288 4.59-13.73 7.014-21.52 7.014-6.186 0-12.303-1.58-17.69-4.565l-1.69-.936-1.33 1.397c-7.814 8.182-18.333 12.688-29.62 12.688-4.728 0-9.373-.805-13.806-2.393l-2.414-.864-.803 2.435c-5.61 16.996-21.398 28.417-39.287 28.417z' fill='#ffff00' stroke='#ff0000' strokeWidth='5' strokeLinecap='butt' strokeMiterlimit='5' />
+                    {/* <text className='resetThoughtsText' id='resetThoughtsTextID' x='50%' y='50%' textAnchor='middle' stroke='#000000' dy='0.35em'>reset my thoughts...</text> */}
+                    <text className='resetThoughtsText' id='resetThoughtsTextID' x='50%' y='50%' textAnchor='middle' stroke='#000000' dy='0.35em'>
+                        <tspan dx='12.5%' dy='-7.5%'>reset</tspan>
+                        <tspan dx='-50%' dy='17.5%'>my thoughts...</tspan>
+                    </text>
+                </svg>
+
+                {/* <div className='thoughtBubbleText' id='thoughtBubbleTextID'>Blahbitty, blahbitty, blah...!</div> */}
+
+            </div>
+
+        {/* #endregion ==================== RESET THOUGHTS ==================== */}
+
 
         {/* #region ==================== THOUGHTS ==================== */}
 
@@ -1008,7 +1082,7 @@ export const About = () => {
                 <MyThoughts />
             </div>
 
-            <div className='thoughtBubbleDiv' id='thoughtBubbleDivID' ref={thoughtBubble_Ref}>
+            <div className='thoughtBubbleDiv' id='thoughtBubbleDivID' onClick={() => closeThought(thoughtBubble_Ref.current)} ref={thoughtBubble_Ref}>
 
                 <svg className='thoughtBubbleSvg' id='thoughtBubbleSvgID' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 280' enableBackground='new 0 0 400 280'>
                     <path className='thoughtBubblePath' id='thoughtBubblePathID' d='M135.83 277.5c-16.127 0-30.895-9.492-37.623-24.184l-.798-1.744-1.893.32c-2.897.49-5.853.738-8.784.738-28.848 0-52.317-23.49-52.317-52.362 0-2.02.12-4.077.357-6.118l.237-2.038-1.953-.63C14.78 185.59 2.5 168.708 2.5 149.476c0-19.473 12.477-36.418 31.047-42.165l2.31-.714-.638-2.333c-.876-3.198-1.32-6.494-1.32-9.794 0-20.406 16.586-37.006 36.973-37.006 2.43 0 4.873.242 7.264.718l2.672.533.3-2.708c2.997-26.96 25.725-47.293 52.868-47.293 17.95 0 34.572 8.973 44.462 24.003l.995 1.512 1.747-.474c3.335-.902 6.77-1.36 10.21-1.36.603 0 1.202.02 1.798.047l1.72.077.685-1.578C203.103 13.664 220.112 2.5 238.93 2.5c25.207 0 45.93 19.72 47.178 44.896l.14 2.807 2.77-.465c2.57-.43 5.19-.65 7.79-.65 12.06 0 23.512 4.583 32.242 12.903l1.26 1.2 1.562-.763c5.976-2.92 12.4-4.4 19.097-4.4 24.036 0 43.59 19.572 43.59 43.63 0 8.104-2.236 16.017-6.47 22.88l-.76 1.23.69 1.27c2.564 4.75 3.92 10.13 3.92 15.56 0 9.508-4.128 18.537-11.325 24.773l-2.273 1.97 2.353 1.875c10.68 8.512 16.807 21.22 16.807 34.865 0 24.562-19.966 44.545-44.507 44.545-6.286 0-12.365-1.287-18.067-3.825l-1.93-.86-1.17 1.762c-6.574 9.907-17.58 15.82-29.438 15.82-16.456 0-30.96-11.662-34.485-27.73l-.82-3.743-3.096 2.258c-6.288 4.59-13.73 7.014-21.52 7.014-6.186 0-12.303-1.58-17.69-4.565l-1.69-.936-1.33 1.397c-7.814 8.182-18.333 12.688-29.62 12.688-4.728 0-9.373-.805-13.806-2.393l-2.414-.864-.803 2.435c-5.61 16.996-21.398 28.417-39.287 28.417z' fill='#ffff00' stroke='#ff0000' strokeWidth='5' strokeLinecap='butt' strokeMiterlimit='5' />
