@@ -40,6 +40,15 @@ $workkNav-height: 60px;
     mix-blend-mode: multiply;
 }
 
+@mixin navbgGradient04() { 
+    background: rgb(230,230,230);
+    background: -moz-linear-gradient(90deg, rgba(210,210,210,1) 0%, rgba(210,210,210,0) 40%, rgba(210,210,210,0) 60%, rgba(210,210,210,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(210,210,210,1) 0%, rgba(210,210,210,0) 40%, rgba(210,210,210,0) 60%, rgba(210,210,210,1) 100%);
+    background: linear-gradient(90deg, rgba(210,210,210,1) 0%, rgba(210,210,210,0) 40%, rgba(210,210,210,0) 60%, rgba(210,210,210,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e6e6e6",endColorstr="#e6e6e6",GradientType=1);
+    mix-blend-mode: multiply;
+}
+
 
 // REF: https://til.hashrocket.com/posts/sxbrscjuqu-share-scss-variables-with-javascript
 // REF: https://medium.com/clover-platform-blog/modular-scss-and-why-you-need-it-6bb2d8c40fd8
@@ -102,7 +111,7 @@ img {
 /* #region ========================= WRAPPER ========================= */
 
 .wrapper {
-    // border: 2px solid #00ff00;
+    // border: 2px solid #ff0000;
 
     width: 100vw;
     // height: 100vh;
@@ -118,7 +127,7 @@ img {
 /* #region ========================= FULL PAGE ========================= */
 
 .fullPage {
-    // border: 2px solid #ff0000;
+    // border: 2px solid #00ff00;
 
     width: 100vw;
     // height: 100vh;
@@ -137,7 +146,7 @@ img {
 /* #region ========================= BODY CONATAINER ========================= */
 
 .bodyContainer {
-    // border: 2px solid #ff0000;
+    // border: 2px solid #0000ff;
 
     // width: 50%;
     // min-width: 820px;

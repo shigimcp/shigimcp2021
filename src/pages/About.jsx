@@ -14,6 +14,7 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 // import * as PIXI from 'pixi.js';
 
 import '../stylesheets/About.scss';
+// import scssVars from '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: ASSETS --------------------

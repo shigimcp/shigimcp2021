@@ -1,18 +1,147 @@
-/* #region ==================== VARIABLES ==================== */
+@import './Global.scss';
 
-$body-width: 50vw;
-$body-min-width: 820px;
-// $body-max-width: 1200px;
-$body-max-width: 960px;
 
-// $workkNav-height: 80px;
-$workkNav-height: 100px;
-
-/* #endregion ==================== VARIABLES ==================== */
-
+/* #region ========================= BASE ========================= */
 
 .contactImgHolder {
     // border: 2px solid #00ffff;
 
     width: 100%;
 }
+
+
+// .contactContainer {
+//     border: 2px solid #ff0000;
+//     background-image: url('https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg');
+
+//     width: 100vw;
+
+    .formContainer {
+        // border: 2px solid #ff0000;
+        // background-color: #000000;
+
+        // background-image: url('https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/SquirrelBit_3D.jpg');
+        // background-image: url('https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg');
+        // background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.7) 100%), url('https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg');
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%,rgba(255, 255, 255, 0.7) 100%), url('https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        width: 100vw;
+        height: 100vh;
+
+        margin: 0 auto;
+        padding: 0;
+
+        .contactForm {
+            // border: 2px solid #00ff00;
+
+            // color: #ffffff;
+
+            width: 20vw;
+            min-width: 300px;
+
+            margin: 0 auto;
+            padding: 17.5vh 0 0 0;
+
+            .form-group {
+                // border: 2px solid #0000ff;
+
+                padding: 0 0 2.5% 0;
+
+                .form-control {
+                    // border: 2px solid #ff00ff;
+
+                    width: 100%;
+                    min-height: 2em;
+                }
+            }
+        }
+    }
+
+    // .formContainer::before {
+    //     content: "";
+
+    //     background-image: url('https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/kawaii08_06_POSE_SingleLadies02.jpg');
+    //     // background-image: url('https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/hilites/pet_projects/SquirrelBit_3D.jpg');
+    //     background-position: center;
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+
+    //     opacity: 0.75;
+
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    // }
+
+
+// }
+
+/* #endregion ========================= BASE ========================= */
+
+
+
+/* #region ========================= MOBILE: 375px ========================= */
+
+@media  
+    only screen and (min-device-width: 375px) 
+    // only screen and (min-device-width: 375px), 
+    // only screen and (max-device-width: 767px) 
+    { 
+        /* #region -------------------- contactContainer -------------------- */
+
+        /* #endregion -------------------- contactContainer -------------------- */
+    }
+
+/* #endregion ========================= MOBILE: 375px ========================= */
+
+
+
+/* #region ========================= TABLETS: 768px ========================= */
+
+@media  
+    only screen and (min-device-width: 768px) 
+    // only screen and (min-device-width: 768px), 
+    // only screen and (max-device-width: 991px) 
+    { 
+        /* #region -------------------- contactContainer -------------------- */
+
+        /* #endregion -------------------- contactContainer -------------------- */
+    }
+
+/* #endregion ========================= TABLETS: 813px - 1200px ========================= */
+
+
+
+/* #region ========================= LAPTOPS: 992px+ ========================= */
+
+@media  
+    only screen and (min-device-width: 992px) 
+    // only screen and (min-device-width: 992px), 
+    // only screen and (min-device-width: 1440px) 
+    { 
+        /* #region -------------------- contactContainer -------------------- */
+
+        /* #endregion -------------------- contactContainer -------------------- */
+    }
+
+/* #endregion ========================= LAPTOPS: 1201px+ ========================= */
+
+
+
+/* #region ========================= DESKTOPS: 1441px+ ========================= */
+
+@media  
+    only screen and (min-device-width: 1441px) 
+    { 
+        /* #region -------------------- contactContainer -------------------- */
+
+        /* #endregion -------------------- contactContainer -------------------- */
+    }
+
+/* #endregion ========================= DESKTOPS: 1201px+ ========================= */
+

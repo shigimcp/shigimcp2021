@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import '../stylesheets/FullPage.scss';
+import '../stylesheets/FullPage.scss';
 
 
 export const FullPage = ({title, children}) => {

@@ -3,12 +3,11 @@
 import React from 'react';
 import { useRoutes } from 'hookrouter';
 
-import '../stylesheets/Work.scss';
-// import scssVars from '../stylesheets/Global.scss';
-
-
 import { FullPage } from '../components/FullPage';
 // import { BodyContainer } from '../components/BodyContainer';
+
+import '../stylesheets/Work.scss';
+// import scssVars from '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: WORK PAGES --------------------
@@ -39,6 +38,7 @@ import { NotFound } from './NotFound';
 
 // console.log('');
 // console.log('=========================  Work.jsx  =========================');
+
 
 //#region ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
 

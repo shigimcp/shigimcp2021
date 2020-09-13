@@ -12,10 +12,12 @@
     // height: 100%;
     height: auto;
 
-    margin: 120px auto 0 auto;
+    // margin: 0 auto;
+    // margin: 120px auto 0 auto;
     // margin: 11.25vh auto 0 auto;
 
     position: absolute;
+    // top: 0;
     // top: 1.25vh;
     // left: 10vw;
     // left: 0;
@@ -289,8 +291,11 @@
         .aboutContainer {
             // border: 1px solid #ff00ff;
 
-            width: 90vw;
-            left: 5vw;
+            width: 95vw;
+
+            margin: 80px auto 0 auto;
+
+            left: 2.5vw;
 
             .haiku {
                 // border: 2px solid #ff00ff;
@@ -300,7 +305,8 @@
                 // line-height: 0.5em;
 
                 // padding: 0 0 10px 0;
-                padding: 0 0 5vh 0;
+                // padding: 0 0 5vh 0;
+                padding: 0 0 5vh 5vw;
 
                 h1 {
                     font-size: 1.5em;
@@ -399,6 +405,9 @@
             // left: 0;
 
             width: 90vw;
+
+            margin: 120px auto 0 auto;
+
             left: 5vw;
 
             .haiku {
@@ -504,6 +513,9 @@
             // border: 1px solid #ff00ff;
 
             width: 80vw;
+
+            margin: 120px auto 0 auto;
+
             left: 10vw;
 
             .haiku {
@@ -606,6 +618,9 @@
             // border: 1px solid #ff00ff;
 
             width: 80vw;
+
+            margin: 120px auto 0 auto;
+
             left: 10vw;
 
             .haiku {

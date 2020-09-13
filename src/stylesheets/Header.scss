@@ -3,12 +3,17 @@
 
 /* #region ========================= BASE ========================= */
 
+.header * {
+    margin: 0;
+    padding: 0;
+}
+
 .header {
-    // border: 02px solid #FF0000;
+    // border: 02px solid #ff0000;
 
     background: #000000;
 
-    color: #FFFFFF;
+    color: #ffffff;
     line-height: 55px;
     text-align: left;
 
@@ -20,6 +25,8 @@
 
     position: fixed;
     z-index: 999;
+
+    /* #region -------------------- hed -------------------- */
 
     .hed {
         // border: 02px solid #0000ff;
@@ -48,15 +55,20 @@
             // margin: 0;
             // padding: inherit;
 
-            position: inherit;
-            top: 10px;
-            // left: 125px;
-            left: 50px;
+            // position: inherit;
+            // top: 10px;
+            // left: 50px;
 
-            display: table-cell;
+            position: absolute;
+            bottom: -17.5%;
+            left: 35px;
+
+            // display: table-cell;
         }
 
         .hed02 {
+            // border: 02px solid #00ffff;
+
             font-size: 20px;
 
             width: auto;
@@ -65,23 +77,30 @@
             // margin: 0;
             // padding: inherit;
 
-            position: inherit;
-            top: 9.5px;
-            // left: 142.5px;
-            left: 60px;
+            // position: inherit;
+            // top: 9.5px;
+            // left: 60px;
+
+            position: absolute;
+            bottom: -22.5%;
+            left: 310px;
 
             display: table-cell;
         }
 
         .contact {
+            // border: 02px solid #ffff00;
 
             font-size: 18px;
-            letter-spacing: .025em;
+            letter-spacing: .05em;
 
-            position: inherit;
-            top: 9.5px;
+            position: absolute;
+            // top: 9.5px;
             // left: 159px;
-            left: 140px;
+            // left: 140px;
+            bottom: -17.5%;
+            right: 0;
+            // right: -80px;
 
             // margin: 0;
             // padding: inherit;
@@ -89,10 +108,83 @@
             display: table-cell;
 
             a, a:visited {
-                color: #FFFFFF;
+                color: #ffffff;
+            }
+        }
+
+        .logoIcon {
+            // border: 02px solid #ff0000;
+
+            // width: 150px;
+            height: 125px;
+
+            // margin: 0;
+            // padding: 0;
+
+            // position: relative;
+            // top: -56px;
+            // left: -100px;
+            // z-index: 99;
+
+            position: absolute;
+            top: 7.5px;
+            left: -120px;
+            z-index: 99;
+
+            display: block;
+            overflow: visible;
+
+            // cursor: pointer;
+
+            // -------------------- logoIcon / afro --------------------
+
+            #shigeru_logo_afro_k {
+                // fill: #00ff00;
+
+                clip-path: url(#shigeru_logo_afro_k_mask);
+                -webkit-clip-path: url(#shigeru_logo_afro_k_mask);
+            }
+
+            #shigeru_logo_afro_w {
+                // fill: #0000ff;
+                fill: #ffffff;
+
+                clip-path: url(#shigeru_logo_afro_w_mask);
+                -webkit-clip-path: url(#shigeru_logo_afro_w_mask);
+            }
+
+            // -------------------- logoIcon / glasses --------------------
+
+            #shigeru_logo_glasses_k {
+                // fill: #00ff00
+
+                clip-path: url(#shigeru_logo_glasses_k_mask);
+                -webkit-clip-path: url(#shigeru_logo_glasses_k_mask);
+            }
+
+            #shigeru_logo_glasses_w {
+                // fill: #0000ff;
+                fill: #ffffff;
+
+                clip-path: url(#shigeru_logo_glasses_w_mask);
+                -webkit-clip-path: url(#shigeru_logo_glasses_w_mask);
+            }
+
+            // -------------------- logoIcon / kanji --------------------
+
+            #shigeru_logo_kanji_w {
+                // fill: #ff00ff;
+                fill: #ffffff;
+
+                // clip-path: url(#header_mask);
+                clip-path: url(#shigeru_logo_kanji_w_mask);
+                -webkit-clip-path: url(#shigeru_logo_kanji_w_mask);
             }
         }
     }
+
+    /* #endregion -------------------- hed -------------------- */
+
 
     /* #region -------------------- navBarContainer -------------------- */
 
@@ -114,119 +206,8 @@
         margin: 0 auto;
         // padding: 0;
 
+        // position: absolute;
         // display: table;
-
-        .navBar {
-            // border: 2px solid #0000ff;
-            // border-top: 1px solid #cccccc;
-            // border-bottom: 1px solid #cccccc;
-
-            // background: #ffffff;
-            // background: none;
-            // @include navbgGradient02();
-
-            // color: #FFFFFF;
-            color: #000000;
-            font-size: 1.25em;
-            text-align: center;
-
-            // width: 70%;
-            width: 50%;
-            height: $navBar-height;
-
-            margin: 0 auto;
-            // padding: 0;
-
-            display: grid;
-            // grid-template-columns: repeat(6, 16.666666666666667%);
-            // grid-template-columns: repeat(6, auto);
-            grid-template-columns: repeat(5, auto);
-            column-gap: 0;
-            align-items: center;
-
-            // A {
-            .navItem {
-                // border: 2px inset #ffff00;
-                // border-right: 1px solid #cccccc;
-
-                // background: none;
-
-                color: inherit;
-                text-decoration: none;
-
-                height: inherit;
-
-                // margin: 0;
-                // padding: 0;
-
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                /* #region - - - - - - - - - - - A: link behavior - - - - - - - - - - - */
-
-                // :link {
-                //     color: #00ff00;
-                // }
-
-                // :visited {
-                //     color: #ff00ff;
-                // }
-
-                // :hover {
-                //     color: #ff0000;
-                // }
-
-                // :active {
-                //     background: #eeeeee;
-                //     color: #00ff00;
-                // }
-
-                /* #endregion - - - - - - - - - - - A: link behavior - - - - - - - - - - - */
-            }
-
-            // ----- Ferda A separators... doesn't work here -----
-
-            // // A:before {
-            // .navItem:before {
-            // // .navItem:after {
-            //     border: 2px inset #ff0000;
-            //     // border-left: 0.5px solid #cccccc;
-            //     // border-right: 0.5px solid #cccccc;
-
-            //     content: "";
-            //     width: 100%;
-            //     height: 40%;
-
-            //     position: absolute;
-            //     left: 0;
-            //     right: 0;
-            //     // top: 30%;
-            //     top: $header-height + $navBar-height/3;
-            //     bottom: 0;
-            // }
-        }
-
-        .activeNavDiv {
-            // border: 2px inset #00ffff;
-
-            // @include navbgGradient01();
-            // @include navbgGradient02();
-            @include navbgGradient03();
-            // mix-blend-mode: multiply;
-
-            color: #ff0000;
-            text-align: center;
-
-            // width: auto;
-            height: $navBar-height;
-
-            position: absolute;
-            // top: $header-height;
-            left: 0;
-            // left: 50vw;
-            // z-index: -1;
-        }
 
 
         /* #region -------------------- workNav -------------------- */
@@ -301,7 +282,7 @@
                 }
             }
 
-            // ----- Ferda employerIcon separators... -----
+            /* #region - - - - - - - - - - - Ferda A separators... - - - - - - - - - - - */
 
             .employerIcon:before {
                 border-left: 0.5px solid #cccccc;
@@ -317,311 +298,141 @@
                 top: 30%;
                 bottom: 0;
             }
+
+            /* #endregion - - - - - - - - - - - Ferda A separators... - - - - - - - - - - - */
         }
 
         /* #endregion -------------------- workNav -------------------- */
 
 
-        /* #region -------------------- navBurger -------------------- */
+        /* #region -------------------- navBar -------------------- */
 
-        .navBurger {
-            // border: 1px solid #ff0000;
-            background: rgba(0,0,0,0.5);
+        .navBar {
+            // border: 2px solid #0000ff;
+            // border-top: 1px solid #cccccc;
+            // border-bottom: 1px solid #cccccc;
 
-            width: 180px;
+            // background: #ffffff;
+            // background: none;
+            @include navbgGradient01();
+            // @include navbgGradient02();
+
+            // color: #ffffff;
+            color: #000000;
+            font-size: 1.125em;
+            text-align: center;
+
+            // width: 70%;
+            width: 50%;
             height: $navBar-height;
 
-            // margin: 0;
-            margin: $header-height 0 0 0;
+            margin: 0 auto;
             // padding: 0;
 
-            position: absolute;
-            top: 0;
-            right: 0;
+            display: grid;
+            // grid-template-columns: repeat(6, 16.666666666666667%);
+            // grid-template-columns: repeat(6, auto);
+            grid-template-columns: repeat(5, auto);
+            column-gap: 0;
+            align-items: center;
 
-            display: none;
+            // position: absolute;
+            // top: $header-height;
 
-            .navDrawer {
-                // border: 1px solid #00ff00;
-                // background: rgba(0,0,0,0.5);
+            // A {
+            .navItem {
+                // border: 2px inset #ffff00;
+                // border-right: 1px solid #cccccc;
 
-                width: inherit;
+                // background: none;
+
+                color: inherit;
+                text-decoration: none;
+
+                height: inherit;
 
                 // margin: 0;
-                margin: $navBar-height 0 0 0;
-                // padding: inherit;
+                // padding: 0;
 
-                position: inherit;
-                right: inherit;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-                img {
-                    // border: 1px solid #0000ff;
-                    // background: rgba(255,255,255,0.5);
-                    background: rgba(255,0,0,0.25);
+                /* #region - - - - - - - - - - - A: link behavior - - - - - - - - - - - */
 
-                    width: 30%;
+                // :link {
+                //     color: #00ff00;
+                // }
 
-                    // margin: 0;
-                    padding: 10px;
-                }
+                // :visited {
+                //     color: #ff00ff;
+                // }
+
+                // :hover {
+                //     color: #ff0000;
+                // }
+
+                // :active {
+                //     background: #eeeeee;
+                //     color: #00ff00;
+                // }
+
+                /* #endregion - - - - - - - - - - - A: link behavior - - - - - - - - - - - */
             }
 
+            .activeNavDiv {
+                // border: 2px inset #00ffff;
+
+                // @include navbgGradient01();
+                // @include navbgGradient02();
+                @include navbgGradient03();
+                // mix-blend-mode: multiply;
+
+                color: #ff0000;
+                text-align: center;
+
+                // width: auto;
+                // height: $navBar-height;
+                height: inherit;
+
+                position: absolute;
+                // top: $header-height;
+                left: 0;
+                // left: 50vw;
+                // z-index: -1;
+            }
+
+            /* #region - - - - - - - - - - - Ferda A separators... doesn't work here - - - - - - - - - - - */
+
+            // // A:before {
+            // .navItem:before {
+            // // .navItem:after {
+            //     border: 2px inset #ff0000;
+            //     // border-left: 0.5px solid #cccccc;
+            //     // border-right: 0.5px solid #cccccc;
+
+            //     content: "";
+            //     width: 100%;
+            //     height: 40%;
+
+            //     position: absolute;
+            //     left: 0;
+            //     right: 0;
+            //     // top: 30%;
+            //     top: $header-height + $navBar-height/3;
+            //     bottom: 0;
+            // }
+
+            /* #endregion - - - - - - - - - - - Ferda A separators... doesn't work here - - - - - - - - - - - */
         }
 
-        /* #endregion -------------------- navBurger -------------------- */
-
+        /* #endregion -------------------- navBar -------------------- */
     }
 
     /* #endregion -------------------- navBarContainer -------------------- */
-
-
-    /* #region - - - - - - - - - - - HEADER: LOGO - - - - - - - - - - - */
-
-    // #logoIconID {
-    .logoIcon {
-        // border: 02px solid #FF0000;
-
-        // width: 150px;
-        height: 125px;
-
-        // margin: 0;
-        // padding: 0;
-
-        position: relative;
-        top: -56px;
-        left: -100px;
-        z-index: 99;
-
-        display: block;
-        overflow: visible;
-
-        // cursor: pointer;
-    }
-
-    // -------------------- HEADER: LOGO / afro --------------------
-
-    #shigeru_logo_afro_k {
-        // fill: #00FF00;
-
-        clip-path: url(#shigeru_logo_afro_k_mask);
-    }
-
-    #shigeru_logo_afro_w {
-        // fill: #0000FF;
-        fill: #FFFFFF;
-
-        clip-path: url(#shigeru_logo_afro_w_mask);
-    }
-
-    // -------------------- HEADER: LOGO / glasses --------------------
-
-    #shigeru_logo_glasses_k {
-        // fill: #00FF00
-
-        clip-path: url(#shigeru_logo_glasses_k_mask);
-    }
-
-    #shigeru_logo_glasses_w {
-        // fill: #0000FF;
-        fill: #FFFFFF;
-
-        clip-path: url(#shigeru_logo_glasses_w_mask);
-    }
-
-    // -------------------- HEADER: LOGO / kanji --------------------
-
-    #shigeru_logo_kanji_w {
-        // fill: #FF00FF;
-        fill: #FFFFFF;
-        clip-path: url(#shigeru_logo_kanji_w_mask);
-        // clip-path: url(#header_mask);
-    }
-
-    /* #endregion - - - - - - - - - - - HEADER: LOGO - - - - - - - - - - - */
-
-
-    /* #region - - - - - - - - - - - HEADER: LOGO (reserves) - - - - - - - - - - - */
-
-    // #logo {
-    //     // border: 02px solid #FF0000
-
-    //     margin: 0 auto;
-    //     padding: 0;
-
-    //     position: relative;
-    //     display: block;
-    //     z-index: 11;
-
-    //     overflow: visible;
-    //     box-shadow : 0px -0px 10000px transparent; /*trick for chrome*/
-
-    //     cursor: pointer;
-    // }
-
-    // #logo path, #logoIconID path {
-    //     fill: #FF0000;
-    // }
-
-
-    // -------------------- LOGO / afro --------------------
-
-    // #shigeru_logo_afro {
-    //     fill: #FF0000;
-
-    //     visibility: hidden
-    //     opacity: 0
-    // }
-
-
-    // -------------------- LOGO / glasses --------------------
-
-    // #shigeru_logo_glasses {
-    //     fill: #FF0000
-    // }
-
-
-    // -------------------- LOGO / kanji --------------------
-
-    // #shigeru_logo_kanji {
-    //     fill: #FFFFFF;
-    //     fill: #0000FF;
-    // }
-
-    // #shigeru_logo_kanji_k {
-    //     fill: #0000FF;
-    // }
-
-
-    // -------------------- LOGO / masks --------------------
-
-    // #shigeru_logo_afro_w_mask, #shigeru_logo_glasses_w_mask, #shigeru_logo_kanji_w_mask {
-    //     position: relative;
-    //     position: fixed;
-    //     display: block;
-    // }
-
-    /* #endregion - - - - - - - - - - - HEADER: LOGO (reserves) - - - - - - - - - - - */
-
 }
 
 /* #endregion ========================= BASE ========================= */
-
-
-
-/* #region ========================= MOBILE: 375px ========================= */
-
-@media  
-    only screen and (min-device-width: 375px) 
-    // only screen and (min-device-width: 375px), 
-    // only screen and (max-device-width: 767px) 
-    { 
-        /* #region -------------------- HEADER -------------------- */
-
-        // .header_lg, .header_md {
-        //     /* visibility: hidden; */
-        //     display: none;
-        // }
-
-        /* #endregion -------------------- HEADER -------------------- */
-
-
-        /* #region -------------------- WORKNAV -------------------- */
-
-        /* #endregion -------------------- WORKNAV -------------------- */
-
-    }
-
-/* #endregion ========================= MOBILE: 375px ========================= */
-
-
-
-/* #region ========================= TABLETS: 768px ========================= */
-
-@media  
-    only screen and (min-device-width: 768px) 
-    // only screen and (min-device-width: 768px), 
-    // only screen and (max-device-width: 991px) 
-    { 
-
-        // /* #region -------------------- HEADER -------------------- */
-
-        // .header_lg, .header_sm {
-        //     /* visibility: hidden; */
-        //     display: none;
-        // }
-
-        .contact {
-            left: 110px !important;
-            // display: none !important;
-        }
-
-        /* #region - - - - - - - - - - - HEADER: LOGO - - - - - - - - - - - */
-
-        .hed {
-            left: -20px !important;
-        }
-
-        /* #endregion - - - - - - - - - - - HEADER: LOGO - - - - - - - - - - - */
-
-        // /* #endregion -------------------- HEADER -------------------- */
-
-
-        // /* #region -------------------- WORKNAV -------------------- */
-
-        // .workNav {
-        //     display: none;
-        // }
-
-        // /* #endregion -------------------- WORKNAV -------------------- */
-
-    }
-
-/* #endregion ========================= TABLETS: 768px ========================= */
-
-
-
-/* #region ========================= LAPTOPS: 992px+ ========================= */
-
-@media  
-    only screen and (min-device-width: 992px) 
-    // only screen and (min-device-width: 992px), 
-    // only screen and (min-device-width: 1440px) 
-    { 
-
-        // /* #region -------------------- HEADER -------------------- */
-
-        // .header_lg, .header_sm {
-        //     /* visibility: hidden; */
-        //     display: none;
-        // }
-
-        .contact {
-            left: 110px !important;
-            // display: none !important;
-        }
-
-        /* #region - - - - - - - - - - - HEADER: LOGO - - - - - - - - - - - */
-
-        .hed {
-            left: -20px !important;
-        }
-
-        /* #endregion - - - - - - - - - - - HEADER: LOGO - - - - - - - - - - - */
-
-        // /* #endregion -------------------- HEADER -------------------- */
-
-
-        // /* #region -------------------- WORKNAV -------------------- */
-
-        // .workNav {
-        //     display: none;
-        // }
-
-        // /* #endregion -------------------- WORKNAV -------------------- */
-
-    }
-
-/* #endregion ========================= LAPTOPS: 992px+ ========================= */
 
 
 
@@ -630,21 +441,233 @@
 @media  
     only screen and (min-device-width: 1441px) 
     { 
-
-        /* #region -------------------- HEADER -------------------- */
-
-        // .header_md, .header_sm {
-        //     /* visibility: hidden; */
-        //     display: none;
-        // }
-
-        /* #endregion -------------------- HEADER -------------------- */
-
-
-        /* #region -------------------- WORKNAV -------------------- */
-
-        /* #endregion -------------------- WORKNAV -------------------- */
-
+        .navBurger {
+            display: none;
+        }
     }
 
 /* #endregion ========================= DESKTOPS: 1441px+ ========================= */
+
+
+
+/* #region ========================= LAPTOPS: 992px+ ========================= */
+
+@media  
+    // only screen and (min-device-width: 992px) 
+    // only screen and (min-device-width: 992px), 
+    only screen and (max-device-width: 1440px) 
+    { 
+        .header {
+            // border: 02px solid #ff0000;
+
+            /* #region -------------------- hed -------------------- */
+
+            .hed {
+                // border: 02px solid #0000ff;
+
+                // left: -20px !important;
+
+                .contact {
+                    // border: 02px solid #ffff00;
+
+                    right: -7.5vw !important;
+                }
+            }
+
+            /* #endregion -------------------- hed -------------------- */
+
+            .navBurger {
+                display: none;
+            }
+        }
+    }
+
+/* #endregion ========================= LAPTOPS: 992px+ ========================= */
+
+
+
+/* #region ========================= TABLETS: 768px ========================= */
+
+@media  
+    // only screen and (min-device-width: 768px) 
+    // only screen and (min-device-width: 768px), 
+    only screen and (max-device-width: 991px) 
+    { 
+        .header {
+            // border: 02px solid #ff0000;
+
+            /* #region -------------------- hed -------------------- */
+
+            .hed {
+                // border: 02px solid #0000ff;
+
+                // left: -20px !important;
+
+                .contact {
+                    // border: 02px solid #ffff00;
+
+                    right: -7.5vw !important;
+                }
+            }
+
+            /* #endregion -------------------- hed -------------------- */
+
+            .navBurger {
+                display: none;
+            }
+        }
+    }
+
+/* #endregion ========================= TABLETS: 768px ========================= */
+
+
+
+/* #region ========================= MOBILE: 375px ========================= */
+
+@media  
+    // only screen and (min-device-width: 375px) 
+    // only screen and (min-device-width: 375px), 
+    only screen and (max-device-width: 767px) 
+    { 
+        .header {
+            // border: 02px solid #ff0000;
+
+            height: 50px;
+
+            /* #region -------------------- hed -------------------- */
+
+            .hed {
+                // border: 02px solid #0000ff;
+
+                // left: 0 !important;
+
+                .hed02, .contact {
+                // .hed01, .hed02, .contact {
+                    display: none;
+                }
+
+                .hed01 {
+                    font-size: 1.625em;
+                    bottom: -5%;
+                    left: 26.25vw;
+                }
+
+                .logoIcon {
+                    height: 100px;
+
+                    top: 7.5px;
+                    left: -15px;
+                }
+            }
+
+            /* #endregion -------------------- hed -------------------- */
+
+
+            /* #region -------------------- NAV -------------------- */
+
+            .navBarContainer {
+                // border: 1px solid #ff0000;
+                border: none;
+                background: none;
+
+                font-size: 0.75em;
+
+                width: 100vw;
+                min-width: 100vw;
+                max-width: 100vw;
+
+                height: 6.25vh;
+
+                // margin: -50px 0 0 0;
+                // top: 0;
+
+                // display: none;
+
+                .navBar {
+                    // border: 1px solid #00ff00;
+                    background: none;
+
+                    font-size: 1.75em;
+
+                    // width: 80%;
+                    width: 100%;
+                    height: inherit;
+
+                    // top: inherit;
+                    // top: 0;
+                    // right: 0;
+
+                    grid-template-columns: repeat(1, auto);
+
+                    .navItem {
+                        // border: 1px solid #0000ff;
+                        border-bottom: 1px solid #cccccc;
+
+                        @include navbgGradient01();
+
+                        // width: 20%;
+
+                        // margin: 0;
+                        // padding: 0;
+                    }
+
+                    .activeNavDiv {
+                        // border: 1px solid #ff00ff;
+                        @include navbgGradient04();
+
+                        // width: inherit !important;
+                    }
+                }
+            }
+
+            .navBurger {
+                // border: 1px solid #00ff00;
+                // background: rgba(0,0,0,0.5);
+
+                width: 50px;
+                // height: $navBar-height;
+                height: 95%;
+
+                // margin: 0;
+                // margin: $header-height 0 0 0;
+                // padding: 0;
+
+                position: absolute;
+                top: 5%;
+                right: 0;
+                z-index: 9999;
+
+                display: table-cell;
+                // display: none;
+
+                .navDrawer {
+                    // border: 1px solid #00ff00;
+                    // background: rgba(0,0,0,0.5);
+
+                    width: inherit;
+
+                    // margin: 0;
+                    margin: $navBar-height 0 0 0;
+                    // padding: inherit;
+
+                    position: inherit;
+                    right: inherit;
+
+                    img {
+                        // border: 1px solid #0000ff;
+                        // background: rgba(255,255,255,0.5);
+                        background: rgba(255,0,0,0.25);
+
+                        width: 30%;
+
+                        // margin: 0;
+                        padding: 10px;
+                    }
+                }
+            }
+
+            /* #endregion -------------------- NAV -------------------- */
+        }
+    }
+
+/* #endregion ========================= MOBILE: 375px ========================= */
