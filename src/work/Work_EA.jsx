@@ -2,23 +2,30 @@
 
 import React from 'react';
 import { useRef } from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 // import { useLayoutEffect } from 'react';
-// import { useState } from 'react';
 
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Moment from 'react-moment';
 
 import { gsap } from 'gsap';
 
-import '../stylesheets/Work.scss';
+// import '../stylesheets/Work.scss';
+// import scssVars from '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: GSAP BANNERS --------------------
 
-// import BSPS_26897 from '../images/ea/banners/assets/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
-// import NMTG_26903 from '../images/ea/banners/assets/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
-// import NMMN_11155 from '../images/ea/banners/assets/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
+import EAAR_18951 from '../images/ea/banners/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600/EAAR_18951';
+import NMPF_04852 from '../images/ea/banners/CR_4852_NMPF_US_Walmart_300x250/NMPF_04852';
+import NMMN_11155 from '../images/ea/banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
+import JCNR_07074 from '../images/ea/banners/CR_7074_JC_VNOIR_2013_AU_300x600/JCNR_07074';
+import BSPS_26897 from '../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
+import NMTG_26903 from '../images/ea/banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
+import JCVR_26963 from '../images/ea/banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250/JCVR_26963';
+import BCBG_02342 from '../images/ea/banners/BCBG_MAXAZRIA_CR00002342_AU_Digital_Plan/BCBG_02342';
+import BCBG_05500 from '../images/ea/banners/CR_5500_BCBG_BC_AU_Digital_Plan_2013/BCBG_05500';
 
 //#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
 
@@ -33,530 +40,513 @@ import work from '../data/json/work_json/work_ea.json';
 //#endregion ==================== IMPORTS ====================
 
 
+
+// console.log('');
+// console.log('=========================  Work_000.jsx  =========================');
+
+
+
+//#region ==================== CONSTANTS ====================
+
 const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
 
+const getWidth = () => window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
 
 
-//#region ==================== FUNCTION: workList() ====================
+//#region -------------------- SCSS VARS --------------------
+
+// console.log('');
+// console.log('------------------------- scssVars -------------------------');
+
+// const headerHeight = scssVars.headerHeight;
+// const navBarHeight = scssVars.navBarHeight;
+// const workkNavHeight = scssVars.workkNavHeight;
+
+// const headerHeight = parseInt(scssVars.headerHeight);
+// const navBarHeight = parseInt(scssVars.navBarHeight);
+// const workkNavHeight = parseInt(scssVars.workkNavHeight);
+
+// console.log('headerHeight = ' + headerHeight + '     navBarHeight = ' + navBarHeight + '     workkNavHeight = ' + workkNavHeight);
+// console.log('(headerHeight + navBarHeight + workkNavHeight) = ' + (headerHeight + navBarHeight + workkNavHeight));
+
+//#endregion -------------------- SCSS VARS --------------------
+
+//#endregion ==================== CONSTANTS ====================
+
+
+
+//#region ==================== workList() => <WorkList /> ====================
 
 function WorkList() {
 
+    //#region -------------------- AVAILABLE GSAP BANNERS: banners[] --------------------
 
-    //#region ==================== ASSETS Ref ====================
+    const banners = {
+        EAAR_18951: EAAR_18951, 
+        NMPF_04852: NMPF_04852, 
+        NMMN_11155: NMMN_11155, 
+        JCNR_07074: JCNR_07074, 
+        BSPS_26897: BSPS_26897, 
+        NMTG_26903: NMTG_26903, 
+        JCVR_26963: JCVR_26963, 
+        BCBG_02342: BCBG_02342, 
+        BCBG_05500: BCBG_05500, 
+    };
 
-    // const respMasonryRef = useRef(null);
-    // const masonryRef = useRef(null);
-
-    // const bsps_26897_workItemRef = useRef(null);
-    // const nmtg_26903_workItemRef = useRef(null);
-    // const nmmn_11155_workItemRef = useRef(null);
-
-    // const bsps_26897Ref = useRef(null);
-    // const nmtg_26903Ref = useRef(null);
-    // const nmmn_11155Ref = useRef(null);
-
-    const workItemRef = useRef(null);
-    const masonryImgRef = useRef(null);
-
-    //#endregion ==================== ASSETS Ref ====================
+    //#endregion -------------------- AVAILABLE GSAP BANNERS: banners[] --------------------
 
 
 
-    //#region ==================== FUNCTION: handleClick(whatIsThis ====================
+    //#region ==================== FUNCTIONS ====================
 
-    // function handleClick(e) {
-    //     e.preventDefault();
-    //     console.log('The link was clicked. e.type = ' + e.type);
-    // }
+    //#region -------------------- FUNCTION: checkBanners(thisMasonry) --------------------
 
-
-    function handleClick(thisWorkImage) {
-    // function handleClick(whatIsThis, thisWorkImage) {
-
-        console.log('');
-        console.log('------------------------- handleClick(thisWorkImage) -------------------------');
-
-        // console.log('whatIsThis = ' + whatIsThis);
-        // console.log('thisWorkImage.id = ' + thisWorkImage.id);
-        // console.log('thisWorkImage.id = thisWorkImage.album_id + thisWorkImage.image_index = ' + thisWorkImage.album_id + thisWorkImage.image_index);
-
-        let thisWorkImageID = thisWorkImage.album_id + thisWorkImage.image_index + '_imgID';
-        console.log('thisWorkImageID = thisWorkImage.album_id + thisWorkImage.image_index = ' + thisWorkImageID);
-
-        console.log('');
-        console.log('document.getElementById(thisWorkImage.id).className = ' + document.getElementById(thisWorkImageID).className);
-        console.log('document.getElementById(thisWorkImage.id).className = ' + document.getElementById(thisWorkImageID).className);
-
-        console.log('document.getElementById(thisWorkImage.id).offsetWidth = ' + document.getElementById(thisWorkImageID).offsetWidth);
-        console.log('document.getElementById(thisWorkImage.id).offsetHeight = ' + document.getElementById(thisWorkImageID).offsetHeight);
-
-
-        console.log('');
-        console.log('document.getElementById(thisWorkImage.id).parentElement.className = ' + document.getElementById(thisWorkImageID).parentElement.className);
-        console.log('document.getElementById(thisWorkImage.id).parentElement.className = ' + document.getElementById(thisWorkImageID).parentElement.className);
-
-        console.log('document.getElementById(thisWorkImage.id).parentElement.offsetWidth = ' + document.getElementById(thisWorkImageID).parentElement.offsetWidth);
-        console.log('document.getElementById(thisWorkImage.id).parentElement.offsetHeight = ' + document.getElementById(thisWorkImageID).parentElement.offsetHeight);
-
-        console.log('');
-        console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
-        console.log('thisWorkImage.link2 = ' + thisWorkImage.link3);
-        console.log('thisWorkImage.link2 = ' + thisWorkImage.link4);
-
-
-
-        // console.log('');
-        // console.log('thisWorkImage.offsetWidth = ' + thisWorkImage.offsetWidth);
-        // console.log('thisWorkImage.offsetHeight = ' + thisWorkImage.offsetHeight);
-
-
-
-        // if (workItemRef.current) {
-        //     console.log('');
-        //     console.log('workItemRef.current.offsetWidth = ' + workItemRef.current.offsetWidth);
-        //     console.log('workItemRef.current.offsetHeight = ' + workItemRef.current.offsetHeight);
-        //     console.log('workItemRef.current.getBoundingClientRect().width = ' + workItemRef.current.getBoundingClientRect().width);
-        //     console.log('workItemRef.current.getBoundingClientRect().height = ' + workItemRef.current.getBoundingClientRect().height);
-        // }
-
-
-        // if (masonryImgRef.current) {
-        //     console.log('');
-        //     console.log('masonryImgRef.current.offsetWidth = ' + masonryImgRef.current.offsetWidth);
-        //     console.log('masonryImgRef.current.offsetHeight = ' + masonryImgRef.current.offsetHeight);
-        //     console.log('masonryImgRef.current.getBoundingClientRect().width = ' + masonryImgRef.current.getBoundingClientRect().width);
-        //     console.log('masonryImgRef.current.getBoundingClientRect().height = ' + masonryImgRef.current.getBoundingClientRect().height);
-        // }
-    }
-
-    //#endregion ==================== FUNCTION: handleClick(whatIsThis ====================
-
-
-
-
-    //#region ==================== useState ====================
-
-    // const [bannerShow, setBannerShow] = useState();
-
-    //#endregion ==================== useState ====================
-
-
-
-    //#region ==================== useLayoutEffect... NOPE! ====================
-
-    // useLayoutEffect(() => {
+    // function checkBanners(thisMasonry) {
 
     //     console.log('');
-    //     console.log('------------------------- useLayoutEffect: workItem -------------------------');
+    //     console.log('--------------------  checkBanners(thisMasonry)  --------------------');
 
-    //     if (workItemRef.current) {
-    //         // console.log('');
-    //         console.log('workItemRef.current.offsetWidth = ' + workItemRef.current.offsetWidth);
-    //         console.log('workItemRef.current.offsetHeight = ' + workItemRef.current.offsetHeight);
-    //     }
+    //     console.log('thisMasonry = ' + thisMasonry);
+    //     // console.log('thisMasonry.id = ' + thisMasonry.id);
+    //     // console.log('thisMasonry.children = ' + thisMasonry.children);
 
-    // }, []);
+    //     // for (let i = 0; i < thisMasonry.children.length; i++) {
+    //     //     console.log('thisMasonry.children[0] = ' + thisMasonry.children[0]);
+    //     // }
+    // }
 
-    //#endregion ==================== useLayoutEffect... NOPE! ====================
+    //#endregion -------------------- FUNCTION: checkBanners(thisMasonry) --------------------
+
+
+    //#region -------------------- FUNCTION: moveImportContainer(thisBanner) --------------------
+
+    function moveImportContainer(thisBanner) {
+
+        console.log('');
+        console.log('--------------------  moveImportContainer(thisBanner)  --------------------');
+
+        console.log('moveImportContainer(thisBanner) ==>   thisBanner = ' + thisBanner);
+        console.log('moveImportContainer(thisBanner) ==>   thisBanner.id = ' + thisBanner.id);
+
+
+        //#region - - - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - - - -
+
+        // const thisBannerDims = thisBanner.getBoundingClientRect();
+
+        // console.log('');
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.x = ' + thisBannerDims.x);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.left = ' + thisBannerDims.left);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.y = ' + thisBannerDims.y);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.top = ' + thisBannerDims.top);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.width = ' + thisBannerDims.width);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.height = ' + thisBannerDims.height);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.right = ' + thisBannerDims.right);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.bottom = ' + thisBannerDims.bottom);
+
+        // return thisBannerDims;
+
+        //#endregion - - - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - - - -
+
+
+        return [thisBanner.offsetLeft, thisBanner.offsetTop];
+    }
+
+    //#endregion -------------------- FUNCTION: moveImportContainer(thisBanner) --------------------
+
+
+    //#region -------------------- FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks - switch/case --------------------
+
+    function handleClick(thisWorkImage) {
+
+        // console.log('');
+        // console.log('------------------------- handleClick(thisWorkImage) -------------------------');
+
+
+        //#region ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
+
+        // console.log('handleClick: windowWidth = ' + windowWidth);
+
+        // console.log('');
+        // console.log('thisWorkImage = ' + thisWorkImage);
+
+        // console.log('thisWorkImage.link = ' + thisWorkImage.link);
+        // console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
+        // console.log('thisWorkImage.link3 = ' + thisWorkImage.link3);
+        // console.log('thisWorkImage.link4 = ' + thisWorkImage.link4);
+
+        // console.log('document.getElementById(thisWorkImage.link2).className = ' + document.getElementById(thisWorkImage.link2).className);
+        // console.log('document.getElementById(thisWorkImage.link2).id = ' + document.getElementById(thisWorkImage.link2).id);
+
+        // console.log('');
+        // console.log('document.getElementById(thisWorkImage.link2).x = ' + document.getElementById(thisWorkImage.link2).x);
+        // console.log('document.getElementById(thisWorkImage.link2).y = ' + document.getElementById(thisWorkImage.link2).y);
+
+        // console.log('');
+        // console.log('document.getElementById(thisWorkImage.link2).offsetWidth = ' + document.getElementById(thisWorkImage.link2).offsetWidth);
+        // console.log('document.getElementById(thisWorkImage.link2).offsetHeight = ' + document.getElementById(thisWorkImage.link2).offsetHeight);
+
+        // console.log('');
+        // // console.log('document.getElementById(importContainerID).offsetWidth = ' + document.getElementById('importContainerID').offsetWidth);
+        // // console.log('document.getElementById(importContainerID).offsetHeight = ' + document.getElementById('importContainerID').offsetHeight);
+
+        // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
+        // // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
+
+        //#endregion ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
+
+
+        //#region - - - - - - - - - - - - - ASSIGN NEW BANNER - - - - - - - - - - - - -
+
+        if (banners[thisWorkImage.link2]) {
+
+            const thisBanner = React.createElement(banners[thisWorkImage.link2]);
+
+            // console.log('');
+            // console.log('thisBanner = ' + thisBanner);
+
+            setBannerShow(thisBanner);
+
+            // setBannerKey(thisBanner);
+            document.getElementById('importContainerID').key = thisWorkImage.link2;
+            // document.getElementById(thisWorkImage.link2).key = thisWorkImage.link2;
+
+            // console.log('');
+            // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
+            // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
+
+        } else {
+            setBannerShow(thisWorkImage.link2 + ' THIS CONTENT COMING SOON!');
+            // setBannerKey(thisWorkImage.link2);
+        }
+
+        //#endregion - - - - - - - - - - - - - ASSIGN NEW BANNER - - - - - - - - - - - - -
+
+
+        //#region - - - - - - - - - - - - - POSITION importContainer_Ref - - - - - - - - - - - - -
+
+        let thisBanner = document.getElementById(thisWorkImage.link2);
+
+        // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft;
+        // let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop;
+        // let thisBannerX = thisBanner.offsetLeft;
+        // let thisBannerY = thisBanner.offsetTop;
+        let thisBannerX = moveImportContainer(thisBanner)[0];
+        let thisBannerY = moveImportContainer(thisBanner)[1];
+
+        let thisBannerScale = document.getElementById(thisWorkImage.link2).offsetWidth / 300;
+
+        // console.log('');
+        // console.log('handleClick(thisWorkImage) ===>   thisBanner = ' + thisBanner);
+        // console.log('handleClick(thisWorkImage) ===>   thisBannerX = ' + thisBannerX);
+        // console.log('handleClick(thisWorkImage) ===>   thisBannerY = ' + thisBannerY);
+        // console.log('handleClick(thisWorkImage) ===>   thisBannerScale = ' + thisBannerScale);
+
+
+        gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
+
+        //#endregion - - - - - - - - - - - - - POSITION importContainer_Ref - - - - - - - - - - - - -
+
+    }
+
+    //#endregion -------------------- FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks - switch/case --------------------
+
+    //#endregion ==================== FUNCTIONS ====================
 
 
 
-    //#region ==================== useEffect ====================
+    //#region ==================== ASSETS _Ref ====================
+
+    // const workListDiv_Ref = useRef(null);
+
+    const bannerMasonry_Ref = useRef(null);
+    const webMasonry_Ref = useRef(null);
+
+    const workItem_Ref = useRef(null);
+    const masonryImg_Ref = useRef(null);
+
+    const importContainer_Ref = useRef(null);
+    // const importedContent_Ref = useRef(null);
+
+    //#endregion ==================== ASSETS _Ref ====================
+
+
+
+    //#region ==================== useState DEFs ====================
+
+    const [bannerShow, setBannerShow] = useState();
+
+    // const [bannerShow, setBannerShow] = useState(BSPS_26897);
+    // const [bannerShow, setBannerShow] = useState(NMMN_11155);
+    // const [bannerShow, setBannerShow] = useState(NMTG_26903);
+
+    // const [bannerShow, setBannerShow] = useState(<BSPS_26897 />);
+    // const [bannerShow, setBannerShow] = useState(<NMMN_11155 />);
+    // const [bannerShow, setBannerShow] = useState(<NMTG_26903 />);
+    
+    // const [bannerKey, setBannerKey] = useState();
+
+
+    let [windowWidth, setWindowWidth] = useState(getWidth());
+
+    // console.log('');
+    // console.log('------------------------- useState -------------------------');
+    // console.log('windowWidth = ' + windowWidth);
+
+    //#endregion ==================== useState DEFs ====================
+
+
+
+    //#region ==================== useEffect: moveBanner on WINDOW RESIZE ====================
 
     useEffect(() => {
 
-        // setBannerShow(
-        //     console.log('click! bannerShow = ' + {bannerShow}),
-        //     handleClick({bannerShow})
-        // );
+        //#region -------------------- moveBanner: RELOCATE THE LOADED GSAP BANNER --------------------
 
+        const moveBanner = () => {
 
-        //#region ------------------------- useEffect: Masonry => undefined -------------------------
-        // console.log('------------------------- useEffect: Masonry => undefined -------------------------');
+            // console.log('');
+            // console.log('------------------------- moveBanner -------------------------');
 
-        // if (respMasonryRef.current) {
-        //     console.log('');
-        //     console.log('respMasonryRef.current.offsetWidth = ' + respMasonryRef.current.offsetWidth);
-        //     console.log('respMasonryRef.current.offsetHeight = ' + respMasonryRef.current.offsetHeight);
-        // }
+            // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
+            // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
 
-        // if (masonryRef.current) {
-        //     console.log('');
-        //     console.log('masonryRef.current.offsetWidth = ' + masonryRef.current.offsetWidth);
-        //     console.log('masonryRef.current.offsetHeight = ' + masonryRef.current.offsetHeight);
-        // }
+            let bannerKey = document.getElementById('importContainerID').key;
 
-        //#endregion ------------------------- useEffect: Masonry -------------------------
 
+            if (!bannerKey) {
 
-        //#region ------------------------- useEffect: workItem -------------------------
-        // console.log('');
-        // console.log('------------------------- useEffect: workItem -------------------------');
+                console.log('OOPS! No banner has been clicked yet OR you are clicking in the WEB/VIDEO section.');
 
-        // // gsap.set(['.workItem'], { scale: 1.5 });
+            } else {
 
-        // if (workItemRef.current) {
+                // console.log('bannerKey = ' + bannerKey);
+                // console.log('document.getElementById(bannerKey).className = ' + document.getElementById(bannerKey).className);
+                // console.log('document.getElementById(bannerKey).id = ' + document.getElementById(bannerKey).id);
 
-        //     // gsap.set([workItemRef.current], { scale: 1.5 });
-        //     // gsap.set([workItemRef.current], { scale: 1.5, immediateRender: true });
+                let thisBanner = document.getElementById(bannerKey);
 
-        //     // console.log('');
-        //     console.log('workItemRef.current.offsetWidth = ' + workItemRef.current.offsetWidth);
-        //     console.log('workItemRef.current.offsetHeight = ' + workItemRef.current.offsetHeight);
-        // }
+                // let thisBannerX = document.getElementById(bannerKey).offsetLeft;
+                // let thisBannerY = document.getElementById(bannerKey).offsetTop;
+                // let thisBannerX = thisBanner.offsetLeft;
+                // let thisBannerY = thisBanner.offsetTop;
+                let thisBannerX = moveImportContainer(thisBanner)[0];
+                let thisBannerY = moveImportContainer(thisBanner)[1];
 
-        // if (bsps_26897_workItemRef.current) {
+                let thisBannerScale = document.getElementById(bannerKey).offsetWidth / 300;
 
-        //     // let bsps_26897Width = bsps_26897_workItemRef.current.offsetWidth;
-        //     // let bsps_26897Height = bsps_26897_workItemRef.current.offsetHeight;
+                // console.log('');
+                // console.log('handleClick(thisWorkImage) ===>   thisBanner = ' + thisBanner);
+                // console.log('handleClick(thisWorkImage) ===>   thisBannerX = ' + thisBannerX);
+                // console.log('handleClick(thisWorkImage) ===>   thisBannerY = ' + thisBannerY);
+                // console.log('handleClick(thisWorkImage) ===>   thisBannerScale = ' + thisBannerScale);
 
-        //     // gsap.set([bsps_26897_workItemRef.current], { scale: 1.5 });
+                gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
+            }
+        }
 
-        //     console.log('');
-        //     console.log('bsps_26897_workItemRef.current.offsetWidth = ' + bsps_26897_workItemRef.current.offsetWidth);
-        //     console.log('bsps_26897_workItemRef.current.offsetHeight = ' + bsps_26897_workItemRef.current.offsetHeight);
-        // }
+        //#endregion -------------------- moveBanner: RELOCATE THE LOADED GSAP BANNER --------------------
 
-        // if (nmtg_26903_workItemRef.current) {
 
-        //     // let nmtg_26903Width = nmtg_26903_workItemRef.current.offsetWidth;
-        //     // let nmtg_26903Height = nmtg_26903_workItemRef.current.offsetHeight;
+        //#region -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
 
-        //     // gsap.set([nmtg_26903_workItemRef.current], { scale: 1.5 });
+        let timeoutId = null;
 
-        //     console.log('');
-        //     console.log('nmtg_26903_workItemRef.current.offsetWidth = ' + nmtg_26903_workItemRef.current.offsetWidth);
-        //     console.log('nmtg_26903_workItemRef.current.offsetHeight = ' + nmtg_26903_workItemRef.current.offsetHeight);
-        // }
+        const resizeListener = () => {
 
-        // if (nmmn_11155_workItemRef.current) {
+            // prevent execution of previous setTimeout
+            clearTimeout(timeoutId);
 
-        //     // let nmmn_11155Width = nmmn_11155_workItemRef.current.offsetWidth;
-        //     // let nmmn_11155Height = nmtg_26903_workItemRef.current.offsetHeight;
+            // change width from the state object after 150 milliseconds
+            timeoutId = setTimeout(() => setWindowWidth(getWidth()), 150);
 
-        //     // gsap.set([nmmn_11155_workItemRef.current], { scale: 1.5 });
+            // moveBanner: RELOCATE THE LOADED GSAP BANNER
+            moveBanner();
+        };
 
-        //     console.log('');
-        //     console.log('nmmn_11155_workItemRef.current.offsetWidth = ' + nmmn_11155_workItemRef.current.offsetWidth);
-        //     console.log('nmmn_11155_workItemRef.current.offsetHeight = ' + nmmn_11155_workItemRef.current.offsetHeight);
-        // }
+        // set resize listener
+        window.addEventListener('resize', resizeListener);
 
-        //#endregion ------------------------- useEffect: workItem -------------------------
+        // clean up function
+        return () => {
+            // // RELOCATE THE LOADED GSAP BANNER
+            // moveBanner();
 
+            // remove resize listener
+            window.removeEventListener('resize', resizeListener);
+        }
 
-        //#region ------------------------- useEffect: masonryBanner -------------------------
-        // console.log('');
-        // console.log('------------------------- useEffect: masonryBanner -------------------------');
+        //#endregion -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
 
-        // if (bsps_26897Ref.current) {
+    // }, []);
+    }, [windowWidth]);
 
-        //     let bsps_26897Width = bsps_26897Ref.current.offsetWidth;
-        //     let bsps_26897Height = bsps_26897Ref.current.offsetHeight;
-
-        //     // gsap.set([bsps_26897Ref.current], { scale: 1.5 });
-
-        //     // console.log('');
-        //     console.log('bsps_26897Width = ' + bsps_26897Width);
-        //     console.log('bsps_26897Height = ' + bsps_26897Height);
-        // }
-
-        // if (nmtg_26903Ref.current) {
-
-        //     let nmtg_26903Width = nmtg_26903Ref.current.offsetWidth;
-        //     let nmtg_26903Height = nmtg_26903Ref.current.offsetHeight;
-
-        //     // gsap.set([nmtg_26903Ref.current], { scale: 1.5 });
-
-        //     console.log('');
-        //     console.log('nmtg_26903Width = ' + nmtg_26903Width);
-        //     console.log('nmtg_26903Height = ' + nmtg_26903Height);
-        // }
-
-        // if (nmmn_11155Ref.current) {
-
-        //     let nmmn_11155Width = nmmn_11155Ref.current.offsetWidth;
-        //     let nmmn_11155Height = nmmn_11155Ref.current.offsetHeight;
-
-        //     // gsap.set([nmmn_11155Ref.current], { scale: 1.5 });
-
-        //     console.log('');
-        //     console.log('nmmn_11155Width = ' + nmmn_11155Width);
-        //     console.log('nmmn_11155Height = ' + nmmn_11155Height);
-        // }
-
-        //#endregion ------------------------- masonryBanner -------------------------
-
-
-        //#region ------------------------- useEffect: masonryImg -------------------------
-        // console.log('');
-        // console.log('------------------------- useEffect: masonryImg -------------------------');
-
-        // if (masonryImgRef.current) {
-
-        //     let masonryImgWidth = masonryImgRef.current.offsetWidth;
-        //     let masonryImgHeight = masonryImgRef.current.offsetHeight;
-
-        //     // console.log('');
-        //     console.log('masonryImgWidth = ' + masonryImgWidth);
-        //     console.log('masonryImgHeight = ' + masonryImgHeight);
-        // }
-
-        //#endregion ------------------------- masonryImg -------------------------
-
-
-
-        const tl = gsap.timeline({ delay: 0 });
-
-        tl
-
-            //#region ==================== INITIALIZE OBJECTS ====================
-
-            // -------------------- SET TRANSFORM ORIGiNS --------------------
-
-            // .set([bsps_26897Ref.current, nmtg_26903Ref.current, nmmn_11155Ref.current], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
-            // .set(['.masonryBanner'], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
-            .set(['.masonryImg'], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
-
-            // -------------------- FRAME01 --------------------
-
-            // .set([bsps_26897Ref.current, nmtg_26903Ref.current], { autoAlpha: 0.5, scale: 1.25, rotation: 30 }, 'frame00')
-            // .set([nmtg_26903Ref.current], { scale: 1.5 }, 'frame00')
-            // .set([nmmn_11155Ref.current], { rotation: 30 }, 'frame00')
-
-            // .set(['.masonryBanner'], { autoAlpha: 0.5, scale: 1.25, rotation: 30 }, 'frame00')
-
-            //#endregion ==================== INITIALIZE OBJECTS ====================
-
-
-            //#region ==================== FRAME 01 ====================
-
-            // .fromTo([bsps_26897Ref.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=0')
-            // .fromTo([nmtg_26903Ref.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=0.5')
-            // .fromTo([nmmn_11155Ref.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'back.inOut(2)', duration: animDuration05 }, 'frame01 +=0')
-
-            //#endregion ==================== FRAME 01 ====================
-
-
-            //#region ==================== FRAME 02 ====================
-
-            // .to([bsps_26897Ref.current], { y: 20, scale: 0.8, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=1.5')
-            // .fromTo([nmtg_26903Ref.current], { x: 70, y: 5, autoAlpha: 0 }, { y: -15, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=1.5')
-
-            //#endregion ==================== FRAME 02 ====================
-
-
-            //#region ==================== FRAME 03 ====================
-
-            // .to([bsps_26897Ref.current], { x: 95, y: 35, scale: 0.7, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
-            // .to([nmtg_26903Ref.current], { x: 126, y: -7, scale: 0.95, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
-            // .fromTo([nmmn_11155Ref.current], { x: -194, y: 6, scale: 1.05882352941176, ease: 'power2.out' }, { x: 0, y: 0, scale: 1, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
-
-            // #endregion ==================== FRAME 03 ====================
-        ;
-
-    }, []);
-    // }, [bannerShow]);
-    // }, [animDuration02, animDuration04, animDuration05]);
-
-    //#endregion ==================== useEffect ====================
-
+    //#endregion ==================== useEffect: moveBanner ====================
 
 
     return (
-        <div className='workList'>
+        // <div className='workList' id='workListID' ref={workListDiv_Ref}>
+        <>
+            {/* width = {width}; */}
 
-        {/*
-            <hr />
-            <h2>testing 1, 2, 3... GSAP animations</h2>
-            <hr />
-            <ResponsiveMasonry className='testing123' columnsCountBreakPoints={{ 300: 1, 600: 2, 900: 2, 1200: 3, 1500: 4, 1800: 5, 2100: 6 }} ref={respMasonryRef}>
-                <Masonry gutter='50px' ref={masonryRef}>
-
-                    <BSPS_26897 />
-                    <NMTG_26903 />
-                    <NMMN_11155 />
+            <div className='importContainer' id='importContainerID' ref={importContainer_Ref}>
+            {/* <div className='importContainer' id='importContainerID' key={bannerShow} ref={importContainer_Ref}> */}
+            {/* <div className='importContainer' id='importContainerID' key={bannerKey} ref={importContainer_Ref}> */}
+                {/* <div className='importedContent' ref={importedContent_Ref}> */}
+                    {bannerShow}
+                {/* </div> */}
+            </div>
 
 
-                    <div className='workItem' ref={bsps_26897_workItemRef}>
-                        <div className='masonryBanner' ref={bsps_26897Ref}><BSPS_26897 /></div>
-                    </div>
+        {/* #region ------------------------- BANNERS ------------------------- */}
+            {/* 
+            <section>
+                <hr />
+                <h2>|*|*|*|*|*| &nbsp;&nbsp;&nbsp; Banners 000 &nbsp;&nbsp;&nbsp; |*|*|*|*|*|</h2>
+                <hr />
+            </section>
+            */}
+            <section className='masonrySection'>
 
-                    <div className='workItem' ref={nmtg_26903_workItemRef}>
-                        <div className='masonryBanner' ref={nmtg_26903Ref}><NMTG_26903 /></div>
-                    </div>
+                <ResponsiveMasonry columnsCountBreakPoints={{ 360: 1, 640: 2, 768: 2, 940: 4, 1640: 4, 1920: 5, 3000: 6 }}>
+                    {/* <Masonry gutter='50px'> */}
+                    <Masonry className='masonry' id='bannerMasonryID' gutter='1.25vw' ref={bannerMasonry_Ref}>
 
-                    <div className='workItem' ref={nmmn_11155_workItemRef}>
-                        <div className='masonryBanner' ref={nmmn_11155Ref}><NMMN_11155 /></div>
-                    </div>
+                        {work.filter(isBanner => isBanner.format === 'banner').map((workImage) => (
 
-                </Masonry>
-            </ResponsiveMasonry>
-
-            <br /><br /><br /><br /><br />
-        */}
-
-            <hr />
-            <h2>Banners</h2>
-            <p className='note'>
-                I want to eventually make these images clickable to trigger GSAP banners like the ones above that were [re]built in React (because I couldn't get react-adobe-animate or html-loader to work).<br />
-                Ideally, the GSAP banners will play in place like they do on this page: <a href='https://www.shigimcp.com/hilites.html' target='_new'>https://www.shigimcp.com/hilites.html</a>.<br />
-                SO FAR: <a href='./000'> See "000" above</a>
-            </p>
-            <hr />
-
-            <ResponsiveMasonry columnsCountBreakPoints={{ 360: 1, 640: 2, 768: 2, 940: 3, 1640: 4, 1920: 5, 3000: 6 }}>
-                <Masonry gutter='50px'>
-
-                    {work.filter(isBanner => isBanner.format === 'banner').map((workImage) => (
-
-                        <div className='workItem' key={workImage.album_id + workImage.image_index} ref={workItemRef}>
-                        {/* 
-                            <img
-                                // key={workImage.album_id + workImage.image_index}
-                                className='masonryImg'
-                                id={workImage.album_id + workImage.image_index}
-                                src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
-                                alt={'album_id: ' + workImage.album_id + workImage.image_index}
-                                // onClick={() => workNavShow.reverse()}
-                                // onClick={handleClick}
-                                onClick={() => handleClick(workImage)}
-                                // onClick={() => handleClick(this, workImage)}
-                                // onClick={() => setBannerShow(workImage.link2)}
-                                // onClick={() => setBannerShow(workImage.link3)}
-                                // onClick={() => setBannerShow(workImage.link4)}
-                                ref={masonryImgRef}
-                            />
-                        */}
-                            <div className='masonryDiv'>
+                            <div className='workItem' id={workImage.link2} key={'banner' + workImage.album_id + workImage.image_index} ref={workItem_Ref}>
 
                                 <img
                                     // key={workImage.album_id + workImage.image_index}
                                     className='masonryImg'
                                     id={workImage.album_id + workImage.image_index + '_imgID'}
+                                    // id={workImage.link2}
                                     src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
                                     alt={'album_id: ' + workImage.album_id + workImage.image_index}
-                                    // onClick={() => workNavShow.reverse()}
-                                    // onClick={handleClick}
-                                    // onClick={() => handleClick(workImage)}
-                                    // onClick={() => handleClick(this, workImage)}
+
+                                    onClick={() => handleClick(workImage)}
                                     // onClick={() => setBannerShow(workImage.link2)}
-                                    // onClick={() => setBannerShow(workImage.link3)}
-                                    // onClick={() => setBannerShow(workImage.link4)}
-                                    ref={masonryImgRef}
+                                    // onClick={() => {
+                                    //     handleClick(workImage);
+                                    //     setBannerShow(workImage.link2);
+                                    // }}
+
+                                    ref={masonryImg_Ref}
                                 />
 
-                                <div 
-                                    className='bannerContainer' 
-                                    id={workImage.album_id + workImage.image_index + '_bannerID'}
-                                    onClick={() => handleClick(workImage)}
-                                >
-                                    {/* <BSPS_26897 /> */}
-                                </div>
+                                <p className='masonryInfo' title='masonryInfoTitle'>
+                                    {workImage.caption}<br />
+                                    <Moment format="MMM YYYY">{workImage.date}</Moment><br />
+
+                                {/* 
+                                    <br />
+                                    album_index = {workImage.album_index}<br />
+                                    album_id = {workImage.album_id}<br />
+                                    image_index = {workImage.image_index}<br />
+                                    src = {workImage.src}<br />
+                                    caption = {workImage.caption}<br />
+                                    date = {workImage.date}<br />
+                                    format = {workImage.format}<br />
+                                    format_src = {workImage.format_src}<br />
+                                    link = {workImage.link}<br />
+                                    link2 = {workImage.link2}<br />
+                                    link3 = {workImage.link3}<br />
+                                    link4 = {workImage.link4}<br />
+                                    cta = {workImage.cta}<br />
+                                    alert = {workImage.alert}<br />
+                                    mwidth = {workImage.mwidth}<br />
+                                    mheight = {workImage.mheight}
+                                */}
+
+                                </p>
 
                             </div>
+                        ))}
 
-                            <p>
-                                {workImage.caption}<br />
-                                <Moment format="MMM YYYY">{workImage.date}</Moment><br />
-                                {/* {workImage.link}<br /> */}
-                                {/* {workImage.link2} */}
-                            {/* 
-                                <br />
+                    </Masonry>
+                </ResponsiveMasonry>
 
-                                album_index = {workImage.album_index}<br />
-                                album_id = {workImage.album_id}<br />
-                                image_index = {workImage.image_index}<br />
-                                src = {workImage.src}<br />
-                                caption = {workImage.caption}<br />
-                                date = {workImage.date}<br />
-                                format = {workImage.format}<br />
-                                format_src = {workImage.format_src}<br />
-                                link = {workImage.link}<br />
-                                link2 = {workImage.link2}<br />
-                                link3 = {workImage.link3}<br />
-                                link4 = {workImage.link4}<br />
-                                cta = {workImage.cta}<br />
-                                alert = {workImage.alert}<br />
-                                mwidth = {workImage.mwidth}<br />
-                                mheight = {workImage.mheight}
-                            */}
-                            </p>
+            </section>
 
-                        </div>
-                    ))}
-
-                </Masonry>
-            </ResponsiveMasonry>
+        {/* #endregion ------------------------- BANNERS ------------------------- */}
 
 
-            <br /><br /><br /><br /><br />
+        {/* #region ------------------------- WEB / VIDEO ------------------------- */}
 
-            <hr />
-            <h2>Web / Video</h2>
-            <p className='note'>
-                TO COME: These will open in modals on click...
-            </p>
-            <hr />
+            <section>
+                <hr />
+                <h2>Web / Video</h2>
+                <hr />
+            </section>
 
-            {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 2040: 3 }}> */}
-            <ResponsiveMasonry columnsCountBreakPoints={{ 1024: 1, 1366: 2, 1920: 3, 3840: 4 }}>
-                <Masonry gutter='50px'>
+            <section className='masonrySection'>
 
-                    {work.filter(isBanner => isBanner.format !== 'banner').map((workImage) => (
+                {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 2040: 3 }}> */}
+                {/* <ResponsiveMasonry columnsCountBreakPoints={{ 1024: 1, 1366: 2, 1920: 3, 3840: 4 }}> */}
+                <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 960: 2, 1920: 3, 3840: 4 }}>
+                    <Masonry className='masonry' id='webMasonryID' gutter='1.25vw' ref={webMasonry_Ref}>
 
-                        <div className='workItem' key={'web' + workImage.album_id + workImage.image_index} ref={workItemRef}>
+                        {work.filter(isBanner => isBanner.format !== 'banner').map((workImage) => (
 
-                            <img
-                                // key={'WV' + workImage.album_id + workImage.image_index}
-                                className='masonryImg'
-                                id={workImage.album_id + workImage.image_index}
-                                src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
-                                alt={'album_id: ' + workImage.album_id + workImage.image_index}
-                                // onClick={() => handleClick(workImage)}
-                            />
+                            <div className='workItem' id={workImage.link2} key={'web' + workImage.album_id + workImage.image_index} ref={workItem_Ref}>
 
-                            <p>
-                                {workImage.caption}<br />
-                                <Moment format="MMM YYYY">{workImage.date}</Moment><br />
-                                {/* {workImage.link}<br /> */}
-                                {/* {workImage.link2} */}
-                            {/* 
-                                <br />
+                                <img
+                                    // key={'WV' + workImage.album_id + workImage.image_index}
+                                    className='masonryImg'
+                                    // id={workImage.album_id + workImage.image_index + '_imgID'}
+                                    id={workImage.link2}
+                                    src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
+                                    alt={'album_id: ' + workImage.album_id + workImage.image_index}
 
-                                album_index = {workImage.album_index}<br />
-                                album_id = {workImage.album_id}<br />
-                                image_index = {workImage.image_index}<br />
-                                src = {workImage.src}<br />
-                                caption = {workImage.caption}<br />
-                                date = {workImage.date}<br />
-                                format = {workImage.format}<br />
-                                format_src = {workImage.format_src}<br />
-                                link = {workImage.link}<br />
-                                link2 = {workImage.link2}<br />
-                                link3 = {workImage.link3}<br />
-                                link4 = {workImage.link4}<br />
-                                cta = {workImage.cta}<br />
-                                alert = {workImage.alert}<br />
-                                mwidth = {workImage.mwidth}<br />
-                                mheight = {workImage.mheight}
-                            */}
-                            </p>
+                                    onClick={() => handleClick(workImage)}
 
-                        </div>
-                    ))}
+                                    ref={masonryImg_Ref}
+                                />
 
-                </Masonry>
-            </ResponsiveMasonry>
+                                <p className='masonryInfo' title='masonryInfoTitle'>
+                                    {workImage.caption}<br />
+                                    <Moment format="MMM YYYY">{workImage.date}</Moment><br />
 
-        </div>
+                                {/* 
+                                    <br />
+
+                                    album_index = {workImage.album_index}<br />
+                                    album_id = {workImage.album_id}<br />
+                                    image_index = {workImage.image_index}<br />
+                                    src = {workImage.src}<br />
+                                    caption = {workImage.caption}<br />
+                                    date = {workImage.date}<br />
+                                    format = {workImage.format}<br />
+                                    format_src = {workImage.format_src}<br />
+                                    link = {workImage.link}<br />
+                                    link2 = {workImage.link2}<br />
+                                    link3 = {workImage.link3}<br />
+                                    link4 = {workImage.link4}<br />
+                                    cta = {workImage.cta}<br />
+                                    alert = {workImage.alert}<br />
+                                    mwidth = {workImage.mwidth}<br />
+                                    mheight = {workImage.mheight}
+                                */}
+
+                                </p>
+
+                            </div>
+                        ))}
+
+                    </Masonry>
+                </ResponsiveMasonry>
+
+            </section>
+
+        {/* #endregion ------------------------- WEB / VIDEO ------------------------- */}
+
+        </>
+        // </div>
     )
 }
 
-//#endregion ==================== FUNCTION: workList() ====================
-
-
-
-
+//#endregion ==================== workList() => <WorkList /> ====================
 
 
 

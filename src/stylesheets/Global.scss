@@ -1,5 +1,3 @@
-/* #region ========================= GLOBAL ========================= */
-
 /* #region -------------------- VARIABLES -------------------- */
 
 $body-width: 50vw;
@@ -7,11 +5,23 @@ $body-min-width: 820px;
 // $body-max-width: 1200px;
 $body-max-width: 960px;
 
+// $body-width: 50vw;
+// $body-min-width: 960px;
+// $body-max-width: 1200px;
+
+// $body-width: 80vw;
+// $body-min-width: 50vw;
+// // $body-max-width: 1200px;
+// $body-max-width: 90vw;
+
 $header-height: 60px;
 $navBar-height: 40px;
 $workkNav-height: 60px;
 // $workkNav-height: 80px;
 // $workkNav-height: 100px;
+
+
+/* #region - - - - - - - - - - - VARIABLES: MIXINS - REF: https://cssgradient.io - - - - - - - - - - - */
 
 @mixin navbgGradient01() { 
     background: rgb(255,255,255);
@@ -49,6 +59,26 @@ $workkNav-height: 60px;
     mix-blend-mode: multiply;
 }
 
+@mixin navbgGradient05() { 
+    // background: rgb(255,255,255);
+    // background: -moz-linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
+    // background: -webkit-linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
+    // background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+
+    // mix-blend-mode: screen;
+}
+
+/* #endregion - - - - - - - - - - - VARIABLES: MIXINS - REF: https://cssgradient.io - - - - - - - - - - - */
+
+
+/* #region - - - - - - - - - - - VARIABLES: EXPORT - - - - - - - - - - - */
 
 // REF: https://til.hashrocket.com/posts/sxbrscjuqu-share-scss-variables-with-javascript
 // REF: https://medium.com/clover-platform-blog/modular-scss-and-why-you-need-it-6bb2d8c40fd8
@@ -79,9 +109,12 @@ $workkNav-height: 60px;
     // workkNavHeight: remove-px($workkNav-height);
 }
 
+/* #endregion - - - - - - - - - - - VARIABLES: EXPORT - - - - - - - - - - - */
+
 /* #endregion -------------------- VARIABLES -------------------- */
 
-/* #region -------------------- BASICS -------------------- */
+
+/* #region ========================= GLOBAL ========================= */
 
 * {
 	margin: 0;
@@ -103,12 +136,10 @@ img {
 	border: 0;
 }
 
-/* #endregion -------------------- BASICS -------------------- */
-
 /* #endregion ========================= GLOBAL ========================= */
 
 
-/* #region ========================= WRAPPER ========================= */
+/* #region ========================= .wrapper ========================= */
 
 .wrapper {
     // border: 2px solid #ff0000;
@@ -121,10 +152,10 @@ img {
     // padding: 0;
 }
 
-/* #endregion ========================= WRAPPER ========================= */
+/* #endregion ========================= .wrapper ========================= */
 
 
-/* #region ========================= FULL PAGE ========================= */
+/* #region ========================= .fullPage ========================= */
 
 .fullPage {
     // border: 2px solid #00ff00;
@@ -140,10 +171,10 @@ img {
     // padding: 150px 0 0 0;
 }
 
-/* #endregion ========================= FULL PAGE ========================= */
+/* #endregion ========================= .fullPage ========================= */
 
 
-/* #region ========================= BODY CONATAINER ========================= */
+/* #region ========================= .bodyContainer ========================= */
 
 .bodyContainer {
     // border: 2px solid #0000ff;
@@ -163,4 +194,4 @@ img {
     // padding: 0;
 }
 
-/* #endregion ========================= BODY CONATAINER ========================= */
+/* #endregion ========================= .bodyContainer ========================= */

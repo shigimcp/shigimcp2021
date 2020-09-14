@@ -1,12 +1,15 @@
+//#region ==================== IMPORTS ====================
+
 import React from 'react';
 
-import '../stylesheets/Resume.scss';
-
 // import { FullPage } from '../components/Page';
-import { BodyContainer } from '../components/BodyContainer';
+// import { BodyContainer } from '../components/BodyContainer';
+
+import '../stylesheets/Resume.scss';
+// import scssVars from '../stylesheets/Global.scss';
 
 
-//#region ==================== DATA IMPORTS ====================
+//#region -------------------- IMPORTS: DATA --------------------
 
 // import employerData from '../data/json/employers_http.json';
 // import employerData from '../data/json/employers_https.json';
@@ -26,10 +29,20 @@ import myData from '../data/MyData';
 // import work from '../data/json/work_json/work_ax.json';
 // import work_ax from '../data/json/work_json/work_ax.json';
 
-//#endregion ==================== DATA IMPORTS ====================
+//#endregion -------------------- IMPORTS: DATA --------------------
+
+//#endregion ==================== IMPORTS ====================
 
 
-//#region ==================== DATA ====================
+
+// console.log('');
+// console.log('=========================  Resume.jsx  =========================');
+
+
+
+//#region ==================== CONSTANTS ====================
+
+//#region -------------------- DATA --------------------
 
 const employerData = myData[0];
 // const workData = myData[1];
@@ -57,10 +70,12 @@ const employerData = myData[0];
 // console.log(aboutData);
 // console.log('');
 
-//#endregion ==================== DATA ====================
+//#endregion -------------------- DATA --------------------
+
+//#endregion ==================== CONSTANTS ====================
 
 
-//#region ==================== RESUME: REF https://reactjs.org/docs/lists-and-keys.html ====================
+//#region ==================== EmployerList ====================
 
 // const remoteLoc = 'https://www.shigimcp.com/img/';
 // const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020/img/';
@@ -71,28 +86,34 @@ function EmployerItem(props) {
 
     return (
         <div className='employerItem'>
+
             <img className='logo' src={remoteLoc + props.employerLogo} alt={'employer: ' + props.employer} />
+
             <div className='employerInfo'>
                 <h1>{props.employer}</h1>
                 <h2>{props.title}</h2>
+
                 <div className='employerDates'>{props.dateStart} - {props.dateEnd}</div>
+
                 <ul>
                     {props.info.split('\n').map((thisInfo, key) => {
                         return <li key={key}>{thisInfo}</li>
                     })}
                 </ul>
+
                 {/* <p>{props.languages}</p> */}
                 {/* <p>languages: {props.languages}</p> */}
                 <p>
                     {(() => {
                         if (props.languages) {
-                            return "languages: ";
+                            return 'languages: ';
                         } else {
-                            return "";
+                            return '';
                         }
                     })()}
                     {props.languages}
                 </p>
+
                 <p>{props.otherInfo}</p>
             </div>
         </div>
@@ -124,15 +145,17 @@ function EmployerList() {
     );
 }
 
-//#endregion ==================== RESUME ====================
+//#endregion ==================== EmployerList ====================
 
 // export default EmployerList;
 
 export const Resume = () => {
     return (
-        <BodyContainer title="Resume">
+        // <BodyContainer title='Resume'>
+        <div className='employerContainer'>
             {/* Resume Page */}
             <EmployerList />
-        </BodyContainer>
+        </div>
+        // </BodyContainer>
     )
 }

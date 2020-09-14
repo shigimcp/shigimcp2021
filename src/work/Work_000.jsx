@@ -4,7 +4,7 @@ import React from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useLayoutEffect } from 'react';
+// import { useLayoutEffect } from 'react';
 
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Moment from 'react-moment';
@@ -55,6 +55,8 @@ const getWidth = () => window.innerWidth
     || document.body.clientWidth;
 
 
+//#region -------------------- SCSS VARS --------------------
+
 // console.log('');
 // console.log('------------------------- scssVars -------------------------');
 
@@ -68,6 +70,8 @@ const getWidth = () => window.innerWidth
 
 // console.log('headerHeight = ' + headerHeight + '     navBarHeight = ' + navBarHeight + '     workkNavHeight = ' + workkNavHeight);
 // console.log('(headerHeight + navBarHeight + workkNavHeight) = ' + (headerHeight + navBarHeight + workkNavHeight));
+
+//#endregion -------------------- SCSS VARS --------------------
 
 //#endregion ==================== CONSTANTS ====================
 
@@ -102,7 +106,7 @@ function WorkList() {
     // function checkBanners(thisMasonry) {
 
     //     console.log('');
-    //     console.log('--------------------  checkBanners()  --------------------');
+    //     console.log('--------------------  checkBanners(thisMasonry)  --------------------');
 
     //     console.log('thisMasonry = ' + thisMasonry);
     //     // console.log('thisMasonry.id = ' + thisMasonry.id);
@@ -115,11 +119,146 @@ function WorkList() {
 
     //#endregion -------------------- FUNCTION: checkBanners(thisMasonry) --------------------
 
+
+    //#region -------------------- FUNCTION: moveImportContainer(thisBanner) --------------------
+
+    function moveImportContainer(thisBanner) {
+
+        console.log('');
+        console.log('--------------------  moveImportContainer(thisBanner)  --------------------');
+
+        console.log('moveImportContainer(thisBanner) ==>   thisBanner = ' + thisBanner);
+        console.log('moveImportContainer(thisBanner) ==>   thisBanner.id = ' + thisBanner.id);
+
+
+        //#region - - - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - - - -
+
+        // const thisBannerDims = thisBanner.getBoundingClientRect();
+
+        // console.log('');
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.x = ' + thisBannerDims.x);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.left = ' + thisBannerDims.left);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.y = ' + thisBannerDims.y);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.top = ' + thisBannerDims.top);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.width = ' + thisBannerDims.width);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.height = ' + thisBannerDims.height);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.right = ' + thisBannerDims.right);
+        // console.log('moveImportContainer(thisBanner) ===>   thisBannerDims.bottom = ' + thisBannerDims.bottom);
+
+        // return thisBannerDims;
+
+        //#endregion - - - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - - - -
+
+
+        return [thisBanner.offsetLeft, thisBanner.offsetTop];
+    }
+
+    //#endregion -------------------- FUNCTION: moveImportContainer(thisBanner) --------------------
+
+
+    //#region -------------------- FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks - switch/case --------------------
+
+    function handleClick(thisWorkImage) {
+
+        // console.log('');
+        // console.log('------------------------- handleClick(thisWorkImage) -------------------------');
+
+
+        //#region ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
+
+        // console.log('handleClick: windowWidth = ' + windowWidth);
+
+        // console.log('');
+        // console.log('thisWorkImage = ' + thisWorkImage);
+
+        // console.log('thisWorkImage.link = ' + thisWorkImage.link);
+        // console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
+        // console.log('thisWorkImage.link3 = ' + thisWorkImage.link3);
+        // console.log('thisWorkImage.link4 = ' + thisWorkImage.link4);
+
+        // console.log('document.getElementById(thisWorkImage.link2).className = ' + document.getElementById(thisWorkImage.link2).className);
+        // console.log('document.getElementById(thisWorkImage.link2).id = ' + document.getElementById(thisWorkImage.link2).id);
+
+        // console.log('');
+        // console.log('document.getElementById(thisWorkImage.link2).x = ' + document.getElementById(thisWorkImage.link2).x);
+        // console.log('document.getElementById(thisWorkImage.link2).y = ' + document.getElementById(thisWorkImage.link2).y);
+
+        // console.log('');
+        // console.log('document.getElementById(thisWorkImage.link2).offsetWidth = ' + document.getElementById(thisWorkImage.link2).offsetWidth);
+        // console.log('document.getElementById(thisWorkImage.link2).offsetHeight = ' + document.getElementById(thisWorkImage.link2).offsetHeight);
+
+        // console.log('');
+        // // console.log('document.getElementById(importContainerID).offsetWidth = ' + document.getElementById('importContainerID').offsetWidth);
+        // // console.log('document.getElementById(importContainerID).offsetHeight = ' + document.getElementById('importContainerID').offsetHeight);
+
+        // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
+        // // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
+
+        //#endregion ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
+
+
+        //#region - - - - - - - - - - - - - ASSIGN NEW BANNER - - - - - - - - - - - - -
+
+        if (banners[thisWorkImage.link2]) {
+
+            const thisBanner = React.createElement(banners[thisWorkImage.link2]);
+
+            // console.log('');
+            // console.log('thisBanner = ' + thisBanner);
+
+            setBannerShow(thisBanner);
+
+            // setBannerKey(thisBanner);
+            document.getElementById('importContainerID').key = thisWorkImage.link2;
+            // document.getElementById(thisWorkImage.link2).key = thisWorkImage.link2;
+
+            // console.log('');
+            // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
+            // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
+
+        } else {
+            setBannerShow(thisWorkImage.link2 + ' THIS CONTENT COMING SOON!');
+            // setBannerKey(thisWorkImage.link2);
+        }
+
+        //#endregion - - - - - - - - - - - - - ASSIGN NEW BANNER - - - - - - - - - - - - -
+
+
+        //#region - - - - - - - - - - - - - POSITION importContainer_Ref - - - - - - - - - - - - -
+
+        let thisBanner = document.getElementById(thisWorkImage.link2);
+
+        // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft;
+        // let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop;
+        // let thisBannerX = thisBanner.offsetLeft;
+        // let thisBannerY = thisBanner.offsetTop;
+        let thisBannerX = moveImportContainer(thisBanner)[0];
+        let thisBannerY = moveImportContainer(thisBanner)[1];
+
+        let thisBannerScale = document.getElementById(thisWorkImage.link2).offsetWidth / 300;
+
+        // console.log('');
+        // console.log('handleClick(thisWorkImage) ===>   thisBanner = ' + thisBanner);
+        // console.log('handleClick(thisWorkImage) ===>   thisBannerX = ' + thisBannerX);
+        // console.log('handleClick(thisWorkImage) ===>   thisBannerY = ' + thisBannerY);
+        // console.log('handleClick(thisWorkImage) ===>   thisBannerScale = ' + thisBannerScale);
+
+
+        gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
+
+        //#endregion - - - - - - - - - - - - - POSITION importContainer_Ref - - - - - - - - - - - - -
+
+    }
+
+    //#endregion -------------------- FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks - switch/case --------------------
+
     //#endregion ==================== FUNCTIONS ====================
 
 
 
     //#region ==================== ASSETS _Ref ====================
+
+    // const workListDiv_Ref = useRef(null);
 
     const bannerMasonry_Ref = useRef(null);
     const webMasonry_Ref = useRef(null);
@@ -159,68 +298,9 @@ function WorkList() {
 
 
 
-    //#region ==================== useEffect ====================
+    //#region ==================== useEffect: moveBanner on WINDOW RESIZE ====================
 
     useEffect(() => {
-
-        //#region -------------------- GSAP TIMELINE --------------------
-
-        const tl = gsap.timeline({ delay: 0 });
-
-        tl
-
-            //#region ==================== INITIALIZE OBJECTS ====================
-
-            //#region -------------------- SET TRANSFORM ORIGiNS --------------------
-
-            // .set([bsps_26897Ref.current, nmtg_26903Ref.current, nmmn_11155Ref.current], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
-            // .set(['.masonryBanner'], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
-            .set(['.masonryImg'], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
-
-            //#endregion -------------------- SET TRANSFORM ORIGiNS --------------------
-
-
-            //#region -------------------- FRAME01 --------------------
-
-            // .set([bsps_26897Ref.current, nmtg_26903Ref.current], { autoAlpha: 0.5, scale: 1.25, rotation: 30 }, 'frame00')
-            // .set([nmtg_26903Ref.current], { scale: 1.5 }, 'frame00')
-            // .set([nmmn_11155Ref.current], { rotation: 30 }, 'frame00')
-
-            // .set(['.masonryBanner'], { autoAlpha: 0.5, scale: 1.25, rotation: 30 }, 'frame00')
-
-            //#endregion -------------------- FRAME01 --------------------
-
-            //#endregion ==================== INITIALIZE OBJECTS ====================
-
-
-            //#region ==================== FRAME 01 ====================
-
-            // .fromTo([bsps_26897Ref.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=0')
-            // .fromTo([nmtg_26903Ref.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=0.5')
-            // .fromTo([nmmn_11155Ref.current], { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, ease: 'back.inOut(2)', duration: animDuration05 }, 'frame01 +=0')
-
-            //#endregion ==================== FRAME 01 ====================
-
-
-            //#region ==================== FRAME 02 ====================
-
-            // .to([bsps_26897Ref.current], { y: 20, scale: 0.8, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=1.5')
-            // .fromTo([nmtg_26903Ref.current], { x: 70, y: 5, autoAlpha: 0 }, { y: -15, autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame02 -=1.5')
-
-            //#endregion ==================== FRAME 02 ====================
-
-
-            //#region ==================== FRAME 03 ====================
-
-            // .to([bsps_26897Ref.current], { x: 95, y: 35, scale: 0.7, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
-            // .to([nmtg_26903Ref.current], { x: 126, y: -7, scale: 0.95, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
-            // .fromTo([nmmn_11155Ref.current], { x: -194, y: 6, scale: 1.05882352941176, ease: 'power2.out' }, { x: 0, y: 0, scale: 1, ease: 'power2.out', duration: animDuration02 }, 'frame03 +=0.75')
-
-            // #endregion ==================== FRAME 03 ====================
-        ;
-
-        //#endregion -------------------- GSAP TIMELINE --------------------
-
 
         //#region -------------------- moveBanner: RELOCATE THE LOADED GSAP BANNER --------------------
 
@@ -245,60 +325,24 @@ function WorkList() {
                 // console.log('document.getElementById(bannerKey).className = ' + document.getElementById(bannerKey).className);
                 // console.log('document.getElementById(bannerKey).id = ' + document.getElementById(bannerKey).id);
 
-
-                //#region - - - - - - - - - - - - - CALCULATE NEW POSITION - - - - - - - - - - - - -
-
-                // let thisBannerX = document.getElementById(bannerKey).x;
-                // let thisBannerY = document.getElementById(bannerKey).y;
+                let thisBanner = document.getElementById(bannerKey);
 
                 // let thisBannerX = document.getElementById(bannerKey).offsetLeft;
                 // let thisBannerY = document.getElementById(bannerKey).offsetTop;
-
-                //#region -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
-
-                // let thisBannerX = document.getElementById(thisWorkImage.link2).x + 1;
-                // let thisBannerY = document.getElementById(bannerKey).y - 250;
-
-                // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft + 1;
-                // let thisBannerY = document.getElementById(bannerKey).offsetTop - 250;
-
-                // let thisBannerX = document.getElementById(bannerKey).offsetLeft - 13;
-                let thisBannerY = document.getElementById(bannerKey).offsetTop - 170;
-
-                let thisBannerX = document.getElementById(bannerKey).offsetLeft - (0.0125 * windowWidth);
-                // let thisBannerY = document.getElementById(bannerKey).offsetTop - (headerHeight + navBarHeight + workkNavHeight);
-
-                //#endregion -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
-
-                // let thisBannerW = document.getElementById(bannerKey).offsetWidth;
-                // let thisBannerH = document.getElementById(bannerKey).offsetHeight;
+                // let thisBannerX = thisBanner.offsetLeft;
+                // let thisBannerY = thisBanner.offsetTop;
+                let thisBannerX = moveImportContainer(thisBanner)[0];
+                let thisBannerY = moveImportContainer(thisBanner)[1];
 
                 let thisBannerScale = document.getElementById(bannerKey).offsetWidth / 300;
 
                 // console.log('');
-                // console.log('thisBannerX = ' + thisBannerX);
-                // console.log('thisBannerY = ' + thisBannerY);
-                // console.log('thisBannerW = ' + thisBannerW);
-                // console.log('thisBannerH = ' + thisBannerH);
-                // console.log('thisBannerScale = ' + thisBannerScale);
+                // console.log('handleClick(thisWorkImage) ===>   thisBanner = ' + thisBanner);
+                // console.log('handleClick(thisWorkImage) ===>   thisBannerX = ' + thisBannerX);
+                // console.log('handleClick(thisWorkImage) ===>   thisBannerY = ' + thisBannerY);
+                // console.log('handleClick(thisWorkImage) ===>   thisBannerScale = ' + thisBannerScale);
 
-                //#endregion - - - - - - - - - - - - - CALCULATE NEW POSITION - - - - - - - - - - - - -
-
-
-                //#region - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
-
-                // gsap.set([importContainer_Ref.current, importedContent_Ref.current], { transformOrigin: '50% 0', immediateRender: true });
-                // // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
-                // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
-
-                // gsap.set([importedContent_Ref.current], { scale: thisBannerScale, zIndex: -100 });
-
-
-                // gsap.set([importContainer_Ref.current, importedContent_Ref.current], { transformOrigin: '0 0', immediateRender: true });
-                gsap.set([importContainer_Ref.current], { transformOrigin: '0 0', immediateRender: true });
-                gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale });
-
-                //#endregion - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
+                gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
             }
         }
 
@@ -324,9 +368,6 @@ function WorkList() {
         // set resize listener
         window.addEventListener('resize', resizeListener);
 
-        //#endregion -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
-
-
         // clean up function
         return () => {
             // // RELOCATE THE LOADED GSAP BANNER
@@ -336,158 +377,17 @@ function WorkList() {
             window.removeEventListener('resize', resizeListener);
         }
 
+        //#endregion -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
+
     // }, []);
     }, [windowWidth]);
-    // }, [animDuration02, animDuration04, animDuration05]);
 
-    //#endregion ==================== useEffect ====================
+    //#endregion ==================== useEffect: moveBanner ====================
 
-
-    useLayoutEffect(() => {
-
-        console.log('');
-        console.log('--------------------  useLayoutEffect  --------------------');
-
-        console.log('bannerMasonry_Ref.current = ' + bannerMasonry_Ref.current);
-        // checkBanners(bannerMasonry_Ref.current);
-        // checkBanners(document.getElementById('bannerMasonryID'));
-
-    }, []);
-
-
-    //#region ==================== FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks - switch/case ====================
-
-    function handleClick(thisWorkImage) {
-
-        // console.log('');
-        // console.log('------------------------- handleClick(thisWorkImage) -------------------------');
-
-
-        //#region ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
-
-        // console.log('handleClick: windowWidth = ' + windowWidth);
-
-        // console.log('');
-        // console.log('thisWorkImage.link = ' + thisWorkImage.link);
-        // console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
-        // console.log('thisWorkImage.link3 = ' + thisWorkImage.link3);
-        // console.log('thisWorkImage.link4 = ' + thisWorkImage.link4);
-
-        // console.log('document.getElementById(thisWorkImage.link2).className = ' + document.getElementById(thisWorkImage.link2).className);
-
-        // console.log('');
-        // console.log('document.getElementById(thisWorkImage.link2).x = ' + document.getElementById(thisWorkImage.link2).x);
-        // console.log('document.getElementById(thisWorkImage.link2).y = ' + document.getElementById(thisWorkImage.link2).y);
-
-        // console.log('');
-        // console.log('document.getElementById(thisWorkImage.link2).offsetWidth = ' + document.getElementById(thisWorkImage.link2).offsetWidth);
-        // console.log('document.getElementById(thisWorkImage.link2).offsetHeight = ' + document.getElementById(thisWorkImage.link2).offsetHeight);
-
-        // console.log('');
-        // // console.log('document.getElementById(importContainerID).offsetWidth = ' + document.getElementById('importContainerID').offsetWidth);
-        // // console.log('document.getElementById(importContainerID).offsetHeight = ' + document.getElementById('importContainerID').offsetHeight);
-
-        // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
-        // // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
-
-        //#endregion ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
-
-
-        //#region ------------------------- Tryin' out sh*t... -------------------------
-
-        //#region - - - - - - - - - - - - - ASSIGN NEW BANNER - - - - - - - - - - - - -
-
-        if (banners[thisWorkImage.link2]) {
-
-            const thisBanner = React.createElement(banners[thisWorkImage.link2]);
-
-            // console.log('');
-            // console.log('thisBanner = ' + thisBanner);
-
-            setBannerShow(thisBanner);
-
-            // setBannerKey(thisBanner);
-            document.getElementById('importContainerID').key = thisWorkImage.link2;
-            // document.getElementById(thisWorkImage.link2).key = thisWorkImage.link2;
-
-            // console.log('');
-            // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
-            // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
-
-        } else {
-            setBannerShow(thisWorkImage.link2 + ' THIS CONTENT COMING SOON!');
-            // setBannerKey(thisWorkImage.link2);
-        }
-
-        //#endregion - - - - - - - - - - - - - ASSIGN NEW BANNER - - - - - - - - - - - - -
-
-
-        //#region - - - - - - - - - - - - - CALCULATE NEW POSITION - - - - - - - - - - - - -
-
-        // let thisBannerX = document.getElementById(thisWorkImage.link2).x;
-        // let thisBannerY = document.getElementById(thisWorkImage.link2).y;
-
-        // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft;
-        // let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop;
-
-        //#region -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
-
-        // let thisBannerX = document.getElementById(thisWorkImage.link2).x + 1;
-        // let thisBannerY = document.getElementById(thisWorkImage.link2).y - 250;
-
-        // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft + 1;
-        // let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop - 250;
-
-        // let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft - 13;
-        let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop - 170;
-
-        let thisBannerX = document.getElementById(thisWorkImage.link2).offsetLeft - (0.0125 * windowWidth);
-        // let thisBannerY = document.getElementById(thisWorkImage.link2).offsetTop - (headerHeight + navBarHeight + workkNavHeight);
-
-        //#endregion -  -  -  -  -  -  -  -  - position compensation for elements above importContainer -  -  -  -  -  -  -  -  -
-
-        // let thisBannerW = document.getElementById(thisWorkImage.link2).offsetWidth;
-        // let thisBannerH = document.getElementById(thisWorkImage.link2).offsetHeight;
-
-        let thisBannerScale = document.getElementById(thisWorkImage.link2).offsetWidth / 300;
-
-        //#endregion - - - - - - - - - - - - - CALCULATE NEW POSITION - - - - - - - - - - - - -
-
-
-        //#region - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
-
-        // gsap.set([importContainer_Ref.current, importedContent_Ref.current], { transformOrigin: '50% 0', immediateRender: true });
-        // // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
-        // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
-
-        // // gsap.set([importedContent_Ref.current], { scale: thisBannerScale, zIndex: -100 });
-
-
-        // gsap.set([importContainer_Ref.current, importedContent_Ref.current], { transformOrigin: '0 0', immediateRender: true });
-        gsap.set([importContainer_Ref.current], { transformOrigin: '0 0', immediateRender: true });
-
-        // gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH });
-        gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale });
-
-        // gsap.set([importedContent_Ref.current], { width: thisBannerW, height: thisBannerH });
-        // gsap.set([importedContent_Ref.current.children[1]], { scale: thisBannerScale });
-        // gsap.set([importedContent_Ref.current], { x: thisBannerX, y: thisBannerY, width: thisBannerW, height: thisBannerH, scale: thisBannerScale });
-
-        //#endregion - - - - - - - - - - - - - POSITION BANNER - - - - - - - - - - - - -
-
-        //#endregion ------------------------- Tryin' out sh*t... -------------------------
-
-    }
-
-    //#endregion ==================== FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks - switch/case ====================
-
-
-
-    //#region ==================== RETURN (className='workList') ====================
 
     return (
-        <div className='workList'>
-
+        // <div className='workList' id='workListID' ref={workListDiv_Ref}>
+        <>
             {/* width = {width}; */}
 
             <div className='importContainer' id='importContainerID' ref={importContainer_Ref}>
@@ -641,15 +541,12 @@ function WorkList() {
 
         {/* #endregion ------------------------- WEB / VIDEO ------------------------- */}
 
-        </div>
+        </>
+        // </div>
     )
-
-    //#endregion ==================== RETURN (className='workList') ====================
-
 }
 
 //#endregion ==================== workList() => <WorkList /> ====================
-
 
 
 

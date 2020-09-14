@@ -66,9 +66,9 @@ export const Work = () => {
     const match = useRoutes(routes);
 
     return (
-        <FullPage title="Work">
+        <FullPage title='Work'>
 
-            <div className='workPage'>
+            <div className='workContainer' id='workContainerID'>
                 {/* <div className='workList'> */}
                     {match || <NotFound />}
                 {/* </div> */}

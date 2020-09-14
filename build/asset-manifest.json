@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/shigimcp2020-react/static/css/main.78cea909.chunk.css",
-    "main.js": "/shigimcp2020-react/static/js/main.e4deb375.chunk.js",
-    "main.js.map": "/shigimcp2020-react/static/js/main.e4deb375.chunk.js.map",
+    "main.css": "/shigimcp2020-react/static/css/main.2b78ad48.chunk.css",
+    "main.js": "/shigimcp2020-react/static/js/main.997418b6.chunk.js",
+    "main.js.map": "/shigimcp2020-react/static/js/main.997418b6.chunk.js.map",
     "runtime-main.js": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js",
     "runtime-main.js.map": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js.map",
-    "static/js/2.311e85cf.chunk.js": "/shigimcp2020-react/static/js/2.311e85cf.chunk.js",
-    "static/js/2.311e85cf.chunk.js.map": "/shigimcp2020-react/static/js/2.311e85cf.chunk.js.map",
+    "static/js/2.69180e6c.chunk.js": "/shigimcp2020-react/static/js/2.69180e6c.chunk.js",
+    "static/js/2.69180e6c.chunk.js.map": "/shigimcp2020-react/static/js/2.69180e6c.chunk.js.map",
     "index.html": "/shigimcp2020-react/index.html",
-    "precache-manifest.66298869301dd877cc0b17a39081edeb.js": "/shigimcp2020-react/precache-manifest.66298869301dd877cc0b17a39081edeb.js",
+    "precache-manifest.d399d4f8415dbc3399bd192e0b1d0e85.js": "/shigimcp2020-react/precache-manifest.d399d4f8415dbc3399bd192e0b1d0e85.js",
     "service-worker.js": "/shigimcp2020-react/service-worker.js",
-    "static/css/main.78cea909.chunk.css.map": "/shigimcp2020-react/static/css/main.78cea909.chunk.css.map",
-    "static/js/2.311e85cf.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.311e85cf.chunk.js.LICENSE.txt",
+    "static/css/main.2b78ad48.chunk.css.map": "/shigimcp2020-react/static/css/main.2b78ad48.chunk.css.map",
+    "static/js/2.69180e6c.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.69180e6c.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/shigimcp2020-react/static/media/ChaleParNinSix.fc1bf3d8.svg",
     "static/media/BSPS_bottle.png": "/shigimcp2020-react/static/media/BSPS_bottle.dab95377.png",
     "static/media/BSPS_image.jpg": "/shigimcp2020-react/static/media/BSPS_image.6bc465a8.jpg",
@@ -82,8 +82,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b6df552f.js",
-    "static/js/2.311e85cf.chunk.js",
-    "static/css/main.78cea909.chunk.css",
-    "static/js/main.e4deb375.chunk.js"
+    "static/js/2.69180e6c.chunk.js",
+    "static/css/main.2b78ad48.chunk.css",
+    "static/js/main.997418b6.chunk.js"
   ]
 }
