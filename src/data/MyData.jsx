@@ -9,18 +9,18 @@ import about from '../data/json/about.json';
 // const aboutData = about.map((thought) => thought);
 
 
-console.log('');
-console.log('==========  MyData.jsx  ==========');
-console.log('employers');
-console.log(employers);
+// console.log('');
+// console.log('==========  MyData.jsx  ==========');
+// console.log('employers');
+// console.log(employers);
 // console.log('');
 
-console.log('work');
-console.log(work);
+// console.log('work');
+// console.log(work);
 // console.log('');
 
-console.log('about');
-console.log(about);
+// console.log('about');
+// console.log(about);
 // console.log('');
 
 

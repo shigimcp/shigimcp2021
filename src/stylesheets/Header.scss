@@ -51,7 +51,7 @@
             line-height: 1em;
 
             width: auto;
-            height: inherit;
+            // height: inherit;
 
             // margin: 0;
             // padding: inherit;
@@ -62,7 +62,8 @@
 
             position: absolute;
             // bottom: -17.5%;
-            bottom: -37.5%;
+            // bottom: -37.5%;
+            bottom: 10%;
             left: 35px;
 
             // display: table-cell;
@@ -74,7 +75,7 @@
             font-size: 20px;
 
             width: auto;
-            height: inherit;
+            // height: inherit;
 
             // margin: 0;
             // padding: inherit;
@@ -84,7 +85,8 @@
             // left: 60px;
 
             position: absolute;
-            bottom: -22.5%;
+            // bottom: -22.5%;
+            bottom: -16.25%;
             left: 310px;
 
             display: table-cell;
@@ -96,14 +98,11 @@
             font-size: 18px;
             letter-spacing: .05em;
 
+            height: 73.75%;
+
             position: absolute;
-            // top: 9.5px;
-            // left: 159px;
-            // left: 140px;
-            // bottom: -17.5%;
-            bottom: -16.25%;
+            bottom: 0;
             right: 0;
-            // right: -80px;
 
             // margin: 0;
             // padding: inherit;
@@ -561,7 +560,8 @@
                     font-size: 1.625em;
                     // bottom: -5%;
                     // left: 26.25vw;
-                    bottom: -35%;
+                    // bottom: -35%;
+                    bottom: 10%;
                     left: 26.25vw;
                 }
 

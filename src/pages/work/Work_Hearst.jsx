@@ -6,14 +6,14 @@ import React from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import Moment from 'react-moment';
 
-// import '../stylesheets/Work.scss';
+// import '../../stylesheets/Work.scss';
 // import scssVars from '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: DATA --------------------
 
 // import work from '../data/MyData';
-import work from '../data/json/work_json/work_mimi.json';
+import work from '../../data/json/work_json/work_hearst.json';
 
 //#endregion -------------------- IMPORTS: DATA --------------------
 
@@ -21,7 +21,7 @@ import work from '../data/json/work_json/work_mimi.json';
 
 
 // console.log('');
-// console.log('=========================  Work_MiMi.jsx  =========================');
+// console.log('=========================  Work_Hearst.jsx  =========================');
 
 
 //#region ==================== CONSTANTS ====================
@@ -115,7 +115,7 @@ function WorkList() {
             <section className='masonrySection'>
                 {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 3200: 3 }}> */}
                 {/* <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3 }}> */}
-                <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1024: 2, 1920: 3, 2560: 4 }}>
+                <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 1366: 2, 1920: 3, 2560: 4 }}>
                     {/* <Masonry gutter='50px'> */}
                     <Masonry className='masonry' gutter='1.25vw'>
                         {work.map((workImage, i) => (
@@ -167,10 +167,10 @@ function WorkList() {
 
 //#endregion -------------------- MASONRY: REF https://cedricdelpoux.github.io/react-responsive-masonry/ --------------------
 
-//#endregion ==================== WorkMiMi ====================
+//#endregion ==================== WorkHearst ====================
 
 
-export const WorkMiMi = () => {
+export const WorkHearst = () => {
 
     return (
         <>

@@ -1,49 +1,49 @@
 {
-  "name": "shigimcp2020-react",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://shigimcp.github.io/shigimcp2020-react/",
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "gh-pages": "^3.1.0",
-    "gsap": "file:gsap-bonus.tgz",
-    "hookrouter": "^1.2.3",
-    "lodash": "^4.17.19",
-    "moment": "^2.27.0",
-    "react": "^16.13.1",
-    "react-css-burger": "^0.2.0",
-    "react-dom": "^16.13.1",
-    "react-gsap": "^2.2.1",
-    "react-moment": "^0.9.7",
-    "react-responsive-masonry": "^2.1.0",
-    "react-scripts": "^3.4.3",
-    "sass": "^1.26.10",
-    "typescript": "^3.9.6"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {}
+    "name": "shigimcp2020-react",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "https://shigimcp.github.io/shigimcp2020-react/",
+    "dependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "gh-pages": "^3.1.0",
+        "gsap": "file:gsap-bonus.tgz",
+        "hookrouter": "^1.2.3",
+        "lodash": "^4.17.19",
+        "moment": "^2.27.0",
+        "react": "^16.13.1",
+        "react-css-burger": "^0.2.0",
+        "react-dom": "^16.13.1",
+        "react-gsap": "^2.2.1",
+        "react-moment": "^0.9.7",
+        "react-responsive-masonry": "^2.1.0",
+        "react-scripts": "^3.4.3",
+        "sass": "^1.26.10",
+        "typescript": "^3.9.6"
+    },
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {}
 }

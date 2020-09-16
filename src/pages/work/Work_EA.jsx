@@ -11,21 +11,21 @@ import Moment from 'react-moment';
 
 import { gsap } from 'gsap';
 
-// import '../stylesheets/Work.scss';
+// import '../../stylesheets/Work.scss';
 // import scssVars from '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: GSAP BANNERS --------------------
 
-import EAAR_18951 from '../images/ea/banners/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600/EAAR_18951';
-import NMPF_04852 from '../images/ea/banners/CR_4852_NMPF_US_Walmart_300x250/NMPF_04852';
-import NMMN_11155 from '../images/ea/banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
-import JCNR_07074 from '../images/ea/banners/CR_7074_JC_VNOIR_2013_AU_300x600/JCNR_07074';
-import BSPS_26897 from '../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
-import NMTG_26903 from '../images/ea/banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
-import JCVR_26963 from '../images/ea/banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250/JCVR_26963';
-import BCBG_02342 from '../images/ea/banners/BCBG_MAXAZRIA_CR00002342_AU_Digital_Plan/BCBG_02342';
-import BCBG_05500 from '../images/ea/banners/CR_5500_BCBG_BC_AU_Digital_Plan_2013/BCBG_05500';
+import EAAR_18951 from '../../images/ea/banners/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600/EAAR_18951';
+import NMPF_04852 from '../../images/ea/banners/CR_4852_NMPF_US_Walmart_300x250/NMPF_04852';
+import NMMN_11155 from '../../images/ea/banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
+import JCNR_07074 from '../../images/ea/banners/CR_7074_JC_VNOIR_2013_AU_300x600/JCNR_07074';
+import BSPS_26897 from '../../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
+import NMTG_26903 from '../../images/ea/banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
+import JCVR_26963 from '../../images/ea/banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250/JCVR_26963';
+import BCBG_02342 from '../../images/ea/banners/BCBG_MAXAZRIA_CR00002342_AU_Digital_Plan/BCBG_02342';
+import BCBG_05500 from '../../images/ea/banners/CR_5500_BCBG_BC_AU_Digital_Plan_2013/BCBG_05500';
 
 //#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
 
@@ -33,7 +33,7 @@ import BCBG_05500 from '../images/ea/banners/CR_5500_BCBG_BC_AU_Digital_Plan_201
 //#region -------------------- IMPORTS: DATA --------------------
 
 // import work from '../data/MyData';
-import work from '../data/json/work_json/work_ea.json';
+import work from '../../data/json/work_json/work_ea.json';
 
 //#endregion -------------------- IMPORTS: DATA --------------------
 
@@ -42,7 +42,7 @@ import work from '../data/json/work_json/work_ea.json';
 
 
 // console.log('');
-// console.log('=========================  Work_000.jsx  =========================');
+// console.log('=========================  Work_EA.jsx  =========================');
 
 
 
@@ -550,7 +550,7 @@ function WorkList() {
 
 
 
-export const Work000 = () => {
+export const WorkEA = () => {
 
     return (
         <>

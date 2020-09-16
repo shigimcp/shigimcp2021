@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import { useRef, useLayoutEffect, useState } from 'react';
-import { useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
+// import { useLayoutEffect } from 'react';
 import { A, usePath } from 'hookrouter';
 // import { useCallback } from 'react';
 
@@ -14,7 +14,12 @@ import Burger from 'react-css-burger';
 import '../stylesheets/Header.scss';
 import scssVars from '../stylesheets/Global.scss';
 
+
+//#region -------------------- IMPORTS: DATA --------------------
+
 import myData from '../data/MyData';
+
+//#endregion -------------------- IMPORTS: DATA --------------------
 
 //#endregion ==================== IMPORTS ====================
 
@@ -68,6 +73,14 @@ const workkNavHeight = parseInt(scssVars.workkNavHeight);
 // console.log('(10 + workkNavHeight) = ' + (10 + workkNavHeight));
 
 //#endregion -------------------- SCSS VARS --------------------
+
+
+//#region -------------------- GSAP TIMELINES: workNavTL, mobileNavTL --------------------
+
+const workNavTL = new gsap.timeline({ paused: true });
+const mobileNavTL = new gsap.timeline({ paused: true });
+
+//#endregion -------------------- GSAP TIMELINES: workNavTL, mobileNavTL --------------------
 
 //#endregion ==================== CONSTANTS ====================
 
@@ -124,27 +137,39 @@ export const Header = () => {
 
     //#region ==================== use DEFs ====================
 
+    // console.log('');
+    // console.log('-------------------------  use DEFs  -------------------------');
+
     const [navLoc, setNavLoc] = useState();
     // const [navLoc, setNavLoc] = useState('homeID');
 
     const [workNavShow, setWorkNavShow] = useState();
-    const [workNavTL] = useState(new gsap.timeline({ paused: true }));
+    // const [workNavTL] = useState(new gsap.timeline({ paused: true }));
+
+    // const [currentEmployer, setCurrentEmployer] = useState();
+    // const [currentEmployer, setCurrentEmployer] = useState(null);
+    const [currentEmployer, setCurrentEmployer] = useState('mimi');
+    const initEmployer = '/work/' + currentEmployer;
+
+    // console.log('');
+    // console.log('use DEFs ===>   currentEmployer = ' + currentEmployer);
+    // console.log('use DEFs ===>   initEmployer = ' + initEmployer);
 
     const [mobileNavShow, setMobileNavShow] = useState(false);
-    const [mobileNavTL] = useState(new gsap.timeline({ paused: true }));
+    // const [mobileNavTL] = useState(new gsap.timeline({ paused: true }));
 
     const currentPath = usePath();
-    // console.log('currentPath = ' + currentPath);
+    // console.log('use DEFs ===>   currentPath = ' + currentPath);
 
     //#endregion ==================== use DEFs ====================
 
 
-    //#region ==================== useLayoutEffect: [navLoc, setNavLoc] ====================
+    //#region ==================== useEffect: [navLoc, setNavLoc] ====================
 
-    useLayoutEffect(() => {
+    useEffect(() => {
 
         // console.log('');
-        // console.log('------------------------- useLayoutEffect: [navLoc, setNavLoc] -------------------------');
+        // console.log('------------------------- useEffect: [navLoc, setNavLoc] -------------------------');
 
 
         //#region -------------------- setActiveNavDiv --------------------
@@ -158,30 +183,31 @@ export const Header = () => {
 
             if (currentPath === '/' || currentPath.includes('/shigimcp2020')) {
 
+                currentLoc = 'homeID';
+
+                // console.log('');
                 // console.log('BLAH 01');
+                // console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
 
-                currentLoc = 'homeID'
-
-                console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
-
-            } else if (currentPath.includes('/contact') || currentPath.includes('/work')) {
-
-                // console.log('BLAH 02');
+            // } else if (currentPath.includes('/contact') || currentPath.includes('/work')) {
+            } else if (currentPath.includes('/contact') || currentPath.includes('/work/')) {
 
                 currentLoc = currentPath.substring(currentPath.indexOf('/') + 1, currentPath.lastIndexOf('/')) + 'ID';
 
-                console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
+                // console.log('');
+                // console.log('BLAH 02');
+                // console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
 
             } else {
 
+                currentLoc = currentPath.substring(currentPath.lastIndexOf('/') + 1) + 'ID';
+
+                // console.log('');
                 // console.log('BLAH 03');
-
-                currentLoc = currentPath.substring(currentPath.lastIndexOf('/') + 1) + 'ID'
-
-                console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
+                // console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
             }
 
-            // console.log('currentLoc = ' + currentLoc);
+            // console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
 
 
             //#region - - - - - - - - - - - offset - - - - - - - - - - -
@@ -235,10 +261,13 @@ export const Header = () => {
             // gsap.set([activeNavDiv_Ref.current], { x: thisLocX, y: (thisLocY - thisLocH), width: thisLocW });
             // gsap.set([activeNavDiv_Ref.current], { x: thisLocX, top: (thisLocY - thisLocH), width: thisLocW, transformOrigin: '100% 0', immediateRender: true });
             gsap.set([activeNavDiv_Ref.current], { x: thisLocX, top: thisLocY, width: thisLocW });
+            // gsap.set([activeNavDiv_Ref.current], { left: thisLocX, top: thisLocY, width: thisLocW });
         }
 
         //#endregion -------------------- setActiveNavDiv --------------------
 
+
+        //#region -------------------- if (navLoc) {animate} --------------------
 
         if (navLoc) {
 
@@ -304,6 +333,7 @@ export const Header = () => {
             // gsap.to([activeNavDiv_Ref.current], { x: thisLocX, y: (thisLocY - thisLocH), width: thisLocW, duration: 0.5 });
             // gsap.to([activeNavDiv_Ref.current], { x: thisLocX, top: (thisLocY - thisLocH), width: thisLocW, transformOrigin: '100% 0', immediateRender: true, duration: 0.5 });
             gsap.to([activeNavDiv_Ref.current], { x: thisLocX, top: thisLocY, width: thisLocW, duration: 0.375 });
+            // gsap.to([activeNavDiv_Ref.current], { left: thisLocX, top: thisLocY, width: thisLocW, duration: 0.375 });
 
         } else {
 
@@ -313,6 +343,8 @@ export const Header = () => {
 
             setActiveNavDiv();
         }
+
+        //#endregion -------------------- if (navLoc) {animate} --------------------
 
 
         //#region -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
@@ -332,17 +364,17 @@ export const Header = () => {
     // }, []);
     }, [navLoc, currentPath]);
 
-    //#endregion ==================== useLayoutEffect: [navLoc, setNavLoc] ====================
+    //#endregion ==================== useEffect: [navLoc, setNavLoc] ====================
 
 
-    //#region ==================== useLayoutEffect: [workNavShow, setWorkNavShow] ====================
+    //#region ==================== useEffect: [workNavShow, setWorkNavShow] ====================
     //        -------------------- (runs both after the first render *and* after every update): REF https://reactjs.org/docs/hooks-effect.html --------------------
     //        -------------------- GSAP TIMELINE: REF https://dev.to/coffeecraftcode/animating-react-greensock-and-react-hooks-55o4 --------------------
 
-    useLayoutEffect(() => {
+    useEffect(() => {
 
         // console.log('');
-        // console.log('------------------------- useLayoutEffect: [workNavShow, setWorkNavShow] -------------------------');
+        // console.log('------------------------- useEffect: [workNavShow, setWorkNavShow] -------------------------');
         // console.log('currentPath = ' + currentPath);
         // console.log('currentPath = ' + currentPath + '     workNavShow = ' + workNavShow);
 
@@ -358,9 +390,6 @@ export const Header = () => {
             // workNavTL.paused();
         }
 
-        // handleClick();
-        // handleClick('blah');
-
         window.scrollTo(0, 0);
 
     // }, []);
@@ -368,65 +397,42 @@ export const Header = () => {
     // }, [workNavShow, workNavTL, currentPath, navLoc]);
     // }, [workNavShow, workNavTL, currentPath, handleClick]);
     // }, [workNavTL, currentPath, handleClick]);
-    }, [workNavTL, currentPath]);
+    }, [currentPath]);
 
-    //#endregion ==================== useLayoutEffect: [workNavShow, setWorkNavShow] ====================
+    //#endregion ==================== useEffect: [workNavShow, setWorkNavShow] ====================
 
 
     //#region ==================== useEffect: [mobileNavShow, setMobileNavShow] ====================
 
-    const breakpointMobile = 767;
+    const breakpointMobile = 768;
 
     useEffect(() => {
 
-        console.log('');
-        console.log('------------------------- useEffect: [mobileNavShow, setMobileNavShow] -------------------------');
+        // console.log('');
+        // console.log('------------------------- useEffect: [mobileNavShow, setMobileNavShow] -------------------------');
 
 
-        if (window.innerWidth < breakpointMobile) {
+        if (window.innerWidth <= breakpointMobile) {
             mobileNavTL.fromTo(['.navItem', '.activeNavDiv'], { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.25, stagger: 0.0625 }, 'frame00');
-            // mobileNavTL.fromTo(['.navItem', '.activeNavDiv'], { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.5, stagger: 0.125 }, 'frame00');
         } else {
             mobileNavTL.set(['.navItem', '.activeNavDiv'], { autoAlpha: 1 });
         }
 
         if (mobileNavShow) {
 
-            console.log('mobileNavShow = ' + mobileNavShow);
-            console.log('navBar_Ref = ' + navBar_Ref);
-            console.log('navBar_Ref.id = ' + navBar_Ref.id);
+            // console.log('mobileNavShow = ' + mobileNavShow);
 
-            // gsap.to([navBar_Ref], { y: 200, duration: 0.5 });
-            // gsap.to([navBar_Ref], { top: 200, duration: 0.5 });
-            // gsap.fromTo([navBar_Ref], { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.5 });
-
-            // gsap.to(['.navItem', '.activeNavDiv'], { autoAlpha: 1, duration: 0.5, stagger: 0.125 });
-            // gsap.from(['.navItem', '.activeNavDiv'], { autoAlpha: 0, duration: 0.5, stagger: 0.125 });
-
-            // mobileNavTL.fromTo(['.navItem', '.activeNavDiv'], { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5, stagger: 0.125 }, 'frame00');
             mobileNavTL.play();
-            // mobileNavTL.reverse();
 
         } else {
 
-            console.log('mobileNavShow = ' + mobileNavShow);
-            console.log('navBar_Ref = ' + navBar_Ref);
-            console.log('navBar_Ref.id = ' + navBar_Ref.id);
+            // console.log('mobileNavShow = ' + mobileNavShow);
 
-            // gsap.to([navBar_Ref], { y: 0, duration: 0.5 });
-            // gsap.to([navBar_Ref], { top: 0, duration: 0.5 });
-            // gsap.fromTo([navBar_Ref], { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5 });
-
-            // gsap.to(['.navItem', '.activeNavDiv'], { autoAlpha: 0, duration: 0.5, stagger: 0.125 });
-            // gsap.to(['.activeNavDiv', '.navItem'], { autoAlpha: 0, duration: 0.5, stagger: 0.125 });
-            // gsap.from(['.activeNavDiv', '.navItem'], { autoAlpha: 1, duration: 0.5, stagger: 0.125 });
-
-            // mobileNavTL.fromTo(['.navItem', '.activeNavDiv'], { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.5, stagger: 0.125 }, 'frame00');
             mobileNavTL.reverse();
-            // mobileNavTL.play();
         }
 
-    }, [mobileNavShow, mobileNavTL]);
+    // }, []);
+    }, [mobileNavShow]);
 
     //#endregion ==================== useEffect: [mobileNavShow, setMobileNavShow] ====================
 
@@ -448,7 +454,8 @@ export const Header = () => {
             // <A href={props.link} className='employerIcon'>
             // <A href={props.link} className='employerIcon' onClick={() => workNavShow.play()}>
             // <A href={props.link} className='employerIcon' onClick={() => workNavShow.reverse()}>
-            <A href={props.link} className='employerIcon' onClick={() => workNavShow.pause()}>
+            // <A href={props.link} className='employerIcon' onClick={() => workNavShow.pause()}>
+            <A href={props.link} className='employerIcon' onClick={() => { workNavShow.pause(); setCurrentEmployer(props.album_id); }}>
                 <img src={remoteLoc + props.employerLogo} alt={'employer: ' + props.employer} />
             </A>
         )
@@ -601,30 +608,19 @@ export const Header = () => {
                     {WorkNavItems}
                 </div>
 
-                {/* <div className='navBar' id='navBarID' ref={navBar_Ref}> */}
-                <div className='navBar' id='navBarID' ref={e => { navBar_Ref = e }}>
+                {/* <div className='navBar' id='navBarID'> */}
+                <div className='navBar' id='navBarID' ref={navBar_Ref}>
+                {/* <div className='navBar' id='navBarID' ref={e => { navBar_Ref = e }}> */}
 
                     {/* <div className='activeNavDiv' ref={activeNavDiv_Ref}></div> */}
                     {/* <div className='activeNavDiv' ref={e => { activeNavDiv_Ref = e }} /> */}
                     <div className='activeNavDiv' ref={activeNavDiv_Ref} onClick={() => { setMobileNavShow(false) }}></div>
 
-                    {/* 
-                    <A className='navItem' href='/' id='homeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('homeID'); }}>Home</A>
-                    <A className='navItem' href='/work/000' id='workID' onClick={() => { setWorkNavShow(workNavShow.play()); setNavLoc('workID'); }}>Work</A>
-                    <A className='navItem' href='/about' id='aboutID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('aboutID'); }}>About</A>
-                    <A className='navItem' href='/resume' id='resumeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('resumeID'); }}>Resume</A>
-                    <A className='navItem' href='/contact' id='contactID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('contactID'); }}>Contact</A>
-                    <A className='navItem' href='/contact/Shigi' id='contactID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('contactID'); }}>Contact</A>
-                    */}
-                    {/* <A className='navItem' href='/work/000' id='000ID' onClick={() => { setWorkNavShow(workNavShow.play()); setNavLoc('000ID'); }}>000</A> */}
-                    {/* <A className='navItem' href='/work/000' id='000ID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('000ID'); }}>000</A> */}
-
-                    <A className='navItem' href='/' id='homeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('homeID'); setMobileNavShow(false); }}>Home</A>
-                    {/* <A className='navItem' href='/work/000' id='workID' onClick={() => { setWorkNavShow(workNavShow.play()); setNavLoc('workID'); setMobileNavShow(false); }}>Work</A> */}
-                    <A className='navItem' href='/work/mimi' id='workID' onClick={() => { setWorkNavShow(workNavShow.play()); setNavLoc('workID'); setMobileNavShow(false); }}>Work</A>
-                    <A className='navItem' href='/about' id='aboutID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('aboutID'); setMobileNavShow(false); }}>About</A>
-                    <A className='navItem' href='/resume' id='resumeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('resumeID'); setMobileNavShow(false); }}>Resume</A>
-                    <A className='navItem' href='/contact/Shigi' id='contactID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setNavLoc('contactID'); setMobileNavShow(false); }}>Contact</A>
+                    <A className='navItem' href='/' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Home</A>
+                    <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Work</A>
+                    <A className='navItem' href='/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>About</A>
+                    <A className='navItem' href='/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Resume</A>
+                    <A className='navItem' href='/contact/Shigi' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Contact</A>
 
                     {/* <div className='activeNavDiv' ref={activeNavDiv_Ref}></div> */}
 
@@ -634,14 +630,8 @@ export const Header = () => {
 
 
             <div className='navBurger' id='navBurgerID'>
-                {/* 
-                <div className='navDrawer' id='navDrawerID'>
-                    {WorkNavItems}
-                </div>
-                */}
+
                 <Burger
-                    // onClick={() => this.setState({ active: !this.state.active })}
-                    // active={this.state.active}
                     onClick={() => { setMobileNavShow(!mobileNavShow) }}
                     active={mobileNavShow}
                     burger='spring'
@@ -654,7 +644,6 @@ export const Header = () => {
                 />
 
             </div>
-
 
         </div>
     )

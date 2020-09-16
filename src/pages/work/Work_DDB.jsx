@@ -6,14 +6,14 @@ import React from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import Moment from 'react-moment';
 
-// import '../stylesheets/Work.scss';
+// import '../../stylesheets/Work.scss';
 // import scssVars from '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: DATA --------------------
 
 // import work from '../data/MyData';
-import work from '../data/json/work_json/work_ddb.json';
+import work from '../../data/json/work_json/work_ddb.json';
 
 //#endregion -------------------- IMPORTS: DATA --------------------
 

@@ -26,8 +26,8 @@ import myData from '../data/MyData';
 
 // import employers from '../data/json/employers_http.json';
 // import work from '../data/json/work_complete.json';
-// import work from '../data/json/work_json/work_ax.json';
-// import work_ax from '../data/json/work_json/work_ax.json';
+// import work from '../../data/json/work_json/work_ax.json';
+// import work_ax from '../../data/json/work_json/work_ax.json';
 
 //#endregion -------------------- IMPORTS: DATA --------------------
 

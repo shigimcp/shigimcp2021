@@ -1,7 +1,7 @@
 import React from 'react';
-import '../stylesheets/Work.scss';
+import '../../stylesheets/Work.scss';
 
-import work from '../data/json/work_json/work_dar.json';
+import work from '../../data/json/work_json/work_lum.json';
 
 
 // --------------------  --------------------
@@ -81,7 +81,7 @@ function WorkList() {
 // --------------------  --------------------
 
 
-export const WorkDarwin = () => {
+export const WorkLuminant = () => {
 
     return (
         <WorkList />

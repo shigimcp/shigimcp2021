@@ -86,6 +86,8 @@
 
                         // position: absolute;
                         // z-index: -999;
+
+                        cursor: pointer;
                     }
 
                     .masonryInfo {
@@ -94,10 +96,11 @@
 
                         // @include navbgGradient02();
 
-                        letter-spacing: .05em;
+                        letter-spacing: .0375em;
 
                         margin: 0;
-                        padding: 3.75%;
+                        // padding: 3.75% 6.25%;
+                        padding: 10px 20px;
                     }
                 }
             }
@@ -164,7 +167,7 @@
                         // border: 2px solid #00ffff;
 
                         .masonryInfo {
-                            // border: 2px solid #00ffff;
+                            // border: 2px solid #ff00ff;
 
                             font-size: 0.875em;
                         }

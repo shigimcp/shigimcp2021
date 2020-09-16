@@ -6,14 +6,14 @@ import React from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import Moment from 'react-moment';
 
-// import '../stylesheets/Work.scss';
+// import '../../stylesheets/Work.scss';
 // import scssVars from '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: DATA --------------------
 
 // import work from '../data/MyData';
-import work from '../data/json/work_json/work_hearst.json';
+import work from '../../data/json/work_json/work_hb.json';
 
 //#endregion -------------------- IMPORTS: DATA --------------------
 
@@ -21,7 +21,7 @@ import work from '../data/json/work_json/work_hearst.json';
 
 
 // console.log('');
-// console.log('=========================  Work_Hearst.jsx  =========================');
+// console.log('=========================  Work_HB.jsx  =========================');
 
 
 //#region ==================== CONSTANTS ====================
@@ -167,10 +167,10 @@ function WorkList() {
 
 //#endregion -------------------- MASONRY: REF https://cedricdelpoux.github.io/react-responsive-masonry/ --------------------
 
-//#endregion ==================== WorkHearst ====================
+//#endregion ==================== WorkHB ====================
 
 
-export const WorkHearst = () => {
+export const WorkHB = () => {
 
     return (
         <>

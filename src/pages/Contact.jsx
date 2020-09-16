@@ -202,6 +202,9 @@ export class Contact extends React.Component {
 
 
                 <div className='formContainer' id='formContainerID'>
+
+                    {/* <h1>Hello, {name}</h1> */}
+
                     <form className='contactForm' id='contact-form' onSubmit={this.handleSubmit.bind(this)} method='POST'>
                         <div className='form-group'>
                             <label htmlFor='name'>Name</label><br />
