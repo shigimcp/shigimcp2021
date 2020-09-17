@@ -528,9 +528,11 @@ function WorkList({currentEmployer}) {
             </section>
             */}
             <section className='masonrySection'>
+                    <hr />
+                    <h2>Banners</h2>
+                    <hr />
 
                 <ResponsiveMasonry columnsCountBreakPoints={{ 360: 1, 640: 2, 768: 2, 940: 4, 1640: 4, 1920: 5, 3000: 6 }}>
-                    {/* <Masonry gutter='50px'> */}
                     <Masonry className='masonry' id='bannerMasonryID' gutter='1.25vw' ref={bannerMasonry_Ref}>
 
                         {/* {work.filter(thisEmployer => thisEmployer.album_id === employer).map((workImage) => ( */}
@@ -599,30 +601,22 @@ function WorkList({currentEmployer}) {
 
         {/* #region ------------------------- WEB / VIDEO ------------------------- */}
 
-            <section>
+            <section className='masonrySection'>
                 <hr />
                 <h2>Web / Video</h2>
                 <hr />
-            </section>
 
-            <section className='masonrySection'>
-
-                {/* <ResponsiveMasonry columnsCountBreakPoints={{ 960: 1, 1366: 2, 2040: 3 }}> */}
-                {/* <ResponsiveMasonry columnsCountBreakPoints={{ 1024: 1, 1366: 2, 1920: 3, 3840: 4 }}> */}
                 <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 960: 2, 1920: 3, 3840: 4 }}>
                     <Masonry className='masonry' id='webMasonryID' gutter='1.25vw' ref={webMasonry_Ref}>
 
-                        {/* {work.filter(isBanner => isBanner.format === 'website').map((workImage) => ( */}
-                        {/* {work.filter((isBanner => isBanner.format === 'website') && (thisEmployer => thisEmployer.album_id === employer)).map((workImage) => ( */}
-
-                        {work.filter(isBanner => isBanner.format !== 'banner').map((workImage) => (
+                        {/* {work.filter(isBanner => isBanner.format !== 'banner').map((workImage) => ( */}
+                        {/* {work.filter(isBanner => isBanner.format === 'html5' || isBanner.format === 'video').map((workImage) => ( */}
+                        {work.filter(isBanner => isBanner.format === 'html5' || isBanner.format === 'video' || isBanner.format === 'website').map((workImage) => (
 
                             <div className='workItem' id={workImage.link2} key={'web' + workImage.album_id + workImage.image_index} ref={workItem_Ref}>
 
                                 <img
-                                    // key={'WV' + workImage.album_id + workImage.image_index}
                                     className='masonryImg'
-                                    // id={workImage.album_id + workImage.image_index + '_imgID'}
                                     id={workImage.link2}
                                     src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
                                     alt={'album_id: ' + workImage.album_id + workImage.image_index}
@@ -636,7 +630,7 @@ function WorkList({currentEmployer}) {
                                     {workImage.caption}<br />
                                     <Moment format="MMM YYYY">{workImage.date}</Moment><br />
 
-
+                                {/* 
                                     <br />
                                     album_index = {workImage.album_index}<br />
                                     album_id = {workImage.album_id}<br />
@@ -654,7 +648,7 @@ function WorkList({currentEmployer}) {
                                     alert = {workImage.alert}<br />
                                     mwidth = {workImage.mwidth}<br />
                                     mheight = {workImage.mheight}
-
+                                */}
 
                                 </p>
 
@@ -667,6 +661,68 @@ function WorkList({currentEmployer}) {
             </section>
 
         {/* #endregion ------------------------- WEB / VIDEO ------------------------- */}
+
+
+        {/* #region ------------------------- PRINT ------------------------- */}
+
+            <section className='masonrySection'>
+                <hr />
+                <h2>Print</h2>
+                <hr />
+
+                <ResponsiveMasonry columnsCountBreakPoints={{ 768: 1, 960: 2, 1920: 3, 3840: 4 }}>
+                    <Masonry className='masonry' id='webMasonryID' gutter='1.25vw' ref={webMasonry_Ref}>
+
+                        {work.filter(isBanner => isBanner.format === 'print').map((workImage) => (
+
+                            <div className='workItem' id={workImage.link2} key={'web' + workImage.album_id + workImage.image_index} ref={workItem_Ref}>
+
+                                <img
+                                    className='masonryImg'
+                                    id={workImage.link2}
+                                    src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
+                                    alt={'album_id: ' + workImage.album_id + workImage.image_index}
+
+                                    onClick={() => handleClick(workImage)}
+
+                                    ref={masonryImg_Ref}
+                                />
+
+                                <p className='masonryInfo' title='masonryInfoTitle'>
+                                    {workImage.caption}<br />
+                                    <Moment format="MMM YYYY">{workImage.date}</Moment><br />
+
+                                    {/* 
+                                    <br />
+                                    album_index = {workImage.album_index}<br />
+                                    album_id = {workImage.album_id}<br />
+                                    image_index = {workImage.image_index}<br />
+                                    src = {workImage.src}<br />
+                                    caption = {workImage.caption}<br />
+                                    date = {workImage.date}<br />
+                                    format = {workImage.format}<br />
+                                    format_src = {workImage.format_src}<br />
+                                    link = {workImage.link}<br />
+                                    link2 = {workImage.link2}<br />
+                                    link3 = {workImage.link3}<br />
+                                    link4 = {workImage.link4}<br />
+                                    cta = {workImage.cta}<br />
+                                    alert = {workImage.alert}<br />
+                                    mwidth = {workImage.mwidth}<br />
+                                    mheight = {workImage.mheight}
+                                */}
+
+                                </p>
+
+                            </div>
+                        ))}
+
+                    </Masonry>
+                </ResponsiveMasonry>
+
+            </section>
+
+        {/* #endregion ------------------------- PRINT ------------------------- */}
 
         </>
     )
