@@ -12,7 +12,6 @@ import { useState } from 'react';
 // import Moment from 'react-moment';
 
 import { gsap } from 'gsap';
-import ReactPlayer from 'react-player/vimeo'
 
 // import { FullPage } from '../components/FullPage';
 // import { BodyContainer } from '../components/BodyContainer';
@@ -79,6 +78,8 @@ import JCVR_26963 from '../images/ea/banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens
 
 //#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
 
+// import ax_denim_2011 from '../images/ax/mobile/giftguide_ho11/site_0318';
+
 //#endregion ==================== IMPORTS ====================
 
 
@@ -88,16 +89,35 @@ import JCVR_26963 from '../images/ea/banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens
 
 
 
+//#region ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
+
+// const routes = {
+//     '/mimi': () => <WorkMiMi />,
+//     // '/ea': () => <Work000 />,
+//     '/ea': () => <WorkEA />,
+//     '/ax': () => <WorkAX />,
+//     '/hearst': () => <WorkHearst />,
+//     '/ddb': () => <WorkDDB />,
+//     '/mrm': () => <WorkMRM />,
+//     '/heeb': () => <WorkHeeb />,
+//     '/hb': () => <WorkHB />,
+//     '/lum': () => <WorkLuminant />,
+//     '/dar': () => <WorkDarwin />,
+//     '/other': () => <WorkOther />,
+
+//     // '/000': () => <Work000 />,
+//     // '/': () => <Work000 />,
+//     '/': () => ' ',
+// }
+
+//#endregion ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
+
+
+
 //#region ==================== CONSTANTS ====================
 
-//#region -------------------- REMOTE CONTENT LOCATIONS --------------------
-
 const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
-// const localLoc = '../images/';
-const videoLoc = 'https://vimeo.com/';
-
-//#endregion -------------------- REMOTE CONTENT LOCATIONS --------------------
-
+const localLoc = '../images/';
 
 const getWidth = () => window.innerWidth
     || document.documentElement.clientWidth
@@ -177,32 +197,68 @@ const bannerContent = {
     // EAMU_26378: EAMU_26378,
 };
 
+// const availableBannerContent = [
+//     'EAAR_18951',
+//     'NMPF_04852',
+//     'NMMN_11155',
+//     'BCBG_02342',
+//     'BCBG_05500',
+//     // 'EAUT_04752',
+//     'JCNR_07074',
+//     'BSPS_26897',
+//     'NMTG_26903',
+//     'JCVR_26963',
+//     // 'JCSU_27801',
+//     // 'GBHO_28721',
+//     // 'GBHG_28726',
+//     // 'EAWT_29709',
+//     // 'EAFS_20741',
+//     // 'JVAB_22710',
+//     // 'EAPV_25219',
+//     // 'EAPV_26124',
+//     // 'EAMU_26378',
+// ];
 
-// const webContent = {
-//     mimi01: 'https://mimiobi19.wixsite.com/mimi01',
-//     mimi02: 'https://mimiobi19.wixsite.com/mimi02',
-//     mimi03: 'https://mimiobi19.wixsite.com/mimi03',
-//     mimi04: 'https://mimiobi19.wixsite.com/mimi04',
-//     mimi05: 'https://mimiobi19.wixsite.com/mimi05',
-// }
 
 
-// const videoContent = {
-//     325441227: '325441227',
-//     250926051: '250926051',
-//     313477117: '313477117',
-//     325994863: '325994863',
-//     325994874: '325994874',
-//     325994879: '325994879',
-//     325994884: '325994884',
-//     325994892: '325994892',
-//     325994894: '325994894',
-// }
+// const availableDummyContent = myData[1].filter(isAvailable => isAvailable.availability).map((dummyContent) => (
+//     dummyContent.link2
+// ));
+
+// console.log('availableDummyContent = ');
+// console.log(availableDummyContent);
+
+
+
+
+
+
+const webContent = {
+    mimi01: 'https://mimiobi19.wixsite.com/mimi01',
+    mimi02: 'https://mimiobi19.wixsite.com/mimi02',
+    mimi03: 'https://mimiobi19.wixsite.com/mimi03',
+    mimi04: 'https://mimiobi19.wixsite.com/mimi04',
+    mimi05: 'https://mimiobi19.wixsite.com/mimi05',
+}
+
+// const availableWebContent = [
+//     'https://mimiobi19.wixsite.com/mimi01',
+// ]
 
 
 // const printContent = {}
 
+// const availablePrintContent = []
+
 //#endregion -------------------- AVAILABLE CONTENT: xContent[] --------------------
+
+
+//#region -------------------- iFRAME --------------------
+
+// const IFRAME_ID = 'webiFrameID';
+// const IFRAME_CONTAINER_ID = 'webiFrameContainerID';
+
+//#endregion -------------------- iFRAME --------------------
 
 //#endregion ==================== CONSTANTS ====================
 
@@ -308,24 +364,23 @@ function moveBanner(thisBanner, bannerContainer) {
 //#endregion -------------------- FUNCTION: moveBanner(thisBanner) --------------------
 
 
-//#region -------------------- FUNCTION: clearContent(thisIframe) --------------------
+//#region -------------------- FUNCTION: emptyContainer(thisContainer) --------------------
 
-// function clearContent(thisIframe, thisVideo) {
-function clearContent(thisContainer) {
+// // function emptyContainer(thisContainer) {
+// function emptyContainer() {
 
-    console.log('');
-    console.log('--------------------  clearContent(thisIframe)  --------------------');
+//     console.log('');
+//     console.log('--------------------  emptyContainer(thisContainer)  --------------------');
 
-    console.log('clearContent(thisIframe) ===> thisContainer = ' + thisContainer.id);
+//     // console.log('emptyContainer(thisContainer) ==>   thisContainer = ' + thisContainer);
+//     // console.log('emptyContainer(thisContainer) ==>   thisContainer.id = ' + thisContainer.id);
 
-    // thisIframe.src = '';
-    // thisVideo.url = '';
+//     // while (thisContainer.firstChild) {
+//     //     thisContainer.removeChild(thisContainer.firstChild);
+//     // }
+// }
 
-    thisContainer.src = '';
-    // thisContainer.url = null;
-}
-
-//#endregion -------------------- FUNCTION: clearContent() --------------------
+//#endregion -------------------- FUNCTION: emptyContainer(thisContainer) --------------------
 
 //#endregion ==================== FUNCTIONS ====================
 
@@ -333,12 +388,11 @@ function clearContent(thisContainer) {
 
 //#region ==================== WorkList() => <WorkList /> ====================
 
-// let iframeSRC;
-// let videoSRC;
-
+// function WorkList() {
 function WorkList({ currentEmployer }) {
 
     // console.log('');
+    // // console.log('------------------------- WorkList() => <WorkList /> -------------------------');
     // console.log('========================= WorkList() => <WorkList /> =========================');
 
     // console.log('WorkList() => <WorkList /> ===>   currentEmployer = ' + currentEmployer);
@@ -358,10 +412,6 @@ function WorkList({ currentEmployer }) {
         workImage
     ));
 
-    // const videoArray = work.filter(thisFormat => thisFormat.format === 'video').map((workImage) => (
-    //     workImage
-    // ));
-
     const printArray = work.filter(thisFormat => thisFormat.format === 'print').map((workImage) => (
         workImage
     ));
@@ -376,10 +426,6 @@ function WorkList({ currentEmployer }) {
     // console.log(webArray);
 
     // console.log('');
-    // console.log('WorkList() => <WorkList /> ===>   videoArray = ');
-    // console.log(videoArray);
-
-    // console.log('');
     // console.log('WorkList() => <WorkList /> ===>   printArray = ');
     // console.log(printArray);
 
@@ -392,6 +438,31 @@ function WorkList({ currentEmployer }) {
     // const missingWebArray = arrayCompare(availableWebContent, webArray);
     // // const missingPrintArray = arrayCompare(availablePrintContent, printArray);
 
+
+    // console.log('WORK FORMAT ARRAYS ===>   missingContentArray.length = ' + missingContentArray.length)
+    // console.log(missingContentArray);
+    // // console.log(work);
+
+
+    // console.log('WORK FORMAT ARRAYS ===>   missingBannerArray.length = ' + missingBannerArray.length)
+    // console.log(missingBannerArray);
+    // // console.log(work);
+
+    // console.log('WORK FORMAT ARRAYS ===>   missingWebArray.length = ' + missingWebArray.length)
+    // console.log(missingWebArray);
+    // // console.log(work);
+
+    // console.log('WORK FORMAT ARRAYS ===>   missingPrintArray.length = ' + missingPrintArray.length)
+    // console.log(missingPrintArray);
+    // // console.log(work);
+
+
+    // missingContentArray.map((thisBanner) => (
+    //     console.log('WORK FORMAT ARRAYS ===>   thisBanner = ' + thisBanner),
+    //     console.log('WORK FORMAT ARRAYS ===>   document.getElementById(thisBanner).className = ' + document.getElementById(thisBanner).className),
+    //     gsap.set([document.getElementById(thisBanner)], { autoAlpha: 0.5 })
+    // ))
+
     //#endregion ==================== WORK FORMAT ARRAYS ==================== */
 
 
@@ -402,21 +473,19 @@ function WorkList({ currentEmployer }) {
 
     function handleClick(thisWorkFormat, thisWorkImage) {
 
-        // console.log('');
-        // console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) -------------------------');
+        console.log('');
+        console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) -------------------------');
 
 
-        //#region - - - - - - - - - - - - - Findin' out sh*t... (console.log messagaes) - - - - - - - - - - - - -
+        //#region ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
 
         // console.log('handleClick: windowWidth = ' + windowWidth);
 
         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage = ' + thisWorkImage);
-
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.format = ' + thisWorkImage.format);
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.link2 = ' + thisWorkImage.link2);
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.mwidth = ' + thisWorkImage.mwidth);
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.mheight = ' + thisWorkImage.mheight);
+        console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.link2 = ' + thisWorkImage.link2);
+        console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.mwidth = ' + thisWorkImage.mwidth);
+        console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.mheight = ' + thisWorkImage.mheight);
 
         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.blah = ' + thisWorkImage.album_id);
 
@@ -443,334 +512,186 @@ function WorkList({ currentEmployer }) {
         // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
         // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
 
-        //#endregion - - - - - - - - - - - - - Findin' out sh*t... (console.log messagaes) - - - - - - - - - - - - -
+        //#endregion ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
 
 
-        //#region - - - - - - - - - - - - - DEFINE NEW CONTENT (from AVAILABLE CONTENT above) - - - - - - - - - - - - -
+        //#region - - - - - - - - - - - - - DEFINE NEW CONTENT - - - - - - - - - - - - -
 
-        // let thisContent;
-        // // let thisContent = bannerContent;
+        let thisContent;
+        // let thisContent = bannerContent;
 
-        // switch (thisWorkFormat) {
-        //     case 'banner':
-
-        //         thisContent = bannerContent;
-
-        //         // console.log('');
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-        //         break;
-
-        //     // case 'html5':
-        //     case 'website':
-        //     // case 'mobile':
-
-        //         thisContent = webContent;
-
-        //         // console.log('');
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-        //         break;
-
-        //     case 'video':
-
-        //         thisContent = videoContent;
-
-        //         // console.log('');
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-        //         break;
-
-        //     // case 'print':
-
-        //     //     thisContent = printontent;
-
-        //     //     console.log('');
-        //     //     console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-        //     //     console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-        //     //     break;
-
-        //     default:
-
-        //         thisContent = bannerContent;
-
-        //         // console.log('');
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   default thisWorkFormat = ' + thisWorkFormat);
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   default thisContent = ' + thisContent);
-
-        //         break;
-        // }
-
-        //#endregion - - - - - - - - - - - - - DEFINE NEW CONTENT (from AVAILABLE CONTENT above) - - - - - - - - - - - - -
-
-
-        //#region - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
-
-        // if (thisContent[thisWorkImage.link2]) {
-        // // if (thisContent[thisWorkImage.link2] && thisContent[thisWorkImage.className] !== 'missingImg') {
-
-        //     const newContent = React.createElement(thisContent[thisWorkImage.link2]);
-
-        //     setBannerShow(newContent);
-
-        //     document.getElementById('bannerContainerID').key = thisWorkImage.link2;
-        //     // document.getElementById(thisWorkImage.link2).key = thisWorkImage.link2;
-
-
-        //     // console.log('');
-        //     console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
-        //     console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-        //     console.log('newContent = ' + newContent);
-        //     // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-        //     // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
-        //     // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
-
-        // } else {
-
-        //     // setBannerShow('');
-        //     // setBannerShow(thisWorkImage.link2 + ' THIS CONTENT COMING SOON!');
-        //     // setBannerShow(thisWorkImage.link2);
-
-        //     // console.log('');
-        //     console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
-        //     console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-        //     // // console.log('newContent = ' + newContent);
-        //     // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-        //     // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
-        //     // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
-
-
-        //     //#region -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
-
-        //     console.log('');
-        //     console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) ===>   IFRAME -------------------------');
-
-        //     let iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
-
-        //     console.log('iframeSRC = ' + iframeSRC);
-
-        //     webiFrame_Ref.current.src = iframeSRC;
-        //     webiFrame_Ref.current.style.width = thisWorkImage.mwidth + 'px';
-        //     webiFrame_Ref.current.style.height = thisWorkImage.mheight + 'px';
-        //     webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkImage.mwidth)/2 + 'px';
-
-        //     //#endregion -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
-        // }
-
-        //#endregion - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
-
-
-
-
-
-
-
-
-
-        //#region - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
-
-        // let iframeSRC;
-        // let videoSRC;
-
-        // switch (thisWorkFormat) {
-        switch (thisWorkImage.format) {
-
+        switch (thisWorkFormat) {
             case 'banner':
 
-            //#region -------------------- ASSIGN NEW CONTENT: banner --------------------
-
-                // thisContent = bannerContent;
+                thisContent = bannerContent;
 
                 // console.log('');
                 // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
                 // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
 
-
-                // console.log('');
-                // console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) ===>   banner -------------------------');
-
-                // if (thisWorkImage.link2) {
-
-                    const newContent = React.createElement(bannerContent[thisWorkImage.link2]);
-
-                    setBannerShow(newContent);
-
-                    document.getElementById('bannerContainerID').key = thisWorkImage.link2;
-
-                    setIframeOpen(false);
-                    // setLoadedIframe('');
-
-                    setVideoOpen(false);
-                    setLoadedVideo(null);
-
-
-                    // console.log('');
-                    // console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
-                    // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-                    // console.log('newContent = ' + newContent);
-                    // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-                    // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
-                    // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
-                // }
-
                 break;
 
-            //#endregion -------------------- ASSIGN NEW CONTENT: banner --------------------
-
-
-            case 'html5':
+            // case 'html5':
+            // case 'video':
             case 'website':
-            case 'mobile':
+            // case 'mobile':
 
-            //#region -------------------- ASSIGN NEW CONTENT: html5, website, mobile --------------------
-
-                // thisContent = webContent;
+                thisContent = webContent;
 
                 // console.log('');
                 // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
                 // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
 
-
-                //#region -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
-
-                // console.log('');
-                // console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) ===>   IFRAME: html5, website, mobile -------------------------');
-
-                let iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
-                // iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
-
-                console.log('IFRAME: html5, website, mobile ===>   iframeSRC = ' + iframeSRC);
-
-                webiFrame_Ref.current.src = iframeSRC;
-                webiFrame_Ref.current.style.width = thisWorkImage.mwidth + 'px';
-                webiFrame_Ref.current.style.height = thisWorkImage.mheight + 'px';
-                webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkImage.mwidth) / 2 + 'px';
-
-                setIframeOpen(true);
-                // setLoadedIframe(iframeSRC);
-
-                setVideoOpen(false);
-                setLoadedVideo(null);
-
-                //#endregion -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
-
                 break;
-
-            //#endregion -------------------- ASSIGN NEW CONTENT: html5, website, mobile --------------------
-
-
-            case 'video':
-
-            //#region -------------------- ASSIGN NEW CONTENT: video --------------------
-
-                // thisContent = videoContent;
-
-                // console.log('');
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-
-                //#region -------------------- VIDEO REF: https://github.com/CookPete/react-player -------------------- 
-
-                console.log('');
-                console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) ===>   VIDEO -------------------------');
-
-
-                // clearContent(webiFrame_Ref.current, videoPlayer_Ref.current);
-
-                let videoSRC = videoLoc + thisWorkImage.link2;
-                // videoSRC = videoLoc + thisWorkImage.link2;
-
-                console.log('VIDEO ===>   videoSRC = ' + videoSRC);
-
-                // webiFrame_Ref.current.src = videoSRC;
-                // webiFrame_Ref.current.style.width = thisWorkImage.mwidth + 'px';
-                // webiFrame_Ref.current.style.height = thisWorkImage.mheight + 'px';
-                // webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkImage.mwidth) / 2 + 'px';
-
-                // videoPlayer_Ref.current.url = videoSRC;
-                // videoPlayer_Ref.current.load(videoSRC);
-                // videoPlayer_Ref.current.style.parentElement.width = thisWorkImage.mwidth + 'px';
-                // videoPlayer_Ref.current.style.height = thisWorkImage.mheight + 'px';
-                // videoPlayer_Ref.current.style.left = (window.innerWidth - thisWorkImage.mwidth) / 2 + 'px';
-
-                console.log('VIDEO ===>   videoPlayer_Ref.current.url = ' + videoPlayer_Ref.current.url);
-
-                setIframeOpen(false);
-                // setLoadedIframe('');
-
-                setVideoOpen(true);
-                setLoadedVideo(videoSRC);
-
-                //#endregion -------------------- VIDEO REF: https://github.com/CookPete/react-player -------------------- 
-
-                break;
-
-            //#endregion -------------------- ASSIGN NEW CONTENT: video --------------------
-
 
             // case 'print':
 
-            //#region -------------------- ASSIGN NEW CONTENT: print --------------------
+            //     thisContent = printontent;
 
-                // // thisContent = printontent;
+            //     console.log('');
+            //     console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
+            //     console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
 
-                // // console.log('');
-                // // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-                // // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-                // setIframeOpen(false);
-                // setLoadedIframe('');
-
-                // setVideoOpen(false);
-                // setLoadedVideo(null);
-
-                // break;
-
-            //#endregion -------------------- ASSIGN NEW CONTENT: print --------------------
-
+            //     break;
 
             default:
 
-            //#region -------------------- ASSIGN NEW CONTENT: default --------------------
-
-                // thisContent = bannerContent;
+                thisContent = bannerContent;
 
                 // console.log('');
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   default thisWorkFormat = ' + thisWorkFormat);
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   default thisContent = ' + thisContent);
-
-                setIframeOpen(false);
-                // setLoadedIframe('');
-
-                setVideoOpen(false);
-                setLoadedVideo(null);
+                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
+                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
 
                 break;
+        }
 
-            //#endregion -------------------- ASSIGN NEW CONTENT: default --------------------
+        //#endregion - - - - - - - - - - - - - DEFINE NEW CONTENT - - - - - - - - - - - - -
+
+
+        //#region - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
+
+        if (thisContent[thisWorkImage.link2]) {
+        // if (thisContent[thisWorkImage.link2] && thisContent[thisWorkImage.className] !== 'missingImg') {
+
+            const newContent = React.createElement(thisContent[thisWorkImage.link2]);
+
+            setBannerShow(newContent);
+
+            document.getElementById('bannerContainerID').key = thisWorkImage.link2;
+            // document.getElementById(thisWorkImage.link2).key = thisWorkImage.link2;
+
+
+            // console.log('');
+            console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
+
+            console.log('newContent = ' + newContent);
+            // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
+
+            // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
+            // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
+
+        } else {
+
+            // setBannerShow('');
+            // setBannerShow(thisWorkImage.link2 + ' THIS CONTENT COMING SOON!');
+            // setBannerShow(thisWorkImage.link2);
+
+            // console.log('');
+            console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
+
+            // // console.log('newContent = ' + newContent);
+            // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
+
+            // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
+            // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
+
+
+
+            // const setIframeContent = () => {
+
+            //     const currentContainer = document.getElementById(IFRAME_ID);
+            //     const iframeContainer = document.getElementById(IFRAME_CONTAINER_ID);
+
+            //     if (iframeContainer) {
+
+            //         const newIframe = frames[IFRAME_ID];
+
+            //         if (newIframe != null) {
+            //             const iframeDocument = newIframe.document;
+            //             iframeDocument.open();
+            //             iframeDocument.write('${body');
+            //             iframeDocument.close();
+            //         }
+            //     }
+            // }
+
+            // setIframeContent(thisWorkImage.link2)
+
+
+
+            // ref: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5
+
+            // let iframeSRC = thisWorkImage.link2;
+            let iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
+            // let iframeSRC = localLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
+
+            console.log('iframeSRC = ' + iframeSRC);
+
+
+            // let iframe = document.createElement('iframe');
+            // // iframe.src = 'http://localhost:3001';
+            // // iframe.src = thisWorkImage.link2;
+            // iframe.src = iframeSRC;
+            // // iframe.frameBorder = '0';
+            // iframe.id = 'iframe';
+            // iframe.style.position = 'absolute';
+            // iframe.style.zIndex = '9999';
+            // // iframe.style.width = '100%';
+            // // iframe.style.height = '100%';
+            // // iframe.style.top = '0';
+            // iframe.style.width = thisWorkImage.mwidth + 'px';
+            // iframe.style.height = thisWorkImage.mheight + 'px';
+            // // iframe.style.width = '450px';
+            // // iframe.style.height = '770px';
+            // iframe.style.top = '10vh';
+            // iframe.style.left = '30vw';
+            // iframe.style.backgroundColor = 'white';
+            // iframe.style.border = 'none';
+
+            // document.body.prepend(iframe);
+            // document.body.style.overflow = 'hidden';
+
+
+
+
+            // let webiFrame_Ref.current = document.createElement('webiFrame_Ref.current');
+            // webiFrame_Ref.current.src = 'http://localhost:3001';
+            // webiFrame_Ref.current.src = thisWorkImage.link2;
+            webiFrame_Ref.current.src = iframeSRC;
+            // webiFrame_Ref.current.frameBorder = '0';
+            // webiFrame_Ref.current.id = 'webiFrame_Ref.current';
+            // webiFrame_Ref.current.style.position = 'absolute';
+            // webiFrame_Ref.current.style.zIndex = '9999';
+            // webiFrame_Ref.current.style.width = '100%';
+            // webiFrame_Ref.current.style.height = '100%';
+            // webiFrame_Ref.current.style.top = '0';
+            webiFrame_Ref.current.style.width = thisWorkImage.mwidth + 'px';
+            webiFrame_Ref.current.style.height = thisWorkImage.mheight + 'px';
+            // webiFrame_Ref.current.style.width = '450px';
+            // webiFrame_Ref.current.style.height = '770px';
+            // webiFrame_Ref.current.style.top = '5vh';
+            // webiFrame_Ref.current.style.left = '30vw';
+            webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkImage.mwidth)/2 + 'px';
+            // webiFrame_Ref.current.style.backgroundColor = 'white';
+            // webiFrame_Ref.current.style.border = 'none';
+
+            // document.body.prepend(webiFrame_Ref.current);
+            // document.body.style.overflow = 'hidden';
+
+
         }
 
         //#endregion - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
-
-
-
-
-
-
-
-
-
 
 
         //#region - - - - - - - - - - - - - POSITION & LOAD NEW CONTENT bannerContainer_Ref - - - - - - - - - - - - -
@@ -799,12 +720,7 @@ function WorkList({ currentEmployer }) {
     // const masonryImg_Ref = useRef(null);
 
     const bannerContainer_Ref = useRef(null);
-
-    const iframeContainer_Ref = useRef(null);
     const webiFrame_Ref = useRef(null);
-
-    const videoContainer_Ref = useRef(null);
-    const videoPlayer_Ref = useRef(null);
 
     // const workList_Ref = useRef(null);
 
@@ -829,12 +745,6 @@ function WorkList({ currentEmployer }) {
 
     // const [bannerKey, setBannerKey] = useState();
 
-    const [iframeOpen, setIframeOpen] = useState(false);
-    // const [loadedIframe, setLoadedIframe] = useState(null);
-
-    const [videoOpen, setVideoOpen] = useState(false);
-    const [loadedVideo, setLoadedVideo] = useState(null);
-
 
     const [employer, setEmployer] = useState(null);
     // const [employer, setEmployer] = useState(currentEmployer);
@@ -847,7 +757,6 @@ function WorkList({ currentEmployer }) {
 
     const [isBannerArray, setBannerArray] = useState(bannerArray);
     const [isWebArray, setWebArray] = useState(webArray);
-    // const [isVideoArray, setVideoArray] = useState(videoArray);
     const [isPrintArray, setPrintArray] = useState(printArray);
 
 
@@ -865,13 +774,11 @@ function WorkList({ currentEmployer }) {
         // console.log('WorkList - setState ==>   employer !== currentEmployer');
 
         setBannerShow(null);
-        setIframeOpen(false);
 
         setEmployer(currentEmployer);
 
         setBannerArray(bannerArray);
         setWebArray(webArray);
-        // setVideoArray(videoArray);
         setPrintArray(printArray);
     }
 
@@ -907,7 +814,7 @@ function WorkList({ currentEmployer }) {
 
     //#endregion ==================== useEffect: iFRAME = REF: https://medium.com/the-thinkmill/how-to-safely-inject-html-in-react-using-an-iframe-adc775d458bc ====================
 
-  
+
 
     //#region ==================== WorkList - useEffect: checkBanner on WINDOW RESIZE ====================
 
@@ -976,79 +883,124 @@ function WorkList({ currentEmployer }) {
     //#endregion ==================== WorkList - useEffect: checkBanner on WINDOW RESIZE ====================
 
 
+
+    //#region ==================== WorkList - useEffect: [employer, setEmployer] ====================
+
+    // // useState(() => {
+    // useEffect(() => {
+
+    //     console.log('');
+    //     // console.log('------------------------- WorkList - useEffect: [employer, setEmployer] -------------------------');
+    //     console.log('========================= WorkList - useEffect: [employer, setEmployer] =========================');
+
+    //     // console.log('WorkList - useEffect: work ==>   currentEmployer = ' + currentEmployer);
+    //     // // console.log('WorkList - useEffect: work ==>   employer = ' + employer);
+    //     // // console.log('WorkList - useEffect: work ==>   employer = ' + work);
+    //     // console.log(work);
+
+
+    //     // if (employer !== currentEmployer) {
+
+    //     //     // console.log('WorkList - useEffect: work ==>   employer !== currentEmployer');
+
+    //     //     setBannerShow(null);
+
+    //     //     setEmployer(currentEmployer);
+
+    //     //     setBannerArray(bannerArray);
+    //     //     setWebArray(webArray);
+    //     //     setPrintArray(printArray);
+
+    //     // // } else {
+
+    //     // //     console.log('WorkList - useEffect: work ==>   employer === currentEmployer');
+    //     // }
+
+
+    //     // {work.filter(isBanner => isBanner.format === 'banner').map((workImage))}
+    //     // console.log({ work.filter(isBanner => isBanner.format === 'banner').map((workImage)) });
+
+
+
+
+
+    //     const missingContentArray = arrayCompare(availableBannerContent, bannerArray);
+
+    //     console.log('WORK FORMAT ARRAYS ===>   missingContentArray.length = ' + missingContentArray.length)
+    //     console.log(missingContentArray);
+    //     console.log(work);
+
+
+    //     missingContentArray.forEach((missingBanner) => {
+    //         // console.log('WORK FORMAT ARRAYS ===>   missingBanner = ' + missingBanner),
+    //         // console.log('WORK FORMAT ARRAYS ===>   document.getElementById(missingBanner).className = ' + document.getElementById(missingBanner).className),
+    //         // console.log('WORK FORMAT ARRAYS ===>   document.getElementById(missingBanner).firstChild.id = ' + document.getElementById(missingBanner).firstChild.id)
+
+    //         let targetBanner = document.getElementById(missingBanner);
+
+    //         console.log('WorkPod - useEffect ===>   targetBanner = ' + targetBanner)
+    //         console.log('WorkPod - useEffect ===>   targetBanner.id = ' + targetBanner.id)
+
+    //         // gsap.set([document.getElementById(missingBanner).firstChild], { autoAlpha: 0.5 })
+    //         gsap.set([targetBanner], { scale: 0.5, autoAlpha: 0.5 })
+    //     });
+
+    //     // gsap.set([document.getElementById('EAUT_04752')], { autoAlpha: 0.5 })
+
+
+    // // }, []);
+    // // }, [currentEmployer, employer]);
+    // // }, [currentEmployer, employer, bannerArray, webArray, printArray]);
+    // }, [bannerArray]);
+
+    //#endregion ==================== WorkList - useEffect: [employer, setEmployer] ====================
+
+    // const iframeSRC = 'https://www.google.com/?client=safari';
+
+    let closeIframe = () => {
+        webiFrame_Ref.current.src = '';
+    };
+
     return (
         <>
             <div className='bannerContainer' id='bannerContainerID' ref={bannerContainer_Ref}>
                 {bannerShow}
             </div>
 
-            {/* <div className={iframeOpen === true ? 'iframeContainerOpen' : 'iframeContainerClosed'} id='iframeContainerID' ref={iframeContainer_Ref}> */}
-            {/* <div className={iframeOpen === true ? 'iframeContainerOpen' : 'iframeContainerClosed'} id='iframeContainerID' onClick={() => { setIframeOpen(!iframeOpen); setLoadedVideo(null); }} ref={iframeContainer_Ref}> */}
-            <div className={iframeOpen === true ? 'iframeContainerOpen' : 'iframeContainerClosed'} id='iframeContainerID' onClick={() => { setIframeOpen(!iframeOpen); setLoadedVideo(null); clearContent(webiFrame_Ref.current); }} ref={iframeContainer_Ref}>
 
-                <iframe
-                    className='webiFrame' 
-                    // className={iframeOpen === true ? 'webiFrameOpen' : 'webiFrameClosed'}
-                    id='webiFrameID'
-                    name='webiFrame'
-                    title='webiFrame'
-                    // sandbox='allow-same-origin'
-                    // srcDoc={iframeSRC}
-                    // src=''
-                    // src='https://mimiobi19.wixsite.com/mimi01'
-                    // src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/ax/mobile/giftguide_ho11/site_0318/site_0318.html'
-                    // src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/ax/mobile/giftguide_ho11'
-                    // width='100%'
-                    // height='1000px'
-                    // src={loadedIframe}
-                    ref={webiFrame_Ref}
-                />
+            <iframe
+                className='webiFrame' 
+                id='webiFrameID'
+                name='testingiframe'
+                // id={IFRAME_ID}
+                // name={IFRAME_ID}
+                title='testingiframe'
+                // sandbox='allow-same-origin'
+                // srcDoc={iframeSRC}
+                // src=''
+                // src='https://mimiobi19.wixsite.com/mimi01'
+                // src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/ax/mobile/giftguide_ho11/site_0318/site_0318.html'
+                // src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/ax/mobile/giftguide_ho11'
+                // width='100%'
+                // height='1000px'
+                ref={webiFrame_Ref}
+            />
 
-            </div>
+            {/* <button onClick={() => closeIframe()}>Close Iframe </button> */}
+            {/* <button onClick={() => webiFrame_Ref.current.src = ''}>Close Iframe </button> */}
 
-            {/* <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' ref={videoContainer_Ref}> */}
-            <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); }} ref={videoContainer_Ref}>
-            {/* <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); clearContent(videoPlayer_Ref.current); }} ref={videoContainer_Ref}> */}
-                <ReactPlayer
-                    className='videoPlayer'
-                    id='videoPlayerID'
-                    width='100%'
-                    height='100%'
-                    // url='https://vimeo.com/313477117'
-                    // url={videoSRC}
-                    url={loadedVideo}
-                    ref={videoPlayer_Ref}
-                />
-            </div>
 
-            {/* <div className='toggleBtnDiv'> */}
-            <div className='toggleBtnDiv' id='toggleBtnDivID'>
-{/* 
-                <p>
-                    iFrame status: {iframeOpen.toString()}
-                    <br />
-                    iframeSRC = {iframeSRC}
-                </p>
 
-                <p>
-                    Video status: {videoOpen.toString()}
-                    <br />
-                    videoSRC = {videoSRC}
-                    <br />
-                    videoSRC = {loadedVideo}
-                </p>
- */}
-                <br />
+            {/* {isBannerArray.length > 0 && <WorkPod workFormat='banner' workArray={bannerArray} handleClick={handleClick} />}
+            {isWebArray.length > 0 && <WorkPod workFormat='website' workArray={webArray} handleClick={handleClick} />}
+            {isPrintArray.length > 0 && <WorkPod workFormat='print' workArray={printArray} handleClick={handleClick} />} */}
 
-                <button className={iframeOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setIframeOpen(!iframeOpen); setLoadedVideo(null); clearContent(webiFrame_Ref.current); }}> Close Iframe </button>
-                {/* <button className={videoOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); clearContent(videoPlayer_Ref.current); }}> Close Video </button> */}
-                {/* <button className={iframeOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setIframeOpen(!iframeOpen); setLoadedVideo(null); }}> Close Iframe </button> */}
-                <button className={videoOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); }}> Close Video </button>
-            </div>
+            {/* {isBannerArray.length > 0 && <WorkPod workFormat='banner' workArray={bannerArray} missingContentArray={missingBannerArray} handleClick={handleClick} />}
+            {isWebArray.length > 0 && <WorkPod workFormat='website' workArray={webArray} missingContentArray={missingWebArray} handleClick={handleClick} />}
+            {isPrintArray.length > 0 && <WorkPod workFormat='print' workArray={printArray} missingContentArray={missingContentArray} handleClick={handleClick} />} */}
 
             {isBannerArray.length > 0 && <WorkPod workFormat='banner' workArray={bannerArray} handleClick={handleClick} />}
             {isWebArray.length > 0 && <WorkPod workFormat='website' workArray={webArray} handleClick={handleClick} />}
-            {/* {isVideoArray.length > 0 && <WorkPod workFormat='video' workArray={videoArray} handleClick={handleClick} />} */}
             {isPrintArray.length > 0 && <WorkPod workFormat='print' workArray={printArray} handleClick={handleClick} />}
         </>
     )

@@ -202,7 +202,7 @@
         border-bottom: 1px solid #cccccc;
 
         // background: #ffffff;
-        @include navbgGradient01();
+        @include bgGradient01();
 
         width: $body-width;
         min-width: $body-min-width;
@@ -227,8 +227,8 @@
 
             // background: #ffffff;
             // background: none;
-            @include navbgGradient01();
-            // @include navbgGradient02();
+            @include bgGradient01();
+            // @include bgGradient02();
 
             // color: #ffffff;
             color: #000000;
@@ -319,9 +319,9 @@
             .activeNavDiv {
                 // border: 2px inset #00ffff;
 
-                // @include navbgGradient01();
-                // @include navbgGradient02();
-                @include navbgGradient03();
+                // @include bgGradient01();
+                // @include bgGradient02();
+                @include bgGradient03();
                 // mix-blend-mode: multiply;
 
                 color: #ff0000;
@@ -348,7 +348,7 @@
             // border: 1px solid #ff00ff;
 
             // background: #ffffff;
-            @include navbgGradient01();
+            @include bgGradient01();
 
             // background: #eeeeee;
             // background: #ffffff;
@@ -382,7 +382,7 @@
                 // border: 1px solid #cccccc;
                 // border-right: 1px solid #cccccc;
 
-                // @include navbgGradient03();
+                // @include bgGradient03();
                 // mix-blend-mode: multiply;
 
                 width: 10.875%;
@@ -591,7 +591,7 @@
                 border: none;
 
                 // background: none;
-                @include navbgGradient05();
+                @include bgGradient05();
 
                 font-size: 0.75em;
 
@@ -617,7 +617,7 @@
                     // border: 1px solid #00ff00;
 
                     background: none;
-                    // @include navbgGradient05();
+                    // @include bgGradient05();
 
                     font-size: 1.75em;
 
@@ -637,7 +637,7 @@
                         // border: 1px solid #0000ff;
                         border-bottom: 1px solid #cccccc;
 
-                        @include navbgGradient01();
+                        @include bgGradient01();
 
                         // width: 20%;
 
@@ -647,7 +647,7 @@
 
                     .activeNavDiv {
                         // border: 1px solid #ff00ff;
-                        @include navbgGradient04();
+                        @include bgGradient04();
 
                         // width: inherit !important;
                     }

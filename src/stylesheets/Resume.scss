@@ -23,16 +23,17 @@
     min-width: $body-min-width;
     max-width: $body-max-width;
 
-    margin: 0 auto;
-    // margin: 120px auto 0 auto;
+    // margin: 0 auto;
+    margin: 0 auto 120px auto;
 
+    
     .employerList {
         // border: 2px solid #00ff00;
 
         text-align: left;
 
         margin: 0 auto;
-        padding: 125px 0;
+        padding: 125px 0 0 0;
 
         .employerItem {
             // border: 1px solid #0000ff;
@@ -140,6 +141,85 @@
 
                     // margin: inherit;
                     padding: 0.5em 0 0 0;
+                }
+            }
+        }
+    }
+
+    .skillHed {
+        // border: 2px solid #ff0000;
+        // border-top: 1px solid #999999;
+        // border-bottom: 1px solid #999999;
+
+        color: #666666;
+        font-size: 1.75em;
+        // letter-spacing: 0.025em;
+
+        width: 100%;
+
+        margin: 0.75em 0;
+        // margin: 0 0 0.75em 0;
+        // padding: 0.0625em 0 0 0;
+    }
+
+    .skillCatHed {
+        // border: 2px solid #ff0000;
+        border-bottom: 1px solid #999999;
+
+        color: #666666;
+        font-size: 1.25em;
+        // letter-spacing: 0.05em;
+
+        width: 100%;
+
+        margin: 0.75em 0;
+        // margin: 0.75em 0 0.5em 0;
+    }
+
+    .skillList {
+        // border: 2px solid #ff0000;
+
+        font-weight: 600;
+        // letter-spacing: 0.05em;
+
+        // margin: 0;
+        // padding: 0 0 100px 0;
+
+        display: grid;
+        // grid-template-columns: repeat(2, auto);
+        grid-template-columns: 48.75% 48.75%;
+        column-gap: 2.5%;
+        align-items: center;
+
+        .skillItem {
+            // border: 2px solid #00ff00;
+
+            margin: 0;
+            padding: 0 0 10px 0;
+
+            .skillBar {
+                // border: 2px solid #0000ff;
+
+                // background: #999999;
+                // @include bgGradient04();
+
+                // fill: #ff00ff;
+                // fill: none;
+                // @include fillGradient01();
+
+                .skillBarRect01, .skillBarRect02 {
+                    // border: 2px solid #ff00ff;
+
+                    // fill: #cccccc;
+                    // @include fillGradient01();
+
+                    // stroke: #ff00ff;
+
+                    // width: 100%;
+                    // height: 100%;
+
+                    margin: 0;
+                    padding: 0;
                 }
             }
         }

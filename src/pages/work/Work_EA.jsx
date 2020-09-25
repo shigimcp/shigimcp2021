@@ -156,7 +156,7 @@ function WorkList() {
     //#endregion -------------------- FUNCTION: moveImportContainer(thisBanner) --------------------
 
 
-    //#region -------------------- FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks - switch/case --------------------
+    //#region -------------------- FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks --------------------
 
     function handleClick(thisWorkImage) {
 
@@ -188,11 +188,11 @@ function WorkList() {
         // console.log('document.getElementById(thisWorkImage.link2).offsetHeight = ' + document.getElementById(thisWorkImage.link2).offsetHeight);
 
         // console.log('');
-        // // console.log('document.getElementById(importContainerID).offsetWidth = ' + document.getElementById('importContainerID').offsetWidth);
-        // // console.log('document.getElementById(importContainerID).offsetHeight = ' + document.getElementById('importContainerID').offsetHeight);
+        // // console.log('document.getElementById(bannerContainerID).offsetWidth = ' + document.getElementById('bannerContainerID').offsetWidth);
+        // // console.log('document.getElementById(bannerContainerID).offsetHeight = ' + document.getElementById('bannerContainerID').offsetHeight);
 
-        // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
-        // // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
+        // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
+        // // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
 
         //#endregion ------------------------- Findin' out sh*t... (console.log messagaes) -------------------------
 
@@ -209,12 +209,12 @@ function WorkList() {
             setBannerShow(thisBanner);
 
             // setBannerKey(thisBanner);
-            document.getElementById('importContainerID').key = thisWorkImage.link2;
+            document.getElementById('bannerContainerID').key = thisWorkImage.link2;
             // document.getElementById(thisWorkImage.link2).key = thisWorkImage.link2;
 
             // console.log('');
-            // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
-            // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
+            // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
+            // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
 
         } else {
             setBannerShow(thisWorkImage.link2 + ' THIS CONTENT COMING SOON!');
@@ -224,7 +224,7 @@ function WorkList() {
         //#endregion - - - - - - - - - - - - - ASSIGN NEW BANNER - - - - - - - - - - - - -
 
 
-        //#region - - - - - - - - - - - - - POSITION importContainer_Ref - - - - - - - - - - - - -
+        //#region - - - - - - - - - - - - - POSITION bannerContainer_Ref - - - - - - - - - - - - -
 
         let thisBanner = document.getElementById(thisWorkImage.link2);
 
@@ -244,13 +244,13 @@ function WorkList() {
         // console.log('handleClick(thisWorkImage) ===>   thisBannerScale = ' + thisBannerScale);
 
 
-        gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
+        gsap.set([bannerContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
 
-        //#endregion - - - - - - - - - - - - - POSITION importContainer_Ref - - - - - - - - - - - - -
+        //#endregion - - - - - - - - - - - - - POSITION bannerContainer_Ref - - - - - - - - - - - - -
 
     }
 
-    //#endregion -------------------- FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks - switch/case --------------------
+    //#endregion -------------------- FUNCTION: handleClick(thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks --------------------
 
     //#endregion ==================== FUNCTIONS ====================
 
@@ -266,7 +266,7 @@ function WorkList() {
     const workItem_Ref = useRef(null);
     const masonryImg_Ref = useRef(null);
 
-    const importContainer_Ref = useRef(null);
+    const bannerContainer_Ref = useRef(null);
     // const importedContent_Ref = useRef(null);
 
     //#endregion ==================== ASSETS _Ref ====================
@@ -309,10 +309,10 @@ function WorkList() {
             // console.log('');
             // console.log('------------------------- moveBanner -------------------------');
 
-            // console.log('document.getElementById(importContainerID).className = ' + document.getElementById('importContainerID').className);
-            // console.log('document.getElementById(importContainerID).key = ' + document.getElementById('importContainerID').key);
+            // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
+            // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
 
-            let bannerKey = document.getElementById('importContainerID').key;
+            let bannerKey = document.getElementById('bannerContainerID').key;
 
 
             if (!bannerKey) {
@@ -342,7 +342,7 @@ function WorkList() {
                 // console.log('handleClick(thisWorkImage) ===>   thisBannerY = ' + thisBannerY);
                 // console.log('handleClick(thisWorkImage) ===>   thisBannerScale = ' + thisBannerScale);
 
-                gsap.set([importContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
+                gsap.set([bannerContainer_Ref.current], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
             }
         }
 
@@ -390,9 +390,9 @@ function WorkList() {
         <>
             {/* width = {width}; */}
 
-            <div className='importContainer' id='importContainerID' ref={importContainer_Ref}>
-            {/* <div className='importContainer' id='importContainerID' key={bannerShow} ref={importContainer_Ref}> */}
-            {/* <div className='importContainer' id='importContainerID' key={bannerKey} ref={importContainer_Ref}> */}
+            <div className='bannerContainer' id='bannerContainerID' ref={bannerContainer_Ref}>
+            {/* <div className='bannerContainer' id='bannerContainerID' key={bannerShow} ref={bannerContainer_Ref}> */}
+            {/* <div className='bannerContainer' id='bannerContainerID' key={bannerKey} ref={bannerContainer_Ref}> */}
                 {/* <div className='importedContent' ref={importedContent_Ref}> */}
                     {bannerShow}
                 {/* </div> */}

@@ -1,0 +1,114 @@
+[
+    {
+        "index": 0,
+        "category": "discipline",
+        "skill": "Print",
+        "level": 80,
+        "level_difference": 20
+    },
+    {
+        "index": 1,
+        "category": "discipline",
+        "skill": "Web / UI / UX",
+        "level": 80,
+        "level_difference": 20
+    },
+    {
+        "index": 2,
+        "category": "software",
+        "skill": "Adobe Creative Suite (general)",
+        "level": 85,
+        "level_difference": 15
+    },
+    {
+        "index": 3,
+        "category": "software",
+        "skill": "Photoshop",
+        "level": 95,
+        "level_difference": 5
+    },
+    {
+        "index": 4,
+        "category": "software",
+        "skill": "Illustrator",
+        "level": 90,
+        "level_difference": 10
+    },
+    {
+        "index": 5,
+        "category": "software",
+        "skill": "InDesign",
+        "level": 65,
+        "level_difference": 35
+    },
+    {
+        "index": 6,
+        "category": "software",
+        "skill": "Premiere Pro / After Effects",
+        "level": 60,
+        "level_difference": 40
+    },
+    {
+        "index": 7,
+        "category": "software",
+        "skill": "Sketch",
+        "level": 15,
+        "level_difference": 85
+    },
+    {
+        "index": 8,
+        "category": "dev",
+        "skill": "HTML[5] / CSS",
+        "level": 90,
+        "level_difference": 10
+    },
+    {
+        "index": 9,
+        "category": "dev",
+        "skill": "Javascript / JQuery",
+        "level": 70,
+        "level_difference": 30
+    },
+    {
+        "index": 10,
+        "category": "dev",
+        "skill": "GSAP",
+        "level": 90,
+        "level_difference": 10
+    },
+    {
+        "index": 11,
+        "category": "dev",
+        "skill": "React",
+        "level": 25,
+        "level_difference": 75
+    },
+    {
+        "index": 12,
+        "category": "dev",
+        "skill": "Angular 6/7",
+        "level": 15,
+        "level_difference": 85
+    },
+    {
+        "index": 13,
+        "category": "dev",
+        "skill": "PHP",
+        "level": 10,
+        "level_difference": 90
+    },
+    {
+        "index": 14,
+        "category": "3d",
+        "skill": "Maya",
+        "level": 20,
+        "level_difference": 80
+    },
+    {
+        "index": 15,
+        "category": "3d",
+        "skill": "Unity",
+        "level": 15,
+        "level_difference": 85
+    }
+]

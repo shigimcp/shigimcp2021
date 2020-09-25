@@ -33,7 +33,7 @@ import '../stylesheets/About.scss';
 
 // import employerData from '../data/json/employers_http.json';
 // import employerData from '../data/json/employers_https.json';
-// import workData from '../data/json/work_complete.json';
+// import workData from '../data/json/work.json';
 // import aboutData from '../data/json/about.json';
 
 
@@ -45,7 +45,7 @@ import myData from '../data/MyData';
 
 
 // import employers from '../data/json/employers_http.json';
-// import work from '../data/json/work_complete.json';
+// import work from '../data/json/work.json';
 // import work_ax from '../../data/json/work_json/work_ax.json';
 // import work from '../../data/json/work_json/work_ax.json';
 

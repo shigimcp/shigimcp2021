@@ -1,4 +1,4 @@
-import work from '../data/json/work_complete.json';
+import work from '../data/json/work.json';
 
 
 const workData = work.map((workItem) => workItem);
