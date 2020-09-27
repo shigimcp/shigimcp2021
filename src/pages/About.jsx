@@ -903,7 +903,12 @@ function resetThoughts(parentContainer, thoughtBubble) {
 
 //#region ==================== EXPORT ABOUT ====================
 
-export const About = () => {
+// export const About = () => {
+// export const About = ({ locID }) => {
+export const About = ({ locID, loadStatus }) => {
+
+    localStorage.setItem('navLoc', locID);
+    localStorage.setItem('loadStatus', loadStatus);
 
     //#region ==================== ASSETS _Ref ====================
 
@@ -980,6 +985,9 @@ export const About = () => {
         <div className='aboutContainer' id='aboutContainerID' ref={aboutContainer_Ref}>
 
             <div className='haiku' onClick={() => closeThought(thoughtBubble_Ref.current)} ref={haiku_Ref}>
+
+                {/* <h1>Hello, locID = {locID}</h1> */}
+
                 <h1>I have thoughts...</h1>
                 <h2>I keep them in my curls.</h2>
                 <h3>Sometimes, they try to escape.</h3>

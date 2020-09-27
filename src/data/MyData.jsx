@@ -30,6 +30,10 @@ import skills from '../data/json/skills.json'
 // console.log(skills);
 // console.log('');
 
+localStorage.setItem('employers', employers);
+localStorage.setItem('work', work);
+localStorage.setItem('about', about);
+localStorage.setItem('skills', skills);
 
 export default [employers, work, about, skills];
 // export default [employerData, workData, aboutData, skillData];

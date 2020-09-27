@@ -222,7 +222,13 @@ function SkillList(props) {
 
 // export default EmployerList;
 
-export const Resume = () => {
+// export const Resume = () => {
+// export const Resume = ({ locID }) => {
+export const Resume = ({ locID, loadStatus }) => {
+
+    localStorage.setItem('navLoc', locID);
+    localStorage.setItem('loadStatus', loadStatus);
+
     return (
 
         <div className='employerContainer'>
@@ -235,6 +241,8 @@ export const Resume = () => {
             <SkillList category='software' />
             <SkillList category='dev' />
             <SkillList category='3d' />
+
+            {/* <h1>Hello, locID = {locID}</h1> */}
 
         </div>
     )

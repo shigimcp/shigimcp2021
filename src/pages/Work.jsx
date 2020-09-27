@@ -384,8 +384,6 @@ function WorkList({ currentEmployer }) {
     // console.log(printArray);
 
 
-
-
     // const missingContentArray = arrayCompare(availableBannerContent, bannerArray);
 
     // const missingBannerArray = arrayCompare(availableBannerContent, bannerArray);
@@ -1007,8 +1005,9 @@ function WorkList({ currentEmployer }) {
             </div>
 
             {/* <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' ref={videoContainer_Ref}> */}
-            <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); }} ref={videoContainer_Ref}>
             {/* <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); clearContent(videoPlayer_Ref.current); }} ref={videoContainer_Ref}> */}
+            <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); }} ref={videoContainer_Ref}>
+
                 <ReactPlayer
                     className='videoPlayer'
                     id='videoPlayerID'
@@ -1019,11 +1018,12 @@ function WorkList({ currentEmployer }) {
                     url={loadedVideo}
                     ref={videoPlayer_Ref}
                 />
+
             </div>
 
             {/* <div className='toggleBtnDiv'> */}
             <div className='toggleBtnDiv' id='toggleBtnDivID'>
-{/* 
+                {/* 
                 <p>
                     iFrame status: {iframeOpen.toString()}
                     <br />
@@ -1037,7 +1037,7 @@ function WorkList({ currentEmployer }) {
                     <br />
                     videoSRC = {loadedVideo}
                 </p>
- */}
+                */}
                 <br />
 
                 <button className={iframeOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setIframeOpen(!iframeOpen); setLoadedVideo(null); clearContent(webiFrame_Ref.current); }}> Close Iframe </button>
@@ -1058,12 +1058,18 @@ function WorkList({ currentEmployer }) {
 
 
 
-export const Work = ({ currentEmployer }) => {
+// export const Work = ({ currentEmployer }) => {
+// export const Work = ({ currentEmployer, locID }) => {
+export const Work = ({ currentEmployer, locID, loadStatus }) => {
+
+    localStorage.setItem('navLoc', locID);
+    localStorage.setItem('loadStatus', loadStatus);
 
     work = myData[1].filter(thisEmployer => thisEmployer.album_id === currentEmployer);
 
     return (
         <div className='workContainer' id='workContainerID'>
+            {/* <h1>Hello, locID = {locID}</h1> */}
             <WorkList currentEmployer={currentEmployer} />
         </div>
     )

@@ -41,51 +41,55 @@ import '../stylesheets/Contact.scss';
 // }
 
 
+// export class Contact extends React.Component {
+// export const Contact = ({ locID }) => {
+export const Contact = ({ locID, loadStatus }) => {
 
-export class Contact extends React.Component {
+    localStorage.setItem('navLoc', locID);
+    localStorage.setItem('loadStatus', loadStatus);
 
-    constructor(props) {
+    // constructor(props) {
 
-        super(props);
+    //     super(props);
 
-        // this.state = { value: '' };
+    //     // this.state = { value: '' };
 
-        // this.state = {
-        //     // value: ''
-        //     // value: 'Please write an essay about your favorite DOM element.'
-        //     // value: 'coconut'
-        //     // value: ['grapefruit', 'coconut']
-        //     value: []
-        // };
+    //     // this.state = {
+    //     //     // value: ''
+    //     //     // value: 'Please write an essay about your favorite DOM element.'
+    //     //     // value: 'coconut'
+    //     //     // value: ['grapefruit', 'coconut']
+    //     //     value: []
+    //     // };
 
-        // this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
-
-
-
-        // this.state = {
-        //     isGoing: true,
-        //     numberOfGuests: 2
-        // }
-
-        // this.handleInputChange = this.handleInputChange.bind(this);
+    //     // this.handleChange = this.handleChange.bind(this);
+    //     // this.handleSubmit = this.handleSubmit.bind(this);
 
 
 
-        this.state = {
-            name: '',
-            email: '',
-            message: ''
-        }
+    //     // this.state = {
+    //     //     isGoing: true,
+    //     //     numberOfGuests: 2
+    //     // }
 
-        this.onNameChange = this.onNameChange.bind(this);
-        this.onEmailChange = this.onEmailChange.bind(this);
-        this.onMessageChange = this.onMessageChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    //     // this.handleInputChange = this.handleInputChange.bind(this);
 
 
 
-    }
+    //     this.state = {
+    //         name: '',
+    //         email: '',
+    //         message: ''
+    //     }
+
+    //     this.onNameChange = this.onNameChange.bind(this);
+    //     this.onEmailChange = this.onEmailChange.bind(this);
+    //     this.onMessageChange = this.onMessageChange.bind(this);
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+
+
+
+    // }
 
 
     // handleChange(event) {
@@ -113,29 +117,29 @@ export class Contact extends React.Component {
 
 
 
-    onNameChange(event) {
-        this.setState({ name: event.target.value })
-    }
+    // onNameChange(event) {
+    //     this.setState({ name: event.target.value })
+    // }
 
-    onEmailChange(event) {
-        this.setState({ email: event.target.value })
-    }
+    // onEmailChange(event) {
+    //     this.setState({ email: event.target.value })
+    // }
 
-    onMessageChange(event) {
-        this.setState({ message: event.target.value })
-    }
+    // onMessageChange(event) {
+    //     this.setState({ message: event.target.value })
+    // }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        console.log(this.state);
-    }
-
-
+    // handleSubmit(event) {
+    //     event.preventDefault();
+    //     console.log(this.state);
+    // }
 
 
 
 
-    render() {
+
+
+    // render() {
         return (
 
             // <FullPage title='Contact' className='contactContainer'>
@@ -201,10 +205,11 @@ export class Contact extends React.Component {
 
 
 
-                <div className='formContainer' id='formContainerID'>
+            <div className='formContainer' id='formContainerID'>
 
                     {/* <h1>Hello, {name}</h1> */}
-
+                    <h1>Hello, locID = {locID}</h1>
+{/* 
                     <form className='contactForm' id='contact-form' onSubmit={this.handleSubmit.bind(this)} method='POST'>
                         <div className='form-group'>
                             <label htmlFor='name'>Name</label><br />
@@ -220,11 +225,12 @@ export class Contact extends React.Component {
                         </div>
                         <button type='submit' className='btn btn-primary'>Submit</button>
                     </form>
+ */}
                 </div>
 
 
 
             // {/* </FullPage> */}
         );
-    }
+    // }
 }

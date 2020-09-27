@@ -23,25 +23,22 @@ import { NotFound } from './pages/NotFound';
 //#region ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
 
 const routes = {
-    // // '': () => <Home />,
-    // '/': () => <Home />,
-    // '/shigimcp2020-react': () => <Home />,
-    // // '/work*': () => <Work />,
-    // '/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} />,
-    // // '/about*': () => <About />,
-    // '/about': () => <About />,
-    // '/resume': () => <Resume />,
-    // '/contact': () => <Contact />,
-    // // '/contact/:name': ({ name }) => <Contact name={name} />,
-    // '/notfound': () => <NotFound />,
 
-    '/': () => <Home />,
-    '/shigimcp2020-react': () => <Home />,
-    '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} />,
-    '/shigimcp2020-react/about': () => <About />,
-    '/shigimcp2020-react/resume': () => <Resume />,
-    '/shigimcp2020-react/contact': () => <Contact />,
-    '/shigimcp2020-react/notfound': () => <NotFound />,
+    // '/': () => <Home locID={'homeID'} />,
+    // '/shigimcp2020-react': () => <Home locID={'homeID'} />,
+    // '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} />,
+    // '/shigimcp2020-react/about': () => <About locID={'aboutID'} />,
+    // '/shigimcp2020-react/resume': () => <Resume locID={'resumeID'} />,
+    // '/shigimcp2020-react/contact': () => <Contact locID={'contactID'} />,
+    // '/shigimcp2020-react/notfound': () => <NotFound locID={'notFoundID'} />,
+
+    '/': () => <Home locID={'homeID'} loadStatus={true} />,
+    '/shigimcp2020-react': () => <Home locID={'homeID'} loadStatus={true} />,
+    '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
+    '/shigimcp2020-react/about': () => <About locID={'aboutID'} loadStatus={true} />,
+    '/shigimcp2020-react/resume': () => <Resume locID={'resumeID'} loadStatus={true} />,
+    '/shigimcp2020-react/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
+    '/shigimcp2020-react/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
 }
 
 //#endregion ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
@@ -56,8 +53,8 @@ function App() {
 
             <Header />
 
-            {match || <NotFound />}
             {/* {match || <Home />} */}
+            {match || <NotFound locID={'notFoundID'} />}
 
         </Wrapper>
     )

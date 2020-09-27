@@ -6,7 +6,13 @@ import React from 'react';
 import '../stylesheets/NotFound.scss';
 
 
-export const NotFound = () => {
+// export const NotFound = () => {
+// export const NotFound = ({ locID }) => {
+export const NotFound = ({ locID, loadStatus }) => {
+
+    localStorage.setItem('navLoc', locID);
+    localStorage.setItem('loadStatus', loadStatus);
+
     return (
         <div className="bodyContainer" title="Not Found">
         {/* <> */}

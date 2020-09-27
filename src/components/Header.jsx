@@ -3,8 +3,9 @@
 import React from 'react';
 
 import { useRef, useEffect, useState } from 'react';
-// import { useLayoutEffect } from 'react';
-import { A, usePath } from 'hookrouter';
+import { useLayoutEffect } from 'react';
+import { A } from 'hookrouter';
+// import { usePath } from 'hookrouter';
 // import { useCallback } from 'react';
 
 import gsap from 'gsap';
@@ -28,6 +29,7 @@ import myData from '../data/MyData';
 // console.log('');
 // console.log('=========================  Header.jsx  =========================');
 
+// console.log('Header.jsx ===>   locID = ' + { locID });
 
 
 //#region ==================== CONSTANTS ====================
@@ -85,53 +87,63 @@ const mobileNavTL = new gsap.timeline({ paused: true });
 //#endregion ==================== CONSTANTS ====================
 
 
+//#region ==================== FUNCTIONS ====================
+
+//#region -------------------- FUNCTION: moveObjectTo(thisObject, thisTarget) --------------------
+
+function moveObjectTo(thisObject, thisTarget) {
+
+    console.log('');
+    console.log('--------------------  moveObjectTo(thisObject, thisTarget)  --------------------');
+
+    console.log('moveObjectTo(thisObject, thisTarget) ==>   thisObject = ' + thisObject);
+    console.log('moveObjectTo(thisObject, thisTarget) ==>   thisObject.id = ' + thisObject.id);
+
+    const thisLocX = document.getElementById(thisTarget).offsetLeft;
+    const thisLocY = document.getElementById(thisTarget).offsetTop;
+    const thisLocW = document.getElementById(thisTarget).offsetWidth;
+    // const thisLocH = document.getElementById(thisTarget).offsetHeight;
+
+    gsap.to([thisObject], { x: thisLocX, top: thisLocY, width: thisLocW, duration: 0.375 });
+}
+
+//#endregion -------------------- FUNCTION: moveObjectTo(thisObject, thisTarget) --------------------
+
+//#endregion ==================== FUNCTIONS ====================
+
+
 
 //#region ==================== EXPORT HEADER ====================
 
 export const Header = () => {
 
-    //#region ==================== ASSETS _Ref ====================
+    console.log('');
+    console.log('========================= Header() => <Header /> =========================');
 
-    // const home_Ref = useRef(null);
-    // const work_Ref = useRef(null);
-    // const about_Ref = useRef(null);
-    // const resume_Ref = useRef(null);
-    // const contact_Ref = useRef(null);
-    // const work000_Ref = useRef(null);
-
-    let workNav_Ref = useRef(null);
-    let activeNavDiv_Ref = useRef(null);
-    let navBar_Ref = useRef(null);
-
-    //#endregion ==================== ASSETS _Ref ====================
+    // console.log('Header() => <Header /> ===>   localStorage.getItem(\'navLoc\') = ' + localStorage.getItem('navLoc'));
 
 
-    //#region ==================== WINDOW RESIZE - useViewport: REF https://blog.logrocket.com/developing-responsive-layouts-with-react-hooks/ ====================
+    //#region ==================== [INTIAL] SET activeNavDiv ====================
 
-    // const useViewport = () => {
+    let thisLoc = localStorage.getItem('navLoc');
 
-    //     const [viewportWidth, setViewportWidth] = React.useState(window.innerWidth);
-    //     const [viewportHeight, setViewportHeight] = React.useState(window.innerHeight);
+    if (document.getElementById(thisLoc) && thisLoc !== 'homeID') {
 
-    //     useEffect(() => {
+        console.log('Header() => <Header /> ===>   thisLoc = ' + thisLoc);
 
-    //         const handleWindowResize = () => {
-    //             setViewportWidth(window.innerWidth);
-    //             setViewportHeight(window.innerHeight);
-    //         }
+        const thisLocX = document.getElementById(thisLoc).offsetLeft;
+        const thisLocY = document.getElementById(thisLoc).offsetTop;
+        const thisLocW = document.getElementById(thisLoc).offsetWidth;
+        // const thisLocH = document.getElementById(thisLoc).offsetHeight;
 
-    //         window.addEventListener("resize", handleWindowResize);
+        // gsap.set([document.getElementById('activeNavDivID')], { x: 0, top: 0, width: 100 });
+        gsap.set([document.getElementById('activeNavDivID')], { x: thisLocX, top: thisLocY, width: thisLocW });
 
-    //         return () => window.removeEventListener("resize", handleWindowResize);
+    } else {
+        console.log('Header() => <Header /> ===>   NOT RENDERED YET - thisLoc = ' + thisLoc);
+    }
 
-    //     }, []);
-
-    //     // Return the width so we can use it in our components
-    //     return { viewportWidth, viewportHeight };
-    // }
-
-    //#endregion ==================== WINDOW RESIZE - useViewport: REF https://blog.logrocket.com/developing-responsive-layouts-with-react-hooks/ ====================
-
+    //#endregion ==================== [INTIAL] SET activeNavDiv ====================
 
 
     //#region ==================== use DEFs ====================
@@ -141,11 +153,20 @@ export const Header = () => {
 
     // const [navLoc, setNavLoc] = useState();
     // const [navLoc, setNavLoc] = useState(null);
-    const [navLoc, setNavLoc] = useState('homeID');
+    // const [navLoc, setNavLoc] = useState('homeID');
+    // const [navLoc, setNavLoc] = useState(localStorage.getItem('navLoc'));
+    const navLoc = localStorage.getItem('navLoc');
+
+    // const currentPath = usePath();
+    // console.log('use DEFs ===>   currentPath = ' + currentPath);
+
+    // const [firstLoad, setFirstLoad] = useState(true);
+    // const [firstLoad, setFirstLoad] = useState(localStorage.getItem('loadStatus'));
+
+    // const [activeNavLoc, setActiveNavLoc] = useState();
 
     // const [workNavShow, setWorkNavShow] = useState();
     const [workNavShow, setWorkNavShow] = useState(null);
-    // const [workNavTL] = useState(new gsap.timeline({ paused: true }));
 
     // const [currentEmployer, setCurrentEmployer] = useState();
     // const [currentEmployer, setCurrentEmployer] = useState(null);
@@ -160,21 +181,34 @@ export const Header = () => {
     const [mobileNavShow, setMobileNavShow] = useState(false);
     // const [mobileNavTL] = useState(new gsap.timeline({ paused: true }));
 
-    const currentPath = usePath();
-    // console.log('use DEFs ===>   currentPath = ' + currentPath);
-
     //#endregion ==================== use DEFs ====================
+
+
+    //#region ==================== ASSETS _Ref ====================
+
+    let workNav_Ref = useRef(null);
+    let activeNavDiv_Ref = useRef(null);
+    let navBar_Ref = useRef(null);
+
+    //#endregion ==================== ASSETS _Ref ====================
+
 
 
     //#region ==================== useEffect: [navLoc, setNavLoc] ====================
 
-    useEffect(() => {
+    // useState(() => {
+    // useEffect(() => {
+    useLayoutEffect(() => {
 
         // console.log('');
         // console.log('------------------------- useEffect: [navLoc, setNavLoc] -------------------------');
 
-        // console.log('useEffect: [navLoc, setNavLoc] ===>   currentPath = ' + currentPath);
         // console.log('useEffect: [navLoc, setNavLoc] ===>   navLoc = ' + navLoc);
+        // console.log('useEffect: [navLoc, setNavLoc] ===>   typeof navLoc = ' + typeof navLoc);
+
+        // console.log('useEffect: [navLoc, setNavLoc] ===>   window.performance = ' + window.performance);
+        // console.log('useEffect: [navLoc, setNavLoc] ===>   window.performance.type = ' + window.performance.type);
+        // console.log('useEffect: [navLoc, setNavLoc] ===>   window.performance.getEntriesByType(\'navigation\') = ' + window.performance.getEntriesByType('navigation'));
 
 
         //#region -------------------- setActiveNavDiv --------------------
@@ -184,91 +218,41 @@ export const Header = () => {
             console.log('');
             console.log('------------------------- setActiveNavDiv -------------------------');
 
-            console.log('setActiveNavDiv ===>   currentPath = ' + currentPath);
             console.log('setActiveNavDiv ===>   navLoc = ' + navLoc);
-
-
-            let currentLoc = '';
-
-            let thisLocX = 0;
-            let thisLocY = 0;
-            let thisLocW = 0;
-
-            if (currentPath === '/' || currentPath.endsWith('/shigimcp2020-react')) {
-
-                currentLoc = 'homeID';
-
-                thisLocX = document.getElementById(currentLoc).offsetLeft;
-                thisLocY = document.getElementById(currentLoc).offsetTop;
-                thisLocW = document.getElementById(currentLoc).offsetWidth;
-
-                console.log('');
-                console.log('BLAH 01');
-                console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
-
-            } else if (currentPath.includes('/work')) {
-
-                currentLoc = currentPath.substring(currentPath.indexOf('shigimcp2020-react/') + 19, currentPath.lastIndexOf('/')) + 'ID';
-
-                thisLocX = document.getElementById(currentLoc).offsetLeft;
-                thisLocY = document.getElementById(currentLoc).offsetTop;
-                thisLocW = document.getElementById(currentLoc).offsetWidth;
-
-                console.log('');
-                console.log('BLAH 02');
-                console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
-
-            } else {
-
-                currentLoc = currentPath.substring(currentPath.lastIndexOf('/') + 1) + 'ID';
-
-                thisLocX = document.getElementById(currentLoc).offsetLeft;
-                thisLocY = document.getElementById(currentLoc).offsetTop;
-                thisLocW = document.getElementById(currentLoc).offsetWidth;
-
-                console.log('');
-                console.log('BLAH 03');
-                console.log('setActiveNavDiv ===>   currentLoc = ' + currentLoc);
-            }
 
 
             //#region - - - - - - - - - - - offset - - - - - - - - - - -
 
-            // const thisLocX = document.getElementById('homeID').offsetLeft;
-            // const thisLocW = document.getElementById('homeID').offsetWidth;
-
-            // const thisLocX = document.getElementById(currentLoc).offsetLeft;
-            // const thisLocY = document.getElementById(currentLoc).offsetTop;
-            // const thisLocW = document.getElementById(currentLoc).offsetWidth;
-            // // const thisLocH = document.getElementById(currentLoc).offsetHeight;
+            const thisLocX = document.getElementById(navLoc).offsetLeft;
+            const thisLocY = document.getElementById(navLoc).offsetTop;
+            const thisLocW = document.getElementById(navLoc).offsetWidth;
+            // const thisLocH = document.getElementById(navLoc).offsetHeight;
 
             // console.log('');
             // console.log('setActiveNavDiv ===>   thisLocX = ' + thisLocX);
             // console.log('setActiveNavDiv ===>   thisLocY = ' + thisLocY);
             // console.log('setActiveNavDiv ===>   thisLocW = ' + thisLocW);
-            // console.log('setActiveNavDiv ===>   thisLocH = ' + thisLocH);
+            // // console.log('setActiveNavDiv ===>   thisLocH = ' + thisLocH);
 
             //#endregion - - - - - - - - - - - offset - - - - - - - - - - -
 
 
             //#region - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - -
 
-            // const thisDims = document.getElementById(currentLoc).getBoundingClientRect();
-
             // console.log('');
-            // console.log('setActiveNavDiv ===>   thisDims.x = ' + thisDims.x);
-            // console.log('setActiveNavDiv ===>   thisDims.left = ' + thisDims.left);
-            // console.log('setActiveNavDiv ===>   thisDims.y = ' + thisDims.y);
-            // console.log('setActiveNavDiv ===>   thisDims.top = ' + thisDims.top);
-            // console.log('setActiveNavDiv ===>   thisDims.width = ' + thisDims.width);
-            // console.log('setActiveNavDiv ===>   thisDims.height = ' + thisDims.height);
-            // console.log('setActiveNavDiv ===>   thisDims.right = ' + thisDims.right);
-            // console.log('setActiveNavDiv ===>   thisDims.bottom = ' + thisDims.bottom);
+            // console.log('setActiveNavDiv ===>   navLoc.x = ' + navLoc.x);
+            // console.log('setActiveNavDiv ===>   navLoc.left = ' + navLoc.left);
+            // console.log('setActiveNavDiv ===>   navLoc.y = ' + navLoc.y);
+            // console.log('setActiveNavDiv ===>   navLoc.top = ' + navLoc.top);
+            // console.log('setActiveNavDiv ===>   navLoc.width = ' + navLoc.width);
+            // console.log('setActiveNavDiv ===>   navLoc.height = ' + navLoc.height);
+            // console.log('setActiveNavDiv ===>   navLoc.right = ' + navLoc.right);
+            // console.log('setActiveNavDiv ===>   navLoc.bottom = ' + navLoc.bottom);
 
-            // const thisLocX = thisDims.x;
-            // const thisLocY = thisDims.y;
-            // const thisLocW = thisDims.width;
-            // const thisLocH = thisDims.height;
+            // const thisLocX = navLoc.x;
+            // const thisLocY = navLoc.y;
+            // const thisLocW = navLoc.width;
+            // const thisLocH = navLoc.height;
 
             // console.log('setActiveNavDiv ===>   thisLocX = ' + thisLocX);
             // console.log('setActiveNavDiv ===>   thisLocY = ' + thisLocY);
@@ -284,80 +268,88 @@ export const Header = () => {
         //#endregion -------------------- setActiveNavDiv --------------------
 
 
-        //#region -------------------- if (navLoc) {animate} --------------------
+        //#region -------------------- if (navLoc !== 'homeID') {animate} --------------------
 
-        if (navLoc) {
+        // if (navLoc === 'homeID') {
+        // // if (navLoc !== 'homeID') {
+        // // if (navLoc !== 'homeID' && !currentPath.includes('home')) {
+        // // if (navLoc !== 'homeID' && !currentPath.includes('home') && document.getElementById('activeNavDivID')) {
+        // // if (localStorage.getItem('navLoc') !== 'homeID') {
+        // // if (navLoc !== 'homeID' && window.performance.navigation !== 1) {
+        // // if (navfirstLoadoc) {
+        // // if (navLoc === 'homeID' && currentPath.includes('home')) {
 
-            // console.log('');
-            // console.log('------------------------- if (navLoc) {animate} -------------------------');
-            // console.log('navLoc = ' + navLoc);
-            // console.log('currentPath = ' + currentPath);
-
-
-            //#region - - - - - - - - - - - offset - - - - - - - - - - -
-
-            // console.log('');
-            // console.log('document.getElementById(' + navLoc + ').offsetWidth = ' + document.getElementById(navLoc).offsetWidth);
-            // console.log('document.getElementById(' + navLoc + ').offsetHeight = ' + document.getElementById(navLoc).offsetHeight);
-            // console.log('document.getElementById(' + navLoc + ').offsetLeft = ' + document.getElementById(navLoc).offsetLeft);
-            // console.log('document.getElementById(' + navLoc + ').offsetTop = ' + document.getElementById(navLoc).offsetTop);
-
-            // console.log('document.getElementById(navBarID).offsetWidth = ' + document.getElementById('navBarID').offsetWidth);
-
-            const thisLocX = document.getElementById(navLoc).offsetLeft;
-            const thisLocY = document.getElementById(navLoc).offsetTop;
-            const thisLocW = document.getElementById(navLoc).offsetWidth;
-            // const thisLocH = document.getElementById(navLoc).offsetHeight;
-
-            // console.log('');
-            // console.log('navLoc ===>   thisLocX = ' + thisLocX);
-            // console.log('navLoc ===>   thisLocY = ' + thisLocY);
-            // console.log('navLoc ===>   thisLocW = ' + thisLocW);
-            // console.log('navLoc ===>   thisLocH = ' + thisLocH);
-
-            //#endregion - - - - - - - - - - - offset - - - - - - - - - - -
+        //     console.log('');
+        //     console.log('------------------------- if (navLoc !== \'homeID\') {animate} -------------------------');
+        //     console.log('if (navLoc !== \'homeID\') {animate} ===>   currentPath = ' + navLoc);
+        //     console.log('if (navLoc !== \'homeID\') {animate} ===>   currentPath = ' + currentPath);
 
 
-            //#region - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - -
+        //     //#region - - - - - - - - - - - offset - - - - - - - - - - -
 
-            // const thisDims = document.getElementById(navLoc).getBoundingClientRect();
+        //     // console.log('');
+        //     // console.log('document.getElementById(' + navLoc + ').offsetWidth = ' + document.getElementById(navLoc).offsetWidth);
+        //     // console.log('document.getElementById(' + navLoc + ').offsetHeight = ' + document.getElementById(navLoc).offsetHeight);
+        //     // console.log('document.getElementById(' + navLoc + ').offsetLeft = ' + document.getElementById(navLoc).offsetLeft);
+        //     // console.log('document.getElementById(' + navLoc + ').offsetTop = ' + document.getElementById(navLoc).offsetTop);
 
-            // console.log('');
-            // console.log('navLoc ===>   thisDims.x = ' + thisDims.x);
-            // console.log('navLoc ===>   thisDims.left = ' + thisDims.left);
-            // console.log('navLoc ===>   thisDims.y = ' + thisDims.y);
-            // console.log('navLoc ===>   thisDims.top = ' + thisDims.top);
-            // console.log('navLoc ===>   thisDims.width = ' + thisDims.width);
-            // console.log('navLoc ===>   thisDims.height = ' + thisDims.height);
-            // console.log('navLoc ===>   thisDims.right = ' + thisDims.right);
-            // console.log('navLoc ===>   thisDims.bottom = ' + thisDims.bottom);
+        //     // console.log('document.getElementById(navBarID).offsetWidth = ' + document.getElementById('navBarID').offsetWidth);
 
-            // const thisLocX = thisDims.x;
-            // const thisLocY = thisDims.y;
-            // const thisLocW = thisDims.width;
-            // const thisLocH = thisDims.height;
+        //     const thisLocX = document.getElementById(navLoc).offsetLeft;
+        //     const thisLocY = document.getElementById(navLoc).offsetTop;
+        //     const thisLocW = document.getElementById(navLoc).offsetWidth;
+        //     // const thisLocH = document.getElementById(navLoc).offsetHeight;
 
-            // console.log('');
-            // console.log('navLoc ===>   thisLocX = ' + thisLocX);
-            // console.log('navLoc ===>   thisLocY = ' + thisLocY);
-            // console.log('navLoc ===>   thisLocW = ' + thisLocW);
-            // console.log('navLoc ===>   thisLocH = ' + thisLocH);
+        //     // console.log('');
+        //     // console.log('navLoc ===>   thisLocX = ' + thisLocX);
+        //     // console.log('navLoc ===>   thisLocY = ' + thisLocY);
+        //     // console.log('navLoc ===>   thisLocW = ' + thisLocW);
+        //     // console.log('navLoc ===>   thisLocH = ' + thisLocH);
 
-            //#endregion - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - -
+        //     //#endregion - - - - - - - - - - - offset - - - - - - - - - - -
 
 
-            gsap.to([activeNavDiv_Ref.current], { x: thisLocX, top: thisLocY, width: thisLocW, duration: 0.375 });
+        //     //#region - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - -
 
-        } else {
+        //     // const thisDims = document.getElementById(navLoc).getBoundingClientRect();
 
-            // console.log('');
-            // console.log('navLoc hasn\'t been defined yet...');
-            // console.log('currentPath = ' + currentPath);
+        //     // console.log('');
+        //     // console.log('navLoc ===>   thisDims.x = ' + thisDims.x);
+        //     // console.log('navLoc ===>   thisDims.left = ' + thisDims.left);
+        //     // console.log('navLoc ===>   thisDims.y = ' + thisDims.y);
+        //     // console.log('navLoc ===>   thisDims.top = ' + thisDims.top);
+        //     // console.log('navLoc ===>   thisDims.width = ' + thisDims.width);
+        //     // console.log('navLoc ===>   thisDims.height = ' + thisDims.height);
+        //     // console.log('navLoc ===>   thisDims.right = ' + thisDims.right);
+        //     // console.log('navLoc ===>   thisDims.bottom = ' + thisDims.bottom);
 
-            setActiveNavDiv();
-        }
+        //     // const thisLocX = thisDims.x;
+        //     // const thisLocY = thisDims.y;
+        //     // const thisLocW = thisDims.width;
+        //     // const thisLocH = thisDims.height;
 
-        //#endregion -------------------- if (navLoc) {animate} --------------------
+        //     // console.log('');
+        //     // console.log('navLoc ===>   thisLocX = ' + thisLocX);
+        //     // console.log('navLoc ===>   thisLocY = ' + thisLocY);
+        //     // console.log('navLoc ===>   thisLocW = ' + thisLocW);
+        //     // console.log('navLoc ===>   thisLocH = ' + thisLocH);
+
+        //     //#endregion - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - -
+
+
+        //     gsap.to([activeNavDiv_Ref.current], { x: thisLocX, top: thisLocY, width: thisLocW, duration: 0.375 });
+
+        // } else {
+
+        //     console.log('');
+        //     console.log('------------------------- else setActiveNavDiv() -------------------------');
+        //     console.log('else setActiveNavDiv() ===>   navLoc = ' + navLoc);
+        //     console.log('else setActiveNavDiv() ===>   currentPath = ' + currentPath);
+
+        //     setActiveNavDiv();
+        // }
+
+        //#endregion -------------------- if (navLoc !== 'homeID') {animate} --------------------
 
 
         //#region -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
@@ -374,8 +366,11 @@ export const Header = () => {
         //#endregion -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
 
 
+    // });
     // }, []);
-    }, [navLoc, currentPath]);
+    }, [navLoc]);
+    // }, [navLoc, currentPath]);
+    // }, [navLoc, setActiveNavDiv]);
 
     //#endregion ==================== useEffect: [navLoc, setNavLoc] ====================
 
@@ -388,62 +383,23 @@ export const Header = () => {
 
         // console.log('');
         // console.log('------------------------- useEffect: [workNavShow, setWorkNavShow] -------------------------');
-        // console.log('currentPath = ' + currentPath);
-        // console.log('currentPath = ' + currentPath + '     workNavShow = ' + workNavShow);
+
 
         setWorkNavShow(
             workNavTL
-                // .to([workNav_Ref], { y: workkNavHeight, autoAlpha: 1, duration: 0.5 }, 'frame01')
-                // .fromTo([workNav_Ref], { y: (navBarHeight + workkNavHeight), autoAlpha: 0 }, { y: (workkNavHeight), autoAlpha: 1, duration: 0.5 }, 'frame01')
                 .fromTo([workNav_Ref], { y: 0, autoAlpha: 0 }, { y: (workkNavHeight), autoAlpha: 1, duration: 0.5 }, 'frame01')
         );
 
-        if (currentPath.includes('/work')) {
+        if (navLoc === 'workID') {
             // workNavTL.play();
             // workNavTL.pause();
             workNavTL.resume();
         }
 
-        // if (currentPath.includes('/work')) {
-        // // if (currentPath.includes('/work') && workNavTL.progress(0) === true) {
-        //     // workNavTL.play();
-        //     // workNavTL.pause();
-        //     workNavTL.resume();
-        //     console.log('You are in the "WORK" section');
-        //     console.log('workNavTL.progress() = ' + workNavTL.progress());
-        //     // console.log('workNavTL.duration() = ' + workNavTL.duration());
-        // }
-
-
-        // if (workNavTL.progress(0) === 'true') {
-        //     console.log('You are at the beginning of workNavTL');
-        // } else if (workNavTL.progress(0) === 'false') {
-        //     console.log('You are at the end of workNavTL');
-        // }
-
-
-        // if (workNavShow === null) {
-        //     // workNavTL.play();
-        //     workNavTL.pause(0);
-        //     // workNavTL.reverse(0);
-        // } else if (currentPath.includes('/work') && workNavTL.progress(0) === 'false') {
-        //     // workNavTL.play();
-        //     workNavTL.pause(0);
-        //     // workNavTL.reverse(0);
-        // } else if (currentPath.includes('/work')) {
-        //     workNavTL.play();
-        //     // workNavTL.pause(0);
-        //     // workNavTL.reverse(0);
-        // };
-
         window.scrollTo(0, 0);
 
     // }, []);
-    // }, [workNavShow, workNavTL, currentPath]);
-    // }, [workNavShow, workNavTL, currentPath, navLoc]);
-    // }, [workNavShow, workNavTL, currentPath, handleClick]);
-    // }, [workNavTL, currentPath, handleClick]);
-    }, [currentPath, workNavShow]);
+    }, [navLoc, workNavShow]);
 
     //#endregion ==================== useEffect: [workNavShow, setWorkNavShow] ====================
 
@@ -635,9 +591,6 @@ export const Header = () => {
 
                 {/* #region ==================== PATHS ==================== */}
 
-                    {/* <use xlinkHref='#shigeru_logo_afro_k' clip-path='url(#shigeru_logo_afro_k_mask)' fill='red' />
-                    <use xlinkHref='#shigeru_logo_afro_w' clip-path='url(#shigeru_logo_afro_w_mask)' fill='blue' /> */}
-
                 </svg>
 
             </div>
@@ -649,28 +602,27 @@ export const Header = () => {
                     {WorkNavItems}
                 </div>
 
-                {/* <div className='navBar' id='navBarID'> */}
                 <div className='navBar' id='navBarID' ref={navBar_Ref}>
-                {/* <div className='navBar' id='navBarID' ref={e => { navBar_Ref = e }}> */}
 
-                    {/* <div className='activeNavDiv' ref={activeNavDiv_Ref}></div> */}
-                    {/* <div className='activeNavDiv' ref={e => { activeNavDiv_Ref = e }} /> */}
-                    <div className='activeNavDiv' ref={activeNavDiv_Ref} onClick={() => { setMobileNavShow(false) }}></div>
+                    <div className='activeNavDiv' id='activeNavDivID' ref={activeNavDiv_Ref}></div>
 
-                    {/* <A className='navItem' href='/' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Home</A>
-                    <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Work</A>
-                    <A className='navItem' href='/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>About</A>
-                    <A className='navItem' href='/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Resume</A>
-                    <A className='navItem' href='/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Contact</A> */}
-                    {/* <A className='navItem' href='/contact/Shigi' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Contact</A> */}
-
-                    <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Home</A>
+                    {/* <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Home</A>
                     <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Work</A>
                     <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>About</A>
                     <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Resume</A>
-                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Contact</A>
+                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); setMobileNavShow(false); }}>Contact</A> */}
 
-                    {/* <div className='activeNavDiv' ref={activeNavDiv_Ref}></div> */}
+                    {/* <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); moveObjectTo(activeNavDiv_Ref.current, navLoc); setMobileNavShow(false); }}>Home</A>
+                    <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); setNavLoc(e.target.id); moveObjectTo(activeNavDiv_Ref.current, navLoc); setMobileNavShow(false); }}>Work</A>
+                    <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); moveObjectTo(activeNavDiv_Ref.current, navLoc); setMobileNavShow(false); }}>About</A>
+                    <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); moveObjectTo(activeNavDiv_Ref.current, navLoc); setMobileNavShow(false); }}>Resume</A>
+                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); moveObjectTo(activeNavDiv_Ref.current, navLoc); setMobileNavShow(false); }}>Contact</A> */}
+
+                    <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Home</A>
+                    <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Work</A>
+                    <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>About</A>
+                    <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Resume</A>
+                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Contact</A>
 
                 </div>
 
