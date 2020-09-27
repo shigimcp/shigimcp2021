@@ -159,8 +159,8 @@
 
         cursor: pointer;
 
-        .webiFrame {
         // .webiFrameOpen {
+        .webiFrame {
             // border: 2px solid #0000ff;
             border: none;
 
@@ -176,8 +176,8 @@
             margin: 0 auto;
             padding: 0;
 
-            // position: fixed;
-            position: relative;
+            position: fixed;
+            // position: relative;
             // // top: ($header-height + $navBar-height + $workkNav-height + 10);
             // top: 12.5vh;
             // z-index: 999;
@@ -196,21 +196,21 @@
         }
 
         // .webiFrameClosed {
-        //     border: 2px solid #0000ff;
-        //     // border: none;
+            // border: 2px solid #0000ff;
+            // // border: none;
 
-        //     width: 0;
-        //     height: 0;
+            // width: 0;
+            // height: 0;
 
-        //     margin: 0 auto;
-        //     padding: 0;
+            // margin: 0 auto;
+            // padding: 0;
 
-        //     position: fixed;
-        //     top: 0;
-        //     left: 0;
-        //     z-index: 0;
+            // position: fixed;
+            // top: 0;
+            // left: 0;
+            // z-index: 0;
 
-        //     display: none;
+            // display: none;
         // }
     }
 
@@ -240,24 +240,26 @@
         cursor: pointer;
 
         .videoPlayer {
-            // border: 2px solid #00ff00;
+            border: 2px solid #00ff00;
             // background: #999999;
 
             // height: 80%;
             // height: 50%;
 
-            padding: 0vh 0;
+            padding: 0 0;
 
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 10%;
+            left: 10%;
+            // bottom: 0;
+            // right: 0;
 
-            -ms-transform: scale(0.875);
-            -moz-transform: scale(0.875);
-            -o-transform: scale(0.875);
-            -webkit-transform: scale(0.875);
-            transform: scale(0.875);
-            
+            // -ms-transform: scale(0.875);
+            // -moz-transform: scale(0.875);
+            // -o-transform: scale(0.875);
+            // -webkit-transform: scale(0.875);
+            // transform: scale(0.875);
+
             // -ms-transform-origin: 0 0;
             // -moz-transform-origin: 0 0;
             // -o-transform-origin: 0 0;

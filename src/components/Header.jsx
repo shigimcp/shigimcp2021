@@ -93,11 +93,11 @@ const mobileNavTL = new gsap.timeline({ paused: true });
 
 function moveObjectTo(thisObject, thisTarget) {
 
-    console.log('');
-    console.log('--------------------  moveObjectTo(thisObject, thisTarget)  --------------------');
+    // console.log('');
+    // console.log('--------------------  moveObjectTo(thisObject, thisTarget)  --------------------');
 
-    console.log('moveObjectTo(thisObject, thisTarget) ==>   thisObject = ' + thisObject);
-    console.log('moveObjectTo(thisObject, thisTarget) ==>   thisObject.id = ' + thisObject.id);
+    // console.log('moveObjectTo(thisObject, thisTarget) ==>   thisObject = ' + thisObject);
+    // console.log('moveObjectTo(thisObject, thisTarget) ==>   thisObject.id = ' + thisObject.id);
 
     const thisLocX = document.getElementById(thisTarget).offsetLeft;
     const thisLocY = document.getElementById(thisTarget).offsetTop;
@@ -117,8 +117,8 @@ function moveObjectTo(thisObject, thisTarget) {
 
 export const Header = () => {
 
-    console.log('');
-    console.log('========================= Header() => <Header /> =========================');
+    // console.log('');
+    // console.log('========================= Header() => <Header /> =========================');
 
     // console.log('Header() => <Header /> ===>   localStorage.getItem(\'navLoc\') = ' + localStorage.getItem('navLoc'));
 
@@ -129,7 +129,7 @@ export const Header = () => {
 
     if (document.getElementById(thisLoc) && thisLoc !== 'homeID') {
 
-        console.log('Header() => <Header /> ===>   thisLoc = ' + thisLoc);
+        // console.log('Header() => <Header /> ===>   thisLoc = ' + thisLoc);
 
         const thisLocX = document.getElementById(thisLoc).offsetLeft;
         const thisLocY = document.getElementById(thisLoc).offsetTop;
@@ -140,7 +140,7 @@ export const Header = () => {
         gsap.set([document.getElementById('activeNavDivID')], { x: thisLocX, top: thisLocY, width: thisLocW });
 
     } else {
-        console.log('Header() => <Header /> ===>   NOT RENDERED YET - thisLoc = ' + thisLoc);
+        // console.log('Header() => <Header /> ===>   NOT RENDERED YET - thisLoc = ' + thisLoc);
     }
 
     //#endregion ==================== [INTIAL] SET activeNavDiv ====================

@@ -508,118 +508,50 @@ function WorkList({ currentEmployer }) {
 
         //#region - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
 
-        // if (thisContent[thisWorkImage.link2]) {
-        // // if (thisContent[thisWorkImage.link2] && thisContent[thisWorkImage.className] !== 'missingImg') {
+        // console.log('');
+        // console.log('------------------------- ASSIGN NEW CONTENT -------------------------');
 
-        //     const newContent = React.createElement(thisContent[thisWorkImage.link2]);
-
-        //     setBannerShow(newContent);
-
-        //     document.getElementById('bannerContainerID').key = thisWorkImage.link2;
-        //     // document.getElementById(thisWorkImage.link2).key = thisWorkImage.link2;
+        // console.log('');
+        // console.log('ASSIGN NEW CONTENT ===>   thisWorkImage.link2 = ' + thisWorkImage.link2);
+        // console.log('ASSIGN NEW CONTENT ===>   webiFrame_Ref.current = ' + webiFrame_Ref.current);
+        // console.log('ASSIGN NEW CONTENT ===>   webiFrame_Ref.current.id = ' + webiFrame_Ref.current.id);
 
 
-        //     // console.log('');
-        //     console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
-        //     console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-        //     console.log('newContent = ' + newContent);
-        //     // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-        //     // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
-        //     // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
-
-        // } else {
-
-        //     // setBannerShow('');
-        //     // setBannerShow(thisWorkImage.link2 + ' THIS CONTENT COMING SOON!');
-        //     // setBannerShow(thisWorkImage.link2);
-
-        //     // console.log('');
-        //     console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
-        //     console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-        //     // // console.log('newContent = ' + newContent);
-        //     // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-        //     // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
-        //     // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
-
-
-        //     //#region -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
-
-        //     console.log('');
-        //     console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) ===>   IFRAME -------------------------');
-
-        //     let iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
-
-        //     console.log('iframeSRC = ' + iframeSRC);
-
-        //     webiFrame_Ref.current.src = iframeSRC;
-        //     webiFrame_Ref.current.style.width = thisWorkImage.mwidth + 'px';
-        //     webiFrame_Ref.current.style.height = thisWorkImage.mheight + 'px';
-        //     webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkImage.mwidth)/2 + 'px';
-
-        //     //#endregion -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
-        // }
-
-        //#endregion - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
-
-
-
-
-
-
-
-
-
-        //#region - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
-
-        // let iframeSRC;
-        // let videoSRC;
-
-        // switch (thisWorkFormat) {
         switch (thisWorkImage.format) {
 
             case 'banner':
 
             //#region -------------------- ASSIGN NEW CONTENT: banner --------------------
 
-                // thisContent = bannerContent;
+                console.log('');
+                console.log('------------------------- ASSIGN NEW CONTENT: banner -------------------------');
+
+                console.log('ASSIGN NEW CONTENT: banner ===>   thisWorkImage.format = ' + thisWorkImage.format);
+                console.log('ASSIGN NEW CONTENT: banner ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
+
+
+                const newContent = React.createElement(bannerContent[thisWorkImage.link2]);
+
+                setBannerShow(newContent);
+
+                document.getElementById('bannerContainerID').key = thisWorkImage.link2;
+
+                setIframeOpen(false);
+                // setLoadedIframe('');
+
+                setVideoOpen(false);
+                setLoadedVideo(null);
+
 
                 // console.log('');
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
+                // console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
+                // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
 
+                // console.log('newContent = ' + newContent);
+                // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
 
-                // console.log('');
-                // console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) ===>   banner -------------------------');
-
-                // if (thisWorkImage.link2) {
-
-                    const newContent = React.createElement(bannerContent[thisWorkImage.link2]);
-
-                    setBannerShow(newContent);
-
-                    document.getElementById('bannerContainerID').key = thisWorkImage.link2;
-
-                    setIframeOpen(false);
-                    // setLoadedIframe('');
-
-                    setVideoOpen(false);
-                    setLoadedVideo(null);
-
-
-                    // console.log('');
-                    // console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
-                    // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-                    // console.log('newContent = ' + newContent);
-                    // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
-
-                    // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
-                    // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
-                // }
+                // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
+                // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
 
                 break;
 
@@ -630,24 +562,28 @@ function WorkList({ currentEmployer }) {
             case 'website':
             case 'mobile':
 
-            //#region -------------------- ASSIGN NEW CONTENT: html5, website, mobile --------------------
+            //#region -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
+            //        -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
 
-                // thisContent = webContent;
+                console.log('');
+                console.log('------------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) -------------------------');
+
+                console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisWorkImage.format = ' + thisWorkImage.format);
+                console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
+
+
+                let iframeSRC;
+
+                if (thisWorkImage.format_src === 'external') {
+                    // let iframeSRC = thisWorkImage.link2;
+                    iframeSRC = thisWorkImage.link2;
+                } else {
+                    // let iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
+                    iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
+                }
 
                 // console.log('');
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-
-                //#region -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
-
-                // console.log('');
-                // console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) ===>   IFRAME: html5, website, mobile -------------------------');
-
-                let iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
-                // iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
-
-                console.log('IFRAME: html5, website, mobile ===>   iframeSRC = ' + iframeSRC);
+                console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   iframeSRC = ' + iframeSRC);
 
                 webiFrame_Ref.current.src = iframeSRC;
                 webiFrame_Ref.current.style.width = thisWorkImage.mwidth + 'px';
@@ -660,28 +596,47 @@ function WorkList({ currentEmployer }) {
                 setVideoOpen(false);
                 setLoadedVideo(null);
 
-                //#endregion -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
+                if (thisWorkImage.mheight >= window.innerHeight) {
+
+                    let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.9;
+                    let thisY = (window.innerHeight - (thisWorkImage.mheight * thisScale)) / 2;
+
+                    console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisScale = ' + thisScale);
+                    console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisY = ' + thisY);
+
+                    // gsap.set([webiFrame_Ref.current], { scale: thisScale, transformOrigin: '50% 0', immediateRender: true });
+                    gsap.set([webiFrame_Ref.current], { top: thisY, scale: thisScale, transformOrigin: '50% 0', immediateRender: true });
+
+                } else {
+
+                    let thisY = (window.innerHeight - thisWorkImage.mheight) / 2;
+                    // let thisScale = 1;
+
+                    console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisY = ' + thisY);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisScale = ' + thisScale);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisWorkImage.mheight = ' + thisWorkImage.mheight);
+
+                    gsap.set([webiFrame_Ref.current], { top: thisY, transformOrigin: '50% 0', immediateRender: true });
+                    // gsap.set([webiFrame_Ref.current], { top: thisY, scale: thisScale, transformOrigin: '50% 0', immediateRender: true });
+                    // gsap.set([webiFrame_Ref.current], { height: thisWorkImage.mheight, top: thisY, transformOrigin: '50% 0', immediateRender: true });
+                    // gsap.set([webiFrame_Ref.current], { height: thisWorkImage.mheight, top: thisY, scale: thisScale, transformOrigin: '50% 0', immediateRender: true });
+                }
 
                 break;
 
-            //#endregion -------------------- ASSIGN NEW CONTENT: html5, website, mobile --------------------
+            //#endregion -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
 
 
             case 'video':
 
-            //#region -------------------- ASSIGN NEW CONTENT: video --------------------
-
-                // thisContent = videoContent;
-
-                // console.log('');
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-
-                //#region -------------------- VIDEO REF: https://github.com/CookPete/react-player -------------------- 
+            //#region -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
+            //        -------------------- VIDEO REF: https://github.com/CookPete/react-player -------------------- 
 
                 console.log('');
-                console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) ===>   VIDEO -------------------------');
+                console.log('------------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) -------------------------');
+
+                console.log('ASSIGN NEW CONTENT: video (REACT-PLAYER) ===>   thisWorkImage.format = ' + thisWorkImage.format);
+                console.log('ASSIGN NEW CONTENT: video (REACT-PLAYER) ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
 
 
                 // clearContent(webiFrame_Ref.current, videoPlayer_Ref.current);
@@ -689,7 +644,8 @@ function WorkList({ currentEmployer }) {
                 let videoSRC = videoLoc + thisWorkImage.link2;
                 // videoSRC = videoLoc + thisWorkImage.link2;
 
-                console.log('VIDEO ===>   videoSRC = ' + videoSRC);
+                // console.log('');
+                console.log('ASSIGN NEW CONTENT: video (REACT-PLAYER) ===>   videoSRC = ' + videoSRC);
 
                 // webiFrame_Ref.current.src = videoSRC;
                 // webiFrame_Ref.current.style.width = thisWorkImage.mwidth + 'px';
@@ -702,7 +658,7 @@ function WorkList({ currentEmployer }) {
                 // videoPlayer_Ref.current.style.height = thisWorkImage.mheight + 'px';
                 // videoPlayer_Ref.current.style.left = (window.innerWidth - thisWorkImage.mwidth) / 2 + 'px';
 
-                console.log('VIDEO ===>   videoPlayer_Ref.current.url = ' + videoPlayer_Ref.current.url);
+                // console.log('ASSIGN NEW CONTENT: video (REACT-PLAYER) ===>   videoPlayer_Ref.current.url = ' + videoPlayer_Ref.current.url);
 
                 setIframeOpen(false);
                 // setLoadedIframe('');
@@ -710,22 +666,25 @@ function WorkList({ currentEmployer }) {
                 setVideoOpen(true);
                 setLoadedVideo(videoSRC);
 
-                //#endregion -------------------- VIDEO REF: https://github.com/CookPete/react-player -------------------- 
+                // gsap.set([videoContainer_Ref.current], { scale: 0.875, transformOrigin: '50% 50%', immediateRender: true });
+                gsap.set([videoPlayer_Ref.current], { scale: 0.875, transformOrigin: '50% 50%', immediateRender: true });
+                // gsap.set([videoPlayer_Ref.current], { width: thisWorkImage.mwidth * 0.875, height: thisWorkImage.mheight * 0.875, transformOrigin: '50% 50%', immediateRender: true });
 
                 break;
 
-            //#endregion -------------------- ASSIGN NEW CONTENT: video --------------------
+            //#endregion -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
 
 
             // case 'print':
 
             //#region -------------------- ASSIGN NEW CONTENT: print --------------------
 
-                // // thisContent = printontent;
+                // console.log('');
+                // console.log('------------------------- ASSIGN NEW CONTENT: print -------------------------');
 
-                // // console.log('');
-                // // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-                // // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
+                // console.log('ASSIGN NEW CONTENT: print ===>   thisWorkImage.format = ' + thisWorkImage.format);
+                // console.log('ASSIGN NEW CONTENT: print ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
+
 
                 // setIframeOpen(false);
                 // setLoadedIframe('');
@@ -742,11 +701,12 @@ function WorkList({ currentEmployer }) {
 
             //#region -------------------- ASSIGN NEW CONTENT: default --------------------
 
-                // thisContent = bannerContent;
+                console.log('');
+                console.log('------------------------- ASSIGN NEW CONTENT: default -------------------------');
 
-                // console.log('');
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   default thisWorkFormat = ' + thisWorkFormat);
-                // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   default thisContent = ' + thisContent);
+                console.log('ASSIGN NEW CONTENT: default ===>   thisWorkImage.format = ' + thisWorkImage.format);
+                console.log('ASSIGN NEW CONTENT: default ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
+
 
                 setIframeOpen(false);
                 // setLoadedIframe('');
@@ -760,15 +720,6 @@ function WorkList({ currentEmployer }) {
         }
 
         //#endregion - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
-
-
-
-
-
-
-
-
-
 
 
         //#region - - - - - - - - - - - - - POSITION & LOAD NEW CONTENT bannerContainer_Ref - - - - - - - - - - - - -
@@ -1011,8 +962,10 @@ function WorkList({ currentEmployer }) {
                 <ReactPlayer
                     className='videoPlayer'
                     id='videoPlayerID'
-                    width='100%'
-                    height='100%'
+                    // width='100%'
+                    // height='100%'
+                    width='80%'
+                    height='80%'
                     // url='https://vimeo.com/313477117'
                     // url={videoSRC}
                     url={loadedVideo}
