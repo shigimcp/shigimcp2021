@@ -14,11 +14,11 @@ import SquirrelBitVid from '../images/hilites/pet_projects/kawaii08_06_POSE_Sing
 
 
 // export const Home = () => {
-// export const Home = ({ locID }) => {
-export const Home = ({ locID, loadStatus }) => {
+export const Home = ({ locID }) => {
+// export const Home = ({ locID, loadStatus }) => {
 
     localStorage.setItem('navLoc', locID);
-    localStorage.setItem('loadStatus', loadStatus);
+    // localStorage.setItem('loadStatus', loadStatus);
 
     const videoRef = useRef(null);
 

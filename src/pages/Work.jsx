@@ -4,7 +4,7 @@ import React from 'react';
 // import { useRoutes } from 'hookrouter';
 import { useRef } from 'react';
 import { useState } from 'react';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 // import { useLayoutEffect } from 'react';
 // import { forwardRef } from "react";
 
@@ -212,129 +212,129 @@ const bannerContent = {
 
 //#region -------------------- FUNCTION: getCoords(thisObject) --------------------
 
-function getCoords(thisObject) {
+// function getCoords(thisObject) {
 
-    // console.log('');
-    // console.log('--------------------  getCoords(thisObject)  --------------------');
+//     // console.log('');
+//     // console.log('--------------------  getCoords(thisObject)  --------------------');
 
-    // console.log('getCoords(thisObject) ==>   thisObject = ' + thisObject);
-    // console.log('getCoords(thisObject) ==>   thisObject.id = ' + thisObject.id);
-
-
-    //#region - - - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - - - -
-
-    // const thisObjectDims = thisObject.getBoundingClientRect();
-
-    // console.log('');
-    // console.log('getCoords(thisObject) ===>   thisObjectDims.x = ' + thisObjectDims.x);
-    // console.log('getCoords(thisObject) ===>   thisObjectDims.left = ' + thisObjectDims.left);
-    // console.log('getCoords(thisObject) ===>   thisObjectDims.y = ' + thisObjectDims.y);
-    // console.log('getCoords(thisObject) ===>   thisObjectDims.top = ' + thisObjectDims.top);
-    // console.log('getCoords(thisObject) ===>   thisObjectDims.width = ' + thisObjectDims.width);
-    // console.log('getCoords(thisObject) ===>   thisObjectDims.height = ' + thisObjectDims.height);
-    // console.log('getCoords(thisObject) ===>   thisObjectDims.right = ' + thisObjectDims.right);
-    // console.log('getCoords(thisObject) ===>   thisObjectDims.bottom = ' + thisObjectDims.bottom);
-
-    // return thisObjectDims;
-
-    //#endregion - - - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - - - -
+//     // console.log('getCoords(thisObject) ==>   thisObject = ' + thisObject);
+//     // console.log('getCoords(thisObject) ==>   thisObject.id = ' + thisObject.id);
 
 
-    return [thisObject.offsetLeft, thisObject.offsetTop];
-}
+//     //#region - - - - - - - - - - - - - offset - - - - - - - - - - - - -
+
+//     // const thisObjectDims = thisObject.offset();
+
+//     // console.log('');
+//     // console.log('getCoords(thisObject) ===>   thisObjectDims = ' + thisObjectDims);
+//     // console.log(thisObjectDims);
+//     // // console.log('getCoords(thisObject) ===>   thisObjectDims.x = ' + thisObjectDims.x);
+
+//     // return thisObjectDims;
+
+//     //#endregion - - - - - - - - - - - - - offset - - - - - - - - - - - - -
+
+
+//     //#region - - - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - - - -
+
+//     const thisObjectDims = thisObject.getBoundingClientRect();
+
+//     console.log('');
+//     console.log('getCoords(thisObject) ===>   thisObjectDims.x = ' + thisObjectDims.x);
+//     console.log('getCoords(thisObject) ===>   thisObjectDims.left = ' + thisObjectDims.left);
+//     console.log('getCoords(thisObject) ===>   thisObjectDims.y = ' + thisObjectDims.y);
+//     console.log('getCoords(thisObject) ===>   thisObjectDims.top = ' + thisObjectDims.top);
+//     console.log('getCoords(thisObject) ===>   thisObjectDims.width = ' + thisObjectDims.width);
+//     console.log('getCoords(thisObject) ===>   thisObjectDims.height = ' + thisObjectDims.height);
+//     console.log('getCoords(thisObject) ===>   thisObjectDims.right = ' + thisObjectDims.right);
+//     console.log('getCoords(thisObject) ===>   thisObjectDims.bottom = ' + thisObjectDims.bottom);
+
+//     return thisObjectDims;
+
+//     //#endregion - - - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - - - -
+
+
+//     // return [thisObject.offsetLeft, thisObject.offsetTop];
+// }
 
 //#endregion -------------------- FUNCTION: getCoords(thisObject) --------------------
 
 
-//#region -------------------- FUNCTION: arrayCompare(baseArray, newArray) --------------------
+//#region -------------------- FUNCTION: moveBanner(thisActiveImage, bannerContainer) --------------------
 
-// function arrayCompare(baseArray, newArray) {
+// function moveBanner(thisActiveImage, bannerContainer) {
 
-//     let missingContentArray = [];
+    // console.log('');
+    // console.log('--------------------  moveBanner(thisActiveImage, bannerContainer)  --------------------');
 
-//     // console.log('');
-//     // console.log('------------------------- arrayCompare(baseArray, newArray) -------------------------');
-
-//     // console.log('arrayCompare(baseArray, newArray) ===>   baseArray.length = ' + baseArray.length)
-//     // console.log('arrayCompare(baseArray, newArray) ===>   newArray.length = ' + newArray.length)
-
-//     // console.log(baseArray)
-//     // console.log(newArray)
-
-
-//     newArray.map((workImage) =>
-//         // console.log('arrayCompare(baseArray, newArray) ===>   workImage.link2 = ' + workImage.link2),
-
-//         missingContentArray.push(workImage.link2)
-//     );
-
-//     missingContentArray = missingContentArray.filter(val => !baseArray.includes(val));
+    // // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage = ' + thisActiveImage);
+    // // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage.className = ' + thisActiveImage.className);
+    // // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage.id = ' + thisActiveImage.id);
+    // // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage.format_src = ' + thisActiveImage.format_src);
+    // // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage.offsetLeft = ' + thisActiveImage.offsetLeft);
+    // // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage.offsetTop = ' + thisActiveImage.offsetTop);
+    // // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage.offsetWidth = ' + thisActiveImage.offsetWidth);
+    // // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage.offsetHeight = ' + thisActiveImage.offsetHeight);
 
 
-//     // console.log('');
-//     // console.log('arrayCompare(baseArray, newArray) ===>   missingContentArray.length = ' + missingContentArray.length)
-//     // console.log(missingContentArray);
+    // console.log('');
+    // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage.getBoundingClientRect() = ' + thisActiveImage.getBoundingClientRect());
+    // console.log(thisActiveImage.getBoundingClientRect());
 
-//     return missingContentArray;
+
+    // console.log('');
+    // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   bannerContainer = ' + bannerContainer);
+    // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   bannerContainer.id = ' + bannerContainer.id);
+
+
+    // let thisActiveImageCoords;
+    // let thisActiveImageScale;
+
+    // if (bannerContainer.id === 'bannerContainerID') {
+
+    //     console.log('');
+    //     console.log('moveBanner(thisActiveImage, bannerContainer) ===>   This banner was rebuilt in React...');
+
+    //     // thisActiveImageCoords = getCoords(thisActiveImage);
+    //     thisActiveImageCoords = [thisActiveImage.offsetLeft, thisActiveImage.offsetTop];
+    //     thisActiveImageScale = thisActiveImage.offsetWidth / 300;
+
+    //     console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImageCoords = ');
+    //     console.log(thisActiveImageCoords);
+    //     console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImageScale = ' + thisActiveImageScale);
+
+    //     gsap.set([bannerContainer], { x: thisActiveImageCoords[0], y: thisActiveImageCoords[1], scale: thisActiveImageScale, transformOrigin: '0 0', immediateRender: true });
+
+    // } else if (bannerContainer.id === 'banneriFrameID') {
+
+    //     console.log('');
+    //     console.log('moveBanner(thisActiveImage, bannerContainer) ===>   This banner comes directly from Animate... with a few adjustments to the Animate-generated code');
+
+    //     thisActiveImageCoords = getCoords(thisActiveImage);
+    // }
+
+
+    // let thisActiveImageCoords = getCoords(thisActiveImage);
+    // let thisActiveImageScale = thisActiveImage.offsetWidth / 300;
+
+    // console.log('');
+    // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImage = ' + thisActiveImage);
+    // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImageX = ' + thisActiveImageX);
+    // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImageY = ' + thisActiveImageY);
+    // console.log('moveBanner(thisActiveImage, bannerContainer) ===>   thisActiveImageScale = ' + thisActiveImageScale);
+
+
+    // gsap.set([bannerContainer], { x: thisActiveImageX, y: thisActiveImageY, scale: thisActiveImageScale, transformOrigin: '0 0', immediateRender: true });
+    // gsap.set([bannerContainer], { x: thisActiveImageCoords[0], y: thisActiveImageCoords[1], scale: thisActiveImageScale, transformOrigin: '0 0', immediateRender: true });
 // }
 
-//#endregion -------------------- FUNCTION: arrayCompare(baseArray, comapareArray) --------------------
-
-
-//#region -------------------- FUNCTION: moveBanner(thisBanner, bannerContainer) --------------------
-
-function moveBanner(thisBanner, bannerContainer) {
-
-    // console.log('');
-    // console.log('--------------------  moveBanner(thisBanner, bannerContainer)  --------------------');
-
-    // console.log('moveBanner(thisBanner, bannerContainer) ==>   thisBanner = ' + thisBanner);
-    // console.log('moveBanner(thisBanner, bannerContainer) ==>   thisBanner.id = ' + thisBanner.id);
-
-    let thisBannerCoords = getCoords(thisBanner);
-    let thisBannerScale = thisBanner.offsetWidth / 300;
-
-    // console.log('');
-    // console.log('moveBanner(thisBanner, bannerContainer) ===>   thisBanner = ' + thisBanner);
-    // console.log('moveBanner(thisBanner, bannerContainer) ===>   thisBannerX = ' + thisBannerX);
-    // console.log('moveBanner(thisBanner, bannerContainer) ===>   thisBannerY = ' + thisBannerY);
-    // console.log('moveBanner(thisBanner, bannerContainer) ===>   thisBannerScale = ' + thisBannerScale);
-
-
-    // gsap.set([bannerContainer], { x: thisBannerX, y: thisBannerY, scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
-    gsap.set([bannerContainer], { x: thisBannerCoords[0], y: thisBannerCoords[1], scale: thisBannerScale, transformOrigin: '0 0', immediateRender: true });
-}
-
 //#endregion -------------------- FUNCTION: moveBanner(thisBanner) --------------------
-
-
-//#region -------------------- FUNCTION: clearContent(thisIframe) --------------------
-
-// function clearContent(thisIframe, thisVideo) {
-function clearContent(thisContainer) {
-
-    console.log('');
-    console.log('--------------------  clearContent(thisIframe)  --------------------');
-
-    console.log('clearContent(thisIframe) ===> thisContainer = ' + thisContainer.id);
-
-    // thisIframe.src = '';
-    // thisVideo.url = '';
-
-    thisContainer.src = '';
-    // thisContainer.url = null;
-}
-
-//#endregion -------------------- FUNCTION: clearContent() --------------------
 
 //#endregion ==================== FUNCTIONS ====================
 
 
 
 //#region ==================== WorkList() => <WorkList /> ====================
-
-// let iframeSRC;
-// let videoSRC;
 
 function WorkList({ currentEmployer }) {
 
@@ -394,27 +394,64 @@ function WorkList({ currentEmployer }) {
 
 
 
-    //#region ==================== FUNCTIONS - handleClick(thisWorkFormat, thisWorkImage) ====================
+    //#region ==================== FUNCTIONS ====================
 
-    //#region -------------------- FUNCTION: handleClick(thisWorkFormat, thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks --------------------
+    //#region -------------------- FUNCTION: clearContent() --------------------
 
-    function handleClick(thisWorkFormat, thisWorkImage) {
+    function clearContent() {
 
         // console.log('');
-        // console.log('------------------------- handleClick(thisWorkFormat, thisWorkImage) -------------------------');
+        // console.log('--------------------  clearContent()  --------------------');
+
+        setBannerShow(null);
+        setBanneriFrameOpen(false);
+        banneriFrame_Ref.current.src = '';
+
+        setWebiFrameOpen(false);
+        webiFrame_Ref.current.src = '';
+
+        setVideoOpen(false);
+        setLoadedVideo(null);
+    }
+
+    //#endregion -------------------- FUNCTION: clearContent() --------------------
+
+
+    //#region -------------------- FUNCTION: handleClick(thisWorkImage, thisTargetImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks --------------------
+
+    // function handleClick(thisWorkFormat, thisWorkImage) {
+    // function handleClick(thisWorkFormat, thisWorkImage, thisTargetImage) {
+    function handleClick(thisWorkImage, thisTargetImage) {
+
+        // console.log('');
+        // console.log('------------------------- handleClick(thisWorkImage, thisTargetImage) -------------------------');
+
+        // setActiveImage(thisWorkImage);
+        setActiveImage(thisTargetImage);
 
 
         //#region - - - - - - - - - - - - - Findin' out sh*t... (console.log messagaes) - - - - - - - - - - - - -
 
-        // console.log('handleClick: windowWidth = ' + windowWidth);
+        // // console.log('handleClick: windowWidth = ' + windowWidth);
 
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage = ' + thisWorkImage);
+        // // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisWorkFormat = ' + thisWorkFormat);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisWorkImage = ' + thisWorkImage);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisWorkImage.format = ' + thisWorkImage.format);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisWorkImage.link2 = ' + thisWorkImage.link2);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisWorkImage.mwidth = ' + thisWorkImage.mwidth);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisWorkImage.mheight = ' + thisWorkImage.mheight);
 
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.format = ' + thisWorkImage.format);
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.link2 = ' + thisWorkImage.link2);
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.mwidth = ' + thisWorkImage.mwidth);
-        // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.mheight = ' + thisWorkImage.mheight);
+        // console.log('');
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisTargetImage = ' + thisTargetImage);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisTargetImage.className = ' + thisTargetImage.className);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisTargetImage.id = ' + thisTargetImage.id);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisTargetImage.offsetLeft = ' + thisTargetImage.offsetLeft);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisTargetImage.offsetTop = ' + thisTargetImage.offsetTop);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisTargetImage.offsetWidth = ' + thisTargetImage.offsetWidth);
+        // console.log('handleClick(thisWorkImage, thisTargetImage) ===>   thisTargetImage.offsetHeight = ' + thisTargetImage.offsetHeight);
+
+
 
         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkImage.blah = ' + thisWorkImage.album_id);
 
@@ -444,68 +481,6 @@ function WorkList({ currentEmployer }) {
         //#endregion - - - - - - - - - - - - - Findin' out sh*t... (console.log messagaes) - - - - - - - - - - - - -
 
 
-        //#region - - - - - - - - - - - - - DEFINE NEW CONTENT (from AVAILABLE CONTENT above) - - - - - - - - - - - - -
-
-        // let thisContent;
-        // // let thisContent = bannerContent;
-
-        // switch (thisWorkFormat) {
-        //     case 'banner':
-
-        //         thisContent = bannerContent;
-
-        //         // console.log('');
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-        //         break;
-
-        //     // case 'html5':
-        //     case 'website':
-        //     // case 'mobile':
-
-        //         thisContent = webContent;
-
-        //         // console.log('');
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-        //         break;
-
-        //     case 'video':
-
-        //         thisContent = videoContent;
-
-        //         // console.log('');
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-        //         break;
-
-        //     // case 'print':
-
-        //     //     thisContent = printontent;
-
-        //     //     console.log('');
-        //     //     console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisWorkFormat = ' + thisWorkFormat);
-        //     //     console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   thisContent = ' + thisContent);
-
-        //     //     break;
-
-        //     default:
-
-        //         thisContent = bannerContent;
-
-        //         // console.log('');
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   default thisWorkFormat = ' + thisWorkFormat);
-        //         // console.log('handleClick(thisWorkFormat, thisWorkImage) ===>   default thisContent = ' + thisContent);
-
-        //         break;
-        // }
-
-        //#endregion - - - - - - - - - - - - - DEFINE NEW CONTENT (from AVAILABLE CONTENT above) - - - - - - - - - - - - -
-
-
         //#region - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
 
         // console.log('');
@@ -523,35 +498,127 @@ function WorkList({ currentEmployer }) {
 
             //#region -------------------- ASSIGN NEW CONTENT: banner --------------------
 
-                console.log('');
-                console.log('------------------------- ASSIGN NEW CONTENT: banner -------------------------');
+                // console.log('');
+                // console.log('------------------------- ASSIGN NEW CONTENT: banner -------------------------');
 
-                console.log('ASSIGN NEW CONTENT: banner ===>   thisWorkImage.format = ' + thisWorkImage.format);
-                console.log('ASSIGN NEW CONTENT: banner ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
-
-
-                const newContent = React.createElement(bannerContent[thisWorkImage.link2]);
-
-                setBannerShow(newContent);
-
-                document.getElementById('bannerContainerID').key = thisWorkImage.link2;
-
-                setIframeOpen(false);
-                // setLoadedIframe('');
-
-                setVideoOpen(false);
-                setLoadedVideo(null);
-
+                // console.log('ASSIGN NEW CONTENT: banner ===>   thisWorkImage = ' + thisWorkImage);
+                // console.log('ASSIGN NEW CONTENT: banner ===>   thisWorkImage.format = ' + thisWorkImage.format);
+                // console.log('ASSIGN NEW CONTENT: banner ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
 
                 // console.log('');
-                // console.log('thisWorkImage.link2 = ' + thisWorkImage.link2);
-                // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
+                // console.log('ASSIGN NEW CONTENT: banner ===>   thisTargetImage = ' + thisTargetImage);
+                // console.log('ASSIGN NEW CONTENT: banner ===>   thisTargetImage.id = ' + thisTargetImage.id);
 
-                // console.log('newContent = ' + newContent);
-                // console.log('thisContent[thisWorkImage.link2] = ' + thisContent[thisWorkImage.link2]);
 
-                // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
-                // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
+                // let bannerDims = thisTargetImage.getBoundingClientRect();
+                let bannerScale = thisTargetImage.width / thisWorkImage.mwidth;
+
+                // console.log('');
+                // console.log('ASSIGN NEW CONTENT: banner ===>   bannerDims = ');
+                // console.log(bannerDims);
+                // console.log('ASSIGN NEW CONTENT: banner ===>   bannerScale = ' + bannerScale);
+
+
+                clearContent();
+
+
+                if (thisWorkImage.format_src === 'animate') {
+
+                //#region -------------------- IF 'animate'... --------------------
+
+                    // console.log('');
+                    // console.log('ASSIGN NEW CONTENT: banner ===>   This banner comes directly from Animate... with a few adjustments to the Animate-generated code');
+
+
+                    let iframeSRC = remoteLoc + thisWorkImage.album_id + '/banners/' + thisWorkImage.link;
+
+
+                    //#region - - - - - - - - - - - - - IF 'animate'... (console.log messagaes) - - - - - - - - - - - - -
+
+                    // console.log('');
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   iframeSRC = ' + iframeSRC);
+
+                    // console.log('');
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.offsetLeft = ' + thisTargetImage.offsetLeft);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.offsetTop = ' + thisTargetImage.offsetTop);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.offsetWidth = ' + thisTargetImage.offsetWidth);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.offsetHeight = ' + thisTargetImage.offsetHeight);
+
+                    // console.log('');
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.x = ' + thisTargetImage.x);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.left = ' + thisTargetImage.left);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.y = ' + thisTargetImage.y);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.top = ' + thisTargetImage.top);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.width = ' + thisTargetImage.width);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.height = ' + thisTargetImage.height);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.right = ' + thisTargetImage.right);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisTargetImage.bottom = ' + thisTargetImage.bottom);
+
+                    //#endregion - - - - - - - - - - - - - IF 'animate'... (console.log messagaes) - - - - - - - - - - - - -
+
+
+                    banneriFrame_Ref.current.src = iframeSRC;
+
+                    banneriFrame_Ref.current.style.left = thisTargetImage.offsetLeft + 'px';
+                    banneriFrame_Ref.current.style.top = thisTargetImage.offsetTop + 'px';
+                    banneriFrame_Ref.current.style.width = thisTargetImage.width / bannerScale + 'px';
+                    banneriFrame_Ref.current.style.height = thisTargetImage.height / bannerScale + 'px';
+
+                    // banneriFrame_Ref.current.style.left = bannerDims.x + 'px';
+                    // banneriFrame_Ref.current.style.top = bannerDims.y + 'px';
+                    // banneriFrame_Ref.current.style.width = bannerDims.width / bannerScale + 'px';
+                    // banneriFrame_Ref.current.style.height = bannerDims.height / bannerScale + 'px';
+
+                    gsap.set([banneriFrame_Ref.current], { scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+
+                    setBanneriFrameOpen(true);
+
+                //#endregion -------------------- IF 'animate'... --------------------
+
+                } else if (thisWorkImage.format_src === 'html5') {
+
+                //#region -------------------- ELSE IF 'html5'... --------------------
+
+                    // console.log('');
+                    // console.log('ASSIGN NEW CONTENT: banner ===>   This banner was rebuilt in React...');
+
+
+                    const newContent = React.createElement(bannerContent[thisWorkImage.link2]);
+
+
+                    //#region - - - - - - - - - - - - - ELSE IF 'html5'... (console.log messagaes) - - - - - - - - - - - - -
+
+                    // console.log('');
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   newContent = ' + newContent);
+
+                    // console.log('');
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.offsetLeft = ' + thisTargetImage.offsetLeft);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.offsetTop = ' + thisTargetImage.offsetTop);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.offsetWidth = ' + thisTargetImage.offsetWidth);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.offsetHeight = ' + thisTargetImage.offsetHeight);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.offsetRight = ' + thisTargetImage.offsetRight);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.offsetBottom = ' + thisTargetImage.offsetBottom);
+
+                    // console.log('');
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.x = ' + thisTargetImage.x);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.left = ' + thisTargetImage.left);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.y = ' + thisTargetImage.y);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.top = ' + thisTargetImage.top);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.width = ' + thisTargetImage.width);
+                    // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.height = ' + thisTargetImage.height);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.right = ' + thisTargetImage.right);
+                    // // console.log('ASSIGN NEW CONTENT: html5, website, mobile (bannerContainer) ===>   thisTargetImage.bottom = ' + thisTargetImage.bottom);
+
+                    //#endregion - - - - - - - - - - - - - ELSE IF 'html5'... (console.log messagaes) - - - - - - - - - - - - -
+
+
+                    gsap.set([bannerContainer_Ref.current], { x: thisTargetImage.offsetLeft, y: thisTargetImage.offsetTop, scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+                    // gsap.set([bannerContainer_Ref.current], { x: bannerDims.x, y: bannerDims.y, scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+
+                    setBannerShow(newContent);
+                }
+
+                //#endregion -------------------- ELSE IF 'html5'... --------------------
 
                 break;
 
@@ -565,12 +632,14 @@ function WorkList({ currentEmployer }) {
             //#region -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
             //        -------------------- IFRAME REF: https://dev.to/damcosset/iframes-and-communicating-between-applications-31k5 -------------------- 
 
-                console.log('');
-                console.log('------------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) -------------------------');
+                // console.log('');
+                // console.log('------------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) -------------------------');
 
-                console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisWorkImage.format = ' + thisWorkImage.format);
-                console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
+                // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisWorkImage.format = ' + thisWorkImage.format);
+                // console.log('ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
 
+
+                clearContent();
 
                 let iframeSRC;
 
@@ -590,11 +659,16 @@ function WorkList({ currentEmployer }) {
                 webiFrame_Ref.current.style.height = thisWorkImage.mheight + 'px';
                 webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkImage.mwidth) / 2 + 'px';
 
-                setIframeOpen(true);
-                // setLoadedIframe(iframeSRC);
+                setWebiFrameOpen(true);
+                // // setLoadedIframe(iframeSRC);
 
-                setVideoOpen(false);
-                setLoadedVideo(null);
+                // setVideoOpen(false);
+                // setLoadedVideo(null);
+
+                // toggleContent(setWebiFrameOpen, true);
+
+
+                //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized content  - - - - - - - - - - -
 
                 if (thisWorkImage.mheight >= window.innerHeight) {
 
@@ -622,6 +696,8 @@ function WorkList({ currentEmployer }) {
                     // gsap.set([webiFrame_Ref.current], { height: thisWorkImage.mheight, top: thisY, scale: thisScale, transformOrigin: '50% 0', immediateRender: true });
                 }
 
+                //#endregion - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized content  - - - - - - - - - - -
+
                 break;
 
             //#endregion -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
@@ -632,14 +708,14 @@ function WorkList({ currentEmployer }) {
             //#region -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
             //        -------------------- VIDEO REF: https://github.com/CookPete/react-player -------------------- 
 
-                console.log('');
-                console.log('------------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) -------------------------');
+                // console.log('');
+                // console.log('------------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) -------------------------');
 
-                console.log('ASSIGN NEW CONTENT: video (REACT-PLAYER) ===>   thisWorkImage.format = ' + thisWorkImage.format);
-                console.log('ASSIGN NEW CONTENT: video (REACT-PLAYER) ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
+                // console.log('ASSIGN NEW CONTENT: video (REACT-PLAYER) ===>   thisWorkImage.format = ' + thisWorkImage.format);
+                // console.log('ASSIGN NEW CONTENT: video (REACT-PLAYER) ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
 
 
-                // clearContent(webiFrame_Ref.current, videoPlayer_Ref.current);
+                clearContent();
 
                 let videoSRC = videoLoc + thisWorkImage.link2;
                 // videoSRC = videoLoc + thisWorkImage.link2;
@@ -660,11 +736,14 @@ function WorkList({ currentEmployer }) {
 
                 // console.log('ASSIGN NEW CONTENT: video (REACT-PLAYER) ===>   videoPlayer_Ref.current.url = ' + videoPlayer_Ref.current.url);
 
-                setIframeOpen(false);
-                // setLoadedIframe('');
+                // setWebiFrameOpen(false);
+                // // setLoadedIframe('');
 
                 setVideoOpen(true);
                 setLoadedVideo(videoSRC);
+
+                // toggleContent(setVideoOpen, true);
+                // toggleContent(setLoadedVideo, videoSRC);
 
                 // gsap.set([videoContainer_Ref.current], { scale: 0.875, transformOrigin: '50% 50%', immediateRender: true });
                 gsap.set([videoPlayer_Ref.current], { scale: 0.875, transformOrigin: '50% 50%', immediateRender: true });
@@ -686,11 +765,13 @@ function WorkList({ currentEmployer }) {
                 // console.log('ASSIGN NEW CONTENT: print ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
 
 
-                // setIframeOpen(false);
-                // setLoadedIframe('');
+                // // setWebiFrameOpen(false);
+                // // setLoadedIframe('');
 
-                // setVideoOpen(false);
-                // setLoadedVideo(null);
+                // // setVideoOpen(false);
+                // // setLoadedVideo(null);
+
+                // toggleContent(setBanneriFrameOpen, false);
 
                 // break;
 
@@ -701,18 +782,22 @@ function WorkList({ currentEmployer }) {
 
             //#region -------------------- ASSIGN NEW CONTENT: default --------------------
 
-                console.log('');
-                console.log('------------------------- ASSIGN NEW CONTENT: default -------------------------');
+                // console.log('');
+                // console.log('------------------------- ASSIGN NEW CONTENT: default -------------------------');
 
-                console.log('ASSIGN NEW CONTENT: default ===>   thisWorkImage.format = ' + thisWorkImage.format);
-                console.log('ASSIGN NEW CONTENT: default ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
+                // console.log('ASSIGN NEW CONTENT: default ===>   thisWorkImage.format = ' + thisWorkImage.format);
+                // console.log('ASSIGN NEW CONTENT: default ===>   thisWorkImage.format_src = ' + thisWorkImage.format_src);
 
 
-                setIframeOpen(false);
-                // setLoadedIframe('');
+                clearContent();
 
-                setVideoOpen(false);
-                setLoadedVideo(null);
+                // setWebiFrameOpen(false);
+                // // setLoadedIframe('');
+
+                // setVideoOpen(false);
+                // setLoadedVideo(null);
+
+                // toggleContent(setBanneriFrameOpen, true);
 
                 break;
 
@@ -724,8 +809,10 @@ function WorkList({ currentEmployer }) {
 
         //#region - - - - - - - - - - - - - POSITION & LOAD NEW CONTENT bannerContainer_Ref - - - - - - - - - - - - -
 
-        let workImageLoc = document.getElementById(thisWorkImage.link2);
-        moveBanner(workImageLoc, bannerContainer_Ref.current)
+        // let workImageLoc = document.getElementById(thisWorkImage.link2);
+
+        // moveBanner(workImageLoc, bannerContainer_Ref.current)
+        // // moveBanner(workImageLoc, banneriFrame_Ref.current)
 
         //#endregion - - - - - - - - - - - - - POSITION & LOAD NEW CONTENT bannerContainer_Ref - - - - - - - - - - - - -
 
@@ -733,7 +820,7 @@ function WorkList({ currentEmployer }) {
 
     //#endregion -------------------- FUNCTION: handleClick(thisWorkFormat, thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks --------------------
 
-    //#endregion ==================== FUNCTIONS - handleClick(thisWorkFormat, thisWorkImage) ====================
+    //#endregion ==================== FUNCTIONS ====================
 
 
 
@@ -748,6 +835,7 @@ function WorkList({ currentEmployer }) {
     // const masonryImg_Ref = useRef(null);
 
     const bannerContainer_Ref = useRef(null);
+    const banneriFrame_Ref = useRef(null);
 
     const iframeContainer_Ref = useRef(null);
     const webiFrame_Ref = useRef(null);
@@ -766,7 +854,10 @@ function WorkList({ currentEmployer }) {
     // console.log('');
     // console.log('------------------------- useState DEFs -------------------------');
 
+    const [activeImage, setActiveImage] = useState('');
+
     const [bannerShow, setBannerShow] = useState(null);
+    const [banneriFrameOpen, setBanneriFrameOpen] = useState(false);
 
     // const [bannerShow, setBannerShow] = useState(BSPS_26897);
     // const [bannerShow, setBannerShow] = useState(NMMN_11155);
@@ -778,7 +869,7 @@ function WorkList({ currentEmployer }) {
 
     // const [bannerKey, setBannerKey] = useState();
 
-    const [iframeOpen, setIframeOpen] = useState(false);
+    const [webiFrameOpen, setWebiFrameOpen] = useState(false);
     // const [loadedIframe, setLoadedIframe] = useState(null);
 
     const [videoOpen, setVideoOpen] = useState(false);
@@ -814,7 +905,7 @@ function WorkList({ currentEmployer }) {
         // console.log('WorkList - setState ==>   employer !== currentEmployer');
 
         setBannerShow(null);
-        setIframeOpen(false);
+        setWebiFrameOpen(false);
 
         setEmployer(currentEmployer);
 
@@ -828,7 +919,7 @@ function WorkList({ currentEmployer }) {
 
 
 
-    //#region ==================== useEffect: iFRAME = REF: https://medium.com/the-thinkmill/how-to-safely-inject-html-in-react-using-an-iframe-adc775d458bc ====================
+    //#region ==================== WorkList - useEffect: iFRAME = REF: https://medium.com/the-thinkmill/how-to-safely-inject-html-in-react-using-an-iframe-adc775d458bc ====================
 
     // useEffect(() => {
 
@@ -854,14 +945,13 @@ function WorkList({ currentEmployer }) {
 
     // }, [props.body]);
 
-    //#endregion ==================== useEffect: iFRAME = REF: https://medium.com/the-thinkmill/how-to-safely-inject-html-in-react-using-an-iframe-adc775d458bc ====================
+    //#endregion ==================== WorkList - useEffect: iFRAME = REF: https://medium.com/the-thinkmill/how-to-safely-inject-html-in-react-using-an-iframe-adc775d458bc ====================
 
   
 
     //#region ==================== WorkList - useEffect: checkBanner on WINDOW RESIZE ====================
 
-    useState(() => {
-    // useEffect(() => {
+    useEffect(() => {
 
         // console.log('');
         // // console.log('------------------------- WorkList - useEffect: checkBanner on WINDOW RESIZE -------------------------');
@@ -870,24 +960,27 @@ function WorkList({ currentEmployer }) {
 
         //#region -------------------- checkBanner: RELOCATE THE LOADED GSAP BANNER --------------------
 
-        const checkBanner = () => {
+        // const checkBanner = () => {
 
-            // console.log('');
-            // console.log('------------------------- useEffect: checkBanner -------------------------');
+        //     console.log('');
+        //     console.log('------------------------- useEffect: checkBanner -------------------------');
 
-            // console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
-            // console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
+        //     console.log('document.getElementById(bannerContainerID).className = ' + document.getElementById('bannerContainerID').className);
+        //     console.log('document.getElementById(bannerContainerID).key = ' + document.getElementById('bannerContainerID').key);
 
 
-            let bannerKey = document.getElementById('bannerContainerID').key;
+        //     let bannerKey = document.getElementById('bannerContainerID').key;
 
-            if (!bannerKey) {
-                console.log('OOPS! No banner has been clicked yet OR you are clicking in the WEB/VIDEO section.');
-            } else {
-                let thisBanner = document.getElementById(bannerKey);
-                moveBanner(thisBanner, bannerContainer_Ref.current)
-            }
-        }
+        //     if (!bannerKey) {
+        //         console.log('OOPS! No banner has been clicked yet OR you are clicking in the WEB/VIDEO section.');
+        //     } else {
+        //         let thisBanner = document.getElementById(bannerKey);
+        //         moveBanner(thisBanner, bannerContainer_Ref.current)
+
+        //         thisBanner = document.getElementById('banneriFrameID');
+        //         moveBanner(thisBanner, banneriFrame_Ref.current)
+        //     }
+        // }
 
         //#endregion -------------------- checkBanner: RELOCATE THE LOADED GSAP BANNER --------------------
 
@@ -898,6 +991,41 @@ function WorkList({ currentEmployer }) {
 
         const resizeListener = () => {
 
+            console.log('');
+            console.log('------------------------- WINDOW RESIZE: resizeListener -------------------------');
+
+
+            //#region - - - - - - - - - - - - - IF 'activeImage'... (console.log messagaes) - - - - - - - - - - - - -
+
+            if (activeImage) {
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage = ' + activeImage);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.key = ' + activeImage.key);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.className = ' + activeImage.className);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.id = ' + activeImage.id);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.src = ' + activeImage.src);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.alt = ' + activeImage.alt);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.format = ' + activeImage.format);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.format_src = ' + activeImage.format_src);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.mwidth = ' + activeImage.mwidth);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.mheight = ' + activeImage.mheight);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.getAttribute(\'format_src\') = ' + activeImage.getAttribute('format_src'));
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.getAttribute(\'mwidth\') = ' + activeImage.getAttribute('mwidth'));
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.getAttribute(\'mheight\') = ' + activeImage.getAttribute('mheight'));
+
+                console.log('');
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.getBoundingClientRect() = ' + activeImage.getBoundingClientRect());
+                console.log(activeImage.getBoundingClientRect());
+
+                console.log('');
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.offsetLeft = ' + activeImage.offsetLeft);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.offsetTop = ' + activeImage.offsetTop);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.offsetWidth = ' + activeImage.offsetWidth);
+                console.log('WINDOW RESIZE: resizeListener ===>   activeImage.offsetHeight = ' + activeImage.offsetHeight);
+        }
+
+        //#endregion - - - - - - - - - - - - - IF 'activeImage'... (console.log messagaes) - - - - - - - - - - - - -
+
+
             // prevent execution of previous setTimeout
             clearTimeout(timeoutId);
 
@@ -905,8 +1033,62 @@ function WorkList({ currentEmployer }) {
             timeoutId = setTimeout(() => setWindowWidth(getWidth()), 150);
 
             // checkBanner: RELOCATE THE LOADED GSAP BANNER
-            checkBanner();
+            // checkBanner();
+
+
+
+            // let bannerScale = activeImage.width / activeImage.getAttribute('mwidth');
+            // console.log('WINDOW RESIZE: resizeListener ===>   bannerScale = ' + bannerScale);
+
+            // let bannerDims = activeImage.getBoundingClientRect();
+            let bannerScale;
+
+
+            if (activeImage && activeImage.getAttribute('format_src') === 'animate') {
+
+            //#region -------------------- IF 'animate'... --------------------
+
+                console.log('');
+                console.log('WINDOW RESIZE: resizeListener ===>   This banner comes directly from Animate... with a few adjustments to the Animate-generated code');
+
+                // moveBanner(activeImage, bannerContainer_Ref.current)
+
+                bannerScale = activeImage.width / activeImage.getAttribute('mwidth');
+                console.log('WINDOW RESIZE: resizeListener ===>   bannerScale = ' + bannerScale);
+
+                banneriFrame_Ref.current.style.left = activeImage.offsetLeft + 'px';
+                banneriFrame_Ref.current.style.top = activeImage.offsetTop + 'px';
+                banneriFrame_Ref.current.style.width = activeImage.width / bannerScale + 'px';
+                banneriFrame_Ref.current.style.height = activeImage.height / bannerScale + 'px';
+
+                // banneriFrame_Ref.current.style.left = bannerDims.x + 'px';
+                // banneriFrame_Ref.current.style.top = bannerDims.y + 'px';
+                // banneriFrame_Ref.current.style.width = bannerDims.width / bannerScale + 'px';
+                // banneriFrame_Ref.current.style.height = bannerDims.height / bannerScale + 'px';
+
+                gsap.set([banneriFrame_Ref.current], { scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+
+            //#endregion -------------------- IF 'animate'... --------------------
+
+            } else if (activeImage && activeImage.getAttribute('format_src') === 'html5') {
+
+            //#region -------------------- ELSE IF 'html5'... --------------------
+
+                console.log('');
+                console.log('WINDOW RESIZE: resizeListener ===>   This banner was rebuilt in React...');
+
+                // moveBanner(activeImage, banneriFrame_Ref.current)
+
+                bannerScale = activeImage.width / activeImage.getAttribute('mwidth');
+                console.log('WINDOW RESIZE: resizeListener ===>   bannerScale = ' + bannerScale);
+
+                gsap.set([bannerContainer_Ref.current], { x: activeImage.offsetLeft, y: activeImage.offsetTop, scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+            }
+
+            //#endregion -------------------- ELSE IF 'html5'... --------------------
+
         };
+
 
         // set resize listener
         window.addEventListener('resize', resizeListener);
@@ -920,24 +1102,62 @@ function WorkList({ currentEmployer }) {
         //#endregion -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
 
     // }, []);
-    }, [windowWidth]);
+    // }, [windowWidth]);
+    }, [windowWidth, activeImage]);
 
     //#endregion ==================== WorkList - useEffect: checkBanner on WINDOW RESIZE ====================
 
 
     return (
         <>
+
+        {/* #region ------------------------- BANNERS: REACT ------------------------- */}
+
             <div className='bannerContainer' id='bannerContainerID' ref={bannerContainer_Ref}>
                 {bannerShow}
             </div>
 
-            {/* <div className={iframeOpen === true ? 'iframeContainerOpen' : 'iframeContainerClosed'} id='iframeContainerID' ref={iframeContainer_Ref}> */}
-            {/* <div className={iframeOpen === true ? 'iframeContainerOpen' : 'iframeContainerClosed'} id='iframeContainerID' onClick={() => { setIframeOpen(!iframeOpen); setLoadedVideo(null); }} ref={iframeContainer_Ref}> */}
-            <div className={iframeOpen === true ? 'iframeContainerOpen' : 'iframeContainerClosed'} id='iframeContainerID' onClick={() => { setIframeOpen(!iframeOpen); setLoadedVideo(null); clearContent(webiFrame_Ref.current); }} ref={iframeContainer_Ref}>
+        {/* #region ------------------------- BANNERS: REACT ------------------------- */}
+
+
+        {/* #region ------------------------- BANNERS: IFRAME ------------------------- */}
+
+            {/* <div className={banneriFrameOpen === true ? 'banneriFrameContainerOpen' : 'banneriFrameContainerClosed'} id='banneriFrameContainerID' onClick={() => { setWebiFrameOpen(!webiFrameOpen); setLoadedVideo(null); clearContent(webiFrame_Ref.current); }} ref={iframeContainer_Ref}> */}
+            {/* <div className={banneriFrameOpen === true ? 'banneriFrameContainerOpen' : 'banneriFrameContainerClosed'} id='banneriFrameContainerID' onClick={() => { toggleContent(setBanneriFrameOpen, true); clearContent(webiFrame_Ref.current); }} ref={iframeContainer_Ref}> */}
+
+                <iframe
+                    // className='banneriFrame'
+                    className={banneriFrameOpen === true ? 'banneriFrameOpen' : 'banneriFrameClosed'}
+                    id='banneriFrameID'
+                    name='banneriFrame'
+                    title='banneriFrame'
+                    // sandbox='allow-same-origin'
+                    // srcDoc={iframeSRC}
+                    // src=''
+                    // src='https://mimiobi19.wixsite.com/mimi01'
+                    // src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/ax/mobile/giftguide_ho11/site_0318/site_0318.html'
+                    // src='https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/ax/mobile/giftguide_ho11'
+                    // width='100%'
+                    // height='100%'
+                    // src={loadedIframe}
+                    ref={banneriFrame_Ref}
+                />
+
+            {/* </div> */}
+
+        {/* #endregion ------------------------- BANNERS: IFRAME ------------------------- */}
+
+
+        {/* #region ------------------------- WEB: IFRAME ------------------------- */}
+
+            {/* <div className={webiFrameOpen === true ? 'webiFrameContainerOpen' : 'webiFrameContainerClosed'} id='iframeContainerID' ref={iframeContainer_Ref}> */}
+            {/* <div className={webiFrameOpen === true ? 'webiFrameContainerOpen' : 'webiFrameContainerClosed'} id='iframeContainerID' onClick={() => { setWebiFrameOpen(!webiFrameOpen); setLoadedVideo(null); }} ref={iframeContainer_Ref}> */}
+            {/* <div className={webiFrameOpen === true ? 'webiFrameContainerOpen' : 'webiFrameContainerClosed'} id='webiFrameContainerID' onClick={() => { setWebiFrameOpen(!webiFrameOpen); setLoadedVideo(null); clearContent(webiFrame_Ref.current); }} ref={iframeContainer_Ref}> */}
+            <div className={webiFrameOpen === true ? 'webiFrameContainerOpen' : 'webiFrameContainerClosed'} id='webiFrameContainerID' onClick={() => { clearContent(); }} ref={iframeContainer_Ref}>
 
                 <iframe
                     className='webiFrame' 
-                    // className={iframeOpen === true ? 'webiFrameOpen' : 'webiFrameClosed'}
+                    // className={webiFrameOpen === true ? 'webiFrameOpen' : 'webiFrameClosed'}
                     id='webiFrameID'
                     name='webiFrame'
                     title='webiFrame'
@@ -955,9 +1175,16 @@ function WorkList({ currentEmployer }) {
 
             </div>
 
+        {/* #endregion ------------------------- WEB: IFRAME ------------------------- */}
+
+
+        {/* #region ------------------------- VIDEO PLAYER ------------------------- */}
+
             {/* <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' ref={videoContainer_Ref}> */}
             {/* <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); clearContent(videoPlayer_Ref.current); }} ref={videoContainer_Ref}> */}
-            <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); }} ref={videoContainer_Ref}>
+            {/* <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { setLoadedVideo(null); }} ref={videoContainer_Ref}> */}
+            {/* <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); }} ref={videoContainer_Ref}> */}
+            <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { clearContent(); }} ref={videoContainer_Ref}>
 
                 <ReactPlayer
                     className='videoPlayer'
@@ -974,11 +1201,16 @@ function WorkList({ currentEmployer }) {
 
             </div>
 
+        {/* #region ------------------------- VIDEO PLAYER ------------------------- */}
+
+
+        {/* #region ------------------------- CLOSE TOGGLE BUTTON ------------------------- */}
+
             {/* <div className='toggleBtnDiv'> */}
             <div className='toggleBtnDiv' id='toggleBtnDivID'>
                 {/* 
                 <p>
-                    iFrame status: {iframeOpen.toString()}
+                    iFrame status: {webiFrameOpen.toString()}
                     <br />
                     iframeSRC = {iframeSRC}
                 </p>
@@ -993,16 +1225,27 @@ function WorkList({ currentEmployer }) {
                 */}
                 <br />
 
-                <button className={iframeOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setIframeOpen(!iframeOpen); setLoadedVideo(null); clearContent(webiFrame_Ref.current); }}> Close Iframe </button>
+                {/* <button className={webiFrameOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setWebiFrameOpen(!webiFrameOpen); setLoadedVideo(null); clearContent(webiFrame_Ref.current); }}> Close Iframe </button> */}
                 {/* <button className={videoOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); clearContent(videoPlayer_Ref.current); }}> Close Video </button> */}
-                {/* <button className={iframeOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setIframeOpen(!iframeOpen); setLoadedVideo(null); }}> Close Iframe </button> */}
-                <button className={videoOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); }}> Close Video </button>
+                {/* <button className={webiFrameOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setWebiFrameOpen(!webiFrameOpen); setLoadedVideo(null); }}> Close Iframe </button> */}
+                {/* <button className={videoOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { setVideoOpen(!videoOpen); setLoadedVideo(null); }}> Close Video </button> */}
+
+                <button className={webiFrameOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { clearContent(); }}> Close Iframe </button>
+                <button className={videoOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { clearContent(); }}> Close Video </button>
             </div>
+
+        {/* #endregion ------------------------- CLOSE TOGGLE BUTTON ------------------------- */}
+
+
+        {/* #region ------------------------- WORKPODS ------------------------- */}
 
             {isBannerArray.length > 0 && <WorkPod workFormat='banner' workArray={bannerArray} handleClick={handleClick} />}
             {isWebArray.length > 0 && <WorkPod workFormat='website' workArray={webArray} handleClick={handleClick} />}
             {/* {isVideoArray.length > 0 && <WorkPod workFormat='video' workArray={videoArray} handleClick={handleClick} />} */}
             {isPrintArray.length > 0 && <WorkPod workFormat='print' workArray={printArray} handleClick={handleClick} />}
+
+        {/* #region ------------------------- WORKPODS ------------------------- */}
+
         </>
     )
 }
@@ -1012,11 +1255,11 @@ function WorkList({ currentEmployer }) {
 
 
 // export const Work = ({ currentEmployer }) => {
-// export const Work = ({ currentEmployer, locID }) => {
-export const Work = ({ currentEmployer, locID, loadStatus }) => {
+export const Work = ({ currentEmployer, locID }) => {
+// export const Work = ({ currentEmployer, locID, loadStatus }) => {
 
     localStorage.setItem('navLoc', locID);
-    localStorage.setItem('loadStatus', loadStatus);
+    // localStorage.setItem('loadStatus', loadStatus);
 
     work = myData[1].filter(thisEmployer => thisEmployer.album_id === currentEmployer);
 

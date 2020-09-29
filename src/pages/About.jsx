@@ -149,8 +149,8 @@ function CurlLB(props) {
     return (
         <svg className='curlSvg' id={props.curlSvgID} brain={props.brain} thought={props.thought} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100' enableBackground='0 0 50 100'>
             <path className='curlPath' id={props.curlPathID} d='M10.164 93.706c7.735 9.34 24.605 8.114 30.362-2.544 2.813-5.207 3.003-11.594.186-16.84-2.904-5.41-9.065-8.555-15.283-9.188-6.42-.654-13.07 1.684-16.955 6.63-3.9 4.967-4.607 12.137.127 16.854 4.535 4.52 11.862 4.53 17.812 3.054 6.502-1.612 12.996-5.167 17.53-9.865 4.63-4.8 7.284-11.432 4.872-17.805-2.334-6.168-8.464-10.812-15.243-12.04-7.614-1.38-15.903.72-22.15 4.97C5.73 60.8.578 67.626 3.315 74.5c2.442 6.14 9.84 8.83 16.37 8.567 6.803-.276 13.363-3.14 18.18-7.65 4.74-4.442 7.87-10.615 7.76-16.987-.11-6.344-3.21-12.58-8.088-16.92-5.093-4.53-11.966-6.99-18.977-6.173-7.487.872-14.26 5.337-16.427 12.352-2.057 6.655 1.092 13.196 7.015 16.996 5.61 3.6 13.084 4.383 19.476 2.346 12.553-4.002 21.796-17.54 16.672-29.843-4.598-11.04-18.768-18.508-31.07-14.477C7.755 24.835 1.95 29.95.402 36.403c-1.618 6.75 1.804 13.23 7.733 17.036 13.012 8.35 31.07-.39 36.818-12.777 2.867-6.175 3.01-13.057-.23-19.13-2.94-5.506-8.712-10.04-15.203-11.203C15.903 7.89 1.992 21.103 8.207 33.824c2.564 5.248 8.34 8.883 14.24 10.03 6.566 1.274 13.086-.264 18.328-4.177 10.726-8.007 12.62-23.19 2.918-32.612-9.492-9.22-25.55-9.655-34.78.106-4.303 4.55-7.036 10.72-6.447 16.883.608 6.364 4.23 11.872 9.602 15.683 5.374 3.812 11.683 4.92 18.234 4.07 1.675-.22 2.557-2.22 2.17-3.603-.474-1.693-2.168-2.26-3.823-2.045C19.87 39.3 10.05 32.028 9.307 23.75 8.565 15.478 15.746 6.9 24.715 6.412c8.967-.49 18.345 6.243 18.482 15.054.128 8.205-7.13 16.42-16.13 16.4-8.49-.02-17.22-7.44-11.98-15.537 2.38-3.68 6.917-6.18 11.535-5.852 4.436.314 8.528 3.002 10.93 6.45 5.758 8.263 1.267 18.96-7.085 23.972-4.61 2.766-10.65 4.208-15.927 2.308-4.212-1.516-7.828-5.308-7.577-9.743.25-4.418 3.944-8.158 8.02-9.97 4.015-1.786 8.713-1.543 12.785-.068C36 32.41 41.685 40.547 39.008 48.822c-2.68 8.275-12.49 14.607-21.66 12.234-4.223-1.092-8.56-4.08-8.876-8.52-.35-4.902 3.66-8.895 8.41-10.203 9.777-2.69 19.336 4.31 21.423 13.225 2.078 8.875-5.134 17.536-13.882 20.112-4.005 1.18-9.16 1.445-12.698-1.087-4.502-3.223-1.064-8.445 2.16-11.16 7.48-6.3 22.26-8.297 27.79 1.364 5.072 8.86-6.388 16.947-13.93 19.792-3.786 1.427-8.92 2.65-12.772.775-4.126-2.008-3.626-6.896-1.337-10.037 5.212-7.15 17.96-5.482 22.176 1.703 4.825 8.224-1.31 18.583-11.122 19.276-4.643.328-9.373-1.22-12.64-4.367-1.235-1.193-2.912.538-1.886 1.776z' fill='#0000ff' />
-            {/* <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(255,0,255,0.5)' onClick={(e) => handleThought(e.target)}></rect> */}
-            <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(255,0,255,0.5)' onMouseOver={(e) => handleThought(e.target)}></rect>
+            <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(255,0,255,0.5)' onClick={(e) => handleThought(e.target)}></rect>
+            {/* <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(255,0,255,0.5)' onMouseOver={(e) => handleThought(e.target)}></rect> */}
         </svg>
     );
 }
@@ -159,8 +159,8 @@ function CurlRB(props) {
     return (
         <svg className='curlSvg' id={props.curlSvgID} brain={props.brain} thought={props.thought} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100' enableBackground='0 0 50 100'>
             <path className='curlPath' id={props.curlPathID} d='M39.836 93.706c-7.735 9.34-24.605 8.114-30.362-2.544-2.813-5.207-3.003-11.594-.186-16.84 2.904-5.41 9.065-8.555 15.283-9.188 6.42-.654 13.07 1.684 16.955 6.63 3.9 4.967 4.607 12.137-.127 16.854-4.535 4.52-11.862 4.53-17.812 3.054-6.502-1.612-12.996-5.167-17.53-9.865-4.63-4.8-7.284-11.432-4.872-17.805 2.334-6.168 8.464-10.812 15.243-12.04 7.614-1.38 15.903.72 22.15 4.97 5.692 3.87 10.844 10.695 8.108 17.57-2.442 6.14-9.84 8.83-16.37 8.567-6.803-.276-13.363-3.14-18.18-7.65-4.74-4.442-7.87-10.615-7.76-16.987.11-6.344 3.21-12.58 8.088-16.92 5.093-4.53 11.966-6.99 18.977-6.173 7.488.872 14.26 5.337 16.428 12.352 2.057 6.655-1.092 13.196-7.015 16.996-5.61 3.6-13.084 4.383-19.476 2.346-12.555-4-21.797-17.54-16.673-29.842 4.598-11.04 18.768-18.51 31.07-14.478 6.472 2.12 12.278 7.237 13.825 13.688 1.618 6.75-1.804 13.23-7.733 17.037-13.012 8.35-31.07-.39-36.818-12.777-2.867-6.175-3.01-13.057.23-19.13 2.94-5.506 8.712-10.04 15.203-11.203 13.615-2.44 27.526 10.774 21.31 23.495-2.564 5.248-8.34 8.883-14.24 10.03-6.566 1.274-13.086-.264-18.328-4.177C-1.5 31.668-3.395 16.486 6.307 7.065c9.492-9.22 25.55-9.655 34.78.106 4.303 4.55 7.036 10.72 6.447 16.883-.608 6.364-4.23 11.872-9.602 15.683-5.374 3.812-11.683 4.92-18.234 4.07-1.675-.22-2.557-2.22-2.17-3.603.474-1.693 2.168-2.26 3.823-2.045C30.13 39.3 39.95 32.028 40.693 23.75c.744-8.27-6.437-16.848-15.407-17.337-8.968-.49-18.345 6.24-18.483 15.053-.128 8.205 7.13 16.42 16.13 16.4 8.49-.02 17.22-7.44 11.98-15.537-2.38-3.68-6.917-6.18-11.535-5.852-4.436.314-8.528 3.002-10.93 6.45-5.757 8.264-1.266 18.96 7.086 23.972 4.61 2.766 10.65 4.208 15.927 2.308 4.212-1.516 7.828-5.308 7.577-9.743-.25-4.418-3.944-8.158-8.02-9.97-4.015-1.786-8.713-1.543-12.785-.068C14 32.41 8.315 40.547 10.992 48.822c2.68 8.275 12.49 14.607 21.66 12.234 4.223-1.092 8.56-4.08 8.876-8.52.35-4.902-3.66-8.895-8.41-10.203-9.777-2.69-19.336 4.31-21.423 13.225-2.078 8.875 5.134 17.536 13.882 20.112 4.005 1.18 9.16 1.445 12.698-1.087 4.502-3.223 1.064-8.445-2.16-11.16-7.48-6.3-22.26-8.297-27.79 1.364-5.072 8.86 6.388 16.947 13.93 19.792 3.786 1.427 8.92 2.65 12.772.775 4.126-2.008 3.626-6.896 1.337-10.037-5.212-7.15-17.96-5.482-22.176 1.703-4.825 8.224 1.31 18.583 11.122 19.276 4.643.328 9.373-1.22 12.64-4.367 1.235-1.193 2.912.538 1.886 1.776z' fill='#0000ff' />
-            {/* <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(0,255,255,0.5)' onClick={(e) => handleThought(e.target)}></rect> */}
-            <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(0,255,255,0.5)' onMouseOver={(e) => handleThought(e.target)}></rect>
+            <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(0,255,255,0.5)' onClick={(e) => handleThought(e.target)}></rect>
+            {/* <rect className='curlRect' id={props.curlRectID} width='100%' height='100%' fill='rgba(0,255,255,0.5)' onMouseOver={(e) => handleThought(e.target)}></rect> */}
         </svg>
     );
 }
@@ -261,57 +261,6 @@ function getDimensions(thisObject) {
 }
 
 //#endregion -------------------- FUNCTION: getDimensions(thisContainer) --------------------
-
-
-//#region -------------------- FUNCTION: getRandomCoords_Circle(thisObject) --------------------
-//        -------------------- REF: https://stackoverflow.com/questions/20539196/creating-svg-elements-dynamically-with-javascript-inside-html --------------------
-
-// function getRandomCoords_Circle(thisObject) {
-
-//     // console.log('');
-//     // console.log('--------------------  getRandomCoords_Circle(thisObject)  --------------------');
-
-//     // // console.log('getRandomCoords_Circle(thisObject) =>   thisObject = ' + thisObject);
-//     // console.log('getRandomCoords_Circle(thisObject) =>   thisObject = ' + thisObject + '     thisObject.id = ' + thisObject.id);
-
-//     let thisObjectDims = getDimensions(thisObject);
-
-//     // console.log('');
-//     // console.log('getRandomCoords_Circle(thisObject) =>   thisObjectDims = ' + thisObjectDims);
-
-//     const minAngleDegrees = -170;
-//     const maxAngleDegrees = -10;
-//     // const minAngleDegrees = -175;
-//     // const maxAngleDegrees = -5;
-
-//     // const outerScale = 0.875;
-//     // const innerScale = 0.625;
-//     const outerScale = 0.875;
-//     const innerScale = 0.75;
-
-//     const outerRadius = thisObjectDims[2] * outerScale;
-//     const innerRadius = thisObjectDims[2] * innerScale;
-
-
-//     // let thisAngle = (Math.random() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
-//     // let thisRadius = (Math.random() * (outerRadius - innerRadius) + innerRadius);
-
-//     let thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
-//     let thisRadius = (randomize2x() * (outerRadius - innerRadius) + innerRadius);
-
-
-//     // let thisX = Math.cos(thisAngle) * (thisRadius / 2);
-//     // let thisY = Math.sin(thisAngle) * (thisRadius / 2);
-
-//     let thisX = (Math.cos(thisAngle) * (thisRadius / 2)) + thisObjectDims[2] / 2;
-//     let thisY = (Math.sin(thisAngle) * (thisRadius / 2)) + thisObjectDims[2] / 2;
-
-
-//     // return [thisX, thisY, thisAngle];
-//     return [thisX, thisY];
-// }
-
-//#endregion -------------------- FUNCTION: getRandomCoords_Circle(thisObject) --------------------
 
 
 //#region -------------------- FUNCTION: addGuides(refContainer) --------------------
@@ -421,195 +370,6 @@ function addGuides(refContainer) {
 //#endregion -------------------- FUNCTION: addGuides(refContainer) --------------------
 
 
-//#region -------------------- FUNCTION: addParticles(thisContainer, numParticle) --------------------
-
-// function addParticles(numParticle, thisContainer) {
-
-//     console.log('');
-//     console.log('--------------------  addParticles(numParticle, thisContainer)  --------------------');
-
-//     console.log('addParticles(numParticle, thisContainer) =>   numParticle = ' + numParticle);
-
-
-//     const thisContainerDims = getDimensions(thisContainer);
-//     const thisParentContainerDims = getDimensions(thisContainer.parentElement);
-
-//     console.log('');
-//     console.log('addParticles(numParticle, thisContainer) =>   thisContainer = ' + thisContainer);
-//     console.log('addParticles(numParticle, thisContainer) =>   thisContainer.id = ' + thisContainer.id);
-//     console.log('addParticles(numParticle, thisContainer) =>   thisContainerDims = ' + thisContainerDims);
-
-//     console.log('');
-//     console.log('addParticles(numParticle, thisContainer) =>   thisContainer.parentElement = ' + thisContainer.parentElement);
-//     console.log('addParticles(numParticle, thisContainer) =>   thisContainer.parentElement.id = ' + thisContainer.parentElement.id);
-//     console.log('addParticles(numParticle, thisContainer) =>   thisParentContainerDims = ' + thisParentContainerDims);
-
-
-//     const outerSVGDims = document.getElementById('outerEllipsePathID').getBBox();
-//     const innerSVGDims = document.getElementById('innerEllipsePathID').getBBox();
-
-//     console.log('');
-//     console.log('addParticles(numParticle, thisContainer) =>   document.getElementById(\'outerEllipseID\').id = ' + document.getElementById('outerEllipseID').id);
-//     console.log('addParticles(numParticle, thisContainer) =>   document.getElementById(\'outerEllipsePathID\').id = ' + document.getElementById('outerEllipsePathID').id);
-//     console.log('outerSVGDims.x = ' + outerSVGDims.x + '     outerSVGDims.y = ' + outerSVGDims.y + '     outerSVGDims.width = ' + outerSVGDims.width + '     outerSVGDims.height = ' + outerSVGDims.height);
-
-//     console.log('');
-//     console.log('addParticles(numParticle, thisContainer) =>   document.getElementById(\'innerEllipseID\').id = ' + document.getElementById('innerEllipseID').id);
-//     console.log('addParticles(numParticle, thisContainer) =>   document.getElementById(\'innerEllipsePathID\').id = ' + document.getElementById('innerEllipsePathID').id);
-//     console.log('innerSVGDims.x = ' + innerSVGDims.x + '     innerSVGDims.y = ' + innerSVGDims.y + '     innerSVGDims.width = ' + innerSVGDims.width + '     innerSVGDims.height = ' + innerSVGDims.height);
-
-
-//     const minAngleDegrees = -170;
-//     const maxAngleDegrees = -10;
-
-//     const outerRadius = outerSVGDims.width;
-//     const innerRadius = innerSVGDims.width;
-
-
-//     for (let p = 0; p < numParticle; p++) {
-
-//         // console.log('p = ' + p);
-
-//         // const thisAngle = (Math.random() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
-//         // const thisRadius = (Math.random() * (outerRadius - innerRadius) + innerRadius);
-
-//         const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
-//         const thisRadius = (randomize2x() * (outerRadius - innerRadius) + innerRadius);
-
-
-//         // const curlX = Math.cos(thisAngle) * (thisRadius * 0.5);
-
-//         // const curlX = Math.cos(thisAngle) * (thisRadius * 0.5) + window.innerWidth * 0.5;
-//         // const curlX = (Math.cos(thisAngle) * (thisRadius * 0.5)) + window.innerWidth * 0.5 - ((window.innerWidth - outerRadius) * 0.5);
-
-//         // const curlX = (Math.cos(thisAngle) * (thisRadius * 0.5)) + (outerRadius * 0.5) - (thisParentContainerDims[0] * 0.5);
-//         const curlX = (Math.cos(thisAngle) * (thisRadius * 0.5)) + outerRadius * 0.5;
-//         // const curlX = (Math.cos(thisAngle) * (thisRadius * 0.5)) + (outerRadius * 0.5) - ((window.innerWidth - outerRadius) / 4);
-//         // const curlX = ((Math.cos(thisAngle) * (thisRadius * 0.5)) + outerRadius * 0.5) - aboutContainerDims[0] * 0.25;
-
-//         // const curlY = Math.sin(thisAngle) * (thisRadius * 0.5);
-//         const curlY = (Math.sin(thisAngle) * (thisRadius * 0.5)) + outerRadius * 0.5;
-
-
-//     //#region -------------------- add thisCurlSvg / thisCurlPath --------------------
-
-//         const thisCurlSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-//         const thisCurlPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-
-
-//         // const curlID = 'curl_' + p + 'ID';
-//         const curlID = 'curlSvg_' + p;
-//         // const curlX = 0;
-//         // const curlY = 0;
-//         const curlFill = '#ff00ff';
-//         const curlRef = '{curl' + p + '_Ref}';
-
-//         thisCurlSvg.setAttributeNS(null, 'version', '1.1');
-//         thisCurlSvg.setAttributeNS(null, 'class', 'curl');
-//         thisCurlSvg.setAttributeNS(null, 'id', curlID);
-//         thisCurlSvg.setAttributeNS(null, 'viewBox', '0 0 50 100');
-//         thisCurlSvg.setAttributeNS(null, 'enable-background', '0 0 50 100');
-//         thisCurlSvg.setAttributeNS(null, 'ref', curlRef);
-
-
-//         // const curlPathID = 'curlPath_' + p + 'ID';
-//         const curlPathID = 'curlPath_' + p;
-
-//         thisCurlPath.setAttributeNS(null, 'class', 'curlPath');
-//         thisCurlPath.setAttributeNS(null, 'id', curlPathID);
-//         thisCurlPath.setAttributeNS(null, 'd', 'M10.164,93.706c7.735,9.34,24.605,8.114,30.362-2.544c2.813-5.207,3.003-11.594,0.186-16.841c-2.904-5.409-9.065-8.554-15.283-9.187c-6.42-0.654-13.07,1.684-16.954,6.63c-3.9,4.967-4.607,12.137,0.127,16.854c4.535,4.519,11.862,4.529,17.812,3.054c6.502-1.612,12.996-5.167,17.529-9.865c4.63-4.799,7.285-11.432,4.873-17.805c-2.334-6.168-8.464-10.812-15.243-12.04c-7.614-1.379-15.903,0.719-22.151,4.969C5.731,60.803,0.579,67.627,3.316,74.503c2.442,6.138,9.839,8.83,16.369,8.566c6.804-0.275,13.364-3.138,18.18-7.649c4.742-4.442,7.872-10.615,7.761-16.987c-0.11-6.344-3.209-12.58-8.088-16.92c-5.093-4.531-11.966-6.989-18.977-6.173c-7.488,0.872-14.26,5.337-16.428,12.352c-2.057,6.655,1.092,13.196,7.015,16.996c5.61,3.599,13.084,4.383,19.476,2.346c12.553-4.002,21.796-17.54,16.672-29.843c-4.598-11.04-18.768-18.509-31.069-14.478C7.754,24.835,1.948,29.951,0.401,36.402c-1.619,6.75,1.803,13.231,7.732,17.037c13.012,8.352,31.07-0.389,36.818-12.776c2.866-6.175,3.009-13.057-0.232-19.131c-2.938-5.505-8.711-10.039-15.202-11.202C15.903,7.89,1.992,21.103,8.207,33.824c2.564,5.248,8.339,8.883,14.24,10.029c6.566,1.275,13.086-0.263,18.328-4.176c10.726-8.007,12.619-23.191,2.918-32.612C34.201-2.154,18.144-2.59,8.912,7.171C4.61,11.719,1.877,17.889,2.466,24.053c0.608,6.364,4.229,11.872,9.602,15.683c5.374,3.812,11.683,4.921,18.234,4.069c1.675-0.218,2.557-2.219,2.17-3.602c-0.474-1.693-2.168-2.261-3.823-2.045c-8.777,1.142-18.597-6.131-19.341-14.408C8.565,15.478,15.746,6.901,24.715,6.412c8.967-0.489,18.345,6.243,18.482,15.054c0.128,8.205-7.129,16.42-16.131,16.4c-8.49-0.019-17.218-7.439-11.98-15.537c2.38-3.68,6.918-6.178,11.536-5.851c4.436,0.314,8.528,3.002,10.931,6.45c5.757,8.263,1.266,18.961-7.086,23.972c-4.61,2.766-10.651,4.208-15.927,2.308c-4.212-1.516-7.828-5.308-7.577-9.743c0.25-4.418,3.944-8.158,8.021-9.971c4.014-1.785,8.712-1.542,12.784-0.067C36,32.41,41.685,40.547,39.007,48.822c-2.678,8.275-12.488,14.607-21.66,12.234c-4.222-1.092-8.558-4.08-8.875-8.519c-0.35-4.903,3.659-8.896,8.411-10.204c9.776-2.69,19.335,4.311,21.422,13.225c2.078,8.875-5.134,17.536-13.882,20.112c-4.005,1.179-9.161,1.445-12.698-1.087c-4.502-3.223-1.064-8.445,2.161-11.161c7.48-6.298,22.26-8.296,27.789,1.365c5.072,8.86-6.388,16.947-13.93,19.792c-3.786,1.428-8.921,2.651-12.772,0.776c-4.126-2.008-3.626-6.896-1.337-10.037c5.212-7.15,17.959-5.482,22.176,1.703c4.825,8.223-1.311,18.582-11.122,19.275c-4.643,0.328-9.373-1.22-12.639-4.367C10.815,90.737,9.138,92.468,10.164,93.706L10.164,93.706z');
-//         // thisCurlPath.setAttributeNS(null, 'cx', curlX);
-//         // thisCurlPath.setAttributeNS(null, 'cy', curlY);
-//         thisCurlPath.setAttributeNS(null, 'cx', 0);
-//         thisCurlPath.setAttributeNS(null, 'cy', 0);
-//         thisCurlPath.setAttributeNS(null, 'fill', curlFill);
-
-
-//         thisCurlSvg.appendChild(thisCurlPath);
-//         thisContainer.appendChild(thisCurlSvg);
-
-//     //#endregion -------------------- add thisCurlSvg / thisCurlPath --------------------
-
-
-//         if (curlX >= (outerSVGDims.width * 0.5)) {
-//         // if (curlX >= (window.innerWidth * 0.5)) {
-//         // if (curlX >= (window.innerWidth * 0.5) - (thisContainerDims[1])) {
-//         // if (curlX >= (window.innerWidth * 0.5) - (thisContainerDims[1] * 0.5)) {
-
-//             gsap.set([thisCurlSvg], { x: curlX, y: curlY, rotation: 30 });
-//             gsap.set([thisCurlPath], { fill: 'rgba(255,255,0,0.5)' });
-
-//         } else {
-
-//             gsap.set([thisCurlSvg], { x: curlX, y: curlY, rotation: -30 });
-//             gsap.set([thisCurlPath], { fill: 'rgba(0,255,255,0.5)' });
-//         }
-//     }
-// }
-
-//#endregion -------------------- FUNCTION: addParticles(thisContainer, numParticle) --------------------
-
-
-//#region -------------------- FUNCTION: buildThought(thisContainer) --------------------
-
-// function buildThought(thisContainer) {
-
-//     console.log('');
-//     console.log('--------------------  buildThought(thisContainer)  --------------------');
-
-//     console.log('thisContainer.id = ' + thisContainer.id);
-
-//     for (let thought = 0; thought < thisContainer.children.length; thought++) {
-
-//         let thisThought = thisContainer.children[thought];
-//         let thisThoughtBubble = thisContainer.children[thought].children[0];
-//         // let boingRB = thisContainer.children[thought].children[1].children[0];
-//         // let boingLB = thisContainer.children[thought].children[2].children[0];
-//         // let thisCurl = thisContainer.children[thought].children[3];
-//         let boing = thisContainer.children[thought].children[1].children[0];
-//         let thisCurl = thisContainer.children[thought].children[2].children[0];
-
-//         // console.log('');
-//         // console.log('buildThought(thisContainer) =>   thisThought.id = ' + thisThought.id);
-//         // console.log('buildThought(thisContainer) =>   thisThoughtBubble.id = ' + thisThoughtBubble.id);
-//         // // console.log('buildThought(thisContainer) =>   boingRB.id = ' + boingRB.id);
-//         // // console.log('buildThought(thisContainer) =>   boingLB.id = ' + boingLB.id);
-//         // console.log('buildThought(thisContainer) =>   boing.id = ' + boing.id);
-//         // console.log('buildThought(thisContainer) =>   thisCurl.id = ' + thisCurl.id);
-//         // // console.log('buildThought(thisContainer) =>   thisThought.getAttribute(\'brain\') = ' + thisThought.getAttribute('brain'));
-
-
-//         if (thisThought.getAttribute('brain') === 'left') {
-
-//             // console.log(thisThought.id + ' is ' + thisThought.getAttribute('brain') + ' brain!');
-//             console.log(thisThought.id + ' is LEFT brain!');
-
-//             // gsap.set([boingRB], { autoAlpha: 0 });
-//             // gsap.set([thisThoughtBubble], { motionPath: { path: boingLB, align: boingLB, alignOrigin: [0.5, 0.5], start: 1 } });
-//             // gsap.to([thisCurl], { motionPath: { path: boingLB, align: boingLB, alignOrigin: [0.5, 0.5], autoRotate: 90 }, duration: animDuration02, ease: 'power3.out' });
-//             gsap.set([thisThoughtBubble], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], start: 1 } });
-//             // gsap.to([thisCurl], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], autoRotate: 90 }, duration: animDuration02, ease: 'power3.out' });
-
-//         } else {
-
-//             // console.log(thisThought.id + ' is ' + thisThought.getAttribute('brain') + ' brain!');
-//             console.log(thisThought.id + ' is RIGHT brain!');
-
-//             // gsap.set([boingLB], { autoAlpha: 0 });
-//             // gsap.set([thisThoughtBubble], { motionPath: { path: boingRB, align: boingRB, alignOrigin: [0.5, 0.5], start: 1 } });
-//             // gsap.to([thisCurl], { motionPath: { path: boingRB, align: boingRB, alignOrigin: [0.5, 0.5], autoRotate: 90 }, duration: animDuration02, ease: 'power3.out' });
-//             gsap.set([thisThoughtBubble], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], end: 0 } });
-//             // gsap.to([thisCurl], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], autoRotate: 90, start: 1, end: 0 }, duration: animDuration02, ease: 'power3.out' });
-//         }
-
-//         // gsap.set([thisThoughtBubble], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], start: 1 } });
-//         // gsap.to([thisCurl], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], autoRotate: 90 }, duration: animDuration02, ease: 'power3.out' });
-//     }
-// }
-
-//#endregion -------------------- FUNCTION: buildThought(thisContainer) --------------------
-
-
 //#region -------------------- FUNCTION: disperseChildren(parentContainer) --------------------
 //        -------------------- REF: https://stackoverflow.com/questions/20539196/creating-svg-elements-dynamically-with-javascript-inside-html --------------------
 
@@ -672,9 +432,7 @@ function disperseChildren(parentContainer) {
             const curlAngle = thisAngle * (180 / Math.PI) + 90;
 
             gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
-            gsap.set([thisCurl.children[0]], { fill: 'rgba(255,255,0,0.5)' });
-            // gsap.set([thisCurl.children[0].children[0]], { fill: 'rgba(255,255,0,0.5)' });
-            // gsap.set([thisCurl.children[0]], { autoAlpha: 1, fill: 'rgba(255,255,0,0.5)' });
+            // gsap.set([thisCurl.children[0]], { fill: 'rgba(255,255,0,0.5)' });
 
         } else {
 
@@ -692,9 +450,7 @@ function disperseChildren(parentContainer) {
             const curlAngle = thisAngle * (180 / Math.PI) + 90;
 
             gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
-            gsap.set([thisCurl.children[0]], { fill: 'rgba(0,255,255,0.5)' });
-            // gsap.set([thisCurl.children[0].children[0]], { fill: 'rgba(0,255,255,0.5)' });
-            // gsap.set([thisCurl.children[0]], { autoAlpha: 1, fill: 'rgba(0,255,255,0.5)' });
+            // gsap.set([thisCurl.children[0]], { fill: 'rgba(0,255,255,0.5)' });
         }
 
         // gsap.set([thisCurl, thisCurl.children[0]], { autoAlpha: 1 });
@@ -904,11 +660,11 @@ function resetThoughts(parentContainer, thoughtBubble) {
 //#region ==================== EXPORT ABOUT ====================
 
 // export const About = () => {
-// export const About = ({ locID }) => {
-export const About = ({ locID, loadStatus }) => {
+export const About = ({ locID }) => {
+// export const About = ({ locID, loadStatus }) => {
 
     localStorage.setItem('navLoc', locID);
-    localStorage.setItem('loadStatus', loadStatus);
+    // localStorage.setItem('loadStatus', loadStatus);
 
     //#region ==================== ASSETS _Ref ====================
 

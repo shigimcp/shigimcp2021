@@ -42,11 +42,11 @@ import '../stylesheets/Contact.scss';
 
 
 // export class Contact extends React.Component {
-// export const Contact = ({ locID }) => {
-export const Contact = ({ locID, loadStatus }) => {
+export const Contact = ({ locID }) => {
+// export const Contact = ({ locID, loadStatus }) => {
 
     localStorage.setItem('navLoc', locID);
-    localStorage.setItem('loadStatus', loadStatus);
+    // localStorage.setItem('loadStatus', loadStatus);
 
     // constructor(props) {
 

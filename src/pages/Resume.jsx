@@ -223,11 +223,11 @@ function SkillList(props) {
 // export default EmployerList;
 
 // export const Resume = () => {
-// export const Resume = ({ locID }) => {
-export const Resume = ({ locID, loadStatus }) => {
+export const Resume = ({ locID }) => {
+// export const Resume = ({ locID, loadStatus }) => {
 
     localStorage.setItem('navLoc', locID);
-    localStorage.setItem('loadStatus', loadStatus);
+    // localStorage.setItem('loadStatus', loadStatus);
 
     return (
 

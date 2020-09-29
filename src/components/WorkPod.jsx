@@ -52,7 +52,7 @@ export const WorkPod = (props) => {
     // // console.log('WorkPod = (props) => <WorkPod /> ===>   props.handleClick = ' + props.handleClick);
 
 
-    //#region ==================== podHed / masonryBreakpoints / [clickable] ====================
+    //#region ==================== podHed / masonryBreakpoints ====================
 
     let podHed = '';
     let masonryBreakpoints;
@@ -121,7 +121,7 @@ export const WorkPod = (props) => {
             break;
     }
 
-    //#endregion ==================== podHed / masonryBreakpoints / [clickable] ====================
+    //#endregion ==================== podHed / masonryBreakpoints ====================
 
 
     //#region ==================== ASSETS _Ref ====================
@@ -219,17 +219,20 @@ export const WorkPod = (props) => {
                                     // className={props.missingContentArray.includes(workImage.link2) ? 'missingImg' : 'masonryImg'}
                                     // className={props.missingContentArray.includes(workImage.link2) ? 'missingImg' : workImage.availability ? 'masonryImg' : 'printImg'}
                                     className={!workImage.availability ? 'missingImg' : workImage.format === 'print' ? 'printImg' : 'masonryImg'}
- 
-
                                     id={workImage.album_id + workImage.image_index + '_imgID'}
                                     src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
                                     alt={'album_id: ' + workImage.album_id + workImage.image_index}
+                                    format_src={workImage.format_src}
+                                    mwidth={workImage.mwidth}
+                                    mheight = {workImage.mheight}
 
                                     // onClick={() => props.handleClick(workImage)}
                                     // onClick={() => props.handleClick(props.workFormat, workImage)}
                                     // onClick={clickable ? props.handleClick(props.workFormat, workImage) : undefined}
                                     // onClick={() => clickable && props.handleClick(props.workFormat, workImage)}
-                                    onClick={() => workImage.availability && props.handleClick(props.workFormat, workImage)}
+                                    // onClick={() => workImage.availability && props.handleClick(props.workFormat, workImage)}
+                                    // onClick={(e) => workImage.availability && props.handleClick(props.workFormat, workImage, e.target)}
+                                    onClick={(e) => workImage.availability && props.handleClick(workImage, e.target)}
 
                                     ref={masonryImg_Ref}
                                 />
@@ -244,7 +247,7 @@ export const WorkPod = (props) => {
 
 
                             {/* #region ------------------------- Extra props ------------------------- */}
-{/* 
+    {/* 
                                 <p className='extraInfo'>
                                     album_index = {workImage.album_index}<br />
                                     album_id = {workImage.album_id}<br />
@@ -264,7 +267,7 @@ export const WorkPod = (props) => {
                                     mheight = {workImage.mheight}<br />
                                     availability.toString() = {workImage.availability.toString()}
                                 </p>
- */}
+    */}
                             {/* #endregion ------------------------- Extra props ------------------------- */}
 
                             </div>
