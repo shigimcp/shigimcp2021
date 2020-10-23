@@ -45,18 +45,26 @@
             // padding: 0 0 50px 0;
             padding: 0 0 2.5em 0;
 
+            position: relative;
             display: inline-block;
 
             .logo {
-                // border: 2px solid #ff0000;
+                // border: 2px solid #0000ff;
+                background: none;
 
-                width: 15%;
+                width: 12.5%;
 
                 float: left;
 
                 // margin: inherit;
                 // margin: 1.25% auto 0 auto;
                 // padding: 0;
+
+                margin: 5px 0 0 0;
+                padding: 0;
+
+                position: absolute;
+                top: 0;
             }
 
             .employerInfo {
@@ -93,7 +101,7 @@
                     // font-weight: bold;
                     // text-align: inherit;
 
-                    width: 50%;
+                    width: 60%;
 
                     // margin: inherit;
                     // padding: inherit;

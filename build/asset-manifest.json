@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/shigimcp2020-react/static/css/main.b6c0d493.chunk.css",
-    "main.js": "/shigimcp2020-react/static/js/main.9817ce26.chunk.js",
-    "main.js.map": "/shigimcp2020-react/static/js/main.9817ce26.chunk.js.map",
+    "main.css": "/shigimcp2020-react/static/css/main.0792839e.chunk.css",
+    "main.js": "/shigimcp2020-react/static/js/main.8bf1b19a.chunk.js",
+    "main.js.map": "/shigimcp2020-react/static/js/main.8bf1b19a.chunk.js.map",
     "runtime-main.js": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js",
     "runtime-main.js.map": "/shigimcp2020-react/static/js/runtime-main.b6df552f.js.map",
-    "static/js/2.9f57a687.chunk.js": "/shigimcp2020-react/static/js/2.9f57a687.chunk.js",
-    "static/js/2.9f57a687.chunk.js.map": "/shigimcp2020-react/static/js/2.9f57a687.chunk.js.map",
+    "static/js/2.5aa737d1.chunk.js": "/shigimcp2020-react/static/js/2.5aa737d1.chunk.js",
+    "static/js/2.5aa737d1.chunk.js.map": "/shigimcp2020-react/static/js/2.5aa737d1.chunk.js.map",
     "index.html": "/shigimcp2020-react/index.html",
-    "precache-manifest.621c58249fd33fb81528a9aa2f1b0b05.js": "/shigimcp2020-react/precache-manifest.621c58249fd33fb81528a9aa2f1b0b05.js",
+    "precache-manifest.3359080304048c76b27dc69a9d2fe5b4.js": "/shigimcp2020-react/precache-manifest.3359080304048c76b27dc69a9d2fe5b4.js",
     "service-worker.js": "/shigimcp2020-react/service-worker.js",
-    "static/css/main.b6c0d493.chunk.css.map": "/shigimcp2020-react/static/css/main.b6c0d493.chunk.css.map",
-    "static/js/2.9f57a687.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.9f57a687.chunk.js.LICENSE.txt",
+    "static/css/main.0792839e.chunk.css.map": "/shigimcp2020-react/static/css/main.0792839e.chunk.css.map",
+    "static/js/2.5aa737d1.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.5aa737d1.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/shigimcp2020-react/static/media/ChaleParNinSix.fc1bf3d8.svg",
     "static/media/BSPS_bottle.png": "/shigimcp2020-react/static/media/BSPS_bottle.dab95377.png",
     "static/media/BSPS_image.jpg": "/shigimcp2020-react/static/media/BSPS_image.6bc465a8.jpg",
@@ -64,7 +64,6 @@
     "static/media/flower_05.png": "/shigimcp2020-react/static/media/flower_05.948d0011.png",
     "static/media/gwp.png": "/shigimcp2020-react/static/media/gwp.adf80631.png",
     "static/media/image.jpg": "/shigimcp2020-react/static/media/image.e51a353a.jpg",
-    "static/media/kawaii08_06_POSE_SingleLadies02.mp4": "/shigimcp2020-react/static/media/kawaii08_06_POSE_SingleLadies02.fdfc7512.mp4",
     "static/media/logo.png": "/shigimcp2020-react/static/media/logo.2805be9d.png",
     "static/media/logo_BCBG_BC.png": "/shigimcp2020-react/static/media/logo_BCBG_BC.71199c88.png",
     "static/media/logo_BCBG_MA.png": "/shigimcp2020-react/static/media/logo_BCBG_MA.b528be7e.png",
@@ -82,8 +81,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b6df552f.js",
-    "static/js/2.9f57a687.chunk.js",
-    "static/css/main.b6c0d493.chunk.css",
-    "static/js/main.9817ce26.chunk.js"
+    "static/js/2.5aa737d1.chunk.js",
+    "static/css/main.0792839e.chunk.css",
+    "static/js/main.8bf1b19a.chunk.js"
   ]
 }

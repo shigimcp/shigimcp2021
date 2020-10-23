@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useRoutes } from 'hookrouter';
-// import { useState } from "react";
 
 import './stylesheets/App.scss';
 
@@ -24,21 +23,15 @@ import { NotFound } from './pages/NotFound';
 
 const routes = {
 
-    // '/': () => <Home locID={'homeID'} />,
-    // '/shigimcp2020-react': () => <Home locID={'homeID'} />,
-    // '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} />,
-    // '/shigimcp2020-react/about': () => <About locID={'aboutID'} />,
-    // '/shigimcp2020-react/resume': () => <Resume locID={'resumeID'} />,
-    // '/shigimcp2020-react/contact': () => <Contact locID={'contactID'} />,
-    // '/shigimcp2020-react/notfound': () => <NotFound locID={'notFoundID'} />,
-
     '/': () => <Home locID={'homeID'} loadStatus={true} />,
     '/shigimcp2020-react': () => <Home locID={'homeID'} loadStatus={true} />,
+    '/shigimcp2020-react/': () => <Home locID={'homeID'} loadStatus={true} />,
     '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
     '/shigimcp2020-react/about': () => <About locID={'aboutID'} loadStatus={true} />,
     '/shigimcp2020-react/resume': () => <Resume locID={'resumeID'} loadStatus={true} />,
     '/shigimcp2020-react/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
     '/shigimcp2020-react/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
+
 }
 
 //#endregion ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
@@ -53,7 +46,6 @@ function App() {
 
             <Header />
 
-            {/* {match || <Home />} */}
             {match || <NotFound locID={'notFoundID'} />}
 
         </Wrapper>
