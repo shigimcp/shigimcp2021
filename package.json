@@ -12,6 +12,7 @@
         "hookrouter": "^1.2.3",
         "lodash": "^4.17.20",
         "moment": "^2.29.1",
+        "object-path": "^0.11.5",
         "react": "^16.14.0",
         "react-css-burger": "^0.2.0",
         "react-dom": "^16.14.0",
