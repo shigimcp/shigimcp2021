@@ -1,15 +1,7 @@
-/* #region ==================== VARIABLES ==================== */
+@import './Global.scss';
 
-$body-width: 50vw;
-$body-min-width: 820px;
-// $body-max-width: 1200px;
-$body-max-width: 960px;
 
-// $workkNav-height: 80px;
-$workkNav-height: 100px;
-
-/* #endregion ==================== VARIABLES ==================== */
-
+/* #region ==================== VIDEO ==================== */
 
 // .homeImgHolder {
 //     // border: 2px solid #ffff00;
@@ -33,3 +25,53 @@ video, .homeImgHolder {
     transform: translate(-50%, -50%);
     z-index: -1;
 }
+
+/* #endregion ==================== VIDEO ==================== */
+
+
+
+/* #region ==================== LOGO ==================== */
+
+.logo {
+    // border: 2px solid #ff0000;
+    background: #ff0000;
+
+    width: 90%;
+    // max-width: 80%;
+
+    margin: 0 auto;
+    padding: 0;
+
+    position: absolute;
+    left: 5%;
+    // top: $header-height + $navBar-height + $workkNav-height;
+    top: $header-height + $workkNav-height;
+}
+
+/* #endregion ==================== LOGO ==================== */
+
+
+
+/* #region ==================== CANVAS ==================== */
+
+Canvas {
+    width: 100vw;
+    height: 100vh;
+    // height: auto;
+
+    // position: absolute;
+    // z-index: -10;
+    // top: 60px;
+
+}
+
+// canvas {
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     top: 0;
+//     pointer-events: none;
+//     overflow: hidden;
+// }
+
+/* #endregion ==================== CANVAS ==================== */

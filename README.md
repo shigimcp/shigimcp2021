@@ -1,4 +1,4 @@
-# shigimcp2020-react
+# shigimcp2020-react (in-progress)
 sandboxing shigimcp portfolio website... again
 
 ==================================================

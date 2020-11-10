@@ -522,7 +522,8 @@ function WorkList({ currentEmployer }) {
                 clearContent();
 
 
-                if (thisWorkImage.format_src === 'animate') {
+                // if (thisWorkImage.format_src === 'animate') {
+                if (thisWorkImage.format_src === 'animate' || thisWorkImage.format_src === 'standard') {
 
                 //#region -------------------- IF 'animate'... --------------------
 

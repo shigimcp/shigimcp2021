@@ -126,8 +126,13 @@ export const Header = () => {
     //#region ==================== [INTIAL] SET activeNavDiv ====================
 
     let thisLoc = localStorage.getItem('navLoc');
+    // let thisLoc = localStorage.getItem('navLoc') + '_Ref';
 
-    if (document.getElementById(thisLoc) && thisLoc !== 'homeID') {
+    // console.log('thisLoc = ' + thisLoc);
+
+    if (document.getElementById(thisLoc)) {
+    // if (document.getElementById(thisLoc) && thisLoc !== 'homeID') {
+    // if (document.getElementById(thisLoc) && thisLoc === 'homeID') {
 
         // console.log('Header() => <Header /> ===>   thisLoc = ' + thisLoc);
 
@@ -139,8 +144,16 @@ export const Header = () => {
         // gsap.set([document.getElementById('activeNavDivID')], { x: 0, top: 0, width: 100 });
         gsap.set([document.getElementById('activeNavDivID')], { x: thisLocX, top: thisLocY, width: thisLocW });
 
-    } else {
-        // console.log('Header() => <Header /> ===>   NOT RENDERED YET - thisLoc = ' + thisLoc);
+    // } else {
+
+    //     // console.log('Header() => <Header /> ===>   NOT RENDERED YET - thisLoc = ' + thisLoc);
+
+    //     // const thisLocX = document.getElementById(thisLoc).offsetLeft;
+    //     // const thisLocY = document.getElementById(thisLoc).offsetTop;
+    //     // const thisLocW = document.getElementById(thisLoc).offsetWidth;
+    //     // // const thisLocH = document.getElementById(thisLoc).offsetHeight;
+
+    //     // gsap.set([document.getElementById('activeNavDivID')], { x: thisLocX, top: thisLocY, width: thisLocW });
     }
 
     //#endregion ==================== [INTIAL] SET activeNavDiv ====================
@@ -155,7 +168,8 @@ export const Header = () => {
     // const [navLoc, setNavLoc] = useState(null);
     // const [navLoc, setNavLoc] = useState('homeID');
     // const [navLoc, setNavLoc] = useState(localStorage.getItem('navLoc'));
-    const navLoc = localStorage.getItem('navLoc');
+    // const navLoc = localStorage.getItem('navLoc');
+    let navLoc = localStorage.getItem('navLoc');
 
     // const currentPath = usePath();
     // console.log('use DEFs ===>   currentPath = ' + currentPath);
@@ -190,35 +204,43 @@ export const Header = () => {
     let activeNavDiv_Ref = useRef(null);
     let navBar_Ref = useRef(null);
 
+    // let homeID_Ref = useRef(null);
+    // let workID_Ref = useRef(null);
+    // let aboutID_Ref = useRef(null);
+    // let resumeID_Ref = useRef(null);
+    // let contactID_Ref = useRef(null);
+
     //#endregion ==================== ASSETS _Ref ====================
 
 
 
-    //#region ==================== useEffect: [navLoc, setNavLoc] ====================
+    //#region ==================== useLayoutEffect: [navLoc, setNavLoc] ====================
 
     // useState(() => {
     // useEffect(() => {
     useLayoutEffect(() => {
 
+        // setNavLoc(localStorage.getItem('navLoc'));
+
         // console.log('');
-        // console.log('------------------------- useEffect: [navLoc, setNavLoc] -------------------------');
+        // console.log('------------------------- useLayoutEffect: [navLoc, setNavLoc] -------------------------');
 
-        // console.log('useEffect: [navLoc, setNavLoc] ===>   navLoc = ' + navLoc);
-        // console.log('useEffect: [navLoc, setNavLoc] ===>   typeof navLoc = ' + typeof navLoc);
+        // console.log('useLayoutEffect: [navLoc, setNavLoc] ===>   navLoc = ' + navLoc);
+        // console.log('useLayoutEffect: [navLoc, setNavLoc] ===>   typeof navLoc = ' + typeof navLoc);
 
-        // console.log('useEffect: [navLoc, setNavLoc] ===>   window.performance = ' + window.performance);
-        // console.log('useEffect: [navLoc, setNavLoc] ===>   window.performance.type = ' + window.performance.type);
-        // console.log('useEffect: [navLoc, setNavLoc] ===>   window.performance.getEntriesByType(\'navigation\') = ' + window.performance.getEntriesByType('navigation'));
+        // console.log('useLayoutEffect: [navLoc, setNavLoc] ===>   window.performance = ' + window.performance);
+        // console.log('useLayoutEffect: [navLoc, setNavLoc] ===>   window.performance.type = ' + window.performance.type);
+        // console.log('useLayoutEffect: [navLoc, setNavLoc] ===>   window.performance.getEntriesByType(\'navigation\') = ' + window.performance.getEntriesByType('navigation'));
 
 
         //#region -------------------- setActiveNavDiv --------------------
 
         const setActiveNavDiv = () => {
 
-            console.log('');
-            console.log('------------------------- setActiveNavDiv -------------------------');
+            // console.log('');
+            // console.log('------------------------- setActiveNavDiv -------------------------');
 
-            console.log('setActiveNavDiv ===>   navLoc = ' + navLoc);
+            // console.log('setActiveNavDiv ===>   navLoc = ' + navLoc);
 
 
             //#region - - - - - - - - - - - offset - - - - - - - - - - -
@@ -237,7 +259,7 @@ export const Header = () => {
             //#endregion - - - - - - - - - - - offset - - - - - - - - - - -
 
 
-            //#region - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - -
+            //#region - - - - - - - - - - - getBoundingClientRect (console.log messagaes) - - - - - - - - - - -
 
             // console.log('');
             // console.log('setActiveNavDiv ===>   navLoc.x = ' + navLoc.x);
@@ -259,7 +281,7 @@ export const Header = () => {
             // console.log('setActiveNavDiv ===>   thisLocW = ' + thisLocW);
             // console.log('setActiveNavDiv ===>   thisLocH = ' + thisLocH);
 
-            //#endregion - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - -
+            //#endregion - - - - - - - - - - - getBoundingClientRect (console.log messagaes) - - - - - - - - - - -
 
 
             gsap.set([activeNavDiv_Ref.current], { x: thisLocX, top: thisLocY, width: thisLocW });
@@ -309,7 +331,7 @@ export const Header = () => {
         //     //#endregion - - - - - - - - - - - offset - - - - - - - - - - -
 
 
-        //     //#region - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - -
+        //     //#region - - - - - - - - - - - getBoundingClientRect (console.log messagaes) - - - - - - - - - - -
 
         //     // const thisDims = document.getElementById(navLoc).getBoundingClientRect();
 
@@ -334,7 +356,7 @@ export const Header = () => {
         //     // console.log('navLoc ===>   thisLocW = ' + thisLocW);
         //     // console.log('navLoc ===>   thisLocH = ' + thisLocH);
 
-        //     //#endregion - - - - - - - - - - - getBoundingClientRect - - - - - - - - - - -
+        //     //#endregion - - - - - - - - - - - getBoundingClientRect (console.log messagaes) - - - - - - - - - - -
 
 
         //     gsap.to([activeNavDiv_Ref.current], { x: thisLocX, top: thisLocY, width: thisLocW, duration: 0.375 });
@@ -372,7 +394,7 @@ export const Header = () => {
     // }, [navLoc, currentPath]);
     // }, [navLoc, setActiveNavDiv]);
 
-    //#endregion ==================== useEffect: [navLoc, setNavLoc] ====================
+    //#endregion ==================== useLayoutEffect: [navLoc, setNavLoc] ====================
 
 
     //#region ==================== useEffect: [workNavShow, setWorkNavShow] ====================
@@ -383,7 +405,6 @@ export const Header = () => {
 
         // console.log('');
         // console.log('------------------------- useEffect: [workNavShow, setWorkNavShow] -------------------------');
-
 
         setWorkNavShow(
             workNavTL
@@ -491,6 +512,9 @@ export const Header = () => {
                     <a href='mailto:shigimcp@yahoo.com?Subject=Hi Shigi! I saw your website, and...' className='email'>shigimcp@yahoo.com</a>
                 </div>
 
+
+            {/* #region ==================== LOGO (inline SVG) ==================== */}
+
                 {/* <svg version='1.1' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880' style='enable-background:new 0 0 1000 880;' onClick='jump('home.html')'> */}
                 <svg version='1.1' className='logoIcon' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880'>
 
@@ -593,6 +617,8 @@ export const Header = () => {
 
                 </svg>
 
+            {/* #endregion ==================== LOGO (inline SVG) ==================== */}
+
             </div>
 
 
@@ -618,11 +644,23 @@ export const Header = () => {
                     <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); moveObjectTo(activeNavDiv_Ref.current, navLoc); setMobileNavShow(false); }}>Resume</A>
                     <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setNavLoc(e.target.id); moveObjectTo(activeNavDiv_Ref.current, navLoc); setMobileNavShow(false); }}>Contact</A> */}
 
+                    {/* <A className='navItem' href='/' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Home</A>
+                    <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Work</A>
+                    <A className='navItem' href='/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>About</A>
+                    <A className='navItem' href='/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Resume</A>
+                    <A className='navItem' href='/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Contact</A> */}
+
                     <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Home</A>
                     <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Work</A>
                     <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>About</A>
                     <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Resume</A>
                     <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Contact</A>
+
+                    {/* <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }} ref={homeID_Ref}>Home</A>
+                    <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }} ref={workID_Ref}>Work</A>
+                    <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }} ref={aboutID_Ref}>About</A>
+                    <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }} ref={resumeID_Ref}>Resume</A>
+                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }} ref={contactID_Ref}>Contact</A> */}
 
                 </div>
 
