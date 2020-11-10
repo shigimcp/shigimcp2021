@@ -72,18 +72,6 @@ export default function Lights(props) {
     function ShadowLight() {
         return (
             <directionalLight
-                // castShadow
-                // position={[2.5, 0, 5]}
-                // intensity={0.05}
-                // shadow-mapSize-width={1024}
-                // shadow-mapSize-height={1024}
-                // shadow-camera-near={0.1}
-                // shadow-camera-far={50}
-                // shadow-camera-left={-10}
-                // shadow-camera-right={10}
-                // shadow-camera-top={10}
-                // shadow-camera-bottom={-10}
-
                 castShadow
                 position={[2.5, 0, 5]}
                 intensity={5}
@@ -106,9 +94,6 @@ export default function Lights(props) {
 
     return (
         <group>
-            {/* <KeyLight brightness={10} color="#ccccff" />
-            <FillLight brightness={10} color="#ffffff" />
-            <RimLight brightness={10} color="#eeeeff" /> */}
             <KeyLight brightness={50} color="#ffffff" />
             <FillLight brightness={50} color="#ffffff" />
             <RimLight brightness={50} color="#ffffff" />

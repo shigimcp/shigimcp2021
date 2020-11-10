@@ -38,8 +38,6 @@ function Text({ children, vAlign = 'center', hAlign = 'center', size = 1, color 
             <mesh ref={meshRef} castShadow>
                 <textGeometry attach="geometry" args={[children, config]} />
                 <meshStandardMaterial attach="material" color="#000000" />
-                {/* <meshStandardMaterial attach="material" color="#000066" />
-                <meshPhongMaterial attach="material" color="#0000ff" /> */}
             </mesh>
         </group>
     )

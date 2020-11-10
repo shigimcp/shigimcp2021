@@ -21,16 +21,12 @@ export default function Cube() {
 
 
     //#region ==================== REF: https://www.digitalocean.com/community/tutorials/react-react-with-threejs ====================
-    //        ==================== REF: https://codesandbox.io/s/alligatordemoreact-three-fiber-forked-ic94p ====================
 
     // -------------------- position --------------------
 
     const orbitRadius = 3;
 
     const position = useMemo(() => {
-        // return [random(-3, 3, true), random(-3, 3, true), random(-3, 3, true)];
-        // return [random(-1.5, 1.5, true), random(-1.5, 1.5, true), random(-1.5, 1.5, true)];
-        // return [random(-orbitRadius, orbitRadius, true), random(-orbitRadius, orbitRadius, true), random(-orbitRadius, orbitRadius, true)];
         return [random(-orbitRadius, orbitRadius, true), 0, random(-orbitRadius, orbitRadius, true)];
     }, []);
 
@@ -42,7 +38,6 @@ export default function Cube() {
 
     // -------------------- hover color --------------------
 
-    // const color = isHovered ? 0xe5d54d : (isActive ? 0xf7e7e5 : 0xf95b3c);
     const color = isHovered ? 0x666666 : (isActive ? 0x000000 : 0xdddddd);
 
 

@@ -5,24 +5,16 @@ import React, { useMemo } from 'react';
 import * as THREE from 'three';
 import { useLoader, useUpdate } from 'react-three-fiber';
 
-// import { TestFont } from '../fonts/ChaleParNinSix.json';
-
 //#endregion ==================== IMPORTS ====================
 
 
 //#region ==================== REF: https://spectrum.chat/react-three-fiber/general/best-way-to-render-text~8597ed37-45e2-4d9a-998d-7351ad5b08ef ====================
 
-// export default function ({ children, vAlign = 'center', hAlign = 'center', size = 1, color = '#000000', ...props }) {
-// export default function ({ children, vAlign = 'center', hAlign = 'center', size = 1, color = '#0000ff', ...props }) {
 export default function Text ({ children, vAlign = 'center', hAlign = 'center', size = 1, color = '#0000ff', ...props }) {
 
-    // const font = useLoader(THREE.FontLoader, '/bold.blob')
-    // const font = useLoader(THREE.FontLoader, '../fonts/bold.blob')
-    // const font = useLoader(THREE.FontLoader, '../fonts/ChaleParNinSix.json')
     const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/threejs-experiment-01/main/src/.github/fonts/ChaleParNinSix.json')
 
     const config = useMemo(
-        // () => ({ font, size: 40, height: 30, curveSegments: 32, bevelEnabled: true, bevelThickness: 6, bevelSize: 2.5, bevelOffset: 0, bevelSegments: 8 }),
         () => ({ font, size: 1, height: 0.125, curveSegments: 10, bevelEnabled: true, bevelThickness: 0, bevelSize: 0, bevelOffset: 0, bevelSegments: 0 }),
         [font]
     )
@@ -43,7 +35,6 @@ export default function Text ({ children, vAlign = 'center', hAlign = 'center', 
         <group {...props} scale={[0.1 * size, 0.1 * size, 0.1]}>
             <mesh ref={meshRef} castShadow>
                 <textGeometry attach="geometry" args={[children, config]} />
-                {/* <meshNormalMaterial attach="material" /> */}
                 <meshPhongMaterial attach="material" color="#0000ff" />
             </mesh>
         </group>

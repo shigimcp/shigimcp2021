@@ -1,12 +1,9 @@
 // #region ==================== IMPORTS ====================
 
 import React from 'react';
-// import { useState } from 'react';
 import { useEffect } from 'react';
 import { useRef, useMemo } from 'react';
 
-// import { DoubleSide } from "three";
-// import { Box3, Sphere, Vector3 } from "three";
 import { Box3, Vector3 } from "three";
 
 import { useLoader } from 'react-three-fiber';
@@ -19,12 +16,7 @@ import { useFrame } from 'react-three-fiber';
 
 // #region ==================== CONSTANTS / VARS ====================
 
-// const localLoc = '../images/';
 const remoteGitImageLoc = 'https://raw.githubusercontent.com/shigimcp/threejs-experiment-01/main/src/.github/images/';
-
-// const meshScaleFactor = 0.05;
-// let meshScaleFactor;
-// const meshColor = "#0000ff";
 
 const getWidth = () => window.innerWidth
     || document.documentElement.clientWidth
@@ -38,108 +30,19 @@ const getHeight = () => window.innerHeight
 
 
 
-// #region ==================== RESPONSIVE: meshScaleFactor (dirty soln) ====================
-
-// #region -------------------- RESPONSIVE: INIT - meshScaleFactor (dirty soln) --------------------
-
-// // console.log('');
-// // console.log('getWidth() = ' + getWidth() + '     getHeight() = ' + getHeight());
-
-// // console.log('window.screen.orientation = ' + window.screen.orientation);
-// // console.log('window.screen.orientation =');
-// // console.log(window.screen.orientation);
-
-// // console.log('document.body.clientWidth = ' + document.body.clientWidth);
-
-// // if (getWidth() > 768) {
-// // if (getWidth() > 768 && getHeight() < getWidth()) {
-// // if (window.screen.orientation.type === 'landscape-primary') {
-// if (getHeight() < getWidth() || window.screen.orientation.type === 'landscape-primary') {
-// // if ((getWidth() > 768 && getHeight() < getWidth()) || window.screen.orientation.type === 'landscape-primary') {
-
-//     // console.log(window.screen.orientation.type);
-//     console.log('orienttion = landscape');
-
-//     meshScaleFactor = 0.05;
-
-// } else {
-
-//     // console.log(window.screen.orientation.type);
-//     console.log('orienttion = portrait');
-
-//     meshScaleFactor = 0.025;
-// }
-
-// #endregion -------------------- RESPONSIVE: INIT - meshScaleFactor (dirty soln) --------------------
-
-
-// #region -------------------- RESPONSIVE: WINDOW RESIZE - meshScaleFactor (dirty soln) --------------------
-
-// window.addEventListener('resize', () => {
-
-
-//     // console.log('');
-//     // console.log('window.screen.orientation.type = ' + window.screen.orientation.type);
-//     // console.log('window.screen.orientation.type =');
-//     // console.log(window.screen.orientation.type);
-
-//     // console.log('document.body.clientWidth = ' + document.body.clientWidth);
-
-//     // this.setState({ windowWidth: document.body.clientWidth })
-
-// // if (getWidth() > 768) {
-// // if (getWidth() > 768 && getHeight() < getWidth()) {
-// // if (window.screen.orientation.type === 'landscape-primary') {
-// if (getHeight() < getWidth() || window.screen.orientation.type === 'landscape-primary') {
-// // if ((getWidth() > 768 && getHeight() < getWidth()) || window.screen.orientation.type === 'landscape-primary') {
-
-//     // console.log(window.screen.orientation.type);
-//     console.log('orienttion = landscape');
-
-//     meshScaleFactor = 0.05;
-
-// } else {
-
-//     // console.log(window.screen.orientation.type);
-//     console.log('orienttion = portrait');
-
-//     meshScaleFactor = 0.025;
-// }
-// });
-
-// #endregion -------------------- RESPONSIVE: WINDOW RESIZE - meshScaleFactor (dirty soln) --------------------
-
-// #endregion ==================== RESPONSIVE: meshScaleFactor (dirty soln) ====================
-
-
-
 // #region ==================== FUNCTIONS ====================
 
 // #region -------------------- FUNCTION: checkWindow(thisObject) --------------------
 
 function checkWindow(thisObject) {
 
-    // console.log('');
-    // console.log('-------------------- FUNCTION: checkWindow(thisObject) --------------------');
-    // // console.log('thisObject = ' + thisObject);
-    // console.log('thisObject = ');
-    // console.log(thisObject);
-
-
     let thisScale;
 
     if (getHeight() < getWidth()) {
-    // if (getHeight() < getWidth() || window.screen.orientation.type === 'landscape-primary') {
-
-        // console.log(window.screen.orientation.type);
-        // console.log('orienttion = landscape');
 
         thisScale = 1;
 
     } else {
-
-        // console.log(window.screen.orientation.type);
-        // console.log('orienttion = portrait');
 
         thisScale = 0.45;
     }
@@ -160,7 +63,6 @@ function checkWindow(thisObject) {
 function LogoMesh(props) {
 
     const meshScaleFactor = 0.05;
-    // const meshScaleFactor = 1;
     const meshColor = "#0000ff";
 
 
@@ -171,15 +73,6 @@ function LogoMesh(props) {
         steps: 1,
         depth: 5,
         bevelEnabled: false,
-
-        // curveSegments: 7,
-        // steps: 2,
-        // depth: 25,
-        // bevelEnabled: true, 
-        // bevelThickness: 5,
-        // bevelSize: 5,
-        // bevelOffset: 0,
-        // bevelSegments: 5, 
     };
 
 
@@ -204,12 +97,7 @@ function LogoMesh(props) {
 
 // #region ==================== LOGOSHAPE: SVG - REF: https://codesandbox.io/s/react-three-fiber-react-spring-svg-parallax-forked-8hdg1 ====================
 
-// const logoShape_Ref = React.createRef();
-
-
 function LogoShape(props) {
-    // const LogoShape = React.forwardRef((props, logoShape_Ref) => {
-
 
     // #region -------------------- LOGOSHAPE shapes --------------------
 
@@ -237,15 +125,7 @@ function LogoShape(props) {
         let bBox = new Box3().setFromObject(logoShape_Ref.current);
         let bSize = new Vector3();
 
-        // bBox.setFromObject(logoShape_Ref.current);
         bBox.getSize(bSize);
-
-
-        // console.log(logoShape_Ref.current.children);
-        // console.log(bBox);
-        // console.log(bSize);
-        // // console.log(bBox.getSize(bSize));
-
 
         let xOffset = bSize.x * -0.5;
         let yOffset = bSize.y * 0.5;
@@ -266,13 +146,6 @@ function LogoShape(props) {
         let timeoutId = null;
 
         const resizeListener = () => {
-
-            // console.log('');
-            // console.log('- - - - - - - - - - - LOGOSHAPE useEffect: RESPONSIVE: WINDOW RESIZE - resizeListener - - - - - - - - - - -');
-            // console.log('logoShape_Ref.current.scale = ');
-            // console.log(logoShape_Ref.current.scale);
-            // console.log(logoShape_Ref.current);
-
 
             // prevent execution of previous setTimeout
             clearTimeout(timeoutId);
@@ -296,8 +169,6 @@ function LogoShape(props) {
 
     // #region -------------------- LOGOSHAPE spin --------------------
 
-    // const logoShape_Ref = useRef()
-
     useFrame(() => {
         logoShape_Ref.current.rotation.y += 0.025;
     });
@@ -314,21 +185,15 @@ function LogoShape(props) {
     )
 };
 
-//     );
-// }, [logoShape_Ref]);
-
 // #endregion ==================== LOGOSHAPE: SVG - REF: https://codesandbox.io/s/react-three-fiber-react-spring-svg-parallax-forked-8hdg1 ====================
 
 
 export default function Logo() {
 
-    // const logoSVG = remoteGitImageLoc + 'logo/shigeru_logo_extrude_clean_sm.svg';
-    // const logoSVG = remoteGitImageLoc + 'logo/shigeru_logo_extrude02_stroke.svg';
     const logoSVG = remoteGitImageLoc + 'logo/shigeru_logo_extrude_stroke.svg';
 
 
     return (
-        // <LogoShape id="logoSVGid" url={logoSVG} fillOpacity="0.25" extrudeDir="positive" ref={logoShape_Ref} />
         <LogoShape id="logoSVGid" url={logoSVG} fillOpacity="0.0625" extrudeDir="positive" />
     );
 }
