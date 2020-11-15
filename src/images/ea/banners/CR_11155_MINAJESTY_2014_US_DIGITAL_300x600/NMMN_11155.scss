@@ -10,9 +10,11 @@
     .bgDiv, 
     .modelDiv, 
     .bottleDiv, 
+    .logoContainer, 
     .logo_NM_Minajesty, 
     // .logo_NM_Minajesty_sultry, 
-    .cta
+    .cta, 
+    .smokeContainer
     {
         // border: 2px solid #ff00ff;
 
@@ -32,21 +34,41 @@
         left: 12px;
     }
 
-    .logo_NM_Minajesty {
-        // border: 2px solid #ff00ff;
+    // .logoContainer {
+    //     // border: 2px solid #ff00ff;
+
+    //     mix-blend-mode: overlay;
+
+    //     top: 37px;
+    //     left: 26px;
+
+    //     .logo_NM_Minajesty {
+    //         // border: 2px solid #ff00ff;
+
+    //         // top: 37px;
+    //         // left: 26px;
+
+    //         z-index: 999;
+
+    //         // .logo_NM_Minajesty_sultry {
+    //         //     border: 2px solid #ff00ff;
+
+    //         //     // width: 100%;
+    //         //     // top: 520px;
+    //         //     margin-top: 400px;
+    //         // }
+    //     }
+
+    //     // z-index: 999;
+    // }
+
+    .LogoNMMinajesty {
 
         mix-blend-mode: overlay;
+        // mix-blend-mode: screen;
 
-        top: 37px;
-        left: 26px;
-
-        // .logo_NM_Minajesty_sultry {
-        //     border: 2px solid #ff00ff;
-
-        //     // width: 100%;
-        //     // top: 520px;
-        //     margin-top: 400px;
-        // }
+        // top: 37px;
+        // left: 26px;
     }
 
     .cta {
@@ -61,5 +83,23 @@
         // position: absolute;
         top: 550px;
         left: 80px;
+    }
+
+    .smokeContainer {
+        // border: 2px solid #ff00ff;
+        // background: #0000ff;
+
+        mix-blend-mode: screen;
+        // z-index: 999;
+    }
+
+    .clickTag {
+        // border: 1px solid #ee70bc !important;
+
+        // width: calc(100% - 1.75px);
+        // height: calc(100% - 1.5px);
+
+        position: absolute;
+        top: 0;
     }
 }

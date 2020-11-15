@@ -80,7 +80,8 @@ export const Header = () => {
 
     const [workNavShow, setWorkNavShow] = useState(null);
 
-    const [currentEmployer, setCurrentEmployer] = useState('mimi');
+    // const [currentEmployer, setCurrentEmployer] = useState('mimi');
+    const [currentEmployer, setCurrentEmployer] = useState('ea');
     const initEmployer = '/shigimcp2020-react/work/' + currentEmployer;
 
     const [mobileNavShow, setMobileNavShow] = useState(false);
@@ -101,6 +102,9 @@ export const Header = () => {
     //#region ==================== useLayoutEffect: [navLoc, setNavLoc] ====================
 
     useLayoutEffect(() => {
+
+        // console.log('');
+        // console.log('------------------------- useLayoutEffect: [navLoc, setNavLoc] -------------------------');
 
         //#region -------------------- setActiveNavDiv --------------------
 
@@ -137,6 +141,9 @@ export const Header = () => {
     //#region ==================== useEffect: [workNavShow, setWorkNavShow] ====================
 
     useEffect(() => {
+
+        // console.log('');
+        // console.log('------------------------- useEffect: [workNavShow, setWorkNavShow] -------------------------');
 
         setWorkNavShow(
             workNavTL

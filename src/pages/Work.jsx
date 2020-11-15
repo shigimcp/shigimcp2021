@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 import { gsap } from 'gsap';
-import ReactPlayer from 'react-player/vimeo'
+import ReactPlayer from 'react-player/vimeo';
 
 import '../stylesheets/Work.scss';
 
@@ -69,6 +69,11 @@ const bannerContent = {
 
 function WorkList({ currentEmployer }) {
 
+    // console.log('');
+    // console.log('------------------------- WorkList({ currentEmployer }) -------------------------');
+    // console.log('currentEmployer = ' + currentEmployer);
+
+
     //#region ==================== WORK FORMAT ARRAYS ==================== */
 
     const bannerArray = work.filter(thisFormat => thisFormat.format === 'banner').map((workImage) => (
@@ -93,7 +98,21 @@ function WorkList({ currentEmployer }) {
 
     function clearContent() {
 
+        // console.log('');
+        // console.log('-------------------- FUNCTION: clearContent() --------------------');
+        // console.log(bannerContainer_Ref.current.parentNode);
+        // console.log(bannerContainer_Ref.current);
+        // console.log(bannerContainer_Ref.current.children);
+        // // console.log(document.getElementById('bannerContainerID').children);
+        // // console.log(bannerContainer_Ref.current.children.tl);
+
+
         setBannerShow(null);
+        // bannerContainer_Ref.current.removeChild(children);
+        // bannerContainer_Ref.current.children.remove();
+        // bannerContainer_Ref.current.children = null;
+        // document.getElementById('bannerContainerID').children.remove();
+
         setBanneriFrameOpen(false);
         banneriFrame_Ref.current.src = '';
 
@@ -109,7 +128,28 @@ function WorkList({ currentEmployer }) {
 
     //#region -------------------- FUNCTION: handleClick(thisWorkImage, thisTargetImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks --------------------
 
+    // let newContent = React.createElement(bannerContent[thisWorkImage.link2]);
+    // let newContent = React.createElement();
+    let newContent;
+
     function handleClick(thisWorkImage, thisTargetImage) {
+
+        // console.log('');
+        // console.log('-------------------- FUNCTION: handleClick(thisWorkImage, thisTargetImage) --------------------');
+        // // console.log('thisWorkImage = ' + thisWorkImage);
+        // console.log('thisWorkImage');
+        // console.log(thisWorkImage);
+
+        // console.log('thisTargetImage = ' + thisTargetImage);
+        // console.log('thisTargetImage');
+        // console.log(thisTargetImage);
+
+        // console.log(bannerContent);
+
+        // console.log(newContent);
+
+        // let newContent = React.createElement(bannerContent[thisWorkImage.link2]);
+
 
         setActiveImage(thisTargetImage);
 
@@ -119,6 +159,8 @@ function WorkList({ currentEmployer }) {
         switch (thisWorkImage.format) {
 
             case 'banner':
+
+            //#region -------------------- ASSIGN NEW CONTENT: banner --------------------
 
                 let bannerScale = thisTargetImage.width / thisWorkImage.mwidth;
 
@@ -147,11 +189,31 @@ function WorkList({ currentEmployer }) {
 
                 //#region -------------------- ELSE IF 'html5'... --------------------
 
-                    const newContent = React.createElement(bannerContent[thisWorkImage.link2]);
+                    // const newContent = React.createElement(bannerContent[thisWorkImage.link2]);
+                    // let newContent = React.createElement(bannerContent[thisWorkImage.link2]);
+                    // newContent = bannerContent[thisWorkImage.link2];
+                    newContent = React.createElement(bannerContent[thisWorkImage.link2]);
+
+
+                    console.log('');
+                    console.log('-------------------- FUNCTION: handleClick(thisWorkImage, thisTargetImage) ----- ELSE IF \'html5\'... --------------------');
+
+                    // console.log('');
+                    // console.log('thisWorkImage = ' + thisWorkImage);
+                    console.log('thisWorkImage');
+                    console.log(thisWorkImage);
+
+                    console.log('');
+                    // console.log('newContent = ' + newContent);
+                    console.log('newContent');
+                    console.log(newContent);
+                    // console.log(newContent.props);
+
 
                     gsap.set([bannerContainer_Ref.current], { x: thisTargetImage.offsetLeft, y: thisTargetImage.offsetTop, scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
 
                     setBannerShow(newContent);
+                    // setBannerShow(bannerContent[thisWorkImage.link2]);
                 }
 
                 //#endregion -------------------- ELSE IF 'html5'... --------------------
@@ -290,7 +352,13 @@ function WorkList({ currentEmployer }) {
     if (employer !== currentEmployer) {
 
         setBannerShow(null);
+        setBanneriFrameOpen(false);
+
         setWebiFrameOpen(false);
+
+        setVideoOpen(false);
+        setLoadedVideo(null);
+
 
         setEmployer(currentEmployer);
 
@@ -303,15 +371,21 @@ function WorkList({ currentEmployer }) {
 
 
 
-    //#region ==================== WorkList - useEffect: checkBanner on WINDOW RESIZE ====================
+    //#region ==================== WorkList - useEffect: WINDOW RESIZE ====================
 
     useEffect(() => {
+
+        // console.log('');
+        // console.log('------------------------- WorkList - useEffect -------------------------');
 
         //#region -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
 
         let timeoutId = null;
 
         const resizeListener = () => {
+
+            // console.log('');
+            // console.log('------------------------- WorkList - useEffect: WINDOW RESIZE (resizeListener) -------------------------');
 
             // prevent execution of previous setTimeout
             clearTimeout(timeoutId);
@@ -363,7 +437,7 @@ function WorkList({ currentEmployer }) {
 
     }, [windowWidth, activeImage]);
 
-    //#endregion ==================== WorkList - useEffect: checkBanner on WINDOW RESIZE ====================
+    //#endregion ==================== WorkList - useEffect: WINDOW RESIZE ====================
 
 
     return (
@@ -460,6 +534,13 @@ export const Work = ({ currentEmployer, locID }) => {
     localStorage.setItem('navLoc', locID);
 
     work = myData[1].filter(thisEmployer => thisEmployer.album_id === currentEmployer);
+
+
+    // console.log('');
+    // console.log('------------------------- export const Work -------------------------');
+    // console.log('work = ' + work);
+    // console.log('currentEmployer = ' + currentEmployer);
+
 
     return (
         <div className='workContainer' id='workContainerID'>

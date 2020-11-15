@@ -31,7 +31,7 @@ export const WorkPod = (props) => {
     switch (props.workFormat) {
         case 'banner':
 
-            podHed = 'Banners';
+            podHed = 'Banner Animations';
             masonryBreakpoints = { 360: 1, 640: 2, 768: 2, 940: 4, 1640: 4, 1920: 5, 3000: 6 };
 
             break;
