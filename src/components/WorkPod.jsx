@@ -24,14 +24,16 @@ export const WorkPod = (props) => {
 
     //#region ==================== podHed / masonryBreakpoints ====================
 
-    let podHed = '';
+    let podID = '';
+    // let podHed = '';
     let masonryBreakpoints;
 
 
     switch (props.workFormat) {
         case 'banner':
 
-            podHed = 'Banner Animations';
+            podID = 'bannerPodID';
+            // podHed = 'Banner Animations';
             masonryBreakpoints = { 360: 1, 640: 2, 768: 2, 940: 4, 1640: 4, 1920: 5, 3000: 6 };
 
             break;
@@ -41,21 +43,24 @@ export const WorkPod = (props) => {
         case 'website':
         case 'mobile':
 
-            podHed = 'Web/Video';
+            podID = 'webPodID';
+            // podHed = 'Web/Video';
             masonryBreakpoints = { 768: 1, 960: 2, 1920: 3, 3840: 4 };
 
             break;
 
         case 'print':
 
-            podHed = 'Print';
+            podID = 'printPodID';
+            // podHed = 'Print';
             masonryBreakpoints = { 768: 1, 960: 2, 1920: 3, 3840: 4 };
 
             break;
 
         default:
 
-            podHed = 'General';
+            podID = 'genPodID';
+            // podHed = 'General';
             masonryBreakpoints = { 360: 1, 640: 2, 768: 2, 940: 4, 1640: 4, 1920: 5, 3000: 6 };
 
             break;
@@ -76,14 +81,14 @@ export const WorkPod = (props) => {
 
     return (
 
-        <div>
+        <>
 
-            <section className='masonrySection'>
-
+            <section className='masonrySection' id={podID} sectionid={podID}>
+{/* 
                 <hr />
                 <h2>{podHed}</h2>
                 <hr />
-
+ */}
                 <ResponsiveMasonry columnsCountBreakPoints={masonryBreakpoints}>
                     <Masonry className='masonry' id='bannerMasonryID' gutter='1.25vw' ref={bannerMasonry_Ref}>
 
@@ -126,6 +131,6 @@ export const WorkPod = (props) => {
 
             </section>
 
-        </div>
+        </>
     )
 }

@@ -331,6 +331,8 @@ function WorkList({ currentEmployer }) {
 
     //#region ==================== ASSETS _Ref ====================
 
+    const sectionNav_Ref = useRef(null);
+
     const bannerContainer_Ref = useRef(null);
     const banneriFrame_Ref = useRef(null);
 
@@ -363,6 +365,12 @@ function WorkList({ currentEmployer }) {
     const [isBannerArray, setBannerArray] = useState(bannerArray);
     const [isWebArray, setWebArray] = useState(webArray);
     const [isPrintArray, setPrintArray] = useState(printArray);
+
+
+    // console.log(isBannerArray);
+    // console.log(isWebArray);
+    // console.log(isPrintArray);
+
 
     let [windowWidth, setWindowWidth] = useState(getWidth());
 
@@ -465,6 +473,21 @@ function WorkList({ currentEmployer }) {
 
     return (
         <>
+
+        {/* #region ------------------------- sectionNav ------------------------- */}
+
+            <div className='sectionNav' id='sectionNavID' ref={sectionNav_Ref}>
+                {/* {isBannerArray.length > 0 && <p>Banner Animations</p>}
+                {isWebArray.length > 0 && <p>Web/Video</p>}
+                {isPrintArray.length > 0 && <p>Print</p>} */}
+
+                {isBannerArray.length > 0 && <a href='#bannerPodID'><p>Banner Animations</p></a>}
+                {isWebArray.length > 0 && <a href='#webPodID'><p>Web/Video</p></a>}
+            {isPrintArray.length > 0 && <a href='#printPodID'><p>Print</p></a>}
+            </div>
+
+        {/* #endregion ------------------------- sectionNav ------------------------- */}
+
 
         {/* #region ------------------------- BANNERS: REACT ------------------------- */}
 
