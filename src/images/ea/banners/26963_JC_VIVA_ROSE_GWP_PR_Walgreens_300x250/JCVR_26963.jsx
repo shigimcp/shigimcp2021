@@ -285,7 +285,11 @@ export default function JCVR_26963() {
             // const thisX = randRange(-thisContainer.offsetWidth * displacementFactor, thisContainer.offsetWidth * displacementFactor);
             // const thisY = randRange(-thisContainer.offsetHeight * displacementFactor, thisContainer.offsetHeight * displacementFactor);
 
-            const thisX = randRange(-thisContainer.offsetWidth * 0.75, thisContainer.offsetWidth * 0.5);
+            // const thisX = randRange(-thisContainer.offsetWidth * 0.75, thisContainer.offsetWidth * 0.5);
+            // const thisY = randRange(-thisContainer.offsetHeight * 0.25, thisContainer.offsetHeight * 0.875);
+
+            // const thisX = randRange(-thisContainer.offsetWidth * 0.375, thisContainer.offsetWidth * 0.625);
+            const thisX = randRange(-thisContainer.offsetWidth * 0.25, thisContainer.offsetWidth * 1);
             const thisY = randRange(-thisContainer.offsetHeight * 0.25, thisContainer.offsetHeight * 0.875);
 
             const thisScale = randRange(25, 60) / 100;

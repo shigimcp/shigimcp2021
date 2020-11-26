@@ -4,7 +4,7 @@ import React from 'react';
 import { useRef } from 'react';
 
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 
 import '../stylesheets/Work.scss';
 
@@ -96,7 +96,9 @@ export const WorkPod = (props) => {
 
                                     className={!workImage.availability ? 'missingImg' : workImage.format === 'print' ? 'printImg' : 'masonryImg'}
                                     id={workImage.album_id + workImage.image_index + '_imgID'}
-                                    src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
+                                    // src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
+                                    // src={remoteLoc + workImage.album_id + '/sl02/' + workImage.src2}
+                                    src={workImage.src === workImage.src2 ? remoteLoc + workImage.album_id + '/sl/' + workImage.src : remoteLoc + workImage.album_id + '/sl02/' + workImage.src2}
                                     alt={'album_id: ' + workImage.album_id + workImage.image_index}
                                     format_src={workImage.format_src}
                                     mwidth={workImage.mwidth}
@@ -107,8 +109,13 @@ export const WorkPod = (props) => {
                                 />
 
                                 <p className='masonryInfo' title='masonryInfoTitle'>
-                                    {workImage.caption}<br />
+                                    {workImage.caption}
+                                    <br />
+                                    {!workImage.availability ? ' - COMING SOON' : ''}
+                                    {/* <br />
                                     <Moment format="MMM YYYY">{workImage.date}</Moment>{!workImage.availability ? ' - COMING SOON' : ''}
+                                    <br />
+                                    {workImage.src2}<br /> */}
                                 </p>
 
                             </div>

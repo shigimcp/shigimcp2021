@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 import { gsap } from 'gsap';
+// import { CSSPlugin } from 'gsap/CSSPlugin';
+
 import ReactPlayer from 'react-player/vimeo';
 
 import '../stylesheets/Work.scss';
@@ -26,8 +28,16 @@ import JCNR_07074 from '../images/ea/banners/CR_7074_JC_VNOIR_2013_AU_300x600/JC
 import BSPS_26897 from '../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
 import NMTG_26903 from '../images/ea/banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
 import JCVR_26963 from '../images/ea/banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250/JCVR_26963';
+import JBJA_10263 from '../images/ea/banners/CR_10263_J_by_JENNIFER_ANISTON_Kohls_300x250/JBJA_10263';
 
 //#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
+
+
+//#region -------------------- GSAP: REGISTER PLUGINS --------------------
+
+// gsap.registerPlugin(CSSPlugin);
+
+//#endregion -------------------- GSAP: REGISTER PLUGINS --------------------
 
 //#endregion ==================== IMPORTS ====================
 
@@ -57,6 +67,7 @@ const bannerContent = {
     BSPS_26897: BSPS_26897,
     NMTG_26903: NMTG_26903,
     JCVR_26963: JCVR_26963,
+    JBJA_10263: JBJA_10263,
 };
 
 //#endregion -------------------- AVAILABLE CONTENT: xContent[] --------------------
@@ -273,14 +284,25 @@ function WorkList({ currentEmployer }) {
 
             //#region -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
 
+                // console.log('');
+                // console.log('-------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------');
+                // console.log(thisWorkImage);
+                // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+                // console.log('window.innerWidth * 0.8 = ' + window.innerWidth * 0.8);
+
+
                 clearContent();
 
                 let videoSRC = videoLoc + thisWorkImage.link2;
+                let newVidHeight = (window.innerWidth * 0.8 / thisWorkImage.mwidth) * thisWorkImage.mheight;
 
-                setVideoOpen(true);
+
+                // console.log('newVidHeight = ' + newVidHeight);
+
+
                 setLoadedVideo(videoSRC);
-
-                gsap.set([videoPlayer_Ref.current], { scale: 0.875, transformOrigin: '50% 50%', immediateRender: true });
+                setVideoHeight(newVidHeight);
+                setVideoOpen(true);
 
                 break;
 
@@ -333,6 +355,7 @@ function WorkList({ currentEmployer }) {
 
     const [videoOpen, setVideoOpen] = useState(false);
     const [loadedVideo, setLoadedVideo] = useState(null);
+    const [videoHeight, setVideoHeight] = useState(null);
 
 
     const [employer, setEmployer] = useState(null);
@@ -492,9 +515,22 @@ function WorkList({ currentEmployer }) {
                     className='videoPlayer'
                     id='videoPlayerID'
                     width='80%'
-                    height='80%'
+                    height={videoHeight} 
                     url={loadedVideo}
                     ref={videoPlayer_Ref}
+
+                    config={{
+                        vimeo: {
+                            playerOptions: { 
+                                autoplay: true, 
+                                loop: true, 
+                                // color: '00ffff',
+                                // width: 1800,
+                                // maxwidth: 2400,
+                                // width: window.innerWidth * 0.8,
+                            },
+                        }
+                    }}
                 />
 
             </div>
