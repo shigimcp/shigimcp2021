@@ -35,5 +35,8 @@ localStorage.setItem('work', work);
 localStorage.setItem('about', about);
 localStorage.setItem('skills', skills);
 
-export default [employers, work, about, skills];
+let myData = [employers, work, about, skills];
+
+// export default [employers, work, about, skills];
 // export default [employerData, workData, aboutData, skillData];
+export default myData;

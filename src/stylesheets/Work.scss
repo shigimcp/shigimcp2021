@@ -7,8 +7,8 @@
 #bannerPodID:before, #webPodID::before, #printPodID:before {
     content: "";
     display: block;
-    height: 215px;
-    margin: -215px 0 0 0;
+    height: 195px;
+    margin: -195px 0 0 0;
 }
 
 .workContainer {
@@ -24,12 +24,12 @@
 
     position: absolute;
     // top: ($header-height + $navBar-height + $workkNav-height + 10);
-    top: ($header-height + $navBar-height + $workkNav-height + 10 + 45);
+    top: ($header-height + $navBar-height + $workkNav-height + 10 + 40);
     left: 1.25vw;
 
-    hr {
-        margin: 10px 35%;
-    }
+    // hr {
+    //     margin: 10px 35%;
+    // }
 
     .sectionNav {
         // border: 2px solid #ff0000;
@@ -66,9 +66,9 @@
                 border-left: 1px solid #cccccc;
                 border-right: 1px solid #cccccc;
 
-                font-size: 1.125em;
+                font-size: 1.0625em;
                 text-align: center;
-                letter-spacing: 0.0125em;
+                letter-spacing: 0.025em;
 
                 padding: 0 10px;
                 display: inline;

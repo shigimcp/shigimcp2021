@@ -30,6 +30,9 @@
 
     .hed {
         // border: 02px solid #0000ff;
+        background: #000000;
+
+        // color: #ff00ff;
 
         width: $body-width;
         min-width: $body-min-width;
@@ -345,7 +348,7 @@
         /* #region -------------------- .workNav -------------------- */
 
         .workNav {
-            // border: 1px solid #ff00ff;
+            // border: 1px solid #00ffff;
 
             // background: #ffffff;
             @include bgGradient01();
@@ -362,8 +365,9 @@
             height: $workkNav-height;
 
             margin: 0 auto;
-            // padding: 0;
-            padding: 5px 0 0 0;
+            // margin: -5px auto 0 auto;
+            padding: 0;
+            // padding: 5px 0 0 0;
 
             // position: fixed;
             position: absolute;
@@ -371,14 +375,15 @@
             // top: -55px;
             // top: 115px;
             // top: -$navBar-height;
-            top: $navBar-height;
-            // top: $header-height + $navBar-height;
+            // top: $navBar-height;
+            top: $header-height + $navBar-height;
             // top: -($header-height - $navBar-height);
             left: 0;
             right: 0;
             z-index: -1;
 
             .employerIcon {
+                // border: 1px solid #ff00ff;
                 // border: 1px solid #cccccc;
                 // border-right: 1px solid #cccccc;
 
@@ -386,11 +391,14 @@
                 // mix-blend-mode: multiply;
 
                 width: 10.875%;
-                height: 100%;
+                // height: 100%;
+                height: 90%;
 
                 display: inline-block;
                 vertical-align: middle;
+                // vertical-align: top;
 
+                margin: -5px 0 0 0;
                 // margin: 0;
                 // padding: 0;
 
@@ -398,13 +406,15 @@
                 z-index: 1;
 
                 img {
-                    // border: 3px solid #ff0000;
+                    // border: 1px solid #0000ff;
 
                     max-width: 65%;
                     // max-height: 85%;
                     max-height: 80%;
 
                     margin: auto;
+                    // padding: 0;
+                    // padding: 5px 0 0 0;
 
                     position: absolute;
                     left: 0;
@@ -428,6 +438,7 @@
                 left: 0;
                 right: 0;
                 top: 30%;
+                // top: 25%;
                 bottom: 0;
             }
 

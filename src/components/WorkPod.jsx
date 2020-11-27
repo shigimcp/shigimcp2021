@@ -53,7 +53,8 @@ export const WorkPod = (props) => {
 
             podID = 'printPodID';
             // podHed = 'Print';
-            masonryBreakpoints = { 768: 1, 960: 2, 1920: 3, 3840: 4 };
+            // masonryBreakpoints = { 768: 1, 960: 2, 1920: 3, 3840: 4 };
+            masonryBreakpoints = { 768: 1, 960: 3, 1920: 3, 3840: 4 };
 
             break;
 
