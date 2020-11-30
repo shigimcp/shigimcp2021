@@ -16,11 +16,19 @@ $body-max-width: 960px;
 
 $header-height: 60px;
 // $navBar-height: 40px;
-// $workkNav-height: 60px;
+// $workNav-height: 60px;
 $navBar-height: 35px;
-$workkNav-height: 50px;
-// $workkNav-height: 80px;
-// $workkNav-height: 100px;
+$workNav-height: 50px;
+// $workNav-height: 80px;
+// $workNav-height: 100px;
+
+
+// $bodyWidth: 50vw;
+// $bodyMinWidth: 820px;
+// $bodyMaxWidth: 960px;
+// $headerHeight: 60px;
+// $navBarHeight: 35px;
+// $workNavHeight: 50px;
 
 
 /* #region - - - - - - - - - - - VARIABLES: BG MIXINS - REF: https://cssgradient.io - - - - - - - - - - - */
@@ -99,6 +107,7 @@ $workkNav-height: 50px;
 
 // REF: https://til.hashrocket.com/posts/sxbrscjuqu-share-scss-variables-with-javascript
 // REF: https://medium.com/clover-platform-blog/modular-scss-and-why-you-need-it-6bb2d8c40fd8
+// REF: https://css-tricks.com/getting-javascript-to-talk-to-css-and-sass/
 
 // @function remove-px($var) {
 //     @return $var / 1px - 1;
@@ -115,7 +124,11 @@ $workkNav-height: 50px;
 
     headerHeight: $header-height;
     navBarHeight: $navBar-height;
-    workkNavHeight: $workkNav-height;
+    workNavHeight: $workNav-height;
+
+    // $headerHeight: $header-height;
+    // $navBarHeight: $navBar-height;
+    // $workNavHeight: $workNav-height;
 
     // bodyWidth: remove-vw($body-width);
     // bodyMinWidth: remove-px($body-min-width);
@@ -123,8 +136,18 @@ $workkNav-height: 50px;
 
     // headerHeight: remove-px($header-height);
     // navBarHeight: remove-px($navBar-height);
-    // workkNavHeight: remove-px($workkNav-height);
+    // workNavHeight: remove-px($workNav-height);
 }
+
+// :root {
+//     --bodyWidth: $bodyWidth;
+//     --bodyMinWidth: $bodyMinWidth;
+//     --bodyMaxWidth: $bodyMaxWidth;
+
+//     --headerHeight: $headerHeight;
+//     --navBarHeight: $navBarHeight;
+//     --workNavHeight: $workNavHeight;
+// }
 
 /* #endregion - - - - - - - - - - - VARIABLES: EXPORT - - - - - - - - - - - */
 

@@ -216,7 +216,8 @@ export default function BSPS_26897() {
 
             //#region ==================== FRAME 02 ====================
 
-            .to([logoBSPSref.current], { y: -65, scale: 0.8, ease: 'power3.out', duration: animDuration01 }, 'frame02 -=1.5')
+            // .to([logoBSPSref.current], { y: -65, scale: 0.8, ease: 'power3.out', duration: animDuration01 }, 'frame02 -=1.5')
+            .to([logoBSPSref.current], { y: -45, scale: 0.8, ease: 'power3.out', duration: animDuration01 }, 'frame02 -=1.5')
 
             .fromTo([bottleRef.current], { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame02 -=1.5')
 
@@ -225,7 +226,9 @@ export default function BSPS_26897() {
 
             //#region ==================== FRAME 03 ====================
 
-            .to([logoBSPSref.current], { x: 60, y: -50, scale: 0.7, ease: 'power2.out', duration: animDuration01 }, 'frame03 +=0.75')
+            // .to([logoBSPSref.current], { x: 60, y: -50, scale: 0.7, ease: 'power2.out', duration: animDuration01 }, 'frame03 +=0.75')
+            .to([logoBSPSref.current], { x: 60, y: -20, scale: 0.7, ease: 'power2.out', duration: animDuration01 }, 'frame03 +=0.75')
+
             .to([bottleRef.current], { x: 60, y: 9, scale: 0.9375, ease: 'power2.out', duration: animDuration01 }, 'frame03 +=0.75')
 
             .fromTo([modelRef.current], { x: -194, y: 6, scale: 1.05882352941176, ease: 'power2.out' }, { x: 0, y: 0, scale: 1, ease: 'power2.out', duration: animDuration01 }, 'frame03 +=0.75')
@@ -251,7 +254,8 @@ export default function BSPS_26897() {
 
         {/* #region -------------------- SVG: logo_NMTG_sp (bsps_dropshadows) -------------------- */}
 
-            <svg className='logoBSPS' version='1.1' baseProfile='full' id='logo_svg' width='230' height='92' space='preserve' overflow='visible' ref={logoBSPSref}>
+            {/* <svg className='logoBSPS' version='1.1' baseProfile='full' id='logo_svg' width='230' height='92' space='preserve' overflow='visible' ref={logoBSPSref}> */}
+            <svg className='logoBSPS' version='1.1' baseProfile='full' id='logo_svg' width='430' height='292' space='preserve' overflow='visible' ref={logoBSPSref}>
 
                 <defs>
                     <filter xmlns='http://www.w3.org/2000/svg' id='bsps_dropshadow01' x='-100%' y='-100%' width='300%' height='300%'>
@@ -273,19 +277,31 @@ export default function BSPS_26897() {
 
                 {/* <g className='logoBSPS_ds' ref={logoBSPS_dsRef}> */}
                 <g className='logoBSPS_ds' filter='url(#bsps_dropshadow01)' ref={logoBSPS_dsRef}>
-                    <image href={LOGO_BSPS_show_ko} width='230' height='92' ref={logoBSPS_show_koRef} />
+                    {/* <image href={LOGO_BSPS_show_ko} width='230' height='92' ref={logoBSPS_show_koRef} />
                     <image href={LOGO_BSPS_private_ko} width='230' height='92' ref={logoBSPS_private_koRef} />
                     <image href={LOGO_BSPS_spears_ko} width='230' height='92' ref={logoBSPS_spears_koRef} />
                     <image href={LOGO_BSPS_britney_ko} width='230' height='92' ref={logoBSPS_britney_koRef} />
-                    <image href={LOGO_BSPS_nueva_ko} width='230' height='92' filter='url(#bsps_dropshadow02)' ref={logoBSPS_nueva_koRef} />
+                    <image href={LOGO_BSPS_nueva_ko} width='230' height='92' filter='url(#bsps_dropshadow02)' ref={logoBSPS_nueva_koRef} /> */}
+
+                    <image href={LOGO_BSPS_show_ko} x='100' y='100' width='230' height='92' ref={logoBSPS_show_koRef} />
+                    <image href={LOGO_BSPS_private_ko} x='100' y='100' width='230' height='92' ref={logoBSPS_private_koRef} />
+                    <image href={LOGO_BSPS_spears_ko} x='100' y='100' width='230' height='92' ref={logoBSPS_spears_koRef} />
+                    <image href={LOGO_BSPS_britney_ko} x='100' y='100' width='230' height='92' ref={logoBSPS_britney_koRef} />
+                    <image href={LOGO_BSPS_nueva_ko} x='100' y='100' width='230' height='92' filter='url(#bsps_dropshadow02)' ref={logoBSPS_nueva_koRef} />
                 </g>
 
                 <g className='logoBSPS_base' ref={logoBSPS_baseref}>
-                    <image href={LOGO_BSPS_show} width='230' height='92' ref={logoBSPS_showRef} />
+                    {/* <image href={LOGO_BSPS_show} width='230' height='92' ref={logoBSPS_showRef} />
                     <image href={LOGO_BSPS_private} width='230' height='92' ref={logoBSPS_privateRef} />
                     <image href={LOGO_BSPS_spears} width='230' height='92' ref={logoBSPS_spearsRef} />
                     <image href={LOGO_BSPS_britney} width='230' height='92' ref={logoBSPS_britneyRef} />
-                    <image href={LOGO_BSPS_nueva} width='230' height='92' ref={logoBSPS_nuevaRef} />
+                    <image href={LOGO_BSPS_nueva} width='230' height='92' ref={logoBSPS_nuevaRef} /> */}
+
+                    <image href={LOGO_BSPS_show} x='100' y='100' width='230' height='92' ref={logoBSPS_showRef} />
+                    <image href={LOGO_BSPS_private} x='100' y='100' width='230' height='92' ref={logoBSPS_privateRef} />
+                    <image href={LOGO_BSPS_spears} x='100' y='100' width='230' height='92' ref={logoBSPS_spearsRef} />
+                    <image href={LOGO_BSPS_britney} x='100' y='100' width='230' height='92' ref={logoBSPS_britneyRef} />
+                    <image href={LOGO_BSPS_nueva} x='100' y='100' width='230' height='92' ref={logoBSPS_nuevaRef} />
                 </g>
 
             </svg>

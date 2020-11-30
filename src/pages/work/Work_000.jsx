@@ -62,14 +62,14 @@ const getWidth = () => window.innerWidth
 
 // const headerHeight = scssVars.headerHeight;
 // const navBarHeight = scssVars.navBarHeight;
-// const workkNavHeight = scssVars.workkNavHeight;
+// const workNavHeight = scssVars.workNavHeight;
 
 // const headerHeight = parseInt(scssVars.headerHeight);
 // const navBarHeight = parseInt(scssVars.navBarHeight);
-// const workkNavHeight = parseInt(scssVars.workkNavHeight);
+// const workNavHeight = parseInt(scssVars.workNavHeight);
 
-// console.log('headerHeight = ' + headerHeight + '     navBarHeight = ' + navBarHeight + '     workkNavHeight = ' + workkNavHeight);
-// console.log('(headerHeight + navBarHeight + workkNavHeight) = ' + (headerHeight + navBarHeight + workkNavHeight));
+// console.log('headerHeight = ' + headerHeight + '     navBarHeight = ' + navBarHeight + '     workNavHeight = ' + workNavHeight);
+// console.log('(headerHeight + navBarHeight + workNavHeight) = ' + (headerHeight + navBarHeight + workNavHeight));
 
 //#endregion -------------------- SCSS VARS --------------------
 

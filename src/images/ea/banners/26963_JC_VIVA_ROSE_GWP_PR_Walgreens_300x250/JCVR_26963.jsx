@@ -285,11 +285,7 @@ export default function JCVR_26963() {
             // const thisX = randRange(-thisContainer.offsetWidth * displacementFactor, thisContainer.offsetWidth * displacementFactor);
             // const thisY = randRange(-thisContainer.offsetHeight * displacementFactor, thisContainer.offsetHeight * displacementFactor);
 
-            // const thisX = randRange(-thisContainer.offsetWidth * 0.75, thisContainer.offsetWidth * 0.5);
-            // const thisY = randRange(-thisContainer.offsetHeight * 0.25, thisContainer.offsetHeight * 0.875);
-
-            // const thisX = randRange(-thisContainer.offsetWidth * 0.375, thisContainer.offsetWidth * 0.625);
-            const thisX = randRange(-thisContainer.offsetWidth * 0.25, thisContainer.offsetWidth * 1);
+            const thisX = randRange(-thisContainer.offsetWidth * 0.75, thisContainer.offsetWidth * 0.5);
             const thisY = randRange(-thisContainer.offsetHeight * 0.25, thisContainer.offsetHeight * 0.875);
 
             const thisScale = randRange(25, 60) / 100;
@@ -427,7 +423,7 @@ export default function JCVR_26963() {
 
             //#region -------------------- autoAlpha --------------------
 
-            // .set([bgRef.current], { autoAlpha: 0 }, 'frame00')
+            .set([bgRef.current], { autoAlpha: 0 }, 'frame00')
 
             // .set([flower01Ref.current], { autoAlpha: 0 }, 'frame00')
             // .set([flower02Ref.current], { autoAlpha: 0 }, 'frame00')
@@ -549,8 +545,8 @@ export default function JCVR_26963() {
         ;
 
         //tl.duration(1.5);
-        console.log('');
-        console.log('tl timing = ' + tl.duration() + ' secs');
+        // console.log('');
+        // console.log('tl timing = ' + tl.duration() + ' secs');
 
     // }, [tl]);
     }, [tl, addRandomParticle]);
@@ -576,7 +572,8 @@ export default function JCVR_26963() {
 
         {/* #region -------------------- SVG FILTERS (logo) -------------------- */}
 
-            <svg className='logoDiv' version='1.1' baseProfile='full' id='logo_ds_svg' width='130' height='225' space='preserve' overflow='visible' ref={logoRef}>
+            {/* <svg className='logoDiv' version='1.1' baseProfile='full' id='logo_ds_svg' width='130' height='225' space='preserve' overflow='visible' ref={logoRef}> */}
+            <svg className='logoSVG' version='1.1' baseProfile='full' id='logo_ds_svg' width='300' height='350' space='preserve' overflow='visible' ref={logoRef}>
 
                 <defs>
 
@@ -590,7 +587,8 @@ export default function JCVR_26963() {
                                     0 0 0 1 0'/>
                     </filter>
 
-                    <filter id='logo_ds01' x='-75%' y='-75%' width='250%' height='250%' xmlns='http://www.w3.org/2000/svg'>
+                    {/* <filter id='logo_ds01' x='-75%' y='-75%' width='250%' height='250%' xmlns='http://www.w3.org/2000/svg'> */}
+                    <filter id='logo_ds01' x='-150%' y='-150%' width='300%' height='300%' xmlns='http://www.w3.org/2000/svg'>
                         <feGaussianBlur in='SourceGraphic' stdDeviation='50' result='logo_blur01' />
                         <feOffset dx='0' dy='0' result='logo_blurOffset01'/>
                         <feComponentTransfer><feFuncA type='linear' slope='3'/></feComponentTransfer>
@@ -599,13 +597,19 @@ export default function JCVR_26963() {
                 </defs>
 
                 <g className='logoDiv' ref={logoRef} filter='url(#logo_ds01)'>
-                    <image href={logo_ko} width='130' height='200' ref={logo_koRef} />
-                    <image href={LOGO_JC} width='100' height='17' ref={LOGO_JCRef} filter='url(#Finvert)' />
+                    {/* <image href={logo_ko} width='130' height='200' ref={logo_koRef} />
+                    <image href={LOGO_JC} width='100' height='17' ref={LOGO_JCRef} filter='url(#Finvert)' /> */}
+
+                    <image href={logo_ko} x='85' y='70' width='130' height='200' ref={logo_koRef} />
+                    <image href={LOGO_JC} x='100' y='275' width='100' height='17' ref={LOGO_JCRef} filter='url(#Finvert)' />
                 </g>
 
                 <g className='logoDiv' ref={logoRef}>
-                    <image href={logo} className='logo_JCVR' width='130' height='200' ref={logo_JCVRRef} />
-                    <image href={LOGO_JC} className='logo_JC' x='15' y='205' width='100' height='17' ref={LOGO_JCRef} />
+                    {/* <image href={logo} className='logo_JCVR' width='130' height='200' ref={logo_JCVRRef} />
+                    <image href={LOGO_JC} className='logo_JC' x='15' y='205' width='100' height='17' ref={LOGO_JCRef} /> */}
+
+                    <image href={logo} className='logo_JCVR' x='85' y='70' width='130' height='200' ref={logo_JCVRRef} />
+                    <image href={LOGO_JC} className='logo_JC' x='100' y='275' width='100' height='17' ref={LOGO_JCRef} />
                 </g>
 
             </svg>

@@ -1,9 +1,7 @@
 //#region ==================== IMPORTS ====================
 
 import React from 'react';
-// import { useRef, useEffect } from 'react';
 import { useRef } from 'react';
-// import { useEffect } from 'react';
 import { useCallback } from 'react';
 import { useLayoutEffect } from 'react';
 
@@ -22,12 +20,6 @@ import bg from './images/bg.jpg';
 import model from './images/IMAGE.jpg';
 import bottle from './images/bottle.png';
 import cta from './images/btn_walmart.svg';
-// import vendorLogo from './images/logo_walgreens.svg'
-
-// import LOGO_NM_Minajesty_hed from './images/ee4f80/LOGO_NM_Minajesty_hed.svg';
-// import LOGO_NM_Minajesty_nicki from './images/ee4f80/LOGO_NM_Minajesty_nicki.svg';
-// import LOGO_NM_Minajesty_minaj from './images/ee4f80/LOGO_NM_Minajesty_minaj.svg';
-// import LOGO_NM_Minajesty_sultry from './images/ee4f80/LOGO_NM_Minajesty_sultry.svg';
 
 import LOGO_NM_Minajesty_hed from './images/ffffff/LOGO_NM_Minajesty_hed.svg';
 import LOGO_NM_Minajesty_nicki from './images/ffffff/LOGO_NM_Minajesty_nicki.svg';
@@ -84,36 +76,16 @@ const animDuration05 = 5.00;
 
 function removeNode(thisNode) {
 
-    console.log('');
-    console.log('------------------------- removeNode(thisNode) triggered! -------------------------');
+    // console.log('');
+    // console.log('------------------------- removeNode(thisNode) triggered! -------------------------');
 
-    console.log('thisNode = ' + thisNode);
-    console.log('thisNode.id = ' + thisNode.id);
+    // console.log('thisNode = ' + thisNode);
+    // console.log('thisNode.id = ' + thisNode.id);
 
     thisNode.remove();
 }
 
 //#endregion -------------------- FUNCTION: removeNode(thisContainer) --------------------
-
-
-//#region -------------------- FUNCTION: removeAllChildNodes(parent) --------------------
-
-// // const removeAllChildNodes = useCallback((parent) => {
-// function removeAllChildNodes(parent) {
-
-//     console.log('');
-//     console.log('------------------------- removeAllChildNodes(parent) triggered! -------------------------');
-
-//     console.log('parent = ' + parent);
-//     // console.log('parent.id = ' + parent.id);
-
-//     while (parent.firstChild) {
-//         parent.removeChild(parent.firstChild);
-//     }
-// }
-// // }, []);
-
-//#endregion -------------------- FUNCTION: removeAllChildNodes(thisContainer) --------------------
 
 //#endregion ==================== FUNCTIONS ====================
 
@@ -133,7 +105,7 @@ const LogoNMMinajesty = React.forwardRef((props, LogoNMMinajestyRef) => {
 
     return (
 
-        <svg className='logo_NM_Minajesty' id='logo_NM_MinajestyID' width='250' height='75' version='1.1' baseProfile='full' space='preserve' overflow='visible' ref={LogoNMMinajestyRef}>
+        <svg className='logo_NM_Minajesty' id='logo_NM_MinajestyID' width='300' height='125' version='1.1' baseProfile='full' space='preserve' overflow='visible' ref={LogoNMMinajestyRef}>
 
             <defs>
 
@@ -153,42 +125,19 @@ const LogoNMMinajesty = React.forwardRef((props, LogoNMMinajestyRef) => {
                     </feComponentTransfer>
                 </filter>
 
-                {/* <filter xmlns='http://www.w3.org/2000/svg' x='-100%' y='-100%' width='300%' height='300%' id='dsFilter2'>
-                    <feDropShadow dx='0' dy='0' floodColor='#ffffff' floodOpacity='1' stdDeviation='0.0625' />
-                    <feOffset dx='0' dy='0' result='blurOffset01' />
-                    <feComponentTransfer>
-                        <feFuncA type='linear' slope='5' />
-                    </feComponentTransfer>
-                </filter> */}
-
-                <filter xmlns='http://www.w3.org/2000/svg' x='-100%' y='-100%' width='300%' height='300%' id='colorFilter'>
-                    <feColorMatrix
-                        in='SourceGraphic'
-                        type='matrix'
-                        values='0.933333333333333 0 0 0 0
-                                0 0.309803921568627 0 0 0
-                                0 0 0.309803921568627 0 0
-                                0 0 0 1 0' />
-                </filter>
-
             </defs>
 
             <g className='logo_NM_Minajesty_ds' id='logo_NM_Minajesty_dsID' filter='url(#dsFilter1)'>
-                <image href={LOGO_NM_Minajesty_hed} width='250' height='75' />
-                <image href={LOGO_NM_Minajesty_nicki} width='250' height='75' />
-                <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_hed} x='26' y='37' width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_nicki} x='26' y='37' width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_minaj} x='26' y='37' width='250' height='75' />
             </g>
 
             <g className='logo_NM_Minajesty_base' id='logo_NM_Minajesty_baseID'>
-                <image href={LOGO_NM_Minajesty_hed} width='250' height='75' />
-                <image href={LOGO_NM_Minajesty_nicki} width='250' height='75' />
-                <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_hed} x='26' y='37' width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_nicki} x='26' y='37' width='250' height='75' />
+                <image href={LOGO_NM_Minajesty_minaj} x='26' y='37' width='250' height='75' />
             </g>
-{/* 
-            <g className='logo_NM_Minajesty_sultry' id='logo_NM_Minajesty_sultryID' filter='url(#dsFilter2)'>
-                <image href={LOGO_NM_Minajesty_sultry} width='250' height='75' />
-            </g>
- */}
         </svg>
     );
 
@@ -244,41 +193,10 @@ export default function NMMN_11155() {
 
     //#region ==================== ASSETS Ref ====================
 
-    // const bgRef = useRef(null);
-    // const modelRef = useRef(null);
-    // const bottleRef = useRef(null);
-    // const ctaRef = useRef(null);
-    // // const vendorLogoRef = useRef(null);
-
-    // const logoContainerRef = useRef(null);
-
-    // const LOGO_NM_MinajestyRef = useRef(null);
-
-    // const logo_NM_Minajesty_baseRef = useRef(null);
-
-    // const LOGO_NM_Minajesty_hedRef = useRef(null);
-    // const LOGO_NM_Minajesty_nickiRef = useRef(null);
-    // const LOGO_NM_Minajesty_minajRef = useRef(null);
-    // const LOGO_NM_Minajesty_sultryRef = useRef(null);
-
-    // const logo_NM_Minajesty_dsRef = useRef(null);
-
-    // const LOGO_NM_Minajesty_hed_dsRef = useRef(null);
-    // const LOGO_NM_Minajesty_nicki_dsRef = useRef(null);
-    // const LOGO_NM_Minajesty_minaj_dsRef = useRef(null);
-    // // const LOGO_NM_Minajesty_sultry_dsRef = useRef(null);
-
-    // // const bottleTagRef = useRef(null);
-
-
     const bgRef = useRef(null);
     const modelRef = useRef(null);
     const bottleRef = useRef(null);
     const ctaRef = useRef(null);
-
-    // const logoContainerRef = useRef(null);
-    // const LOGO_NM_MinajestyRef = useRef(null);
-    // const LOGO_NM_Minajesty_sultryRef = useRef(null);
 
     const smokeContainerRef = useRef(null);
 
@@ -303,6 +221,7 @@ export default function NMMN_11155() {
     //#endregion -------------------- FUNCTION: handleClick() --------------------
 
     //#endregion ==================== FUNCTIONS ====================
+
 
 
     //#region ==================== PIXIJS 5 SMOKE - REF: https://www.pixiplayground.com/#/edit/6ThqOOz-SVJe3AyvkbnaU ====================
@@ -351,11 +270,11 @@ export default function NMMN_11155() {
 
     const addPixi = useCallback((thisContainer) => {
 
-        console.log('');
-        console.log('------------------------- addPixi(thisContainer) triggered! -------------------------');
+        // console.log('');
+        // console.log('------------------------- addPixi(thisContainer) triggered! -------------------------');
 
-        console.log('thisContainer = ' + thisContainer);
-        console.log('thisContainer.id = ' + thisContainer.id);
+        // console.log('thisContainer = ' + thisContainer);
+        // console.log('thisContainer.id = ' + thisContainer.id);
 
         // Adapted from: http://codepen.io/davidhartley/pen/seEki?editors=0010
 
@@ -363,18 +282,9 @@ export default function NMMN_11155() {
         const height = 600;
 
         const app = new PIXI.Application({
-        // const app = new PIXI.Container({
-            // // width: window.innerWidth,
-            // // height: window.innerHeight,
-            // width: width,
-            // height: height,
-            // // zIndex: 0,
-
             width: width,
             height: height,
             backgroundColor: 0xdd8ea3,
-            // view: document.getElementById('smokeContainer'),
-            // view: document.getElementById(thisContainer.id),
 
             autoResize: true,
             resolution: devicePixelRatio || 1,
@@ -382,7 +292,6 @@ export default function NMMN_11155() {
             transparent: true
         });
 
-        // thisContainer.appendChild(app.view);
         smokeContainerRef.current.appendChild(app.view);
 
 
@@ -495,19 +404,12 @@ export default function NMMN_11155() {
             }
         `;
 
-        // var smokeShader = new PIXI.Filter(undefined, frag, myUniforms);
         var smokeShader = new PIXI.Filter(undefined, frag);
 
         smokeShader.uniforms.dimensions = [width, 720];
         smokeShader.uniforms.time = 0;
-
-        // smokeShader.uniforms.speed = [0.8, 0.7];
         smokeShader.uniforms.speed = [0.5, 0.5];
-
-        // smokeShader.uniforms.brightness = 0.1;
-        // smokeShader.uniforms.brightness = 0.01;
         smokeShader.uniforms.brightness = 5;
-
         smokeShader.uniforms.smoke1_color_a = hexColorToVec3('#EC10FF');
         smokeShader.uniforms.smoke1_color_b = hexColorToVec3('#86D609');
         smokeShader.uniforms.smoke2_color_a = hexColorToVec3('#06D7F9');
@@ -518,11 +420,9 @@ export default function NMMN_11155() {
 
         smokeBG.width = width;
         smokeBG.height = height;
-        // smokeBG.blendMode = PIXI.BLEND_MODES.ADD;
         smokeBG.blendMode = PIXI.BLEND_MODES.SCREEN;
         smokeBG.filters = [smokeShader];
 
-        // stage.addChild(smokeBG);
         app.stage.addChild(smokeBG);
 
 
@@ -538,6 +438,7 @@ export default function NMMN_11155() {
     //#endregion ==================== PIXIJS 5 SMOKE - REF: https://www.pixiplayground.com/#/edit/6ThqOOz-SVJe3AyvkbnaU ====================
 
 
+
     //#region ==================== useEffect / useLayoutEffect ====================
 
     const tl = gsap.timeline({ delay: 0 });
@@ -545,17 +446,7 @@ export default function NMMN_11155() {
     // useEffect(() => {
     useLayoutEffect(() => {
 
-        // const tl = gsap.timeline({ delay: 0 });
-
-        // smokeContainerRef.current.appendChild(view);
-        // smokeContainerRef.current.appendChild(app.view);
-        // smokeContainerRef.current.sortableChildren = true;
         addPixi(smokeContainerRef.current);
-
-        // logoContainerRef.current.style.zIndex = 999;
-        // smokeContainerRef.current.style.zIndex = 0;
-        // smokeContainerRef.current.app.zIndex = 0;
-        // app.view.zIndex = 0;
 
         tl
 
@@ -563,19 +454,10 @@ export default function NMMN_11155() {
 
             //#region -------------------- autoAlpha --------------------
 
-            // .set([bgRef.current], { autoAlpha: 0 }, 'frame00')
             .set([modelRef.current], { autoAlpha: 0 }, 'frame00')
-
-            // .set([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, 'frame00')
-            // .set([logo_NM_Minajesty_baseRef.current], { autoAlpha: 0 }, 'frame00')
-            // .set([logo_NM_Minajesty_dsRef.current], { autoAlpha: 0 }, 'frame00')
-
-            // .set([LOGO_NM_Minajesty_sultryRef.current], { autoAlpha: 0 }, 'frame00')
 
             .set([bottleRef.current], { autoAlpha: 0 }, 'frame00')
             .set([ctaRef.current], { autoAlpha: 0 }, 'frame00')
-
-            // .set([smokeContainerRef.current], { autoAlpha: 0.5 }, 'frame00')
 
             //#endregion -------------------- autoAlpha --------------------
 
@@ -584,31 +466,13 @@ export default function NMMN_11155() {
 
             // -------------------- SET TRANSFORM ORIGiNS --------------------
 
-            // .set([LOGO_NM_MinajestyRef.current], { transformOrigin: '50% 0', immediateRender: true }, 'frame00')
-
-            // .set([bottleRef.current, LOGO_NM_Minajesty_sultryRef.current], { transformOrigin: '0 0', immediateRender: true }, 'frame00')
             .set([bottleRef.current], { transformOrigin: '0 0', immediateRender: true }, 'frame00')
 
 
             // -------------------- FRAME01 --------------------
 
-            // .set([LOGO_NM_MinajestyRef.current], { x: -124, y: 36 }, 'frame00')
-            // .set([bottleRef.current], { x: 12, y: 465 }, 'frame00')
-            // .set([LOGO_NM_Minajesty_sultryRef.current], { x: -13, y: 403, scale: 1.3 }, 'frame00')
-            // .set([ctaRef.current], { y: 550 }, 'frame00')
-
-            // .set([logoContainerRef.current, LogoNMMinajestyRef.current], { zIndex: 999 }, 'frame00')
-
-            // .set([LOGO_NM_MinajestyRef.current], { zIndex: 999 }, 'frame00')
-            // .set([LogoNMMinajestyRef.current], { x: -125, y: 37 }, 'frame00')
-            // .set([LogoNMMinajestyRef.current], { y: 37 }, 'frame00')
-            .set([LogoNMMinajestyRef.current], { x: 26, y: 37 }, 'frame00')
-
-            // .set([document.getElementById('logo_NM_Minajesty_sultryID')], { y: 400 }, 'frame00')
-            // .set([LOGO_NM_Minajesty_sultryRef.current], { x: -13, y: 403, scale: 1.3 }, 'frame00')
-            // .set([LOGO_NM_Minajesty_sultryRef.current], { x: 30, y: 430, scale: 1.3 }, 'frame00')
             // .set([LogoNMMinajestySultryRef.current], { x: 27, y: 450, scale: 1.3 }, 'frame00')
-            .set([LogoNMMinajestySultryRef.current], { x: 53, y: 450, scale: 1.3 }, 'frame00')
+            .set([LogoNMMinajestySultryRef.current], { x: 50, y: 450, scale: 1.3 }, 'frame00')
 
             .set([smokeContainerRef.current], { zIndex: 0 }, 'frame00')
 
@@ -619,35 +483,23 @@ export default function NMMN_11155() {
 
             //#region ==================== FRAME 01 ====================
 
-            // .fromTo([LOGO_NM_MinajestyRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
-            // .fromTo([logo_NM_Minajesty_baseRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
-            // .fromTo([logo_NM_Minajesty_dsRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
-            // .fromTo([logo_NM_Minajesty_dsRef.current, logo_NM_Minajesty_baseRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
             .fromTo([LogoNMMinajestyRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: "rough({template: none.out, strength: 7.5, points: 50, taper: 'out', randomize: true, clamp: false})", duration: animDuration05 }, 'frame01 +=0')
 
             .fromTo([modelRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration04 }, 'frame01 +=2')
 
-            // .fromTo([ctaRef.current], { y: 525, autoAlpha: 0 }, { y: 550, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame01 +=3.5')
             .fromTo([ctaRef.current], { y: -25, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: 'power3.out', duration: animDuration01 }, 'frame01 +=3.5')
 
             .fromTo([bottleRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=2.5')
-            // .fromTo([LOGO_NM_Minajesty_sultryRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=2.5625')
             .fromTo([LogoNMMinajestySultryRef.current], { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power3.out', duration: animDuration02 }, 'frame01 +=2.5625')
 
-            // .fromTo([smokeContainerRef.current], { autoAlpha: 0.5 }, { autoAlpha: 0, ease: 'power3.out', duration: animDuration05 }, 'frame01 +=7.5')
-            // .fromTo([smokeContainerRef.current], { autoAlpha: 0.5 }, { autoAlpha: 0, ease: 'power3.out', duration: animDuration05, onComplete: removeNode(smokeContainerRef.current) }, 'frame01 +=7.5')
-            // .fromTo([smokeContainerRef.current], { autoAlpha: 0.5 }, { autoAlpha: 0, ease: 'power3.out', duration: animDuration02, onComplete: removeNode, onCompleteParams: [smokeContainerRef.current] }, 'frame01 +=1.5')
             .fromTo([smokeContainerRef.current], { autoAlpha: 0.5 }, { autoAlpha: 0, ease: 'power3.out', duration: animDuration05, onComplete: removeNode, onCompleteParams: [smokeContainerRef.current] }, 'frame01 +=7.5')
 
             //#endregion ==================== FRAME 01 ====================
         ;
 
         //tl.duration(1.5);
-        console.log('tl timing = ' + tl.duration() + ' secs');
+        // console.log('tl timing = ' + tl.duration() + ' secs');
 
-    // }, [tl]);
-    // }, [tl, view]);
-    // }, [tl, app.view]);
     }, [tl, addPixi]);
 
     //#endregion ==================== useEffect / useLayoutEffect ====================
@@ -655,7 +507,6 @@ export default function NMMN_11155() {
 
     return (
         <div className='banner300x600 nmmn_11155'>
-            {/* <h1>NMMN_11155 banner300x600 Component</h1> */}
 
             <div className='bgDiv' ref={bgRef}><img src={bg} alt='bg' /></div>
             <div className='modelDiv' ref={modelRef}><img src={model} alt='model' /></div>
@@ -664,83 +515,11 @@ export default function NMMN_11155() {
 
             <div className='bottleDiv' ref={bottleRef}><img src={bottle} alt='bottle' /></div>
 
-
-            {/* <div className='logoContainer' id='logoContainerID' ref={logoContainerRef}> */}
-
-                {/* #region -------------------- SVG FILTERS (logo_NM_Minajesty) -------------------- */}
-
-                {/* <svg className='logo_NM_Minajesty' version='1.1' baseProfile='full' id='logo_NM_MinajestyID' width='250' height='75' space='preserve' overflow='visible' ref={LOGO_NM_MinajestyRef}>
-
-                    <defs>
-
-                        <filter xmlns='http://www.w3.org/2000/svg' x='-100%' y='-100%' width='300%' height='300%' id='dsFilter1'>
-                            <feGaussianBlur in='SourceGraphic' stdDeviation='5' result='dsBlur' />
-                            <feColorMatrix
-                                in='SourceGraphic'
-                                in2='dsBlur'
-                                type='matrix'
-                                values='0.933333333333333 0 0 0 0
-                                        0 0.309803921568627 0 0 0
-                                        0 0 0.309803921568627 0 0
-                                        0 0 0 1 0' />
-
-                            <feDropShadow dx='0' dy='0' floodColor='#ee4f80' floodOpacity='1' stdDeviation='10' result='dsDropShadow' />
-                            <feComponentTransfer>
-                                <feFuncA type='linear' slope='3' />
-                            </feComponentTransfer>
-                        </filter>
-
-                        <filter xmlns='http://www.w3.org/2000/svg' x='-100%' y='-100%' width='300%' height='300%' id='dsFilter2'>
-                            <feDropShadow dx='0' dy='0' floodColor='#ffffff' floodOpacity='1' stdDeviation='0.0625' />
-                            <feOffset dx='0' dy='0' result='blurOffset01' />
-                            <feComponentTransfer>
-                                <feFuncA type='linear' slope='5' />
-                            </feComponentTransfer>
-                        </filter>
-
-                        <filter xmlns='http://www.w3.org/2000/svg' x='-100%' y='-100%' width='300%' height='300%' id='colorFilter'>
-                            <feColorMatrix
-                                in='SourceGraphic'
-                                type='matrix'
-                                values='0.933333333333333 0 0 0 0
-                                        0 0.309803921568627 0 0 0
-                                        0 0 0.309803921568627 0 0
-                                        0 0 0 1 0' />
-                        </filter>
-
-                    </defs>
-
-                    <g className='logo_NM_Minajesty_ds' ref={logo_NM_Minajesty_dsRef} filter='url(#dsFilter1)'>
-                        <image href={LOGO_NM_Minajesty_hed} width='250' height='75' ref={LOGO_NM_Minajesty_hed_dsRef} />
-                        <image href={LOGO_NM_Minajesty_nicki} width='250' height='75' ref={LOGO_NM_Minajesty_nicki_dsRef} />
-                        <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' ref={LOGO_NM_Minajesty_minaj_dsRef} />
-                    </g>
-
-                    <g className='logo_NM_Minajesty_base' ref={logo_NM_Minajesty_baseRef}>
-                        <image href={LOGO_NM_Minajesty_hed} width='250' height='75' ref={LOGO_NM_Minajesty_hedRef} />
-                        <image href={LOGO_NM_Minajesty_nicki} width='250' height='75' ref={LOGO_NM_Minajesty_nickiRef} />
-                        <image href={LOGO_NM_Minajesty_minaj} width='250' height='75' ref={LOGO_NM_Minajesty_minajRef} />
-                    </g>
-
-                    <g className='logo_NM_Minajesty_sultry' ref={LOGO_NM_Minajesty_sultryRef} filter='url(#dsFilter2)'>
-                        <image href={LOGO_NM_Minajesty_sultry} width='250' height='75' />
-                    </g>
-
-                </svg> */}
-
-                {/* #endregion -------------------- SVG FILTERS (logo_NM_Minajesty) -------------------- */}
-
-            {/* </div> */}
-
             <LogoNMMinajesty className='LogoNMMinajesty' id='LogoNMMinajestyID' ref={LogoNMMinajestyRef} />
-
-            {/* <div className='logo_NM_Minajesty_sultry' ref={LOGO_NM_Minajesty_sultryRef}><img src={LOGO_NM_Minajesty_sultry} width='250' height='75' alt='logoTag' /></div> */}
             <LogoNMMinajestySultry className='LogoNMMinajestySultry' id='LogoNMMinajestySultryID' ref={LogoNMMinajestySultryRef} />
 
             <div className='cta' ref={ctaRef}><img src={cta} alt='cta_Walgreens' /></div>
-            {/* <div className='vendorTag' ref={vendorLogoRef}><img src={vendorLogo} alt='vendorLogo_Walgreens' /></div> */}
 
-            {/* <div className='clickTag' id='clickTagID' ref={clickTagRef} onClick={() => handleClick()}></div> */}
             <div className='clickTag' id='clickTagID' ref={clickTagRef} onClick={handleClick}></div>
         </div>
     );

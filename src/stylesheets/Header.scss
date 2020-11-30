@@ -362,10 +362,10 @@
             min-width: $body-min-width;
             max-width: $body-max-width;
 
-            height: $workkNav-height;
+            height: $workNav-height;
 
-            margin: 0 auto;
-            // margin: -5px auto 0 auto;
+            // margin: 0 auto;
+            margin: -5px auto 0 auto;
             padding: 0;
             // padding: 5px 0 0 0;
 
@@ -375,9 +375,12 @@
             // top: -55px;
             // top: 115px;
             // top: -$navBar-height;
+            // top: $header-height;
+            top: $workNav-height;
             // top: $navBar-height;
-            top: $header-height + $navBar-height;
+            // top: $header-height + $navBar-height;
             // top: -($header-height - $navBar-height);
+            // top: 0;
             left: 0;
             right: 0;
             z-index: -1;

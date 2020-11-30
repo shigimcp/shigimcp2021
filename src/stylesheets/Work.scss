@@ -19,12 +19,12 @@
     width: 97.5vw;
 
     margin: 0 auto;
-    // padding: ($header-height + $navBar-height + $workkNav-height) 0 0 0;
-    // padding: ($header-height + $navBar-height + $workkNav-height + 10) 0 0 0;
+    // padding: ($header-height + $navBar-height + $workNav-height) 0 0 0;
+    // padding: ($header-height + $navBar-height + $workNav-height + 10) 0 0 0;
 
     position: absolute;
-    // top: ($header-height + $navBar-height + $workkNav-height + 10);
-    top: ($header-height + $navBar-height + $workkNav-height + 10 + 40);
+    // top: ($header-height + $navBar-height + $workNav-height + 10);
+    top: ($header-height + $navBar-height + $workNav-height + 10 + 40);
     left: 1.25vw;
 
     // hr {
@@ -252,7 +252,7 @@
 
             position: fixed;
             // position: relative;
-            // // top: ($header-height + $navBar-height + $workkNav-height + 10);
+            // // top: ($header-height + $navBar-height + $workNav-height + 10);
             // top: 12.5vh;
             // z-index: 999;
 

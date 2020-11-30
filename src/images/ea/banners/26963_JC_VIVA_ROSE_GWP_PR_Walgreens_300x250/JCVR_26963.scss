@@ -57,25 +57,36 @@
         }
     }
 
-    .logoDiv {
+    .logoSVG {
         // border: 2px solid #ff0000;
+        // border: 4px inset #0000ff;
 
-        width: 130px;
+        position: absolute;
+        top: -50px;
+        left: 0;
 
-        top: 20px;
-        left: 85px;
+        // .logoDiv {
+        //     border: 2px solid #0000ff;
 
-        .logo_JCVR {
-            // border: 2px solid #0000ff;
+        //     // width: 130px;
 
-            width: 100%;
-        }
+        //     // top: 20px;
+        //     // left: 85px;
+        //     top: -80px;
+        //     left: -15px;
 
-        .logo_JC {
-            // border: 2px solid #0000ff;
+        //     .logo_JCVR {
+        //         // border: 2px solid #0000ff;
 
-            width: 100px;
-        }
+        //         width: 100%;
+        //     }
+
+        //     .logo_JC {
+        //         // border: 2px solid #0000ff;
+
+        //         width: 100px;
+        //     }
+        // }
     }
 
     .bgDiv {

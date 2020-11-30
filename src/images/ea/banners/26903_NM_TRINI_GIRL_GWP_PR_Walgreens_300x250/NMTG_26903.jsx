@@ -309,7 +309,8 @@ export default function NMTG_26903() {
 
         {/* #region -------------------- SVG: logo_NMTG_sp (nmtg_dropshadows) -------------------- */}
 
-            <svg className='logo_NMTG_sp' id='logo_NMTG_spID' version='1.1' baseProfile='full' width='225' height='78.75' space='preserve' overflow='visible' ref={logo_NMTG_spRef}>
+            {/* <svg className='logo_NMTG_sp' id='logo_NMTG_spID' version='1.1' baseProfile='full' width='225' height='78.75' space='preserve' overflow='visible' ref={logo_NMTG_spRef}> */}
+            <svg className='logo_NMTG_sp' id='logo_NMTG_spID' version='1.1' baseProfile='full' width='425' height='278.75' space='preserve' overflow='visible' ref={logo_NMTG_spRef}>
 
                 <defs>
 
@@ -370,10 +371,15 @@ export default function NMTG_26903() {
 
                 <g className='logo_NMTG_sp_ds' id='logo_NMTG_sp_ds01ID' ref={logo_NMTG_sp_dsRef}>
                     {/* <image href={LOGO_NMTG_sp} width='225' height='78.75' ref={logo_NMTG_sp_dsRef01} /> */}
-                    <image href={LOGO_NMTG_sp} width='225' height='78.75' filter='url(#nmtg_dropshadow01)' ref={logo_NMTG_sp_dsRef01} />
                     {/* <image href={LOGO_NMTG_sp} width='225' height='78.75' ref={logo_NMTG_sp_dsRef02} /> */}
+
+                    {/* <image href={LOGO_NMTG_sp} width='225' height='78.75' filter='url(#nmtg_dropshadow01)' ref={logo_NMTG_sp_dsRef01} />
                     <image href={LOGO_NMTG_sp} width='225' height='78.75' filter='url(#nmtg_dropshadow02)' ref={logo_NMTG_sp_dsRef02} />
-                    <image href={LOGO_NMTG_sp} width='225' height='78.75' ref={logo_NMTG_sp_baseRef} />
+                    <image href={LOGO_NMTG_sp} width='225' height='78.75' ref={logo_NMTG_sp_baseRef} /> */}
+
+                    <image href={LOGO_NMTG_sp} x='100' y='100' width='225' height='78.75' filter='url(#nmtg_dropshadow01)' ref={logo_NMTG_sp_dsRef01} />
+                    <image href={LOGO_NMTG_sp} x='100' y='100' width='225' height='78.75' filter='url(#nmtg_dropshadow02)' ref={logo_NMTG_sp_dsRef02} />
+                    <image href={LOGO_NMTG_sp} x='100' y='100' width='225' height='78.75' ref={logo_NMTG_sp_baseRef} />
                 </g>
 
             </svg>

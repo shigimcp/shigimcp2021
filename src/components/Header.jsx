@@ -11,7 +11,9 @@ import gsap from 'gsap';
 import Burger from 'react-css-burger';
 
 import '../stylesheets/Header.scss';
-import scssVars from '../stylesheets/Global.scss';
+// import scssVars from '../stylesheets/Global.scss';
+// import { scssVars } from '../stylesheets/Global.scss';
+// import '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: DATA --------------------
@@ -27,7 +29,12 @@ import myData from '../data/MyData';
 
 const employerData = myData[0];
 
-const workkNavHeight = parseInt(scssVars.workkNavHeight);
+// const workNavHeight = scssVars.workNavHeight;
+// // const workNavHeight = parseInt(scssVars.workNavHeight);
+
+// console.log(scssVars);
+// console.log(scssVars.workNavHeight);
+// console.log(workNavHeight);
 
 const workNavTL = new gsap.timeline({ paused: true });
 const mobileNavTL = new gsap.timeline({ paused: true });
@@ -145,9 +152,11 @@ export const Header = () => {
         // console.log('');
         // console.log('------------------------- useEffect: [workNavShow, setWorkNavShow] -------------------------');
 
+        let workNavHeight = workNav_Ref.getBoundingClientRect().height;
+
         setWorkNavShow(
             workNavTL
-                .fromTo([workNav_Ref], { y: 0, autoAlpha: 0 }, { y: (workkNavHeight), autoAlpha: 1, duration: 0.5 }, 'frame01')
+                .fromTo([workNav_Ref], { y: 0, autoAlpha: 0 }, { y: workNavHeight, autoAlpha: 1, duration: 0.5 }, 'frame01')
         );
 
         if (navLoc === 'workID') {
