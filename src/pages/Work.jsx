@@ -155,15 +155,8 @@ function WorkList({ currentEmployer }) {
         // console.log('thisTargetImage');
         // console.log(thisTargetImage);
 
-        // console.log(bannerContent);
-
-        // console.log(newContent);
-
-        // let newContent = React.createElement(bannerContent[thisWorkImage.link2]);
-
 
         setActiveImage(thisTargetImage);
-
 
         //#region - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
 
@@ -259,9 +252,13 @@ function WorkList({ currentEmployer }) {
 
                 //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized content  - - - - - - - - - - -
 
-                if (thisWorkImage.mheight >= window.innerHeight) {
+                // if (thisWorkImage.mheight >= window.innerHeight) {
+                if (thisWorkImage.mwidth >= window.innerWidth || thisWorkImage.mheight >= window.innerHeight) {
 
-                    let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.9;
+                    // let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.9;
+                    // let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.875;
+                    let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.75;
+                    // let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.5;
                     let thisY = (window.innerHeight - (thisWorkImage.mheight * thisScale)) / 2;
 
                     gsap.set([webiFrame_Ref.current], { top: thisY, scale: thisScale, transformOrigin: '50% 0', immediateRender: true });
@@ -288,20 +285,103 @@ function WorkList({ currentEmployer }) {
                 // console.log('-------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------');
                 // console.log(thisWorkImage);
                 // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+                // console.log('window.innerWidth = ' + window.innerWidth + '     window.innerHeight = ' + window.innerHeight);
                 // console.log('window.innerWidth * 0.8 = ' + window.innerWidth * 0.8);
 
 
                 clearContent();
 
                 let videoSRC = videoLoc + thisWorkImage.link2;
-                let newVidHeight = (window.innerWidth * 0.8 / thisWorkImage.mwidth) * thisWorkImage.mheight;
+                let newVidWidth;
+                let newVidHeight;
+
+                // let vidScale = 0.5;
+                let vidScale = 0.8;
+
+                switch (true) {
+
+                    case thisWorkImage.mwidth >= window.innerWidth && thisWorkImage.mwidth >= thisWorkImage.mheight:
+
+                        // console.log('This content is TOO WIDE & LANDSCAPE');
+                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+
+                        newVidWidth = window.innerWidth * vidScale;
+                        newVidHeight = thisWorkImage.mheight * (newVidWidth / thisWorkImage.mwidth);
+
+                        break;
+
+                    case thisWorkImage.mwidth >= window.innerWidth && thisWorkImage.mwidth <= thisWorkImage.mheight:
+
+                        // console.log('This content is TOO WIDE & PORTRAIT');
+                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+
+                        newVidWidth = window.innerWidth * vidScale;
+                        newVidHeight = thisWorkImage.mheight * (newVidWidth / thisWorkImage.mwidth);
+
+                        break;
+
+                    case thisWorkImage.mheight >= window.innerHeight && thisWorkImage.mwidth >= thisWorkImage.mheight:
+
+                        // console.log('This content is TOO TALL & LANDSCAPE');
+                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+
+                        newVidHeight = window.innerHeight * vidScale;
+                        newVidWidth = thisWorkImage.mwidth * (newVidHeight / thisWorkImage.mheight);
+
+                        break;
+
+                    case thisWorkImage.mheight >= window.innerHeight && thisWorkImage.mwidth <= thisWorkImage.mheight:
+
+                        // console.log('This content is TOO TALL & PORTRAIT');
+                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+
+                        newVidHeight = window.innerHeight * vidScale;
+                        newVidWidth = thisWorkImage.mwidth * (newVidHeight / thisWorkImage.mheight);
+
+                        break;
+
+                    default:
+
+                        console.log('DEFAULT');
+                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+
+                        // newVidWidth = thisWorkImage.mwidth;
+                        // newVidHeight = thisWorkImage.mheight;
+
+                        // newVidWidth = window.innerWidth * vidScale;
+                        // newVidHeight = thisWorkImage.mheight * (newVidWidth / thisWorkImage.mwidth);
+
+                        if (window.innerWidth / window.innerHeight <= thisWorkImage.mwidth / thisWorkImage.mheight) {
+
+                            // console.log('thisWorkImage.mwidth / thisWorkImage.mheight = ' + thisWorkImage.mwidth / thisWorkImage.mheight);
+                            // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+
+                            // console.log('This content FITS and I want it to behave LANDSCAPE');
+
+                            newVidWidth = window.innerWidth * 0.75;
+                            newVidHeight = thisWorkImage.mheight * (newVidWidth / thisWorkImage.mwidth);
+
+                        } else {
+
+                            // console.log('thisWorkImage.mwidth / thisWorkImage.mheight = ' + thisWorkImage.mwidth / thisWorkImage.mheight);
+                            // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+
+                            // console.log('This content FITS and I want it to behave PORTRAIT');
+
+                            newVidHeight = window.innerHeight * 0.75;
+                            newVidWidth = thisWorkImage.mwidth * (newVidHeight / thisWorkImage.mheight);
+                        }
+
+                        break;
+                }
 
 
-                // console.log('newVidHeight = ' + newVidHeight);
+                // console.log('newVidWidth = ' + newVidWidth + '     newVidHeight = ' + newVidHeight);
 
+                setVideoWidth(newVidWidth);
+                setVideoHeight(newVidHeight);
 
                 setLoadedVideo(videoSRC);
-                setVideoHeight(newVidHeight);
                 setVideoOpen(true);
 
                 break;
@@ -357,6 +437,7 @@ function WorkList({ currentEmployer }) {
 
     const [videoOpen, setVideoOpen] = useState(false);
     const [loadedVideo, setLoadedVideo] = useState(null);
+    const [videoWidth, setVideoWidth] = useState(null);
     const [videoHeight, setVideoHeight] = useState(null);
 
 
@@ -537,7 +618,8 @@ function WorkList({ currentEmployer }) {
                 <ReactPlayer
                     className='videoPlayer'
                     id='videoPlayerID'
-                    width='80%'
+                    // width='80%'
+                    width={videoWidth} 
                     height={videoHeight} 
                     url={loadedVideo}
                     ref={videoPlayer_Ref}

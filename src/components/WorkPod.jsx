@@ -4,7 +4,9 @@ import React from 'react';
 import { useRef } from 'react';
 
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+
 // import Moment from 'react-moment';
+// import 'moment-timezone';
 
 import '../stylesheets/Work.scss';
 
@@ -123,6 +125,35 @@ export const WorkPod = (props) => {
                                     <br />
                                     {workImage.src2}<br /> */}
                                 </p>
+
+
+                            {/* #region ------------------------- Extra props ------------------------- */}
+
+                                {/* <p className='extraInfo'>
+                                    album_index = {workImage.album_index}<br />
+                                    album_id = {workImage.album_id}<br />
+                                    image_index = {workImage.image_index}<br />
+                                    src = {workImage.src}<br />
+                                    src2 = {workImage.src2}<br />
+                                    caption = {workImage.caption}<br />
+                                    date = {workImage.date}<br />
+                                    <Moment format="MMM YYYY">{workImage.date}</Moment><br />
+                                    format = {workImage.format}<br />
+                                    format_src = {workImage.format_src}<br />
+                                    link = {workImage.link}<br />
+                                    link2 = {workImage.link2}<br />
+                                    link3 = {workImage.link3}<br />
+                                    link4 = {workImage.link4}<br />
+                                    cta = {workImage.cta}<br />
+                                    alert = {workImage.alert}<br />
+                                    mwidth = {workImage.mwidth}<br />
+                                    mheight = {workImage.mheight}<br />
+                                    mwidthORIG = {workImage.mwidthORIG}<br />
+                                    mheightORIG = {workImage.mheightORIG}<br />
+                                    availability.toString() = {workImage.availability.toString()}
+                                </p> */}
+
+                            {/* #endregion ------------------------- Extra props ------------------------- */}
 
                             </div>
                         ))}

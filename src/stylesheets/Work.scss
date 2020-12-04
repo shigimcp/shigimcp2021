@@ -155,10 +155,13 @@
                     // background: #eeeeee;
 
                     font-size: 0.8125em;
+                    letter-spacing: 0.05em;
 
                     margin: 0;
                     // padding: 3.75% 6.25%;
                     padding: 10px 20px;
+
+                    overflow: scroll;
                 }
             }
         }
@@ -221,21 +224,17 @@
 
         width: 100vw;
         height: 100vh;
-        // width: 100%;
-        // // height: 100%;
-        // height: auto;
 
         position: fixed;
         top: 0;
         left: 0;
-        // z-index: 0;
         z-index: 999;
 
         cursor: pointer;
 
         // .webiFrameOpen {
         .webiFrame {
-            // border: 2px solid #0000ff;
+            // border: 2px solid #00ffff;
             border: none;
 
             // background: none;
@@ -244,18 +243,30 @@
             width: 50vw;
             height: 50vh;
 
-            // width: 0;
-            // height: 0;
-
-            margin: 0 auto;
+            // margin: 0 auto;
+            margin: 0;
             padding: 0;
 
-            position: fixed;
             // position: relative;
             // // top: ($header-height + $navBar-height + $workNav-height + 10);
             // top: 12.5vh;
             // z-index: 999;
 
+            position: fixed;
+
+            // top: 50%;
+            // left: 50%;
+            top: 50vh;
+            left: 50vw;
+
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            // zoom: 0.875;
             // -ms-transform: scale(0.875);
             // -moz-transform: scale(0.875);
             // -o-transform: scale(0.875);
@@ -268,24 +279,6 @@
             // -webkit-transform-origin: 0 0;
             // transform-origin: 0 0;
         }
-
-        // .webiFrameClosed {
-            // border: 2px solid #0000ff;
-            // // border: none;
-
-            // width: 0;
-            // height: 0;
-
-            // margin: 0 auto;
-            // padding: 0;
-
-            // position: fixed;
-            // top: 0;
-            // left: 0;
-            // z-index: 0;
-
-            // display: none;
-        // }
     }
 
     .webiFrameContainerClosed {
@@ -321,17 +314,41 @@
             // background: #999999;
 
             // width: 100%;
+            // width: 80%;
+            // width: auto;
             // height: 80%;
             // height: 50%;
-            height: 100%;
+            // height: 100%;
 
             padding: 0;
 
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            // bottom: 0;
-            // right: 0;
+            // position: absolute;
+            // top: 10%;
+            // left: 10%;
+            // // bottom: 0;
+            // // right: 0;
+
+            position: fixed;
+
+            // top: 50%;
+            // left: 50%;
+
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            top: 50vh;
+            left: 50vw;
+
+            // transform: translate(-50vw, -50vh);
+            // -ms-transform: translate(-50vw, -50vh);
+            // -moz-transform: translate(-50vw, -50vh);
+            // -o-transform: translate(-50vw, -50vh);
+            // -webkit-transform: translate(-50vw, -50vh);
+            // transform: translate(-50vw, -50vh);
 
             // -ms-transform: scale(0.875);
             // -moz-transform: scale(0.875);
@@ -438,14 +455,15 @@
 
 
 
-/* #region ========================= DESKTOPS: 1441px+ ========================= */
+/* #region ========================= DESKTOPS: 1440px+ ========================= */
 
 @media  
-    only screen and (min-device-width: 1441px) 
+    only screen and (min-device-width: 1440px) 
+    // only screen and (min-device-width: 1441px) 
     { 
     }
 
-/* #endregion ========================= DESKTOPS: 1441px+ ========================= */
+/* #endregion ========================= DESKTOPS: 1440px+ ========================= */
 
 
 
@@ -453,8 +471,9 @@
 
 @media  
     // only screen and (min-device-width: 992px) 
+    // only screen and (max-device-width: 1440px) 
     // only screen and (min-device-width: 992px), 
-    only screen and (max-device-width: 1440px) 
+    only screen and (max-device-width: 1439px) 
     { 
     }
 

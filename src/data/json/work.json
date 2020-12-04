@@ -16,7 +16,9 @@
    "cta": "",
    "alert": "",
    "mwidth": 1440,
-   "mheight": 800,
+   "mheight": 900,
+   "mwidthORIG": 1440,
+   "mheightORIG": 800,
    "availability": true
  },
  {
@@ -36,7 +38,9 @@
    "cta": "",
    "alert": "",
    "mwidth": 1440,
-   "mheight": 800,
+   "mheight": 900,
+   "mwidthORIG": 1440,
+   "mheightORIG": 800,
    "availability": false
  },
  {
@@ -56,7 +60,9 @@
    "cta": "",
    "alert": "",
    "mwidth": 1440,
-   "mheight": 800,
+   "mheight": 900,
+   "mwidthORIG": 1440,
+   "mheightORIG": 800,
    "availability": false
  },
  {
@@ -76,7 +82,9 @@
    "cta": "",
    "alert": "",
    "mwidth": 1440,
-   "mheight": 800,
+   "mheight": 900,
+   "mwidthORIG": 1440,
+   "mheightORIG": 800,
    "availability": false
  },
  {
@@ -97,6 +105,8 @@
    "alert": "",
    "mwidth": 1650,
    "mheight": 1250,
+   "mwidthORIG": 1650,
+   "mheightORIG": 1250,
    "availability": false
  },
  {
@@ -117,6 +127,8 @@
    "alert": "",
    "mwidth": 1280,
    "mheight": 720,
+   "mwidthORIG": 1280,
+   "mheightORIG": 720,
    "availability": true
  },
  {
@@ -137,6 +149,8 @@
    "alert": "This is a fully functional HTML5 presentation!",
    "mwidth": 1366,
    "mheight": 1300,
+   "mwidthORIG": 1366,
+   "mheightORIG": 1300,
    "availability": true
  },
  {
@@ -157,6 +171,8 @@
    "alert": "",
    "mwidth": 1280,
    "mheight": 720,
+   "mwidthORIG": 1280,
+   "mheightORIG": 720,
    "availability": true
  },
  {
@@ -177,6 +193,8 @@
    "alert": "This is a fully functional HTML5 presentation!",
    "mwidth": 990,
    "mheight": 1375,
+   "mwidthORIG": 990,
+   "mheightORIG": 1375,
    "availability": true
  },
  {
@@ -197,6 +215,8 @@
    "alert": "This is a fully functional HTML5 presentation!",
    "mwidth": 551,
    "mheight": 970,
+   "mwidthORIG": 551,
+   "mheightORIG": 970,
    "availability": true
  },
  {
@@ -217,6 +237,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 600,
+   "mwidthORIG": 300,
+   "mheightORIG": 600,
    "availability": true
  },
  {
@@ -237,6 +259,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -257,6 +281,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 300,
    "mheight": 600,
+   "mwidthORIG": 300,
+   "mheightORIG": 600,
    "availability": true
  },
  {
@@ -277,6 +303,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -297,6 +325,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -317,6 +347,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 300,
    "mheight": 600,
+   "mwidthORIG": 300,
+   "mheightORIG": 600,
    "availability": true
  },
  {
@@ -337,6 +369,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -357,6 +391,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -377,6 +413,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -397,6 +435,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -417,6 +457,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -437,6 +479,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 600,
+   "mwidthORIG": 300,
+   "mheightORIG": 600,
    "availability": true
  },
  {
@@ -457,6 +501,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -477,6 +523,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -497,6 +545,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -517,6 +567,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -537,6 +589,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -557,6 +611,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -577,6 +633,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -597,6 +655,8 @@
    "alert": "",
    "mwidth": 300,
    "mheight": 250,
+   "mwidthORIG": 300,
+   "mheightORIG": 250,
    "availability": true
  },
  {
@@ -617,6 +677,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 1500,
    "mheight": 693,
+   "mwidthORIG": 1500,
+   "mheightORIG": 693,
    "availability": true
  },
  {
@@ -637,6 +699,8 @@
    "alert": "This is a fully functional HTML5 presentation!",
    "mwidth": 450,
    "mheight": 770,
+   "mwidthORIG": 450,
+   "mheightORIG": 770,
    "availability": true
  },
  {
@@ -657,6 +721,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 2000,
    "mheight": 985,
+   "mwidthORIG": 2000,
+   "mheightORIG": 985,
    "availability": true
  },
  {
@@ -677,6 +743,8 @@
    "alert": "This is a fully functional HTML5 presentation!",
    "mwidth": 450,
    "mheight": 770,
+   "mwidthORIG": 450,
+   "mheightORIG": 770,
    "availability": true
  },
  {
@@ -697,6 +765,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 1790,
    "mheight": 1270,
+   "mwidthORIG": 1790,
+   "mheightORIG": 1270,
    "availability": true
  },
  {
@@ -717,6 +787,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 1790,
    "mheight": 1270,
+   "mwidthORIG": 1790,
+   "mheightORIG": 1270,
    "availability": true
  },
  {
@@ -737,6 +809,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 1500,
    "mheight": 860,
+   "mwidthORIG": 1500,
+   "mheightORIG": 860,
    "availability": true
  },
  {
@@ -757,6 +831,8 @@
    "alert": "This is a fully functional HTML5 presentation!",
    "mwidth": 1280,
    "mheight": 1150,
+   "mwidthORIG": 1280,
+   "mheightORIG": 1150,
    "availability": true
  },
  {
@@ -777,6 +853,8 @@
    "alert": "This is a fully functional HTML5 presentation!",
    "mwidth": 450,
    "mheight": 770,
+   "mwidthORIG": 450,
+   "mheightORIG": 770,
    "availability": true
  },
  {
@@ -797,6 +875,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 2000,
    "mheight": 1050,
+   "mwidthORIG": 2000,
+   "mheightORIG": 1050,
    "availability": true
  },
  {
@@ -817,6 +897,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 1900,
    "mheight": 1340,
+   "mwidthORIG": 1900,
+   "mheightORIG": 1340,
    "availability": true
  },
  {
@@ -824,28 +906,30 @@
    "album_id": "hearst",
    "image_index": 0,
    "src": "hearst00.jpg",
-   "src2": "hearst00.jpg",
+   "src2": "TownHallMeeting_103108.jpg",
    "caption": "Hearst Communications Town Hall",
    "date": "2008-10-01T00:00:00.00Z",
    "format": "video",
    "format_src": "flash",
-   "link": "flash/townhall/hearst_townhall.html",
-   "link2": "flash/townhall/hearst_townhall.html",
-   "link3": "flash/townhall/hearst_townhall.html",
-   "link4": "flash/townhall/hearst_townhall.html",
-   "cta": "click image for Flash* presentation",
+   "link": "486218561",
+   "link2": "486218561",
+   "link3": "486218561",
+   "link4": "486218561",
+   "cta": "click image to play video",
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
-   "mwidth": 1280,
-   "mheight": 960,
-   "availability": false
+   "mwidth": 1260,
+   "mheight": 945,
+   "mwidthORIG": 1440,
+   "mheightORIG": 1080,
+   "availability": true
  },
  {
    "album_index": 3,
    "album_id": "hearst",
    "image_index": 1,
    "src": "hearst01.jpg",
-   "src2": "hearst01.jpg",
-   "caption": "Cosmopolitan Magazine: Cosmo Bachelors",
+   "src2": "COSMO_EC_InstantHottie.jpg",
+   "caption": "Cosmopolitan Magazine: Instant Hotties",
    "date": "2008-09-01T00:00:00.00Z",
    "format": "banner",
    "format_src": "flash",
@@ -855,8 +939,10 @@
    "link4": "flash/cosmo/hearst_cosmo.html",
    "cta": "click image for Flash* presentation",
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
-   "mwidth": 980,
-   "mheight": 840,
+   "mwidth": 450,
+   "mheight": 360,
+   "mwidthORIG": 450,
+   "mheightORIG": 360,
    "availability": false
  },
  {
@@ -864,8 +950,8 @@
    "album_id": "hearst",
    "image_index": 2,
    "src": "hearst02.jpg",
-   "src2": "hearst02.jpg",
-   "caption": "Seventeen Magazine: Halloween 2008",
+   "src2": "ECard01_PaperDoll.jpg",
+   "caption": "Seventeen Magazine: Halloween - Paper Doll",
    "date": "2008-09-01T00:00:00.00Z",
    "format": "banner",
    "format_src": "flash",
@@ -875,8 +961,76 @@
    "link4": "flash/seventeen/hearst_seventeen.html",
    "cta": "click image for Flash* presentation",
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
-   "mwidth": 980,
-   "mheight": 480,
+   "mwidth": 450,
+   "mheight": 360,
+   "mwidthORIG": 450,
+   "mheightORIG": 360,
+   "availability": false
+ },
+ {
+   "album_index": 3,
+   "album_id": "hearst",
+   "image_index": 3,
+   "src": "hearst03.jpg",
+   "src2": "COSMO_EC_24Pack.jpg",
+   "caption": "Cosmopolitan Magazine: 24 Pack",
+   "date": "2008-09-01T00:00:00.00Z",
+   "format": "banner",
+   "format_src": "flash",
+   "link": "flash/cosmo/hearst_cosmo.html",
+   "link2": "flash/cosmo/hearst_cosmo.html",
+   "link3": "flash/cosmo/hearst_cosmo.html",
+   "link4": "flash/cosmo/hearst_cosmo.html",
+   "cta": "click image for Flash* presentation",
+   "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
+   "mwidth": 450,
+   "mheight": 360,
+   "mwidthORIG": 450,
+   "mheightORIG": 360,
+   "availability": false
+ },
+ {
+   "album_index": 3,
+   "album_id": "hearst",
+   "image_index": 4,
+   "src": "hearst04.jpg",
+   "src2": "ECard02_Dog.jpg",
+   "caption": "Seventeen Magazine: Halloween - Dog",
+   "date": "2008-09-01T00:00:00.00Z",
+   "format": "banner",
+   "format_src": "flash",
+   "link": "flash/seventeen/hearst_seventeen.html",
+   "link2": "flash/seventeen/hearst_seventeen.html",
+   "link3": "flash/seventeen/hearst_seventeen.html",
+   "link4": "flash/seventeen/hearst_seventeen.html",
+   "cta": "click image for Flash* presentation",
+   "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
+   "mwidth": 450,
+   "mheight": 360,
+   "mwidthORIG": 450,
+   "mheightORIG": 360,
+   "availability": false
+ },
+ {
+   "album_index": 3,
+   "album_id": "hearst",
+   "image_index": 5,
+   "src": "hearst05.jpg",
+   "src2": "COSMO_EC_Bachelors.jpg",
+   "caption": "Cosmopolitan Magazine: Beach Bachelors",
+   "date": "2008-09-01T00:00:00.00Z",
+   "format": "banner",
+   "format_src": "flash",
+   "link": "flash/cosmo/hearst_cosmo.html",
+   "link2": "flash/cosmo/hearst_cosmo.html",
+   "link3": "flash/cosmo/hearst_cosmo.html",
+   "link4": "flash/cosmo/hearst_cosmo.html",
+   "cta": "click image for Flash* presentation",
+   "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
+   "mwidth": 450,
+   "mheight": 360,
+   "mwidthORIG": 450,
+   "mheightORIG": 360,
    "availability": false
  },
  {
@@ -897,6 +1051,8 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 1350,
    "mheight": 952.5,
+   "mwidthORIG": 1350,
+   "mheightORIG": 952.5,
    "availability": false
  },
  {
@@ -917,6 +1073,8 @@
    "alert": "*Flash is deprecated technology, so please enjoy the video capture of the animation",
    "mwidth": 960,
    "mheight": 720,
+   "mwidthORIG": 960,
+   "mheightORIG": 720,
    "availability": false
  },
  {
@@ -937,6 +1095,8 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 785,
    "mheight": 700,
+   "mwidthORIG": 785,
+   "mheightORIG": 700,
    "availability": false
  },
  {
@@ -957,6 +1117,8 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 660,
    "mheight": 270,
+   "mwidthORIG": 660,
+   "mheightORIG": 270,
    "availability": false
  },
  {
@@ -977,6 +1139,8 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 336,
    "mheight": 310,
+   "mwidthORIG": 336,
+   "mheightORIG": 310,
    "availability": false
  },
  {
@@ -997,6 +1161,8 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 800,
    "mheight": 575,
+   "mwidthORIG": 800,
+   "mheightORIG": 575,
    "availability": false
  },
  {
@@ -1017,6 +1183,8 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 728,
    "mheight": 120,
+   "mwidthORIG": 728,
+   "mheightORIG": 120,
    "availability": false
  },
  {
@@ -1037,6 +1205,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1057,6 +1227,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1077,6 +1249,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1097,6 +1271,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1117,6 +1293,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1137,6 +1315,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1157,6 +1337,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1177,6 +1359,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1197,6 +1381,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1217,6 +1403,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1237,6 +1425,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1257,6 +1447,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1277,6 +1469,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": true
  },
  {
@@ -1297,6 +1491,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": false
  },
  {
@@ -1317,6 +1513,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": false
  },
  {
@@ -1324,48 +1522,74 @@
    "album_id": "other",
    "image_index": 0,
    "src": "other00.jpg",
-   "src2": "other00.jpg",
-   "caption": "Baeble Music - Closing Logo",
-   "date": "2018-01-01T00:00:00.00Z",
-   "format": "video",
-   "format_src": "image",
-   "link": "#",
-   "link2": "#",
-   "link3": "#",
-   "link4": "#",
-   "cta": "",
-   "alert": "",
-   "mwidth": 100,
-   "mheight": 100,
-   "availability": false
+   "src2": "SquirrelBit_3D.jpg",
+   "caption": "Kawaii SquirrelBit 3D Maze (Game)",
+   "date": "2020-06-14T00:00:00.00Z",
+   "format": "website",
+   "format_src": "external",
+   "link": "https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/other/SquirrelBit_3D_webgl_desktop/",
+   "link2": "https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/other/SquirrelBit_3D_webgl_desktop/",
+   "link3": "https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/other/SquirrelBit_3D_webgl_desktop/",
+   "link4": "https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/other/SquirrelBit_3D_webgl_desktop/",
+   "cta": "click image to play",
+   "alert": "This is a fully functional interactive presentation!",
+   "mwidth": 1600,
+   "mheight": 1080,
+   "mwidthORIG": 1600,
+   "mheightORIG": 1080,
+   "availability": true
  },
  {
    "album_index": 10,
    "album_id": "other",
    "image_index": 1,
    "src": "other01.jpg",
-   "src2": "other01.jpg",
-   "caption": "Baeble Music - Closing Logo",
-   "date": "2018-01-01T00:00:00.00Z",
+   "src2": "kawaii08_06_POSE_SL02_sm.jpg",
+   "caption": "Kawaii SquirrelBit 3D: Single Ladies",
+   "date": "2020-01-10T00:00:00.00Z",
    "format": "video",
-   "format_src": "image",
-   "link": "#",
-   "link2": "#",
-   "link3": "#",
-   "link4": "#",
-   "cta": "",
+   "format_src": "video",
+   "link": "486302798",
+   "link2": "486302798",
+   "link3": "486302798",
+   "link4": "486302798",
+   "cta": "click image to play video",
    "alert": "",
-   "mwidth": 100,
-   "mheight": 100,
-   "availability": false
+   "mwidth": 1440,
+   "mheight": 810,
+   "mwidthORIG": 1920,
+   "mheightORIG": 1080,
+   "availability": true
  },
  {
    "album_index": 10,
    "album_id": "other",
    "image_index": 2,
    "src": "other02.jpg",
-   "src2": "other02.jpg",
-   "caption": "Baeble Music - Closing Logo",
+   "src2": "IchibanYofuku_0320.jpg",
+   "caption": "Ichiban Yofuku",
+   "date": "2019-11-01T00:00:00.00Z",
+   "format": "website",
+   "format_src": "external",
+   "link": "https://ichibanyofukuinfo.wixsite.com/ichiban07",
+   "link2": "https://ichibanyofukuinfo.wixsite.com/ichiban07",
+   "link3": "https://ichibanyofukuinfo.wixsite.com/ichiban07",
+   "link4": "https://ichibanyofukuinfo.wixsite.com/ichiban07",
+   "cta": "",
+   "alert": "",
+   "mwidth": 1440,
+   "mheight": 880,
+   "mwidthORIG": 1440,
+   "mheightORIG": 800,
+   "availability": true
+ },
+ {
+   "album_index": 10,
+   "album_id": "other",
+   "image_index": 3,
+   "src": "other03.jpg",
+   "src2": "Baeble_logo_subway.jpg",
+   "caption": "Baeble Music: Closing Logo - Subway Busking",
    "date": "2018-01-01T00:00:00.00Z",
    "format": "video",
    "format_src": "image",
@@ -1377,26 +1601,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
-   "availability": false
- },
- {
-   "album_index": 10,
-   "album_id": "other",
-   "image_index": 3,
-   "src": "other03.jpg",
-   "src2": "other03.jpg",
-   "caption": "Baeble Music - Roku Ads",
-   "date": "2017-01-01T00:00:00.00Z",
-   "format": "banner",
-   "format_src": "image",
-   "link": "#",
-   "link2": "#",
-   "link3": "#",
-   "link4": "#",
-   "cta": "",
-   "alert": "",
-   "mwidth": 100,
-   "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": false
  },
  {
@@ -1404,10 +1610,10 @@
    "album_id": "other",
    "image_index": 4,
    "src": "other04.jpg",
-   "src2": "other04.jpg",
-   "caption": "Baeble Music - Roku Ads",
-   "date": "2017-01-01T00:00:00.00Z",
-   "format": "banner",
+   "src2": "Baeble_logo_garage.jpg",
+   "caption": "Baeble Music: Closing Logo - Garage",
+   "date": "2018-01-01T00:00:00.00Z",
+   "format": "video",
    "format_src": "image",
    "link": "#",
    "link2": "#",
@@ -1417,6 +1623,8 @@
    "alert": "",
    "mwidth": 100,
    "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
    "availability": false
  },
  {
@@ -1424,7 +1632,73 @@
    "album_id": "other",
    "image_index": 5,
    "src": "other05.jpg",
-   "src2": "other05.jpg",
+   "src2": "Baeble_logo_brooklyn.jpg",
+   "caption": "Baeble Music: Closing Logo - Brooklyn Wall",
+   "date": "2018-01-01T00:00:00.00Z",
+   "format": "video",
+   "format_src": "image",
+   "link": "#",
+   "link2": "#",
+   "link3": "#",
+   "link4": "#",
+   "cta": "",
+   "alert": "",
+   "mwidth": 100,
+   "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
+   "availability": false
+ },
+ {
+   "album_index": 10,
+   "album_id": "other",
+   "image_index": 6,
+   "src": "other06.jpg",
+   "src2": "Baeble_logo_Roku01.jpg",
+   "caption": "Baeble Music - Roku Ads",
+   "date": "2017-01-01T00:00:00.00Z",
+   "format": "website",
+   "format_src": "image",
+   "link": "#",
+   "link2": "#",
+   "link3": "#",
+   "link4": "#",
+   "cta": "",
+   "alert": "",
+   "mwidth": 100,
+   "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
+   "availability": true
+ },
+ {
+   "album_index": 10,
+   "album_id": "other",
+   "image_index": 7,
+   "src": "other07.jpg",
+   "src2": "Baeble_logo_Roku02.jpg",
+   "caption": "Baeble Music - Roku Ads",
+   "date": "2017-01-01T00:00:00.00Z",
+   "format": "website",
+   "format_src": "image",
+   "link": "#",
+   "link2": "#",
+   "link3": "#",
+   "link4": "#",
+   "cta": "",
+   "alert": "",
+   "mwidth": 100,
+   "mheight": 100,
+   "mwidthORIG": 100,
+   "mheightORIG": 100,
+   "availability": true
+ },
+ {
+   "album_index": 10,
+   "album_id": "other",
+   "image_index": 8,
+   "src": "other08.jpg",
+   "src2": "BenHavrilak.jpg",
    "caption": "Benjamin Havrilak, Art Director",
    "date": "2013-01-01T00:00:00.00Z",
    "format": "website",
@@ -1435,16 +1709,18 @@
    "link4": "html5/benhavrilak",
    "cta": "click image for HTML5 presentation",
    "alert": "This is a fully functional interactive presentation!",
-   "mwidth": 1350,
-   "mheight": 759.375,
+   "mwidth": 1920,
+   "mheight": 1080,
+   "mwidthORIG": 1350,
+   "mheightORIG": 759.375,
    "availability": true
  },
  {
    "album_index": 10,
    "album_id": "other",
-   "image_index": 6,
-   "src": "other06.jpg",
-   "src2": "other06.jpg",
+   "image_index": 9,
+   "src": "other09.jpg",
+   "src2": "PWS_Conquer.jpg",
    "caption": "Conquer Beauty by Paul Wharton Jr.",
    "date": "2013-01-01T00:00:00.00Z",
    "format": "website",
@@ -1457,14 +1733,16 @@
    "alert": "This is a fully functional interactive presentation!",
    "mwidth": 1920,
    "mheight": 1080,
+   "mwidthORIG": 1920,
+   "mheightORIG": 1080,
    "availability": true
  },
  {
    "album_index": 10,
    "album_id": "other",
-   "image_index": 7,
-   "src": "other07.jpg",
-   "src2": "other07.jpg",
+   "image_index": 10,
+   "src": "other10.jpg",
+   "src2": "PWS_blog.jpg",
    "caption": "Paul Wharton Style Blog",
    "date": "2013-01-01T00:00:00.00Z",
    "format": "website",
@@ -1477,14 +1755,16 @@
    "alert": "",
    "mwidth": 1920,
    "mheight": 1350,
+   "mwidthORIG": 1920,
+   "mheightORIG": 1350,
    "availability": false
  },
  {
    "album_index": 10,
    "album_id": "other",
-   "image_index": 8,
-   "src": "other08.jpg",
-   "src2": "other08.jpg",
+   "image_index": 11,
+   "src": "other11.jpg",
+   "src2": "249BarLounge.jpg",
    "caption": "249 Bar &bull; Lounge",
    "date": "2009-01-01T00:00:00.00Z",
    "format": "website",
@@ -1497,14 +1777,16 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 1200,
    "mheight": 666.6666667,
+   "mwidthORIG": 1200,
+   "mheightORIG": 666.6666667,
    "availability": false
  },
  {
    "album_index": 10,
    "album_id": "other",
-   "image_index": 9,
-   "src": "other09.jpg",
-   "src2": "other09.jpg",
+   "image_index": 12,
+   "src": "other12.jpg",
+   "src2": "LinkbyTwo.jpg",
    "caption": "Link by Two",
    "date": "2008-01-01T00:00:00.00Z",
    "format": "website",
@@ -1517,14 +1799,16 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 1350,
    "mheight": 675,
+   "mwidthORIG": 1350,
+   "mheightORIG": 675,
    "availability": false
  },
  {
    "album_index": 10,
    "album_id": "other",
-   "image_index": 10,
-   "src": "other10.jpg",
-   "src2": "other10.jpg",
+   "image_index": 13,
+   "src": "other13.jpg",
+   "src2": "NinaChoi.jpg",
    "caption": "Nina Choi Photography",
    "date": "2012-01-01T00:00:00.00Z",
    "format": "website",
@@ -1537,14 +1821,16 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 1350,
    "mheight": 763.59375,
+   "mwidthORIG": 1350,
+   "mheightORIG": 763.59375,
    "availability": false
  },
  {
    "album_index": 10,
    "album_id": "other",
-   "image_index": 11,
-   "src": "other11.jpg",
-   "src2": "other11.jpg",
+   "image_index": 14,
+   "src": "other14.jpg",
+   "src2": "CarlyJaneProductions.jpg",
    "caption": "Carly Jane Productions",
    "date": "2014-01-01T00:00:00.00Z",
    "format": "website",
@@ -1557,6 +1843,8 @@
    "alert": "*Flash is deprecated technology, so this will likely fail for security reasons and/or require a download/permission to use the Flash Plug-In.",
    "mwidth": 1355,
    "mheight": 900,
+   "mwidthORIG": 1355,
+   "mheightORIG": 900,
    "availability": false
  }
 ]
