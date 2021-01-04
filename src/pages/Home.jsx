@@ -34,7 +34,8 @@ export const Home = ({ locID }) => {
         <Canvas title='Home' shadowMap>
             <Suspense fallback={null}>
                 <Lights />
-                <Camera position={[0, 0, 7.5]} fov={40} />
+                <Camera />
+                {/* <Camera position={[0, 0, 7.5]} fov={40} /> */}
                 <Scene />
             </Suspense>
         </Canvas>

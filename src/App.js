@@ -22,7 +22,6 @@ import { NotFound } from './pages/NotFound';
 //#region ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
 
 const routes = {
-
     '/': () => <Home locID={'homeID'} loadStatus={true} />,
     '/shigimcp2020-react': () => <Home locID={'homeID'} loadStatus={true} />,
     '/shigimcp2020-react/': () => <Home locID={'homeID'} loadStatus={true} />,

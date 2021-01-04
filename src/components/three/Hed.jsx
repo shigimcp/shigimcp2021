@@ -48,13 +48,17 @@ function Text({ children, vAlign = 'center', hAlign = 'center', size = 1, color 
 
 export default function Hed() {
 
-    const hedRef = useRef()
+    const hedRef = useRef(null);
 
     return (
         <group ref={hedRef}>
-            <Text hAlign="left" position={[0.7625, 1.5, -4]} children="Shigeru McPherson" size={5} />
+            {/* <Text hAlign="left" position={[0.7625, 1.5, -4]} children="Shigeru McPherson" size={5} />
             <Text hAlign="left" position={[0, 0.8125, -4]} children="digital designer • art director" size={3} />
-            <Text hAlign="left" position={[-3.0625, 0.25, -4]} children="(work-in-progress)" size={2} />
+            <Text hAlign="left" position={[-3.0625, 0.25, -4]} children="(work-in-progress)" size={2} /> */}
+
+            <Text hAlign="left" position={[1.2625, 0.75, -4]} children="Shigeru McPherson" size={5} />
+            <Text hAlign="left" position={[0.5, 0.03125, -4]} children="digital designer • art director" size={3} />
+            <Text hAlign="left" position={[-2.03125, -0.5625, -4]} children="( a work in progress... )" size={2} />
         </group>
-    )
+    );
 }

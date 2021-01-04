@@ -647,8 +647,8 @@ function WorkList({ currentEmployer }) {
 
             <div className='toggleBtnDiv' id='toggleBtnDivID'>
                 <br />
-                <button className={webiFrameOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { clearContent(); }}> Close Iframe </button>
-                <button className={videoOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { clearContent(); }}> Close Video </button>
+                <button className={webiFrameOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { clearContent(); }}> Close </button>
+                <button className={videoOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { clearContent(); }}> Close </button>
             </div>
 
         {/* #endregion ------------------------- CLOSE TOGGLE BUTTON ------------------------- */}

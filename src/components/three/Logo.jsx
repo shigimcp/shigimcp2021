@@ -129,6 +129,7 @@ function LogoShape(props) {
 
         let xOffset = bSize.x * -0.5;
         let yOffset = bSize.y * 0.5;
+        // let yOffset = bSize.y * 0.46875;
 
         logoShape_Ref.current.children.forEach(item => {
             item.position.x = xOffset;
