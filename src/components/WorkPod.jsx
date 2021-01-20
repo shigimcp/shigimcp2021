@@ -96,13 +96,17 @@ export const WorkPod = (props) => {
                     <Masonry className='masonry' id='bannerMasonryID' gutter='1.25vw' ref={bannerMasonry_Ref}>
 
                         {props.workArray.map((workImage) => (
+//                        {props.workArray.filter(workImage => workImage.availability).map((workImage) => (
 
                             <div className='workItem' id={workImage.link2} key={'banner' + workImage.album_id + workImage.image_index} ref={workItem_Ref}>
 
                                 <img
                                     key={workImage.album_id + workImage.image_index}
 
-                                    className={!workImage.availability ? 'missingImg' : workImage.format === 'print' ? 'printImg' : 'masonryImg'}
+                                    // className='printImg'
+                                    // className='masonryImg'
+                                    className={workImage.format === 'print' ? 'printImg' : 'masonryImg'}
+                                    // className={!workImage.availability ? 'missingImg' : workImage.format === 'print' ? 'printImg' : 'masonryImg'}
                                     id={workImage.album_id + workImage.image_index + '_imgID'}
                                     // src={remoteLoc + workImage.album_id + '/sl/' + workImage.src}
                                     // src={remoteLoc + workImage.album_id + '/sl02/' + workImage.src2}

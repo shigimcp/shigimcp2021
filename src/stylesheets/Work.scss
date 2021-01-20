@@ -132,6 +132,8 @@
                     // cursor: pointer;
 
                     opacity: 0.375;
+
+                    // visibility: hidden;
                 }
 
                 .masonryInfo {
@@ -143,6 +145,7 @@
                     // background: #eeeeee;
                     @include bgGradient03();
 
+                    font-size: 0.875em;
                     letter-spacing: .0375em;
 
                     margin: 0;
@@ -234,7 +237,7 @@
 
         // .webiFrameOpen {
         .webiFrame {
-            // border: 2px solid #00ffff;
+            // border: 2px solid #0000ff;
             border: none;
 
             // background: none;

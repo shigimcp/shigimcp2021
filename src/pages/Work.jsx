@@ -87,17 +87,32 @@ function WorkList({ currentEmployer }) {
 
     //#region ==================== WORK FORMAT ARRAYS ==================== */
 
-    const bannerArray = work.filter(thisFormat => thisFormat.format === 'banner').map((workImage) => (
+    // const bannerArray = work.filter(thisFormat => thisFormat.format === 'banner').map((workImage) => (
+    const bannerArray = work.filter(thisFormat => thisFormat.format === 'banner' && thisFormat.availability).map((workImage) => (
         workImage
     ));
 
-    const webArray = work.filter(thisFormat => thisFormat.format === 'html5' || thisFormat.format === 'video' || thisFormat.format === 'website' || thisFormat.format === 'mobile').map((workImage) => (
+    // const webArray = work.filter(thisFormat => thisFormat.format === 'html5' || thisFormat.format === 'video' || thisFormat.format === 'website' || thisFormat.format === 'mobile').map((workImage) => (
+    const webArray = work.filter(thisFormat => (thisFormat.format === 'html5' && thisFormat.availability) || (thisFormat.format === 'video' && thisFormat.availability) || (thisFormat.format === 'website' && thisFormat.availability) || (thisFormat.format === 'mobile' && thisFormat.availability)).map((workImage) => (
         workImage
     ));
 
     const printArray = work.filter(thisFormat => thisFormat.format === 'print').map((workImage) => (
         workImage
     ));
+
+
+    // console.log('');
+    // console.log('bannerArray = ' + bannerArray);
+    // console.log(bannerArray);
+
+    // console.log('');
+    // console.log('webArray = ' + webArray);
+    // console.log(webArray);
+
+    // console.log('');
+    // console.log('printArray = ' + printArray);
+    // console.log(printArray);
 
     //#endregion ==================== WORK FORMAT ARRAYS ==================== */
 
@@ -250,10 +265,13 @@ function WorkList({ currentEmployer }) {
 
                 setWebiFrameOpen(true);
 
-                //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized content  - - - - - - - - - - -
+                //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized / oddly-sized content  - - - - - - - - - - -
 
                 // if (thisWorkImage.mheight >= window.innerHeight) {
-                if (thisWorkImage.mwidth >= window.innerWidth || thisWorkImage.mheight >= window.innerHeight) {
+                // if (thisWorkImage.mwidth >= window.innerWidth || thisWorkImage.mheight >= window.innerHeight) {
+                if (thisWorkImage.mwidth >= window.innerWidth || thisWorkImage.mheight >= window.innerHeight || thisWorkImage.mwidth <= window.innerWidth * 0.5 || thisWorkImage.mheight <= window.innerHeight * 0.5) {
+
+                    //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - TOO BIG / SMALL  - - - - - - - - - - -
 
                     // let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.9;
                     // let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.875;
@@ -263,14 +281,20 @@ function WorkList({ currentEmployer }) {
 
                     gsap.set([webiFrame_Ref.current], { top: thisY, scale: thisScale, transformOrigin: '50% 0', immediateRender: true });
 
+                    //#endregion - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - TOO BIG / SMALL  - - - - - - - - - - -
+
                 } else {
+
+                    //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - JUUUUST RIIIIGHT  - - - - - - - - - - -
 
                     let thisY = (window.innerHeight - thisWorkImage.mheight) / 2;
 
                     gsap.set([webiFrame_Ref.current], { top: thisY, transformOrigin: '50% 0', immediateRender: true });
+
+                    //#endregion - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - JUUUUST RIIIIGHT  - - - - - - - - - - -
                 }
 
-                //#endregion - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized content  - - - - - - - - - - -
+                //#endregion - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized / oddly-sized content  - - - - - - - - - - -
 
                 break;
 

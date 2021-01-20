@@ -27,7 +27,18 @@ import myData from '../data/MyData';
 
 //#region ==================== CONSTANTS ====================
 
+// console.log(myData);
+
 const employerData = myData[0];
+const workData = myData[1];
+// const aboutData = myData[2];
+// const skillData = myData[3];
+
+// console.log(employerData);
+// console.log(workData);
+// // console.log(aboutData);
+// // console.log(skillData);
+
 
 // const workNavHeight = scssVars.workNavHeight;
 // // const workNavHeight = parseInt(scssVars.workNavHeight);
@@ -199,7 +210,39 @@ export const Header = () => {
     const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
 
 
+    //#region -------------------- filteredNavArray: REF https://www.samanthaming.com/tidbits/43-3-ways-to-remove-array-duplicates/ --------------------
+    //        -------------------- NOTE: This step is to check * workData * for employers that have content to display --------------------
+
+    // console.log('');
+    // console.log('------------------------- filteredNavArray: REF https://www.samanthaming.com/tidbits/43-3-ways-to-remove-array-duplicates/ -------------------------');
+    // console.log('------------------------- NOTE: This step is to check * workData * for employers that have content to display -------------------------');
+    // // console.log('');
+
+
+    let filteredNavArray = workData.filter(thisContent => thisContent.availability === true).map((workImage) => (
+        workImage.album_id
+    ));
+
+    // filteredNavArray = new Set(filteredNavArray);
+    // filteredNavArray = Array.from(filteredNavArray);
+    filteredNavArray = Array.from(new Set(filteredNavArray));
+
+
+    // console.log('filteredNavArray = ' + filteredNavArray);
+    // console.log(filteredNavArray);
+
+    //#endregion -------------------- filteredNavArray: REF https://www.samanthaming.com/tidbits/43-3-ways-to-remove-array-duplicates/ --------------------
+
+
+    //#region -------------------- FUNCTION: WorkNavItem(props) --------------------
+
     function WorkNavItem(props) {
+
+        // console.log('');
+        // console.log('------------------------- FUNCTION: WorkNavItem(props) -------------------------');
+        // console.log('props = ' + props);
+        // console.log(props);
+
 
         return (
             <A href={props.link} className='employerIcon' onClick={() => { workNavShow.pause(); setCurrentEmployer(props.album_id); }}>
@@ -208,7 +251,12 @@ export const Header = () => {
         )
     }
 
-    const WorkNavItems = employerData.map((employer) =>
+
+    // console.log('');
+    // console.log('------------------------- CONST: WorkNavItems -------------------------');
+
+    // const WorkNavItems = employerData.map((employer) =>
+    const WorkNavItems = employerData.filter(contentExists => filteredNavArray.includes(contentExists.album_id)).map((employer) =>
         <WorkNavItem
             key={employer.album_id}
             album_id={employer.album_id}
@@ -223,6 +271,12 @@ export const Header = () => {
             link={'/shigimcp2020-react/work/' + employer.album_id}
         />
     );
+
+
+    // console.log('WorkNavItems = ' + WorkNavItems);
+    // console.log(WorkNavItems);
+
+    //#endregion -------------------- FUNCTION: WorkNavItem(props) --------------------
 
     //#endregion ==================== WorkNavItems: REF https://reactjs.org/docs/lists-and-keys.html ====================
 
@@ -345,6 +399,7 @@ export const Header = () => {
 
                 <div className='workNav' id='workNavBarID' ref={e => { workNav_Ref = e }}>
                     {WorkNavItems}
+                    {/* {WorkBlahItems} */}
                 </div>
 
                 <div className='navBar' id='navBarID' ref={navBar_Ref}>
