@@ -697,6 +697,7 @@ function WorkList({ currentEmployer }) {
 export const Work = ({ currentEmployer, locID }) => {
 
     localStorage.setItem('navLoc', locID);
+    // localStorage.setItem('emplLoc', 'eaID');
 
     work = myData[1].filter(thisEmployer => thisEmployer.album_id === currentEmployer);
 

@@ -5,6 +5,7 @@ import React from 'react';
 import { useRef, useEffect, useState } from 'react';
 import { useLayoutEffect } from 'react';
 import { A } from 'hookrouter';
+import {usePath} from 'hookrouter';
 
 import gsap from 'gsap';
 
@@ -25,7 +26,7 @@ import myData from '../data/MyData';
 //#endregion ==================== IMPORTS ====================
 
 
-//#region ==================== CONSTANTS ====================
+//#region ==================== CONSTANTS n VARS ====================
 
 // console.log(myData);
 
@@ -34,37 +35,42 @@ const workData = myData[1];
 // const aboutData = myData[2];
 // const skillData = myData[3];
 
-// console.log(employerData);
-// console.log(workData);
-// // console.log(aboutData);
-// // console.log(skillData);
-
-
-// const workNavHeight = scssVars.workNavHeight;
-// // const workNavHeight = parseInt(scssVars.workNavHeight);
-
-// console.log(scssVars);
-// console.log(scssVars.workNavHeight);
-// console.log(workNavHeight);
-
 const workNavTL = new gsap.timeline({ paused: true });
 const mobileNavTL = new gsap.timeline({ paused: true });
 
-//#endregion ==================== CONSTANTS ====================
+let navLoc;
+let emplLoc;
+
+//#endregion ==================== CONSTANTS n VARS ====================
 
 
 //#region ==================== FUNCTIONS ====================
 
 //#region -------------------- FUNCTION: moveObjectTo(thisObject, thisTarget) --------------------
 
-function moveObjectTo(thisObject, thisTarget) {
+// function moveObjectTo(thisObject, thisTarget) {
 
-    const thisLocX = document.getElementById(thisTarget).offsetLeft;
-    const thisLocY = document.getElementById(thisTarget).offsetTop;
-    const thisLocW = document.getElementById(thisTarget).offsetWidth;
+//     // console.log('');
+//     // console.log('------------------------- FUNCTION: moveObjectTo(thisObject, thisTarget) -------------------------');
 
-    gsap.to([thisObject], { x: thisLocX, top: thisLocY, width: thisLocW, duration: 0.375 });
-}
+//     // console.log('thisObject = ' + thisObject);
+//     // console.log('thisObject.id = ' + thisObject.id);
+//     // // console.log(thisObject);
+
+//     // console.log('');
+//     // console.log('thisTarget = ' + thisTarget);
+//     // // console.log('thisTarget = ' + thisTarget + '     thisTarget.className = ' + thisTarget.className);
+//     // // console.log(thisTarget);
+
+
+//     const thisLocX = document.getElementById(thisTarget).offsetLeft;
+//     // const thisLocY = document.getElementById(thisTarget).offsetTop;
+//     const thisLocW = document.getElementById(thisTarget).offsetWidth;
+//     // const thisLocH = document.getElementById(thisTarget).offsetHeight;
+
+//     gsap.to([thisObject], { x: thisLocX, width: thisLocW, duration: 0.375 });
+//     // gsap.to([thisObject], { x: thisLocX, top: thisLocY, width: thisLocW, height: thisLocH, duration: 0.375 });
+// }
 
 //#endregion -------------------- FUNCTION: moveObjectTo(thisObject, thisTarget) --------------------
 
@@ -76,29 +82,14 @@ function moveObjectTo(thisObject, thisTarget) {
 
 export const Header = () => {
 
-    //#region ==================== [INTIAL] SET activeNavDiv ====================
-
-    let thisLoc = localStorage.getItem('navLoc');
-
-    if (document.getElementById(thisLoc)) {
-
-        const thisLocX = document.getElementById(thisLoc).offsetLeft;
-        const thisLocY = document.getElementById(thisLoc).offsetTop;
-        const thisLocW = document.getElementById(thisLoc).offsetWidth;
-
-        gsap.set([document.getElementById('activeNavDivID')], { x: thisLocX, top: thisLocY, width: thisLocW });
-    }
-
-    //#endregion ==================== [INTIAL] SET activeNavDiv ====================
-
-
     //#region ==================== use DEFs ====================
 
-    let navLoc = localStorage.getItem('navLoc');
+    // const currentPath = usePath();
+    let currentPath = usePath();
 
     const [workNavShow, setWorkNavShow] = useState(null);
 
-    // const [currentEmployer, setCurrentEmployer] = useState('mimi');
+    // const [currentEmployer, setCurrentEmployer] = useState(null);
     const [currentEmployer, setCurrentEmployer] = useState('ea');
     const initEmployer = '/shigimcp2020-react/work/' + currentEmployer;
 
@@ -110,29 +101,33 @@ export const Header = () => {
     //#region ==================== ASSETS _Ref ====================
 
     let workNav_Ref = useRef(null);
-    let activeNavDiv_Ref = useRef(null);
+    let activeEmplDiv_Ref = useRef(null);
+
     let navBar_Ref = useRef(null);
+    let activeNavDiv_Ref = useRef(null);
 
     //#endregion ==================== ASSETS _Ref ====================
 
 
 
-    //#region ==================== useLayoutEffect: [navLoc, setNavLoc] ====================
+    //#region ==================== useLayoutEffect: [navLoc, setNavLoc] / WINDOW RESIZE ====================
 
     useLayoutEffect(() => {
 
         // console.log('');
-        // console.log('------------------------- useLayoutEffect: [navLoc, setNavLoc] -------------------------');
+        // console.log('------------------------- useLayoutEffect: [navLoc, setNavLoc] / WINDOW RESIZE -------------------------');
 
         //#region -------------------- setActiveNavDiv --------------------
 
         const setActiveNavDiv = () => {
 
-            const thisLocX = document.getElementById(navLoc).offsetLeft;
-            const thisLocY = document.getElementById(navLoc).offsetTop;
-            const thisLocW = document.getElementById(navLoc).offsetWidth;
+            let thisLocX = document.getElementById(navLoc).offsetLeft;
+            // let thisLocY = document.getElementById(navLoc).offsetTop;
+            let thisLocW = document.getElementById(navLoc).offsetWidth;
+            // let thisLocH = document.getElementById(navLoc).offsetHeight;
 
-            gsap.set([activeNavDiv_Ref.current], { x: thisLocX, top: thisLocY, width: thisLocW });
+            gsap.set([activeNavDiv_Ref.current], { x: thisLocX, width: thisLocW });
+            // gsap.set([activeNavDiv_Ref.current], { x: thisLocX, top: thisLocY, width: thisLocW, height: thisLocH });
         }
 
         //#endregion -------------------- setActiveNavDiv --------------------
@@ -151,9 +146,101 @@ export const Header = () => {
 
         //#endregion -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
 
-    }, [navLoc]);
+    });
 
-    //#endregion ==================== useLayoutEffect: [navLoc, setNavLoc] ====================
+    //#endregion ==================== useLayoutEffect: [navLoc, setNavLoc] / WINDOW RESIZE ====================
+
+
+    //#region ==================== useEffect: currentPath ====================
+
+    useEffect(() => {
+
+        // // console.log('');
+        // console.log('------------------------- useEffect: currentPath -------------------------');
+
+        // // console.log('');
+        // console.log('currentPath = ' + currentPath);
+
+
+        const lastChar = currentPath.charAt(currentPath.length-1);
+
+        if (lastChar === '/') {
+            currentPath = currentPath.slice(0, -1);
+        }
+
+
+        // // console.log('');
+        // console.log('currentPath = ' + currentPath);
+
+
+        const pathEnd = currentPath.split('/').pop();
+
+        const pathMid = currentPath.substring(
+            currentPath.lastIndexOf('react/') + 6, 
+            currentPath.lastIndexOf('/')
+        );
+
+
+        // console.log('');
+        // console.log('pathEnd = ' + pathEnd);
+        // console.log('pathMid = ' + pathMid);
+
+
+        let thisEmplLocX;
+        // let thisEmplLocY;
+        let thisEmplLocW;
+        // let thisEmplLocH;
+
+
+        switch (pathMid) {
+
+            case '/':
+
+                navLoc = pathEnd + 'ID';
+                emplLoc = '';
+
+                break;
+
+            case 'work':
+
+                navLoc = pathMid + 'ID';
+                emplLoc = pathEnd + 'ID';
+
+                thisEmplLocX = document.getElementById(emplLoc).offsetLeft;
+                // thisEmplLocY = document.getElementById(emplLoc).offsetTop;
+                thisEmplLocW = document.getElementById(emplLoc).offsetWidth;
+                // thisEmplLocH = document.getElementById(emplLoc).offsetHeight;
+
+                break;
+
+            default:
+
+                navLoc = 'homeID';
+                emplLoc = '';
+
+                break;
+        }
+
+
+        // console.log('');
+        // console.log('navLoc = ' + navLoc);
+        // console.log('emplLoc = ' + emplLoc);
+
+
+        const thisNavLocX = document.getElementById(navLoc).offsetLeft;
+        // const thisNavLocY = document.getElementById(navLoc).offsetTop;
+        const thisNavLocW = document.getElementById(navLoc).offsetWidth;
+        // const thisNavLocH = document.getElementById(navLoc).offsetHeight;
+
+        gsap.to([document.getElementById('activeNavDivID')], { x: thisNavLocX, width: thisNavLocW, duration: 0.375 });
+        // gsap.to([document.getElementById('activeNavDivID')], { x: thisNavLocX, top: thisNavLocY, width: thisNavLocW, height: thisNavLocH, duration: 0.375 });
+
+        gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, width: thisEmplLocW, duration: 0.375 });
+        // gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, top: thisEmplLocY, width: thisEmplLocW, height: thisEmplLocH, duration: 0.375 });
+
+    }, [currentPath]);
+
+    //#endregion ==================== useEffect: currentPath ====================
 
 
     //#region ==================== useEffect: [workNavShow, setWorkNavShow] ====================
@@ -176,8 +263,7 @@ export const Header = () => {
 
         window.scrollTo(0, 0);
 
-    // }, []);
-    }, [navLoc, workNavShow]);
+    }, [workNavShow]);
 
     //#endregion ==================== useEffect: [workNavShow, setWorkNavShow] ====================
 
@@ -199,6 +285,7 @@ export const Header = () => {
         } else {
             mobileNavTL.reverse();
         }
+
     }, [mobileNavShow]);
 
     //#endregion ==================== useEffect: [mobileNavShow, setMobileNavShow] ====================
@@ -245,7 +332,7 @@ export const Header = () => {
 
 
         return (
-            <A href={props.link} className='employerIcon' onClick={() => { workNavShow.pause(); setCurrentEmployer(props.album_id); }}>
+            <A href={props.link} className='employerIcon' id={props.album_id + 'ID'} onClick={() => { workNavShow.pause(); setCurrentEmployer(props.album_id); }}>
                 <img src={remoteLoc + props.employerLogo} alt={'employer: ' + props.employer} />
             </A>
         )
@@ -299,7 +386,8 @@ export const Header = () => {
             {/* #region ==================== LOGO (inline SVG) ==================== */}
 
                 {/* <A href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}> */}
-                <A href='/shigimcp2020-react' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, 'homeID'); setMobileNavShow(false); }}>
+                {/* <A href='/shigimcp2020-react' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, 'homeID'); setMobileNavShow(false); }}> */}
+                <A href='/shigimcp2020-react' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>
 
                     <svg version='1.1' className='logoIcon' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880'>
                     {/* <svg version='1.1' className='logoIcon' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}> */}
@@ -398,19 +486,19 @@ export const Header = () => {
             <div className='navBarContainer'>
 
                 <div className='workNav' id='workNavBarID' ref={e => { workNav_Ref = e }}>
+                    <div className='activeEmplDiv' id='activeEmplDivID' ref={activeEmplDiv_Ref}></div>
                     {WorkNavItems}
-                    {/* {WorkBlahItems} */}
                 </div>
 
                 <div className='navBar' id='navBarID' ref={navBar_Ref}>
 
                     <div className='activeNavDiv' id='activeNavDivID' ref={activeNavDiv_Ref}></div>
 
-                    <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Home</A>
-                    <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Work</A>
-                    <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>About</A>
-                    <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Resume</A>
-                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}>Contact</A>
+                    <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
+                    <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); setMobileNavShow(false); }}>Work</A>
+                    <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>About</A>
+                    <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>Resume</A>
+                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>Contact</A>
 
                 </div>
 

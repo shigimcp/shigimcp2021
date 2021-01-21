@@ -333,6 +333,7 @@
                 // width: auto;
                 // height: $navBar-height;
                 height: inherit;
+                // height: 80px;
 
                 position: absolute;
                 // top: $header-height;
@@ -447,6 +448,30 @@
             }
 
             /* #endregion - - - - - - - - - - - .employerIcon: Ferda A separators... - - - - - - - - - - - */
+
+            .activeEmplDiv {
+                // border: 2px inset #00ffff;
+
+                // @include bgGradient01();
+                // @include bgGradient02();
+                @include bgGradient03();
+                // mix-blend-mode: multiply;
+
+                color: #ff0000;
+                text-align: center;
+
+                // width: auto;
+                // height: $navBar-height;
+                height: inherit;
+                // height: 90%;
+
+                position: absolute;
+                // top: $header-height;
+                top: 0;
+                // left: 0;
+                // left: 50vw;
+                // z-index: -1;
+            }
 
             .alert {
                 border: 1px solid #00ffff;

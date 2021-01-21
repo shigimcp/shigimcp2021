@@ -87,16 +87,16 @@ export const WorkPod = (props) => {
         <>
 
             <section className='masonrySection' id={podID} sectionid={podID}>
-{/* 
-                <hr />
+
+                {/* <hr />
                 <h2>{podHed}</h2>
-                <hr />
- */}
+                <hr /> */}
+
                 <ResponsiveMasonry columnsCountBreakPoints={masonryBreakpoints}>
                     <Masonry className='masonry' id='bannerMasonryID' gutter='1.25vw' ref={bannerMasonry_Ref}>
 
+                        {/* {props.workArray.filter(workImage => workImage.availability).map((workImage) => ( */}
                         {props.workArray.map((workImage) => (
-//                        {props.workArray.filter(workImage => workImage.availability).map((workImage) => (
 
                             <div className='workItem' id={workImage.link2} key={'banner' + workImage.album_id + workImage.image_index} ref={workItem_Ref}>
 
