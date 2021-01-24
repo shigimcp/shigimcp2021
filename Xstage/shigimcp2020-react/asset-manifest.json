@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/shigimcp2020-react/static/css/main.1b06042b.chunk.css",
-    "main.js": "/shigimcp2020-react/static/js/main.3d17d7a5.chunk.js",
-    "main.js.map": "/shigimcp2020-react/static/js/main.3d17d7a5.chunk.js.map",
+    "main.js": "/shigimcp2020-react/static/js/main.c3b2a093.chunk.js",
+    "main.js.map": "/shigimcp2020-react/static/js/main.c3b2a093.chunk.js.map",
     "runtime-main.js": "/shigimcp2020-react/static/js/runtime-main.2be22644.js",
     "runtime-main.js.map": "/shigimcp2020-react/static/js/runtime-main.2be22644.js.map",
-    "static/js/2.589547ed.chunk.js": "/shigimcp2020-react/static/js/2.589547ed.chunk.js",
-    "static/js/2.589547ed.chunk.js.map": "/shigimcp2020-react/static/js/2.589547ed.chunk.js.map",
+    "static/js/2.e225aeca.chunk.js": "/shigimcp2020-react/static/js/2.e225aeca.chunk.js",
+    "static/js/2.e225aeca.chunk.js.map": "/shigimcp2020-react/static/js/2.e225aeca.chunk.js.map",
     "index.html": "/shigimcp2020-react/index.html",
     "static/css/main.1b06042b.chunk.css.map": "/shigimcp2020-react/static/css/main.1b06042b.chunk.css.map",
-    "static/js/2.589547ed.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.589547ed.chunk.js.LICENSE.txt",
+    "static/js/2.e225aeca.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.e225aeca.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/shigimcp2020-react/static/media/ChaleParNinSix.e986494b.svg",
     "static/media/BSPS_bottle.a95786b2.png": "/shigimcp2020-react/static/media/BSPS_bottle.a95786b2.png",
     "static/media/BSPS_image.03a1cd3f.jpg": "/shigimcp2020-react/static/media/BSPS_image.03a1cd3f.jpg",
@@ -100,8 +100,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.2be22644.js",
-    "static/js/2.589547ed.chunk.js",
+    "static/js/2.e225aeca.chunk.js",
     "static/css/main.1b06042b.chunk.css",
-    "static/js/main.3d17d7a5.chunk.js"
+    "static/js/main.c3b2a093.chunk.js"
   ]
 }
