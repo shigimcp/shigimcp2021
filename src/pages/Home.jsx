@@ -21,9 +21,18 @@ import Camera from '../components/three/Camera';
 
 
 
-export const Home = ({ locID }) => {
+// export const Home = ({ locID }) => {
+export const Home = (props) => {
 
-    localStorage.setItem('navLoc', locID);
+    // console.log('');
+    // console.log('==================== COMPONENT: Home.jsx ====================');
+
+    // // console.log('');
+    // console.log('props = ' + props);
+    // console.log(props);
+
+
+    // localStorage.setItem('navLoc', locID);
 
     window.scene = new THREE.Scene();
     window.THREE = THREE;

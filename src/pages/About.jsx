@@ -429,9 +429,18 @@ function resetThoughts(parentContainer, thoughtBubble) {
 
 //#region ==================== EXPORT ABOUT ====================
 
-export const About = ({ locID }) => {
+// export const About = ({ locID }) => {
+export const About = (props) => {
 
-    localStorage.setItem('navLoc', locID);
+    // console.log('');
+    // console.log('==================== COMPONENT: About.jsx ====================');
+
+    // // console.log('');
+    // console.log('props = ' + props);
+    // console.log(props);
+
+
+    // localStorage.setItem('navLoc', locID);
 
 
     //#region ==================== ASSETS _Ref ====================

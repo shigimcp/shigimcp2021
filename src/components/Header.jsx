@@ -36,6 +36,7 @@ const workData = myData[1];
 // const skillData = myData[3];
 
 const workNavTL = new gsap.timeline({ paused: true });
+const resumeNavTL = new gsap.timeline({ paused: true });
 const mobileNavTL = new gsap.timeline({ paused: true });
 
 let navLoc;
@@ -44,54 +45,32 @@ let emplLoc;
 //#endregion ==================== CONSTANTS n VARS ====================
 
 
-//#region ==================== FUNCTIONS ====================
-
-//#region -------------------- FUNCTION: moveObjectTo(thisObject, thisTarget) --------------------
-
-// function moveObjectTo(thisObject, thisTarget) {
-
-//     // console.log('');
-//     // console.log('------------------------- FUNCTION: moveObjectTo(thisObject, thisTarget) -------------------------');
-
-//     // console.log('thisObject = ' + thisObject);
-//     // console.log('thisObject.id = ' + thisObject.id);
-//     // // console.log(thisObject);
-
-//     // console.log('');
-//     // console.log('thisTarget = ' + thisTarget);
-//     // // console.log('thisTarget = ' + thisTarget + '     thisTarget.className = ' + thisTarget.className);
-//     // // console.log(thisTarget);
-
-
-//     const thisLocX = document.getElementById(thisTarget).offsetLeft;
-//     // const thisLocY = document.getElementById(thisTarget).offsetTop;
-//     const thisLocW = document.getElementById(thisTarget).offsetWidth;
-//     // const thisLocH = document.getElementById(thisTarget).offsetHeight;
-
-//     gsap.to([thisObject], { x: thisLocX, width: thisLocW, duration: 0.375 });
-//     // gsap.to([thisObject], { x: thisLocX, top: thisLocY, width: thisLocW, height: thisLocH, duration: 0.375 });
-// }
-
-//#endregion -------------------- FUNCTION: moveObjectTo(thisObject, thisTarget) --------------------
-
-//#endregion ==================== FUNCTIONS ====================
-
-
 
 //#region ==================== EXPORT HEADER ====================
 
-export const Header = () => {
+export const Header = (props) => {
+
+    // console.log('');
+    // console.log('==================== COMPONENT: Header.jsx ====================');
+
+    // // console.log('');
+    // console.log('props = ' + props);
+    // console.log(props);
+
 
     //#region ==================== use DEFs ====================
 
     // const currentPath = usePath();
-    let currentPath = usePath();
+    // let currentPath = usePath();
+    let useCurrentPath = usePath();
 
     const [workNavShow, setWorkNavShow] = useState(null);
 
     // const [currentEmployer, setCurrentEmployer] = useState(null);
     const [currentEmployer, setCurrentEmployer] = useState('ea');
     const initEmployer = '/shigimcp2020-react/work/' + currentEmployer;
+
+    const [resumeNavShow, setResumeNavShow] = useState(null);
 
     const [mobileNavShow, setMobileNavShow] = useState(false);
 
@@ -100,22 +79,24 @@ export const Header = () => {
 
     //#region ==================== ASSETS _Ref ====================
 
+    let navBar_Ref = useRef(null);
+    let activeNavDiv_Ref = useRef(null);
+
     let workNav_Ref = useRef(null);
     let activeEmplDiv_Ref = useRef(null);
 
-    let navBar_Ref = useRef(null);
-    let activeNavDiv_Ref = useRef(null);
+    let resumeNav_Ref = useRef(null);
 
     //#endregion ==================== ASSETS _Ref ====================
 
 
 
-    //#region ==================== useLayoutEffect: [navLoc, setNavLoc] / WINDOW RESIZE ====================
+    //#region ==================== useLayoutEffect: setActiveNavDiv / WINDOW RESIZE ====================
 
     useLayoutEffect(() => {
 
         // console.log('');
-        // console.log('------------------------- useLayoutEffect: [navLoc, setNavLoc] / WINDOW RESIZE -------------------------');
+        // console.log('------------------------- useLayoutEffect: setActiveNavDiv / WINDOW RESIZE -------------------------');
 
         //#region -------------------- setActiveNavDiv --------------------
 
@@ -148,15 +129,18 @@ export const Header = () => {
 
     });
 
-    //#endregion ==================== useLayoutEffect: [navLoc, setNavLoc] / WINDOW RESIZE ====================
+    //#endregion ==================== useLayoutEffect: setActiveNavDiv / WINDOW RESIZE ====================
 
 
-    //#region ==================== useEffect: currentPath ====================
+    //#region ==================== useEffect: currentPath => set active[X]Divs ====================
 
     useEffect(() => {
 
         // // console.log('');
-        // console.log('------------------------- useEffect: currentPath -------------------------');
+        // console.log('------------------------- useEffect: currentPath => set active[X]Divs -------------------------');
+
+        // let currentPath = usePath();
+        let currentPath = useCurrentPath;
 
         // // console.log('');
         // console.log('currentPath = ' + currentPath);
@@ -238,9 +222,11 @@ export const Header = () => {
         gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, width: thisEmplLocW, duration: 0.375 });
         // gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, top: thisEmplLocY, width: thisEmplLocW, height: thisEmplLocH, duration: 0.375 });
 
-    }, [currentPath]);
+    // }, []);
+    // }, [currentPath]);
+    }, [useCurrentPath]);
 
-    //#endregion ==================== useEffect: currentPath ====================
+    //#endregion ==================== useEffect: currentPath => set active[X]Divs ====================
 
 
     //#region ==================== useEffect: [workNavShow, setWorkNavShow] ====================
@@ -266,6 +252,39 @@ export const Header = () => {
     }, [workNavShow]);
 
     //#endregion ==================== useEffect: [workNavShow, setWorkNavShow] ====================
+
+
+    //#region ==================== useEffect: [resumeNavShow, setResumeNavShow] ====================
+
+    // const dialogModal_Ref = React.createRef();
+
+    useEffect(() => {
+
+        // console.log('');
+        // console.log('------------------------- useEffect: [resumeNavShow, setResumeNavShow] -------------------------');
+
+
+        let resumeNavHeight = resumeNav_Ref.getBoundingClientRect().height;
+        // let resumeNavHeight = resumeNav_Ref.getBoundingClientRect().height * 0.5;
+
+        setResumeNavShow(
+            resumeNavTL
+                // .fromTo([resumeNav_Ref], { y: 0, autoAlpha: 0 }, { y: resumeNavHeight, autoAlpha: 1, duration: 0.25 }, 'frame01')
+                .fromTo([resumeNav_Ref], { y: -resumeNavHeight, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.25 }, 'frame01')
+        );
+
+        if (navLoc === 'resumeID') {
+            resumeNavTL.resume();
+
+            // console.log('dialogModal_Ref.current = ' + dialogModal_Ref.current);
+        }
+
+        window.scrollTo(0, 0);
+
+    }, [resumeNavShow]);
+    // }, [resumeNavShow, dialogModal_Ref]);
+
+    //#endregion ==================== useEffect: [resumeNavShow, setResumeNavShow] ====================
 
 
     //#region ==================== useEffect: [mobileNavShow, setMobileNavShow] ====================
@@ -490,15 +509,19 @@ export const Header = () => {
                     {WorkNavItems}
                 </div>
 
+                <div className='resumeNav' id='resumeNavBarID' onClick={() => {props.setResumeModalOpen(!props.resumeModalOpen)}} ref={e => { resumeNav_Ref = e }}>
+                    <p className='resumeDdl' id='resumeDdlID'>download resume</p>
+                </div>
+
                 <div className='navBar' id='navBarID' ref={navBar_Ref}>
 
                     <div className='activeNavDiv' id='activeNavDivID' ref={activeNavDiv_Ref}></div>
 
-                    <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
-                    <A className='navItem' href={initEmployer} id='workID' onClick={(e) => { setWorkNavShow(workNavShow.play()); setMobileNavShow(false); }}>Work</A>
-                    <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>About</A>
-                    <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>Resume</A>
-                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>Contact</A>
+                    <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
+                    <A className='navItem' href={initEmployer} id='workID' onClick={() => { setWorkNavShow(workNavShow.play()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work</A>
+                    <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>About</A>
+                    <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A>
+                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A>
 
                 </div>
 

@@ -215,10 +215,14 @@
         // height: 30px;
 
         margin: 0 auto;
+        // margin: -($navBar-height * 1.375) auto 0 auto;
         // padding: 0;
 
-        // position: absolute;
+        position: absolute;
         // display: table;
+        top: $header-height;
+        left: 0;
+        right: 0;
 
 
         /* #region -------------------- .navBar -------------------- */
@@ -243,6 +247,7 @@
             height: $navBar-height;
 
             margin: 0 auto;
+            // margin: -($navBar-height * 0.75) auto 0 auto;
             // padding: 0;
 
             display: grid;
@@ -252,8 +257,12 @@
             column-gap: 0;
             align-items: center;
 
-            // position: absolute;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             // top: $header-height;
+            // z-index: 999;
 
             .navItem {
                 // border: 2px inset #ffff00;
@@ -366,18 +375,21 @@
             height: $workNav-height;
 
             // margin: 0 auto;
-            margin: -5px auto 0 auto;
+            // margin: -5px auto 0 auto;
+            margin: -15px auto 0 auto;
+            // margin: -($workNav-height * 0.25) auto 0 auto;
             padding: 0;
             // padding: 5px 0 0 0;
 
             // position: fixed;
             position: absolute;
+            top: 0;
             // top: -40px;
             // top: -55px;
             // top: 115px;
             // top: -$navBar-height;
             // top: $header-height;
-            top: $workNav-height;
+            // top: $workNav-height;
             // top: $navBar-height;
             // top: $header-height + $navBar-height;
             // top: -($header-height - $navBar-height);
@@ -482,6 +494,61 @@
         }
 
         /* #endregion -------------------- .workNav -------------------- */
+
+
+        /* #region -------------------- .resumeNav -------------------- */
+
+        .resumeNav {
+            // border: 1px solid #00ffff;
+
+            @include bgGradient06();
+
+            color: #000000;
+            text-align: center;
+            line-height: 1.5em;
+
+            // width: $body-width;
+            // min-width: $body-min-width;
+            // max-width: $body-max-width;
+            width: 20%;
+
+            height: $workNav-height * 0.5;
+
+            // margin: 0 auto;
+            // margin: 0 0 0 80%;
+            // margin: $header-height 0 0 80%;
+            // margin: $navBar-height 0 0 80%;
+            margin: ($navBar-height + 1) 0 0 80%;
+            // margin: $workNav-height 0 0 80%;
+
+            padding: 0;
+            // padding: 5px 0 0 0;
+
+            // position: absolute;
+            // position: relative;
+            // top: 0;
+            // top: 100px;
+            // top: $header-height;
+            // top: $workNav-height;
+            // top: $navBar-height + 1;
+            // top: $navBar-height * 2;
+            // top: calc($header-height + $workNav-height);
+            // left: 0;
+            // right: 0;
+            // right: 0;
+            z-index: -1;
+
+            cursor: pointer;
+
+            p {
+                // border: 1px solid #ff00ff;
+                height: inherit;
+                margin: 0 auto;
+                padding: 0;
+            }
+        }
+
+        /* #endregion -------------------- .resumeNav -------------------- */
     }
 
     /* #endregion -------------------- .navBarContainer -------------------- */

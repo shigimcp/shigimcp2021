@@ -104,6 +104,7 @@
                     width: 60%;
 
                     // margin: inherit;
+                    margin: 0 0 5px 0;
                     // padding: inherit;
                     // padding: 0 0 10px 0;
 
@@ -232,6 +233,123 @@
             }
         }
     }
+}
+
+.dialogHotspot {
+    // border: 2px solid #ff0000;
+
+    // background: rgba($color: #000000, $alpha: 0.5);
+
+    text-align: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    // z-index: 999;
+    // display: inline-block;
+
+    cursor: pointer;
+}
+
+.dialogModal {
+    // border: 2px solid #ff0000;
+
+    background: rgba($color: #000000, $alpha: 0.5);
+
+    text-align: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    // z-index: 999;
+    // display: inline-block;
+
+    .dialogBox {
+        // border: 2px solid #ff0000;
+        border: 2px solid #999999;
+
+        // background: #ffffff;
+        background: rgba($color: #ffffff, $alpha: 1);
+        // @include bgGradient06();
+
+        width: 25%;
+        height: 25%;
+
+        margin: 0 auto;
+        padding: 1.25%;
+
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+        // z-index: 999;
+
+        .dialogMenu {
+            // border: 2px solid #00ff00;
+
+            height: 80%;
+
+            margin: 0;
+            padding: 5% 0;
+
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+
+            a {
+                // border: 2px solid #00ff00;
+                border-radius: 3px;
+
+                // background: rgba($color: #000000, $alpha: 0.125);
+                @include bgGradient07();
+
+                color: rgba($color: #000000, $alpha: 1);
+                font-size: 0.875em;
+                text-decoration: none;
+
+                height: 20%;
+
+                margin: 10%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            // button {
+            form {
+                // border: 2px solid #00ff00;
+                // border: 2px solid #dddddd;
+                // border: none;
+
+                height: 20%;
+
+                margin: 0 10%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.dialogModalOpen {
+    z-index: 999;
+}
+
+.dialogModalClosed {
+    z-index: 0;
+    display: none;
 }
 
 /* #endregion ==================== BASE ==================== */

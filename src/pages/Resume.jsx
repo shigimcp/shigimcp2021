@@ -1,6 +1,8 @@
 //#region ==================== IMPORTS ====================
 
 import React from 'react';
+import { useRef } from 'react';
+// import { useState } from 'react';
 
 import '../stylesheets/Resume.scss';
 
@@ -18,12 +20,24 @@ const skillData = myData[3];
 
 //#endregion -------------------- DATA --------------------
 
+//#region -------------------- RESUME URLs --------------------
+
+// const remoteResumeLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/';
+
+const resumePDFurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.pdf';
+const resumeDOCXurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.docx';
+const resumeSimpleDOCXurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021_simplified.docx';
+const resumeTXTurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.txt';
+
+//#endregion -------------------- RESUME URLs --------------------
+
 //#endregion ==================== CONSTANTS ====================
 
 
-//#region ==================== EmployerList ====================
 
-const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
+//#region ==================== EmployerItem ====================
+
+const remoteImgLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
 
 
 function EmployerItem(props) {
@@ -31,7 +45,7 @@ function EmployerItem(props) {
     return (
         <div className='employerItem'>
 
-            <img className='logo' src={remoteLoc + props.employerLogo} alt={'employer: ' + props.employer} />
+            <img className='logo' src={remoteImgLoc + props.employerLogo} alt={'employer: ' + props.employer} />
 
             <div className='employerInfo'>
                 <h1>{props.employer}</h1>
@@ -62,6 +76,11 @@ function EmployerItem(props) {
     )
 }
 
+//#endregion ==================== EmployerItem ====================
+
+
+//#region ==================== EmployerList ====================
+
 function EmployerList() {
 
     const employerItems = employerData.map((employer) =>
@@ -89,7 +108,7 @@ function EmployerList() {
 //#endregion ==================== EmployerList ====================
 
 
-//#region ==================== SkillList ====================
+//#region ==================== SkillItem ====================
 
 function SkillItem(props) {
 
@@ -125,6 +144,11 @@ function SkillItem(props) {
     )
 }
 
+//#endregion ==================== SkillItem ====================
+
+
+//#region ==================== SkillList ====================
+
 function SkillList(props) {
 
     const skillItems = skillData.filter(thisCategory => thisCategory.category === props.category).map((skill) =>
@@ -151,22 +175,64 @@ function SkillList(props) {
 //#endregion ==================== SkillList ====================
 
 
-export const Resume = ({ locID }) => {
 
-    localStorage.setItem('navLoc', locID);
+export const Resume = (props) => {
+
+    // console.log('');
+    // console.log('==================== COMPONENT: Resume.jsx ====================');
+
+    // // console.log('');
+    // console.log('props = ' + props);
+    // console.log(props);
+
+
+    // localStorage.setItem('navLoc', locID);
+
+
+    //#region ==================== ASSETS _Ref ====================
+
+    const dialogModal_Ref = useRef(null);
+    const dialogHotspot_Ref = useRef(null);
+    const dialogBox_Ref = useRef(null);
+
+    //#endregion ==================== ASSETS _Ref ====================
+
+
 
     return (
+        <>
+            <div className='employerContainer'>
 
-        <div className='employerContainer'>
+                <EmployerList />
 
-            <EmployerList />
+                <h1 className='skillHed'>Skills</h1>
+                <SkillList category='discipline' />
+                <SkillList category='software' />
+                <SkillList category='dev' />
+                <SkillList category='3d' />
 
-            <h1 className='skillHed'>Skills</h1>
-            <SkillList category='discipline' />
-            <SkillList category='software' />
-            <SkillList category='dev' />
-            <SkillList category='3d' />
+            </div>
 
-        </div>
+            <div className={props.resumeModalOpen === true ? 'dialogModal dialogModalOpen' : 'dialogModal dialogModalClosed'} id='dialogModalID' ref={dialogModal_Ref}>
+
+                <div className='dialogHotspot' id='dialogHotspotID' onClick={() => {props.setResumeModalOpen(!props.resumeModalOpen)}} ref={dialogHotspot_Ref}></div>
+
+                <div className='dialogBox' id='dialogBoxID' ref={dialogBox_Ref}>
+
+                    <div className='dialogHed' id='dialogHedID'>
+                        Choose your format...<br />
+                    </div>
+
+                    <div className='dialogMenu' id='dialogMenuID'>
+                        <a href={resumePDFurl} download target='_blank' rel='noreferrer'>*.pdf</a>
+                        <a href={resumeDOCXurl} download target='_blank' rel='noreferrer'>*.docx</a>
+                        <a href={resumeSimpleDOCXurl} download target='_blank' rel='noreferrer'>*.docx</a>
+                        <a href={resumeTXTurl} download target='_blank' rel='noreferrer'>*.txt</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </>
     )
 }

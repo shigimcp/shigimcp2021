@@ -85,6 +85,24 @@ $workNav-height: 50px;
     // mix-blend-mode: screen;
 }
 
+@mixin bgGradient06() { 
+    background: rgb(230,230,230);
+    background: -moz-linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 80%, rgba(230,230,230,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 80%, rgba(230,230,230,1) 100%);
+    background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 80%, rgba(230,230,230,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e6e6e6",endColorstr="#e6e6e6",GradientType=1);
+    // mix-blend-mode: multiply;
+}
+
+@mixin bgGradient07() { 
+    background: rgb(230,230,230);
+    background: -moz-linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 20%, rgba(245,245,245,1) 80%, rgba(230,230,230,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 20%, rgba(245,245,245,1) 80%, rgba(230,230,230,1) 100%);
+    background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 20%, rgba(245,245,245,1) 80%, rgba(230,230,230,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e6e6e6",endColorstr="#e6e6e6",GradientType=1);
+    // mix-blend-mode: multiply;
+}
+
 /* #endregion - - - - - - - - - - - VARIABLES: BG MIXINS - REF: https://cssgradient.io - - - - - - - - - - - */
 
 

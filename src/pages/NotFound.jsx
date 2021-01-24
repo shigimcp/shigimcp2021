@@ -3,9 +3,18 @@ import React from 'react';
 import '../stylesheets/NotFound.scss';
 
 
-export const NotFound = ({ locID }) => {
+// export const NotFound = ({ locID }) => {
+export const NotFound = (props) => {
 
-    localStorage.setItem('navLoc', locID);
+    // console.log('');
+    // console.log('==================== COMPONENT: NotFound.jsx ====================');
+
+    // // console.log('');
+    // console.log('props = ' + props);
+    // console.log(props);
+
+
+    // localStorage.setItem('navLoc', locID);
 
     return (
         <div className="bodyContainer" title="Not Found">

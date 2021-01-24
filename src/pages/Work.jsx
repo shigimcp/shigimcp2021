@@ -694,12 +694,22 @@ function WorkList({ currentEmployer }) {
 
 
 
-export const Work = ({ currentEmployer, locID }) => {
+// export const Work = ({ currentEmployer, locID }) => {
+export const Work = (props) => {
 
-    localStorage.setItem('navLoc', locID);
+    // console.log('');
+    // console.log('==================== COMPONENT: Work.jsx ====================');
+
+    // // console.log('');
+    // console.log('props = ' + props);
+    // console.log(props);
+
+
+    // localStorage.setItem('navLoc', locID);
     // localStorage.setItem('emplLoc', 'eaID');
 
-    work = myData[1].filter(thisEmployer => thisEmployer.album_id === currentEmployer);
+    // work = myData[1].filter(thisEmployer => thisEmployer.album_id === currentEmployer);
+    work = myData[1].filter(thisEmployer => thisEmployer.album_id === props.currentEmployer);
 
 
     // console.log('');
@@ -710,7 +720,8 @@ export const Work = ({ currentEmployer, locID }) => {
 
     return (
         <div className='workContainer' id='workContainerID'>
-            <WorkList currentEmployer={currentEmployer} />
+            {/* <WorkList currentEmployer={currentEmployer} /> */}
+            <WorkList currentEmployer={props.currentEmployer} />
         </div>
     )
 }
