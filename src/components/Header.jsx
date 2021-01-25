@@ -46,8 +46,6 @@ let emplLoc;
 
 
 
-//#region ==================== EXPORT HEADER ====================
-
 export const Header = (props) => {
 
     // console.log('');
@@ -219,7 +217,9 @@ export const Header = (props) => {
         gsap.to([document.getElementById('activeNavDivID')], { x: thisNavLocX, width: thisNavLocW, duration: 0.375 });
         // gsap.to([document.getElementById('activeNavDivID')], { x: thisNavLocX, top: thisNavLocY, width: thisNavLocW, height: thisNavLocH, duration: 0.375 });
 
-        gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, width: thisEmplLocW, duration: 0.375 });
+        // gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, width: thisEmplLocW, duration: 0.375 });
+        // gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX + 1, width: thisEmplLocW, duration: 0.375 });
+        gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, width: thisEmplLocW + 2, duration: 0.375 });
         // gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, top: thisEmplLocY, width: thisEmplLocW, height: thisEmplLocH, duration: 0.375 });
 
     // }, []);
@@ -544,5 +544,3 @@ export const Header = (props) => {
         </div>
     )
 }
-
-//#endregion ==================== EXPORT HEADER ====================

@@ -20,6 +20,7 @@ const skillData = myData[3];
 
 //#endregion -------------------- DATA --------------------
 
+
 //#region -------------------- RESUME URLs --------------------
 
 // const remoteResumeLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/';
@@ -28,6 +29,13 @@ const resumePDFurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume
 const resumeDOCXurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.docx';
 const resumeSimpleDOCXurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021_simplified.docx';
 const resumeTXTurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.txt';
+const resumeZIPurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.zip';
+
+const resumePDFfilename = 'smcpherson_resume_2021.pdf';
+const resumeDOCXfilename = 'smcpherson_resume_2021.docx';
+const resumeSimpleDOCXfilename = 'smcpherson_resume_2021_simplified.docx';
+const resumeTXTfilename = 'smcpherson_resume_2021.txt';
+const resumeZIPfilename = 'smcpherson_resume_2021.zip';
 
 //#endregion -------------------- RESUME URLs --------------------
 
@@ -219,15 +227,30 @@ export const Resume = (props) => {
 
                 <div className='dialogBox' id='dialogBoxID' ref={dialogBox_Ref}>
 
+                    <button className='dialogCloseBTN' onClick={() => {props.setResumeModalOpen(!props.resumeModalOpen)}}>X</button>
+
                     <div className='dialogHed' id='dialogHedID'>
-                        Choose your format...<br />
+                        <p>Choose your format...</p>
                     </div>
 
                     <div className='dialogMenu' id='dialogMenuID'>
-                        <a href={resumePDFurl} download target='_blank' rel='noreferrer'>*.pdf</a>
+                        {/* <a href={resumePDFurl} download target='_blank' rel='noreferrer'>*.pdf</a>
                         <a href={resumeDOCXurl} download target='_blank' rel='noreferrer'>*.docx</a>
                         <a href={resumeSimpleDOCXurl} download target='_blank' rel='noreferrer'>*.docx</a>
-                        <a href={resumeTXTurl} download target='_blank' rel='noreferrer'>*.txt</a>
+                        <a href={resumeTXTurl} download target='_blank' rel='noreferrer'>*.txt</a> */}
+
+                        <a href={resumePDFurl} download target='_blank' rel='noreferrer'>{resumePDFfilename}</a>
+                        <a href={resumeDOCXurl} download target='_blank' rel='noreferrer'>{resumeDOCXfilename}</a>
+                        <a href={resumeSimpleDOCXurl} download target='_blank' rel='noreferrer'>{resumeSimpleDOCXfilename}</a>
+                        <a href={resumeTXTurl} download target='_blank' rel='noreferrer'>{resumeTXTfilename}</a>
+                    </div>
+
+                    <div className='dialogHed dialogHed02' id='dialogHed02ID'>
+                        <p>or Download all...</p>
+                    </div>
+
+                    <div className='dialogMenu dialogMenu02' id='dialogMenu02ID'>
+                        <a href={resumeZIPurl} download target='_blank' rel='noreferrer'>{resumeZIPfilename}</a>
                     </div>
 
                 </div>

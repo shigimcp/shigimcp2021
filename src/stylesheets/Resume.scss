@@ -73,7 +73,7 @@
                 font-size: 1em;
                 // font-weight: bold;
                 // line-height: 1em;
-                letter-spacing: 0.05em;
+                // letter-spacing: 0.05em;
 
                 width: 80%;
                 height: 100%;
@@ -83,10 +83,15 @@
 
                 float: right;
 
+                h1, h2 {
+                    letter-spacing: 0.0375em;
+                }
+
                 h1 {
                     // border: 2px solid #ffff00;
 
                     font-size: 1.5em;
+                    // font-weight: 600;
                     // font-weight: bold;
                     // text-align: inherit;
 
@@ -100,11 +105,13 @@
                     font-size: 1.125em;
                     // font-weight: bold;
                     // text-align: inherit;
+                    line-height: 0.5em;
 
                     width: 60%;
 
                     // margin: inherit;
-                    margin: 0 0 5px 0;
+                    // margin: 0 0 5px 0;
+                    margin: 0 0 10px 0;
                     // padding: inherit;
                     // padding: 0 0 10px 0;
 
@@ -135,7 +142,7 @@
                     li {
                         // font-weight: bold;
 
-                        letter-spacing: 0.05em;
+                        // letter-spacing: 0.05em;
 
                         padding-left: 0.625em;
                         text-indent: -0.625em;
@@ -160,7 +167,7 @@
         // border-top: 1px solid #999999;
         // border-bottom: 1px solid #999999;
 
-        color: #666666;
+        // color: #666666;
         font-size: 1.75em;
         // letter-spacing: 0.025em;
 
@@ -175,7 +182,7 @@
         // border: 2px solid #ff0000;
         border-bottom: 1px solid #999999;
 
-        color: #666666;
+        // color: #666666;
         font-size: 1.25em;
         // letter-spacing: 0.05em;
 
@@ -188,6 +195,7 @@
     .skillList {
         // border: 2px solid #ff0000;
 
+        color: #666666;
         font-weight: 600;
         // letter-spacing: 0.05em;
 
@@ -239,6 +247,7 @@
     // border: 2px solid #ff0000;
 
     // background: rgba($color: #000000, $alpha: 0.5);
+    @include modalBG();
 
     text-align: center;
 
@@ -259,7 +268,8 @@
 .dialogModal {
     // border: 2px solid #ff0000;
 
-    background: rgba($color: #000000, $alpha: 0.5);
+    // background: rgba($color: #000000, $alpha: 0.5);
+    // @include modalBG();
 
     text-align: center;
 
@@ -280,13 +290,20 @@
 
         // background: #ffffff;
         background: rgba($color: #ffffff, $alpha: 1);
-        // @include bgGradient06();
+        // @include modalBG();
 
-        width: 25%;
-        height: 25%;
+        // letter-spacing: 0.03125em;
+
+        width: 27.5%;
+        max-width: 400px;
+        // height: 40%;
+        height: 45%;
+        // height: auto;
+        max-height: 400px;
+        // max-height: 655px;
 
         margin: 0 auto;
-        padding: 1.25%;
+        padding: 0 1.25%;
 
         position: absolute;
         top: 20%;
@@ -294,51 +311,124 @@
         right: 0;
         // z-index: 999;
 
-        .dialogMenu {
-            // border: 2px solid #00ff00;
+        .dialogHed {
+            // border: 1px solid #ff0000;
 
-            height: 80%;
+            font-size: 1.25em;
 
+            // height: 20%;
+            height: 5%;
+
+            // margin: 10%;
+            // margin: 1.25% 0 0 0;
             margin: 0;
             padding: 5% 0;
 
+            // position: relative;
+
+            p {
+                // border: 1px solid #00ff00;
+
+                width: 100%;
+
+                margin: 0;
+                padding: 0;
+
+                // position: absolute;
+                // top: 50%;
+                // left: 50%;
+                // transform: translate(-50%, -50%);
+            }
+        }
+
+        .dialogHed02 {
+            // border: 1px solid #ff0000;
+
+            padding: 10% 0 5% 0;
+        }
+
+        .dialogMenu {
+            // border: 1px solid #0000ff;
+
+            // width: 100%;
+            // height: 80%;
+
+            margin: 0;
+            padding: 0;
+
             display: grid;
-            grid-template-columns: repeat(4, auto);
+            // grid-template-columns: repeat(4, auto);
+            grid-template-columns: repeat(auto, 5);
+            grid-gap: 5%;
 
             a {
                 // border: 2px solid #00ff00;
                 border-radius: 3px;
 
                 // background: rgba($color: #000000, $alpha: 0.125);
-                @include bgGradient07();
+                @include btnBgRest();
 
                 color: rgba($color: #000000, $alpha: 1);
                 font-size: 0.875em;
                 text-decoration: none;
 
+                // height: 20%;
                 height: 20%;
 
-                margin: 10%;
+                // margin: 10%;
+                margin: 0;
+                padding: 3.75% 0;
 
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                transition: 0.25s;
+                // @include transition(background-color 1s 0.25s, color 0.25s);
+                // @include transition(0.25s);
             }
 
-            // button {
-            form {
+            a:hover {
                 // border: 2px solid #00ff00;
-                // border: 2px solid #dddddd;
-                // border: none;
 
-                height: 20%;
-
-                margin: 0 10%;
-
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include btnBgHover();
+                transform: scale(1.03125);
             }
+        }
+
+        .dialogMenu02 {
+            // border: 1px solid #0000ff;
+
+            grid-template-columns: repeat(auto, 1);
+            grid-gap: 5%;
+        }
+
+        .dialogCloseBTN {
+            border: none;
+            border-radius: 15px;
+
+            background: #eeeeee;
+
+            font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+            // font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+            // text-decoration: none;
+
+            width: 25px;
+            height: 25px;
+
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .dialogCloseBTN:hover {
+            background: #cccccc;
+        }
+
+        .dialogCloseBTN:focus {
+            outline: 0;
         }
     }
 }
@@ -412,9 +502,9 @@
                     .employerInfo {
                         // border: 1px solid #00ff00;
 
-                        h1, h2 {
-                            letter-spacing: 0.005em;
-                        }
+                        // h1, h2 {
+                        //     letter-spacing: 0.005em;
+                        // }
 
                         h2 {
                             // border: 1px solid #0000ff;
@@ -477,7 +567,7 @@
                         width: 76.25%;
 
                         h1, h2 {
-                            letter-spacing: 0.005em;
+                            // letter-spacing: 0.005em;
                             width: auto;
                         }
 

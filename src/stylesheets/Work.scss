@@ -68,7 +68,7 @@
 
                 font-size: 1.0625em;
                 text-align: center;
-                letter-spacing: 0.025em;
+                // letter-spacing: 0.025em;
 
                 padding: 0 10px;
                 display: inline;
@@ -146,7 +146,7 @@
                     @include bgGradient03();
 
                     font-size: 0.875em;
-                    letter-spacing: .0375em;
+                    // letter-spacing: .0375em;
 
                     margin: 0;
                     // padding: 3.75% 6.25%;
@@ -158,7 +158,7 @@
                     // background: #eeeeee;
 
                     font-size: 0.8125em;
-                    letter-spacing: 0.05em;
+                    // letter-spacing: 0.05em;
 
                     margin: 0;
                     // padding: 3.75% 6.25%;
@@ -223,7 +223,8 @@
     .webiFrameContainer, .webiFrameContainerOpen {
         // border: 2px solid #ff0000;
 
-        background: rgba($color: #000000, $alpha: 0.5);
+        // background: rgba($color: #000000, $alpha: 0.5);
+        @include modalBG();
 
         width: 100vw;
         height: 100vh;
@@ -242,6 +243,7 @@
 
             // background: none;
             // background: rgba($color: #000000, $alpha: 0.5);
+            // @include modalBG();
 
             width: 50vw;
             height: 50vh;
@@ -297,7 +299,8 @@
         // border: 2px solid #ff0000;
         // border: none;
 
-        background: rgba($color: #000000, $alpha: 0.5);
+        // background: rgba($color: #000000, $alpha: 0.5);
+        @include modalBG();
 
         width: 100vw;
         height: 100vh;

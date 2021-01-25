@@ -16,41 +16,41 @@ Digital Designer / Front-End Developer
 10.18 - 04.19
 - logo / brand ideation and design
 - ecommerce website design and development (in-progress)
-- languages: HTML5, Javascript/JQuery, GSAP, CSS3Elizabeth ArdenFreelance Digital Designer07.12 – 10.17
+- languages: HTML5, Javascript/JQuery, GSAP, CSS3Elizabeth ArdenFreelance Digital Designer07.12 - 10.17
 - website, banner and email design & development
 - Facebook page design & development using Buddy Media
 - web app design & development (HTML5, CSS3, Javascript)
 - animation & video editing
-- languages: HTML5, Javascript/JQuery, GSAP, CSS3, AS3Armani ExchangeFreelance Digital Designer12.10 – 07.12
+- languages: HTML5, Javascript/JQuery, GSAP, CSS3, AS3Armani ExchangeFreelance Digital Designer12.10 - 07.12
 - microsite design & development
 - banner and email design & development
 - mobile site design & development from concept to completion
 - languages: HTML5, Javascript/JQuery, GSAP, CSS3, AS3
-- distinction: AOL/KBS Project Devil Competition Winner (in conjunction with MediaKitchen)Hearst Digital MediaDigital Designer / Front-End Developer04.08 – 01.09
+- distinction: AOL/KBS Project Devil Competition Winner (in conjunction with MediaKitchen)Hearst Digital MediaDigital Designer / Front-End Developer04.08 - 01.09
 - promo player & evite design
 - actionscript design & development from concept to completion
 - in-house promotion
 - languages: AS2, AS3
-- publications include: Seventeen, Cosmopolitan, CosmoGirl, Town & Country, Harper’s BazaarDDB Studio 8 (DDB Worldwide)Multimedia Specialist (design & development)09.07 – 12.07
+- publications include: Seventeen, Cosmopolitan, CosmoGirl, Town & Country, Harper’s BazaarDDB Studio 8 (DDB Worldwide)Multimedia Specialist (design & development)09.07 - 12.07
 - website design & development from concept to completion
 - in-house promotion
-- languages: AS2, AS3MRM Partners (McCann Worldgroup)Art Director08.05 – 05.06
+- languages: AS2, AS3MRM Partners (McCann Worldgroup)Art Director08.05 - 05.06
 - worked closely with the copywriter to generate creative ideas and executions
 - very hands-on work including design and actionscript development
 - produced sketches and storyboards to communicate ideas to clients
 - ensured deadlines were met and worked effectively under pressure
 - worked in industry-standard editing suites to oversee the finished product
 - language: AS2
-- clients include: GM, Intel, Wendy’sHeeb MagazineDesigner / Design Director04.04 – 05.05
-(issues: 06 – 08)
+- clients include: GM, Intel, Wendy’sHeeb MagazineDesigner / Design Director04.04 - 05.05
+(issues: 06 - 08)
 - page design / layout
 - logo & type treatment
 - retouching
 - pre-press prep
 - asset trafficking
 - pages include: Battle of the Schwartzes, Out from Under, photo features, fiction features, products, parody ads
-Harper’s BazaarDesigner11.01 – 08.03
-(issues: 02.02 – 11.03)
+Harper's BazaarDesigner11.01 - 08.03
+(issues: 02.02 - 11.03)
 - heavy logo and type treatment
 - heavy page layout
 - moderate (p)retouching
@@ -58,12 +58,12 @@ Digital Designer / Front-End Developer
 - light art trafficking
 - heavy scanning
 - pages include: Cover(s), Center of Book photo features, Letter from the Editor, What to Wear, parties, reviews, horoscopes and product pages
-Luminant Worldwide CorporationArt Director11.99 – 11.00
+Luminant Worldwide CorporationArt Director11.99 - 11.00
 - website design and art direction
 - moderate html and light Javascript
 - moderate flash work
 - light 3d modeling & rendering
-- clients include: A&E Television Networks, DeBeers, gazelle.com (formerly mylegs.com), M&M/Mars, Maybelline, RJ Reynolds, StarbandDarwin Digital - A Saatchi & Saatchi Vision CompanyDesigner12.97 – 11.99
+- clients include: A&E Television Networks, DeBeers, gazelle.com (formerly mylegs.com), M&M/Mars, Maybelline, RJ Reynolds, StarbandDarwin Digital - A Saatchi & Saatchi Vision CompanyDesigner12.97 - 11.99
 - website design
 - moderate programming, including html and light Javascript
 - moderate flash work

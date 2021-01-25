@@ -52,6 +52,7 @@
 
             font-size: 30px;
             line-height: 1em;
+            letter-spacing: 0.00625em;
 
             width: auto;
             // height: inherit;
@@ -115,6 +116,10 @@
 
             a, a:visited {
                 color: #ffffff;
+            }
+
+            .email {
+                letter-spacing: inherit;
             }
         }
 

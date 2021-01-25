@@ -106,7 +106,7 @@ $workNav-height: 50px;
 /* #endregion - - - - - - - - - - - VARIABLES: BG MIXINS - REF: https://cssgradient.io - - - - - - - - - - - */
 
 
-/* #region - - - - - - - - - - - VARIABLES: SVG FILL MIXINS - REF: https://cssgradient.io - OOPS! CAN'T use css to give SVGs gradient fills; must use inline <linearGradient> - - - - - - - - - - - */
+/* #region - - - - - - - - - - - VARIABLES: SVG FILL MIXINS - REF: https://cssgradient.io - *** OOPS! CAN'T use css to give SVGs gradient fills; must use inline <linearGradient> *** - - - - - - - - - - - */
 
 @mixin fillGradient01() { 
     fill: rgb(255,255,255);
@@ -118,7 +118,81 @@ $workNav-height: 50px;
     // mix-blend-mode: screen;
 }
 
-/* #endregion - - - - - - - - - - - VARIABLES: SVG FILL MIXINS - REF: https://cssgradient.io - OOPS! CAN'T use css to give SVGs gradient fills; must use inline <linearGradient> - - - - - - - - - - - */
+/* #endregion - - - - - - - - - - - VARIABLES: SVG FILL MIXINS - REF: https://cssgradient.io - *** OOPS! CAN'T use css to give SVGs gradient fills; must use inline <linearGradient> *** - - - - - - - - - - - */
+
+
+/* #region - - - - - - - - - - - VARIABLES: modalBG - - - - - - - - - - - */
+
+@mixin modalBG() {
+    background: rgba($color: #000000, $alpha: 0.5);
+
+    // mix-blend-mode: screen;
+}
+
+/* #endregion - - - - - - - - - - - VARIABLES: modalBG - - - - - - - - - - - */
+
+
+/* #region - - - - - - - - - - - VARIABLES: BUTTON MIXINS - REF: https://cssgradient.io - - - - - - - - - - - */
+
+@mixin btnBgRest() {
+    background: rgb(230,230,230);
+    background: -moz-linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 20%, rgba(245,245,245,1) 80%, rgba(230,230,230,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 20%, rgba(245,245,245,1) 80%, rgba(230,230,230,1) 100%);
+    background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 20%, rgba(245,245,245,1) 80%, rgba(230,230,230,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e6e6e6",endColorstr="#e6e6e6",GradientType=1);
+    // mix-blend-mode: multiply;
+}
+
+@mixin btnBgHover() {
+    background: rgb(170,170,170);
+    background: -moz-linear-gradient(90deg, rgba(170,170,170,1) 0%, rgba(245,245,245,1) 20%, rgba(245,245,245,1) 80%, rgba(170,170,170,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(170,170,170,1) 0%, rgba(245,245,245,1) 20%, rgba(245,245,245,1) 80%, rgba(170,170,170,1) 100%);
+    background: linear-gradient(90deg, rgba(170,170,170,1) 0%, rgba(245,245,245,1) 20%, rgba(245,245,245,1) 80%, rgba(170,170,170,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e6e6e6",endColorstr="#e6e6e6",GradientType=1);
+    // mix-blend-mode: multiply;
+}
+
+/* #endregion - - - - - - - - - - - VARIABLES: BUTTON MIXINS - REF: https://cssgradient.io - - - - - - - - - - - */
+
+
+/* #region - - - - - - - - - - - VARIABLES: TRANSITION MIXINS - REF: https://codepen.io/marknotton/pen/VamaqN - - - - - - - - - - - */
+
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transition-property($property...) {
+    -moz-transition-property: $property;
+    -o-transition-property: $property;
+    -webkit-transition-property: $property;
+    transition-property: $property;
+}
+
+@mixin transition-duration($duration...) {
+    -moz-transition-property: $duration;
+    -o-transition-property: $duration;
+    -webkit-transition-property: $duration;
+    transition-property: $duration;
+}
+
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function: $timing;
+    -o-transition-timing-function: $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+}
+
+@mixin transition-delay($delay...) {
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+/* #endregion - - - - - - - - - - - VARIABLES: TRANSITION MIXINS - REF: https://codepen.io/marknotton/pen/VamaqN - - - - - - - - - - - */
 
 
 /* #region - - - - - - - - - - - VARIABLES: EXPORT - - - - - - - - - - - */
@@ -175,7 +249,9 @@ $workNav-height: 50px;
 /* #region ========================= GLOBAL ========================= */
 
 * {
-	margin: 0;
+    letter-spacing: 0.025em;
+
+    margin: 0;
 	padding: 0;
 
     user-select: none;
