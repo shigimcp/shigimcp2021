@@ -46,6 +46,34 @@ let emplLoc;
 
 
 
+//#region ==================== FUNCTIONS ====================
+
+// #region -------------------- FUNCTION (GENERAL) - clearContentFAKE() --------------------
+
+function clearContentFAKE() {
+
+    // console.log('');
+    // console.log('==================== FUNCTION: clearContentFAKE ====================');
+    // console.log('NOTE/ISSUE: audio from an external html wouldnt\'t stop playing when switching employers. (see Hearst => banners)');
+    // console.log('THIS IS A DIRTY, DIRTY WORKAROUND!!!');
+    // console.log('This clears the banneriFrameID source ONLY! NO STATE CONTROL for Work.jsx');
+    // console.log('(DAMMIT! How do I call THIS function?!?!?! see: Work.jsx => WorkList({ currentEmployer }) => clearContent()');
+
+
+    let banner = document.getElementById('banneriFrameID');
+
+    // console.log('banner = ' + banner);
+    // console.log(banner);
+
+    banner.src = '';
+}
+
+// #endregion -------------------- FUNCTION (GLOBAL) - clearContentFAKE() --------------------
+
+//#endregion ==================== FUNCTIONS ====================
+
+
+
 export const Header = (props) => {
 
     // console.log('');
@@ -351,7 +379,8 @@ export const Header = (props) => {
 
 
         return (
-            <A href={props.link} className='employerIcon' id={props.album_id + 'ID'} onClick={() => { workNavShow.pause(); setCurrentEmployer(props.album_id); }}>
+            // <A href={props.link} className='employerIcon' id={props.album_id + 'ID'} onClick={() => { workNavShow.pause(); setCurrentEmployer(props.album_id); }}>
+            <A href={props.link} className='employerIcon' id={props.album_id + 'ID'} onClick={() => { workNavShow.pause(); setCurrentEmployer(props.album_id); clearContentFAKE(); }}>
                 <img src={remoteLoc + props.employerLogo} alt={'employer: ' + props.employer} />
             </A>
         )

@@ -13,10 +13,11 @@ import { Home } from './pages/Home';
 import { Work } from './pages/Work';
 import { About } from './pages/About';
 import { Resume } from './pages/Resume';
-// import Resume from './pages/Resume';
 import { Contact } from './pages/Contact';
 
 import { NotFound } from './pages/NotFound';
+
+// import { useContext } from 'react';
 
 //#endregion ==================== IMPORTS ====================
 
@@ -44,9 +45,9 @@ function App() {
     // console.log('');
     // console.log('==================== COMPONENT: App.jsx ====================');
 
-    // // console.log('');
-    // console.log('props = ' + props);
-    // console.log(props);
+    // // // console.log('');
+    // // console.log('props = ' + props);
+    // // console.log(props);
 
 
     //#region ==================== use DEFs ====================
@@ -68,6 +69,7 @@ function App() {
         '/shigimcp2020-react': () => <Home locID={'homeID'} loadStatus={true} />,
         '/shigimcp2020-react/': () => <Home locID={'homeID'} loadStatus={true} />,
         '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
+        // '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} clearContent={clearContent} />,
         '/shigimcp2020-react/about': () => <About locID={'aboutID'} loadStatus={true} />,
         '/shigimcp2020-react/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
         '/shigimcp2020-react/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
@@ -79,6 +81,15 @@ function App() {
 
     const match = useRoutes(routes);
 
+    // // console.log('');
+    // console.log('match = ' + match);
+    // console.log(match);
+
+    // // console.log('');
+    // console.log('match.props = ' + match.props);
+    // console.log(match.props);
+
+
     return (
         <Wrapper>
 
@@ -86,8 +97,69 @@ function App() {
 
             {match || <NotFound locID={'notFoundID'} />}
 
+            {/* <ParentNum /> */}
+
         </Wrapper>
     )
 }
+
+
+
+
+//#region ==================== useContext: REF https://programmingwithmosh.com/javascript/learn-the-usecontext-hook-in-react/ ====================
+
+// const numInfo = {
+//     numInfo01: {
+//         num01: 36,
+//         num02: 50
+//     },
+//     numInfo02: {
+//         num01: 37,
+//         num02: 51
+//     }
+// };
+
+// const NumberContext = React.createContext(numInfo);
+
+// function ParentNum(){
+//     return (
+//         <NumberContext.Provider value={numInfo}>
+//             <h2>Use Context Example Component</h2>
+//             <NumDetailComponent />
+//             <MyOtherNumInfoComponent />
+//         </NumberContext.Provider>
+//     );
+// }
+
+// function NumDetailComponent(){
+
+//     const numDetails = useContext(NumberContext);
+
+//     return (
+//         <div className='display' id='display01'>
+//             <h3>numInfo01 Details</h3>
+//             <p>num01: {numDetails.numInfo01.num01}</p>
+//             <p>num02: {numDetails.numInfo01.num02}</p>
+//         </div>
+//     );
+// }
+
+// function MyOtherNumInfoComponent(){
+
+//     const numDetails = useContext(NumberContext);
+
+//     return (
+//         <div className='display' id='display02'>
+//             <h3>numInfo02 Details</h3>
+//             <p>num01: {numDetails.numInfo02.num01}</p>
+//             <p>num02: {numDetails.numInfo02.num02}</p>
+//         </div>
+//     );
+// }
+
+//#endregion ==================== useContext: REF https://programmingwithmosh.com/javascript/learn-the-usecontext-hook-in-react/ ====================
+
+
+
 
 export default App;

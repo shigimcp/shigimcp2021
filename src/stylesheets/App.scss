@@ -17,18 +17,66 @@
 
 @font-face {
 	font-family: 'ChaleParNinSix';
-	src: url('../fonts/ChaleParNinSix.otf') format("opentype");
-	src: url('../fonts/ChaleParNinSix.eot');
-	src: url('../fonts/ChaleParNinSix.woff') format('woff'),
-	url('../fonts/ChaleParNinSix.svg#-GothaBoo') format('svg');
+	src: url('../fonts/ChaletParNineteenSixty/ChaleParNinSix.otf') format("opentype");
+	src: url('../fonts/ChaletParNineteenSixty/ChaleParNinSix.eot');
+	src: url('../fonts/ChaletParNineteenSixty/ChaleParNinSix.woff') format('woff'),
+	url('../fonts/ChaletParNineteenSixty/ChaleParNinSix.svg#-GothaBoo') format('svg');
 }
 
 @font-face {
 	font-family: 'AnimeAceItalic';
-	src: url('../fonts/AnimeAceItalic.otf') format("opentype");
-	src: url('../fonts/AnimeAceItalic.eot');
-	src: url('../fonts/AnimeAceItalic.woff') format('woff'),
-	url('../fonts/AnimeAceItalic.svg#-Italic') format('svg');
+	src: url('../fonts/AnimeAceItalic/AnimeAceItalic.otf') format("opentype");
+	src: url('../fonts/AnimeAceItalic/AnimeAceItalic.eot');
+	src: url('../fonts/AnimeAceItalic/AnimeAceItalic.woff') format('woff'),
+	url('../fonts/AnimeAceItalic/AnimeAceItalic.svg#-Italic') format('svg');
+}
+
+@font-face {
+	font-family: 'AvenirNext-Regular';
+	src: url('../fonts/AvenirNext/AvenirNext-Regular.otf') format("opentype");
+	src: url('../fonts/AvenirNext/AvenirNext-Regular.eot');
+	src: url('../fonts/AvenirNext/AvenirNext-Regular.woff') format('woff'),
+	url('../fonts/AvenirNext/AvenirNext-Regular.svg#-Italic') format('svg');
+}
+
+@font-face {
+	font-family: 'AvenirNext-Italic';
+	src: url('../fonts/AvenirNext/AvenirNext-Italic.otf') format("opentype");
+	src: url('../fonts/AvenirNext/AvenirNext-Italic.eot');
+	src: url('../fonts/AvenirNext/AvenirNext-Italic.woff') format('woff'),
+	url('../fonts/AvenirNext/AvenirNext-Italic.svg#-Italic') format('svg');
+}
+
+@font-face {
+	font-family: 'AvenirNext-Medium';
+	src: url('../fonts/AvenirNext/AvenirNext-Medium.otf') format("opentype");
+	src: url('../fonts/AvenirNext/AvenirNext-Medium.eot');
+	src: url('../fonts/AvenirNext/AvenirNext-Medium.woff') format('woff'),
+	url('../fonts/AvenirNext/AvenirNext-Medium.svg#-Italic') format('svg');
+}
+
+@font-face {
+	font-family: 'AvenirNext-MediumItalic';
+	src: url('../fonts/AvenirNext/AvenirNext-MediumItalic.otf') format("opentype");
+	src: url('../fonts/AvenirNext/AvenirNext-MediumItalic.eot');
+	src: url('../fonts/AvenirNext/AvenirNext-MediumItalic.woff') format('woff'),
+	url('../fonts/AvenirNext/AvenirNext-MediumItalic.svg#-Italic') format('svg');
+}
+
+@font-face {
+	font-family: 'AvenirNext-DemiBold';
+	src: url('../fonts/AvenirNext/AvenirNext-DemiBold.otf') format("opentype");
+	src: url('../fonts/AvenirNext/AvenirNext-DemiBold.eot');
+	src: url('../fonts/AvenirNext/AvenirNext-DemiBold.woff') format('woff'),
+	url('../fonts/AvenirNext/AvenirNext-DemiBold.svg#-Italic') format('svg');
+}
+
+@font-face {
+	font-family: 'AvenirNext-DemiBoldItalic';
+	src: url('../fonts/AvenirNext/AvenirNext-DemiBoldItalic.otf') format("opentype");
+	src: url('../fonts/AvenirNext/AvenirNext-DemiBoldItalic.eot');
+	src: url('../fonts/AvenirNext/AvenirNext-DemiBoldItalic.woff') format('woff'),
+	url('../fonts/AvenirNext/AvenirNext-DemiBoldItalic.svg#-Italic') format('svg');
 }
 
 /* #endregion ==================== FONTS ==================== */
@@ -43,7 +91,8 @@ code {
 body {
     margin: 0;
     // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: ChaleParNinSix, Arial, Helvetica, sans-serif;
+	// font-family: ChaleParNinSix, Arial, Helvetica, sans-serif;
+	font-family: AvenirNext-Regular, Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -67,4 +116,19 @@ html, body, #root, #rootContainer {
     height: 250px;
 
     display: block;
+}
+
+
+.display {
+    position: absolute;
+    // bottom: 10%;
+    right: 10%;
+}
+
+#display01 {
+    bottom: 15%;
+}
+
+#display02 {
+    bottom: 5%;
 }

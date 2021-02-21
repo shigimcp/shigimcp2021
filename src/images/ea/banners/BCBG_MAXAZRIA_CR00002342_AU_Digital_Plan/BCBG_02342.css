@@ -1,0 +1,74 @@
+.bcbg_02342 {
+  background: #efc4c2;
+  background-size: contain;
+}
+
+.bcbg_02342 .bg,
+.bcbg_02342 .modelDiv,
+.bcbg_02342 .model_ctr, .bcbg_02342 .model_lf, .bcbg_02342 .model_rt,
+.bcbg_02342 .bottle,
+.bcbg_02342 .logo,
+.bcbg_02342 .mask,
+.bcbg_02342 .cta,
+.bcbg_02342 .particleContainer,
+.bcbg_02342 .clickTag {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.bcbg_02342 .bg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.bcbg_02342 .modelDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.bcbg_02342 .modelDiv .model_ctr, .bcbg_02342 .modelDiv .model_lf, .bcbg_02342 .modelDiv .model_rt {
+  height: 100%;
+}
+
+.bcbg_02342 .modelDiv .model_lf {
+  left: 0;
+  -webkit-filter: url("#turbulenceFilterID");
+          filter: url("#turbulenceFilterID");
+}
+
+.bcbg_02342 .modelDiv .model_ctr {
+  left: 125px;
+}
+
+.bcbg_02342 .modelDiv .model_rt {
+  left: 190px;
+  -webkit-filter: url("#turbulenceFilterID");
+          filter: url("#turbulenceFilterID");
+}
+
+.bcbg_02342 .bottle {
+  width: 72.5px;
+  top: 50px;
+  left: 205px;
+}
+
+.bcbg_02342 .logo {
+  width: 270px;
+  top: 180px;
+  left: 15px;
+}
+
+.bcbg_02342 .mask {
+  top: 0;
+  left: 0;
+}
+
+.bcbg_02342 .cta {
+  width: 115px;
+  top: 225px;
+  left: 92.5px;
+}
+/*# sourceMappingURL=BCBG_02342.css.map */

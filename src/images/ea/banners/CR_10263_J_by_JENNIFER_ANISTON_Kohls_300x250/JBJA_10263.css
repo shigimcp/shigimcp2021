@@ -1,0 +1,131 @@
+.jbja_10263 {
+  background-image: url(./images/bg.jpg);
+  background-size: contain;
+}
+
+.jbja_10263 .model,
+.jbja_10263 .bottle,
+.jbja_10263 .copy,
+.jbja_10263 .logo,
+.jbja_10263 .cta,
+.jbja_10263 .pixiContainer {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.jbja_10263 canvas {
+  position: absolute;
+}
+
+.jbja_10263 .copy {
+  height: 10%;
+  position: absolute;
+  top: 46.25%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.jbja_10263 #copy02waveID {
+  -webkit-transform: translate(-50%, 0) scale(2) skew(-60deg);
+          transform: translate(-50%, 0) scale(2) skew(-60deg);
+}
+
+.jbja_10263 .logo {
+  background: none;
+  width: 43.333333333333333%;
+  position: absolute;
+  top: 8.125%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.jbja_10263 .bottle {
+  width: 36.666666666666667%;
+  position: absolute;
+  top: 56.25%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.jbja_10263 .modelSVG {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.jbja_10263 .modelSVG .model {
+  width: inherit;
+  height: inherit;
+}
+
+.jbja_10263 .bug {
+  background-image: url(./images/bg_bug.png);
+  background-size: contain;
+  width: 100%;
+  height: 16%;
+  position: absolute;
+  bottom: 0;
+  z-index: 90;
+}
+
+.jbja_10263 .bug .bottle {
+  opacity: 0.5;
+  width: 22.5%;
+  position: absolute;
+  top: -57.5%;
+  left: 20%;
+}
+
+.jbja_10263 .bug #bottle02ID {
+  mix-blend-mode: multiply;
+}
+
+.jbja_10263 .bug .logo {
+  width: 28.333333333333333%;
+  top: -110%;
+}
+
+.jbja_10263 .bug #logo_ds01ID {
+  -webkit-filter: drop-shadow(0 0 5px #ffffff);
+          filter: drop-shadow(0 0 5px #ffffff);
+  opacity: 0.5;
+}
+
+.jbja_10263 .bug #logo_ds02ID {
+  -webkit-filter: drop-shadow(0 0 3px #ffffff);
+          filter: drop-shadow(0 0 3px #ffffff);
+  opacity: 0.5;
+}
+
+.jbja_10263 .bug .cta {
+  width: 20%;
+  right: 8.5%;
+}
+
+.jbja_10263 .pixiContainer {
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+}
+
+.jbja_10263 .clickTag, .jbja_10263 .border {
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.jbja_10263 .border {
+  border: 4px solid #000000 !important;
+}
+/*# sourceMappingURL=JBJA_10263.css.map */

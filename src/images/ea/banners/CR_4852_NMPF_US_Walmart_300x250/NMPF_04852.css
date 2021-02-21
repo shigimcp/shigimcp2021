@@ -1,0 +1,121 @@
+.nmpf_04852 {
+  background: #dd8ea3;
+  background-image: url(./images/bg.jpg);
+  background-size: contain;
+}
+
+.nmpf_04852 .bgDiv,
+.nmpf_04852 .bg_koDiv,
+.nmpf_04852 .bg,
+.nmpf_04852 .bg_ko,
+.nmpf_04852 .skyline,
+.nmpf_04852 .starspinDiv,
+.nmpf_04852 .modelDiv,
+.nmpf_04852 .model,
+.nmpf_04852 .bottleDiv,
+.nmpf_04852 .bottle,
+.nmpf_04852 .logoDiv,
+.nmpf_04852 .logo_NMPF,
+.nmpf_04852 .tagDiv,
+.nmpf_04852 .tag,
+.nmpf_04852 .cta,
+.nmpf_04852 .particleContainer {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.nmpf_04852 .bgDiv, .nmpf_04852 .bg_koDiv, .nmpf_04852 .bg, .nmpf_04852 .bg_ko {
+  width: 100%;
+  height: 100%;
+}
+
+.nmpf_04852 .bgDiv img, .nmpf_04852 .bg_koDiv img, .nmpf_04852 .bg img, .nmpf_04852 .bg_ko img {
+  width: inherit;
+  height: inherit;
+}
+
+.nmpf_04852 .skyline {
+  width: 100%;
+  top: 140px;
+  left: 0;
+}
+
+.nmpf_04852 .starspinDiv {
+  top: 0;
+  left: 0;
+}
+
+.nmpf_04852 .modelDiv, .nmpf_04852 .model {
+  width: 165px;
+  height: 240px;
+  top: 10px;
+  left: 67.5px;
+}
+
+.nmpf_04852 .bottleDiv, .nmpf_04852 .bottle {
+  width: 35px;
+  height: 70px;
+  top: 177.5px;
+  left: 200px;
+}
+
+.nmpf_04852 .logoDiv, .nmpf_04852 .logo_NMPF {
+  width: 165px;
+  height: 50px;
+  top: 10px;
+  left: 67.5px;
+}
+
+.nmpf_04852 .tagDiv, .nmpf_04852 .tag {
+  width: 115px;
+  height: 7.5px;
+  top: 235px;
+  left: 92.5px;
+}
+
+.nmpf_04852 .cta {
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 217.5px;
+  left: 15px;
+}
+
+.nmpf_04852 .copy01, .nmpf_04852 .copy02 {
+  color: #ffffff;
+  font-family: 'at_sackers_english_scriptRg';
+  font-size: 2.8125em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: -0.02em;
+  line-height: 1.125em;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+}
+
+.nmpf_04852 .copy01 {
+  top: 255px;
+}
+
+.nmpf_04852 .copy02 {
+  width: 60%;
+  margin: 0 20%;
+  top: 180px;
+}
+
+.nmpf_04852 .particleContainer {
+  color: #ffffff;
+  width: inherit;
+  height: inherit;
+}
+
+.nmpf_04852 .particleContainer .particle {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+/*# sourceMappingURL=NMPF_04852.css.map */

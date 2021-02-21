@@ -23,13 +23,19 @@ const skillData = myData[3];
 
 //#region -------------------- RESUME URLs --------------------
 
-// const remoteResumeLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/';
+const remoteResumeLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/';
 
-const resumePDFurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.pdf';
-const resumeDOCXurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.docx';
-const resumeSimpleDOCXurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021_simplified.docx';
-const resumeTXTurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.txt';
-const resumeZIPurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.zip';
+// const resumePDFurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.pdf';
+// const resumeDOCXurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.docx';
+// const resumeSimpleDOCXurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021_simplified.docx';
+// const resumeTXTurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.txt';
+// const resumeZIPurl = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/resume/smcpherson_resume_2021.zip';
+
+const resumePDFurl = remoteResumeLoc + 'smcpherson_resume_2021.pdf';
+const resumeDOCXurl = remoteResumeLoc + 'smcpherson_resume_2021.docx';
+const resumeSimpleDOCXurl = remoteResumeLoc + 'smcpherson_resume_2021_simplified.docx';
+const resumeTXTurl = remoteResumeLoc + 'smcpherson_resume_2021.txt';
+const resumeZIPurl = remoteResumeLoc + 'smcpherson_resume_2021.zip';
 
 const resumePDFfilename = 'smcpherson_resume_2021.pdf';
 const resumeDOCXfilename = 'smcpherson_resume_2021.docx';

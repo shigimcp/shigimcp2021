@@ -12,7 +12,9 @@ import { useLoader, useUpdate } from 'react-three-fiber';
 
 export default function Text ({ children, vAlign = 'center', hAlign = 'center', size = 1, color = '#0000ff', ...props }) {
 
-    const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/threejs-experiment-01/main/src/.github/fonts/ChaleParNinSix.json')
+    // const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/threejs-experiment-01/main/src/.github/fonts/ChaleParNinSix.json')
+    // const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/threejs-experiment-01/main/src/.github/fonts/ChaletParNineteenSixty/ChaleParNinSix.json')
+    const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/threejs-experiment-01/main/src/.github/fonts/AvenirNext/AvenirNext-Regular.json')
 
     const config = useMemo(
         () => ({ font, size: 1, height: 0.125, curveSegments: 10, bevelEnabled: true, bevelThickness: 0, bevelSize: 0, bevelOffset: 0, bevelSegments: 0 }),

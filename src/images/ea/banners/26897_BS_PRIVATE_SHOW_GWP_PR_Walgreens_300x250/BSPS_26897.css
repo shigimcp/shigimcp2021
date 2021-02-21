@@ -1,0 +1,45 @@
+.bsps_26897 {
+  background-size: contain;
+}
+
+.bsps_26897 .bgDiv,
+.bsps_26897 .imageDiv,
+.bsps_26897 .bottleDiv,
+.bsps_26897 .logoBSPS,
+.bsps_26897 .vendorTag {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.bsps_26897 .logoBSPS {
+  top: -15px;
+  left: -65px;
+}
+
+.bsps_26897 .bottleDiv {
+  top: 84px;
+  left: 70px;
+}
+
+.bsps_26897 .vendorTag {
+  background: #ffffff;
+  width: 90px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bsps_26897 .vendorTag img {
+  width: 66.666666666666667%;
+  margin: 3.75% 16.666666666666667%;
+  padding: 0;
+}
+
+.bsps_26897 .clickTag {
+  border: 1px solid #ee70bc !important;
+  width: calc(100% - 1.75px);
+  height: calc(100% - 1.5px);
+}
+/*# sourceMappingURL=BSPS_26897.css.map */

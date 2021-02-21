@@ -1,0 +1,106 @@
+.jcnr_07074 {
+  background: #000000;
+  background-size: contain;
+}
+
+.jcnr_07074 .bgDiv,
+.jcnr_07074 .modelDiv,
+.jcnr_07074 .bottleDiv,
+.jcnr_07074 .particleContainer {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.jcnr_07074 .particleContainer {
+  color: #ffffff;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+}
+
+.jcnr_07074 .particleContainer .particle {
+  position: absolute;
+}
+
+.jcnr_07074 .logo_JCNR {
+  width: 170px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  top: 160px;
+}
+
+.jcnr_07074 .logo_JCNR img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.jcnr_07074 .bgDiv {
+  width: 100%;
+}
+
+.jcnr_07074 .bgDiv img {
+  width: inherit;
+}
+
+.jcnr_07074 .modelDiv {
+  top: 0;
+  left: 0;
+}
+
+.jcnr_07074 .bottleDiv {
+  width: 215px;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  top: 135px;
+  left: 5px;
+}
+
+.jcnr_07074 .bottleDiv img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.jcnr_07074 .bottleFlash {
+  position: absolute;
+}
+
+.jcnr_07074 .copy01, .jcnr_07074 .copy02 {
+  color: #ffffff;
+  font-family: 'at_sackers_english_scriptRg';
+  font-size: 2.8125em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: -0.02em;
+  line-height: 1.125em;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+}
+
+.jcnr_07074 .copy01 {
+  top: 255px;
+}
+
+.jcnr_07074 .copy02 {
+  width: 60%;
+  margin: 0 20%;
+  top: 180px;
+}
+
+.jcnr_07074 .cta {
+  width: 110px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 548px;
+  left: 160px;
+}
+/*# sourceMappingURL=JCNR_07074.css.map */

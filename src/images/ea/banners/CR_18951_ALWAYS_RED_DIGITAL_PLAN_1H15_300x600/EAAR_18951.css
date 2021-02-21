@@ -1,0 +1,130 @@
+.eaar_18951 {
+  background-image: url(./images/Xframes/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600_retina_03.jpg);
+  background-size: contain;
+}
+
+.eaar_18951 .bgDiv,
+.eaar_18951 .modelDiv,
+.eaar_18951 .bottleDiv,
+.eaar_18951 .particleContainer {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.eaar_18951 .particleContainer {
+  color: #ffffff;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+}
+
+.eaar_18951 .particleContainer .particle {
+  mix-blend-mode: screen;
+  position: absolute;
+}
+
+.eaar_18951 .logo_EAAR {
+  width: 220px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+.eaar_18951 .logo_EAAR .logo_EAARbase {
+  width: inherit;
+  margin: inherit;
+  padding: inherit;
+}
+
+.eaar_18951 .logo_EAAR .logo_EAARbase img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eaar_18951 .logo_EAAR .logo_EAARds {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -50px;
+  left: -40px;
+}
+
+.eaar_18951 .logo_EAAR .logo_EAARds img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eaar_18951 .bgDiv {
+  width: 100%;
+}
+
+.eaar_18951 .bgDiv img {
+  width: inherit;
+}
+
+.eaar_18951 .modelDiv {
+  width: 350px;
+  top: -50px;
+  left: -25px;
+}
+
+.eaar_18951 .bottleDiv {
+  width: 170px;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+.eaar_18951 .bottleDiv img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eaar_18951 .bottleFlash {
+  position: absolute;
+}
+
+.eaar_18951 .copy01, .eaar_18951 .copy02 {
+  color: #ffffff;
+  font-family: Didot_Regular;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+}
+
+.eaar_18951 .copy01 .char01, .eaar_18951 .copy01 .char02, .eaar_18951 .copy02 .char01, .eaar_18951 .copy02 .char02 {
+  margin: 0 -.0025em;
+  padding: 0;
+  display: inline-block;
+}
+
+.eaar_18951 .copy01 {
+  font-size: 1.5625em;
+  letter-spacing: -0.005em;
+  top: 15px;
+}
+
+.eaar_18951 .copy02 {
+  font-size: 0.875em;
+  letter-spacing: 0.025em;
+  top: 520px;
+}
+
+.eaar_18951 .cta {
+  width: 90px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 560px;
+  left: 105px;
+}
+/*# sourceMappingURL=EAAR_18951.css.map */

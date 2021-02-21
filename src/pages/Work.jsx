@@ -4,6 +4,8 @@ import React from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+// import { useLayoutEffect } from 'react';
+// import { useCallback } from 'react';
 
 import { gsap } from 'gsap';
 // import { CSSPlugin } from 'gsap/CSSPlugin';
@@ -122,14 +124,20 @@ function WorkList({ currentEmployer }) {
 
     //#region -------------------- FUNCTION: clearContent() --------------------
 
+    // // const clearContentRef = React.createRef();
+
     function clearContent() {
+    // const clearContent = React.forwardRef((props) => {
+    // const clearContent = useCallback(() => {
+    // const clearContent = () => {
 
         // console.log('');
         // console.log('-------------------- FUNCTION: clearContent() --------------------');
+
         // console.log(bannerContainer_Ref.current.parentNode);
         // console.log(bannerContainer_Ref.current);
         // console.log(bannerContainer_Ref.current.children);
-        // // console.log(document.getElementById('bannerContainerID').children);
+        // console.log(document.getElementById('bannerContainerID').children);
         // // console.log(bannerContainer_Ref.current.children.tl);
 
 
@@ -148,6 +156,10 @@ function WorkList({ currentEmployer }) {
         setVideoOpen(false);
         setLoadedVideo(null);
     }
+    // }, []);
+
+    // export default clearContent;
+
 
     //#endregion -------------------- FUNCTION: clearContent() --------------------
 
@@ -214,19 +226,19 @@ function WorkList({ currentEmployer }) {
                     newContent = React.createElement(bannerContent[thisWorkImage.link2]);
 
 
-                    console.log('');
-                    console.log('-------------------- FUNCTION: handleClick(thisWorkImage, thisTargetImage) ----- ELSE IF \'html5\'... --------------------');
+                    // console.log('');
+                    // console.log('-------------------- FUNCTION: handleClick(thisWorkImage, thisTargetImage) ----- ELSE IF \'html5\'... --------------------');
+
+                    // // console.log('');
+                    // // console.log('thisWorkImage = ' + thisWorkImage);
+                    // console.log('thisWorkImage');
+                    // console.log(thisWorkImage);
 
                     // console.log('');
-                    // console.log('thisWorkImage = ' + thisWorkImage);
-                    console.log('thisWorkImage');
-                    console.log(thisWorkImage);
-
-                    console.log('');
-                    // console.log('newContent = ' + newContent);
-                    console.log('newContent');
-                    console.log(newContent);
-                    // console.log(newContent.props);
+                    // // console.log('newContent = ' + newContent);
+                    // console.log('newContent');
+                    // console.log(newContent);
+                    // // console.log(newContent.props);
 
 
                     gsap.set([bannerContainer_Ref.current], { x: thisTargetImage.offsetLeft, y: thisTargetImage.offsetTop, scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
@@ -712,10 +724,14 @@ export const Work = (props) => {
     work = myData[1].filter(thisEmployer => thisEmployer.album_id === props.currentEmployer);
 
 
+    // clearContent();
+
     // console.log('');
     // console.log('------------------------- export const Work -------------------------');
     // console.log('work = ' + work);
-    // console.log('currentEmployer = ' + currentEmployer);
+    // console.log(work);
+
+    // console.log('props.currentEmployer = ' + props.currentEmployer);
 
 
     return (

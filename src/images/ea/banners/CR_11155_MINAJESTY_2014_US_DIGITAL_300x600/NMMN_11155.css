@@ -1,0 +1,42 @@
+.nmmn_11155 {
+  background-size: contain;
+}
+
+.nmmn_11155 .bgDiv,
+.nmmn_11155 .modelDiv,
+.nmmn_11155 .bottleDiv,
+.nmmn_11155 .logoContainer,
+.nmmn_11155 .logo_NM_Minajesty,
+.nmmn_11155 .cta,
+.nmmn_11155 .smokeContainer {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.nmmn_11155 .bottleDiv {
+  top: 465px;
+  left: 12px;
+}
+
+.nmmn_11155 .logo_NM_Minajesty {
+  top: 0;
+  left: 0;
+}
+
+.nmmn_11155 .cta {
+  width: 140px;
+  height: 20px;
+  top: 550px;
+  left: 80px;
+}
+
+.nmmn_11155 .smokeContainer {
+  mix-blend-mode: screen;
+}
+
+.nmmn_11155 .clickTag {
+  position: absolute;
+  top: 0;
+}
+/*# sourceMappingURL=NMMN_11155.css.map */
