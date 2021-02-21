@@ -36,13 +36,13 @@ export default {
     // "AvenirNext-MediumItalic": "https://raw.githubusercontent.com/shigimcp/threejs-experiment-01/main/src/.github/fonts/AvenirNext/AvenirNext-MediumItalic.otf",
     // "AvenirNext-Regular": "https://raw.githubusercontent.com/shigimcp/threejs-experiment-01/main/src/.github/fonts/AvenirNext/AvenirNext-Regular.otf"
 
-    "AnimeAceItalic": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/tree/master/src/.github/fonts/AnimeAceItalic/AnimeAceItalic.otf",
-    "Chalet-ParisNineteenSixty": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/tree/master/src/.github/fonts/ChaletParNineteenSixty/ChaleParNinSix.otf",
+    "AnimeAceItalic": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AnimeAceItalic/AnimeAceItalic.otf",
+    "Chalet-ParisNineteenSixty": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/ChaletParNineteenSixty/ChaleParNinSix.otf",
 
-    "AvenirNext-DemiBold": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/tree/master/src/.github/fonts/AvenirNext/AvenirNext-DemiBold.otf",
-    "AvenirNext-DemiBoldItalic": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/tree/master/src/.github/fonts/AvenirNext/AvenirNext-DemiBoldItalic.otf",
-    "AvenirNext-Italic": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/tree/master/src/.github/fonts/AvenirNext/AvenirNext-Italic.otf",
-    "AvenirNext-Medium": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/tree/master/src/.github/fonts/AvenirNext/AvenirNext-Medium.otf",
-    "AvenirNext-MediumItalic": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/tree/master/src/.github/fonts/AvenirNext/AvenirNext-MediumItalic.otf",
-    "AvenirNext-Regular": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/tree/master/src/.github/fonts/AvenirNext/AvenirNext-Regular.otf"
+    "AvenirNext-DemiBold": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNext-DemiBold.otf",
+    "AvenirNext-DemiBoldItalic": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNext-DemiBoldItalic.otf",
+    "AvenirNext-Italic": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNext-Italic.otf",
+    "AvenirNext-Medium": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNext-Medium.otf",
+    "AvenirNext-MediumItalic": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNext-MediumItalic.otf",
+    "AvenirNext-Regular": "https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNext-Regular.otf"
 };
