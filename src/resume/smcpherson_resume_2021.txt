@@ -19,34 +19,34 @@ EXPERIENCE
 Ichiban Yofuku
 Digital Designer / Front-End Developer
 02.19 – 11.19
-• E-commerce website design and development
+- E-commerce website design and development
 Software: Adobe CC Photoshop, Illustrator, After Effects, Media Encoder
 Languages: HTML5, JavaScript/jQuery, GSAP, CSS3/SCSS/SASS
 
 MiMi
 Digital Designer / Front-End Developer
 10.18 – 04.19
-• Logo / Brand ideation and design 
-• E-commerce website design and development
+- Logo / Brand ideation and design 
+- E-commerce website design and development
 Software: Adobe CC Photoshop, Illustrator, After Effects, Media Encoder, Lightroom, XD, Sketch, InVision, Figma
 Languages: HTML5, JavaScript/jQuery, GSAP, CSS3/SCSS/SASS
 
 Elizabeth Arden
 Freelance Digital Designer
 07.12 - 10.17
-• Website, banner and email design and development
-• Facebook page design and development using Buddy Media
-• Web app design & development (HTML5, CSS3, JavaScript)
-• Animation & video editing
+- Website, banner and email design and development
+- Facebook page design and development using Buddy Media
+- Web app design & development (HTML5, CSS3, JavaScript)
+- Animation & video editing
 Software: Adobe CS Photoshop, Illustrator, After Effects, Media Encoder, Animate, Dreamweaver, DoubleClick
 Languages: HTML5, JavaScript/jQuery, GSAP, CSS3, AS3
 
 Armani Exchange
 Freelance Digital Designer
 12.10 - 07.12
-• Microsite design and development
-• Banner and email design and development
-• Mobile site design and development from concept to completion
+- Microsite design and development
+- Banner and email design and development
+- Mobile site design and development from concept to completion
 Distinction: AOL/KBS Project Devil Competition Winner (in conjunction with Media Kitchen)
 Software: Adobe CS Photoshop, Illustrator, After Effects, Media Encoder, Animate, Dreamweaver, DoubleClick
 Languages: HTML5, JavaScript/jQuery, GSAP, CSS3, AS3
@@ -54,29 +54,29 @@ Languages: HTML5, JavaScript/jQuery, GSAP, CSS3, AS3
 Hearst Digital Media
 Designer / Front-End Developer
 04.08 - 01.09
-• Promo player & evite design
-• ActionScript design and development from concept to completion
-• In-house promotion
-Publications include: Seventeen, Cosmopolitan, Cosmogirl, Town & Country, Harper’s Bazaar
+- Promo player & evite design
+- ActionScript design and development from concept to completion
+- In-house promotion
+Publications include: Seventeen, Cosmopolitan, CosmoGirl, Town & Country, Harper’s Bazaar
 Software: Adobe CS Photoshop, Illustrator, Flash, Dreamweaver, After Effects
 Languages: AS2, AS3
 
 DDB Studio 8 (DDB Worldwide)
 Multimedia Specialist
 09.07 - 12.07
-• Website design and development from concept to completion
-• In-house promotion
+- Website design and development from concept to completion
+- In-house promotion
 Software: Adobe CS Photoshop, Illustrator, Dreamweaver
 Languages: AS2, AS3
 
 MRM Partners (McCann Worldgroup)
 Art Director
 08.05 - 05.06
-• Worked closely with the copywriter to generate creative ideas and executions
-• Very hands-on work including design and ActionScript development
-• Produced sketches and storyboards to communicate ideas to clients
-• Ensured deadlines were met and worked effectively under pressure
-• Worked in industry-standard editing suites to oversee the finished product
+- Worked closely with the copywriter to generate creative ideas and executions
+- Very hands-on work including design and ActionScript development
+- Produced sketches and storyboards to communicate ideas to clients
+- Ensured deadlines were met and worked effectively under pressure
+- Worked in industry-standard editing suites to oversee the finished product
 Clients include: GM, Intel, Wendy’s
 Software: Adobe CS Photoshop, Illustrator, Flash, Dreamweaver
 Languages: HTML, CSS, AS2
@@ -85,11 +85,11 @@ Heeb Magazine
 Designer / Design Director
 04.04 - 05.05
 (issues: 06 - 08)
-• Page design / layout
-• Logo & type treatment
-• Retouching
-• Pre-press prep
-• Asset trafficking
+- Page design / layout
+- Logo & type treatment
+- Retouching
+- Pre-press prep
+- Asset trafficking
 Pages include: "Battle of the Schwartzes", "Out from Under", photo & fiction features, products, parody ads
 Software: Adobe CS Photoshop, Illustrator, QuarkXPress, Alias Maya (3D)
 
@@ -97,28 +97,28 @@ Harper’s Bazaar
 Designer
 11.01 - 08.03
 (Issues: 02.02 - 11.03)
-• Heavy page layout, logo/type treatment
-• Moderate (p)retouching
-• Moderate pre-press preparation
-• Light art trafficking
+- Heavy page layout, logo/type treatment
+- Moderate (p)retouching
+- Moderate pre-press preparation
+- Light art trafficking
 Pages include: cover(s), center of book photo features, "Letter From the Editor", "What to Wear", parties, reviews, horoscopes and product pages
 Software: QuarkXPress, Adobe Photoshop, Illustrator, Infini-D, Strata StudioPro, Alias Maya (3D), Fontographer, various word processing applications
 
 Style.com
 Freelance Production Designer
 06.01 - 09.01
-• E-commerce website asset creation
-• Retouching
-• Batch processing
+- E-commerce website asset creation
+- Retouching
+- Batch processing
 Software: Adobe Photoshop
 
 Luminant Worldwide Corporation (née Interactive8)
 Art Director
 11.99 - 11.00
-• Website design and art direction
-• Moderate HTML and light JavaScript
-• Moderate flash work
-• Light 3d modeling & rendering
+- Website design and art direction
+- Moderate HTML and light JavaScript
+- Moderate Flash work
+- Light 3d modeling & rendering
 Clients include: A&E Television Networks, DeBeers, Gazelle.com (formerly MyLegs.com), M&M/Mars, Maybelline, RJ Reynolds, StarBand
 Software: QuarkXPress, Adobe Illustrator, Photoshop, Premiere, ImageReady, Dimensions, Streamline, After Effects, Infini-D, Strata StudioPro, MacroMedia Director, Flash, AfterShock, Fireworks, SoundEdit 16 Plus Deck II, Fontographer, various word processing applications
 Languages: HTML, CSS, AS2
@@ -126,9 +126,10 @@ Languages: HTML, CSS, AS2
 Darwin Digital, A Saatchi & Saatchi Vision Company
 Designer
 12.97 - 11.99
-• Responsible for website design
-• Used HTML, light JavaScript and Flash
-• Responsible for 3d modeling & rendering
+- Website design
+- Moderate programming, including html and light Javascript
+- Moderate Flash work
+- Light 3d modeling & rendering
 Clients include: Albertsons, Allied Domecq, Darwin Digital, Enterprise, General Mills, GeoCities, Hewlett-Packard, Procter & Gamble, Reynolds Metals, Smarterkids, TeaQ, Tel-Save, Time Inc. New Media
 Software: QuarkXPress, Adobe Illustrator, Photoshop, ImageReady, Streamline, After Effects, Infini-D, Strata StudioPro, MacroMedia Director, Flash, AfterShock, Fireworks, SoundEdit 16 Plus Deck II, Fontographer, various word processing applications
 Languages: HTML, light DHTML, JavaScript, CSS
@@ -136,108 +137,107 @@ Languages: HTML, light DHTML, JavaScript, CSS
 dELiA*s
 Designer
 02.99 - 03.99
-• Prospectus cover design from concept to completion
-• Website design from concept to completion
+- Prospectus cover design from concept to completion
+- Website design from concept to completion
 Software: QuarkXPress, Adobe Illustrator, Photoshop, ImageReady, Flash, Fireworks, Fontographer, various word processing applications
 Languages: HTML, JavaScript, CSS
 
 Media Circus
 Production Designer
 09.97 - 12.97
-• Website asset creation for MTV and Gateway
-• Interactive television screen design for Cablevision
-• Also acted as Producer for this project
+- Website asset creation for MTV and Gateway
+- Interactive television screen design for Cablevision
+- Also acted as Producer for this project
 Software: Adobe Illustrator, Photoshop, Premiere
 
 Sunshine Interactive Network
 Designer
 12.96 - 07.97
-• Website and CD-Rom asset creation
-• Moderate interface design
-• Heavy 2D animation
-• Manipulation of scanned artwork including retouching, coloring and batch processing
-• Digital asset management
-• Very light HTML programming
+- Website and CD-Rom asset creation
+- Moderate interface design
+- Heavy 2D animation
+- Manipulation of scanned artwork including retouching, coloring and batch processing
+- Digital asset management
+- Very light HTML programming
 Titles include: Scholastic’s Mathshop Deluxe, New Line Cinema’s First Strike, The Mask, Austin Powers
 Software: QuarkXPress, Adobe Illustrator, Photoshop, ImageReady, MacroMedia Director, FutureSplash (Flash), various word processing applications
 
 Byron Preiss Multimedia Co., Inc.
 Production Artist
 11.95 - 12.96
-• CD_Rom asset creation and interface design
-• Heavy Quicktime movie creation including audio and video capture, 2D animation and editing
-• 2D manipulation of scanned artwork including retouching, colorization of b/w photos and batch processing
-• 3D animation (design, modeling and rendering)
-• Digital asset management
-• Light Macromedia Director work including some Lingo script
+- CD_Rom asset creation and interface design
+- Heavy Quicktime movie creation including audio and video capture, 2D animation and editing
+- 2D manipulation of scanned artwork including retouching, colorization of b/w photos and batch processing
+- 3D animation (design, modeling and rendering)
+- Digital asset management
+- Light Macromedia Director work including some Lingo script
 Titles include: Scientific American's From Quarks to Cosmos and Simon & Schuster Interactive's Philip Marlowe, Private Eye
 Software: QuarkXPress, Adobe Illustrator, Photoshop, Premiere, ImageReady, Streamline, After Effects, Infini-D, MacroMedia Director, various word processing applications
 
 @radical.media / Tape House Interactive / RGA
 Scan Retoucher / Colorist / Computer Animator
 10.95
-• Cel-by-cel production of 90-second animated spot for Nike's "All NYC" campaign for viewing in theaters
-• Digital scanning of original art in PC environment
-• Scan clean-up in Adobe Photoshop, Streamline and Illustrator in PC and Mac environment
-• Retouch and color in Adobe Photoshop in PC and Mac environments
+- Cel-by-cel production of 90-second animated spot for Nike's "All NYC" campaign for viewing in theaters
+- Digital scanning of original art in PC environment
+- Scan clean-up in Adobe Photoshop, Streamline and Illustrator in PC and Mac environment
+- Retouch and color in Adobe Photoshop in PC and Mac environments
 Title: Nike All NYC
 Software: Adobe Illustrator, Photoshop, Premiere, Streamline, After Effects, various word processing applications
 
 MIX Film/Video Festival
 Designer
 09.95
-• Design and layout from concept to completion of MIX 95 poster and catalogue
-• Extensive scanning and page layout for 2-color output
-• Light advertisement layout
-Software: QuarkXPress, Adobe Illustrator, Photoshop, Premiere, ImageReady, Streamline, After Effects, Infini-D various word processing applications
+- Design and layout from concept to completion of MIX 95 poster and catalogue
+- Extensive scanning and page layout for 2-color output
+- Light advertisement layout
+Software: QuarkXPress, Adobe Illustrator, Photoshop, Premiere, ImageReady, Streamline, After Effects, Infini-D, various word processing applications
 
 Jumbo Pictures
 Computer Animator
 03.95 - 07.95
-• Produce animatics from storyboard images using Adobe Premiere
-• Shoot images from video camera directly to computer
-• Record audio directly to computer
-• Record complete animatic to half-inch or three quarter-inch videotape
-• Consult on hardware/software purchases, storage systems and future options for computer video production
-• Help maintain and troubleshoot all in-house computers
+- Produce animatics from storyboard images using Adobe Premiere
+- Shoot images from video camera directly to computer
+- Record audio directly to computer
+- Record complete animatic to half-inch or three quarter-inch videotape
+- Consult on hardware/software purchases, storage systems and future options for computer video production
+- Help maintain and troubleshoot all in-house computers
 Title: SportsBenders
 Software: Adobe Illustrator, Photoshop, Premiere, After Effects, various word processing applications
 
 ITVS/AIDSFilms
 Production Assistant
 09.94 - 07.95
-• Sound recording
-• Production photography
-• Tech runner
-• Administrative assistance
+- Sound recording
+- Production photography
+- Tech runner
+- Administrative assistance
 Title: Positive: Life With HIV
 Software: Microsoft Office
 
 MRY - various clients
 Partner / Computer Graphics Specialist
 04.94 - 12.96
-• Design and layout from concept to completion for style guides, textboooks, brochures and advertisements
-• Scan retouching and/or compositing in Adobe Photoshop
-• Computer illustration and fabric design in Adobe Illustrator and Photoshop
-• 3D modeling and rendering using form•Z and Strata StudioPro
+- Design and layout from concept to completion for style guides, textboooks, brochures and advertisements
+- Scan retouching and/or compositing in Adobe Photoshop
+- Computer illustration and fabric design in Adobe Illustrator and Photoshop
+- 3D modeling and rendering using form•Z and Strata StudioPro
 Software: QuarkXPress, Adobe Illustrator, Photoshop, form•Z, Infini-D, Strata StudioPro, Electric Image, various word processing applications
 
 Oasis Creative Resources
 Computer Graphics Specialist
 08.93 - 04.94
-• High resolution scan retouching
-• Computer illustration including 3D rendering in Adobe Dimensions and Illustrator
-• Brochure, ad and magazine layout
+- High resolution scan retouching
+- Computer illustration including 3D rendering in Adobe Dimensions and Illustrator
+- Brochure, ad and magazine layout
 Software: QuarkXPress, Adobe Illustrator, Photoshop, various word processing applications
 
 
 
 EDUCATION
 
-Columbia University, School of Engineering and Applied Science
-May 1990
-Major: Mechanical Engineering
-Degree: Bachelor of Science
+Columbia University
+School of Engineering and Applied Science
+BS Mechanical Engineering - May 1990
 
 
 
@@ -264,16 +264,16 @@ Availability												Immediate
 
 LIST
 
-• Adobe Creative Suite 
-• Premiere Pro/After Effects
-• Photoshop
-• Illustrator
-• InDesign
-• QuarkXPress 
-• Motion/Animation
-• UI/UX
-• Sketch, XD, InVision, Figma
-• HTML(5)/CSS
-• JavaScript/jQuery, GSAP
-• React & Angular 6
+- Adobe Creative Suite 
+- Premiere Pro/After Effects
+- Photoshop
+- Illustrator
+- InDesign
+- QuarkXPress 
+- Motion/Animation
+- UI/UX
+- Sketch, XD, InVision, Figma
+- HTML(5)/CSS
+- JavaScript/jQuery, GSAP
+- React & Angular 6
 

@@ -10,8 +10,8 @@
     line-height: 1.25em;
 
     margin: 0;
-    // padding: 0;
-    padding: 0 0 0.125em 0;
+    padding: 0;
+    // padding: 0 0 0.125em 0;
 }
 
 .employerContainer {
@@ -25,221 +25,602 @@
 
     // margin: 0 auto;
     margin: 0 auto 120px auto;
+    // padding: 0 0 0 5%;
 
-    
+    // position: absolute;
+
+    h1 {
+        // border: 2px solid #ffff00;
+
+        font-size: 1.375em;
+    }
+
+    .sectHed {
+        // border: 2px solid #ff00ff;
+
+        text-transform: uppercase;
+        width: auto;
+        // margin: 0 5%;
+        margin: 1.5em 0 0.5em 0;
+        // left: 12.5%;
+
+        // position: relative;
+    }
+
+    h2 {
+        // border: 2px solid #ff00ff;
+
+        font-size: 1.125em;
+        // line-height: 0.5em;
+        line-height: 1.375em;
+
+        width: 60%;
+
+        margin: 0 0 5px 0;
+        // margin: 0 0 10px 0;
+
+        display: inline-block;
+    }
+
+    ul {
+        // margin: inherit;
+        // padding: 15px 0;
+
+        li {
+            // font-weight: bold;
+
+            padding-left: 0.625em;
+            text-indent: -0.625em;
+
+            list-style: none;
+        }
+    }
+
+    p {
+        // font-weight: bold;
+        // letter-spacing: 0.05em;
+
+        // margin: inherit;
+        padding: 0.5em 0 0 0;
+    }
+
+    .logo {
+        // border: 2px solid #00ffff;
+        background: none;
+
+        width: 12.5%;
+        max-height: 80px;
+
+        float: left;
+
+        // margin: 0;
+        margin: 5px 0 0 0;
+        // padding: 0;
+
+        // position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .employerInfo, .eduInfo {
+        // border: 2px solid #ff0000;
+
+        font-size: 1em;
+
+        // width: 80%;
+        width: 83.75%;
+        // height: 100%;
+
+        float: right;
+    }
+
     .employerList {
         // border: 2px solid #00ff00;
 
         text-align: left;
 
         margin: 0 auto;
-        padding: 125px 0 0 0;
+        padding: 125px 0 0 5%;
 
         .employerItem {
-            // border: 1px solid #0000ff;
+            // border: 1px solid #ff00ff;
 
             width: 100%;
             height: auto;
 
             margin: 0;
+            // padding: 0;
             // padding: 0 0 50px 0;
-            padding: 0 0 2.5em 0;
+            padding: 0 0 2em 0;
+            // padding: 0 0 2.5em 0;
 
             position: relative;
             display: inline-block;
 
-            .logo {
-                // border: 2px solid #0000ff;
-                background: none;
+            // .logo {
+            //     border: 2px solid #00ffff;
+            // }
 
-                width: 12.5%;
-
-                float: left;
-
-                // margin: inherit;
-                // margin: 1.25% auto 0 auto;
-                // padding: 0;
-
-                margin: 5px 0 0 0;
-                padding: 0;
-
-                position: absolute;
-                top: 0;
-            }
-
-            .employerInfo {
-                // border: 2px solid #ff0000;
-
-                font-size: 1em;
-                // font-weight: bold;
-                // line-height: 1em;
-                // letter-spacing: 0.05em;
-
-                width: 80%;
-                height: 100%;
-
-                // margin: inherit;
-                // padding: 0;
-
-                float: right;
-
-                h1, h2 {
-                    // letter-spacing: 0.0375em;
-                }
-
-                h1 {
-                    // border: 2px solid #ffff00;
-
-                    font-size: 1.5em;
-                    // font-weight: 600;
-                    // font-weight: bold;
-                    // text-align: inherit;
-
-                    // margin: inherit;
-                    // padding: inherit;
-                }
-
-                h2 {
-                    // border: 2px solid #ff00ff;
-
-                    font-size: 1.125em;
-                    // font-weight: bold;
-                    // text-align: inherit;
-                    line-height: 0.5em;
-
-                    width: 60%;
-
-                    // margin: inherit;
-                    // margin: 0 0 5px 0;
-                    margin: 0 0 10px 0;
-                    // padding: inherit;
-                    // padding: 0 0 10px 0;
-
-                    display: inline-block;
-                }
+            // .employerInfo {
+            //     border: 2px solid #00ffff;
 
                 .employerDates {
                     // border: 2px solid #00ffff;
 
-                    // font-size: 1em;
-                    // font-weight: bold;
                     text-align: right;
-                    // letter-spacing: 0.025em;
 
                     width: 22.5%;
 
-                    // margin: inherit;
-                    // padding: inherit;
-
-                    // display: inline-block;
                     float: right;
                 }
+            // }
 
-                ul {
-                    // margin: inherit;
-                    // padding: 15px 0;
+            /* #region ==================== DEAD / DYING CODE ==================== */
+            // .logo {
+            //     border: 2px solid #00ffff;
+            //     background: none;
 
-                    li {
-                        // font-weight: bold;
+            //     width: 12.5%;
 
-                        // letter-spacing: 0.05em;
+            //     float: left;
 
-                        padding-left: 0.625em;
-                        text-indent: -0.625em;
+            //     // margin: inherit;
+            //     // margin: 1.25% auto 0 auto;
+            //     // padding: 0;
 
-                        list-style: none;
-                    }
-                }
+            //     margin: 5px 0 0 0;
+            //     padding: 0;
 
-                p {
-                    // font-weight: bold;
-                    // letter-spacing: 0.05em;
+            //     position: absolute;
+            //     top: 0;
+            // }
 
-                    // margin: inherit;
-                    padding: 0.5em 0 0 0;
-                }
-            }
+            // .employerInfo {
+            //     // border: 2px solid #ff0000;
+
+            //     font-size: 1em;
+            //     // font-weight: bold;
+            //     // line-height: 1em;
+            //     // letter-spacing: 0.05em;
+
+            //     width: 80%;
+            //     height: 100%;
+
+            //     // margin: inherit;
+            //     // padding: 0;
+
+            //     float: right;
+
+            //     // h1, h2 {
+            //     //     // letter-spacing: 0.0375em;
+            //     // }
+
+            //     h1 {
+            //         // border: 2px solid #ffff00;
+
+            //         font-size: 1.5em;
+            //         // font-weight: 600;
+            //         // font-weight: bold;
+            //         // text-align: inherit;
+
+            //         // margin: inherit;
+            //         // padding: inherit;
+            //     }
+
+            //     h2 {
+            //         // border: 2px solid #ff00ff;
+
+            //         font-size: 1.125em;
+            //         // font-weight: bold;
+            //         // text-align: inherit;
+            //         line-height: 0.5em;
+
+            //         width: 60%;
+
+            //         // margin: inherit;
+            //         // margin: 0 0 5px 0;
+            //         margin: 0 0 10px 0;
+            //         // padding: inherit;
+            //         // padding: 0 0 10px 0;
+
+            //         display: inline-block;
+            //     }
+
+            //     .employerDates {
+            //         // border: 2px solid #00ffff;
+
+            //         // font-size: 1em;
+            //         // font-weight: bold;
+            //         text-align: right;
+            //         // letter-spacing: 0.025em;
+
+            //         width: 22.5%;
+
+            //         // margin: inherit;
+            //         // padding: inherit;
+
+            //         // display: inline-block;
+            //         float: right;
+            //     }
+
+            //     ul {
+            //         // margin: inherit;
+            //         // padding: 15px 0;
+
+            //         li {
+            //             // font-weight: bold;
+
+            //             // letter-spacing: 0.05em;
+
+            //             padding-left: 0.625em;
+            //             text-indent: -0.625em;
+
+            //             list-style: none;
+            //         }
+            //     }
+
+            //     p {
+            //         // font-weight: bold;
+            //         // letter-spacing: 0.05em;
+
+            //         // margin: inherit;
+            //         padding: 0.5em 0 0 0;
+            //     }
+            // }
+            /* #endregion ==================== DEAD / DYING CODE ==================== */
         }
     }
 
-    .skillHed {
-        // border: 2px solid #ff0000;
-        // border-top: 1px solid #999999;
-        // border-bottom: 1px solid #999999;
+    .eduContainer {
+        // border: 2px solid #0000ff;
 
-        // color: #666666;
-        font-size: 1.75em;
-        // letter-spacing: 0.025em;
-
-        width: 100%;
-
-        margin: 0.75em 0;
-        // margin: 0 0 0.75em 0;
-        // padding: 0.0625em 0 0 0;
-    }
-
-    .skillCatHed {
-        // border: 2px solid #ff0000;
-        border-bottom: 1px solid #999999;
-
-        // color: #666666;
-        font-size: 1.25em;
-        // letter-spacing: 0.05em;
-
-        width: 100%;
-
-        margin: 0.75em 0;
-        // margin: 0.75em 0 0.5em 0;
-    }
-
-    .skillList {
-        // border: 2px solid #ff0000;
-
-        color: #666666;
-        font-weight: 600;
-        // letter-spacing: 0.05em;
+        width: auto;
+        height: 8.75em;
 
         // margin: 0;
-        // padding: 0 0 100px 0;
+        padding: 0 0 0 5%;
 
-        display: grid;
-        // grid-template-columns: repeat(2, auto);
-        grid-template-columns: 48.75% 48.75%;
-        column-gap: 2.5%;
-        align-items: center;
+        position: relative;
 
-        .skillItem {
-            // border: 2px solid #00ff00;
+        // .sectHed {
+        //     border: 2px solid #00ffff;
+        // }
 
-            margin: 0;
-            padding: 0 0 10px 0;
+        // .logo {
+        //     border: 2px solid #00ffff;
+        // }
 
-            .skillBar {
+        #eduLogoID {
+            // border: 2px solid #00ffff;
+            position: relative;
+        }
+
+        // .eduInfo {
+        //     border: 2px solid #00ff00;
+
+            h2 {
                 // border: 2px solid #0000ff;
+                line-height: 1.5em;
+                margin: 0 0 0.125em 0;
+            }
 
-                // background: #999999;
-                // @include bgGradient04();
+            .eduDate {
+                // border: 2px solid #0000ff;
+                margin: 0;
+                padding: 0.25em 0 0 0;
+            }
+        // }
 
-                // fill: #ff00ff;
-                // fill: none;
-                // @include fillGradient01();
+        /* #region ==================== DEAD / DYING CODE ==================== */
+        // .logo {
+        //     border: 2px solid #00ffff;
+        //     background: none;
 
-                .skillBarRect01, .skillBarRect02 {
+        //     width: 12.5%;
+
+        //     float: left;
+
+        //     margin: 5px 0 0 0;
+        //     padding: 0;
+
+        //     position: absolute;
+        //     top: 0;
+        // }
+
+        // .eduInfo {
+        //     // border: 2px solid #ff0000;
+
+        //     font-size: 1em;
+        //     // font-weight: bold;
+        //     // line-height: 1em;
+        //     // letter-spacing: 0.05em;
+
+        //     width: 80%;
+        //     height: 100%;
+
+        //     // margin: inherit;
+        //     // padding: 0;
+
+        //     float: right;
+
+        //     // h1, h2 {
+        //     //     // letter-spacing: 0.0375em;
+        //     // }
+
+        //     h1 {
+        //         // border: 2px solid #ffff00;
+
+        //         font-size: 1.5em;
+        //         // font-weight: 600;
+        //         // font-weight: bold;
+        //         // text-align: inherit;
+
+        //         // margin: inherit;
+        //         // padding: inherit;
+        //     }
+
+        //     h2 {
+        //         // border: 2px solid #ff00ff;
+
+        //         font-size: 1.125em;
+        //         // font-weight: bold;
+        //         // text-align: inherit;
+        //         line-height: 0.5em;
+
+        //         width: 60%;
+
+        //         // margin: inherit;
+        //         // margin: 0 0 5px 0;
+        //         margin: 0 0 10px 0;
+        //         // padding: inherit;
+        //         // padding: 0 0 10px 0;
+
+        //         display: inline-block;
+        //     }
+
+        //     .employerDates {
+        //         // border: 2px solid #00ffff;
+
+        //         // font-size: 1em;
+        //         // font-weight: bold;
+        //         text-align: right;
+        //         // letter-spacing: 0.025em;
+
+        //         width: 22.5%;
+
+        //         // margin: inherit;
+        //         // padding: inherit;
+
+        //         // display: inline-block;
+        //         float: right;
+        //     }
+
+        //     ul {
+        //         // margin: inherit;
+        //         // padding: 15px 0;
+
+        //         li {
+        //             // font-weight: bold;
+
+        //             // letter-spacing: 0.05em;
+
+        //             padding-left: 0.625em;
+        //             text-indent: -0.625em;
+
+        //             list-style: none;
+        //         }
+        //     }
+
+        //     p {
+        //         // font-weight: bold;
+        //         // letter-spacing: 0.05em;
+
+        //         // margin: inherit;
+        //         padding: 0.5em 0 0 0;
+        //     }
+        // }
+        /* #endregion ==================== DEAD / DYING CODE ==================== */
+    }
+
+    .skillContainer {
+        // border: 2px solid #ff00ff;
+
+        font-size: 0.9375em;
+
+        padding: 0 0 0 5%;
+
+        .skillCatHed {
+            // border: 2px solid #ff0000;
+            border-bottom: 1px solid #999999;
+
+            // color: #666666;
+            font-size: 1.25em;
+            // letter-spacing: 0.05em;
+
+            width: 100%;
+
+            margin: 0.75em 0;
+            // margin: 0.75em 0 0.5em 0;
+        }
+
+        .skillChart {
+            // border: 2px solid #ff0000;
+
+            // color: #666666;
+            // // font-size: 0.9375em;
+            // font-weight: 600;
+            // // letter-spacing: 0.05em;
+
+            // margin: 0;
+            // padding: 0 0 100px 0;
+
+            // display: grid;
+            // // grid-template-columns: repeat(2, auto);
+            // grid-template-columns: 48.75% 48.75%;
+            // column-gap: 2.5%;
+            // align-items: center;
+
+            // position: relative;
+
+            .chartHed {
+                // border: 2px solid #00ff00;
+                font-size: 1.125em;
+                margin: 0;
+                padding: 0 0 0.5em 0;
+            }
+
+            .chartItem {
+                // border: 2px solid #00ff00;
+                // background: rgba($color: #000000, $alpha: 1);
+
+                // margin: 0;
+                // padding: 0 0 10px 0;
+
+                display: grid;
+
+                // grid-template-columns: repeat(2, auto);
+                // grid-template-columns: 47.5% 52.5%;
+                grid-template-columns: 77.5% 22.5%;
+                column-gap: 0;
+
+                // grid-auto-rows: max-content;
+                grid-template-rows: auto auto;
+
+                align-items: center;
+                justify-items: center;
+
+                .chartCell {
                     // border: 2px solid #ff00ff;
+                    border: 1px solid #666666;
+                    background: #ffffff;
 
-                    // fill: #cccccc;
-                    // @include fillGradient01();
-
-                    // stroke: #ff00ff;
-
-                    // width: 100%;
-                    // height: 100%;
+                    // width: 47.5%;
+                    width: 100%;
+                    height: 100%;
 
                     margin: 0;
                     padding: 0;
+
+                    display: table-cell;
+                    vertical-align: middle;
+
+                    p {
+                        line-height: 1.5em;
+                        margin: 0;
+                        // padding: 0;
+                        // padding: 0 15px;
+                        padding: 5px 15px;
+                    }
+
+                    .pInline {
+                        margin: 0;
+                        // padding: 0;
+                        padding: 0 15px;
+                        // padding: 5px 15px;
+                    }
                 }
             }
         }
+
+        .skillList {
+            // border: 2px solid #ff0000;
+
+            // color: #666666;
+            // font-size: 0.875em;
+            // font-size: 1em;
+            // font-weight: 600;
+            // letter-spacing: 0.05em;
+            // text-align: left;
+
+            // margin: 0;
+            margin: 2em 0;
+            // padding: 0 0 100px 0;
+
+
+            // display: grid;
+
+            // // grid-template-columns: repeat(3, auto);
+            // // grid-template-columns: 37.5% 37.5% 25%;
+            // grid-template-columns: 36.25% 36.25% 30%;
+            // column-gap: 0;
+
+            // grid-auto-rows: max-content;
+            // grid-template-rows: auto auto;
+
+
+            // --grid-col: var(--grid-col-2) !important;
+            // grid-auto-flow:column;
+            // grid-template-columns:repeat(2, 1fr);
+            // grid-template-rows:repeat(var(--grid-col), 1fr);
+
+            // align-items: center;
+            // // align-content: center;
+            // justify-items: center;
+
+
+            column-count: 3;
+            // column-gap: 15%;
+            column-gap: 10%;
+            // column-rule: 4px double #999999;
+
+            .listItem {
+                // border: 2px solid #00ff00;
+                // background: rgba($color: #000000, $alpha: 1);
+
+                line-height: 1.5em;
+                list-style: disc;
+                list-style-position: inside;
+
+                // margin: 0;
+                // padding: 0.25em 0;
+            }
+        }
+
+        /* #region ==================== DEAD / DYING CODE ==================== */
+
+        // .skillHed {
+        //     // border: 2px solid #ff0000;
+        //     // border-top: 1px solid #999999;
+        //     // border-bottom: 1px solid #999999;
+
+        //     // color: #666666;
+        //     font-size: 1.75em;
+        //     // letter-spacing: 0.025em;
+
+        //     width: 100%;
+
+        //     margin: 0.75em 0;
+        //     // margin: 0 0 0.75em 0;
+        //     // padding: 0.0625em 0 0 0;
+        // }
+
+        // .skillBar {
+        //     // border: 2px solid #0000ff;
+
+        //     // background: #999999;
+        //     // @include bgGradient04();
+
+        //     // fill: #ff00ff;
+        //     // fill: none;
+        //     // @include fillGradient01();
+
+        //     .skillBarRect01, .skillBarRect02 {
+        //         // border: 2px solid #ff00ff;
+
+        //         // fill: #cccccc;
+        //         // @include fillGradient01();
+
+        //         // stroke: #ff00ff;
+
+        //         // width: 100%;
+        //         // height: 100%;
+
+        //         margin: 0;
+        //         padding: 0;
+        //     }
+        // }
+
+        /* #endregion ==================== DEAD / DYING CODE ==================== */
     }
 }
 
