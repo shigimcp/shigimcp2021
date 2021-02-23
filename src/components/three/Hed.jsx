@@ -19,7 +19,8 @@ function Text({ children, vAlign = 'center', hAlign = 'center', size = 1, color 
     // const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/ChaletParNineteenSixty/ChaleParNinSix.json')
     // const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNext-Regular.json')
     // const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNext-UltraLight.json')
-    const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNextCyr-Light_Regular.json')
+    // const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNextCyr-Light_Regular.json')
+    const font = useLoader(THREE.FontLoader, 'https://raw.githubusercontent.com/shigimcp/shigimcp2020-react/master/src/.github/fonts/AvenirNext/AvenirNextCyr-Thin_Regular.json')
 
     const config = useMemo(
         () => ({ font, size: 1, height: 0.125, curveSegments: 10, bevelEnabled: true, bevelThickness: 0, bevelSize: 0, bevelOffset: 0, bevelSegments: 0 }),
