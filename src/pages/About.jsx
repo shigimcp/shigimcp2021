@@ -508,7 +508,7 @@ export const About = (props) => {
                 <h2>I keep them in my curls.</h2>
                 <h3>Sometimes, they try to escape.</h3>
                 <p className='credit'>Bad haiku, by Shigeru McPherson</p>
-                <p className='plea'>(This isn't even haiku... Someone, *please* take her crayon away!)</p>
+                <p className='plea'>(This isn't even haiku... Someone, *please* take her crayon away.)</p>
             </div>
 
 

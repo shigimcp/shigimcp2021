@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/shigimcp2020-react/static/css/main.5041a835.chunk.css",
-    "main.js": "/shigimcp2020-react/static/js/main.3480250e.chunk.js",
-    "main.js.map": "/shigimcp2020-react/static/js/main.3480250e.chunk.js.map",
-    "runtime-main.js": "/shigimcp2020-react/static/js/runtime-main.2be22644.js",
-    "runtime-main.js.map": "/shigimcp2020-react/static/js/runtime-main.2be22644.js.map",
-    "static/js/2.e225aeca.chunk.js": "/shigimcp2020-react/static/js/2.e225aeca.chunk.js",
-    "static/js/2.e225aeca.chunk.js.map": "/shigimcp2020-react/static/js/2.e225aeca.chunk.js.map",
+    "main.css": "/shigimcp2020-react/static/css/main.15e2a9f0.chunk.css",
+    "main.js": "/shigimcp2020-react/static/js/main.e1e13310.chunk.js",
+    "main.js.map": "/shigimcp2020-react/static/js/main.e1e13310.chunk.js.map",
+    "runtime-main.js": "/shigimcp2020-react/static/js/runtime-main.27a09372.js",
+    "runtime-main.js.map": "/shigimcp2020-react/static/js/runtime-main.27a09372.js.map",
+    "static/js/2.0e02b55f.chunk.js": "/shigimcp2020-react/static/js/2.0e02b55f.chunk.js",
+    "static/js/2.0e02b55f.chunk.js.map": "/shigimcp2020-react/static/js/2.0e02b55f.chunk.js.map",
     "index.html": "/shigimcp2020-react/index.html",
-    "static/css/main.5041a835.chunk.css.map": "/shigimcp2020-react/static/css/main.5041a835.chunk.css.map",
-    "static/js/2.e225aeca.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.e225aeca.chunk.js.LICENSE.txt",
+    "static/css/main.15e2a9f0.chunk.css.map": "/shigimcp2020-react/static/css/main.15e2a9f0.chunk.css.map",
+    "static/js/2.0e02b55f.chunk.js.LICENSE.txt": "/shigimcp2020-react/static/js/2.0e02b55f.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/shigimcp2020-react/static/media/ChaleParNinSix.e986494b.svg",
     "static/media/BSPS_bottle.a95786b2.png": "/shigimcp2020-react/static/media/BSPS_bottle.a95786b2.png",
     "static/media/BSPS_image.03a1cd3f.jpg": "/shigimcp2020-react/static/media/BSPS_image.03a1cd3f.jpg",
@@ -99,9 +99,9 @@
     "static/media/starspin.01672c26.svg": "/shigimcp2020-react/static/media/starspin.01672c26.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2be22644.js",
-    "static/js/2.e225aeca.chunk.js",
-    "static/css/main.5041a835.chunk.css",
-    "static/js/main.3480250e.chunk.js"
+    "static/js/runtime-main.27a09372.js",
+    "static/js/2.0e02b55f.chunk.js",
+    "static/css/main.15e2a9f0.chunk.css",
+    "static/js/main.e1e13310.chunk.js"
   ]
 }
