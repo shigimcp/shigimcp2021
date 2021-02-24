@@ -237,7 +237,7 @@ EDUCATION
 
 Columbia University
 School of Engineering and Applied Science
-BS Mechanical Engineering - May 1990
+BS Mechanical Engineering
 
 
 
@@ -245,35 +245,42 @@ SKILLS
 
 ==================================================
 
-CHART
-
+discipline	
+--------------------------------------------------
 Art Director Experience											15+ years
-Graphics Design Experience										15+ years
-Conceive, create and produce original graphic design and assets for all marketing creative demands	15+ years
-Adobe Suite (Premiere, After Effects, Photoshop, Final Cut)						15+ years
 Branding Experience											15+ years
+Conceive, create and produce original graphic design and assets for all marketing creative demands	15+ years
+Graphics Design Experience										15+ years
+Motion / Animation											15+ years
+Print													15+ years
+Web / UI / UX												15+ years
 Video Editing Experience										5 years
-Portfolio												http://www.shigimcp.com 
-													https://www.shigimcp.com/shigimcp2020-react (work in progress)
-Communication Skills											Excellent
-Location												Pennsylvania / New York
-Availability												Immediate
+
+software	
+--------------------------------------------------
+Adobe Creative Suite											15+ years
+Illustrator												15+ years
+Photoshop												15+ years
+QuarkXPress												15+ years
+Premiere Pro / After Effects										5 years
+InDesign												3 years
+Sketch, XD, Figma, InVision										1.5 years
+
+dev	
+--------------------------------------------------
+HTML[5], CSS[3]												15+ years
+Javascript / JQuery											15+ years
+GSAP													11 years
+SCSS / SASS												2 years
+NodeJS / npm												1.5 years
+React													1.5 years
+Angular 6 / 7												0.5 years
+
+3d	
+--------------------------------------------------
+Maya													2 years
+Unity													2 years
 
 
-==================================================
 
-LIST
-
-- Adobe Creative Suite 
-- Premiere Pro/After Effects
-- Photoshop
-- Illustrator
-- InDesign
-- QuarkXPress 
-- Motion/Animation
-- UI/UX
-- Sketch, XD, InVision, Figma
-- HTML(5)/CSS
-- JavaScript/jQuery, GSAP
-- React & Angular 6
 

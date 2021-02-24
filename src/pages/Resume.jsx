@@ -3,6 +3,7 @@
 import React from 'react';
 import { useRef } from 'react';
 // import { useState } from 'react';
+import Moment from 'moment';
 
 import '../stylesheets/Resume.scss';
 
@@ -62,17 +63,20 @@ function EmployerItem(props) {
         return (
             <div className='employerItem'>
 
-                <img className='logo' src={remoteImgLoc + props.employerLogo} alt={'Employer: ' + props.employer} />
+                {/* <img className='logo' src={remoteImgLoc + props.employerLogo} alt={'Employer: ' + props.employer} /> */}
+                {props.employerLogo ? <img className='logo' src={remoteImgLoc + props.employerLogo} alt={'Employer: ' + props.employer} /> : <img className='logo logoMissing' src={remoteImgLoc + 'shigeru_logo_transparent.svg'} alt={'Employer: ' + props.employer} />}
 
-                <div className='employerInfo'>
+                <div className='employerInfoContainer'>
                     <h1>{props.employer}</h1>
                     <h2>{props.title}</h2>
 
-                    <div className='employerDates'>{props.dateStart} - {props.dateEnd}</div>
+                    {/* <div className='employerDates'>{props.dateStart} - {props.dateEnd}</div> */}
+                    {/* <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')} - {Moment(props.dateEnd).format('MM/YY')}</div> */}
+                    {props.dateEnd ? <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')} - {Moment(props.dateEnd).format('MM/YY')}</div> : <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')}</div>}
 
                     <ul>
                         {props.info.split('\n').map((thisInfo, key) => {
-                            return <li key={key}>{thisInfo}</li>
+                            return <li className='employerInfo' key={key}>{thisInfo}</li>
                         })}
                     </ul>
 
@@ -127,93 +131,6 @@ function EmployerList() {
 
 
 
-//#region ==================== SkillList ====================
-
-// function SkillList(props) {
-
-//     const skillItems = skillData.filter(thisCategory => thisCategory.category === props.category).map((skill) =>
-
-//         <SkillChartItem
-//             key={skill.index}
-//             category={skill.category}
-//             skill={skill.skill}
-//             level={skill.level}
-//             level_difference={skill.level_difference}
-//         />
-//     );
-
-//     return (
-//         <>
-//             <h2 className='skillCatHed'>{props.category}</h2>
-
-//             <div className='skillList'>
-//                 {skillItems}
-//             </div>
-//         </>
-//     );
-// }
-
-//#endregion ==================== SkillList ====================
-
-
-
-//#region ==================== SkillChart ====================
-
-// function SkillChart() {
-
-//     const skillItems = skillData.map((skill) =>
-
-//         <SkillChartItem
-//             key={skill.index}
-//             skill={skill.skill}
-//             skillInfo={skill.skill_info}
-//             skillExtra={skill.skill_extra}
-//         />
-//     );
-
-//     return (
-//         <>
-//             {/* <h2 className='skillCatHed'>{props.category}</h2> */}
-
-//             <div className='skillList'>
-//                 CHART{skillItems}
-//             </div>
-//         </>
-//     );
-// }
-
-//#endregion ==================== SkillChart ====================
-
-
-//#region ==================== SkillList ====================
-
-// function SkillList() {
-
-//     const skillItems = skillData.map((skill) =>
-
-//         <SkillListItem
-//             key={skill.index}
-//             skill={skill.skill}
-//             skillInfo={skill.skill_info}
-//             skillExtra={skill.skill_extra}
-//         />
-//     );
-
-//     return (
-//         <>
-//             {/* <h2 className='skillCatHed'>{props.category}</h2> */}
-
-//             <div className='skillList'>
-//                 LIST{skillItems}
-//             </div>
-//         </>
-//     );
-// }
-
-//#endregion ==================== SkillList ====================
-
-
-
 //#region ==================== SkillChartItem ====================
 
 function SkillChartItem(props) {
@@ -226,14 +143,11 @@ function SkillChartItem(props) {
 
                 <div className='chartCell'>
                     <p>{props.skill}</p>
-                    {/* {props.skillInfo}
-                    {props.skillExtra} */}
                 </div>
 
                 <div className='chartCell'>
-                    {props.skillInfo.split('\n').map((thisInfo, key) => {
+                    {props.notes.split('\n').map((thisInfo, key) => {
                         return <p key={key}>{thisInfo}</p>
-                        {/* return <p className='pInline' key={key}>{thisInfo}</p> */}
                     })}
                 </div>
 
@@ -248,69 +162,49 @@ function SkillChartItem(props) {
 //#endregion ==================== SkillChartItem ====================
 
 
-//#region ==================== SkillListItem ====================
+//#region ==================== SkillChart ====================
 
-function SkillListItem(props) {
+function SkillChart(props) {
 
-    return (
-        // <div className='listItem'>
-
-        //     <ul className='listCell'>
-        //         {/* <li>{props.skill}</li>
-        //         <li>{props.skillInfo}</li> */}
-        //         <li>{props.skillExtra}</li>
-        //     </ul>
-
-        // </div>
-
-        <li className='listItem'>{props.skillExtra}</li>
-    )
-}
-
-//#endregion ==================== SkillListItem ====================
-
-
-//#region ==================== SkillSet ====================
-
-function SkillSet() {
-
-    const chartItems = skillData.map((skill) =>
+    const skillItems = skillData.filter(thisCategory => thisCategory.category === props.category).map((skill) =>
 
         <SkillChartItem
             key={skill.index}
+            category={skill.category}
             skill={skill.skill}
-            skillInfo={skill.skill_info}
-            skillExtra={skill.skill_extra}
-            availability={skill.availability}
-        />
-    );
-
-    const listItems = skillData.map((skill) =>
-
-        <SkillListItem
-            key={skill.index}
-            skill={skill.skill}
-            skillInfo={skill.skill_info}
-            skillExtra={skill.skill_extra}
+            level={skill.level}
+            level_difference={skill.level_difference}
+            exp={skill.exp}
+            notes={skill.notes}
             availability={skill.availability}
         />
     );
 
     return (
         <>
+            <h2 className='skillCatHed'>{props.category}</h2>
+
             <div className='skillChart'>
-                <p className='chartHed'>SnapChart...</p>
-                {chartItems}
+                {skillItems}
             </div>
+        </>
+    );
+}
 
-            {/* <div className='skillList'>
-                {listItems}
-            </div> */}
+//#endregion ==================== SkillChart ====================
 
-            <ul className='skillList'>
-            {/* <ul className='skillList --grid-col:17; --grid-col-2:9; --grid-col-3:6; --grid-col-4:5;'> */}
-                {listItems}
-            </ul>
+
+//#region ==================== SkillSet ====================
+
+function SkillSet() {
+
+    return (
+        <>
+            <SkillChart category='discipline' />
+            <SkillChart category='software' />
+            <SkillChart category='dev' />
+            <SkillChart category='3d' />
+            {/* <SkillChart category='info' /> */}
         </>
     );
 }
@@ -357,20 +251,13 @@ export const Resume = (props) => {
                     <div className='eduInfo'>
                         <h1>Columbia University</h1>
                         <h2>School of Engineering and Applied Science</h2>
-                        <p className='eduDate'><b>BS Mechanical Engineering</b> - May 1990</p>
+                        {/* <p className='eduDate'><b>BS Mechanical Engineering</b> - May 1990</p> */}
+                        <p className='eduDate'>BS Mechanical Engineering</p>
                     </div>
                 </div>
 
                 <div className='skillContainer'>
                     <h1 className='sectHed'>Skills</h1>
-
-                    {/* <SkillList category='discipline' />
-                    <SkillList category='software' />
-                    <SkillList category='dev' />
-                    <SkillList category='3d' /> */}
-
-                    {/* <SkillChart />
-                    <SkillList /> */}
                     <SkillSet />
                 </div>
 
