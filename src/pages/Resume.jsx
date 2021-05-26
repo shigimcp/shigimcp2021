@@ -288,7 +288,7 @@ export const Resume = (props) => {
                     </div>
 
                     <div className='dialogHed dialogHed02' id='dialogHed02ID'>
-                        <p>or Download all...</p>
+                        <p>or download ALL...</p>
                     </div>
 
                     <div className='dialogMenu dialogMenu02' id='dialogMenu02ID'>

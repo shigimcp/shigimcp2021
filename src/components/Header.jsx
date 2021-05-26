@@ -93,8 +93,9 @@ export const Header = (props) => {
     const [workNavShow, setWorkNavShow] = useState(null);
 
     // const [currentEmployer, setCurrentEmployer] = useState(null);
-    const [currentEmployer, setCurrentEmployer] = useState('ea');
-    const initEmployer = '/shigimcp2020-react/work/' + currentEmployer;
+    // const [currentEmployer, setCurrentEmployer] = useState('ea');
+    const [currentEmployer, setCurrentEmployer] = useState('ctm');
+    const initEmployer = '/shigimcp2021/work/' + currentEmployer;
 
     const [resumeNavShow, setResumeNavShow] = useState(null);
 
@@ -403,7 +404,7 @@ export const Header = (props) => {
             otherInfo={employer.info_other}
             languages={employer.languages}
             employerLogo={employer.logopath}
-            link={'/shigimcp2020-react/work/' + employer.album_id}
+            link={'/shigimcp2021/work/' + employer.album_id}
         />
     );
 
@@ -433,9 +434,9 @@ export const Header = (props) => {
 
             {/* #region ==================== LOGO (inline SVG) ==================== */}
 
-                {/* <A href='/shigimcp2020-react' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}> */}
-                {/* <A href='/shigimcp2020-react' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, 'homeID'); setMobileNavShow(false); }}> */}
-                <A href='/shigimcp2020-react' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>
+                {/* <A href='/shigimcp2021' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}> */}
+                {/* <A href='/shigimcp2021' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, 'homeID'); setMobileNavShow(false); }}> */}
+                <A href='/shigimcp2021' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>
 
                     <svg version='1.1' className='logoIcon' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880'>
                     {/* <svg version='1.1' className='logoIcon' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}> */}
@@ -546,11 +547,12 @@ export const Header = (props) => {
 
                     <div className='activeNavDiv' id='activeNavDivID' ref={activeNavDiv_Ref}></div>
 
-                    <A className='navItem' href='/shigimcp2020-react' id='homeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
+                    <A className='navItem' href='/shigimcp2021' id='homeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
                     <A className='navItem' href={initEmployer} id='workID' onClick={() => { setWorkNavShow(workNavShow.play()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work</A>
-                    <A className='navItem' href='/shigimcp2020-react/about' id='aboutID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>About</A>
-                    <A className='navItem' href='/shigimcp2020-react/resume' id='resumeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A>
-                    <A className='navItem' href='/shigimcp2020-react/contact' id='contactID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A>
+                    <A className='navItem' href='/shigimcp2021/isotope' id='isotopeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Isotope</A>
+                    <A className='navItem' href='/shigimcp2021/about' id='aboutID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>About</A>
+                    <A className='navItem' href='/shigimcp2021/resume' id='resumeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A>
+                    <A className='navItem' href='/shigimcp2021/contact' id='contactID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A>
 
                 </div>
 

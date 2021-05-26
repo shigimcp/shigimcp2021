@@ -1,32 +1,34 @@
 {
-    "name": "shigimcp2020-react",
+    "name": "shigimcp2021",
     "version": "0.1.0",
     "private": true,
     "_homepage": "https://www.shigimcp.com",
-    "__homepage": "https://www.shigimcp.com/shigimcp2020-react",
-    "homepage": "https://shigimcp.github.io/shigimcp2020-react",
+    "homepage": "https://www.shigimcp.com/shigimcp2021",
+    "__homepage": "https://shigimcp.github.io/shigimcp2021",
     "___homepage": ".",
     "dependencies": {
-        "gh-pages": "^3.1.0",
+        "gh-pages": "^3.2.0",
         "gsap": "file:gsap-bonus.tgz",
         "hookrouter": "^1.2.5",
+        "isotope-layout": "^3.0.6",
+        "isotope-packery": "^2.0.1",
         "lodash": "^4.17.21",
         "moment": "^2.29.1",
         "object-path": "^0.11.5",
         "pixi-particles": "^4.3.0",
-        "pixi.js": "^5.3.8",
-        "react": "^17.0.1",
+        "pixi.js": "^5.3.9",
+        "react": "^17.0.2",
         "react-css-burger": "^0.2.0",
-        "react-dom": "^17.0.1",
-        "react-gsap": "^2.2.1",
+        "react-dom": "^17.0.2",
+        "react-gsap": "^2.3.0",
         "react-moment": "^1.1.1",
         "react-player": "^2.9.0",
-        "react-responsive-masonry": "^2.1.1",
-        "react-scripts": "^4.0.2",
-        "react-three-fiber": "^5.3.18",
-        "sass": "^1.32.8",
-        "three": "^0.123.0",
-        "typescript": "^4.1.5"
+        "react-responsive-masonry": "^2.1.2",
+        "react-scripts": "^4.0.3",
+        "react-three-fiber": "^5.3.22",
+        "sass": "^1.34.0",
+        "three": "^0.128.0",
+        "typescript": "^4.2.4"
     },
     "scripts": {
         "predeploy": "npm run build",
@@ -52,9 +54,9 @@
         ]
     },
     "devDependencies": {
-        "@testing-library/jest-dom": "^5.11.9",
-        "@testing-library/react": "^11.2.5",
-        "@testing-library/user-event": "^12.7.1",
-        "npm": "^7.5.6"
+        "@testing-library/jest-dom": "^5.12.0",
+        "@testing-library/react": "^11.2.7",
+        "@testing-library/user-event": "^12.8.3",
+        "npm": "^7.14.0"
     }
 }

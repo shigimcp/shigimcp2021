@@ -600,7 +600,7 @@ function WorkList({ currentEmployer }) {
 
                 {isBannerArray.length > 0 && <a href='#bannerPodID'><p>Banner Animations</p></a>}
                 {isWebArray.length > 0 && <a href='#webPodID'><p>Web/Video</p></a>}
-            {isPrintArray.length > 0 && <a href='#printPodID'><p>Print</p></a>}
+                {isPrintArray.length > 0 && <a href='#printPodID'><p>Print</p></a>}
             </div>
 
         {/* #endregion ------------------------- sectionNav ------------------------- */}

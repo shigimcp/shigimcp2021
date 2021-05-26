@@ -17,6 +17,8 @@ import { Contact } from './pages/Contact';
 
 import { NotFound } from './pages/NotFound';
 
+import { Isotope03 } from './pages/Isotope03';
+
 // import { useContext } from 'react';
 
 //#endregion ==================== IMPORTS ====================
@@ -26,14 +28,14 @@ import { NotFound } from './pages/NotFound';
 
 // const routes = {
 //     '/': () => <Home locID={'homeID'} loadStatus={true} />,
-//     '/shigimcp2020-react': () => <Home locID={'homeID'} loadStatus={true} />,
-//     '/shigimcp2020-react/': () => <Home locID={'homeID'} loadStatus={true} />,
-//     '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
-//     '/shigimcp2020-react/about': () => <About locID={'aboutID'} loadStatus={true} />,
-//     // '/shigimcp2020-react/resume': () => <Resume locID={'resumeID'} loadStatus={true} />,
-//     '/shigimcp2020-react/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} />,
-//     '/shigimcp2020-react/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
-//     '/shigimcp2020-react/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
+//     '/shigimcp2021': () => <Home locID={'homeID'} loadStatus={true} />,
+//     '/shigimcp2021/': () => <Home locID={'homeID'} loadStatus={true} />,
+//     '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
+//     '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
+//     // '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} />,
+//     '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} />,
+//     '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
+//     '/shigimcp2021/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
 // }
 
 //#endregion ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
@@ -66,14 +68,15 @@ function App() {
 
     const routes = {
         '/': () => <Home locID={'homeID'} loadStatus={true} />,
-        '/shigimcp2020-react': () => <Home locID={'homeID'} loadStatus={true} />,
-        '/shigimcp2020-react/': () => <Home locID={'homeID'} loadStatus={true} />,
-        '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
-        // '/shigimcp2020-react/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} clearContent={clearContent} />,
-        '/shigimcp2020-react/about': () => <About locID={'aboutID'} loadStatus={true} />,
-        '/shigimcp2020-react/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
-        '/shigimcp2020-react/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
-        '/shigimcp2020-react/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
+        '/shigimcp2021': () => <Home locID={'homeID'} loadStatus={true} />,
+        '/shigimcp2021/': () => <Home locID={'homeID'} loadStatus={true} />,
+        '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
+        // '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} clearContent={clearContent} />,
+        '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
+        '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} loadStatus={true} />,
+        '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
+        '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
+        '/shigimcp2021/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
     }
 
     //#endregion ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================

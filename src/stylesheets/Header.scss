@@ -247,8 +247,8 @@
             font-size: 1.125em;
             text-align: center;
 
-            // width: 70%;
-            width: 50%;
+            width: 70%;
+            // width: 50%;
             height: $navBar-height;
 
             margin: 0 auto;
@@ -258,7 +258,7 @@
             display: grid;
             // grid-template-columns: repeat(6, 16.666666666666667%);
             // grid-template-columns: repeat(6, auto);
-            grid-template-columns: repeat(5, auto);
+            grid-template-columns: repeat(6, auto);
             column-gap: 0;
             align-items: center;
 

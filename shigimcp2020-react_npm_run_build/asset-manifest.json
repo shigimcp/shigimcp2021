@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/shigimcp2020-react/static/css/main.dd296342.chunk.css",
-    "main.js": "/shigimcp2020-react/static/js/main.daa071c2.chunk.js",
-    "main.js.map": "/shigimcp2020-react/static/js/main.daa071c2.chunk.js.map",
+    "main.js": "/shigimcp2020-react/static/js/main.f0047356.chunk.js",
+    "main.js.map": "/shigimcp2020-react/static/js/main.f0047356.chunk.js.map",
     "runtime-main.js": "/shigimcp2020-react/static/js/runtime-main.27a09372.js",
     "runtime-main.js.map": "/shigimcp2020-react/static/js/runtime-main.27a09372.js.map",
     "static/js/2.6a845940.chunk.js": "/shigimcp2020-react/static/js/2.6a845940.chunk.js",
@@ -102,6 +102,6 @@
     "static/js/runtime-main.27a09372.js",
     "static/js/2.6a845940.chunk.js",
     "static/css/main.dd296342.chunk.css",
-    "static/js/main.daa071c2.chunk.js"
+    "static/js/main.f0047356.chunk.js"
   ]
 }
