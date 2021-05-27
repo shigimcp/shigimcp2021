@@ -163,7 +163,7 @@ export const Header = (props) => {
 
     useEffect(() => {
 
-        // // console.log('');
+        // console.log('');
         // console.log('------------------------- useEffect: currentPath => set active[X]Divs -------------------------');
 
         // let currentPath = usePath();
@@ -180,14 +180,16 @@ export const Header = (props) => {
         }
 
 
-        // // console.log('');
+        // console.log('');
         // console.log('currentPath = ' + currentPath);
 
 
         const pathEnd = currentPath.split('/').pop();
 
         const pathMid = currentPath.substring(
-            currentPath.lastIndexOf('react/') + 6, 
+            // currentPath.lastIndexOf('react/') + 6,
+            // currentPath.lastIndexOf('react/') + 2,
+            currentPath.lastIndexOf('react/') + 15,
             currentPath.lastIndexOf('/')
         );
 
@@ -207,12 +209,18 @@ export const Header = (props) => {
 
             case '/':
 
+                // console.log('');
+                // console.log('pathMid = /');
+
                 navLoc = pathEnd + 'ID';
                 emplLoc = '';
 
                 break;
 
             case 'work':
+
+                // console.log('');
+                // console.log('pathMid = work');
 
                 navLoc = pathMid + 'ID';
                 emplLoc = pathEnd + 'ID';
@@ -226,7 +234,11 @@ export const Header = (props) => {
 
             default:
 
+                // console.log('');
+                // console.log('pathMid = default');
+
                 navLoc = 'homeID';
+                // navLoc = pathEnd + 'ID';
                 emplLoc = '';
 
                 break;
@@ -278,7 +290,8 @@ export const Header = (props) => {
 
         window.scrollTo(0, 0);
 
-    }, [workNavShow]);
+    }, []);
+    // }, [workNavShow]);
 
     //#endregion ==================== useEffect: [workNavShow, setWorkNavShow] ====================
 

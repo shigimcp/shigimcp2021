@@ -14,14 +14,19 @@ import '../stylesheets/Isotope.scss';
 import myData from '../data/MyData';
 
 import { gsap } from 'gsap';
-// import { Flip } from 'gsap/Flip';
-
-// gsap.registerPlugin(Flip);
 
 //#endregion ==================== IMPORTS ====================
 
 
-//#region ==================== DATA ====================
+//#region ==================== CONSTANTS n VARS ====================
+
+const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
+
+// let navLoc;
+// let emplLoc;
+
+
+//#region -------------------- DATA --------------------
 
 // console.log('');
 // // console.log('myData = ' + myData);
@@ -42,15 +47,10 @@ let workData = myData[1];
 // console.log('workData = ');
 // console.log(workData);
 
-//#endregion ==================== DATA ====================
+//#endregion -------------------- DATA --------------------
 
 
-//#region ==================== FILTER ARRAYS ====================
-
-const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
-
-
-//#region -------------------- CONSTANT: filterEmployer --------------------
+//#region -------------------- FILTER ARRAY: filterEmployer --------------------
 
 const filterEmployer = employerData.filter(isInGallery => isInGallery.isInGallery);
 
@@ -60,31 +60,31 @@ const filterEmployer = employerData.filter(isInGallery => isInGallery.isInGaller
 // console.log(filterEmployer);
 
 filterEmployer.unshift(
-{
-   "album_index": '00',
-   "album_id": "*",
-   "employer": "All",
-   "title": "Digital Designer / Front-End Developer",
-   "date_start": "present",
-   "date_end": "present",
-   "info": "View ALL work",
-   "info_other": "",
-   "other_html": "",
-   "other_type": "",
-   "other": "",
-   "software": "",
-   "languages": "",
-//    "logopath": "0elements/shigeru_logo.svg",
-//    "logo": "shigeru_logo_transparent.svg",
-   "logopath": "#",
-   "logo": "#",
-   "slpath": "other/sl",
-   "thpath": "other/th",
-   "flpath": "https://www.shigimcp.com/img/other/",
-   "flpath_stage": "https://www.shigimcp.com/Xstage/shigimcp_2019/img/other/",
-   "availability": true,
-   "isInGallery": true
- }
+    {
+        "album_index": '00',
+        "album_id": "*",
+        "employer": "All",
+        "title": "Digital Designer / Front-End Developer",
+        "date_start": "present",
+        "date_end": "present",
+        "info": "View ALL work",
+        "info_other": "",
+        "other_html": "",
+        "other_type": "",
+        "other": "",
+        "software": "",
+        "languages": "",
+        //    "logopath": "0elements/shigeru_logo.svg",
+        //    "logo": "shigeru_logo_transparent.svg",
+        "logopath": "#",
+        "logo": "#",
+        "slpath": "other/sl",
+        "thpath": "other/th",
+        "flpath": "https://www.shigimcp.com/img/other/",
+        "flpath_stage": "https://www.shigimcp.com/Xstage/shigimcp_2019/img/other/",
+        "availability": true,
+        "isInGallery": true
+    }
 )
 
 // console.log('');
@@ -92,10 +92,10 @@ filterEmployer.unshift(
 // console.log('filterEmployer = ');
 // console.log(filterEmployer);
 
-//#endregion -------------------- CONSTANT: filterEmployer --------------------
+//#endregion -------------------- FILTER ARRAY: filterEmployer --------------------
 
 
-//#region -------------------- CONSTANT: filterType - REF: https://github.com/rhernandog/gsap-flip-react/blob/master/src/App.js --------------------
+//#region -------------------- FILTER ARRAY: filterType - REF: https://github.com/rhernandog/gsap-flip-react/blob/master/src/App.js --------------------
 
 const filterType = [
     // { key: '0000', id: 'allCheck', value: 'all', label: 'All' },
@@ -113,23 +113,29 @@ const filterType = [
 // console.log('filterType = ');
 // console.log(filterType);
 
-//#endregion -------------------- CONSTANT: filterType - REF: https://github.com/rhernandog/gsap-flip-react/blob/master/src/App.js --------------------
-
-//#endregion ==================== FILTER ARRAYS ====================
+//#endregion -------------------- FILTER ARRAY: filterType - REF: https://github.com/rhernandog/gsap-flip-react/blob/master/src/App.js --------------------
 
 
-//#region ==================== TIMELINES ====================
-console.log('==================== TIMELINES: workNavTL ====================');
+//#region -------------------- TIMELINES --------------------
 
-const workNavTL = new gsap.timeline();
-// const workNavTL = new gsap.timeline({ paused: true });
+// console.log('-------------------- TIMELINES: workNavTL --------------------');
 
-//#endregion ==================== TIMELINES ====================
+// const workNavTL = new gsap.timeline();
+const workNavTL = new gsap.timeline({ paused: true });
+
+//#endregion -------------------- TIMELINES --------------------
+
+//#endregion ==================== CONSTANTS n VARS ====================
 
 
 
 
-export const Isotope03 = () => {
+export const Isotope03 = (props) => {
+
+    // console.log('');
+    // console.log('==================== Isotope03 ====================');
+    // console.log('props = ' + props);
+    // console.log(props);
 
     //#region ==================== ASSETS _Ref ====================
 
@@ -138,6 +144,7 @@ export const Isotope03 = () => {
 
     const workNav_Ref = useRef(null);
     const employerNav_Ref = useRef(null);
+    const activeEmplDiv_Ref = useRef(null);
     const typeNav_Ref = useRef(null);
 
     const toggleNav_Ref = useRef(null);
@@ -154,10 +161,8 @@ export const Isotope03 = () => {
     // store the filter keyword in a state
     const [filterKey, setFilterKey] = React.useState('*')
 
-    // const [workNavToggle, setWorkNavToggle] = useState(null);
     const [workNavToggleText, setWorkNavToggleText] = useState('<< View by employer');
     const [workNavToggleBtn, setWorkNavToggleBtn] = useState(true);
-    // const [workNavToggleBtn, setWorkNavToggleBtn] = useState(false);
 
     //#endregion ==================== useState DEFs ====================
 
@@ -165,22 +170,26 @@ export const Isotope03 = () => {
 
     //#region ==================== useEffect: workNavTL ====================
 
-    // let workNavHeight = employerNav_Ref.current.getBoundingClientRect().height;
-
     useEffect(() => {
 
         let workNavHeight = employerNav_Ref.current.getBoundingClientRect().height;
 
-        console.log('');
-        console.log('==================== useEffect: workNavTL ====================');
-        console.log('workNavHeight = ' + workNavHeight);
+        // console.log('');
+        // console.log('==================== useEffect: workNavTL ====================');
+        // console.log('workNavHeight = ' + workNavHeight);
 
         workNavTL
             .fromTo([employerNav_Ref.current], { y: -workNavHeight, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5 }, 'frame01')
             .fromTo([typeNav_Ref.current], { y: 0, autoAlpha: 1 }, { y: -workNavHeight, autoAlpha: 0, duration: 0.5 }, 'frame01')
 
-    }, [])
+
+        if (workNavToggleBtn) {
+            workNavTL.restart();
+        }
+
+    // }, [])
     // }, [workNavHeight])
+    }, [workNavToggleBtn])
 
     //#endregion ==================== useEffect: workNavTL ====================
 
@@ -189,65 +198,18 @@ export const Isotope03 = () => {
 
     useEffect(() => {
 
-        console.log('');
-        console.log('==================== useEffect: workNavToggleBtn ====================');
-        console.log('workNavToggleBtn = ' + workNavToggleBtn);
+        // console.log('');
+        // console.log('==================== useEffect: workNavToggleBtn ====================');
+        // console.log('workNavToggleBtn = ' + workNavToggleBtn);
+
 
         if (workNavToggleBtn) {
             workNavTL.play();
-            // workNavTL.resume();
             setWorkNavToggleText('View by type >>');
         } else {
             workNavTL.reverse();
             setWorkNavToggleText('<< View by employer');
         }
-
-        // if (!workNavToggleBtn) {
-        //     workNavTL.reverse();
-        //     setWorkNavToggleText('<< View by employer');
-        // } else {
-        //     workNavTL.play();
-        //     setWorkNavToggleText('View by type >>');
-        // }
-
-
-        // switch (props.workFormat) {
-        //     case 'banner':
-
-        //         podID = 'bannerPodID';
-        //         // podHed = 'Banner Animations';
-        //         masonryBreakpoints = { 360: 1, 640: 2, 768: 2, 940: 4, 1640: 4, 1920: 5, 3000: 6 };
-
-        //         break;
-
-        //     case 'html5':
-        //     case 'video':
-        //     case 'website':
-        //     case 'mobile':
-
-        //         podID = 'webPodID';
-        //         // podHed = 'Web/Video';
-        //         masonryBreakpoints = { 768: 1, 960: 2, 1920: 3, 3840: 4 };
-
-        //         break;
-
-        //     case 'print':
-
-        //         podID = 'printPodID';
-        //         // podHed = 'Print';
-        //         // masonryBreakpoints = { 768: 1, 960: 2, 1920: 3, 3840: 4 };
-        //         masonryBreakpoints = { 768: 1, 960: 3, 1920: 3, 3840: 4 };
-
-        //         break;
-
-        //     default:
-
-        //         podID = 'genPodID';
-        //         // podHed = 'General';
-        //         masonryBreakpoints = { 360: 1, 640: 2, 768: 2, 940: 4, 1640: 4, 1920: 5, 3000: 6 };
-
-        //         break;
-        // }
 
     // }, [])
     }, [workNavToggleBtn])
@@ -288,40 +250,6 @@ export const Isotope03 = () => {
         return () => isotope_Ref.current.destroy()
 
     }, [])
-
-    // function isotopeInit() {
-
-    //     console.log('');
-    //     console.log('==================== FUNCTION: isotopeInit ====================');
-
-    //     isotope_Ref.current = new Isotope('.galleryContainer', {
-
-    //         // itemSelector: '.filter-item',
-    //         itemSelector: '.workItem',
-    //         percentPosition: true,
-
-    //         // layoutMode: 'masonry',
-    //         // masonry: {
-    //         //     // columnWidth: 100,
-    //         //     // gutter: 20,
-    //         //     isFitWidth: true,
-    //         // }
-
-    //         layoutMode: 'packery',
-    //         // packery: {
-    //         //     gutter: 20,
-    //         //     columnWidth: '.workItem',
-    //         //     rowHeight: 60,
-    //         //     horizontal: true,
-    //         // }
-    //     })
-
-    //     // cleanup
-    //     return () => isotope_Ref.current.destroy()
-
-    // };
-
-    // isotopeInit();
 
     //#endregion ==================== useEffect: initialize an Isotope object with configs ====================
 
@@ -425,17 +353,19 @@ export const Isotope03 = () => {
 
 
     return (
+
         <div className='isotopeContainer'>
 
             <div className='workNavBar' id='workNavBarID' ref={workNav_Ref}>
 
+                <div className='activeEmplDiv' id='activeEmplDivID' ref={activeEmplDiv_Ref}></div>
+
                 <div className='workNav' id='employerNavID' ref={employerNav_Ref}>
-                    {/* {renderEmployers()} */}
+                    {/* <div className='activeEmplDiv' id='activeEmplDivID' ref={activeEmplDiv_Ref}></div> */}
                     <RenderEmployers />
                 </div>
 
                 <div className='workNav' id='typeNavID' ref={typeNav_Ref}>
-                    {/* {renderFilters()} */}
                     <RenderFilters />
                 </div>
 
@@ -451,11 +381,9 @@ export const Isotope03 = () => {
 
             <div className='galleryContainer' ref={galleryContainer_Ref}>
                 {renderElements()}
-                {/* <isotopeInit /> */}
                 {/* <RenderElements /> */}
             </div>
 
         </div>
     )
-
 }

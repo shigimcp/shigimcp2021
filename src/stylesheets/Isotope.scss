@@ -45,8 +45,34 @@
         // vertical-align: middle;
 
         margin: 0;
-        // padding: 0;
-        padding: 5px 0;
+        padding: 0;
+        // padding: 5px 0;
+
+        .activeEmplDiv {
+            // border: 2px inset #00ffff;
+
+            // @include bgGradient01();
+            @include bgGradient02();
+            // @include bgGradient03();
+            // mix-blend-mode: multiply;
+
+            color: #ff0000;
+            text-align: center;
+
+            width: 50%;
+            // width: auto;
+            // height: $navBar-height;
+            height: inherit;
+            // height: 90%;
+
+            position: absolute;
+            // top: $header-height;
+            top: 0;
+            // left: 0;
+            // left: -25vw;
+            // left: 50vw;
+            // z-index: -1;
+        }
 
         .workNav {
             // border: 2px solid #00ff00;
@@ -79,7 +105,7 @@
                 // border-radius: 2.5px;
 
                 // background: rgba($color: #ff0000, $alpha: 0.5);
-                background: rgba($color: #ffffff, $alpha: 0.5);
+                // background: rgba($color: #ffffff, $alpha: 0.5);
 
                 // font-size: 0.875rem;
                 // line-height: 0.25em;
@@ -93,11 +119,12 @@
                 // height: 100%;
                 // height: $navBar-height+10px;
 
-                // margin: 0;
+                margin: 0;
                 // padding: 0;
 
-                margin: 0 5px;
+                // margin: 0 5px;
                 padding: 0 10px;
+                // padding: 0 20px;
                 // padding: 10px 20px;
 
                 // grid-area: auto;
@@ -149,14 +176,14 @@
             }
 
             .workNavItemLogo {
-                // // border: 2px solid #0000ff;
+                // border: 2px solid #0000ff;
                 // border-radius: 2.5px;
 
                 // background: rgba($color: #ffffff, $alpha: 0.5);
 
                 // font-size: 0.875rem;
                 // line-height: 0.25em;
-                line-height: 2.5rem;
+                // line-height: 2.5rem;
                 // line-height: 2.875rem;
                 // text-align: center;
                 // vertical-align: middle;
@@ -172,8 +199,10 @@
                 // padding: 0;
 
                 // margin: 0 2.5px;
-                // padding: 5px 10px;
-                padding: 0 5px;
+                padding: 5px 10px;
+                // padding: 0 5px;
+                // padding: 0 10px;
+                // padding: 5px 0;
 
                 // grid-area: auto;
 
@@ -186,6 +215,7 @@
                     // max-width: 60px;
 
                     // height: 20px;
+                    // height: 80%;
                     height: 100%;
                     // height: inherit;
 
@@ -212,7 +242,8 @@
             padding: 7.5px 10px;
 
             position: absolute;
-            top: ($navBar-height+10px)*0.25;
+            // top: ($navBar-height+10px)*0.25;
+            top: ($navBar-height+10px)*0.125;
             // transform: translate(0 -($navBar-height+10px)*0.5);
             right: 15vw;
 

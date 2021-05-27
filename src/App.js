@@ -58,6 +58,7 @@ function App() {
     // REF: https://stackoverflow.com/questions/62046448/toggle-two-components-using-react-hooks
 
     const [resumeModalOpen, setResumeModalOpen] = useState(false);
+    // const [workNavEmplOpen, setWorkNavEmplOpen] = useState(false);
 
     // console.log('resumeModalOpen = ' + resumeModalOpen);
 
@@ -73,7 +74,9 @@ function App() {
         '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
         // '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} clearContent={clearContent} />,
         '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
-        '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} loadStatus={true} />,
+        '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} />,
+        // '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} loadStatus={true} workNavEmplOpen={true} />,
+        // '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} loadStatus={true} workNavEmplOpen={workNavEmplOpen} setWorkNavEmplOpen={setWorkNavEmplOpen} />,
         '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
         '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
         '/shigimcp2021/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
@@ -97,6 +100,7 @@ function App() {
         <Wrapper>
 
             <Header resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />
+            {/* <Header resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} workNavEmplOpen={workNavEmplOpen} setWorkNavEmplOpen={setWorkNavEmplOpen} /> */}
 
             {match || <NotFound locID={'notFoundID'} />}
 
