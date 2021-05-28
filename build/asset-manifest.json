@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/shigimcp2021/static/css/main.1d26ebc2.chunk.css",
-    "main.js": "/shigimcp2021/static/js/main.367880af.chunk.js",
-    "main.js.map": "/shigimcp2021/static/js/main.367880af.chunk.js.map",
+    "main.css": "/shigimcp2021/static/css/main.0dfc4234.chunk.css",
+    "main.js": "/shigimcp2021/static/js/main.61cdfe42.chunk.js",
+    "main.js.map": "/shigimcp2021/static/js/main.61cdfe42.chunk.js.map",
     "runtime-main.js": "/shigimcp2021/static/js/runtime-main.2a09758d.js",
     "runtime-main.js.map": "/shigimcp2021/static/js/runtime-main.2a09758d.js.map",
     "static/js/2.f538d8e8.chunk.js": "/shigimcp2021/static/js/2.f538d8e8.chunk.js",
     "static/js/2.f538d8e8.chunk.js.map": "/shigimcp2021/static/js/2.f538d8e8.chunk.js.map",
     "index.html": "/shigimcp2021/index.html",
-    "static/css/main.1d26ebc2.chunk.css.map": "/shigimcp2021/static/css/main.1d26ebc2.chunk.css.map",
+    "static/css/main.0dfc4234.chunk.css.map": "/shigimcp2021/static/css/main.0dfc4234.chunk.css.map",
     "static/js/2.f538d8e8.chunk.js.LICENSE.txt": "/shigimcp2021/static/js/2.f538d8e8.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/shigimcp2021/static/media/ChaleParNinSix.e986494b.svg",
     "static/media/BSPS_bottle.a95786b2.png": "/shigimcp2021/static/media/BSPS_bottle.a95786b2.png",
@@ -101,7 +101,7 @@
   "entrypoints": [
     "static/js/runtime-main.2a09758d.js",
     "static/js/2.f538d8e8.chunk.js",
-    "static/css/main.1d26ebc2.chunk.css",
-    "static/js/main.367880af.chunk.js"
+    "static/css/main.0dfc4234.chunk.css",
+    "static/js/main.61cdfe42.chunk.js"
   ]
 }

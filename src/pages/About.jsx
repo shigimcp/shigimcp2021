@@ -168,6 +168,15 @@ function addGuides(refContainer) {
 
     let refContainerDims = getDimensions(refContainer);
 
+    // console.log('');
+    // console.log('-------------------- FUNCTION: addGuides(refContainer) --------------------');
+    // console.log('refContainer = ' + refContainer);
+    // console.log(refContainer);
+
+    // console.log('');
+    // console.log('refContainerDims = ' + refContainerDims);
+    // console.log(refContainerDims);
+
 
     //#region -------------------- AFRO GUIDE (guideSVG): outerEllipse / innerEllipse --------------------
 
@@ -179,10 +188,24 @@ function addGuides(refContainer) {
     let posFactor = 0.5;
     let scaleFactor = 0.5;
 
+    // let posFactor = 1;
+    // let scaleFactor = 1;
+
+    // let outer_cx = refContainerDims[2];
+    // let outer_cy = refContainerDims[3];
+    // let outer_rx = refContainerDims[2];
+    // let outer_ry = refContainerDims[3];
+
+    // let outer_cx = refContainerDims[2] * posFactor;
+    // let outer_cy = refContainerDims[3] * posFactor;
+    // let outer_rx = refContainerDims[2] * scaleFactor;
+    // let outer_ry = refContainerDims[3] * scaleFactor;
+
     let outer_cx = refContainerDims[2] * posFactor;
     let outer_cy = refContainerDims[3] * posFactor;
     let outer_rx = refContainerDims[2] * scaleFactor;
     let outer_ry = refContainerDims[3] * scaleFactor;
+
     let outer_stroke = 'red';
     let outer_stroke_width = 2;
     let outer_fill = 'green';
@@ -216,10 +239,19 @@ function addGuides(refContainer) {
     posFactor = 0.5;
     scaleFactor = 0.2625;
 
+    // posFactor = 1;
+    // scaleFactor = 0.525;
+
+    // let inner_cx = refContainerDims[2];
+    // let inner_cy = refContainerDims[3] * 1.475;
+    // let inner_rx = refContainerDims[2];
+    // let inner_ry = refContainerDims[3];
+
     let inner_cx = refContainerDims[2] * posFactor;
     let inner_cy = refContainerDims[3] * posFactor * 1.475;
     let inner_rx = refContainerDims[2] * scaleFactor;
     let inner_ry = refContainerDims[3] * scaleFactor;
+
     let inner_stroke = 'red';
     let inner_stroke_width = 2;
     let inner_fill = 'green';
@@ -257,6 +289,12 @@ function addGuides(refContainer) {
 
 function disperseChildren(parentContainer) {
 
+    // console.log('');
+    // console.log('-------------------- FUNCTION: disperseChildren(parentContainer) --------------------');
+    // console.log('parentContainer = ' + parentContainer);
+    // console.log(parentContainer);
+
+
     //#region - - - - - - - - - - - SETUP - - - - - - - - - - -
 
     const outerSVGDims = document.getElementById('outerEllipsePathID').getBoundingClientRect();
@@ -265,6 +303,21 @@ function disperseChildren(parentContainer) {
     const outerRadius = outerSVGDims.width;
     const innerRadius = innerSVGDims.width;
 
+    // console.log('');
+    // console.log('outerSVGDims = ' + outerSVGDims);
+    // console.log(outerSVGDims);
+
+    // console.log('');
+    // console.log('innerSVGDims = ' + innerSVGDims);
+    // console.log(innerSVGDims);
+
+    // console.log('');
+    // console.log('outerRadius = ' + outerRadius);
+    // // console.log(outerRadius);
+
+    // console.log('innerRadius = ' + innerRadius);
+    // // console.log(innerRadius);
+
     //#endregion - - - - - - - - - - - SETUP - - - - - - - - - - -
 
 
@@ -272,35 +325,57 @@ function disperseChildren(parentContainer) {
 
         let thisCurl = parentContainer.children[p];
 
+        let curlFactorX = 0.5;
+        let curlFactorY = 0.5;
+
+        let minAngleDegrees;
+        let maxAngleDegrees;
+
 
         if (thisCurl.getAttribute('brain') === 'left') {
 
-            let minAngleDegrees = -90;
-            let maxAngleDegrees = -20;
+            minAngleDegrees = -90;
+            maxAngleDegrees = -20;
 
-            const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
-            const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
+            // let minAngleDegrees = -90;
+            // let maxAngleDegrees = -20;
 
-            const curlX = (Math.cos(thisAngle) * (thisRadius * 0.5)) + outerRadius * 0.5;
-            const curlY = (Math.sin(thisAngle) * (thisRadius * 0.5)) + outerRadius * 0.5;
-            const curlAngle = thisAngle * (180 / Math.PI) + 90;
+            // const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
+            // const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
 
-            gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
+            // const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX)) + outerRadius * curlFactorX;
+            // const curlY = (Math.sin(thisAngle) * (thisRadius * curlFactorY)) + outerRadius * curlFactorY;
+            // const curlAngle = thisAngle * (180 / Math.PI) + 90;
+
+            // gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
 
         } else {
 
-            let minAngleDegrees = -150;
-            let maxAngleDegrees = -90;
+            minAngleDegrees = -150;
+            maxAngleDegrees = -90;
 
-            const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
-            const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
+            // let minAngleDegrees = -150;
+            // let maxAngleDegrees = -90;
 
-            const curlX = (Math.cos(thisAngle) * (thisRadius * 0.5)) + outerRadius * 0.5;
-            const curlY = (Math.sin(thisAngle) * (thisRadius * 0.5)) + outerRadius * 0.5;
-            const curlAngle = thisAngle * (180 / Math.PI) + 90;
+            // const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
+            // const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
 
-            gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
+            // const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX)) + outerRadius * curlFactorX;
+            // const curlY = (Math.sin(thisAngle) * (thisRadius * curlFactorY)) + outerRadius * curlFactorY;
+            // const curlAngle = thisAngle * (180 / Math.PI) + 90;
+
+            // gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
         }
+
+        const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
+        const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
+
+        // const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX)) + outerRadius * curlFactorX;
+        const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX));
+        const curlY = (Math.sin(thisAngle) * (thisRadius * curlFactorY)) + outerRadius * curlFactorY;
+        const curlAngle = thisAngle * (180 / Math.PI) + 90;
+
+        gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
     }
 }
 
@@ -312,6 +387,12 @@ function disperseChildren(parentContainer) {
 let thoughtAnimTL = gsap.timeline({ delay: 0, paused: true });
 
 function handleThought(thisCurl) {
+
+    // console.log('');
+    // console.log('-------------------- FUNCTION: handleThought(thisCurl) --------------------');
+    // console.log('thisCurl = ' + thisCurl);
+    // console.log(thisCurl);
+
 
     //#region -------------------- define objects --------------------
 
@@ -333,18 +414,46 @@ function handleThought(thisCurl) {
     const outerEllipseDims = document.getElementById('outerEllipsePathID').getBoundingClientRect();
     const boingDims = document.getElementById('boingSvgID').getBoundingClientRect();
 
+    // console.log('');
+    // console.log('thisCurlDims = ' + thisCurlDims);
+    // console.log(thisCurlDims);
+
+    // console.log('');
+    // console.log('outerEllipseDims = ' + outerEllipseDims);
+    // console.log(outerEllipseDims);
+
+    // console.log('');
+    // console.log('boingDims = ' + boingDims);
+    // console.log(boingDims);
+
+    // console.log('');
+    // console.log('thisBrain = ' + thisBrain);
+    // console.log(thisBrain);
+
+
     let thisBoingX;
     let thisBoingY;
 
     if (thisBrain === 'left') {
         gsap.set([boing], { rotationY: 0 });
-        thisBoingX = thisCurlDims.x + thisCurlDims.width * 0.5 - outerEllipseDims.x;
-        thisBoingY = thisCurlDims.y - thisCurlDims.height * 0.5 - outerEllipseDims.y - boingDims.height * 0.5;
+        // thisBoingX = thisCurlDims.x + thisCurlDims.width * 0.5 - outerEllipseDims.x;
+        thisBoingX = thisCurlDims.x + (thisCurlDims.width * 0.5) - (boingDims.width * 0.5) - (outerEllipseDims.width * 0.5);
+        thisBoingY = thisCurlDims.y - (thisCurlDims.height * 0.5) - (boingDims.height * 0.5) - outerEllipseDims.y;
     } else {
         gsap.set([boing], { rotationY: 180 });
-        thisBoingX = thisCurlDims.x - thisCurlDims.width * 0.5 - boingDims.width;
-        thisBoingY = thisCurlDims.y - outerEllipseDims.y - boingDims.height * 0.5 - thisCurlDims.height * 0.5;
+        // thisBoingX = thisCurlDims.x - thisCurlDims.width * 0.5 - boingDims.width;
+        thisBoingX = thisCurlDims.x + (thisCurlDims.width * 0.5) + (boingDims.width * 0.5) - outerEllipseDims.width;
+        thisBoingY = thisCurlDims.y - outerEllipseDims.y - (boingDims.height * 0.5) - (thisCurlDims.height * 0.5);
     }
+
+    // console.log('');
+    // console.log('thisBoingX = ' + thisBoingX);
+    // // console.log(thisBoingX);
+
+    // // console.log('');
+    // console.log('thisBoingY = ' + thisBoingY);
+    // // console.log(thisBoingY);
+
 
     gsap.set([boing], { x: thisBoingX, y: thisBoingY });
     gsap.set([thoughtBubble], { motionPath: { path: boingPath, align: boingPath, alignOrigin: [0.5, 0.5], start: 1 } });
@@ -461,7 +570,7 @@ export const About = (props) => {
     //#endregion ==================== ASSETS _Ref ====================
 
 
-    //#region ==================== useEffect / useLayoutEffect ====================
+    //#region ==================== useLayoutEffect: WINDOW RESIZE ====================
 
     useLayoutEffect(() => {
 
@@ -495,7 +604,7 @@ export const About = (props) => {
 
     }, []);
 
-    //#endregion ==================== useEffect / useLayoutEffect ====================
+    //#endregion ==================== useLayoutEffect: WINDOW RESIZE ====================
 
 
     return (
@@ -503,12 +612,11 @@ export const About = (props) => {
         <div className='aboutContainer' id='aboutContainerID' ref={aboutContainer_Ref}>
 
             <div className='haiku' onClick={() => closeThought(thoughtBubble_Ref.current)} ref={haiku_Ref}>
-
                 <h1>I have thoughts...</h1>
                 <h2>I keep them in my curls.</h2>
                 <h3>Sometimes, they try to escape.</h3>
                 <p className='credit'>Bad haiku, by Shigeru McPherson</p>
-                <p className='plea'>(This isn't even haiku... Someone, *please* take her crayon away.)</p>
+                <p className='plea'>(Umm... This isn't haiku. Someone, please take her crayon away.)</p>
             </div>
 
 
@@ -578,12 +686,16 @@ export const About = (props) => {
 
                 <svg className='resetThoughtsSvg' id='resetThoughtsSvgID' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 280' enableBackground='new 0 0 400 280'>
                     <path className='resetThoughtsPath' id='resetThoughtsPathID' d='M135.83 277.5c-16.127 0-30.895-9.492-37.623-24.184l-.798-1.744-1.893.32c-2.897.49-5.853.738-8.784.738-28.848 0-52.317-23.49-52.317-52.362 0-2.02.12-4.077.357-6.118l.237-2.038-1.953-.63C14.78 185.59 2.5 168.708 2.5 149.476c0-19.473 12.477-36.418 31.047-42.165l2.31-.714-.638-2.333c-.876-3.198-1.32-6.494-1.32-9.794 0-20.406 16.586-37.006 36.973-37.006 2.43 0 4.873.242 7.264.718l2.672.533.3-2.708c2.997-26.96 25.725-47.293 52.868-47.293 17.95 0 34.572 8.973 44.462 24.003l.995 1.512 1.747-.474c3.335-.902 6.77-1.36 10.21-1.36.603 0 1.202.02 1.798.047l1.72.077.685-1.578C203.103 13.664 220.112 2.5 238.93 2.5c25.207 0 45.93 19.72 47.178 44.896l.14 2.807 2.77-.465c2.57-.43 5.19-.65 7.79-.65 12.06 0 23.512 4.583 32.242 12.903l1.26 1.2 1.562-.763c5.976-2.92 12.4-4.4 19.097-4.4 24.036 0 43.59 19.572 43.59 43.63 0 8.104-2.236 16.017-6.47 22.88l-.76 1.23.69 1.27c2.564 4.75 3.92 10.13 3.92 15.56 0 9.508-4.128 18.537-11.325 24.773l-2.273 1.97 2.353 1.875c10.68 8.512 16.807 21.22 16.807 34.865 0 24.562-19.966 44.545-44.507 44.545-6.286 0-12.365-1.287-18.067-3.825l-1.93-.86-1.17 1.762c-6.574 9.907-17.58 15.82-29.438 15.82-16.456 0-30.96-11.662-34.485-27.73l-.82-3.743-3.096 2.258c-6.288 4.59-13.73 7.014-21.52 7.014-6.186 0-12.303-1.58-17.69-4.565l-1.69-.936-1.33 1.397c-7.814 8.182-18.333 12.688-29.62 12.688-4.728 0-9.373-.805-13.806-2.393l-2.414-.864-.803 2.435c-5.61 16.996-21.398 28.417-39.287 28.417z' fill='#ffff00' stroke='#ff0000' strokeWidth='5' strokeLinecap='butt' strokeMiterlimit='5' />
-                    <text className='resetThoughtsText' id='resetThoughtsTextID' x='50%' y='50%' textAnchor='middle' stroke='#000000' dy='0.35em'>
+                    {/* <text className='resetThoughtsText' id='resetThoughtsTextID' x='50%' y='50%' textAnchor='middle' stroke='#000000' dy='0.35em'>
                         <tspan dx='12.5%' dy='-7.5%'>reset</tspan>
                         <tspan dx='-50%' dy='17.5%'>my thoughts...</tspan>
-                    </text>
+                    </text> */}
                 </svg>
 
+                <p className='resetThoughtsText'>
+                    reset<br />
+                    my thoughts...
+                </p>
             </div>
 
         {/* #endregion ==================== RESET THOUGHTS ==================== */}
@@ -596,6 +708,7 @@ export const About = (props) => {
             </svg>
 
             <div className='curlContainer' id='curlContainerID' ref={curlContainer_Ref}>
+                {/* <div className='guideContainer' id='guideContainerID' onClick={() => closeThought(thoughtBubble_Ref.current)} ref={guideContainer_Ref}></div> */}
                 <MyThoughts />
             </div>
 

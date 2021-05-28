@@ -1,26 +1,83 @@
 @import './Global.scss';
 
 
-/* #region ==================== BASE ==================== */
+/* #region ==================== BASE (iPAD 1024 x 768 Retina... WTF?!) ==================== */
 
 .aboutContainer {
     // border: 2px solid #ff0000;
 
-    // width: 80vw;
-    width: 100vw;
-    // width: 100%;
-    // height: 100%;
-    height: auto;
+    width: 85vw;
+    height: 100%;
+    // height: auto;
 
-    // margin: 0 auto;
-    // margin: 120px auto 0 auto;
-    // margin: 11.25vh auto 0 auto;
+    margin: 110px auto 0 auto;
+    padding: 0;
 
     position: absolute;
-    // top: 0;
-    // top: 1.25vh;
-    // left: 10vw;
-    // left: 0;
+    left: 50%;
+
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+
+    .haiku {
+        // border: 2px solid #00ffff;
+
+        font-size: 15px;
+        font-weight: normal;
+        text-align: center;
+        // letter-spacing: 0.0625px;
+        // line-height: 2.5em;
+        line-height: 50px;
+
+        margin: 0;
+        // padding: 0;
+        padding: 0 0 25px 0;
+
+        h1 {
+            font-size: 2em;
+            font-weight: inherit;
+            // letter-spacing: 0.005em;
+            // line-height: 1.125em;
+            // line-height: inherit;
+            line-height: 1em;
+        }
+
+        h2 {
+            font-size: 1.625em;
+            font-weight: inherit;
+            // letter-spacing: 0.025em;
+            // line-height: inherit;
+            line-height: 1.25em;
+        }
+
+        h3 {
+            font-size: 1.375em;
+            font-weight: normal;
+            // letter-spacing: 0.025em;
+            // line-height: inherit;
+            line-height: 1.1875em;
+        }
+
+        .credit {
+            font-size: 1em;
+            // letter-spacing: 0.025em;
+            line-height: 2.5em;
+
+            // padding: 0.875vh 0 0 0;
+        }
+
+        .plea {
+            font-size: 0.875em;
+            // letter-spacing: 0.0375em;
+            line-height: 0.125em;
+
+            // padding: 0.0625vh 0 1.25vh 0;
+        }
+    }
 
     .afroContainer, .guideContainer, .curlContainer {
         // border: 2px solid #ff00ff;
@@ -45,6 +102,8 @@
         // height: 100%;
         // height: 100vh;
 
+        // margin: 100% 0 0 0;
+
         visibility: hidden;
 
         .guideSVG {
@@ -52,22 +111,24 @@
 
             opacity: 0.5;
 
-            position: inherit;
-            // position: absolute;
-            // top: 0;
-            // left: 0;
+            // margin: -100% 0 0 0;
+
+            // position: inherit;
+            position: absolute      ;
+            top: 0;
+            left: 0;
         }
     }
 
     .boingSvg {
         // border: 2px solid #0000ff;
 
-        visibility: hidden;
-
         width: 25%;
         height: auto;
 
         position: absolute;
+
+        visibility: hidden;
 
         .boingPath {
             stroke: #000000;
@@ -78,14 +139,18 @@
     .curlContainer {
         // border: 2px solid #0000ff;
 
-        width: 100%;
-        height: auto;
+        // width: 100%;
+        // width: 50%;
+        // height: auto;
+        // position: relative;
+        // position: absolute;
+        // transform: translate(-50% 0);
 
         .curlSvg {
             // border: 2px solid #0000ff;
 
             // width: 3.75vw;
-            // width: 3.75%;
+            width: 3.75%;
 
             position: absolute;
             overflow: visible;
@@ -113,6 +178,17 @@
 
     .thoughtBubbleDiv {
         // border: 2px solid #0000ff;
+
+        font-family: AnimeAceItalic, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 30px;
+        // font-size: 1.625em;
+        // line-height: 1em;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        width: 50%;
 
         visibility: hidden;
         opacity: 0;
@@ -147,16 +223,15 @@
         .thoughtBubbleText {
             // border: 2px solid #00ff00;
 
-            font-family: AnimeAceItalic, Arial, Helvetica, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-
             // font-size: 1.5em;
             // line-height: 1.375em;
             // text-align: center;
 
             // width: 77.5%;
             // height: 60%;
+
+            width: 80%;
+            height: 60%;
 
             // margin: 0;
             // padding: 0;
@@ -167,8 +242,11 @@
             align-items: center;
 
             position: absolute;
-            // top: 20%;
+
+            top: 20%;
             // left: 13.125%;
+            // top: 19.375%;
+            left: 11.25%;
 
             p {
                 padding: 1.125% 0;
@@ -182,7 +260,7 @@
             // background-color: #FFFFFF;
 
             font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-            font-size: 1.25em;
+            font-size: 1rem;
             font-weight: 600;
             line-height: 1.5em;
             text-align: center;
@@ -215,7 +293,7 @@
             .thoughtCloseX {
                 // border: 02px solid #0000ff;
 
-                font-size: 0.75em;
+                // font-size: 0.75em;
 
                 stroke: #000000;
                 stroke-width: 3.75%;
@@ -224,33 +302,34 @@
     }
 
     .resetThoughtsDiv {
-        // border: 2px solid #0000ff;
+        // border: 2px solid #ff0000;
 
         font-family: AnimeAceItalic, Arial, Helvetica, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-size: 1.875em;
+        // font-size: 12px;
+        font-size: 0.625rem;
+        text-align: center;
         // letter-spacing: 0.025em;
         // color: #666666;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
 
-        // width: 10vw;
+        width: 13.75%;
         // height: auto;
 
         opacity: 0.5;
 
         position: absolute;
         // top: 0;
-        top: 15vh;
-        right: 0;
-        // top: 45vh;
-        // right: 12.5vw;
+        // right: 0;
+        top: 25%;
+        right: -2.5%;
 
         transition: 0.2s;
 
         cursor: pointer;
 
         .resetThoughtsSvg {
-            // border: 2px solid #0000ff;
+            // border: 2px solid #00ff00;
 
             overflow: visible;
 
@@ -271,10 +350,26 @@
                 stroke-linejoin: miter;
                 stroke-miterlimit: 1;
             }
+        }
 
-            // .resetThoughtsText {
-            //     // border: 2px solid #0000ff;
-            // }
+        .resetThoughtsText {
+            // border: 2px solid #ff00ff;
+            width: 100%;
+
+            margin: 0;
+            // padding: 0;
+            padding: 0 0 0 1.25%;
+
+            position: inherit;
+            // top: 50%;
+            top: 47.5%;
+
+            transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            -moz-transform: translate(0, -50%);
+            -o-transform: translate(0, -50%);
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
         }
     }
 
@@ -284,436 +379,523 @@
     }
 }
 
-/* #endregion ==================== BASE ==================== */
+/* #endregion ==================== BASE (iPAD 1024 x 768 Retina... WTF?!) ==================== */
 
 
 
-/* #region ========================= MOBILE: 375px ========================= */
+/* #region ========================= MOBILE: 414px ========================= */
 
 @media  
-    only screen and (min-device-width: 375px) 
+    // only screen and (min-device-width: 375px) 
+    // only screen and (min-device-width: 414px)
     // only screen and (min-device-width: 375px), 
-    // only screen and (max-device-width: 767px) 
+    // only screen and (min-device-width: 414px), 
+    only screen and (max-device-width: 414px) 
     { 
         /* #region -------------------- aboutContainer -------------------- */
 
         .aboutContainer {
             // border: 1px solid #ff00ff;
 
-            width: 95vw;
-
-            // margin: 80px auto 0 auto;
-            margin: 110px auto 0 auto;
-
-            left: 2.5vw;
-
-            .haiku {
-                // border: 2px solid #ff00ff;
-
-                text-align: center;
-                // letter-spacing: 0.0625em;
-                // line-height: 0.5em;
-
-                // padding: 0 0 10px 0;
-                // padding: 0 0 5vh 0;
-                padding: 0 0 5vh 5vw;
-
-                h1 {
-                    font-size: 1.5em;
-                    // letter-spacing: -0.025em;
-                    line-height: 1em;
-                }
-
-                h2 {
-                    font-size: 1.375em;
-                    // letter-spacing: -0.0375em;
-                }
-
-                h3 {
-                    font-size: 1.25em;
-                    // letter-spacing: -0.025em;
-                    line-height: 1.125em;
-                }
-
-                .credit {
-                    font-size: 1em;
-                    // letter-spacing: 0.025em;
-                    line-height: 1.375em;
-
-                    padding: 0.5vh 0 0 0;
-                }
-
-                .plea {
-                    font-size: 0.6875em;
-                    // letter-spacing: 0.0375em;
-
-                    padding: 0.0625vh 0 1.25vh 0;
-                }
-            }
-
-            .curlContainer {
-                // border: 2px solid #0000ff;
-
-                .curlSvg {
-                    // border: 2px solid #0000ff;
-
-                    // width: 3.75vw;
-                    width: 7.5%;
-                }
-            }
-
-            .thoughtBubbleDiv {
-                // border: 2px solid #0000ff;
-
-                // visibility: hidden;
-
-                width: 90%;
-
-                .thoughtBubbleText {
-                    // border: 2px solid #00ff00;
-
-                    font-size: 0.625em;
-                    line-height: 1.375em;
-                    text-align: center;
-
-                    width: 77.5%;
-                    height: 60%;
-
-                    top: 20%;
-                    left: 13.125%;
-                }
-            }
-
-            .resetThoughtsDiv {
-                // border: 2px solid #0000ff;
-
-                width: 20vw;
-                top: 16.25vh;
-            }
-        }
-
-        /* #endregion -------------------- aboutContainer -------------------- */
-    }
-
-/* #endregion ========================= MOBILE: 375px ========================= */
-
-
-
-/* #region ========================= TABLETS: 768px ========================= */
-
-@media  
-    only screen and (min-device-width: 768px) 
-    // only screen and (min-device-width: 768px), 
-    // only screen and (max-device-width: 991px) 
-    { 
-        /* #region -------------------- aboutContainer -------------------- */
-
-        .aboutContainer {
-            // border: 1px solid #ff00ff;
-
-            // width: 100vw;
-            // left: 0;
-
-            width: 90vw;
-
-            margin: 120px auto 0 auto;
-
-            left: 5vw;
-
-            .haiku {
-                // border: 2px solid #0000ff;
-
-                text-align: center;
-                // letter-spacing: 0.0625em;
-                // line-height: 0.5em;
-
-                // padding: 0 0 10px 0;
-                padding: 0 0 0.5vh 0;
-
-                h1 {
-                    font-size: 2em;
-                    // letter-spacing: -0.025em;
-                    line-height: 0.9375em;
-                }
-
-                h2 {
-                    font-size: 1.75em;
-                    // letter-spacing: -0.0375em;
-                }
-
-                h3 {
-                    font-size: 1.625em;
-                    // letter-spacing: -0.025em;
-                    line-height: 0.9375em;
-                }
-
-                .credit {
-                    font-size: 1.3125em;
-                    // letter-spacing: 0.025em;
-                    line-height: 1.375em;
-
-                    padding: 0.5vh 0 0 0;
-                }
-
-                .plea {
-                    font-size: 1.125em;
-                    // letter-spacing: 0.0375em;
-
-                    padding: 0.0625vh 0 1.25vh 0;
-                }
-            }
-
-            .curlContainer {
-                // border: 2px solid #0000ff;
-
-                .curlSvg {
-                    // border: 2px solid #0000ff;
-
-                    // width: 3.75vw;
-                    width: 5%;
-                }
-            }
-
-            .thoughtBubbleDiv {
-                // border: 2px solid #0000ff;
-
-                // visibility: hidden;
-
-                width: 50%;
-
-                .thoughtBubbleText {
-                    // border: 2px solid #00ff00;
-
-                    font-size: 0.75em;
-                    line-height: 1.4125em;
-                    text-align: center;
-
-                    width: 77.5%;
-                    height: 60%;
-
-                    top: 20%;
-                    left: 13.125%;
-                }
-            }
-
-            .resetThoughtsDiv {
-                // border: 2px solid #0000ff;
-
-                width: 15vw;
-            }
-        }
-
-        /* #endregion -------------------- aboutContainer -------------------- */
-    }
-
-/* #endregion ========================= TABLETS: 813px - 1200px ========================= */
-
-
-
-/* #region ========================= LAPTOPS: 992px+ ========================= */
-
-@media  
-    only screen and (min-device-width: 992px) 
-    // only screen and (min-device-width: 992px), 
-    // only screen and (min-device-width: 1440px) 
-    { 
-        /* #region -------------------- aboutContainer -------------------- */
-
-        .aboutContainer {
-            // border: 1px solid #ff00ff;
-
-            width: 80vw;
-
-            margin: 120px auto 0 auto;
-
-            left: 10vw;
-
-            .haiku {
-                // border: 2px solid #ff0000;
-
-                text-align: center;
-                // letter-spacing: 0.0625em;
-
-                // padding: 0 0 10px 0;
-                padding: 0 0 0.5vh 0;
-
-                h1 {
-                    font-size: 2em;
-                    // letter-spacing: 0.05em;
-                    line-height: 1em;
-                }
-
-                h2 {
-                    font-size: 1.75em;
-                    // letter-spacing: 0.025em;
-                }
-
-                h3 {
-                    font-size: 1.625em;
-                    // letter-spacing: 0.04125em;
-                    line-height: 1.25em;
-                }
-
-                .credit {
-                    font-size: 1.3125em;
-                    // letter-spacing: 0.025em;
-                    line-height: 1.375em;
-
-                    padding: 0.5vh 0 0 0;
-                }
-
-                .plea {
-                    font-size: 1.125em;
-                    // letter-spacing: 0.0375em;
-
-                    padding: 0.0625vh 0 1.25vh 0;
-                }
-            }
-
-            .curlContainer {
-                // border: 2px solid #0000ff;
-
-                .curlSvg {
-                    // border: 2px solid #0000ff;
-
-                    // width: 3.75vw;
-                    width: 4.5%;
-                }
-            }
-
-            .thoughtBubbleDiv {
-                // border: 2px solid #0000ff;
-
-                // visibility: hidden;
-
-                width: 50%;
-
-                .thoughtBubbleText {
-                    // border: 2px solid #00ff00;
-
-                    // font-size: 1em;
-                    font-size: 0.875em;
-                    line-height: 1.375em;
-                    text-align: center;
-
-                    width: 77.5%;
-                    height: 60%;
-
-                    top: 20%;
-                    left: 13.125%;
-                }
-            }
-
-            .resetThoughtsDiv {
-                // border: 2px solid #0000ff;
-
-                width: 10vw;
-            }
-        }
-
-        /* #endregion -------------------- aboutContainer -------------------- */
-    }
-
-/* #endregion ========================= LAPTOPS: 1201px+ ========================= */
-
-
-
-/* #region ========================= DESKTOPS: 1441px+ ========================= */
-
-@media  
-    only screen and (min-device-width: 1441px) 
-    { 
-        /* #region -------------------- aboutContainer -------------------- */
-
-        .aboutContainer {
-            // border: 1px solid #ff00ff;
-
-            width: 80vw;
-
-            margin: 120px auto 0 auto;
-
-            left: 10vw;
+            width: 100vw;
+            // width: 120vw;
+            // left: 5vw;
+
+            margin: 80px auto 0 auto;
+            // padding: 0;
 
             .haiku {
                 // border: 2px solid #00ffff;
 
-                text-align: center;
-                // letter-spacing: 0.0625em;
+                font-size: 14px;
+                // font-weight: normal;
+                // text-align: center;
+                // // letter-spacing: 0.0625px;
+                // // line-height: 2.5em;
+                // line-height: 50px;
 
-                // padding: 0 0 10px 0;
-                padding: 0 0 0.5vh 0;
+                // margin: 0;
+                // // padding: 0;
+                // padding: 0 0 25px 0;
 
-                h1 {
-                    font-size: 2.5em;
-                    // letter-spacing: 0.005em;
-                    line-height: 1.125em;
-                }
+                // h1 {
+                //     font-size: 2em;
+                //     font-weight: inherit;
+                //     // letter-spacing: 0.005em;
+                //     // line-height: 1.125em;
+                //     // line-height: inherit;
+                //     line-height: 1em;
+                // }
 
-                h2 {
-                    font-size: 1.875em;
-                    // letter-spacing: 0.025em;
-                }
+                // h2 {
+                //     font-size: 1.625em;
+                //     font-weight: inherit;
+                //     // letter-spacing: 0.025em;
+                //     // line-height: inherit;
+                //     line-height: 1.25em;
+                // }
 
-                h3 {
-                    font-size: 1.625em;
-                    // letter-spacing: 0.025em;
-                }
+                // h3 {
+                //     font-size: 1.375em;
+                //     font-weight: normal;
+                //     // letter-spacing: 0.025em;
+                //     // line-height: inherit;
+                //     line-height: 1.25em;
+                // }
 
-                .credit {
-                    font-size: 1.3125em;
-                    // letter-spacing: 0.025em;
-                    line-height: 1.375em;
+                // .credit {
+                //     font-size: 1em;
+                //     // letter-spacing: 0.025em;
+                //     line-height: 2.5em;
 
-                    padding: 0.5vh 0 0 0;
-                }
+                //     // padding: 0.875vh 0 0 0;
+                // }
 
-                .plea {
-                    font-size: 1.125em;
-                    // letter-spacing: 0.0375em;
+                // .plea {
+                //     font-size: 0.875em;
+                //     // letter-spacing: 0.0375em;
+                //     line-height: 0.125em;
 
-                    padding: 0.0625vh 0 1.25vh 0;
-                }
+                //     // padding: 0.0625vh 0 1.25vh 0;
+                // }
             }
 
-            .curlContainer {
-                // border: 2px solid #0000ff;
+            // .curlContainer {
+            //     // border: 2px solid #0000ff;
 
-                .curlSvg {
-                    // border: 2px solid #0000ff;
+            //     .curlSvg {
+            //         // border: 2px solid #0000ff;
 
-                    // width: 3.75vw;
-                    width: 3.75%;
-                }
-            }
+            //         // width: 3.75vw;
+            //         width: 7.5%;
+            //     }
+            // }
 
             .thoughtBubbleDiv {
                 // border: 2px solid #0000ff;
 
-                width: 30%;
+                font-size: 0.625em;
+                // line-height: 1em;
+                // text-align: center;
 
-                .thoughtBubbleText {
-                    // border: 2px solid #00ff00;
+                width: 80%;
+                // width: 60%;
 
-                    font-size: 1.375em;
-                    line-height: 1.375em;
-                    text-align: center;
+                // visibility: hidden;
 
-                    width: 80%;
-                    height: 60%;
+                // .thoughtBubbleText {
+                //     // border: 2px solid #00ff00;
 
-                    top: 20.625%;
-                    left: 11.25%;
-                }
+                //     // font-size: 0.625em;
+                //     // line-height: 1.375em;
+                //     // text-align: center;
+
+                //     width: 77.5%;
+                //     height: 60%;
+
+                //     top: 20%;
+                //     left: 13.125%;
+                // }
             }
 
             .resetThoughtsDiv {
                 // border: 2px solid #0000ff;
 
-                width: 10vw;
+                // font-size: 0.5em;
+                font-size: 7px;
+
+                width: 20%;
+
+                // top: 17.5%;
+                // right: 1.25%;
+                top: 47.5%;
+                right: 5.25%;
             }
         }
 
         /* #endregion -------------------- aboutContainer -------------------- */
     }
 
-/* #endregion ========================= DESKTOPS: 1201px+ ========================= */
+/* #endregion ========================= MOBILE: 414px ========================= */
+
+
+
+/* #region ========================= TABLETS / CRAPTOPS: 1024px ========================= */
+
+@media  
+    // only screen and (min-device-width: 768px) 
+    // only screen and (min-device-width: 768px), 
+    // only screen and (max-device-width: 991px) 
+    only screen and (min-device-width: 1024px)
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            // border: 1px solid #ff0000;
+
+            width: 70vw;
+            // left: 17.5vw;
+
+            // margin: 120px auto 0 auto;
+            // margin: 110px auto 0 auto;
+            // padding: 0;
+
+            .haiku {
+                // border: 2px solid #00ffff;
+
+                font-size: 12px;
+                // font-size: 62px;
+                // font-weight: normal;
+                // text-align: center;
+                // // letter-spacing: 0.0625px;
+                // // line-height: 2.5em;
+                // line-height: 50px;
+
+                // margin: 0;
+                // // padding: 0;
+                // padding: 0 0 25px 0;
+
+                // h1 {
+                //     font-size: 2em;
+                //     font-weight: inherit;
+                //     // letter-spacing: 0.005em;
+                //     // line-height: 1.125em;
+                //     // line-height: inherit;
+                //     line-height: 1em;
+                // }
+
+                // h2 {
+                //     font-size: 1.625em;
+                //     font-weight: inherit;
+                //     // letter-spacing: 0.025em;
+                //     // line-height: inherit;
+                //     line-height: 1.25em;
+                // }
+
+                // h3 {
+                //     font-size: 1.375em;
+                //     font-weight: normal;
+                //     // letter-spacing: 0.025em;
+                //     // line-height: inherit;
+                //     line-height: 1.25em;
+                // }
+
+                // .credit {
+                //     font-size: 1em;
+                //     // letter-spacing: 0.025em;
+                //     line-height: 2.5em;
+
+                //     // padding: 0.875vh 0 0 0;
+                // }
+
+                // .plea {
+                //     font-size: 0.875em;
+                //     // letter-spacing: 0.0375em;
+                //     line-height: 0.125em;
+
+                //     // padding: 0.0625vh 0 1.25vh 0;
+                // }
+            }
+
+            // .curlContainer {
+            //     // border: 2px solid #0000ff;
+
+            //     .curlSvg {
+            //         // border: 2px solid #0000ff;
+
+            //         // width: 3.75vw;
+            //         width: 5%;
+            //     }
+            // }
+
+            .thoughtBubbleDiv {
+                // border: 2px solid #0000ff;
+
+                font-size: 1.125em;
+                // line-height: 1em;
+                // text-align: center;
+
+                // width: 50%;
+
+                // // visibility: hidden;
+
+                // .thoughtBubbleText {
+                //     // border: 2px solid #00ff00;
+
+                //     // font-size: 0.75em;
+                //     // line-height: 1.4125em;
+                //     // text-align: center;
+
+                //     width: 77.5%;
+                //     height: 60%;
+
+                //     top: 20%;
+                //     left: 13.125%;
+                // }
+            }
+
+            .resetThoughtsDiv {
+                // border: 2px solid #0000ff;
+
+                font-size: 0.875em;
+            }
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= TABLETS / CRAPTOPS: 1024px ========================= */
+
+
+
+/* #region ========================= LAPTOPS: 1440px ========================= */
+
+@media  
+    // only screen and (min-device-width: 992px) 
+    // only screen and (min-device-width: 992px), 
+    // only screen and (min-device-width: 1366px)
+    only screen and (min-device-width: 1440px)
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            // border: 1px solid #00ff00;
+
+            width: 80vw;
+            // left: 10vw;
+
+            // margin: 120px auto 0 auto;
+            // margin: 110px auto 0 auto;
+            // padding: 0;
+
+            .haiku {
+                // border: 2px solid #00ffff;
+
+                font-size: 14px;
+                // font-weight: normal;
+                // text-align: center;
+                // // letter-spacing: 0.0625px;
+                // // line-height: 2.5em;
+                // line-height: 50px;
+
+                // margin: 0;
+                // // padding: 0;
+                // padding: 0 0 25px 0;
+
+                // h1 {
+                //     font-size: 2em;
+                //     font-weight: inherit;
+                //     // letter-spacing: 0.005em;
+                //     // line-height: 1.125em;
+                //     // line-height: inherit;
+                //     line-height: 1em;
+                // }
+
+                // h2 {
+                //     font-size: 1.625em;
+                //     font-weight: inherit;
+                //     // letter-spacing: 0.025em;
+                //     // line-height: inherit;
+                //     line-height: 1.25em;
+                // }
+
+                // h3 {
+                //     font-size: 1.375em;
+                //     font-weight: normal;
+                //     // letter-spacing: 0.025em;
+                //     // line-height: inherit;
+                //     line-height: 1.1875em;
+                // }
+
+                // .credit {
+                //     font-size: 1em;
+                //     // letter-spacing: 0.025em;
+                //     line-height: 2.5em;
+
+                //     // padding: 0.875vh 0 0 0;
+                // }
+
+                // .plea {
+                //     font-size: 0.875em;
+                //     // letter-spacing: 0.0375em;
+                //     line-height: 0.125em;
+
+                //     // padding: 0.0625vh 0 1.25vh 0;
+                // }
+            }
+
+            // .curlContainer {
+            //     // border: 2px solid #0000ff;
+
+            //     .curlSvg {
+            //         // border: 2px solid #0000ff;
+
+            //         // width: 3.75vw;
+            //         width: 4.5%;
+            //     }
+            // }
+
+            .thoughtBubbleDiv {
+                // border: 2px solid #0000ff;
+
+                font-size: 0.9375em;
+                // line-height: 1em;
+                // text-align: center;
+
+                // width: 50%;
+
+                // // visibility: hidden;
+
+                // .thoughtBubbleText {
+                //     // border: 2px solid #00ff00;
+
+                //     // font-size: 1em;
+                //     // font-size: 0.875em;
+                //     // line-height: 1.375em;
+                //     // text-align: center;
+
+                //     width: 77.5%;
+                //     height: 60%;
+
+                //     top: 20.625%;
+                //     left: 13.125%;
+                // }
+            }
+
+            .resetThoughtsDiv {
+                // border: 2px solid #0000ff;
+
+                font-size: 0.8125em;
+            }
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= LAPTOPS: 1440px ========================= */
+
+
+
+/* #region ========================= DESKTOPS: 1920px+ ========================= */
+
+@media  
+    // only screen and (min-device-width: 1441px)
+    only screen and (min-device-width: 1920px)
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            // border: 1px solid #0000ff;
+
+            // width: 70vw;
+            // left: 15vw;
+
+            // margin: 115px auto 0 auto;
+            // padding: 0;
+
+            .haiku {
+                // border: 2px solid #00ffff;
+
+                font-size: 18px;
+                // font-weight: normal;
+                // text-align: center;
+                // // letter-spacing: 0.0625px;
+                // // line-height: 2.5em;
+                // line-height: 50px;
+
+                // margin: 0;
+                // // margin: -0.25em 0 1em 0;
+                // padding: 0 0 35px 0;
+
+                // h1 {
+                //     font-size: 2em;
+                //     font-weight: inherit;
+                //     // letter-spacing: 0.005em;
+                //     // line-height: 1.125em;
+                //     // line-height: inherit;
+                //     line-height: 1em;
+                // }
+
+                // h2 {
+                //     font-size: 1.625em;
+                //     font-weight: inherit;
+                //     // letter-spacing: 0.025em;
+                //     // line-height: inherit;
+                //     line-height: 1.25em;
+                // }
+
+                // h3 {
+                //     font-size: 1.375em;
+                //     font-weight: normal;
+                //     // letter-spacing: 0.025em;
+                //     // line-height: inherit;
+                //     line-height: 1.25em;
+                // }
+
+                // .credit {
+                //     font-size: 1em;
+                //     // letter-spacing: 0.025em;
+                //     line-height: 2.5em;
+
+                //     // padding: 0.875vh 0 0 0;
+                // }
+
+                // .plea {
+                //     font-size: 0.875em;
+                //     // letter-spacing: 0.0375em;
+                //     line-height: 0.125em;
+
+                //     // padding: 0.0625vh 0 1.25vh 0;
+                // }
+            }
+
+            // .curlContainer {
+            //     // border: 2px solid #0000ff;
+
+            //     .curlSvg {
+            //         // border: 2px solid #0000ff;
+
+            //         // width: 3.75vw;
+            //         width: 3.75%;
+            //     }
+            // }
+
+            .thoughtBubbleDiv {
+                // border: 2px solid #0000ff;
+
+                // font-size: 20px;
+                // line-height: 30px;
+                font-size: 1.25em;
+                // line-height: 1em;
+                // text-align: center;
+
+                // width: 30%;
+
+                // .thoughtBubbleText {
+                //     // border: 2px solid #00ff00;
+
+                //     // font-size: 1.375em;
+                //     // line-height: 1.375em;
+                //     // font-size: 0.5em;
+                //     // line-height: 1.375em;
+                //     // text-align: center;
+
+                //     width: 80%;
+                //     height: 60%;
+
+                //     top: 20.625%;
+                //     left: 11.25%;
+                // }
+            }
+
+            .resetThoughtsDiv {
+                // border: 2px solid #0000ff;
+
+                font-size: 1em;
+            }
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= DESKTOPS: 1920px+ ========================= */
