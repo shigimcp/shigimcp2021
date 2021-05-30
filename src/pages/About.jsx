@@ -328,54 +328,56 @@ function disperseChildren(parentContainer) {
         let curlFactorX = 0.5;
         let curlFactorY = 0.5;
 
-        let minAngleDegrees;
-        let maxAngleDegrees;
+        // let minAngleDegrees;
+        // let maxAngleDegrees;
 
 
         if (thisCurl.getAttribute('brain') === 'left') {
 
-            minAngleDegrees = -90;
-            maxAngleDegrees = -20;
+            // minAngleDegrees = -90;
+            // maxAngleDegrees = -20;
 
-            // let minAngleDegrees = -90;
-            // let maxAngleDegrees = -20;
+            let minAngleDegrees = -90;
+            let maxAngleDegrees = -20;
 
-            // const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
-            // const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
+            const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
+            const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
 
-            // const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX)) + outerRadius * curlFactorX;
-            // const curlY = (Math.sin(thisAngle) * (thisRadius * curlFactorY)) + outerRadius * curlFactorY;
-            // const curlAngle = thisAngle * (180 / Math.PI) + 90;
+            const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX)) + outerRadius * curlFactorX;
+            const curlY = (Math.sin(thisAngle) * (thisRadius * curlFactorY)) + outerRadius * curlFactorY;
 
-            // gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
+            const curlAngle = thisAngle * (180 / Math.PI) + 90;
+
+            gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
 
         } else {
 
-            minAngleDegrees = -150;
-            maxAngleDegrees = -90;
+            // minAngleDegrees = -150;
+            // maxAngleDegrees = -90;
 
-            // let minAngleDegrees = -150;
-            // let maxAngleDegrees = -90;
+            let minAngleDegrees = -150;
+            let maxAngleDegrees = -90;
 
-            // const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
-            // const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
+            const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
+            const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
 
-            // const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX)) + outerRadius * curlFactorX;
-            // const curlY = (Math.sin(thisAngle) * (thisRadius * curlFactorY)) + outerRadius * curlFactorY;
-            // const curlAngle = thisAngle * (180 / Math.PI) + 90;
+            const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX)) + outerRadius * curlFactorX;
+            const curlY = (Math.sin(thisAngle) * (thisRadius * curlFactorY)) + outerRadius * curlFactorY;
 
-            // gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
+            const curlAngle = thisAngle * (180 / Math.PI) + 90;
+
+            gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
         }
 
-        const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
-        const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
+        // const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
+        // const thisRadius = ((randomize2x() * (outerRadius - innerRadius)) + innerRadius);
 
-        // const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX)) + outerRadius * curlFactorX;
-        const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX));
-        const curlY = (Math.sin(thisAngle) * (thisRadius * curlFactorY)) + outerRadius * curlFactorY;
-        const curlAngle = thisAngle * (180 / Math.PI) + 90;
+        // // const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX)) + outerRadius * curlFactorX;
+        // const curlX = (Math.cos(thisAngle) * (thisRadius * curlFactorX));
+        // const curlY = (Math.sin(thisAngle) * (thisRadius * curlFactorY)) + outerRadius * curlFactorY;
+        // const curlAngle = thisAngle * (180 / Math.PI) + 90;
 
-        gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
+        // gsap.set([thisCurl], { x: curlX, y: curlY, rotation: curlAngle });
     }
 }
 
@@ -436,13 +438,13 @@ function handleThought(thisCurl) {
 
     if (thisBrain === 'left') {
         gsap.set([boing], { rotationY: 0 });
-        // thisBoingX = thisCurlDims.x + thisCurlDims.width * 0.5 - outerEllipseDims.x;
-        thisBoingX = thisCurlDims.x + (thisCurlDims.width * 0.5) - (boingDims.width * 0.5) - (outerEllipseDims.width * 0.5);
+        thisBoingX = thisCurlDims.x + thisCurlDims.width * 0.5 - outerEllipseDims.x;
+        // thisBoingX = thisCurlDims.x + (thisCurlDims.width * 0.5) - (boingDims.width * 0.5) - (outerEllipseDims.width * 0.5);
         thisBoingY = thisCurlDims.y - (thisCurlDims.height * 0.5) - (boingDims.height * 0.5) - outerEllipseDims.y;
     } else {
         gsap.set([boing], { rotationY: 180 });
-        // thisBoingX = thisCurlDims.x - thisCurlDims.width * 0.5 - boingDims.width;
-        thisBoingX = thisCurlDims.x + (thisCurlDims.width * 0.5) + (boingDims.width * 0.5) - outerEllipseDims.width;
+        thisBoingX = thisCurlDims.x - thisCurlDims.width * 0.5 - boingDims.width;
+        // thisBoingX = thisCurlDims.x + (thisCurlDims.width * 0.5) + (boingDims.width * 0.5) - outerEllipseDims.width;
         thisBoingY = thisCurlDims.y - outerEllipseDims.y - (boingDims.height * 0.5) - (thisCurlDims.height * 0.5);
     }
 

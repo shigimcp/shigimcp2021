@@ -150,7 +150,9 @@
             // border: 2px solid #0000ff;
 
             // width: 3.75vw;
-            width: 3.75%;
+            // width: 3.75%;
+            width: 5%;
+            // width: 5.75%;
 
             position: absolute;
             overflow: visible;
@@ -177,11 +179,11 @@
     }
 
     .thoughtBubbleDiv {
-        // border: 2px solid #0000ff;
+        // border: 2px solid #999999;
 
         font-family: AnimeAceItalic, Arial, Helvetica, sans-serif;
         font-size: 12px;
-        line-height: 30px;
+        line-height: 17.5px;
         // font-size: 1.625em;
         // line-height: 1em;
         text-align: center;
@@ -196,7 +198,9 @@
         // width: 30%;
         height: auto;
 
-        position: relative;
+        // position: relative;
+        // position: absolute;
+        // z-index: 999;
 
         .thoughtBubbleSvg {
             // border: 2px solid #0000ff;
@@ -243,7 +247,8 @@
 
             position: absolute;
 
-            top: 20%;
+            // top: 20%;
+            top: 21.25%;
             // left: 13.125%;
             // top: 19.375%;
             left: 11.25%;
@@ -472,10 +477,10 @@
             // }
 
             .thoughtBubbleDiv {
-                // border: 2px solid #0000ff;
+                // border: 2px solid #ff00ff;
 
                 font-size: 0.625em;
-                // line-height: 1em;
+                line-height: 1.375em;
                 // text-align: center;
 
                 width: 80%;
@@ -486,15 +491,15 @@
                 // .thoughtBubbleText {
                 //     // border: 2px solid #00ff00;
 
-                //     // font-size: 0.625em;
-                //     // line-height: 1.375em;
+                //     font-size: 0.625em;
+                //     line-height: 1.375em;
                 //     // text-align: center;
 
-                //     width: 77.5%;
-                //     height: 60%;
+                //     // width: 77.5%;
+                //     // height: 60%;
 
-                //     top: 20%;
-                //     left: 13.125%;
+                //     // top: 15%;
+                //     // left: 13.125%;
                 // }
             }
 
@@ -597,41 +602,41 @@
                 // }
             }
 
-            // .curlContainer {
-            //     // border: 2px solid #0000ff;
+            .curlContainer {
+                // border: 2px solid #0000ff;
 
-            //     .curlSvg {
-            //         // border: 2px solid #0000ff;
+                .curlSvg {
+                    // border: 2px solid #0000ff;
 
-            //         // width: 3.75vw;
-            //         width: 5%;
-            //     }
-            // }
+                    // width: 3.75vw;
+                    width: 3.75%;
+                }
+            }
 
             .thoughtBubbleDiv {
                 // border: 2px solid #0000ff;
 
                 font-size: 1.125em;
-                // line-height: 1em;
+                line-height: 1.375em;
                 // text-align: center;
 
                 // width: 50%;
 
                 // // visibility: hidden;
 
-                // .thoughtBubbleText {
-                //     // border: 2px solid #00ff00;
+                .thoughtBubbleText {
+                    // border: 2px solid #00ff00;
 
-                //     // font-size: 0.75em;
-                //     // line-height: 1.4125em;
-                //     // text-align: center;
+                    // font-size: 0.75em;
+                    // line-height: 1.4125em;
+                    // text-align: center;
 
-                //     width: 77.5%;
-                //     height: 60%;
+                    // width: 77.5%;
+                    // height: 60%;
 
-                //     top: 20%;
-                //     left: 13.125%;
-                // }
+                    top: 20%;
+                    // left: 13.125%;
+                }
             }
 
             .resetThoughtsDiv {
@@ -736,7 +741,7 @@
             // }
 
             .thoughtBubbleDiv {
-                // border: 2px solid #0000ff;
+                // border: 2px solid #00ff00;
 
                 font-size: 0.9375em;
                 // line-height: 1em;
@@ -861,15 +866,15 @@
             // }
 
             .thoughtBubbleDiv {
-                // border: 2px solid #0000ff;
+                // border: 2px solid #ff0000;
 
                 // font-size: 20px;
                 // line-height: 30px;
-                font-size: 1.25em;
+                font-size: 1.125em;
                 // line-height: 1em;
                 // text-align: center;
 
-                // width: 30%;
+                width: 40%;
 
                 // .thoughtBubbleText {
                 //     // border: 2px solid #00ff00;
