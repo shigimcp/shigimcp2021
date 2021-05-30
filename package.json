@@ -20,6 +20,7 @@
         "postcss": "^8.3.0",
         "react": "^17.0.2",
         "react-css-burger": "^0.2.0",
+        "react-device-detect": "^1.17.0",
         "react-dom": "^17.0.2",
         "react-gsap": "^2.3.0",
         "react-moment": "^1.1.1",

@@ -8,6 +8,11 @@ import { useEffect } from 'react';
 import Isotope from 'isotope-layout';
 import Packery from 'isotope-packery';
 
+import { isBrowser } from "react-device-detect";
+// import { isMobile } from "react-device-detect";
+// import { isBrowser, isMobile } from "react-device-detect";
+// import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
+
 import '../stylesheets/Global.scss';
 import '../stylesheets/Isotope.scss';
 
@@ -137,6 +142,14 @@ export const Isotope03 = (props) => {
     // console.log('props = ' + props);
     // console.log(props);
 
+    // console.log('');
+    // console.log('isBrowser = ' + isBrowser);
+    // // console.log(isBrowser);
+
+    // console.log('isMobile = ' + isMobile);
+    // // console.log(isMobile);
+
+
     //#region ==================== ASSETS _Ref ====================
 
     // init one ref to store the future isotope object
@@ -172,15 +185,23 @@ export const Isotope03 = (props) => {
 
     useEffect(() => {
 
+        let workNavWidth = employerNav_Ref.current.getBoundingClientRect().width;
         let workNavHeight = employerNav_Ref.current.getBoundingClientRect().height;
 
         // console.log('');
         // console.log('==================== useEffect: workNavTL ====================');
+        // console.log('workNavWidth = ' + workNavWidth);
         // console.log('workNavHeight = ' + workNavHeight);
 
-        workNavTL
-            .fromTo([employerNav_Ref.current], { y: -workNavHeight, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5 }, 'frame01')
-            .fromTo([typeNav_Ref.current], { y: 0, autoAlpha: 1 }, { y: -workNavHeight, autoAlpha: 0, duration: 0.5 }, 'frame01')
+        if (isBrowser === true) {
+            workNavTL
+                .fromTo([employerNav_Ref.current], { y: -workNavHeight, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5 }, 'frame01')
+                .fromTo([typeNav_Ref.current], { y: 0, autoAlpha: 1 }, { y: -workNavHeight, autoAlpha: 0, duration: 0.5 }, 'frame01')
+        } else {
+            workNavTL
+                .fromTo([employerNav_Ref.current], { x: -workNavWidth, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.5 }, 'frame01')
+                .fromTo([typeNav_Ref.current], { x: 0, autoAlpha: 1 }, { x: -workNavWidth, autoAlpha: 0, duration: 0.5 }, 'frame01')
+        }
 
 
         if (workNavToggleBtn) {
@@ -205,10 +226,10 @@ export const Isotope03 = (props) => {
 
         if (workNavToggleBtn) {
             workNavTL.play();
-            setWorkNavToggleText('View by type >>');
+            setWorkNavToggleText('View by type');
         } else {
             workNavTL.reverse();
-            setWorkNavToggleText('<< View by employer');
+            setWorkNavToggleText('View by employer');
         }
 
     // }, [])

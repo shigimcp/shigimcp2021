@@ -436,7 +436,8 @@ export const Header = (props) => {
             <div className='hed' id='hedID'>
 
                 <div className='hed01' id='hed01'>Shigeru McPherson</div>
-                <div className='hed02' id='hed02'>digital designer &#8226; art director</div>
+                <div className='hed02' id='hed02'>digital designer <span className='bullet'>&#8226;</span> art director</div>
+                {/* <div className='hed02' id='hed02'>digital designer <span className='bullet'>&#8226;</span> art director <span className='bullet'>&#8226;</span> front-end developer</div> */}
 
                 <div className='contact'>
                     212.464.7989 &nbsp;
@@ -571,15 +572,17 @@ export const Header = (props) => {
             </div>
 
 
-            <div className='navBurger' id='navBurgerID'>
+            <div className='navBurgerDiv' id='navBurgerID'>
 
                 <Burger
+                    // className='navBurger'
                     onClick={() => { setMobileNavShow(!mobileNavShow) }}
                     active={mobileNavShow}
                     burger='spring'
                     color='#cccccc'
                     hoverOpacity={0.8}
                     scale={0.75}
+                    // style={{ border: '1px solid #ff00ff' }}
                 />
 
             </div>

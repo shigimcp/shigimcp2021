@@ -9,8 +9,7 @@
 }
 
 .header {
-    border: 02px solid #ff0000;
-
+    // border: 02px solid #ff0000;
     background: #000000;
 
     color: #ffffff;
@@ -29,14 +28,17 @@
     /* #region -------------------- .hed -------------------- */
 
     .hed {
-        border: 02px solid #0000ff;
+        // border: 02px solid #0000ff;
         background: #000000;
 
         // color: #ff00ff;
+        font-size: 30px;
+        line-height: 1em;
 
-        width: $body-width;
-        min-width: $body-min-width;
-        max-width: $body-max-width;
+        // width: $body-width;
+        width: 100%;
+        // min-width: $body-min-width;
+        // max-width: $body-max-width;
 
         height: inherit;
 
@@ -47,84 +49,10 @@
 
         display: block;
 
-        .hed01 {
-            border: 02px solid #ff00ff;
-
-            font-size: 30px;
-            line-height: 1em;
-            // letter-spacing: 0.00625em;
-
-            width: auto;
-            // height: inherit;
-
-            // margin: 0;
-            // padding: inherit;
-
-            // position: inherit;
-            // top: 10px;
-            // left: 50px;
-
-            position: absolute;
-            // bottom: -17.5%;
-            // bottom: -37.5%;
-            bottom: 10%;
-            left: 35px;
-
-            // display: table-cell;
-        }
-
-        .hed02 {
-            border: 02px solid #00ffff;
-
-            font-size: 20px;
-
-            width: auto;
-            // height: inherit;
-            height: 75%;
-
-            // margin: 0;
-            // padding: inherit;
-
-            // position: inherit;
-            // top: 9.5px;
-            // left: 60px;
-
-            position: absolute;
-            // bottom: -22.5%;
-            bottom: 0;
-            left: 310px;
-
-            display: table-cell;
-        }
-
-        .contact {
-            border: 02px solid #ffff00;
-
-            font-size: 18px;
-            // letter-spacing: .05em;
-
-            height: 73.75%;
-
-            position: absolute;
-            bottom: 0;
-            right: 0;
-
-            // margin: 0;
-            // padding: inherit;
-
-            display: table-cell;
-
-            a, a:visited {
-                color: #ffffff;
-            }
-
-            // .email {
-            //     letter-spacing: inherit;
-            // }
-        }
+        z-index: 999;
 
         .logoIcon {
-            border: 02px solid #ff0000;
+            // border: 02px solid #ff0000;
 
             // width: 150px;
             height: 125px;
@@ -135,15 +63,17 @@
             // position: relative;
             // top: -56px;
             // left: -100px;
-            // z-index: 99;
+            // z-index: 999;
 
             position: absolute;
-            top: 7.5px;
-            left: -120px;
-            z-index: 99;
+            // top: 7.5px;
+            top: 7.25px;
+            // left: -120px;
+            left: -30px;
+            // z-index: 99;
 
-            display: block;
-            overflow: visible;
+            // display: block;
+            // overflow: visible;
 
             // cursor: pointer;
 
@@ -197,6 +127,84 @@
 
             /* #endregion -------------------- .logoIcon: clipping paths -------------------- */
         }
+
+        .hed01, .hed02, .contact {
+            // border: 02px solid #ff00ff;
+
+            // letter-spacing: 0.00625em;
+
+            position: absolute;
+            // bottom: 0;
+            bottom: 0;
+
+            .bullet {
+                // border: 02px solid #ff00ff;
+                font-size: 60%;
+            }
+        }
+
+        .hed01 {
+            // border: 02px solid #ff00ff;
+
+            // font-size: 30px;
+            font-size: 1em;
+            line-height: 1em;
+            // letter-spacing: 0.00625em;
+
+            left: calc(142.045454545454545px - 15px);
+        }
+
+        .hed02 {
+            // border: 02px solid #00ffff;
+
+            // font-size: 20px;
+            font-size: 0.5875em;
+
+            // width: auto;
+            // height: inherit;
+            // height: 75%;
+
+            // margin: 0;
+            // padding: inherit;
+
+            // position: inherit;
+            // top: 9.5px;
+            // left: 60px;
+
+            // position: absolute;
+            // bottom: -22.5%;
+            // bottom: 0;
+            // left: 310px;
+            left: calc(142.045454545454545px - 15px + 280px);
+
+            // display: table-cell;
+        }
+
+        .contact {
+            // border: 02px solid #ffff00;
+
+            // font-size: 18px;
+            font-size: 0.5em;
+            // letter-spacing: .05em;
+
+            // height: 73.75%;
+
+            // right: 20px;
+            right: 2.5vw;
+
+            // margin: 0;
+            // padding: inherit;
+
+            // display: table-cell;
+
+            a, a:visited {
+                color: #ffffff;
+            }
+
+            // .email {
+            //     letter-spacing: inherit;
+            // }
+        }
     }
 
     /* #endregion -------------------- .hed -------------------- */
@@ -212,9 +220,12 @@
         // background: #ffffff;
         @include bgGradient01();
 
-        width: $body-width;
+        // width: 100vw;
+        width: inherit;
+        // width: $body-width;
+        // width: calc($body-width - 10vw);
         min-width: $body-min-width;
-        max-width: $body-max-width;
+        // max-width: $body-max-width;
 
         height: $navBar-height;
         // height: 30px;
@@ -239,7 +250,7 @@
 
             // background: #ffffff;
             // background: none;
-            @include bgGradient01();
+            // @include bgGradient01();
             // @include bgGradient02();
 
             // color: #ffffff;
@@ -247,8 +258,9 @@
             font-size: 1.125em;
             text-align: center;
 
-            width: 70%;
+            // width: 70%;
             // width: 50%;
+            width: $body-width;
             height: $navBar-height;
 
             margin: 0 auto;
@@ -568,7 +580,7 @@
 @media  
     only screen and (min-device-width: 1441px) 
     { 
-        .navBurger {
+        .navBurgerDiv {
             display: none;
         }
     }
@@ -584,29 +596,29 @@
     // only screen and (min-device-width: 992px), 
     only screen and (max-device-width: 1440px) 
     { 
-        .header {
+        // .header {
             // border: 02px solid #ff0000;
 
             /* #region -------------------- hed -------------------- */
 
-            .hed {
-                // border: 02px solid #0000ff;
+            // .hed {
+            //     // border: 02px solid #0000ff;
 
-                // left: -20px !important;
+            //     // left: -20px !important;
 
-                .contact {
-                    // border: 02px solid #ffff00;
+            //     .contact {
+            //         // border: 02px solid #ffff00;
 
-                    right: -7.5vw !important;
-                }
-            }
+            //         right: -7.5vw !important;
+            //     }
+            // }
 
             /* #endregion -------------------- hed -------------------- */
 
-            .navBurger {
+            .navBurgerDiv {
                 display: none;
             }
-        }
+        // }
     }
 
 /* #endregion ========================= LAPTOPS: 992px+ ========================= */
@@ -620,29 +632,29 @@
     // only screen and (min-device-width: 768px), 
     only screen and (max-device-width: 991px) 
     { 
-        .header {
+        // .header {
             // border: 02px solid #ff0000;
 
             /* #region -------------------- hed -------------------- */
 
-            .hed {
-                // border: 02px solid #0000ff;
+            // .hed {
+            //     // border: 02px solid #0000ff;
 
-                // left: -20px !important;
+            //     // left: -20px !important;
 
-                .contact {
-                    // border: 02px solid #ffff00;
+            //     .contact {
+            //         // border: 02px solid #ffff00;
 
-                    right: -7.5vw !important;
-                }
-            }
+            //         right: -7.5vw !important;
+            //     }
+            // }
 
             /* #endregion -------------------- hed -------------------- */
 
-            .navBurger {
+            .navBurgerDiv {
                 display: none;
             }
-        }
+        // }
     }
 
 /* #endregion ========================= TABLETS: 768px ========================= */
@@ -665,39 +677,37 @@
 
             .hed {
                 // border: 02px solid #0000ff;
+                // background: none;
 
                 // left: 0 !important;
-
-                // .hed01 {
-                // .hed02 {
-                .contact {
-                // .hed02, .contact {
-                // .hed01, .hed02, .contact {
-                    display: none;
-                }
-
-                .hed01 {
-                    font-size: 1.625em;
-                    // bottom: -5%;
-                    // left: 26.25vw;
-                    // bottom: -35%;
-                    bottom: 10%;
-                    left: 26.25vw;
-                }
-
-                .hed02 {
-                // .contact {
-                    color: #000000;
-                    top: 40px;
-                    left: 26.25vw;
-                }
 
                 .logoIcon {
                     height: 100px;
 
-                    top: 7.5px;
+                    // top: 7.5px;
                     left: -15px;
+                    z-index: 999;
                 }
+
+                .hed01 {
+                    font-size: 0.875em;
+
+                    left: 26.25vw;
+                }
+
+                .hed02, .contact {
+                    // color: #000000;
+                    // top: 40px;
+                    // left: 26.25vw;
+
+                    visibility: hidden;
+                }
+
+                // .contact {
+                // // .hed02, .contact {
+                // // .hed01, .hed02, .contact {
+                //     display: none;
+                // }
             }
 
             /* #endregion -------------------- .hed -------------------- */
@@ -709,8 +719,8 @@
                 // border: 1px solid #ff0000;
                 border: none;
 
-                // background: none;
-                @include bgGradient05();
+                background: none;
+                // @include bgGradient05();
 
                 font-size: 0.75em;
 
@@ -722,12 +732,16 @@
                 height: 7.5vh;
 
                 // margin: -50px 0 0 0;
-                // top: 0;
 
                 // display: none;
 
                 // position: absolute;
+                // top: 50px;
+                top: 49px;
                 // z-index: 99;
+                // z-index: 0;
+
+                // visibility: hidden;
 
 
                 /* #region -------------------- .navBar -------------------- */
@@ -744,10 +758,11 @@
                     width: 100%;
                     height: inherit;
 
-                    position: absolute;
-                    // // top: inherit;
-                    // // top: 0;
-                    // // right: 0;
+                    // position: absolute;
+                    // top: inherit;
+                    // top: 0;
+                    // right: 0;
+                    // top: -10px;
                     // z-index: 99;
 
                     grid-template-columns: repeat(1, auto);
@@ -769,16 +784,21 @@
                         @include bgGradient04();
 
                         // width: inherit !important;
+                        visibility: hidden !important;
                     }
                 }
 
                 /* #endregion -------------------- .navBar -------------------- */
 
 
+                // .workNav, .resumeNav {
+                //     visibility: hidden;
+                // }
+
                 /* #region -------------------- .workNav -------------------- */
 
                 .workNav {
-                    // border: 1px solid #ff00ff;
+                    border: 1px solid #ff00ff;
 
                     width: 20vw;
                     min-width: unset;
@@ -810,27 +830,32 @@
             /* #endregion -------------------- .navBarContainer -------------------- */
 
 
-            /* #region -------------------- .navBurger -------------------- */
+            /* #region -------------------- .navBurgerDiv -------------------- */
 
-            .navBurger {
-                // border: 1px solid #00ff00;
+            .navBurgerDiv {
+                // border: 1px solid #00ffff;
                 // background: rgba(0,0,0,0.5);
 
                 width: 50px;
                 // height: $navBar-height;
-                height: 95%;
+                // height: 95%;
 
                 // margin: 0;
                 // margin: $header-height 0 0 0;
                 // padding: 0;
+                padding: 2.5% 0;
 
                 position: absolute;
-                top: 5%;
+                top: 0;
                 right: 0;
                 z-index: 9999;
 
                 display: table-cell;
                 // display: none;
+
+                // .navBurger {
+                //     border: 1px solid #ff00ff;
+                // }
 
                 .navDrawer {
                     // border: 1px solid #00ff00;
@@ -858,7 +883,7 @@
                 }
             }
 
-            /* #endregion -------------------- .navBurger -------------------- */
+            /* #endregion -------------------- .navBurgerDiv -------------------- */
         }
     }
 

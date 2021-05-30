@@ -1,20 +1,21 @@
-/* #region ==================== GENERAL ==================== */
-
 @import './Global.scss';
 
-* {
-    font-size: 1em;
-    line-height: 1.375em;
+
+/* #region ==================== BASE (iPAD 1024 x 768 Retina... WTF?!) ==================== */
+
+.isotopeContainer * {
+    // font-size: 1em;
+    // line-height: 1.375em;
+    font-size: 15px;
+    line-height: 15px;
     text-align: center;
 }
 
-/* #endregion ==================== GENERAL ==================== */
-
-
-/* #region ==================== GALLERY workItem format[s] ==================== */
-
 .isotopeContainer {
-    // border: 2px solid #ff0000;
+    // border: 2px solid #00ffff;
+
+    // font-size: 0.5em;
+    // line-height: 0.5em;
 
     width: 100vw;
 
@@ -26,27 +27,42 @@
     position: absolute;
     top: $header-height+$navBar-height;
 
+
+    /* #region -------------------- .workNavBar -------------------- */
+
     .workNavBar {
         // border: 2px solid #ff0000;
 
         // background: #ffffff;
-        // background: rgba($color: #000000, $alpha: 0.75);
+        // background: rgba($color: #000000, $alpha: 0.25);
+        @include bgGradient01();
 
-        font-size: 0.875rem;
+        // font-size: 12px;
+        // line-height: 20px;
+        // font-size: 0.875rem;
         // line-height: 0.25rem;
         // line-height: 2.5rem;
+        // font-size: inherit;
+        // line-height: inherit;
         text-align: center;
 
         // width: 100vw;
         width: inherit;
-        height: $navBar-height + 10px;
+        height: $navBar-height+10px;
+        // height: $navBar-height+15px;
+        // height: $navBar-height+20px;
 
-        text-align: center;
         // vertical-align: middle;
 
         margin: 0;
         padding: 0;
         // padding: 5px 0;
+
+        position: fixed;
+        z-index: 99;
+
+
+        /* #region - - - - - - - - - - - .activeEmplDiv - - - - - - - - - - - */
 
         .activeEmplDiv {
             // border: 2px inset #00ffff;
@@ -59,9 +75,12 @@
             color: #ff0000;
             text-align: center;
 
-            width: 50%;
+            // width: 50%;
+            // width: 100%;
             // width: auto;
+            width: inherit;
             // height: $navBar-height;
+            // height: auto;
             height: inherit;
             // height: 90%;
 
@@ -72,29 +91,29 @@
             // left: -25vw;
             // left: 50vw;
             // z-index: -1;
+
+            display: none;
         }
+
+        /* #endregion - - - - - - - - - - - .activeEmplDiv - - - - - - - - - - - */
+
+
+        /* #region - - - - - - - - - - - .workNav - - - - - - - - - - - */
 
         .workNav {
             // border: 2px solid #00ff00;
 
             // line-height: 2.5rem;
-            text-align: center;
+            // text-align: center;
 
             // width: inherit;
             height: inherit;
 
-            margin: 0;
-            padding: 0;
-
-            // margin: 0 auto;
-            // padding: 10px 0 0 0;
-
-            // vertical-align: middle;
+            // margin: 0;
+            // padding: 0;
 
             display: flex;
-            // align-items: center;
             justify-content: center;
-            // justify-content: space-between;
 
             position: absolute;
             left: 50%;
@@ -104,16 +123,9 @@
                 // border: 2px solid #0000ff;
                 // border-radius: 2.5px;
 
-                // background: rgba($color: #ff0000, $alpha: 0.5);
-                // background: rgba($color: #ffffff, $alpha: 0.5);
+                // font-size: 0.875em;
 
-                // font-size: 0.875rem;
-                // line-height: 0.25em;
-                // line-height: 2.5rem;
-                // line-height: 2.875rem;
-                // text-align: center;
-                vertical-align: middle;
-
+                min-width: 30px;
                 // width: inherit;
                 // height: inherit;
                 // height: 100%;
@@ -122,85 +134,35 @@
                 margin: 0;
                 // padding: 0;
 
-                // margin: 0 5px;
-                padding: 0 10px;
-                // padding: 0 20px;
-                // padding: 10px 20px;
-
-                // grid-area: auto;
-
                 cursor: pointer;
-
-                // .workNavLogo {
-                //     border: 2px solid #0000ff;
-
-                //     max-width: 100px;
-                //     // height: 20px;
-                //     height: 80%;
-                //     // height: inherit;
-
-                //     // display: inline-block;
-                //     vertical-align: middle;
-                // }
             }
 
             .workNavItem {
                 // border: 2px solid #0000ff;
                 // border-radius: 2.5px;
 
-                // background: rgba($color: #ff0000, $alpha: 0.5);
-                // background: rgba($color: #ffffff, $alpha: 0.5);
-
-                // font-size: 0.875rem;
-                // line-height: 0.25em;
-                // line-height: 2.5rem;
-                line-height: 2.875rem;
-                // text-align: center;
-                // vertical-align: middle;
-
-                // width: inherit;
-                // height: inherit;
-                // height: 100%;
-                // height: $navBar-height+10px;
-
                 // margin: 0;
                 // padding: 0;
 
                 // margin: 0 5px;
-                // padding: 10px 20px;
-                // padding: 0 10px;
-
-                // grid-area: auto;
-
-                // cursor: pointer;
+                padding: 15px 10px;
+                // padding: 0 15px;
             }
 
             .workNavItemLogo {
                 // border: 2px solid #0000ff;
                 // border-radius: 2.5px;
 
-                // background: rgba($color: #ffffff, $alpha: 0.5);
-
-                // font-size: 0.875rem;
-                // line-height: 0.25em;
-                // line-height: 2.5rem;
-                // line-height: 2.875rem;
-                // text-align: center;
-                // vertical-align: middle;
-
-                // // width: 20%;
-                // // width: 100%;
-                // // height: 5px;
-                // height: 150%;
-                // // height: 50%;
-                // // height: inherit;
-
                 // margin: 0;
                 // padding: 0;
 
-                // margin: 0 2.5px;
-                padding: 5px 10px;
-                // padding: 0 5px;
+                margin: 5px 0 0 0;
+
+                // padding: 5px 10px;
+                padding: 0 5px;
+                // padding: 3.75px 5px 0 5px;
+                // padding: 5px 5px 0 5px;
+                // padding: 7.5px 5px 0 5px;
                 // padding: 0 10px;
                 // padding: 5px 0;
 
@@ -209,21 +171,27 @@
                 // cursor: pointer;
 
                 .workNavLogo {
-                    // border: 2px solid #0000ff;
+                    // border: 2px solid #ff00ff;
 
-                    width: 60px;
+                    width: 50px;
+                    // min-width: 50px;
+                    // width: auto;
                     // max-width: 60px;
 
                     // height: 20px;
-                    // height: 80%;
-                    height: 100%;
+                    height: 80%;
+                    // height: 100%;
                     // height: inherit;
+                    // max-height: 70%;
 
-                    // display: inline-block;
-                    vertical-align: middle;
                 }
             }
         }
+
+        /* #endregion - - - - - - - - - - - .workNav - - - - - - - - - - - */
+
+
+        /* #region - - - - - - - - - - - .toggleNav - - - - - - - - - - - */
 
         .toggleNav {
             // border: 2px solid #ff0000;
@@ -232,25 +200,29 @@
             // color: #ffffff;
             // line-height: .025rem;
 
-            width: 7.5vw;
+            // width: 7.5vw;
             // width: 10vw;
+            width: 12.5vw;
             // height: 100%;
             // height: inherit;
             // height: auto;
 
             margin: 0;
-            padding: 7.5px 10px;
+            // padding: 7.5px 10px;
+            padding: 5px 5px;
 
             position: absolute;
-            // top: ($navBar-height+10px)*0.25;
-            top: ($navBar-height+10px)*0.125;
+            top: ($navBar-height+10px)*0.25;
+            // top: ($navBar-height+10px)*0.125;
             // transform: translate(0 -($navBar-height+10px)*0.5);
-            right: 15vw;
+            // right: 15vw;
+            right: 1.25vw;
 
             .toggleBtn {
                 // border: 2px solid #00ff00;
 
                 color: #ffffff;
+                font-size: 0.875em;
                 // font-size: 0.875rem;
                 // line-height: 0.5rem;
                 // line-height: 2.5rem;
@@ -285,14 +257,24 @@
                 // }
             }
         }
+
+        /* #endregion - - - - - - - - - - - .toggleNav - - - - - - - - - - - */
     }
 
+    /* #endregion -------------------- .workNavBar -------------------- */
+
+
+    /* #region -------------------- .galleryContainer -------------------- */
 
     .galleryContainer {
         // border: 2px solid #0000ff;
 
-        margin: 20px auto 0 auto;
+        // margin: 20px auto 0 auto;
+        margin: 55px auto 0 auto;
         padding: 0;
+
+
+        /* #region -------------------- .workItem -------------------- */
 
         .workItem {
             // border: 2px solid #00ffff;
@@ -362,6 +344,11 @@
             }
         }
 
+        /* #endregion -------------------- .workItem -------------------- */
+
+
+        /* #region -------------------- .masonryWidth2 .masonryHeight2 -------------------- */
+
         .masonryWidth2 {
             // width: 40vw;
             // width: calc(40vw - 30px);
@@ -378,7 +365,404 @@
             // height: calc(16.6666666666667vw * 1.5);
             height: calc(16.6666666666667vw * 2);
         }
+
+        /* #endregion -------------------- .masonryWidth2 .masonryHeight2 -------------------- */
     }
+
+    /* #endregion -------------------- .galleryContainer -------------------- */
 }
 
-/* #endregion ==================== GALLERY workItem format[s] ==================== */
+/* #endregion ==================== BASE (iPAD 1024 x 768 Retina... WTF?!) ==================== */
+
+
+
+/* #region ========================= MOBILE: 414px ========================= */
+
+@media  
+    // only screen and (min-device-width: 375px) 
+    // only screen and (min-device-width: 414px)
+    // only screen and (min-device-width: 375px), 
+    // only screen and (min-device-width: 414px), 
+    only screen and (max-device-width: 414px) 
+    { 
+        .isotopeContainer {
+            // border: 2px solid #ff00ff;
+
+            // margin: 0;
+            // padding: 0;
+
+            // top: 0;
+            top: 50px;
+
+            /* #region -------------------- .workNavBar -------------------- */
+
+            .workNavBar {
+                // border: 2px solid #ff0000;
+
+                width: 20vw;
+                // height: 80vh;
+                height: auto;
+
+                margin: 0;
+                padding: 20px 0;
+
+                // position: relative;
+                position: fixed;
+                // top: 0;
+                // left: 0;
+                top: 120px;
+                // float: left;
+
+                // .activeEmplDiv {
+                //     // border: 2px solid #00ff00;
+
+                //     height: 100%;
+
+                //     // visibility: hidden;
+                // }
+
+                .workNav {
+                    // border: 2px solid #0000ff;
+
+                    width: 100%;
+
+                    // margin: 0;
+                    // padding: 0;
+
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+                    // position: absolute;
+                    // position: fixed;
+                    // top: 0;
+                    // left: 0;
+
+                    top: 40px;
+                    // left: 10%;
+                    // float: left;
+                    // transform: translate(-250%, 0);
+
+                    .workNavItem, .workNavItemLogo {
+                        // border: 2px solid #ff0000;
+
+                        // min-height: 60px;
+                        max-height: 60px;
+                        // max-height: 20px;
+                        // padding: 5px 0;
+
+                        margin: 0;
+                        // padding: 0;
+                        // padding: 5px 0;
+                    }
+
+                    .workNavItemLogo {
+                        // border: 2px solid #00ffff;
+
+                        // height: auto;
+                        // height: 50px;
+
+                        // margin: 0;
+                        // padding: 0;
+                        // padding: 7.5px 0 2.5px 0;
+                        padding: 8.75px 0 5px 0;
+
+                        .workNavLogo {
+                            // border: 2px solid #ff00ff;
+
+                            // width: 100%;
+                            width: 80%;
+                            // max-width: 70%;
+                            max-height: 40px;
+
+                            margin: 0;
+                            // padding: 0;
+                            // padding: 0 10px;
+                            // padding: 5px 0;
+
+                            // top: 0;
+                            // left: 0;
+                            // top: 100%;
+                            // left: 25%;
+                            // transform: translate(-50%, 0);
+                        }
+                    }
+                }
+
+                .toggleNav {
+                    // border: 2px solid #00ffff;
+
+                    font-size: 0.875em;
+                    line-height: 0.875em;
+
+                    width: 100%;
+                    height: 40px;
+                    vertical-align: middle;
+
+                    margin: 0;
+                    padding: 0;
+                    // padding: 5px 0;
+
+                    top: 0;
+                    left: 0;
+                    right: 0;
+
+                    // visibility: hidden;
+                    .toggleBtn {
+                        // border: 2px solid #0000ff;
+
+                        // text-align: center;
+                        width: inherit;
+                        // vertical-align: middle;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+
+            /* #endregion -------------------- .workNavBar -------------------- */
+
+
+            /* #region -------------------- .galleryContainer -------------------- */
+
+            .galleryContainer {
+                // border: 2px solid #0000ff;
+
+                // width: 50%;
+                width: 77.5vw;
+                // width: 80vw;
+
+                // margin: 0;
+                // padding: 0;
+                margin: 5px auto;
+
+                // position: absolute;
+                // top: 0;
+                // left: 20vw;
+                right: 5px;
+                float: right;
+
+                .workItem {
+                    // border: 2px solid #00ffff;
+                    // border: 1px inset rgba($color: #000000, $alpha: 0.125);
+
+                    // background: rgba($color: #000000, $alpha: 0.0625);
+
+                    // color: #ffffff;
+                    // font-size: 1rem;
+
+                    // width: calc(16.6666666666667vw - 10px);
+                    // width: calc(75vw);
+                    width: inherit;
+                    // height: auto;
+
+                    margin: 0;
+                    padding: 0;
+
+                    // margin: 0 5px 10px 5px;
+                    // padding: 0 0 5px 0;
+
+                    .itemInfo {
+                        // border: 2px solid #00ffff;
+                        // border: 1px inset rgba($color: #000000, $alpha: 0.125);
+
+                        margin: 0;
+                        padding: 0;
+
+                        // visibility: hidden;
+                        display: none;
+                    }
+                }
+            }
+
+            /* #endregion -------------------- .galleryContainer -------------------- */
+        }
+    }
+
+/* #endregion ========================= MOBILE: 414px ========================= */
+
+
+
+/* #region ========================= TABLETS / CRAPTOPS: 1024px ========================= */
+
+@media  
+    // only screen and (min-device-width: 768px) 
+    // only screen and (min-device-width: 768px), 
+    // only screen and (max-device-width: 991px) 
+    only screen and (min-device-width: 1024px)
+    { 
+        .isotopeContainer {
+            // border: 2px solid #0000ff;
+
+            .workNavBar {
+                // border: 2px solid #ff0000;
+
+                height: $navBar-height+15px;
+
+                .workNav {
+                    // border: 2px solid #00ff00;
+
+                    margin: 5px 0 0 0;
+
+                    .workNavItem, .workNavItemLogo {
+                        // border: 2px solid #0000ff;
+
+                        font-size: 0.875em;
+                    }
+
+                    // .workNavItem {
+                    //     border: 2px solid #0000ff;
+                    // }
+
+                    .workNavItemLogo {
+                        // border: 2px solid #0000ff;
+
+                        margin: 0;
+                        padding: 0 10px;
+
+                        // .workNavLogo {
+                        //     border: 2px solid #ff00ff;
+                        // }
+                    }
+                }
+
+                .toggleNav {
+                    // border: 2px solid #ff0000;
+
+                    width: 10vw;
+                    right: 7.5vw;
+
+                    // .toggleBtn {
+                    //     // border: 2px solid #00ff00;
+
+                    // }
+                }
+            }
+
+            .galleryContainer {
+                // border: 2px solid #0000ff;
+
+                margin: 60px auto 0 auto;
+            }
+        }
+    }
+
+/* #endregion ========================= TABLETS / CRAPTOPS: 1024px ========================= */
+
+
+
+/* #region ========================= LAPTOPS: 1440px ========================= */
+
+@media  
+    // only screen and (min-device-width: 992px) 
+    // only screen and (min-device-width: 992px), 
+    // only screen and (min-device-width: 1366px)
+    only screen and (min-device-width: 1440px)
+    { 
+        .isotopeContainer {
+            // border: 2px solid #00ff00;
+
+            .workNavBar {
+                // border: 2px solid #ff0000;
+
+                .workNav {
+                    // border: 2px solid #00ff00;
+
+                    .workNavItem, .workNavItemLogo {
+                        // border: 2px solid #0000ff;
+
+                        font-size: 1.125em;
+                    }
+
+                    // .workNavItem {
+                    //     border: 2px solid #0000ff;
+                    // }
+
+                    // .workNavItemLogo {
+                    //     border: 2px solid #0000ff;
+                    // }
+                }
+
+                // .toggleNav {
+                //     border: 2px solid #ff0000;
+                // }
+            }
+        }
+    }
+
+/* #endregion ========================= LAPTOPS: 1440px ========================= */
+
+
+
+/* #region ========================= DESKTOPS: 1920px+ ========================= */
+
+@media  
+    // only screen and (min-device-width: 1441px)
+    only screen and (min-device-width: 1920px)
+    { 
+        .isotopeContainer {
+            // border: 2px solid #ff0000;
+
+            .workNavBar {
+                // border: 2px solid #ff0000;
+
+                height: $navBar-height+25px;
+
+                .workNav {
+                    // border: 2px solid #00ff00;
+
+                    // margin: 5px 0 0 0;
+
+                    // .workNavItem, .workNavItemLogo {
+                    //     border: 2px solid #0000ff;
+                    // }
+
+                    .workNavItem {
+                        // border: 2px solid #0000ff;
+
+                        padding: 15px 20px;
+                    }
+
+                    .workNavItemLogo {
+                        // border: 2px solid #0000ff;
+
+                        // margin: 0;
+                        // padding: 0 10px;
+
+                        .workNavLogo {
+                            // border: 2px solid #ff00ff;
+
+                            width: 100%;
+                            max-width: 100px;
+
+                            height: 85%;
+                            // max-height: 100px;
+                        }
+                    }
+                }
+
+                .toggleNav {
+                    // border: 2px solid #ff0000;
+
+                    width: 7.5vw;
+
+                    top: ($navBar-height+10px)*0.375;
+                    right: 10vw;
+
+                    // .toggleBtn {
+                    //     // border: 2px solid #00ff00;
+
+                    // }
+                }
+            }
+
+            .galleryContainer {
+                // border: 2px solid #0000ff;
+
+                margin: 70 px auto 0 auto;
+            }
+        }
+    }
+
+/* #endregion ========================= DESKTOPS: 1920px+ ========================= */
