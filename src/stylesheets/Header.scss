@@ -9,10 +9,11 @@
 }
 
 .header {
-    // border: 02px solid #ff0000;
+    // border: 2px solid #00ffff;
     background: #000000;
 
     color: #ffffff;
+    font-size: 15px;
     line-height: 55px;
     text-align: left;
 
@@ -134,8 +135,8 @@
             // letter-spacing: 0.00625em;
 
             position: absolute;
-            // bottom: 0;
             bottom: 0;
+            // bottom: -5px;
 
             .bullet {
                 // border: 02px solid #ff00ff;
@@ -172,10 +173,11 @@
             // left: 60px;
 
             // position: absolute;
-            // bottom: -22.5%;
-            // bottom: 0;
             // left: 310px;
             left: calc(142.045454545454545px - 15px + 280px);
+            // bottom: -22.5%;
+            // bottom: 0;
+            bottom: -6.25px;
 
             // display: table-cell;
         }
@@ -189,13 +191,12 @@
 
             // height: 73.75%;
 
-            // right: 20px;
-            right: 2.5vw;
-
             // margin: 0;
             // padding: inherit;
 
-            // display: table-cell;
+            // right: 20px;
+            right: 2.5vw;
+            bottom: -5px;
 
             a, a:visited {
                 color: #ffffff;
@@ -261,6 +262,7 @@
             // width: 70%;
             // width: 50%;
             width: $body-width;
+            max-width: $body-max-width;
             height: $navBar-height;
 
             margin: 0 auto;
@@ -269,8 +271,8 @@
 
             display: grid;
             // grid-template-columns: repeat(6, 16.666666666666667%);
+            grid-template-columns: repeat(5, auto);
             // grid-template-columns: repeat(6, auto);
-            grid-template-columns: repeat(6, auto);
             column-gap: 0;
             align-items: center;
 
@@ -374,141 +376,141 @@
 
         /* #region -------------------- .workNav -------------------- */
 
-        .workNav {
-            // border: 1px solid #00ffff;
+        // .workNav {
+        //     // border: 1px solid #00ffff;
 
-            // background: #ffffff;
-            @include bgGradient01();
+        //     // background: #ffffff;
+        //     @include bgGradient01();
 
-            // background: #eeeeee;
-            // background: #ffffff;
+        //     // background: #eeeeee;
+        //     // background: #ffffff;
 
-            text-align: center;
+        //     text-align: center;
 
-            width: $body-width;
-            min-width: $body-min-width;
-            max-width: $body-max-width;
+        //     width: $body-width;
+        //     min-width: $body-min-width;
+        //     max-width: $body-max-width;
 
-            height: $workNav-height;
+        //     height: $workNav-height;
 
-            // margin: 0 auto;
-            // margin: -5px auto 0 auto;
-            margin: -15px auto 0 auto;
-            // margin: -($workNav-height * 0.25) auto 0 auto;
-            padding: 0;
-            // padding: 5px 0 0 0;
+        //     // margin: 0 auto;
+        //     // margin: -5px auto 0 auto;
+        //     margin: -15px auto 0 auto;
+        //     // margin: -($workNav-height * 0.25) auto 0 auto;
+        //     padding: 0;
+        //     // padding: 5px 0 0 0;
 
-            // position: fixed;
-            position: absolute;
-            top: 0;
-            // top: -40px;
-            // top: -55px;
-            // top: 115px;
-            // top: -$navBar-height;
-            // top: $header-height;
-            // top: $workNav-height;
-            // top: $navBar-height;
-            // top: $header-height + $navBar-height;
-            // top: -($header-height - $navBar-height);
-            // top: 0;
-            left: 0;
-            right: 0;
-            z-index: -1;
+        //     // position: fixed;
+        //     position: absolute;
+        //     top: 0;
+        //     // top: -40px;
+        //     // top: -55px;
+        //     // top: 115px;
+        //     // top: -$navBar-height;
+        //     // top: $header-height;
+        //     // top: $workNav-height;
+        //     // top: $navBar-height;
+        //     // top: $header-height + $navBar-height;
+        //     // top: -($header-height - $navBar-height);
+        //     // top: 0;
+        //     left: 0;
+        //     right: 0;
+        //     z-index: -1;
 
-            .employerIcon {
-                // border: 1px solid #ff00ff;
-                // border: 1px solid #cccccc;
-                // border-right: 1px solid #cccccc;
+        //     .employerIcon {
+        //         // border: 1px solid #ff00ff;
+        //         // border: 1px solid #cccccc;
+        //         // border-right: 1px solid #cccccc;
 
-                // @include bgGradient03();
-                // mix-blend-mode: multiply;
+        //         // @include bgGradient03();
+        //         // mix-blend-mode: multiply;
 
-                // width: 10.875%;
-                width: 9.875%;
-                // height: 100%;
-                height: 90%;
+        //         // width: 10.875%;
+        //         width: 9.875%;
+        //         // height: 100%;
+        //         height: 90%;
 
-                display: inline-block;
-                vertical-align: middle;
-                // vertical-align: top;
+        //         display: inline-block;
+        //         vertical-align: middle;
+        //         // vertical-align: top;
 
-                margin: -5px 0 0 0;
-                // margin: 0;
-                // padding: 0;
+        //         margin: -5px 0 0 0;
+        //         // margin: 0;
+        //         // padding: 0;
 
-                position: relative;
-                z-index: 1;
+        //         position: relative;
+        //         z-index: 1;
 
-                img {
-                    // border: 1px solid #0000ff;
+        //         img {
+        //             // border: 1px solid #0000ff;
 
-                    max-width: 65%;
-                    // max-height: 85%;
-                    max-height: 80%;
+        //             max-width: 65%;
+        //             // max-height: 85%;
+        //             max-height: 80%;
 
-                    margin: auto;
-                    // padding: 0;
-                    // padding: 5px 0 0 0;
+        //             margin: auto;
+        //             // padding: 0;
+        //             // padding: 5px 0 0 0;
 
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                }
-            }
+        //             position: absolute;
+        //             left: 0;
+        //             right: 0;
+        //             top: 0;
+        //             bottom: 0;
+        //         }
+        //     }
 
-            /* #region - - - - - - - - - - - .employerIcon: Ferda A separators... - - - - - - - - - - - */
+        //     /* #region - - - - - - - - - - - .employerIcon: Ferda A separators... - - - - - - - - - - - */
 
-            .employerIcon:before {
-                border-left: 0.5px solid #cccccc;
-                border-right: 0.5px solid #cccccc;
+        //     .employerIcon:before {
+        //         border-left: 0.5px solid #cccccc;
+        //         border-right: 0.5px solid #cccccc;
 
-                content: "";
-                width: 100%;
-                height: 40%;
+        //         content: "";
+        //         width: 100%;
+        //         height: 40%;
 
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 30%;
-                // top: 25%;
-                bottom: 0;
-            }
+        //         position: absolute;
+        //         left: 0;
+        //         right: 0;
+        //         top: 30%;
+        //         // top: 25%;
+        //         bottom: 0;
+        //     }
 
-            /* #endregion - - - - - - - - - - - .employerIcon: Ferda A separators... - - - - - - - - - - - */
+        //     /* #endregion - - - - - - - - - - - .employerIcon: Ferda A separators... - - - - - - - - - - - */
 
-            .activeEmplDiv {
-                // border: 2px inset #00ffff;
+        //     .activeEmplDiv {
+        //         // border: 2px inset #00ffff;
 
-                // @include bgGradient01();
-                // @include bgGradient02();
-                @include bgGradient03();
-                // mix-blend-mode: multiply;
+        //         // @include bgGradient01();
+        //         // @include bgGradient02();
+        //         @include bgGradient03();
+        //         // mix-blend-mode: multiply;
 
-                color: #ff0000;
-                text-align: center;
+        //         color: #ff0000;
+        //         text-align: center;
 
-                // width: auto;
-                // height: $navBar-height;
-                height: inherit;
-                // height: 90%;
+        //         // width: auto;
+        //         // height: $navBar-height;
+        //         height: inherit;
+        //         // height: 90%;
 
-                position: absolute;
-                // top: $header-height;
-                top: 0;
-                // left: 0;
-                // left: 50vw;
-                // z-index: -1;
-            }
+        //         position: absolute;
+        //         // top: $header-height;
+        //         top: 0;
+        //         // left: 0;
+        //         // left: 50vw;
+        //         // z-index: -1;
+        //     }
 
-            .alert {
-                border: 1px solid #00ffff;
-                color: red;
-                margin: 0;
-                padding: 0;
-            }
-        }
+        //     .alert {
+        //         border: 1px solid #00ffff;
+        //         color: red;
+        //         margin: 0;
+        //         padding: 0;
+        //     }
+        // }
 
         /* #endregion -------------------- .workNav -------------------- */
 
@@ -569,27 +571,55 @@
     }
 
     /* #endregion -------------------- .navBarContainer -------------------- */
+
+
+    /* #region -------------------- .navBurgerDiv -------------------- */
+
+    .navBurgerDiv {
+        display: none;
+    }
+
+    /* #endregion -------------------- .navBurgerDiv -------------------- */
+
 }
 
 /* #endregion ========================= BASE ========================= */
 
 
 
-/* #region ========================= DESKTOPS: 1441px+ ========================= */
+/* #region ========================= DESKTOPS: 1920px+ ========================= */
 
 @media  
-    only screen and (min-device-width: 1441px) 
+    // only screen and (min-device-width: 1441px)
+    only screen and (min-device-width: 1920px)
     { 
-        .navBurgerDiv {
-            display: none;
+        .header {
+            // border: 02px solid #ff0000;
+
+            .hed {
+                // border: 02px solid #00ff00;
+
+                font-size: 2.5em;
+
+                // // width: $body-width;
+                // width: 50vw;
+                // min-width: $body-min-width;
+                // // max-width: $body-max-width;
+
+                .hed02 {
+                    // border: 02px solid #00ffff;
+
+                    left: calc(156.25px + 320px);
+                }
+            }
         }
     }
 
-/* #endregion ========================= DESKTOPS: 1441px+ ========================= */
+/* #endregion ========================= DESKTOPS: 1920px+ ========================= */
 
 
 
-/* #region ========================= LAPTOPS: 992px+ ========================= */
+/* #region ========================= LAPTOPS: 1440px+ ========================= */
 
 @media  
     // only screen and (min-device-width: 992px) 
@@ -597,79 +627,41 @@
     only screen and (max-device-width: 1440px) 
     { 
         // .header {
-            // border: 02px solid #ff0000;
-
-            /* #region -------------------- hed -------------------- */
-
-            // .hed {
-            //     // border: 02px solid #0000ff;
-
-            //     // left: -20px !important;
-
-            //     .contact {
-            //         // border: 02px solid #ffff00;
-
-            //         right: -7.5vw !important;
-            //     }
-            // }
-
-            /* #endregion -------------------- hed -------------------- */
-
-            .navBurgerDiv {
-                display: none;
-            }
+        //     border: 02px solid #00ff00;
         // }
     }
 
-/* #endregion ========================= LAPTOPS: 992px+ ========================= */
+/* #endregion ========================= LAPTOPS: 1440px+ ========================= */
 
 
 
-/* #region ========================= TABLETS: 768px ========================= */
+/* #region ========================= TABLETS / CRAPTOPS: 1024px ========================= */
 
 @media  
     // only screen and (min-device-width: 768px) 
     // only screen and (min-device-width: 768px), 
-    only screen and (max-device-width: 991px) 
+    // only screen and (max-device-width: 991px)
+    only screen and (max-device-width: 1024px)
     { 
         // .header {
-            // border: 02px solid #ff0000;
-
-            /* #region -------------------- hed -------------------- */
-
-            // .hed {
-            //     // border: 02px solid #0000ff;
-
-            //     // left: -20px !important;
-
-            //     .contact {
-            //         // border: 02px solid #ffff00;
-
-            //         right: -7.5vw !important;
-            //     }
-            // }
-
-            /* #endregion -------------------- hed -------------------- */
-
-            .navBurgerDiv {
-                display: none;
-            }
+        //     border: 02px solid #0000ff;
         // }
     }
 
-/* #endregion ========================= TABLETS: 768px ========================= */
+/* #endregion ========================= TABLETS / CRAPTOPS: 1024px ========================= */
 
 
 
-/* #region ========================= MOBILE: 375px ========================= */
+/* #region ========================= MOBILE: 414px ========================= */
 
 @media  
     // only screen and (min-device-width: 375px) 
     // only screen and (min-device-width: 375px), 
-    only screen and (max-device-width: 767px) 
+    // only screen and (max-device-width: 767px)
+    only screen and (max-device-width: 414px)
     { 
         .header {
-            // border: 02px solid #ff0000;
+            // border: 02px solid #ff00ff;
 
             height: 50px;
 
@@ -840,22 +832,19 @@
                 // height: $navBar-height;
                 // height: 95%;
 
-                // margin: 0;
+                margin: 0;
                 // margin: $header-height 0 0 0;
-                // padding: 0;
-                padding: 2.5% 0;
+                padding: 0;
+                // padding: 2.5% 0;
 
                 position: absolute;
-                top: 0;
+                // top: 0;
+                top: 1.25px;
                 right: 0;
                 z-index: 9999;
 
                 display: table-cell;
                 // display: none;
-
-                // .navBurger {
-                //     border: 1px solid #ff00ff;
-                // }
 
                 .navDrawer {
                     // border: 1px solid #00ff00;
@@ -870,16 +859,16 @@
                     position: inherit;
                     right: inherit;
 
-                    img {
-                        // border: 1px solid #0000ff;
-                        // background: rgba(255,255,255,0.5);
-                        background: rgba(255,0,0,0.25);
+                    // img {
+                    //     // border: 1px solid #0000ff;
+                    //     // background: rgba(255,255,255,0.5);
+                    //     background: rgba(255,0,0,0.25);
 
-                        width: 30%;
+                    //     width: 30%;
 
-                        // margin: 0;
-                        padding: 10px;
-                    }
+                    //     // margin: 0;
+                    //     padding: 10px;
+                    // }
                 }
             }
 
@@ -887,4 +876,4 @@
         }
     }
 
-/* #endregion ========================= MOBILE: 375px ========================= */
+/* #endregion ========================= MOBILE: 414px ========================= */

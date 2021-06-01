@@ -10,7 +10,7 @@ import { Wrapper } from './components/Wrapper';
 import { Header } from './components/Header';
 
 import { Home } from './pages/Home';
-import { Work } from './pages/Work';
+// import { Work } from './pages/Work';
 import { About } from './pages/About';
 import { Resume } from './pages/Resume';
 import { Contact } from './pages/Contact';
@@ -71,12 +71,13 @@ function App() {
         '/': () => <Home locID={'homeID'} loadStatus={true} />,
         '/shigimcp2021': () => <Home locID={'homeID'} loadStatus={true} />,
         '/shigimcp2021/': () => <Home locID={'homeID'} loadStatus={true} />,
-        '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
+        // '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
         // '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} clearContent={clearContent} />,
-        '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
-        '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} />,
+        '/shigimcp2021/work': () => <Isotope03 locID={'workID'} loadStatus={true} />,
+        // '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} />,
         // '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} loadStatus={true} workNavEmplOpen={true} />,
         // '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} loadStatus={true} workNavEmplOpen={workNavEmplOpen} setWorkNavEmplOpen={setWorkNavEmplOpen} />,
+        '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
         '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
         '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
         '/shigimcp2021/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,

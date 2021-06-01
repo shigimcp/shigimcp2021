@@ -404,10 +404,12 @@
 
             width: 100vw;
             // width: 120vw;
-            // left: 5vw;
+            height: auto;
 
             margin: 80px auto 0 auto;
             // padding: 0;
+
+            // left: 5vw;
 
             .haiku {
                 // border: 2px solid #00ffff;
@@ -513,8 +515,10 @@
 
                 // top: 17.5%;
                 // right: 1.25%;
-                top: 47.5%;
-                right: 5.25%;
+                // top: 47.5%;
+                // right: 5.25%;
+                top: 41.25vh;
+                right: 2.5vw;
             }
         }
 
