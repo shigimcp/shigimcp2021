@@ -47,7 +47,7 @@
    "mheight": 100,
    "mwidthORIG": 100,
    "mheightORIG": 100,
-   "availability": true
+   "availability": false
  },
  {
    "album_index": 1,
@@ -2297,7 +2297,7 @@
    "mheight": 100,
    "mwidthORIG": 100,
    "mheightORIG": 100,
-   "availability": true
+   "availability": false
  },
  {
    "album_index": 26,
@@ -2322,7 +2322,7 @@
    "mheight": 100,
    "mwidthORIG": 100,
    "mheightORIG": 100,
-   "availability": true
+   "availability": false
  },
  {
    "album_index": 26,

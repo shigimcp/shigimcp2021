@@ -73,6 +73,7 @@ function EmployerItem(props) {
                     {/* <div className='employerDates'>{props.dateStart} - {props.dateEnd}</div> */}
                     {/* <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')} - {Moment(props.dateEnd).format('MM/YY')}</div> */}
                     {props.dateEnd ? <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')} - {Moment(props.dateEnd).format('MM/YY')}</div> : <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')}</div>}
+                    {/* {props.dateEnd ? <div className='employerDates'>{Moment(props.dateStart).format('MM')}/{Moment(props.dateStart).format('YY')} - {Moment(props.dateEnd).format('MM')}/{Moment(props.dateEnd).format('YY')}</div> : <div className='employerDates'>{Moment(props.dateStart).format('MM')}/{Moment(props.dateStart).format('YY')}</div>} */}
 
                     <ul>
                         {props.info.split('\n').map((thisInfo, key) => {

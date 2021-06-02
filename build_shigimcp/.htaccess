@@ -1,0 +1,47 @@
+# ===== ORIG at ROOT https://www.shigimcp.com - 010321  =====
+
+    # RewriteEngine On 
+    # RewriteCond %{SERVER_PORT} 80
+    # RewriteCond %{HTTP_HOST} ^(www\.)?shigimcp\.com
+    # RewriteRule ^(.*)$ https://www.shigimcp.com/$1 [R,L]
+
+# ===== ORIG at ROOT https://www.shigimcp.com - 010321  =====
+
+
+# ===== REF: https://ui.dev/react-router-cannot-get-url-refresh/ =====
+    # = REF: https://stackoverflow.com/questions/9924987/how-to-stop-sub-directory-inheriting-parents-htaccess-rules =====
+
+    # Options +FollowSymLinks
+
+    # <IfModule mod_rewrite.c>
+
+        # RewriteEngine on
+        # RewriteOptions inherit
+        # RewriteBase /shigimcp2020-react/
+        # RewriteRule ^shigimcp2020-react/index\.html$ - [L]
+
+        # if a directory or a file exists, use it directly
+        # RewriteCond %{REQUEST_FILENAME} !-f
+        # RewriteCond %{REQUEST_FILENAME} !-d
+        # RewriteCond %{REQUEST_FILENAME} !-l
+
+        # if request is not for the /shigimcp2020-react/
+        # RewriteCond %{REQUEST_URI} !^/shigimcp2020-react/ [NC]
+
+        # otherwise forward it to index.html
+        # RewriteRule https://www.shigimcp.com/shigimcp2020-react/* https://www.shigimcp.com/shigimcp2020-react/index.html
+        # RewriteRule ./shigimcp2020-react/* shigimcp2020-react/index.html [L]
+
+    # </IfModule>
+
+# ===== REF: https://ui.dev/react-router-cannot-get-url-refresh/ =====
+
+
+# ===== WINNER!!! REF: https://stackoverflow.com/questions/57610032/how-to-fix-404-when-reloading-page-in-reactjs =====
+
+    Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]
+
+# ===== WINNER!!! REF: https://stackoverflow.com/questions/57610032/how-to-fix-404-when-reloading-page-in-reactjs =====

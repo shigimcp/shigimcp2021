@@ -30,44 +30,18 @@
         text-align: center;
 
         width: inherit;
-        height: $navBar-height+10px;
+        height: $navBar-height * 0.875;
+        // height: $navBar-height+10px;
         // height: $navBar-height+15px;
         // height: $navBar-height+20px;
+
+        overflow: visible;
 
         margin: 0;
         padding: 0;
 
         position: fixed;
         z-index: 99;
-
-
-        /* #region - - - - - - - - - - - .activeEmplDiv - - - - - - - - - - - */
-
-        // .activeEmplDiv {
-        //     // border: 2px inset #00ffff;
-
-        //     // @include bgGradient01();
-        //     // @include bgGradient02();
-        //     // @include bgGradient03();
-        //     @include bgGradient04();
-        //     // @include bgGradient05();
-        //     // @include bgGradient06();
-        //     // @include bgGradient07();
-        //     // mix-blend-mode: multiply;
-
-        //     color: #ff0000;
-
-        //     width: inherit;
-        //     height: inherit;
-
-        //     position: absolute;
-        //     // top: $header-height;
-        //     top: 0;
-
-        //     // display: none;
-        // }
-
-        /* #endregion - - - - - - - - - - - .activeEmplDiv - - - - - - - - - - - */
 
 
         /* #region - - - - - - - - - - - .workNav - - - - - - - - - - - */
@@ -78,7 +52,8 @@
             font-size: 1.25em;
 
             // width: inherit;
-            height: inherit;
+            // height: inherit;
+            height: $navBar-height+10px;
 
             // margin: 0;
             // padding: 0;
@@ -129,12 +104,15 @@
             }
 
             .workNavItem {
-                // border: 2px solid #00ff00;
+                // border: 2px solid #0000ff;
+
+                height: 30%;
 
                 // margin: 0;
                 // padding: 0;
 
-                padding: 15px 15px;
+                // padding: 15px 15px;
+                padding: 6.25px 15px;
             }
 
             .workNavItemLogo {
@@ -153,7 +131,8 @@
                     width: 50px;
                     height: 80%;
 
-                    margin: 10% 0 0 0;
+                    // margin: 10% 0 0 0;
+                    margin: 5% 0 0 0;
                 }
             }
         }
@@ -161,33 +140,63 @@
         /* #endregion - - - - - - - - - - - .workNav - - - - - - - - - - - */
 
 
-        /* #region - - - - - - - - - - - .toggleNav - - - - - - - - - - - */
+        /* #region - - - - - - - - - - - .navToggleBtn - - - - - - - - - - - */
 
-        .toggleNav {
+        // .toggleNav {
+        // .toggleBtn {
+        .navToggleBtn {
             // border: 2px solid #ff0000;
             background: rgba($color: #000000, $alpha: 0.5);
 
+            color: #ffffff;
+
             width: 11.25vw;
+            height: 20px;
 
             margin: 0;
-            padding: 5px 5px;
+            // padding: 0;
+            padding: 5px 0;
 
             position: absolute;
+            top: 0;
             // top: ($navBar-height+10px)*0.125;
-            top: ($navBar-height+10px)*0.1625;
+            // top: ($navBar-height+10px)*0.125;
+            // top: ($navBar-height+10px)*0.1625;
             // top: ($navBar-height+10px)*0.25;
             right: 1.25vw;
 
-            .toggleBtn {
+            cursor: pointer;
+
+            span {
                 // border: 2px solid #00ff00;
 
-                color: #ffffff;
+                text-align: center;
 
-                cursor: pointer;
+                width: 100%;
+                // display: table-cell;
+                // vertical-align: middle;
+                position: inherit;
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
             }
+
+            // .toggleBtn {
+            //     // border: 2px solid #00ff00;
+
+            //     color: #ffffff;
+
+            //     cursor: pointer;
+            // }
         }
 
-        /* #endregion - - - - - - - - - - - .toggleNav - - - - - - - - - - - */
+        /* #endregion - - - - - - - - - - - .navToggleBtn - - - - - - - - - - - */
     }
 
     /* #endregion -------------------- .workNavBar -------------------- */
@@ -211,6 +220,7 @@
             // border: 1px inset rgba($color: #000000, $alpha: 0.125);
 
             // background: rgba($color: #000000, $alpha: 0.0625);
+            // @include bgGradient04();
 
             width: calc(16.6666666666667vw - 20px);
 
@@ -219,7 +229,8 @@
 
             margin: 0 5px 20px 15px;
 
-            cursor: pointer;
+            // cursor: pointer;
+            cursor: auto;
 
             img {
                 width: 100%;
@@ -279,14 +290,148 @@
             // width: calc(50vw - 30px);
         }
 
-        .masonryHeight2 {
-            // height: 200px;
-            // height: 20vh;
-            // height: calc(16.6666666666667vw * 1.5);
-            height: calc(16.6666666666667vw * 2);
-        }
+        // .masonryHeight2 {
+        //     // height: 200px;
+        //     // height: 20vh;
+        //     // height: calc(16.6666666666667vw * 1.5);
+        //     height: calc(16.6666666666667vw * 2);
+        // }
 
         /* #endregion - - - - - - - - - - -  .masonryWidth2 .masonryHeight2 - - - - - - - - - - -  */
+
+
+        /* #region - - - - - - - - - - -  .bannerContainer - - - - - - - - - - -  */
+
+        .bannerContainer {
+            // border: 2px solid #ff0000;
+
+            background: rgba($color: #ff0000, $alpha: 0.5);
+            // @include bgGradient04();
+
+            // width: 20%;
+            // height: 200px;
+            // width: 0;
+            // height: 0;
+
+            // margin: 0;
+            // padding: 0;
+
+            position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+
+        /* #endregion - - - - - - - - - - -  .bannerContainer - - - - - - - - - - -  */
+
+
+        /* #region - - - - - - - - - - -  .banneriFrame, .banneriFrameOpen, .banneriFrameClosed - - - - - - - - - - -  */
+
+        .banneriFrame, .banneriFrameOpen {
+            // border: 2px solid #0000ff;
+            border: none;
+
+            // background: rgba($color: #ff0000, $alpha: 0.5);
+            // @include bgGradient04();
+
+            // width: 300px;
+            // height: 250px;
+
+            margin: 0 auto;
+            padding: 0;
+
+            position: absolute;
+            z-index: 99;
+        }
+
+        .banneriFrameClosed {
+            // border: 2px solid #ff0000;
+
+            display: none;
+            z-index: 0;
+        }
+
+        /* #endregion - - - - - - - - - - -  .banneriFrame, .banneriFrameOpen, .banneriFrameClosed - - - - - - - - - - -  */
+
+
+        /* #region - - - - - - - - - - -  .webiFrameContainer, .webiFrameContainerOpen, .webiFrameContainerClosed / .videoContainer, .videoContainerOpen, .videoContainerClosed / .closeModalBtn, .closeModalBtnShow, .closeModalBtnHide  - - - - - - - - - - -  */
+
+        .webiFrameContainer, .videoContainer {
+            // border: 2px solid #ff0000;
+
+            // background: rgba($color: #000000, $alpha: 0.5);
+            @include modalBG();
+
+            width: 100vw;
+            height: 100vh;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            // z-index: 999;
+
+            cursor: pointer;
+
+            .webiFrame, .videoPlayer {
+                // border: 2px solid #0000ff;
+                border: none;
+
+                width: 50vw;
+                height: 50vh;
+
+                // margin: 0 auto;
+                margin: 0;
+                padding: 0;
+
+                position: fixed;
+
+                top: 50vh;
+                left: 50vw;
+
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            /* #region - - - - - - - - - - -  .closeModalBtn - - - - - - - - - - -  */
+
+            .closeModalBtn {
+                // border: 2px solid #ff0000;
+                // background: #ffffff;
+                // border-radius: 0;
+
+                width: 100px;
+                // height: 20px;
+
+                padding: 5px 10px;
+
+                position: fixed;
+                top: 10%;
+                right: 2.5%;
+                // right: 11.25%;
+            }
+
+            /* #endregion - - - - - - - - - - -  .closeModalBtn - - - - - - - - - - -  */
+        }
+
+        .webiFrameContainerOpen, .videoContainerOpen, .closeModalBtnShow {
+            // border: 2px solid #ff0000;
+
+            z-index: 999;
+            display: initial;
+        }
+
+        .webiFrameContainerClosed, .videoContainerClosed, .closeModalBtnHide {
+            // border: 2px solid #ff0000;
+
+            z-index: 0;
+            display: none;
+        }
+
+        /* #endregion - - - - - - - - - - -  .webiFrameContainer, .webiFrameContainerOpen, .webiFrameContainerClosed / .videoContainer, .videoContainerOpen, .videoContainerClosed / .closeModalBtn, .closeModalBtnShow, .closeModalBtnHide  - - - - - - - - - - -  */
+
     }
 
     /* #endregion -------------------- .galleryContainer -------------------- */
@@ -362,6 +507,12 @@
                         margin: 0;
                     }
 
+                    .workNavItem {
+                        // border: 2px solid #00ff00;
+
+                        padding: 15px 0;
+                    }
+
                     .workNavItemLogo {
                         // border: 2px solid #00ffff;
 
@@ -384,7 +535,7 @@
                     }
                 }
 
-                .toggleNav {
+                .navToggleBtn {
                     // border: 2px solid #00ffff;
 
                     width: 100%;
@@ -393,7 +544,7 @@
                     margin: 0;
                     padding: 0;
 
-                    vertical-align: middle;
+                    // vertical-align: middle;
 
                     top: 0;
                     left: 0;
@@ -401,16 +552,16 @@
 
                     // visibility: hidden;
 
-                    .toggleBtn {
-                        // border: 2px solid #0000ff;
+                    // .toggleBtn {
+                    //     // border: 2px solid #0000ff;
 
-                        width: inherit;
+                    //     width: inherit;
 
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                    }
+                    //     position: absolute;
+                    //     top: 50%;
+                    //     left: 50%;
+                    //     transform: translate(-50%, -50%);
+                    // }
                 }
             }
 
@@ -500,11 +651,11 @@
                         // padding: 15px 15px;
                     // }
 
-                    .workNavItem {
-                        // border: 2px solid #0000ff;
+                    // .workNavItem {
+                    //     // border: 2px solid #0000ff;
 
-                        padding: 15px 15px;
-                    }
+                    //     padding: 15px 15px;
+                    // }
 
                     .workNavItemLogo {
                         // border: 2px solid #0000ff;
@@ -517,7 +668,7 @@
                     }
                 }
 
-                .toggleNav {
+                .navToggleBtn {
                     // border: 2px solid #ff0000;
 
                     width: 10vw;
@@ -626,45 +777,48 @@
             .workNavBar {
                 // border: 2px solid #ff0000;
 
-                font-size: 1.125em;
-                line-height: 1.875em;
+                // font-size: 1.125em;
+                // line-height: 1.875em;
 
                 height: $navBar-height+25px;
 
-                // .workNav {
-                //     // border: 2px solid #00ff00;
+                .workNav {
+                    // border: 2px solid #00ff00;
 
-                //     // margin: 5px 0 0 0;
+                    height: inherit;
 
-                //     // .workNavItem, .workNavItemLogo {
-                //     //     border: 2px solid #0000ff;
-                //     // }
+                    // margin: 5px 0 0 0;
 
-                //     .workNavItem {
-                //         // border: 2px solid #0000ff;
+                    // .workNavItem, .workNavItemLogo {
+                    //     border: 2px solid #0000ff;
+                    // }
 
-                //         padding: 15px 20px;
-                //     }
+                    .workNavItem {
+                        // border: 2px solid #0000ff;
 
-                //     .workNavItemLogo {
-                //         // border: 2px solid #0000ff;
+                        padding: 10px 20px;
+                    }
 
-                //         // margin: 0;
-                //         // padding: 0 10px;
+                    .workNavItemLogo {
+                        // border: 2px solid #0000ff;
 
-                //         .workNavLogo {
-                //             // border: 2px solid #ff00ff;
+                        // margin: 0;
+                        // padding: 0 10px;
 
-                //             width: 100%;
-                //             max-width: 100px;
+                        .workNavLogo {
+                            // border: 2px solid #ff00ff;
 
-                //             height: 85%;
-                //             // max-height: 100px;
-                //         }
-                //     }
-                // }
+                            width: 100%;
+                            max-width: 100px;
 
-                .toggleNav {
+                            height: 85%;
+                            // height: 100%;
+                            // max-height: 100px;
+                        }
+                    }
+                }
+
+                .navToggleBtn {
                     // border: 2px solid #ff0000;
 
                     width: 7.5vw;

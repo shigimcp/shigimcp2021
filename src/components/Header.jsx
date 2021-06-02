@@ -89,7 +89,7 @@ export const Header = (props) => {
     // let currentPath = usePath();
     let useCurrentPath = usePath();
 
-    const [workNavShow, setWorkNavShow] = useState(null);
+    // const [workNavShow, setWorkNavShow] = useState(null);
 
     // const [currentEmployer, setCurrentEmployer] = useState(null);
     // const [currentEmployer, setCurrentEmployer] = useState('ea');
@@ -449,7 +449,8 @@ export const Header = (props) => {
 
                 {/* <A href='/shigimcp2021' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}> */}
                 {/* <A href='/shigimcp2021' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, 'homeID'); setMobileNavShow(false); }}> */}
-                <A href='/shigimcp2021' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}>
+                {/* <A href='/shigimcp2021' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}> */}
+                <A href='/shigimcp2021' onClick={(e) => { setMobileNavShow(false); }}>
 
                     <svg version='1.1' className='logoIcon' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880'>
                     {/* <svg version='1.1' className='logoIcon' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}> */}

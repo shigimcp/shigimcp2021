@@ -15,6 +15,8 @@ import { isBrowser } from "react-device-detect";
 // import { isBrowser, isMobile } from "react-device-detect";
 // import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
+import ReactPlayer from 'react-player/vimeo';
+
 import '../stylesheets/Global.scss';
 import '../stylesheets/Isotope.scss';
 
@@ -22,15 +24,29 @@ import myData from '../data/MyData';
 
 import { gsap } from 'gsap';
 
+
+//#region -------------------- IMPORTS: GSAP BANNERS --------------------
+
+import EAAR_18951 from '../images/ea/banners/CR_18951_ALWAYS_RED_DIGITAL_PLAN_1H15_300x600/EAAR_18951';
+import NMPF_04852 from '../images/ea/banners/CR_4852_NMPF_US_Walmart_300x250/NMPF_04852';
+import NMMN_11155 from '../images/ea/banners/CR_11155_MINAJESTY_2014_US_DIGITAL_300x600/NMMN_11155';
+import BCBG_02342 from '../images/ea/banners/BCBG_MAXAZRIA_CR00002342_AU_Digital_Plan/BCBG_02342';
+import BCBG_05500 from '../images/ea/banners/CR_5500_BCBG_BC_AU_Digital_Plan_2013/BCBG_05500';
+import JCNR_07074 from '../images/ea/banners/CR_7074_JC_VNOIR_2013_AU_300x600/JCNR_07074';
+import BSPS_26897 from '../images/ea/banners/26897_BS_PRIVATE_SHOW_GWP_PR_Walgreens_300x250/BSPS_26897';
+import NMTG_26903 from '../images/ea/banners/26903_NM_TRINI_GIRL_GWP_PR_Walgreens_300x250/NMTG_26903';
+import JCVR_26963 from '../images/ea/banners/26963_JC_VIVA_ROSE_GWP_PR_Walgreens_300x250/JCVR_26963';
+import JBJA_10263 from '../images/ea/banners/CR_10263_J_by_JENNIFER_ANISTON_Kohls_300x250/JBJA_10263';
+
+//#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
+
 //#endregion ==================== IMPORTS ====================
 
 
 //#region ==================== CONSTANTS n VARS ====================
 
 const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
-
-// let navLoc;
-// let emplLoc;
+const videoLoc = 'https://vimeo.com/';
 
 
 //#region -------------------- DATA --------------------
@@ -132,20 +148,25 @@ const workNavTL = new gsap.timeline({ paused: true });
 
 //#endregion -------------------- TIMELINES --------------------
 
+
+//#region -------------------- HTML5 BANNERS: bannerContent[] --------------------
+
+const bannerContent = {
+    EAAR_18951: EAAR_18951,
+    NMPF_04852: NMPF_04852,
+    NMMN_11155: NMMN_11155,
+    BCBG_02342: BCBG_02342,
+    BCBG_05500: BCBG_05500,
+    JCNR_07074: JCNR_07074,
+    BSPS_26897: BSPS_26897,
+    NMTG_26903: NMTG_26903,
+    JCVR_26963: JCVR_26963,
+    JBJA_10263: JBJA_10263,
+};
+
+//#endregion -------------------- HTML5 BANNERS: xContent[] --------------------
+
 //#endregion ==================== CONSTANTS n VARS ====================
-
-
-//#region ==================== FUNCTIONS ====================
-
-function handleClick(event) {
-
-    console.log('');
-    console.log('==================== FUNCTION: handleClick(event) ====================');
-    console.log('event = ' + event);
-    console.log(event);
-}
-
-//#endregion ==================== FUNCTIONS ====================
 
 
 
@@ -177,11 +198,20 @@ export const Isotope03 = (props) => {
     const typeNav_Ref = useRef(null);
     const activeTypeDiv_Ref = useRef(null);
 
-    const toggleNav_Ref = useRef(null);
-    const toggleBtn_Ref = useRef(null);
+    // const toggleNav_Ref = useRef(null);
+    // const toggleBtn_Ref = useRef(null);
+    const navToggleBtn_Ref = useRef(null);
 
     const galleryContainer_Ref = useRef(null);
-    // const galleryItem_Ref = useRef(null);
+
+    const bannerContainer_Ref = useRef(null);
+    const banneriFrame_Ref = useRef(null);
+
+    const iframeContainer_Ref = useRef(null);
+    const webiFrame_Ref = useRef(null);
+
+    const videoContainer_Ref = useRef(null);
+    const videoPlayer_Ref = useRef(null);
 
     //#endregion ==================== ASSETS _Ref ====================
 
@@ -191,83 +221,21 @@ export const Isotope03 = (props) => {
     // store the filter keyword in a state
     const [filterKey, setFilterKey] = useState('*');
 
-    // const [activeEmplDiv, setActiveEmplDiv] = useState(null);
-
     const [workNavToggleText, setWorkNavToggleText] = useState('<< View by employer');
     const [workNavToggleBtn, setWorkNavToggleBtn] = useState(true);
 
+    const [bannerShow, setBannerShow] = useState(null);
+    const [banneriFrameOpen, setBanneriFrameOpen] = useState(false);
+
+    const [webiFrameOpen, setWebiFrameOpen] = useState(false);
+
+    const [videoOpen, setVideoOpen] = useState(false);
+    const [loadedVideo, setLoadedVideo] = useState(null);
+    const [videoWidth, setVideoWidth] = useState(null);
+    const [videoHeight, setVideoHeight] = useState(null);
+
     //#endregion ==================== useState DEFs ====================
 
-
-
-    //#region ==================== useLayoutEffect: setActiveEmplDiv / WINDOW RESIZE ====================
-
-    // useLayoutEffect(() => {
-
-    //     console.log('');
-    //     console.log('------------------------- useLayoutEffect: setActiveEmplDiv / WINDOW RESIZE -------------------------');
-
-    //     // console.log('');
-    //     // console.log('employerNav_Ref.current = ' + employerNav_Ref.current);
-    //     // console.log(employerNav_Ref.current);
-
-    //     console.log('employerNav_Ref.current.children[0] = ' + employerNav_Ref.current.children[0]);
-    //     console.log(employerNav_Ref.current.children[0]);
-
-
-    //     console.log('');
-    //     // console.log('typeNav_Ref.current = ' + typeNav_Ref.current);
-    //     // console.log(typeNav_Ref.current);
-    //     console.log('typeNav_Ref.current.children[0] = ' + typeNav_Ref.current.children[0]);
-    //     console.log(typeNav_Ref.current.children[0]);
-
-
-    //     //#region -------------------- setActiveEmplDiv --------------------
-
-    //     // let thisLocX;
-    //     // // let thisLocY;
-    //     // let thisLocW;
-    //     // // let thisLocH;
-
-    //     // const setActiveEmplDiv = () => {
-
-    //     //     // let thisLocX = document.getElementById(activeEmplDiv).offsetLeft;
-    //     //     // // let thisLocY = document.getElementById(activeEmplDiv).offsetTop;
-    //     //     // let thisLocW = document.getElementById(activeEmplDiv).offsetWidth;
-    //     //     // // let thisLocH = document.getElementById(activeEmplDiv).offsetHeight;
-
-    //     //     thisLocX = document.getElementById(activeEmplDiv).offsetLeft;
-    //     //     // thisLocY = document.getElementById(activeEmplDiv).offsetTop;
-    //     //     thisLocW = document.getElementById(activeEmplDiv).offsetWidth;
-    //     //     // thisLocH = document.getElementById(activeEmplDiv).offsetHeight;
-
-    //     //     gsap.set([activeEmplDiv_Ref.current], { x: thisLocX, width: thisLocW });
-    //     //     // gsap.set([activeEmplDiv_Ref.current], { x: thisLocX, top: thisLocY, width: thisLocW, height: thisLocH });
-    //     // }
-
-    //     // console.log('activeEmplDiv = ' + activeEmplDiv);
-    //     // console.log('thisLocX = ' + thisLocX);
-    //     // console.log('thisLocW = ' + thisLocW);
-
-    //     //#endregion -------------------- setActiveEmplDiv --------------------
-
-
-    //     //#region -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
-
-    //     // window.addEventListener('resize', setActiveEmplDiv);
-
-    //     window.scrollTo(0, 0);
-
-    //     // // clean up function
-    //     // return () => {
-    //     //     window.removeEventListener('resize', setActiveEmplDiv);
-    //     // }
-
-    //     //#endregion -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
-
-    // });
-
-    //#endregion ==================== useLayoutEffect: setActiveEmplDiv / WINDOW RESIZE ====================
 
 
     //#region ==================== useEffect: setActiveEmplDiv / activeTypeDiv INIT ====================
@@ -278,44 +246,41 @@ export const Isotope03 = (props) => {
         // console.log('');
         // console.log('==================== useEffect: setActiveEmplDiv / activeTypeDiv INIT ====================');
 
-        // // console.log('activeEmplDiv_Ref.current = ' + activeEmplDiv_Ref.current);
-        // // console.log('employerNav_Ref.current = ' + employerNav_Ref.current);
-        // // console.log('employerNav_Ref.current.children[5] = ' + employerNav_Ref.current.children[5]);
-        // // console.log(employerNav_Ref.current.children[5]);
+        let activeDivDims = getDimensions(employerNav_Ref.current.lastChild);
 
-        // // console.log(employerNav_Ref.current.children);
-        // // console.log(employerNav_Ref.current.children.length);
-        // console.log(employerNav_Ref.current.lastChild);
-
-        // // console.log(typeNav_Ref.current);
-        // console.log(typeNav_Ref.current.lastChild);
+        // console.log('');
+        // console.log('activeDivDims: employerNav_Ref = ' + activeDivDims);
+        // console.log(activeDivDims);
 
 
-        // let thisLocX = employerNav_Ref.current.lastChild.offsetLeft;
-        // let thisLocX = employerNav_Ref.current.offsetLeft + (employerNav_Ref.current.offsetWidth * 0.5) - employerNav_Ref.current.lastChild.offsetWidth;
-        // let thisLocX = employerNav_Ref.current.lastChild.offsetLeft - employerNav_Ref.current.offsetLeft + (employerNav_Ref.current.offsetWidth * 0.5);
-        let thisLocX = (employerNav_Ref.current.offsetWidth * 0.5) - (employerNav_Ref.current.lastChild.offsetWidth * 0.5);
-        let thisLocY = employerNav_Ref.current.lastChild.offsetTop;
-        let thisLocW = employerNav_Ref.current.lastChild.offsetWidth;
-        let thisLocH = employerNav_Ref.current.lastChild.offsetHeight;
+        let thisLocX = (employerNav_Ref.current.offsetWidth * 0.5) - (activeDivDims[2] * 0.5);
+        let thisLocY = activeDivDims[1];
+        let thisLocW = activeDivDims[2];
+        let thisLocH = activeDivDims[3];
 
         // console.log('');
         // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
         // console.log('thisLocW = ' + thisLocW + '     thisLocH = ' + thisLocH);
-
 
         gsap.set([activeEmplDiv_Ref.current], { x: thisLocX, y: thisLocY, width: thisLocW, height: thisLocH });
 
 
-        thisLocX = (typeNav_Ref.current.offsetWidth * 0.5) - (typeNav_Ref.current.lastChild.offsetWidth * 0.5);
-        thisLocY = typeNav_Ref.current.lastChild.offsetTop;
-        thisLocW = typeNav_Ref.current.lastChild.offsetWidth;
-        thisLocH = typeNav_Ref.current.lastChild.offsetHeight;
+
+        activeDivDims = getDimensions(typeNav_Ref.current.lastChild);
+
+        // console.log('');
+        // console.log('activeDivDims: typeNav_Ref = ' + activeDivDims);
+        // console.log(activeDivDims);
+
+
+        thisLocX = (typeNav_Ref.current.offsetWidth * 0.5) - (activeDivDims[2] * 0.5);
+        thisLocY = activeDivDims[1];
+        thisLocW = activeDivDims[2];
+        thisLocH = activeDivDims[3];
 
         // console.log('');
         // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
         // console.log('thisLocW = ' + thisLocW + '     thisLocH = ' + thisLocH);
-
 
         gsap.set([activeTypeDiv_Ref.current], { x: thisLocX, y: thisLocY, width: thisLocW, height: thisLocH });
 
@@ -325,76 +290,6 @@ export const Isotope03 = (props) => {
     //#endregion ==================== useEffect: setActiveEmplDiv / activeTypeDiv INIT ====================
 
 
-    //#region ==================== useEffect: setActiveEmplDiv ====================
-
-    // useEffect(() => {
-
-    //     console.log('');
-    //     console.log('==================== useEffect: setActiveEmplDiv ====================');
-
-    //     // console.log('activeEmplDiv_Ref.current = ' + activeEmplDiv_Ref.current);
-    //     // console.log('employerNav_Ref.current = ' + employerNav_Ref.current);
-    //     // console.log('employerNav_Ref.current.children[5] = ' + employerNav_Ref.current.children[5]);
-    //     // console.log(employerNav_Ref.current.children[5]);
-
-    //     // console.log(employerNav_Ref.current.children);
-    //     // console.log(employerNav_Ref.current.children.length);
-    //     // console.log(employerNav_Ref.current.lastChild);
-
-    //     // console.log('filterKey = ' + filterKey);
-    //     // console.log('activeEmplDiv = ' + activeEmplDiv);
-    //     // console.log(activeEmplDiv);
-
-    //     if (activeEmplDiv) {
-
-    //         console.log('activeEmplDiv = ' + activeEmplDiv);
-    //         console.log(activeEmplDiv);
-
-    //         // console.log(activeEmplDiv.target);
-    //         // // console.log(activeEmplDiv.currentTarget);
-    //         // console.log(activeEmplDiv.target.parentNode);
-
-    //         // console.log(activeEmplDiv.clientX);
-    //         // console.log(activeEmplDiv.clientY);
-    //         // console.log(activeEmplDiv.screenX);
-    //         // console.log(activeEmplDiv.screenY);
-
-    //         console.log(activeEmplDiv.getBoundingClientRect().offsetLeft);
-    //         // console.log(activeEmplDiv.offsetLeft);
-
-
-    //         // let thisLocX = activeEmplDiv.offsetLeft;
-    //         // let thisLocY = activeEmplDiv.offsetTop;
-    //         // let thisLocW = activeEmplDiv.offsetWidth;
-    //         // let thisLocH = activeEmplDiv.offsetHeight;
-
-    //         // let thisLocX = activeEmplDiv.target.parentNode.offsetLeft;
-    //         // let thisLocY = activeEmplDiv.target.parentNode.offsetTop;
-    //         // let thisLocW = activeEmplDiv.target.parentNode.offsetWidth;
-    //         // let thisLocH = activeEmplDiv.target.parentNode.offsetHeight;
-
-    //         // console.log('');
-    //         // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
-    //         // console.log('thisLocW = ' + thisLocW + '     thisLocH = ' + thisLocH);
-
-
-    //         // gsap.to([activeEmplDiv_Ref.current], { x: thisLocX, y: thisLocY, width: thisLocW, duration: 3.75 });
-
-    //     } else {
-
-    //         console.log('SORRY, BUD! activeEmplDiv = ' + activeEmplDiv);
-    //         console.log(activeEmplDiv);
-    //     }
-
-    // // }, [])
-    // }, [activeEmplDiv])
-    // // }, [filterKey, activeEmplDiv])
-
-    // // const handleActiveEmplDiv = key => () => setActiveEmplDiv(key);
-
-    //#endregion ==================== useEffect: workNavTL ====================
-
-
     //#region ==================== useEffect: workNavTL ====================
 
     useEffect(() => {
@@ -402,15 +297,15 @@ export const Isotope03 = (props) => {
         // console.log('');
         // console.log('==================== useEffect: workNavTL ====================');
         // console.log('workNavTL = ' + workNavTL);
+        // console.log('isBrowser = ' + isBrowser);
 
 
         let workNavWidth = employerNav_Ref.current.getBoundingClientRect().width;
         let workNavHeight = employerNav_Ref.current.getBoundingClientRect().height;
 
-        // console.log('');
-        // console.log('==================== useEffect: workNavTL ====================');
         // console.log('workNavWidth = ' + workNavWidth);
         // console.log('workNavHeight = ' + workNavHeight);
+
 
         if (isBrowser === true) {
             workNavTL
@@ -452,6 +347,8 @@ export const Isotope03 = (props) => {
         // console.log('typeNav_Ref.current.lastChild = ' + typeNav_Ref.current.lastChild);
         // console.log(typeNav_Ref.current.lastChild);
 
+
+        clearContent();
 
         if (workNavToggleBtn) {
             workNavTL.play();
@@ -538,16 +435,16 @@ export const Isotope03 = (props) => {
         // console.log('');
         // console.log('==================== const handleFilterKeyChange: setFilterKey / activeEmplDiv_Ref / activeTypeDiv ====================');
 
-        // // console.log('key = ' + key);
-        // // console.log(key);
+        // console.log('key = ' + key);
+        // console.log(key);
 
-        // // console.log('');
-        // // console.log('keyJSONnode = ' + keyJSONnode);
-        // // console.log(keyJSONnode);
+        // console.log('');
+        // console.log('keyJSONnode = ' + keyJSONnode);
+        // console.log(keyJSONnode);
 
-        // // console.log('');
-        // // console.log('keyJSONnode.target = ' + keyJSONnode.target);
-        // // console.log(keyJSONnode.target);
+        // console.log('');
+        // console.log('keyJSONnode.target = ' + keyJSONnode.target);
+        // console.log(keyJSONnode.target);
 
         // console.log('');
         // console.log('keyJSONnode.currentTarget = ' + keyJSONnode.currentTarget);
@@ -559,35 +456,29 @@ export const Isotope03 = (props) => {
         // console.log('keyJSONnode.currentTarget.parentNode.id = ' + keyJSONnode.currentTarget.parentNode.id);
 
 
+        clearContent();
+
         setFilterKey(key);
         // setFilterKey(key.album_id);
-
-        // setActiveEmplDiv(keyJSONnode);
-        // setActiveEmplDiv(keyJSONnode.currentTarget);
-
-
-        // let thisLocX = employerNav_Ref.current.offsetLeft - (employerNav_Ref.current.offsetWidth * 0.5) + keyJSONnode.currentTarget.offsetLeft;
-        // let thisLocY = keyJSONnode.currentTarget.offsetTop;
-        // let thisLocW = keyJSONnode.currentTarget.offsetWidth;
-        // let thisLocH = keyJSONnode.currentTarget.offsetHeight;
-
-        // // console.log('');
-        // // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
-        // // console.log('thisLocW = ' + thisLocW + '     thisLocH = ' + thisLocH);
 
         let thisLocX;
         let thisLocY;
         let thisLocW;
         let thisLocH;
 
+        let activeDivDims = getDimensions(keyJSONnode.currentTarget);
+
+        // console.log('');
+        // console.log('activeDivDims: activeEmplDiv_Ref / activeEmplDiv_Ref = ' + activeDivDims);
+        // console.log(activeDivDims);
+
 
         if (keyJSONnode.currentTarget.parentNode.id === 'employerNavID') {
 
-            // thisLocX = employerNav_Ref.current.offsetLeft - (employerNav_Ref.current.offsetWidth * 0.5) + keyJSONnode.currentTarget.offsetLeft;
-            thisLocX = keyJSONnode.currentTarget.offsetLeft - (employerNav_Ref.current.offsetWidth * 0.5) + (keyJSONnode.currentTarget.offsetWidth * 0.5);
-            thisLocY = keyJSONnode.currentTarget.offsetTop;
-            thisLocW = keyJSONnode.currentTarget.offsetWidth;
-            thisLocH = keyJSONnode.currentTarget.offsetHeight;
+            thisLocX = activeDivDims[0] - (employerNav_Ref.current.offsetWidth * 0.5) + (activeDivDims[2] * 0.5);
+            thisLocY = activeDivDims[1];
+            thisLocW = activeDivDims[2];
+            thisLocH = activeDivDims[3];
 
             // console.log('');
             // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
@@ -597,10 +488,10 @@ export const Isotope03 = (props) => {
 
         } else {
 
-            thisLocX = keyJSONnode.currentTarget.offsetLeft - (typeNav_Ref.current.offsetWidth * 0.5) + (keyJSONnode.currentTarget.offsetWidth * 0.5);
-            thisLocY = keyJSONnode.currentTarget.offsetTop;
-            thisLocW = keyJSONnode.currentTarget.offsetWidth;
-            thisLocH = keyJSONnode.currentTarget.offsetHeight;
+            thisLocX = activeDivDims[0] - (typeNav_Ref.current.offsetWidth * 0.5) + (activeDivDims[2] * 0.5);
+            thisLocY = activeDivDims[1];
+            thisLocW = activeDivDims[2];
+            thisLocH = activeDivDims[3];
 
             // console.log('');
             // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
@@ -608,12 +499,358 @@ export const Isotope03 = (props) => {
 
             gsap.to([activeTypeDiv_Ref.current], { x: thisLocX, y: thisLocY, width: thisLocW, height: thisLocH, duration: 0.375 });
         }
-
-
-        // gsap.to([activeEmplDiv_Ref.current], { x: thisLocX, y: thisLocY, width: thisLocW, height: thisLocH, duration: 0.375 });
     };
 
     //#endregion ==================== const handleFilterKeyChange: setFilterKey / activeEmplDiv_Ref / activeTypeDiv0 ====================
+
+
+
+    //#region ==================== FUNCTIONS ====================
+
+    //#region -------------------- FUNCTION: getDimensions(thisObject) --------------------
+
+    function getDimensions(thisObject) {
+
+        // let thisObject_x = document.getElementById(thisObject.id).offsetLeft;
+        // let thisObject_y = document.getElementById(thisObject.id).offsetTop;
+        // let thisObject_w = document.getElementById(thisObject.id).offsetWidth;
+        // let thisObject_h = document.getElementById(thisObject.id).offsetHeight;
+
+        let thisObject_x = thisObject.offsetLeft;
+        let thisObject_y = thisObject.offsetTop;
+        let thisObject_w = thisObject.offsetWidth;
+        let thisObject_h = thisObject.offsetHeight;
+
+        return [thisObject_x, thisObject_y, thisObject_w, thisObject_h];
+    }
+
+    //#endregion -------------------- FUNCTION: getDimensions(thisContainer) --------------------
+
+
+    //#region -------------------- FUNCTION: clearContent() --------------------
+
+    function clearContent() {
+
+        // console.log('');
+        // console.log('-------------------- FUNCTION: clearContent() --------------------');
+
+        // console.log(bannerContainer_Ref.current.parentNode);
+        // console.log(bannerContainer_Ref.current);
+        // console.log(bannerContainer_Ref.current.children);
+        // console.log(document.getElementById('bannerContainerID').children);
+        // // console.log(bannerContainer_Ref.current.children.tl);
+
+
+        setBannerShow(null);
+        // bannerContainer_Ref.current.removeChild(children);
+        // bannerContainer_Ref.current.children.remove();
+        // bannerContainer_Ref.current.children = null;
+        // document.getElementById('bannerContainerID').children.remove();
+
+        setBanneriFrameOpen(false);
+        banneriFrame_Ref.current.src = '';
+
+        setWebiFrameOpen(false);
+        webiFrame_Ref.current.src = '';
+
+        setVideoOpen(false);
+        setLoadedVideo(null);
+    }
+
+    //#endregion -------------------- FUNCTION: clearContent() --------------------
+
+
+    //#region -------------------- FUNCTION: loadContent(thisEvent, thisWorkItem) --------------------
+
+    let newContent;
+    let iframeSRC;
+
+    function loadContent(thisEvent, thisWorkItem) {
+
+        // console.log('');
+        // console.log('-------------------- FUNCTION: loadContent(thisEvent, thisWorkItem) --------------------');
+
+        // // console.log('');
+        // console.log('thisEvent = ' + thisEvent);
+        // console.log(thisEvent);
+        // // console.log(thisEvent.target);
+        // console.log(thisEvent.currentTarget);
+
+
+        // let thisLocX;
+        // let thisLocY;
+        // let thisLocW;
+        // let thisLocH;
+
+        let currentTargetDims = getDimensions(thisEvent.currentTarget);
+
+        // console.log('');
+        // console.log('currentTargetDims loadContent: ANIMATE or STANDARD = ' + currentTargetDims);
+        // console.log(currentTargetDims);
+
+
+        let targetDims = getDimensions(thisEvent.target);
+
+        // console.log('');
+        // console.log('targetDims loadContent: HTML5 = ' + targetDims);
+        // console.log(targetDims);
+
+
+        switch (thisWorkItem.format) {
+
+            case 'banner':
+
+                //#region -------------------- ASSIGN NEW CONTENT: banner --------------------
+
+                // console.log('');
+                // console.log('I AM A BANNER: ' + thisWorkItem.format);
+
+
+                let bannerScale = thisEvent.target.offsetWidth / thisWorkItem.mwidth;
+                console.log('bannerScale = ' + bannerScale);
+
+                clearContent();
+
+
+                if (thisWorkItem.format_src === 'animate' || thisWorkItem.format_src === 'standard') {
+
+                    //#region - - - - - - - - - - - IF 'animate'... - - - - - - - - - - -
+
+                    console.log('I am an ANIMATE or STANDARD banner: ' + thisWorkItem.format_src);
+
+                    iframeSRC = remoteLoc + thisWorkItem.album_id + '/banners/' + thisWorkItem.link;
+
+                    banneriFrame_Ref.current.src = iframeSRC;
+                    banneriFrame_Ref.current.style.left = currentTargetDims[0] + 'px';
+                    banneriFrame_Ref.current.style.top = currentTargetDims[1] + 'px';
+                    banneriFrame_Ref.current.style.width = targetDims[2] / bannerScale + 'px';
+                    banneriFrame_Ref.current.style.height = targetDims[3] / bannerScale + 'px';
+
+                    gsap.set([banneriFrame_Ref.current], { scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+
+                    setBanneriFrameOpen(true);
+
+                    //#endregion - - - - - - - - - - - IF 'animate'... - - - - - - - - - - -
+
+                } else if (thisWorkItem.format_src === 'html5') {
+
+                    //#region - - - - - - - - - - - ELSE IF 'html5'... - - - - - - - - - - -
+
+                    console.log('I am an HTML5 banner: ' + thisWorkItem.format_src);
+
+                    newContent = React.createElement(bannerContent[thisWorkItem.link2]);
+
+                    // gsap.set([bannerContainer_Ref.current], { x: currentTargetDims[0], y: currentTargetDims[1], width: currentTargetDims[2], height: currentTargetDims[3], transformOrigin: '0 0', immediateRender: true });
+                    // gsap.set([bannerContainer_Ref.current], { x: currentTargetDims[0], y: currentTargetDims[1], width: currentTargetDims[2], height: currentTargetDims[3], scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+                    // gsap.set([bannerContainer_Ref.current], { x: currentTargetDims[0], y: currentTargetDims[1], width: targetDims[2], height: targetDims[3], scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+
+                    bannerContainer_Ref.current.src = newContent;
+                    bannerContainer_Ref.current.style.left = currentTargetDims[0] + 'px';
+                    bannerContainer_Ref.current.style.top = currentTargetDims[1] + 'px';
+                    bannerContainer_Ref.current.style.width = targetDims[2] / bannerScale + 'px';
+                    bannerContainer_Ref.current.style.height = targetDims[3] / bannerScale + 'px';
+
+                    gsap.set([bannerContainer_Ref.current], { scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+
+                    setBannerShow(newContent);
+
+                    //#endregion - - - - - - - - - - - ELSE IF 'html5'... - - - - - - - - - - -
+                }
+
+                break;
+
+                //#endregion -------------------- ASSIGN NEW CONTENT: banner --------------------
+
+
+            case 'html5':
+            case 'website':
+            case 'mobile':
+
+                //#region -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
+
+                clearContent();
+
+                // iframeSRC;
+
+                if (thisWorkItem.format_src === 'external') {
+                    iframeSRC = thisWorkItem.link2;
+                } else {
+                    iframeSRC = remoteLoc + thisWorkItem.album_id + '/' + thisWorkItem.link2;
+                }
+
+                webiFrame_Ref.current.src = iframeSRC;
+                webiFrame_Ref.current.style.width = thisWorkItem.mwidth + 'px';
+                webiFrame_Ref.current.style.height = thisWorkItem.mheight + 'px';
+                webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkItem.mwidth) / 2 + 'px';
+
+                setWebiFrameOpen(true);
+
+                //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized / oddly-sized content  - - - - - - - - - - -
+
+                // if (thisWorkItem.mheight >= window.innerHeight) {
+                // if (thisWorkItem.mwidth >= window.innerWidth || thisWorkItem.mheight >= window.innerHeight) {
+                if (thisWorkItem.mwidth >= window.innerWidth || thisWorkItem.mheight >= window.innerHeight || thisWorkItem.mwidth <= window.innerWidth * 0.5 || thisWorkItem.mheight <= window.innerHeight * 0.5) {
+
+                    //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - TOO BIG / SMALL  - - - - - - - - - - -
+
+                    // let thisScale = (window.innerHeight / thisWorkItem.mheight) * 0.9;
+                    // let thisScale = (window.innerHeight / thisWorkItem.mheight) * 0.875;
+                    let thisScale = (window.innerHeight / thisWorkItem.mheight) * 0.75;
+                    // let thisScale = (window.innerHeight / thisWorkItem.mheight) * 0.5;
+                    let thisY = (window.innerHeight - (thisWorkItem.mheight * thisScale)) / 2;
+
+                    gsap.set([webiFrame_Ref.current], { top: thisY, scale: thisScale, transformOrigin: '50% 0', immediateRender: true });
+
+                    //#endregion - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - TOO BIG / SMALL  - - - - - - - - - - -
+
+                } else {
+
+                    //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - JUUUUST RIIIIGHT  - - - - - - - - - - -
+
+                    let thisY = (window.innerHeight - thisWorkItem.mheight) / 2;
+
+                    gsap.set([webiFrame_Ref.current], { top: thisY, transformOrigin: '50% 0', immediateRender: true });
+
+                    //#endregion - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - JUUUUST RIIIIGHT  - - - - - - - - - - -
+                }
+
+                //#endregion - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized / oddly-sized content  - - - - - - - - - - -
+
+                break;
+
+                //#endregion -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
+
+
+            case 'video':
+
+                //#region -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
+
+                // console.log('');
+                // console.log('-------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------');
+                // console.log(thisWorkItem);
+                // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+                // console.log('window.innerWidth = ' + window.innerWidth + '     window.innerHeight = ' + window.innerHeight);
+                // console.log('window.innerWidth * 0.8 = ' + window.innerWidth * 0.8);
+
+
+                clearContent();
+
+                let videoSRC = videoLoc + thisWorkItem.link2;
+                let newVidWidth;
+                let newVidHeight;
+
+                // let vidScale = 0.5;
+                let vidScale = 0.8;
+
+                switch (true) {
+
+                    case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth >= thisWorkItem.mheight:
+
+                        // console.log('This content is TOO WIDE & LANDSCAPE');
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        newVidWidth = window.innerWidth * vidScale;
+                        newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+
+                        break;
+
+                    case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth <= thisWorkItem.mheight:
+
+                        // console.log('This content is TOO WIDE & PORTRAIT');
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        newVidWidth = window.innerWidth * vidScale;
+                        newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+
+                        break;
+
+                    case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth >= thisWorkItem.mheight:
+
+                        // console.log('This content is TOO TALL & LANDSCAPE');
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        newVidHeight = window.innerHeight * vidScale;
+                        newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
+
+                        break;
+
+                    case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth <= thisWorkItem.mheight:
+
+                        // console.log('This content is TOO TALL & PORTRAIT');
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        newVidHeight = window.innerHeight * vidScale;
+                        newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
+
+                        break;
+
+                    default:
+
+                        // console.log('VIDEO: DEFAULT');
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        // newVidWidth = thisWorkItem.mwidth;
+                        // newVidHeight = thisWorkItem.mheight;
+
+                        // newVidWidth = window.innerWidth * vidScale;
+                        // newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+
+                        if (window.innerWidth / window.innerHeight <= thisWorkItem.mwidth / thisWorkItem.mheight) {
+
+                            // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
+                            // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+
+                            // console.log('This content FITS and I want it to behave LANDSCAPE');
+
+                            newVidWidth = window.innerWidth * 0.75;
+                            newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+
+                        } else {
+
+                            // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
+                            // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+
+                            // console.log('This content FITS and I want it to behave PORTRAIT');
+
+                            newVidHeight = window.innerHeight * 0.75;
+                            newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
+                        }
+
+                        break;
+                }
+
+
+                // console.log('newVidWidth = ' + newVidWidth + '     newVidHeight = ' + newVidHeight);
+
+                setVideoWidth(newVidWidth);
+                setVideoHeight(newVidHeight);
+
+                setLoadedVideo(videoSRC);
+                setVideoOpen(true);
+
+                break;
+
+                //#endregion -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
+
+
+            default:
+
+                //#region -------------------- ASSIGN NEW CONTENT: default --------------------
+
+                console.log('');
+                console.log('I AM THE DEFAULT: ' + thisWorkItem.format);
+
+                clearContent();
+
+                break;
+
+                //#endregion -------------------- ASSIGN NEW CONTENT: default --------------------
+        }
+    }
+
+    //#endregion -------------------- FUNCTION: loadContent(thisEvent, thisWorkItem) --------------------
+
+    //#endregion ==================== FUNCTIONS ====================
 
 
 
@@ -674,10 +911,16 @@ export const Isotope03 = (props) => {
         return workData.filter(isSrc => isSrc.src !== '#').map((workItem, index) =>
 
             <div 
-                className={`workItem ${workItem.format} ${workItem.album_id} masonryWidth${workItem.masonryWidth} masonryHeight${workItem.masonryHeight}`}
+                // className={`workItem ${workItem.format} ${workItem.album_id} masonryWidth${workItem.masonryWidth} masonryHeight${workItem.masonryHeight}`}
+                className={`workItem ${workItem.format} ${workItem.album_id} masonryWidth${workItem.masonryWidth}`}
                 id={workItem.album_id + 'DivID' + index}
                 key={index}
-                onClick={(event) => handleClick(event)}
+                // onClick={(event) => loadContent(event, workItem)}
+                // onClick={workItem.availability ? (event) => loadContent(event, workItem) : undefined}
+                onClick={workItem.link !== '#' ? (event) => loadContent(event, workItem) : undefined}
+                // style={{ cursor: workItem.availability && 'pointer'}}
+                style={{ cursor: workItem.availability && 'pointer' }}
+                // style={{ cursor: workItem.link !== '#' && 'pointer' }}
             >
 
                 <img
@@ -706,6 +949,8 @@ export const Isotope03 = (props) => {
 
         <div className='isotopeContainer'>
 
+        {/* #region ------------------------- workNavBar ------------------------- */}
+
             <div className='workNavBar' id='workNavBarID' ref={workNav_Ref}>
 
                 {/* <div className='activeEmplDiv' id='activeEmplDivID' ref={activeEmplDiv_Ref}></div> */}
@@ -720,20 +965,107 @@ export const Isotope03 = (props) => {
                     <RenderFilters />
                 </div>
 
-                <div className='toggleNav' id='toggleNavID' ref={toggleNav_Ref}>
-                    <div className='toggleBtn' onClick={(e) => { setWorkNavToggleBtn(!workNavToggleBtn); }} ref={toggleBtn_Ref}>
+                {/* <div className='toggleNav' id='toggleNavID' onClick={(e) => { setWorkNavToggleBtn(!workNavToggleBtn); }} ref={toggleNav_Ref}>
+                    <div className='toggleBtn' id='toggleBtnID' onClick={(e) => { setWorkNavToggleBtn(!workNavToggleBtn); }} ref={toggleBtn_Ref}>
                         {workNavToggleText}
-                        {/* <span className='toggleText'>{workNavToggleText}</span> */}
-                        {/* <div className='toggleText'>ReactJS v{React.version}</div> */}
+                        <span className='toggleText'>{workNavToggleText}</span>
+                        <div className='toggleText'>ReactJS v{React.version}</div>
                     </div>
+                </div> */}
+
+                <div className='navToggleBtn' id='navToggleBtnID' onClick={(e) => { setWorkNavToggleBtn(!workNavToggleBtn); }} ref={navToggleBtn_Ref}>
+                    <span>{workNavToggleText}</span>
                 </div>
 
             </div>
 
+        {/* #endregion ------------------------- workNavBar ------------------------- */}
+
+
+        {/* #region ------------------------- galleryContainer ------------------------- */}
+
             <div className='galleryContainer' ref={galleryContainer_Ref}>
+
                 {renderElements()}
                 {/* <RenderElements /> */}
+
+            {/* #region ------------------------- BANNERS: REACT ------------------------- */}
+
+                <div className='bannerContainer' id='bannerContainerID' ref={bannerContainer_Ref}>
+                    {bannerShow}
+                </div>
+
+            {/* #region ------------------------- BANNERS: REACT ------------------------- */}
+
+
+            {/* #region ------------------------- BANNERS: IFRAME ------------------------- */}
+
+                <iframe
+                    className={banneriFrameOpen === true ? 'banneriFrameOpen' : 'banneriFrameClosed'}
+                    id='banneriFrameID'
+                    name='banneriFrame'
+                    title='banneriFrame'
+                    ref={banneriFrame_Ref}
+                />
+
+            {/* #endregion ------------------------- BANNERS: IFRAME ------------------------- */}
+
+
+            {/* #region ------------------------- WEB: IFRAME ------------------------- */}
+
+                <div className={webiFrameOpen === true ? 'webiFrameContainer webiFrameContainerOpen' : 'webiFrameContainer webiFrameContainerClosed'} id='webiFrameContainerID' onClick={() => { clearContent(); }} ref={iframeContainer_Ref}>
+
+                    <iframe
+                        className='webiFrame' 
+                        id='webiFrameID'
+                        name='webiFrame'
+                        title='webiFrame'
+                        ref={webiFrame_Ref}
+                    />
+
+                    <button className={webiFrameOpen ? 'closeModalBtn closeModalBtnShow' : 'closeModalBtn closeModalBtnHide'} onClick={() => { clearContent(); }}> Close </button>
+
+                </div>
+
+            {/* #endregion ------------------------- WEB: IFRAME ------------------------- */}
+
+
+            {/* #region ------------------------- VIDEO PLAYER ------------------------- */}
+
+                <div className={videoOpen === true ? 'videoContainer videoContainerOpen' : 'videoContainer videoContainerClosed'} id='videoContainerID' onClick={() => { clearContent(); }} ref={videoContainer_Ref}>
+
+                    <ReactPlayer
+                        className='videoPlayer'
+                        id='videoPlayerID'
+                        // width='80%'
+                        width={videoWidth} 
+                        height={videoHeight} 
+                        url={loadedVideo}
+                        ref={videoPlayer_Ref}
+
+                        config={{
+                            vimeo: {
+                                playerOptions: { 
+                                    autoplay: true, 
+                                    loop: true, 
+                                    // color: '00ffff',
+                                    // width: 1800,
+                                    // maxwidth: 2400,
+                                    // width: window.innerWidth * 0.8,
+                                },
+                            }
+                        }}
+                    />
+
+                    <button className={videoOpen ? 'closeModalBtn closeModalBtnShow' : 'closeModalBtn closeModalBtnHide'} onClick={() => { clearContent(); }}> Close </button>
+
+                </div>
+
+            {/* #region ------------------------- VIDEO PLAYER ------------------------- */}
+
             </div>
+
+        {/* #rendegion ------------------------- galleryContainer ------------------------- */}
 
         </div>
     )
