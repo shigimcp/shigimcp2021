@@ -342,8 +342,10 @@ export const Header = (props) => {
 
         if (mobileNavShow) {
             mobileNavTL.play();
+            gsap.set(['#resumeNavBarID'], { zIndex: -1 });
         } else {
             mobileNavTL.reverse();
+            gsap.set(['#resumeNavBarID'], { zIndex: 1 });
         }
 
     }, [mobileNavShow]);
@@ -553,7 +555,7 @@ export const Header = (props) => {
                     {WorkNavItems}
                 </div> */}
 
-                <div className='resumeNav' id='resumeNavBarID' onClick={() => {props.setResumeModalOpen(!props.resumeModalOpen)}} ref={e => { resumeNav_Ref = e }}>
+                <div className='resumeNav' id='resumeNavBarID' onClick={() => { props.setResumeModalOpen(!props.resumeModalOpen) }} ref={e => { resumeNav_Ref = e }}>
                     <p className='resumeDdl' id='resumeDdlID'>download resume</p>
                 </div>
 
@@ -570,7 +572,7 @@ export const Header = (props) => {
                     <A className='navItem' href='/shigimcp2021/contact' id='contactID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A> */}
 
                     <A className='navItem' href='/shigimcp2021' id='homeID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
-                    <A className='navItem' href='/shigimcp2021/work' id='workID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work (Isotope)</A>
+                    <A className='navItem' href='/shigimcp2021/work' id='workID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work</A>
                     <A className='navItem' href='/shigimcp2021/about' id='aboutID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>About</A>
                     <A className='navItem' href='/shigimcp2021/resume' id='resumeID' onClick={() => { setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A>
                     <A className='navItem' href='/shigimcp2021/contact' id='contactID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A>

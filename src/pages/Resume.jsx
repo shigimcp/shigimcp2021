@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRef } from 'react';
 // import { useState } from 'react';
-import Moment from 'moment';
+// import Moment from 'moment';
 
 import '../stylesheets/Resume.scss';
 
@@ -58,6 +58,16 @@ const remoteImgLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/re
 
 function EmployerItem(props) {
 
+    // console.log('');
+    // console.log('props.dateStart = ' + props.dateStart + '     props.dateEnd = ' + props.dateEnd);
+
+    let thisDateStart = props.dateStart.slice(0, -3);
+    let thisDateEnd = props.dateEnd.slice(0, -3);
+
+    // console.log('');
+    // console.log('thisDateStart = ' + thisDateStart + '     thisDateEnd = ' + thisDateEnd);
+
+
     if (props.availability) {
 
         return (
@@ -72,8 +82,8 @@ function EmployerItem(props) {
 
                     {/* <div className='employerDates'>{props.dateStart} - {props.dateEnd}</div> */}
                     {/* <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')} - {Moment(props.dateEnd).format('MM/YY')}</div> */}
-                    {props.dateEnd ? <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')} - {Moment(props.dateEnd).format('MM/YY')}</div> : <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')}</div>}
-                    {/* {props.dateEnd ? <div className='employerDates'>{Moment(props.dateStart).format('MM')}/{Moment(props.dateStart).format('YY')} - {Moment(props.dateEnd).format('MM')}/{Moment(props.dateEnd).format('YY')}</div> : <div className='employerDates'>{Moment(props.dateStart).format('MM')}/{Moment(props.dateStart).format('YY')}</div>} */}
+                    {/* {props.dateEnd ? <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')} - {Moment(props.dateEnd).format('MM/YY')}</div> : <div className='employerDates'>{Moment(props.dateStart).format('MM/YY')}</div>} */}
+                    {props.dateEnd ? <div className='employerDates'>{thisDateStart} - {thisDateEnd}</div> : <div className='employerDates'>{thisDateEnd}</div>}
 
                     <ul>
                         {props.info.split('\n').map((thisInfo, key) => {

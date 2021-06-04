@@ -2,8 +2,8 @@
     "name": "shigimcp2021",
     "version": "0.1.0",
     "private": true,
-    "_homepage": "https://www.shigimcp.com",
-    "__homepage": "https://www.shigimcp.com/shigimcp2021",
+    "__homepage": "https://www.shigimcp.com",
+    "_homepage": "https://www.shigimcp.com/shigimcp2021",
     "homepage": "https://shigimcp.github.io/shigimcp2021",
     "___homepage": ".",
     "dependencies": {
