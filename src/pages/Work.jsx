@@ -4,19 +4,24 @@ import React from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-// import { useLayoutEffect } from 'react';
-// import { useCallback } from 'react';
 
-import { gsap } from 'gsap';
-// import { CSSPlugin } from 'gsap/CSSPlugin';
+import Isotope from 'isotope-layout';
+import Packery from 'isotope-packery';
+import FadeLoader from 'react-spinners/FadeLoader';
+
+import { isBrowser } from "react-device-detect";
+// import { isMobile } from "react-device-detect";
+// import { isBrowser, isMobile } from "react-device-detect";
+// import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
 import ReactPlayer from 'react-player/vimeo';
 
+import '../stylesheets/Global.scss';
 import '../stylesheets/Work.scss';
 
 import myData from '../data/MyData';
 
-import { WorkPod } from '../components/WorkPod';
+import { gsap } from 'gsap';
 
 
 //#region -------------------- IMPORTS: GSAP BANNERS --------------------
@@ -34,30 +39,116 @@ import JBJA_10263 from '../images/ea/banners/CR_10263_J_by_JENNIFER_ANISTON_Kohl
 
 //#endregion -------------------- IMPORTS: GSAP BANNERS --------------------
 
-
-//#region -------------------- GSAP: REGISTER PLUGINS --------------------
-
-// gsap.registerPlugin(CSSPlugin);
-
-//#endregion -------------------- GSAP: REGISTER PLUGINS --------------------
-
 //#endregion ==================== IMPORTS ====================
 
 
-
-//#region ==================== CONSTANTS ====================
+//#region ==================== CONSTANTS n VARS ====================
 
 const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
 const videoLoc = 'https://vimeo.com/';
 
-const getWidth = () => window.innerWidth
-    || document.documentElement.clientWidth
-    || document.body.clientWidth;
 
-let work;
+//#region -------------------- DATA --------------------
+
+// console.log('');
+// // console.log('myData = ' + myData);
+// console.log('myData = ');
+// console.log(myData);
+
+let employerData = myData[0];
+let workData = myData[1];
+
+// console.log('');
+// // console.log('employerData = ' + employerData);
+// console.log('employerData = ');
+// console.log(employerData);
+// // console.log(employerData[0].employer);
+
+// console.log('');
+// // console.log('workData = ' + workData);
+// console.log('workData = ');
+// console.log(workData);
+
+//#endregion -------------------- DATA --------------------
 
 
-//#region -------------------- AVAILABLE CONTENT: xContent[] --------------------
+//#region -------------------- FILTER ARRAY: filterEmployer --------------------
+
+const filterEmployer = employerData.filter(isInGallery => isInGallery.isInGallery);
+
+// console.log('');
+// // console.log('filterEmployer = ' + filterEmployer);
+// console.log('filterEmployer = ');
+// console.log(filterEmployer);
+
+// filterEmployer.unshift(
+filterEmployer.push(
+    {
+        "album_index": '00',
+        "album_id": "*",
+        "employer": "All",
+        "title": "Digital Designer / Front-End Developer",
+        "date_start": "present",
+        "date_end": "present",
+        "info": "View ALL work",
+        "info_other": "",
+        "other_html": "",
+        "other_type": "",
+        "other": "",
+        "software": "",
+        "languages": "",
+        //    "logopath": "0elements/shigeru_logo.svg",
+        //    "logo": "shigeru_logo_transparent.svg",
+        "logopath": "#",
+        "logo": "#",
+        "slpath": "other/sl",
+        "thpath": "other/th",
+        "flpath": "https://www.shigimcp.com/img/other/",
+        "flpath_stage": "https://www.shigimcp.com/Xstage/shigimcp_2019/img/other/",
+        "availability": true,
+        "isInGallery": true
+    }
+)
+
+// console.log('');
+// // console.log('filterEmployer = ' + filterEmployer);
+// console.log('filterEmployer = ');
+// console.log(filterEmployer);
+
+//#endregion -------------------- FILTER ARRAY: filterEmployer --------------------
+
+
+//#region -------------------- FILTER ARRAY: filterType - REF: https://github.com/rhernandog/gsap-flip-react/blob/master/src/App.js --------------------
+
+const filterType = [
+    // { key: '0000', id: 'allCheck', value: 'all', label: 'All' },
+    { key: '0000', id: 'websiteCheck', value: 'website', label: 'Website' },
+    { key: '0001', id: 'mobileCheck', value: 'mobile', label: 'Mobile' },
+    { key: '0002', id: 'videoCheck', value: 'video', label: 'Video' },
+    { key: '0003', id: 'bannerCheck', value: 'banner', label: 'Banner' },
+    { key: '0004', id: 'printCheck', value: 'print', label: 'Print' },
+    { key: '0005', id: 'allCheck', value: '*', label: 'All' },
+];
+
+// console.log('');
+// console.log('filterType = ' + filterType);
+// console.log('filterType = ');
+// console.log(filterType);
+
+//#endregion -------------------- FILTER ARRAY: filterType - REF: https://github.com/rhernandog/gsap-flip-react/blob/master/src/App.js --------------------
+
+
+//#region -------------------- TIMELINES --------------------
+
+// console.log('-------------------- TIMELINES: workNavTL --------------------');
+
+// const workNavTL = new gsap.timeline();
+const workNavTL = new gsap.timeline({ paused: true });
+
+//#endregion -------------------- TIMELINES --------------------
+
+
+//#region -------------------- HTML5 BANNERS: bannerContent[] --------------------
 
 const bannerContent = {
     EAAR_18951: EAAR_18951,
@@ -72,64 +163,54 @@ const bannerContent = {
     JBJA_10263: JBJA_10263,
 };
 
-//#endregion -------------------- AVAILABLE CONTENT: xContent[] --------------------
+//#endregion -------------------- HTML5 BANNERS: xContent[] --------------------
 
-//#endregion ==================== CONSTANTS ====================
-
-
-
-//#region ==================== WorkList() => <WorkList /> ====================
-
-function WorkList({ currentEmployer }) {
-
-    // console.log('');
-    // console.log('------------------------- WorkList({ currentEmployer }) -------------------------');
-    // console.log('currentEmployer = ' + currentEmployer);
+//#endregion ==================== CONSTANTS n VARS ====================
 
 
-    //#region ==================== WORK FORMAT ARRAYS ==================== */
 
-    // const bannerArray = work.filter(thisFormat => thisFormat.format === 'banner').map((workImage) => (
-    const bannerArray = work.filter(thisFormat => thisFormat.format === 'banner' && thisFormat.availability).map((workImage) => (
-        workImage
-    ));
-
-    // const webArray = work.filter(thisFormat => thisFormat.format === 'html5' || thisFormat.format === 'video' || thisFormat.format === 'website' || thisFormat.format === 'mobile').map((workImage) => (
-    const webArray = work.filter(thisFormat => (thisFormat.format === 'html5' && thisFormat.availability) || (thisFormat.format === 'video' && thisFormat.availability) || (thisFormat.format === 'website' && thisFormat.availability) || (thisFormat.format === 'mobile' && thisFormat.availability)).map((workImage) => (
-        workImage
-    ));
-
-    const printArray = work.filter(thisFormat => thisFormat.format === 'print').map((workImage) => (
-        workImage
-    ));
-
+export const Work = (props) => {
+// export function Work(props) {
 
     // console.log('');
-    // console.log('bannerArray = ' + bannerArray);
-    // console.log(bannerArray);
+    // console.log('==================== Work ====================');
+    // console.log('props = ' + props);
+    // console.log(props);
 
     // console.log('');
-    // console.log('webArray = ' + webArray);
-    // console.log(webArray);
+    // console.log('isBrowser = ' + isBrowser);
+    // // console.log(isBrowser);
 
-    // console.log('');
-    // console.log('printArray = ' + printArray);
-    // console.log(printArray);
-
-    //#endregion ==================== WORK FORMAT ARRAYS ==================== */
+    // console.log('isMobile = ' + isMobile);
+    // // console.log(isMobile);
 
 
 
     //#region ==================== FUNCTIONS ====================
 
+    //#region -------------------- FUNCTION: getDimensions(thisObject) --------------------
+
+    function getDimensions(thisObject) {
+
+        // let thisObject_x = document.getElementById(thisObject.id).offsetLeft;
+        // let thisObject_y = document.getElementById(thisObject.id).offsetTop;
+        // let thisObject_w = document.getElementById(thisObject.id).offsetWidth;
+        // let thisObject_h = document.getElementById(thisObject.id).offsetHeight;
+
+        let thisObject_x = thisObject.offsetLeft;
+        let thisObject_y = thisObject.offsetTop;
+        let thisObject_w = thisObject.offsetWidth;
+        let thisObject_h = thisObject.offsetHeight;
+
+        return [thisObject_x, thisObject_y, thisObject_w, thisObject_h];
+    }
+
+    //#endregion -------------------- FUNCTION: getDimensions(thisContainer) --------------------
+
+
     //#region -------------------- FUNCTION: clearContent() --------------------
 
-    // // const clearContentRef = React.createRef();
-
     function clearContent() {
-    // const clearContent = React.forwardRef((props) => {
-    // const clearContent = useCallback(() => {
-    // const clearContent = () => {
 
         // console.log('');
         // console.log('-------------------- FUNCTION: clearContent() --------------------');
@@ -156,140 +237,148 @@ function WorkList({ currentEmployer }) {
         setVideoOpen(false);
         setLoadedVideo(null);
     }
-    // }, []);
-
-    // export default clearContent;
-
 
     //#endregion -------------------- FUNCTION: clearContent() --------------------
 
 
-    //#region -------------------- FUNCTION: handleClick(thisWorkImage, thisTargetImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks --------------------
+    //#region -------------------- FUNCTION: loadContent(thisEvent, thisWorkItem) --------------------
 
-    // let newContent = React.createElement(bannerContent[thisWorkImage.link2]);
-    // let newContent = React.createElement();
     let newContent;
+    let iframeSRC;
 
-    function handleClick(thisWorkImage, thisTargetImage) {
+    function loadContent(thisEvent, thisWorkItem) {
 
         // console.log('');
-        // console.log('-------------------- FUNCTION: handleClick(thisWorkImage, thisTargetImage) --------------------');
-        // // console.log('thisWorkImage = ' + thisWorkImage);
-        // console.log('thisWorkImage');
-        // console.log(thisWorkImage);
+        // console.log('-------------------- FUNCTION: loadContent(thisEvent, thisWorkItem) --------------------');
 
-        // console.log('thisTargetImage = ' + thisTargetImage);
-        // console.log('thisTargetImage');
-        // console.log(thisTargetImage);
+        // // console.log('');
+        // console.log('thisEvent = ' + thisEvent);
+        // console.log(thisEvent);
+        // // console.log(thisEvent.target);
+        // console.log(thisEvent.currentTarget);
 
 
-        setActiveImage(thisTargetImage);
+        // let thisLocX;
+        // let thisLocY;
+        // let thisLocW;
+        // let thisLocH;
 
-        //#region - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
+        let currentTargetDims = getDimensions(thisEvent.currentTarget);
 
-        switch (thisWorkImage.format) {
+        // console.log('');
+        // console.log('currentTargetDims loadContent: ANIMATE or STANDARD = ' + currentTargetDims);
+        // console.log(currentTargetDims);
+
+
+        let targetDims = getDimensions(thisEvent.target);
+
+        // console.log('');
+        // console.log('targetDims loadContent: HTML5 = ' + targetDims);
+        // console.log(targetDims);
+
+
+        switch (thisWorkItem.format) {
 
             case 'banner':
 
-            //#region -------------------- ASSIGN NEW CONTENT: banner --------------------
+                //#region -------------------- ASSIGN NEW CONTENT: banner --------------------
 
-                let bannerScale = thisTargetImage.width / thisWorkImage.mwidth;
+                // console.log('');
+                // console.log('I AM A BANNER: ' + thisWorkItem.format);
+
+
+                let bannerScale = thisEvent.target.offsetWidth / thisWorkItem.mwidth;
+                console.log('bannerScale = ' + bannerScale);
 
                 clearContent();
 
-                if (thisWorkImage.format_src === 'animate' || thisWorkImage.format_src === 'standard') {
 
-                //#region -------------------- IF 'animate'... --------------------
+                if (thisWorkItem.format_src === 'animate' || thisWorkItem.format_src === 'standard') {
 
-                    let iframeSRC = remoteLoc + thisWorkImage.album_id + '/banners/' + thisWorkImage.link;
+                    //#region - - - - - - - - - - - IF 'animate'... - - - - - - - - - - -
+
+                    console.log('I am an ANIMATE or STANDARD banner: ' + thisWorkItem.format_src);
+
+                    iframeSRC = remoteLoc + thisWorkItem.album_id + '/banners/' + thisWorkItem.link;
 
                     banneriFrame_Ref.current.src = iframeSRC;
-
-                    banneriFrame_Ref.current.style.left = thisTargetImage.offsetLeft + 'px';
-                    banneriFrame_Ref.current.style.top = thisTargetImage.offsetTop + 'px';
-                    banneriFrame_Ref.current.style.width = thisTargetImage.width / bannerScale + 'px';
-                    banneriFrame_Ref.current.style.height = thisTargetImage.height / bannerScale + 'px';
+                    banneriFrame_Ref.current.style.left = currentTargetDims[0] + 'px';
+                    banneriFrame_Ref.current.style.top = currentTargetDims[1] + 'px';
+                    banneriFrame_Ref.current.style.width = targetDims[2] / bannerScale + 'px';
+                    banneriFrame_Ref.current.style.height = targetDims[3] / bannerScale + 'px';
 
                     gsap.set([banneriFrame_Ref.current], { scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
 
                     setBanneriFrameOpen(true);
 
-                //#endregion -------------------- IF 'animate'... --------------------
+                    //#endregion - - - - - - - - - - - IF 'animate'... - - - - - - - - - - -
 
-                } else if (thisWorkImage.format_src === 'html5') {
+                } else if (thisWorkItem.format_src === 'html5') {
 
-                //#region -------------------- ELSE IF 'html5'... --------------------
+                    //#region - - - - - - - - - - - ELSE IF 'html5'... - - - - - - - - - - -
 
-                    // const newContent = React.createElement(bannerContent[thisWorkImage.link2]);
-                    // let newContent = React.createElement(bannerContent[thisWorkImage.link2]);
-                    // newContent = bannerContent[thisWorkImage.link2];
-                    newContent = React.createElement(bannerContent[thisWorkImage.link2]);
+                    console.log('I am an HTML5 banner: ' + thisWorkItem.format_src);
 
+                    newContent = React.createElement(bannerContent[thisWorkItem.link2]);
 
-                    // console.log('');
-                    // console.log('-------------------- FUNCTION: handleClick(thisWorkImage, thisTargetImage) ----- ELSE IF \'html5\'... --------------------');
+                    // gsap.set([bannerContainer_Ref.current], { x: currentTargetDims[0], y: currentTargetDims[1], width: currentTargetDims[2], height: currentTargetDims[3], transformOrigin: '0 0', immediateRender: true });
+                    // gsap.set([bannerContainer_Ref.current], { x: currentTargetDims[0], y: currentTargetDims[1], width: currentTargetDims[2], height: currentTargetDims[3], scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+                    // gsap.set([bannerContainer_Ref.current], { x: currentTargetDims[0], y: currentTargetDims[1], width: targetDims[2], height: targetDims[3], scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
 
-                    // // console.log('');
-                    // // console.log('thisWorkImage = ' + thisWorkImage);
-                    // console.log('thisWorkImage');
-                    // console.log(thisWorkImage);
+                    bannerContainer_Ref.current.src = newContent;
+                    bannerContainer_Ref.current.style.left = currentTargetDims[0] + 'px';
+                    bannerContainer_Ref.current.style.top = currentTargetDims[1] + 'px';
+                    bannerContainer_Ref.current.style.width = targetDims[2] / bannerScale + 'px';
+                    bannerContainer_Ref.current.style.height = targetDims[3] / bannerScale + 'px';
 
-                    // console.log('');
-                    // // console.log('newContent = ' + newContent);
-                    // console.log('newContent');
-                    // console.log(newContent);
-                    // // console.log(newContent.props);
-
-
-                    gsap.set([bannerContainer_Ref.current], { x: thisTargetImage.offsetLeft, y: thisTargetImage.offsetTop, scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
+                    gsap.set([bannerContainer_Ref.current], { scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
 
                     setBannerShow(newContent);
-                    // setBannerShow(bannerContent[thisWorkImage.link2]);
-                }
 
-                //#endregion -------------------- ELSE IF 'html5'... --------------------
+                    //#endregion - - - - - - - - - - - ELSE IF 'html5'... - - - - - - - - - - -
+                }
 
                 break;
 
-            //#endregion -------------------- ASSIGN NEW CONTENT: banner --------------------
+                //#endregion -------------------- ASSIGN NEW CONTENT: banner --------------------
 
 
             case 'html5':
             case 'website':
             case 'mobile':
 
-            //#region -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
+                //#region -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
 
                 clearContent();
 
-                let iframeSRC;
+                // iframeSRC;
 
-                if (thisWorkImage.format_src === 'external') {
-                    iframeSRC = thisWorkImage.link2;
+                if (thisWorkItem.format_src === 'external') {
+                    iframeSRC = thisWorkItem.link2;
                 } else {
-                    iframeSRC = remoteLoc + thisWorkImage.album_id + '/' + thisWorkImage.link2;
+                    iframeSRC = remoteLoc + thisWorkItem.album_id + '/' + thisWorkItem.link2;
                 }
 
                 webiFrame_Ref.current.src = iframeSRC;
-                webiFrame_Ref.current.style.width = thisWorkImage.mwidth + 'px';
-                webiFrame_Ref.current.style.height = thisWorkImage.mheight + 'px';
-                webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkImage.mwidth) / 2 + 'px';
+                webiFrame_Ref.current.style.width = thisWorkItem.mwidth + 'px';
+                webiFrame_Ref.current.style.height = thisWorkItem.mheight + 'px';
+                webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkItem.mwidth) / 2 + 'px';
 
                 setWebiFrameOpen(true);
 
                 //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized / oddly-sized content  - - - - - - - - - - -
 
-                // if (thisWorkImage.mheight >= window.innerHeight) {
-                // if (thisWorkImage.mwidth >= window.innerWidth || thisWorkImage.mheight >= window.innerHeight) {
-                if (thisWorkImage.mwidth >= window.innerWidth || thisWorkImage.mheight >= window.innerHeight || thisWorkImage.mwidth <= window.innerWidth * 0.5 || thisWorkImage.mheight <= window.innerHeight * 0.5) {
+                // if (thisWorkItem.mheight >= window.innerHeight) {
+                // if (thisWorkItem.mwidth >= window.innerWidth || thisWorkItem.mheight >= window.innerHeight) {
+                if (thisWorkItem.mwidth >= window.innerWidth || thisWorkItem.mheight >= window.innerHeight || thisWorkItem.mwidth <= window.innerWidth * 0.5 || thisWorkItem.mheight <= window.innerHeight * 0.5) {
 
                     //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - TOO BIG / SMALL  - - - - - - - - - - -
 
-                    // let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.9;
-                    // let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.875;
-                    let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.75;
-                    // let thisScale = (window.innerHeight / thisWorkImage.mheight) * 0.5;
-                    let thisY = (window.innerHeight - (thisWorkImage.mheight * thisScale)) / 2;
+                    // let thisScale = (window.innerHeight / thisWorkItem.mheight) * 0.9;
+                    // let thisScale = (window.innerHeight / thisWorkItem.mheight) * 0.875;
+                    let thisScale = (window.innerHeight / thisWorkItem.mheight) * 0.75;
+                    // let thisScale = (window.innerHeight / thisWorkItem.mheight) * 0.5;
+                    let thisY = (window.innerHeight - (thisWorkItem.mheight * thisScale)) / 2;
 
                     gsap.set([webiFrame_Ref.current], { top: thisY, scale: thisScale, transformOrigin: '50% 0', immediateRender: true });
 
@@ -299,7 +388,7 @@ function WorkList({ currentEmployer }) {
 
                     //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - JUUUUST RIIIIGHT  - - - - - - - - - - -
 
-                    let thisY = (window.innerHeight - thisWorkImage.mheight) / 2;
+                    let thisY = (window.innerHeight - thisWorkItem.mheight) / 2;
 
                     gsap.set([webiFrame_Ref.current], { top: thisY, transformOrigin: '50% 0', immediateRender: true });
 
@@ -310,24 +399,24 @@ function WorkList({ currentEmployer }) {
 
                 break;
 
-            //#endregion -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
+                //#endregion -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
 
 
             case 'video':
 
-            //#region -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
+                //#region -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
 
                 // console.log('');
                 // console.log('-------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------');
-                // console.log(thisWorkImage);
-                // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+                // console.log(thisWorkItem);
+                // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
                 // console.log('window.innerWidth = ' + window.innerWidth + '     window.innerHeight = ' + window.innerHeight);
                 // console.log('window.innerWidth * 0.8 = ' + window.innerWidth * 0.8);
 
 
                 clearContent();
 
-                let videoSRC = videoLoc + thisWorkImage.link2;
+                let videoSRC = videoLoc + thisWorkItem.link2;
                 let newVidWidth;
                 let newVidHeight;
 
@@ -336,76 +425,76 @@ function WorkList({ currentEmployer }) {
 
                 switch (true) {
 
-                    case thisWorkImage.mwidth >= window.innerWidth && thisWorkImage.mwidth >= thisWorkImage.mheight:
+                    case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth >= thisWorkItem.mheight:
 
                         // console.log('This content is TOO WIDE & LANDSCAPE');
-                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
                         newVidWidth = window.innerWidth * vidScale;
-                        newVidHeight = thisWorkImage.mheight * (newVidWidth / thisWorkImage.mwidth);
+                        newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
 
                         break;
 
-                    case thisWorkImage.mwidth >= window.innerWidth && thisWorkImage.mwidth <= thisWorkImage.mheight:
+                    case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth <= thisWorkItem.mheight:
 
                         // console.log('This content is TOO WIDE & PORTRAIT');
-                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
                         newVidWidth = window.innerWidth * vidScale;
-                        newVidHeight = thisWorkImage.mheight * (newVidWidth / thisWorkImage.mwidth);
+                        newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
 
                         break;
 
-                    case thisWorkImage.mheight >= window.innerHeight && thisWorkImage.mwidth >= thisWorkImage.mheight:
+                    case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth >= thisWorkItem.mheight:
 
                         // console.log('This content is TOO TALL & LANDSCAPE');
-                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
                         newVidHeight = window.innerHeight * vidScale;
-                        newVidWidth = thisWorkImage.mwidth * (newVidHeight / thisWorkImage.mheight);
+                        newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
 
                         break;
 
-                    case thisWorkImage.mheight >= window.innerHeight && thisWorkImage.mwidth <= thisWorkImage.mheight:
+                    case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth <= thisWorkItem.mheight:
 
                         // console.log('This content is TOO TALL & PORTRAIT');
-                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
                         newVidHeight = window.innerHeight * vidScale;
-                        newVidWidth = thisWorkImage.mwidth * (newVidHeight / thisWorkImage.mheight);
+                        newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
 
                         break;
 
                     default:
 
-                        console.log('DEFAULT');
-                        // console.log('thisWorkImage.mwidth = ' + thisWorkImage.mwidth + '     thisWorkImage.mheight = ' + thisWorkImage.mheight);
+                        // console.log('VIDEO: DEFAULT');
+                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
-                        // newVidWidth = thisWorkImage.mwidth;
-                        // newVidHeight = thisWorkImage.mheight;
+                        // newVidWidth = thisWorkItem.mwidth;
+                        // newVidHeight = thisWorkItem.mheight;
 
                         // newVidWidth = window.innerWidth * vidScale;
-                        // newVidHeight = thisWorkImage.mheight * (newVidWidth / thisWorkImage.mwidth);
+                        // newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
 
-                        if (window.innerWidth / window.innerHeight <= thisWorkImage.mwidth / thisWorkImage.mheight) {
+                        if (window.innerWidth / window.innerHeight <= thisWorkItem.mwidth / thisWorkItem.mheight) {
 
-                            // console.log('thisWorkImage.mwidth / thisWorkImage.mheight = ' + thisWorkImage.mwidth / thisWorkImage.mheight);
+                            // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
                             // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
 
                             // console.log('This content FITS and I want it to behave LANDSCAPE');
 
                             newVidWidth = window.innerWidth * 0.75;
-                            newVidHeight = thisWorkImage.mheight * (newVidWidth / thisWorkImage.mwidth);
+                            newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
 
                         } else {
 
-                            // console.log('thisWorkImage.mwidth / thisWorkImage.mheight = ' + thisWorkImage.mwidth / thisWorkImage.mheight);
+                            // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
                             // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
 
                             // console.log('This content FITS and I want it to behave PORTRAIT');
 
                             newVidHeight = window.innerHeight * 0.75;
-                            newVidWidth = thisWorkImage.mwidth * (newVidHeight / thisWorkImage.mheight);
+                            newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
                         }
 
                         break;
@@ -422,24 +511,25 @@ function WorkList({ currentEmployer }) {
 
                 break;
 
-            //#endregion -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
+                //#endregion -------------------- ASSIGN NEW CONTENT: video (REACT-PLAYER) --------------------
 
 
             default:
 
-            //#region -------------------- ASSIGN NEW CONTENT: default --------------------
+                //#region -------------------- ASSIGN NEW CONTENT: default --------------------
+
+                console.log('');
+                console.log('I AM THE DEFAULT: ' + thisWorkItem.format);
 
                 clearContent();
 
                 break;
 
-            //#endregion -------------------- ASSIGN NEW CONTENT: default --------------------
+                //#endregion -------------------- ASSIGN NEW CONTENT: default --------------------
         }
-
-        //#endregion - - - - - - - - - - - - - ASSIGN NEW CONTENT - - - - - - - - - - - - -
     }
 
-    //#endregion -------------------- FUNCTION: handleClick(thisWorkFormat, thisWorkImage) REF: https://www.digitalocean.com/community/tutorials/react-loading-components-dynamically-hooks --------------------
+    //#endregion -------------------- FUNCTION: loadContent(thisEvent, thisWorkItem) --------------------
 
     //#endregion ==================== FUNCTIONS ====================
 
@@ -447,7 +537,22 @@ function WorkList({ currentEmployer }) {
 
     //#region ==================== ASSETS _Ref ====================
 
-    const sectionNav_Ref = useRef(null);
+    // init one ref to store the future isotope object
+    const isotope_Ref = useRef();
+
+    const workNav_Ref = useRef(null);
+
+    const employerNav_Ref = useRef(null);
+    const activeEmplDiv_Ref = useRef(null);
+
+    const typeNav_Ref = useRef(null);
+    const activeTypeDiv_Ref = useRef(null);
+
+    // const toggleNav_Ref = useRef(null);
+    // const toggleBtn_Ref = useRef(null);
+    const navToggleBtn_Ref = useRef(null);
+
+    const galleryContainer_Ref = useRef(null);
 
     const bannerContainer_Ref = useRef(null);
     const banneriFrame_Ref = useRef(null);
@@ -461,10 +566,17 @@ function WorkList({ currentEmployer }) {
     //#endregion ==================== ASSETS _Ref ====================
 
 
-
     //#region ==================== useState DEFs ====================
 
-    const [activeImage, setActiveImage] = useState('');
+    // REF: https://jack72828383883.medium.com/how-to-preload-images-into-cache-in-react-js-ff1642708240
+    const [isLoading, setIsLoading] = useState(true);
+
+    // store the filter keyword in a state
+    const [filterKey, setFilterKey] = useState('*');
+    // const [filterKey, setFilterKey] = useState(null);
+
+    const [workNavToggleText, setWorkNavToggleText] = useState('<< View by employer');
+    const [workNavToggleBtn, setWorkNavToggleBtn] = useState(true);
 
     const [bannerShow, setBannerShow] = useState(null);
     const [banneriFrameOpen, setBanneriFrameOpen] = useState(false);
@@ -476,146 +588,564 @@ function WorkList({ currentEmployer }) {
     const [videoWidth, setVideoWidth] = useState(null);
     const [videoHeight, setVideoHeight] = useState(null);
 
-
-    const [employer, setEmployer] = useState(null);
-
-    const [isBannerArray, setBannerArray] = useState(bannerArray);
-    const [isWebArray, setWebArray] = useState(webArray);
-    const [isPrintArray, setPrintArray] = useState(printArray);
-
-
-    // console.log(isBannerArray);
-    // console.log(isWebArray);
-    // console.log(isPrintArray);
-
-
-    let [windowWidth, setWindowWidth] = useState(getWidth());
-
     //#endregion ==================== useState DEFs ====================
 
 
 
-    //#region ==================== setState ====================
+    //#region ==================== useEffect: PRE-CACHE IMAGES - REF: https://jack72828383883.medium.com/how-to-preload-images-into-cache-in-react-js-ff1642708240 ====================
 
-    if (employer !== currentEmployer) {
+    useEffect(() => {
 
-        setBannerShow(null);
-        setBanneriFrameOpen(false);
+        const imgs = workData.filter(isSrc => isSrc.src !== '#').map((workImage) => (
+            remoteLoc + workImage.album_id + '/sl/' + workImage.src
+        ));
 
-        setWebiFrameOpen(false);
+        // const cacheImages = async (srcArray) => {
+        async function cacheImages(srcArray) {
+        // const cacheImages = async (srcArray) => {
+        // const cacheImages = useCallback(async(srcArray) => {
 
-        setVideoOpen(false);
-        setLoadedVideo(null);
+        // const cacheImages = async (imgs) => {
+        // async function cacheImages(imgs) {
 
-
-        setEmployer(currentEmployer);
-
-        setBannerArray(bannerArray);
-        setWebArray(webArray);
-        setPrintArray(printArray);
-    }
-
-    //#endregion ==================== setState ====================
+            // console.log('');
+            // console.log('==================== cacheImages ====================');
 
 
+            // const promises = await srcArray.map((src, index) => {
+            const promises = await imgs.map((src, index) => {
 
-    //#region ==================== WorkList - useEffect: WINDOW RESIZE ====================
+                // return new Promise(function (resolve, reject) {
+                return new Promise(function (resolve) {
+
+                    const img = new Image();
+
+                    img.src = src;
+                    // img.onload = resolve();
+                    // img.onerror = reject();
+
+
+                    // -------------------- REF: https://stackoverflow.com/questions/37854355/wait-for-image-loading-to-complete-in-javascript --------------------
+
+                    img.addEventListener('load', function () {
+
+                        // console.log('index = ' + index + ': ' + src);
+                        // console.log('cacheImages: IMAGE LOADED!');
+
+                        resolve();
+                    });
+
+                });
+            });
+
+            await Promise.all(promises);
+
+
+            // console.log('cacheImages: DONE LOADING!');
+            // // console.log('promises = ' + promises);
+            // console.log(promises);
+
+
+            setIsLoading(false);
+
+
+            // -------------------- THIS IS ODD: I shouldn't have to use all three of these to avoid Isotope ovelapping imsges, but this seems to work... MORE RESEARCH, PLEASE! --------------------
+            // -------------------- REF01: https://github.com/metafizzy/isotope/issues/1575 --------------------
+            // -------------------- REF02: https://isotope.metafizzy.co/methods.html#arranging-and-layout --------------------
+
+            isotope_Ref.current.arrange();
+            isotope_Ref.current.arrange({ filter: `*` });
+            isotope_Ref.current.layout();
+        };
+
+        cacheImages(imgs);
+
+    // })
+    }, [])
+    // }, [isLoading])
+
+    //#endregion ==================== useEffect: PRE-CACHE IMAGES - REF: https://jack72828383883.medium.com/how-to-preload-images-into-cache-in-react-js-ff1642708240 ====================
+
+
+    //#region ==================== useEffect: activeEmplDiv_Ref / activeTypeDiv_Ref INIT ====================
+    // -------------------- imagesloaded: REF01: https://isotope.metafizzy.co/layout.html#imagesloaded --------------------
+    // -------------------- imagesloaded: REF02: https://imagesloaded.desandro.com/#webpack --------------------
+    // -------------------- imagesloaded: REF03: https://github.com/desandro/imagesloaded --------------------
+
+    useEffect(() => {
+    // useLayoutEffect(() => {
+
+        // console.log('');
+        // console.log('==================== useEffect: setActiveEmplDiv / activeTypeDiv INIT ====================');
+
+
+        let navImagesLoaded = require('imagesloaded');
+
+        navImagesLoaded(workNav_Ref.current, function () {
+
+            let activeDivDims = getDimensions(employerNav_Ref.current.lastChild);
+
+            // console.log('');
+            // console.log('activeDivDims: employerNav_Ref = ' + activeDivDims);
+            // console.log(activeDivDims);
+
+
+            let thisLocX = (employerNav_Ref.current.offsetWidth * 0.5) - (activeDivDims[2] * 0.5);
+            let thisLocY = activeDivDims[1];
+            let thisLocW = activeDivDims[2];
+            let thisLocH = activeDivDims[3];
+
+            // console.log('');
+            // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
+            // console.log('thisLocW = ' + thisLocW + '     thisLocH = ' + thisLocH);
+
+            gsap.set([activeEmplDiv_Ref.current], { x: thisLocX, y: thisLocY, width: thisLocW, height: thisLocH });
+
+
+
+            activeDivDims = getDimensions(typeNav_Ref.current.lastChild);
+
+            // console.log('');
+            // console.log('activeDivDims: typeNav_Ref = ' + activeDivDims);
+            // console.log(activeDivDims);
+
+
+            thisLocX = (typeNav_Ref.current.offsetWidth * 0.5) - (activeDivDims[2] * 0.5);
+            thisLocY = activeDivDims[1];
+            thisLocW = activeDivDims[2];
+            thisLocH = activeDivDims[3];
+
+            // console.log('');
+            // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
+            // console.log('thisLocW = ' + thisLocW + '     thisLocH = ' + thisLocH);
+
+            gsap.set([activeTypeDiv_Ref.current], { x: thisLocX, y: thisLocY, width: thisLocW, height: thisLocH });
+        });
+
+    }, [])
+    // }, [activeEmplDiv])
+
+    //#endregion ==================== useEffect: activeEmplDiv_Ref / activeTypeDiv_Ref INIT ====================
+
+
+    //#region ==================== useEffect: workNavTL ====================
 
     useEffect(() => {
 
         // console.log('');
-        // console.log('------------------------- WorkList - useEffect -------------------------');
-
-        //#region -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
-
-        let timeoutId = null;
-
-        const resizeListener = () => {
-
-            // console.log('');
-            // console.log('------------------------- WorkList - useEffect: WINDOW RESIZE (resizeListener) -------------------------');
-
-            // prevent execution of previous setTimeout
-            clearTimeout(timeoutId);
-
-            // change width from the state object after 150 milliseconds
-            timeoutId = setTimeout(() => setWindowWidth(getWidth()), 150);
-
-            let bannerScale;
-
-            if (activeImage && activeImage.getAttribute('format_src') === 'animate') {
-
-            //#region -------------------- IF 'animate'... --------------------
-
-                bannerScale = activeImage.width / activeImage.getAttribute('mwidth');
-
-                banneriFrame_Ref.current.style.left = activeImage.offsetLeft + 'px';
-                banneriFrame_Ref.current.style.top = activeImage.offsetTop + 'px';
-                banneriFrame_Ref.current.style.width = activeImage.width / bannerScale + 'px';
-                banneriFrame_Ref.current.style.height = activeImage.height / bannerScale + 'px';
-
-                gsap.set([banneriFrame_Ref.current], { scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
-
-            //#endregion -------------------- IF 'animate'... --------------------
-
-            } else if (activeImage && activeImage.getAttribute('format_src') === 'html5') {
-
-            //#region -------------------- ELSE IF 'html5'... --------------------
-
-                bannerScale = activeImage.width / activeImage.getAttribute('mwidth');
-
-                gsap.set([bannerContainer_Ref.current], { x: activeImage.offsetLeft, y: activeImage.offsetTop, scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
-            }
-
-            //#endregion -------------------- ELSE IF 'html5'... --------------------
-
-        };
+        // console.log('==================== useEffect: workNavTL ====================');
+        // console.log('workNavTL = ' + workNavTL);
+        // console.log('isBrowser = ' + isBrowser);
 
 
-        // set resize listener
-        window.addEventListener('resize', resizeListener);
+        let workNavWidth = employerNav_Ref.current.getBoundingClientRect().width;
+        let workNavHeight = employerNav_Ref.current.getBoundingClientRect().height;
 
-        // clean up function
-        return () => {
-            // remove resize listener
-            window.removeEventListener('resize', resizeListener);
+        // console.log('workNavWidth = ' + workNavWidth);
+        // console.log('workNavHeight = ' + workNavHeight);
+
+
+        if (isBrowser === true) {
+            workNavTL
+                .fromTo([employerNav_Ref.current], { y: -workNavHeight, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5 }, 'frame01')
+                .fromTo([typeNav_Ref.current], { y: 0, autoAlpha: 1 }, { y: -workNavHeight, autoAlpha: 0, duration: 0.5 }, 'frame01')
+                // .fromTo([activeEmplDiv_Ref.current], { height: 0 }, { height: workNavHeight, duration: 0.5 }, 'frame01')
+        } else {
+            workNavTL
+                .fromTo([employerNav_Ref.current], { x: -workNavWidth, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.5 }, 'frame01')
+                .fromTo([typeNav_Ref.current], { x: 0, autoAlpha: 1 }, { x: -workNavWidth, autoAlpha: 0, duration: 0.5 }, 'frame01')
+                // .fromTo([activeEmplDiv_Ref.current], { width: 0 }, { width: workNavHeight, duration: 0.5 }, 'frame01')
         }
 
-        //#endregion -------------------- WINDOW RESIZE - REF: https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c --------------------
 
-    }, [windowWidth, activeImage]);
+        if (workNavToggleBtn) {
+            workNavTL.restart();
+        }
 
-    //#endregion ==================== WorkList - useEffect: WINDOW RESIZE ====================
+    // }, [])
+    // }, [workNavHeight])
+    }, [workNavToggleBtn])
+
+    //#endregion ==================== useEffect: workNavTL ====================
+
+
+    //#region ==================== useEffect: workNavToggleBtn ====================
+
+    useEffect(() => {
+
+        // console.log('');
+        // console.log('==================== useEffect: workNavToggleBtn ====================');
+        // console.log('workNavToggleBtn = ' + workNavToggleBtn);
+
+        // // console.log('');
+        // console.log('employerNav_Ref.current.lastChild = ' + employerNav_Ref.current.lastChild);
+        // console.log(employerNav_Ref.current.lastChild);
+
+        // console.log('');
+        // console.log('typeNav_Ref.current.lastChild = ' + typeNav_Ref.current.lastChild);
+        // console.log(typeNav_Ref.current.lastChild);
+
+
+        clearContent();
+
+        if (workNavToggleBtn) {
+            workNavTL.play();
+            setWorkNavToggleText('View by type');
+            typeNav_Ref.current.lastChild.click();
+        } else {
+            workNavTL.reverse();
+            setWorkNavToggleText('View by employer');
+            employerNav_Ref.current.lastChild.click();
+        }
+
+    // }, [])
+    }, [workNavToggleBtn])
+
+    //#endregion ==================== useEffect: workNavToggleBtn ====================
+
+
+    //#region ==================== useEffect: initialize an Isotope object with configs ====================
+
+    useEffect(() => {
+
+        console.log('');
+        console.log('==================== useEffect: initialize an Isotope object with configs ====================');
+
+        // console.log('isLoading = ' + isLoading);
+        // console.log('isLoaded = ' + isLoaded);
+
+
+
+        // let galleryImagesLoaded = require('imagesloaded');
+
+        // galleryImagesLoaded(workNav_Ref.current, function () {
+
+            isotope_Ref.current = new Isotope('.galleryContainer', {
+
+                // itemSelector: '.filter-item',
+                itemSelector: '.workItem',
+                percentPosition: true,
+
+                // layoutMode: 'masonry',
+                // masonry: {
+                //     // columnWidth: 100,
+                //     // gutter: 20,
+                //     isFitWidth: true,
+                // }
+
+                layoutMode: 'packery',
+                // packery: {
+                //     gutter: 20,
+                //     columnWidth: '.workItem',
+                //     rowHeight: 60,
+                //     horizontal: true,
+                // }
+            })
+
+
+            // setIsLoaded(!isLoaded);
+
+            // cleanup
+            return () => isotope_Ref.current.destroy()
+
+        // });
+
+    // }, [])
+    }, [isLoading])
+    // }, [isLoaded])
+
+    //#endregion ==================== useEffect: initialize an Isotope object with configs ====================
+
+
+    //#region ==================== useEffect: handleFilterKeyChange - handling filter key change ====================
+    // -------------------- imagesloaded: REF01: https://isotope.metafizzy.co/layout.html#imagesloaded --------------------
+    // -------------------- imagesloaded: REF02: https://imagesloaded.desandro.com/#webpack --------------------
+    // -------------------- imagesloaded: REF03: https://github.com/desandro/imagesloaded --------------------
+
+    useEffect(() => {
+
+        console.log('');
+        console.log('==================== useEffect: handleFilterKeyChange - handling filter key change ====================');
+        console.log('filterKey = ' + filterKey);
+        // console.log('isLoading = ' + isLoading);
+
+
+        // let imagesLoaded = require('imagesloaded');
+
+        // imagesLoaded(galleryContainer_Ref.current, function () {
+
+            filterKey === '*'
+                ? isotope_Ref.current.arrange({ filter: `*` })
+                : isotope_Ref.current.arrange({ filter: `.${filterKey}` });
+
+            window.scrollTo(0, 0);
+
+            // setActiveEmplDiv(filterKey);
+            // setIsLoaded(true);
+
+        // });
+
+    // }, [filterKey])
+    }, [filterKey, isLoading])
+
+    //#endregion ==================== useEffect: handleFilterKeyChange - handling filter key change ====================
+
+
+    //#region ==================== const handleFilterKeyChange: setFilterKey / activeEmplDiv_Ref / activeTypeDiv ====================
+
+    // const handleFilterKeyChange = key => () => setFilterKey(key);
+
+    const handleFilterKeyChange = key => (keyJSONnode) => {
+
+        // console.log('');
+        // console.log('==================== const handleFilterKeyChange: setFilterKey / activeEmplDiv_Ref / activeTypeDiv ====================');
+
+        //#region -------------------- const handleFilterKeyChange: finding out sh*t --------------------
+
+        // console.log('key = ' + key);
+        // console.log(key);
+
+        // console.log('');
+        // console.log('keyJSONnode = ' + keyJSONnode);
+        // console.log(keyJSONnode);
+
+        // console.log('');
+        // console.log('keyJSONnode.target = ' + keyJSONnode.target);
+        // console.log(keyJSONnode.target);
+
+        // console.log('');
+        // console.log('keyJSONnode.currentTarget = ' + keyJSONnode.currentTarget);
+        // console.log(keyJSONnode.currentTarget);
+
+        // console.log('');
+        // console.log('keyJSONnode.currentTarget.parentNode = ' + keyJSONnode.currentTarget.parentNode);
+        // console.log(keyJSONnode.currentTarget.parentNode);
+        // console.log('keyJSONnode.currentTarget.parentNode.id = ' + keyJSONnode.currentTarget.parentNode.id);
+
+        // console.log('isLoading = ' + isLoading);
+
+        //#endregion -------------------- const handleFilterKeyChange: finding out sh*t --------------------
+
+
+        clearContent();
+
+        setFilterKey(key);
+
+        let thisLocX;
+        let thisLocY;
+        let thisLocW;
+        let thisLocH;
+
+        let activeDivDims = getDimensions(keyJSONnode.currentTarget);
+
+        // console.log('');
+        // console.log('activeDivDims: activeEmplDiv_Ref / activeEmplDiv_Ref = ' + activeDivDims);
+        // console.log(activeDivDims);
+
+
+        if (keyJSONnode.currentTarget.parentNode.id === 'employerNavID') {
+
+            thisLocX = activeDivDims[0] - (employerNav_Ref.current.offsetWidth * 0.5) + (activeDivDims[2] * 0.5);
+            thisLocY = activeDivDims[1];
+            thisLocW = activeDivDims[2];
+            thisLocH = activeDivDims[3];
+
+            // console.log('');
+            // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
+            // console.log('thisLocW = ' + thisLocW + '     thisLocH = ' + thisLocH);
+
+            gsap.to([activeEmplDiv_Ref.current], { x: thisLocX, y: thisLocY, width: thisLocW, height: thisLocH, duration: 0.375 });
+
+        } else {
+
+            thisLocX = activeDivDims[0] - (typeNav_Ref.current.offsetWidth * 0.5) + (activeDivDims[2] * 0.5);
+            thisLocY = activeDivDims[1];
+            thisLocW = activeDivDims[2];
+            thisLocH = activeDivDims[3];
+
+            // console.log('');
+            // console.log('thisLocX = ' + thisLocX + '     thisLocY = ' + thisLocY);
+            // console.log('thisLocW = ' + thisLocW + '     thisLocH = ' + thisLocH);
+
+            gsap.to([activeTypeDiv_Ref.current], { x: thisLocX, y: thisLocY, width: thisLocW, height: thisLocH, duration: 0.375 });
+        }
+    };
+
+    //#endregion ==================== const handleFilterKeyChange: setFilterKey / activeEmplDiv_Ref / activeTypeDiv0 ====================
+
+
+
+    //#region ==================== COMPONENTS ====================
+
+    //#region -------------------- LoaderImage --------------------
+
+    const LoaderImage = () => {
+    // function LoaderImage() {
+
+        // console.log('');
+        // console.log('-------------------- LoaderImage --------------------');
+
+
+        // const override = css`
+        const override = `
+            color: #ff0000;
+            display: block;
+            margin: 0 auto;
+            border-color: #00ff00;
+        `;
+
+
+        return (
+
+            <div className='loadingContainer' id='loadingContainerID'>
+                <div className='loadingImage sweet-loading' id='loadingImageID'>
+                    <FadeLoader css={override} size={500} loading={isLoading} />
+                    <br />
+                    LOADING...
+                </div>
+            </div>
+        )
+    }
+
+    //#endregion -------------------- LoaderImage --------------------
+
+
+    //#region -------------------- renderEmployers: workNav --------------------
+
+    // const renderEmployers = () => {
+    function RenderEmployers() {
+
+        // console.log('');
+        // console.log('-------------------- renderEmployers --------------------');
+
+        return filterEmployer.map((e) =>
+
+            <div className={e.logopath !== '#' ? 'workNavItemLogo' : 'workNavItem'} id={e.album_id + 'NavID'} key={e.album_index} onClick={handleFilterKeyChange(e.album_id)}>
+                {e.logopath !== '#' ? <img className='workNavLogo' src={remoteLoc + e.logopath} alt={e.employer} /> : e.employer}
+            </div>
+        );
+    };
+
+    //#endregion -------------------- renderEmployers: workNav --------------------
+
+
+    //#region -------------------- renderFilters: workNav --------------------
+
+    // const renderFilters = () => {
+    function RenderFilters() {
+
+        // console.log('');
+        // console.log('-------------------- renderFilters --------------------');
+
+        return filterType.map((e) =>
+            <div className='workNavItem' id={e.label + 'NavID'} key={e.key} onClick={handleFilterKeyChange(e.value)}>{e.label}</div>
+        );
+    };
+
+    //#endregion -------------------- renderFilters: workNav --------------------
+
+
+    //#region -------------------- renderElements: workItem[s] --------------------
+
+    const renderElements = () => { 
+    // function RenderElements() { 
+
+        // console.log('');
+        // console.log('-------------------- renderElements --------------------');
+
+        return workData.filter(isSrc => isSrc.src !== '#').map((workItem, index) =>
+
+            <div 
+                // className={`workItem ${workItem.format} ${workItem.album_id} masonryWidth${workItem.masonryWidth} masonryHeight${workItem.masonryHeight}`}
+                className={`workItem ${workItem.format} ${workItem.album_id} masonryWidth${workItem.masonryWidth}`}
+                id={workItem.album_id + 'DivID' + index}
+                key={index}
+                // onClick={(event) => loadContent(event, workItem)}
+                // onClick={workItem.availability ? (event) => loadContent(event, workItem) : undefined}
+                onClick={workItem.link !== '#' ? (event) => loadContent(event, workItem) : undefined}
+                // style={{ cursor: workItem.availability && 'pointer'}}
+                style={{ cursor: workItem.availability && 'pointer' }}
+                // style={{ cursor: workItem.link !== '#' && 'pointer' }}
+            >
+
+                <img
+                    src={remoteLoc + workItem.album_id + '/sl/' + workItem.src}
+                    alt={'workItem: ' + workItem.album_id}
+                />
+
+                <div className='itemInfo'>
+                    {/* <h3 className='masonry-title'>{employerData[workItem.album_index].employer}</h3>
+                    <p className='masonry-description'>{workItem.caption}</p> */}
+                    <h3>{employerData[workItem.album_index].employer}</h3>
+                    <p>{workItem.caption}</p>
+                </div>
+
+            </div>
+        );
+    };
+
+    //#endregion -------------------- renderElements: workItem[s] --------------------
+
+    //#endregion ==================== COMPONENTS ====================
+
+
 
 
     return (
-        <>
 
-        {/* #region ------------------------- sectionNav ------------------------- */}
+        <div className='isotopeContainer'>
 
-            <div className='sectionNav' id='sectionNavID' ref={sectionNav_Ref}>
-                {/* {isBannerArray.length > 0 && <p>Banner Animations</p>}
-                {isWebArray.length > 0 && <p>Web/Video</p>}
-                {isPrintArray.length > 0 && <p>Print</p>} */}
+        {/* #region ------------------------- workNavBar ------------------------- */}
 
-                {isBannerArray.length > 0 && <a href='#bannerPodID'><p>Banner Animations</p></a>}
-                {isWebArray.length > 0 && <a href='#webPodID'><p>Web/Video</p></a>}
-                {isPrintArray.length > 0 && <a href='#printPodID'><p>Print</p></a>}
+            <div className='workNavBar' id='workNavBarID' ref={workNav_Ref}>
+
+                {/* <div className='activeEmplDiv' id='activeEmplDivID' ref={activeEmplDiv_Ref}></div> */}
+
+                <div className='workNav employerNav' id='employerNavID' ref={employerNav_Ref}>
+                    <div className='activeEmplDiv' id='activeEmplDivID' ref={activeEmplDiv_Ref}></div>
+                    <RenderEmployers />
+                </div>
+
+                <div className='workNav typeNav' id='typeNavID' ref={typeNav_Ref}>
+                    <div className='activeTypeDiv' id='activeTypeDivID' ref={activeTypeDiv_Ref}></div>
+                    <RenderFilters />
+                </div>
+
+                {/* <div className='toggleNav' id='toggleNavID' onClick={(e) => { setWorkNavToggleBtn(!workNavToggleBtn); }} ref={toggleNav_Ref}>
+                    <div className='toggleBtn' id='toggleBtnID' onClick={(e) => { setWorkNavToggleBtn(!workNavToggleBtn); }} ref={toggleBtn_Ref}>
+                        {workNavToggleText}
+                        <span className='toggleText'>{workNavToggleText}</span>
+                        <div className='toggleText'>ReactJS v{React.version}</div>
+                    </div>
+                </div> */}
+
+                <div className='navToggleBtn' id='navToggleBtnID' onClick={(e) => { setWorkNavToggleBtn(!workNavToggleBtn); }} ref={navToggleBtn_Ref}>
+                    <span>{workNavToggleText}</span>
+                </div>
+
             </div>
 
-        {/* #endregion ------------------------- sectionNav ------------------------- */}
+        {/* #endregion ------------------------- workNavBar ------------------------- */}
 
 
-        {/* #region ------------------------- BANNERS: REACT ------------------------- */}
+        {/* #region ------------------------- galleryContainer ------------------------- */}
 
-            <div className='bannerContainer' id='bannerContainerID' ref={bannerContainer_Ref}>
-                {bannerShow}
-            </div>
+            <div className='galleryContainer' ref={galleryContainer_Ref}>
 
-        {/* #region ------------------------- BANNERS: REACT ------------------------- */}
+                {/* <LoaderImage /> */}
+                {isLoading ? <LoaderImage /> : renderElements()}
 
 
-        {/* #region ------------------------- BANNERS: IFRAME ------------------------- */}
+            {/* #region ------------------------- BANNERS: REACT ------------------------- */}
+
+                <div className='bannerContainer' id='bannerContainerID' ref={bannerContainer_Ref}>
+                    {bannerShow}
+                </div>
+
+            {/* #region ------------------------- BANNERS: REACT ------------------------- */}
+
+
+            {/* #region ------------------------- BANNERS: IFRAME ------------------------- */}
 
                 <iframe
                     className={banneriFrameOpen === true ? 'banneriFrameOpen' : 'banneriFrameClosed'}
@@ -625,119 +1155,67 @@ function WorkList({ currentEmployer }) {
                     ref={banneriFrame_Ref}
                 />
 
-            {/* </div> */}
-
-        {/* #endregion ------------------------- BANNERS: IFRAME ------------------------- */}
+            {/* #endregion ------------------------- BANNERS: IFRAME ------------------------- */}
 
 
-        {/* #region ------------------------- WEB: IFRAME ------------------------- */}
+            {/* #region ------------------------- WEB: IFRAME ------------------------- */}
 
-            <div className={webiFrameOpen === true ? 'webiFrameContainerOpen' : 'webiFrameContainerClosed'} id='webiFrameContainerID' onClick={() => { clearContent(); }} ref={iframeContainer_Ref}>
+                <div className={webiFrameOpen === true ? 'webiFrameContainer webiFrameContainerOpen' : 'webiFrameContainer webiFrameContainerClosed'} id='webiFrameContainerID' onClick={() => { clearContent(); }} ref={iframeContainer_Ref}>
 
-                <iframe
-                    className='webiFrame' 
-                    id='webiFrameID'
-                    name='webiFrame'
-                    title='webiFrame'
-                    ref={webiFrame_Ref}
-                />
+                    <iframe
+                        className='webiFrame' 
+                        id='webiFrameID'
+                        name='webiFrame'
+                        title='webiFrame'
+                        ref={webiFrame_Ref}
+                    />
+
+                    <button className={webiFrameOpen ? 'closeModalBtn closeModalBtnShow' : 'closeModalBtn closeModalBtnHide'} onClick={() => { clearContent(); }}> Close </button>
+
+                </div>
+
+            {/* #endregion ------------------------- WEB: IFRAME ------------------------- */}
+
+
+            {/* #region ------------------------- VIDEO PLAYER ------------------------- */}
+
+                <div className={videoOpen === true ? 'videoContainer videoContainerOpen' : 'videoContainer videoContainerClosed'} id='videoContainerID' onClick={() => { clearContent(); }} ref={videoContainer_Ref}>
+
+                    <ReactPlayer
+                        className='videoPlayer'
+                        id='videoPlayerID'
+                        // width='80%'
+                        width={videoWidth} 
+                        height={videoHeight} 
+                        url={loadedVideo}
+                        ref={videoPlayer_Ref}
+
+                        config={{
+                            vimeo: {
+                                playerOptions: { 
+                                    autoplay: true, 
+                                    loop: true, 
+                                    // color: '00ffff',
+                                    // width: 1800,
+                                    // maxwidth: 2400,
+                                    // width: window.innerWidth * 0.8,
+                                },
+                            }
+                        }}
+                    />
+
+                    <button className={videoOpen ? 'closeModalBtn closeModalBtnShow' : 'closeModalBtn closeModalBtnHide'} onClick={() => { clearContent(); }}> Close </button>
+
+                </div>
+
+            {/* #region ------------------------- VIDEO PLAYER ------------------------- */}
 
             </div>
 
-        {/* #endregion ------------------------- WEB: IFRAME ------------------------- */}
+        {/* #rendegion ------------------------- galleryContainer ------------------------- */}
 
-
-        {/* #region ------------------------- VIDEO PLAYER ------------------------- */}
-
-            <div className={videoOpen === true ? 'videoContainerOpen' : 'videoContainerClosed'} id='videoContainerID' onClick={() => { clearContent(); }} ref={videoContainer_Ref}>
-
-                <ReactPlayer
-                    className='videoPlayer'
-                    id='videoPlayerID'
-                    // width='80%'
-                    width={videoWidth} 
-                    height={videoHeight} 
-                    url={loadedVideo}
-                    ref={videoPlayer_Ref}
-
-                    config={{
-                        vimeo: {
-                            playerOptions: { 
-                                autoplay: true, 
-                                loop: true, 
-                                // color: '00ffff',
-                                // width: 1800,
-                                // maxwidth: 2400,
-                                // width: window.innerWidth * 0.8,
-                            },
-                        }
-                    }}
-                />
-
-            </div>
-
-        {/* #region ------------------------- VIDEO PLAYER ------------------------- */}
-
-
-        {/* #region ------------------------- CLOSE TOGGLE BUTTON ------------------------- */}
-
-            <div className='toggleBtnDiv' id='toggleBtnDivID'>
-                <br />
-                <button className={webiFrameOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { clearContent(); }}> Close </button>
-                <button className={videoOpen === true ? 'toggleBtnShow' : 'toggleBtnHide'} onClick={() => { clearContent(); }}> Close </button>
-            </div>
-
-        {/* #endregion ------------------------- CLOSE TOGGLE BUTTON ------------------------- */}
-
-
-        {/* #region ------------------------- WORKPODS ------------------------- */}
-
-            {isBannerArray.length > 0 && <WorkPod workFormat='banner' workArray={bannerArray} handleClick={handleClick} />}
-            {isWebArray.length > 0 && <WorkPod workFormat='website' workArray={webArray} handleClick={handleClick} />}
-            {isPrintArray.length > 0 && <WorkPod workFormat='print' workArray={printArray} handleClick={handleClick} />}
-
-        {/* #region ------------------------- WORKPODS ------------------------- */}
-
-        </>
-    )
-}
-
-//#endregion ==================== WorkList() => <WorkList /> ====================
-
-
-
-// export const Work = ({ currentEmployer, locID }) => {
-export const Work = (props) => {
-
-    // console.log('');
-    // console.log('==================== COMPONENT: Work.jsx ====================');
-
-    // // console.log('');
-    // console.log('props = ' + props);
-    // console.log(props);
-
-
-    // localStorage.setItem('navLoc', locID);
-    // localStorage.setItem('emplLoc', 'eaID');
-
-    // work = myData[1].filter(thisEmployer => thisEmployer.album_id === currentEmployer);
-    work = myData[1].filter(thisEmployer => thisEmployer.album_id === props.currentEmployer);
-
-
-    // clearContent();
-
-    // console.log('');
-    // console.log('------------------------- export const Work -------------------------');
-    // console.log('work = ' + work);
-    // console.log(work);
-
-    // console.log('props.currentEmployer = ' + props.currentEmployer);
-
-
-    return (
-        <div className='workContainer' id='workContainerID'>
-            {/* <WorkList currentEmployer={currentEmployer} /> */}
-            <WorkList currentEmployer={props.currentEmployer} />
         </div>
     )
 }
+
+// export default Work;

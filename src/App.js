@@ -10,35 +10,18 @@ import { Wrapper } from './components/Wrapper';
 import { Header } from './components/Header';
 
 import { Home } from './pages/Home';
-// import { Work } from './pages/Work';
+import { Work } from './pages/Work';
 import { About } from './pages/About';
 import { Resume } from './pages/Resume';
 import { Contact } from './pages/Contact';
 
 import { NotFound } from './pages/NotFound';
 
-import { Isotope03 } from './pages/Isotope03';
+// import { SuspenseExample } from './pages/SuspenseExample';
 
 // import { useContext } from 'react';
 
 //#endregion ==================== IMPORTS ====================
-
-
-//#region ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
-
-// const routes = {
-//     '/': () => <Home locID={'homeID'} loadStatus={true} />,
-//     '/shigimcp2021': () => <Home locID={'homeID'} loadStatus={true} />,
-//     '/shigimcp2021/': () => <Home locID={'homeID'} loadStatus={true} />,
-//     '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
-//     '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
-//     // '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} />,
-//     '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} />,
-//     '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
-//     '/shigimcp2021/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
-// }
-
-//#endregion ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
 
 
 function App() {
@@ -71,15 +54,11 @@ function App() {
         '/': () => <Home locID={'homeID'} loadStatus={true} />,
         '/shigimcp2021': () => <Home locID={'homeID'} loadStatus={true} />,
         '/shigimcp2021/': () => <Home locID={'homeID'} loadStatus={true} />,
-        // '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} />,
-        // '/shigimcp2021/work/:currentEmployer': ({ currentEmployer }) => <Work currentEmployer={currentEmployer} locID={'workID'} loadStatus={true} clearContent={clearContent} />,
-        '/shigimcp2021/work': () => <Isotope03 locID={'workID'} loadStatus={true} />,
-        // '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} />,
-        // '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} loadStatus={true} workNavEmplOpen={true} />,
-        // '/shigimcp2021/isotope': () => <Isotope03 locID={'isotopeID'} loadStatus={true} workNavEmplOpen={workNavEmplOpen} setWorkNavEmplOpen={setWorkNavEmplOpen} />,
+        '/shigimcp2021/work': () => <Work locID={'workID'} loadStatus={true} />,
         '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
         '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
         '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
+
         '/shigimcp2021/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
     }
 
@@ -110,64 +89,6 @@ function App() {
         </Wrapper>
     )
 }
-
-
-
-
-//#region ==================== useContext: REF https://programmingwithmosh.com/javascript/learn-the-usecontext-hook-in-react/ ====================
-
-// const numInfo = {
-//     numInfo01: {
-//         num01: 36,
-//         num02: 50
-//     },
-//     numInfo02: {
-//         num01: 37,
-//         num02: 51
-//     }
-// };
-
-// const NumberContext = React.createContext(numInfo);
-
-// function ParentNum(){
-//     return (
-//         <NumberContext.Provider value={numInfo}>
-//             <h2>Use Context Example Component</h2>
-//             <NumDetailComponent />
-//             <MyOtherNumInfoComponent />
-//         </NumberContext.Provider>
-//     );
-// }
-
-// function NumDetailComponent(){
-
-//     const numDetails = useContext(NumberContext);
-
-//     return (
-//         <div className='display' id='display01'>
-//             <h3>numInfo01 Details</h3>
-//             <p>num01: {numDetails.numInfo01.num01}</p>
-//             <p>num02: {numDetails.numInfo01.num02}</p>
-//         </div>
-//     );
-// }
-
-// function MyOtherNumInfoComponent(){
-
-//     const numDetails = useContext(NumberContext);
-
-//     return (
-//         <div className='display' id='display02'>
-//             <h3>numInfo02 Details</h3>
-//             <p>num01: {numDetails.numInfo02.num01}</p>
-//             <p>num02: {numDetails.numInfo02.num02}</p>
-//         </div>
-//     );
-// }
-
-//#endregion ==================== useContext: REF https://programmingwithmosh.com/javascript/learn-the-usecontext-hook-in-react/ ====================
-
-
 
 
 export default App;

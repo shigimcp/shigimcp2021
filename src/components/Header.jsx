@@ -12,9 +12,6 @@ import gsap from 'gsap';
 import Burger from 'react-css-burger';
 
 import '../stylesheets/Header.scss';
-// import scssVars from '../stylesheets/Global.scss';
-// import { scssVars } from '../stylesheets/Global.scss';
-// import '../stylesheets/Global.scss';
 
 
 //#region -------------------- IMPORTS: DATA --------------------
@@ -47,28 +44,6 @@ let navLoc;
 
 //#region ==================== FUNCTIONS ====================
 
-// #region -------------------- FUNCTION (GENERAL) - clearContentFAKE() --------------------
-
-// function clearContentFAKE() {
-
-//     // console.log('');
-//     // console.log('==================== FUNCTION: clearContentFAKE ====================');
-//     // console.log('NOTE/ISSUE: audio from an external html wouldnt\'t stop playing when switching employers. (see Hearst => banners)');
-//     // console.log('THIS IS A DIRTY, DIRTY WORKAROUND!!!');
-//     // console.log('This clears the banneriFrameID source ONLY! NO STATE CONTROL for Work.jsx');
-//     // console.log('(DAMMIT! How do I call THIS function?!?!?! see: Work.jsx => WorkList({ currentEmployer }) => clearContent()');
-
-
-//     let banner = document.getElementById('banneriFrameID');
-
-//     // console.log('banner = ' + banner);
-//     // console.log(banner);
-
-//     banner.src = '';
-// }
-
-// #endregion -------------------- FUNCTION (GLOBAL) - clearContentFAKE() --------------------
-
 //#endregion ==================== FUNCTIONS ====================
 
 
@@ -85,19 +60,8 @@ export const Header = (props) => {
 
     //#region ==================== use DEFs ====================
 
-    // const currentPath = usePath();
-    // let currentPath = usePath();
     let useCurrentPath = usePath();
-
-    // const [workNavShow, setWorkNavShow] = useState(null);
-
-    // const [currentEmployer, setCurrentEmployer] = useState(null);
-    // const [currentEmployer, setCurrentEmployer] = useState('ea');
-    // const [currentEmployer, setCurrentEmployer] = useState('ctm');
-    // const initEmployer = '/shigimcp2021/work/' + currentEmployer;
-
     const [resumeNavShow, setResumeNavShow] = useState(null);
-
     const [mobileNavShow, setMobileNavShow] = useState(false);
 
     //#endregion ==================== use DEFs ====================
@@ -107,10 +71,6 @@ export const Header = (props) => {
 
     let navBar_Ref = useRef(null);
     let activeNavDiv_Ref = useRef(null);
-
-    // let workNav_Ref = useRef(null);
-    // let activeEmplDiv_Ref = useRef(null);
-
     let resumeNav_Ref = useRef(null);
 
     //#endregion ==================== ASSETS _Ref ====================
@@ -179,29 +139,12 @@ export const Header = (props) => {
         }
 
 
-        // console.log('');
-        // console.log('currentPath = ' + currentPath);
-
-
         const pathEnd = currentPath.split('/').pop();
 
         const pathMid = currentPath.substring(
-            // currentPath.lastIndexOf('react/') + 6,
-            // currentPath.lastIndexOf('react/') + 2,
             currentPath.lastIndexOf('react/') + 15,
             currentPath.lastIndexOf('/')
         );
-
-
-        // console.log('');
-        // console.log('pathEnd = ' + pathEnd);
-        // console.log('pathMid = ' + pathMid);
-
-
-        // let thisEmplLocX;
-        // // let thisEmplLocY;
-        // let thisEmplLocW;
-        // // let thisEmplLocH;
 
 
         switch (pathMid) {
@@ -223,11 +166,6 @@ export const Header = (props) => {
 
                 navLoc = pathMid + 'ID';
                 // emplLoc = pathEnd + 'ID';
-
-                // thisEmplLocX = document.getElementById(emplLoc).offsetLeft;
-                // // thisEmplLocY = document.getElementById(emplLoc).offsetTop;
-                // thisEmplLocW = document.getElementById(emplLoc).offsetWidth;
-                // // thisEmplLocH = document.getElementById(emplLoc).offsetHeight;
 
                 break;
 
@@ -255,44 +193,12 @@ export const Header = (props) => {
         // const thisNavLocH = document.getElementById(navLoc).offsetHeight;
 
         gsap.to([document.getElementById('activeNavDivID')], { x: thisNavLocX, width: thisNavLocW, duration: 0.375 });
-        // gsap.to([document.getElementById('activeNavDivID')], { x: thisNavLocX, top: thisNavLocY, width: thisNavLocW, height: thisNavLocH, duration: 0.375 });
-
-        // gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, width: thisEmplLocW, duration: 0.375 });
-        // gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX + 1, width: thisEmplLocW, duration: 0.375 });
-        // gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, width: thisEmplLocW + 2, duration: 0.375 });
-        // gsap.to([document.getElementById('activeEmplDivID')], { x: thisEmplLocX, top: thisEmplLocY, width: thisEmplLocW, height: thisEmplLocH, duration: 0.375 });
 
     // }, []);
     // }, [currentPath]);
     }, [useCurrentPath]);
 
     //#endregion ==================== useEffect: currentPath => set active[X]Divs ====================
-
-
-    //#region ==================== useEffect: [workNavShow, setWorkNavShow] ====================
-
-    // useEffect(() => {
-
-    //     // console.log('');
-    //     // console.log('------------------------- useEffect: [workNavShow, setWorkNavShow] -------------------------');
-
-    //     let workNavHeight = workNav_Ref.getBoundingClientRect().height;
-
-    //     setWorkNavShow(
-    //         workNavTL
-    //             .fromTo([workNav_Ref], { y: 0, autoAlpha: 0 }, { y: workNavHeight, autoAlpha: 1, duration: 0.5 }, 'frame01')
-    //     );
-
-    //     if (navLoc === 'workID') {
-    //         workNavTL.resume();
-    //     }
-
-    //     window.scrollTo(0, 0);
-
-    // }, []);
-    // // }, [workNavShow]);
-
-    //#endregion ==================== useEffect: [workNavShow, setWorkNavShow] ====================
 
 
     //#region ==================== useEffect: [resumeNavShow, setResumeNavShow] ====================
@@ -352,83 +258,6 @@ export const Header = (props) => {
 
     //#endregion ==================== useEffect: [mobileNavShow, setMobileNavShow] ====================
 
-
-
-    //#region ==================== WorkNavItems: REF https://reactjs.org/docs/lists-and-keys.html ====================
-
-    // const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
-
-
-    //#region -------------------- filteredNavArray: REF https://www.samanthaming.com/tidbits/43-3-ways-to-remove-array-duplicates/ --------------------
-    //        -------------------- NOTE: This step is to check * workData * for employers that have content to display --------------------
-
-    // // console.log('');
-    // // console.log('------------------------- filteredNavArray: REF https://www.samanthaming.com/tidbits/43-3-ways-to-remove-array-duplicates/ -------------------------');
-    // // console.log('------------------------- NOTE: This step is to check * workData * for employers that have content to display -------------------------');
-    // // // console.log('');
-
-
-    // let filteredNavArray = workData.filter(thisContent => thisContent.availability === true).map((workImage) => (
-    //     workImage.album_id
-    // ));
-
-    // // filteredNavArray = new Set(filteredNavArray);
-    // // filteredNavArray = Array.from(filteredNavArray);
-    // filteredNavArray = Array.from(new Set(filteredNavArray));
-
-
-    // // console.log('filteredNavArray = ' + filteredNavArray);
-    // // console.log(filteredNavArray);
-
-    //#endregion -------------------- filteredNavArray: REF https://www.samanthaming.com/tidbits/43-3-ways-to-remove-array-duplicates/ --------------------
-
-
-    //#region -------------------- FUNCTION: WorkNavItem(props) --------------------
-
-    // function WorkNavItem(props) {
-
-    //     // console.log('');
-    //     // console.log('------------------------- FUNCTION: WorkNavItem(props) -------------------------');
-    //     // console.log('props = ' + props);
-    //     // console.log(props);
-
-
-    //     return (
-    //         // <A href={props.link} className='employerIcon' id={props.album_id + 'ID'} onClick={() => { workNavShow.pause(); setCurrentEmployer(props.album_id); }}>
-    //         <A href={props.link} className='employerIcon' id={props.album_id + 'ID'} onClick={() => { workNavShow.pause(); setCurrentEmployer(props.album_id); clearContentFAKE(); }}>
-    //             <img src={remoteLoc + props.employerLogo} alt={'employer: ' + props.employer} />
-    //         </A>
-    //     )
-    // }
-
-
-    // // console.log('');
-    // // console.log('------------------------- CONST: WorkNavItems -------------------------');
-
-    // // const WorkNavItems = employerData.map((employer) =>
-    // const WorkNavItems = employerData.filter(contentExists => filteredNavArray.includes(contentExists.album_id)).map((employer) =>
-    //     <WorkNavItem
-    //         key={employer.album_id}
-    //         album_id={employer.album_id}
-    //         employer={employer.employer}
-    //         title={employer.title}
-    //         dateStart={employer.date_start}
-    //         dateEnd={employer.date_end}
-    //         info={employer.info}
-    //         otherInfo={employer.info_other}
-    //         languages={employer.languages}
-    //         employerLogo={employer.logopath}
-    //         link={'/shigimcp2021/work/' + employer.album_id}
-    //     />
-    // );
-
-
-    // // console.log('WorkNavItems = ' + WorkNavItems);
-    // // console.log(WorkNavItems);
-
-    //#endregion -------------------- FUNCTION: WorkNavItem(props) --------------------
-
-    //#endregion ==================== WorkNavItems: REF https://reactjs.org/docs/lists-and-keys.html ====================
 
 
     return (
@@ -550,11 +379,6 @@ export const Header = (props) => {
 
             <div className='navBarContainer'>
 
-                {/* <div className='workNav' id='workNavBarID' ref={e => { workNav_Ref = e }}>
-                    <div className='activeEmplDiv' id='activeEmplDivID' ref={activeEmplDiv_Ref}></div>
-                    {WorkNavItems}
-                </div> */}
-
                 <div className='resumeNav' id='resumeNavBarID' onClick={() => { props.setResumeModalOpen(!props.resumeModalOpen) }} ref={e => { resumeNav_Ref = e }}>
                     <p className='resumeDdl' id='resumeDdlID'>download resume</p>
                 </div>
@@ -563,19 +387,12 @@ export const Header = (props) => {
 
                     <div className='activeNavDiv' id='activeNavDivID' ref={activeNavDiv_Ref}></div>
 
-                    {/* <A className='navItem' href='/shigimcp2021' id='homeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
-                    <A className='navItem' href={initEmployer} id='workID' onClick={() => { setWorkNavShow(workNavShow.play()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work</A>
-                    <A className='navItem' href='/shigimcp2021/isotope' id='isotopeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Isotope</A>
-                    <A className='navItem' href='/shigimcp2021/work' id='workID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work (Isotope)</A>
-                    <A className='navItem' href='/shigimcp2021/about' id='aboutID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>About</A>
-                    <A className='navItem' href='/shigimcp2021/resume' id='resumeID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A>
-                    <A className='navItem' href='/shigimcp2021/contact' id='contactID' onClick={() => { setWorkNavShow(workNavShow.reverse()); setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A> */}
-
                     <A className='navItem' href='/shigimcp2021' id='homeID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
                     <A className='navItem' href='/shigimcp2021/work' id='workID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work</A>
                     <A className='navItem' href='/shigimcp2021/about' id='aboutID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>About</A>
                     <A className='navItem' href='/shigimcp2021/resume' id='resumeID' onClick={() => { setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A>
                     <A className='navItem' href='/shigimcp2021/contact' id='contactID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A>
+                    {/* <A className='navItem' href='/shigimcp2021/suspense' id='suspenseID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Suspense</A> */}
 
                 </div>
 

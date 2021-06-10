@@ -61,10 +61,21 @@ function EmployerItem(props) {
     // console.log('');
     // console.log('props.dateStart = ' + props.dateStart + '     props.dateEnd = ' + props.dateEnd);
 
-    let thisDateStart = props.dateStart.slice(0, -3);
-    let thisDateEnd = props.dateEnd.slice(0, -3);
+    // let thisDateStart = props.dateStart.slice(0, -3);
+    // let thisDateEnd = props.dateEnd.slice(0, -3);
+
+    let thisStartMonth = props.dateStart.slice(0, -6);
+    let thisStartYear = props.dateStart.slice(6);
+
+    let thisEndMonth = props.dateEnd.slice(0, -6);
+    let thisEndYear = props.dateEnd.slice(6);
+
+    let thisDateStart = thisStartMonth + '/' + thisStartYear;
+    let thisDateEnd = thisEndMonth + '/' + thisEndYear;
 
     // console.log('');
+    // console.log('thisStartMonth = ' + thisStartMonth + '     thisStartYear = ' + thisStartYear);
+    // console.log('thisEndMonth = ' + thisEndMonth + '     thisEndYear = ' + thisEndYear);
     // console.log('thisDateStart = ' + thisDateStart + '     thisDateEnd = ' + thisDateEnd);
 
 
