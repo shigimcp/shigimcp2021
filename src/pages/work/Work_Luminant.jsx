@@ -8,7 +8,7 @@ import work from '../../data/json/work_json/work_lum.json';
 
 // const remoteLoc = 'https://www.shigimcp.com/img/';
 // const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020/img/';
-const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
+const remoteLoc = 'https://www.shigimcp.com/assets/img/';
 
 
 function WorkItem(props) {

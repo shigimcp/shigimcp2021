@@ -245,7 +245,7 @@
         /* #region -------------------- .navBar -------------------- */
 
         .navBar {
-            // border: 2px solid #0000ff;
+            // border: 2px solid #ff00ff;
             // border-top: 1px solid #cccccc;
             // border-bottom: 1px solid #cccccc;
 
@@ -261,6 +261,8 @@
 
             // width: 70%;
             // width: 50%;
+            // width: $body-width;
+            // width: $body-width * 0.5;
             width: $body-width;
             max-width: $body-max-width;
             height: $navBar-height;
@@ -271,7 +273,8 @@
 
             display: grid;
             // grid-template-columns: repeat(6, 16.666666666666667%);
-            grid-template-columns: repeat(5, auto);
+            grid-template-columns: repeat(4, auto);
+            // grid-template-columns: repeat(5, auto);
             // grid-template-columns: repeat(6, auto);
             column-gap: 0;
             align-items: center;
@@ -657,7 +660,7 @@
                 /* #region -------------------- .navBar -------------------- */
 
                 .navBar {
-                    // border: 1px solid #00ff00;
+                    // border: 1px solid #00ffff;
 
                     background: none;
                     // @include bgGradient05();
@@ -847,6 +850,12 @@
             .navBarContainer {
                 // border: 2px solid #00ff00;
 
+                .navBar {
+                    // border: 1px solid #ff0000;
+
+                    width: $body-width * 0.625;
+                }
+
                 .resumeNav {
                     // border: 1px solid #00ffff;
 
@@ -869,20 +878,24 @@
     // only screen and (min-device-width: 1366px)
     only screen and (min-device-width: 1440px)
     { 
-        // .header {
-        //     // border: 02px solid #00ff00;
+        .header {
+            // border: 02px solid #00ff00;
 
-        //     .navBarContainer {
-        //         // border: 2px solid #00ff00;
+            .navBarContainer {
+                // border: 2px solid #00ff00;
 
-        //         .resumeNav {
-        //             // border: 1px solid #00ffff;
+                // .navBar {
+                //     border: 1px solid #00ff00;
+                // }
 
-        //             width: 12.5vw;
-        //             // right: 12.5vw;
-        //         }
-        //     }
-        // }
+                .resumeNav {
+                    // border: 1px solid #00ffff;
+
+                    width: 12.5vw;
+                    // right: 12.5vw;
+                }
+            }
+        }
     }
 
 /* #endregion ========================= LAPTOPS: 1440px+ ========================= */
@@ -917,6 +930,12 @@
 
             .navBarContainer {
                 // border: 2px solid #00ff00;
+
+                .navBar {
+                    // border: 1px solid #0000ff;
+
+                    width: $body-width * 0.5;
+                }
 
                 .resumeNav {
                     // border: 1px solid #00ffff;

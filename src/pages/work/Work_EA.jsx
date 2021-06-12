@@ -48,7 +48,7 @@ import work from '../../data/json/work_json/work_ea.json';
 
 //#region ==================== CONSTANTS ====================
 
-const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
+const remoteLoc = 'https://www.shigimcp.com/assets/img/';
 
 const getWidth = () => window.innerWidth
     || document.documentElement.clientWidth

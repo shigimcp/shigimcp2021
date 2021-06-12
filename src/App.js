@@ -13,7 +13,7 @@ import { Home } from './pages/Home';
 import { Work } from './pages/Work';
 import { About } from './pages/About';
 import { Resume } from './pages/Resume';
-import { Contact } from './pages/Contact';
+// import { Contact } from './pages/Contact';
 
 import { NotFound } from './pages/NotFound';
 
@@ -57,7 +57,7 @@ function App() {
         '/shigimcp2021/work': () => <Work locID={'workID'} loadStatus={true} />,
         '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
         '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
-        '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
+        // '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
 
         '/shigimcp2021/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
     }

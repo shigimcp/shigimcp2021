@@ -69,7 +69,8 @@ export default function Hed() {
             <Text hAlign="left" position={[-2.03125, -0.5625, -4]} children="( a work in progress... )" size={2} /> */}
 
             <Text hAlign="left" position={[1.125, 0.75, -4]} children="Shigeru McPherson" size={5} />
-            <Text hAlign="left" position={[0.5, 0.03125, -4]} children="digital designer • art director" size={3} />
+            {/* <Text hAlign="left" position={[0.5, 0.03125, -4]} children="digital designer &middot; art director" size={3} /> */}
+            <Text hAlign="left" position={[0.3875, 0.03125, -4]} children="digital designer &middot; art director" size={3} />
             <Text hAlign="left" position={[-2.05, -0.5625, -4]} children="( a work in progress... )" size={2} />
         </group>
     );

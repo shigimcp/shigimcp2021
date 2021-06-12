@@ -267,7 +267,8 @@ export const Header = (props) => {
             <div className='hed' id='hedID'>
 
                 <div className='hed01' id='hed01'>Shigeru McPherson</div>
-                <div className='hed02' id='hed02'>digital designer <span className='bullet'>&#8226;</span> art director</div>
+                {/* <div className='hed02' id='hed02'>digital designer <span className='bullet'>&#8226;</span> art director</div> */}
+                <div className='hed02' id='hed02'>digital designer &middot; art director</div>
                 {/* <div className='hed02' id='hed02'>digital designer <span className='bullet'>&#8226;</span> art director <span className='bullet'>&#8226;</span> front-end developer</div> */}
 
                 <div className='contact'>
@@ -391,7 +392,7 @@ export const Header = (props) => {
                     <A className='navItem' href='/shigimcp2021/work' id='workID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work</A>
                     <A className='navItem' href='/shigimcp2021/about' id='aboutID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>About</A>
                     <A className='navItem' href='/shigimcp2021/resume' id='resumeID' onClick={() => { setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A>
-                    <A className='navItem' href='/shigimcp2021/contact' id='contactID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A>
+                    {/* <A className='navItem' href='/shigimcp2021/contact' id='contactID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A> */}
                     {/* <A className='navItem' href='/shigimcp2021/suspense' id='suspenseID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Suspense</A> */}
 
                 </div>

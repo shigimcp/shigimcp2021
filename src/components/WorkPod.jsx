@@ -16,7 +16,7 @@ import '../stylesheets/Work.scss';
 
 //#region ==================== CONSTANTS ====================
 
-const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
+const remoteLoc = 'https://www.shigimcp.com/assets/img/';
 
 //#endregion ==================== CONSTANTS ====================
 

@@ -48,7 +48,7 @@ console.log('=========================  Work_000.jsx  ========================='
 
 //#region ==================== CONSTANTS ====================
 
-const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
+const remoteLoc = 'https://www.shigimcp.com/assets/img/';
 
 const getWidth = () => window.innerWidth
     || document.documentElement.clientWidth

@@ -305,7 +305,8 @@
         .bannerContainer {
             // border: 2px solid #ff0000;
 
-            background: rgba($color: #ff0000, $alpha: 0.5);
+            background: none;
+            // background: rgba($color: #ff0000, $alpha: 0.5);
             // @include bgGradient04();
 
             // width: 20%;

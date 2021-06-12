@@ -44,7 +44,7 @@ import JBJA_10263 from '../images/ea/banners/CR_10263_J_by_JENNIFER_ANISTON_Kohl
 
 //#region ==================== CONSTANTS n VARS ====================
 
-const remoteLoc = 'https://www.shigimcp.com/Xstage/shigimcp_2020_react/img/';
+const remoteLoc = 'https://www.shigimcp.com/assets/img/';
 const videoLoc = 'https://vimeo.com/';
 
 
@@ -125,7 +125,7 @@ const filterType = [
     { key: '0000', id: 'websiteCheck', value: 'website', label: 'Website' },
     { key: '0001', id: 'mobileCheck', value: 'mobile', label: 'Mobile' },
     { key: '0002', id: 'videoCheck', value: 'video', label: 'Video' },
-    { key: '0003', id: 'bannerCheck', value: 'banner', label: 'Banner' },
+    { key: '0003', id: 'bannerCheck', value: 'banner', label: 'Banners' },
     { key: '0004', id: 'printCheck', value: 'print', label: 'Print' },
     { key: '0005', id: 'allCheck', value: '*', label: 'All' },
 ];
@@ -230,6 +230,9 @@ export const Work = (props) => {
 
         setBanneriFrameOpen(false);
         banneriFrame_Ref.current.src = '';
+        bannerContainer_Ref.current.style.left = 0 + 'px';
+        bannerContainer_Ref.current.style.top = 0 + 'px';
+        gsap.set([bannerContainer_Ref.current], { scale: 0, transformOrigin: '0 0', immediateRender: true });
 
         setWebiFrameOpen(false);
         webiFrame_Ref.current.src = '';
@@ -288,7 +291,8 @@ export const Work = (props) => {
 
 
                 let bannerScale = thisEvent.target.offsetWidth / thisWorkItem.mwidth;
-                console.log('bannerScale = ' + bannerScale);
+
+                // console.log('bannerScale = ' + bannerScale);
 
                 clearContent();
 
@@ -297,7 +301,7 @@ export const Work = (props) => {
 
                     //#region - - - - - - - - - - - IF 'animate'... - - - - - - - - - - -
 
-                    console.log('I am an ANIMATE or STANDARD banner: ' + thisWorkItem.format_src);
+                    // console.log('I am an ANIMATE or STANDARD banner: ' + thisWorkItem.format_src);
 
                     iframeSRC = remoteLoc + thisWorkItem.album_id + '/banners/' + thisWorkItem.link;
 
@@ -317,7 +321,7 @@ export const Work = (props) => {
 
                     //#region - - - - - - - - - - - ELSE IF 'html5'... - - - - - - - - - - -
 
-                    console.log('I am an HTML5 banner: ' + thisWorkItem.format_src);
+                    // console.log('I am an HTML5 banner: ' + thisWorkItem.format_src);
 
                     newContent = React.createElement(bannerContent[thisWorkItem.link2]);
 
@@ -518,8 +522,8 @@ export const Work = (props) => {
 
                 //#region -------------------- ASSIGN NEW CONTENT: default --------------------
 
-                console.log('');
-                console.log('I AM THE DEFAULT: ' + thisWorkItem.format);
+                // console.log('');
+                // console.log('I AM THE DEFAULT: ' + thisWorkItem.format);
 
                 clearContent();
 
@@ -808,8 +812,8 @@ export const Work = (props) => {
 
     useEffect(() => {
 
-        console.log('');
-        console.log('==================== useEffect: initialize an Isotope object with configs ====================');
+        // console.log('');
+        // console.log('==================== useEffect: initialize an Isotope object with configs ====================');
 
         // console.log('isLoading = ' + isLoading);
         // console.log('isLoaded = ' + isLoaded);
@@ -864,9 +868,9 @@ export const Work = (props) => {
 
     useEffect(() => {
 
-        console.log('');
-        console.log('==================== useEffect: handleFilterKeyChange - handling filter key change ====================');
-        console.log('filterKey = ' + filterKey);
+        // console.log('');
+        // console.log('==================== useEffect: handleFilterKeyChange - handling filter key change ====================');
+        // console.log('filterKey = ' + filterKey);
         // console.log('isLoading = ' + isLoading);
 
 
