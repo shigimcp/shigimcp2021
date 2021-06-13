@@ -1,10 +1,16 @@
 // #region ==================== IMPORTS ====================
 
 import React from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { useRef, useMemo } from 'react';
 
 import { Box3, Vector3 } from "three";
+
+// import { isBrowser } from "react-device-detect";
+import { isMobile } from "react-device-detect";
+// import { isBrowser, isMobile } from "react-device-detect";
+// import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
 import { useLoader } from 'react-three-fiber';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
@@ -32,9 +38,9 @@ const getHeight = () => window.innerHeight
 
 // #region ==================== FUNCTIONS ====================
 
-// #region -------------------- FUNCTION: checkWindow(thisObject) --------------------
+// #region -------------------- FUNCTION: scaleObject(thisObject) --------------------
 
-function checkWindow(thisObject) {
+function scaleObject(thisObject) {
 
     let thisScale;
 
@@ -44,7 +50,7 @@ function checkWindow(thisObject) {
 
     } else {
 
-        thisScale = 0.45;
+        thisScale = 0.5;
     }
 
     thisObject.scale.x = thisScale;
@@ -52,7 +58,7 @@ function checkWindow(thisObject) {
     thisObject.scale.z = thisScale;
 }
 
-// #endregion -------------------- FUNCTION: checkWindow(thisObject) --------------------
+// #endregion -------------------- FUNCTION: scaleObject(thisObject) --------------------
 
 // #endregion ==================== FUNCTIONS ====================
 
@@ -99,7 +105,23 @@ function LogoMesh(props) {
 
 function LogoShape(props) {
 
-    // #region -------------------- LOGOSHAPE shapes --------------------
+    //#region ==================== ASSETS _Ref ====================
+
+    const logoShape_Ref = useRef();
+
+    //#endregion ==================== ASSETS _Ref ====================
+
+
+    //#region ==================== useState DEFs ====================
+
+    // const [isMobilePortrait, setIsMobilePortrait] = useState(true);
+    const [isMobileLandscape, setIsMobileLandscape] = useState(true);
+
+    //#endregion ==================== useState DEFs ====================
+
+
+
+    // #region ==================== LOGOSHAPE: shapes ====================
 
     const { paths } = useLoader(SVGLoader, props.url)
 
@@ -111,38 +133,96 @@ function LogoShape(props) {
         ), [paths, props]
     );
 
-    // #endregion -------------------- LOGOSHAPE shapes --------------------
+    // #endregion ==================== LOGOSHAPE: shapes ====================
 
 
-    const logoShape_Ref = useRef();
 
-    // #region -------------------- LOGOSHAPE center - REF: https://muffinman.io/three-js-extrude-svg-path/ --------------------
+    //#region ==================== useEffect: isMobilePortrait ====================
+
+    // useEffect(() => {
+
+    //     console.log('');
+    //     console.log('==================== useEffect: isMobilePortrait ====================');
+    //     console.log('isMobile = ' + isMobile);
+    //     console.log('getWidth() = ' + getWidth() + '     getHeight() = ' + getHeight());
+
+    //     if (isMobile && getHeight() > getWidth()) {
+    //         setIsMobilePortrait(true);
+    //     } else {
+    //         setIsMobilePortrait(false);
+    //     }
+
+    //     // console.log('isMobilePortrait = ' + isMobilePortrait);
+
+    // }, [])
+    // // }, [isMobilePortrait])
+
+    //#endregion ==================== useEffect: isMobilePortrait ====================
+
+
+
+    //#region ==================== useEffect: isMobileLandscape ====================
 
     useEffect(() => {
 
-        // #region - - - - - - - - - - - LOGOSHAPE useEffect: center - REF: https://muffinman.io/three-js-extrude-svg-path/ - - - - - - - - - - -
+        console.log('');
+        console.log('==================== useEffect: isMobileLandscape ====================');
+        console.log('isMobile = ' + isMobile);
+        console.log('getWidth() = ' + getWidth() + '     getHeight() = ' + getHeight());
 
-        let bBox = new Box3().setFromObject(logoShape_Ref.current);
-        let bSize = new Vector3();
+        if (isMobile && getHeight() > getWidth()) {
+            setIsMobileLandscape(true);
+        } else {
+            setIsMobileLandscape(false);
+        }
 
-        bBox.getSize(bSize);
+        // console.log('isMobileLandscape = ' + isMobileLandscape);
 
-        let xOffset = bSize.x * -0.5;
-        let yOffset = bSize.y * 0.5;
-        // let yOffset = bSize.y * 0.46875;
+    }, [])
+    // }, [isMobileLandscape])
+
+    //#endregion ==================== useEffect: isMobileLandscape ====================
+
+
+    // #region ==================== useEffect: LOGOSHAPE position - REF: https://muffinman.io/three-js-extrude-svg-path/ ====================
+
+    useEffect(() => {
+
+        // scaleObject(logoShape_Ref.current);
+
+        // if (isMobile && getHeight() > getWidth()) {
+        //     setIsMobilePortrait(true);
+        // } else {
+        //     setIsMobilePortrait(false);
+        // }
+
+        // console.log('isMobilePortrait = ' + isMobilePortrait);
+
+        // #region - - - - - - - - - - - boundingBox / boxSize - REF: https://muffinman.io/three-js-extrude-svg-path/ - - - - - - - - - - -
+
+        let boundingBox = new Box3().setFromObject(logoShape_Ref.current);
+        let boxSize = new Vector3();
+
+        boundingBox.getSize(boxSize);
+
+        let xOffset = boxSize.x * -0.5;
+        // let yOffset = boxSize.y * 0.46875;
+        // let yOffset = isMobile ? boxSize.y * 0.91275 : boxSize.y * 0.5;
+        // let yOffset = isMobilePortrait ? boxSize.y * 0.91275 : boxSize.y * 0.5;
+        let yOffset = isMobileLandscape ? boxSize.y * 0.91275 : boxSize.y * 0.5;
 
         logoShape_Ref.current.children.forEach(item => {
             item.position.x = xOffset;
             item.position.y = yOffset;
         })
 
-        // #endregion - - - - - - - - - - - LOGOSHAPE useEffect: center - REF: https://muffinman.io/three-js-extrude-svg-path/ - - - - - - - - - - -
+        // #endregion - - - - - - - - - - - boundingBox / boxSize - REF: https://muffinman.io/three-js-extrude-svg-path/ - - - - - - - - - - -
 
 
-        checkWindow(logoShape_Ref.current);
+        scaleObject(logoShape_Ref.current);
 
 
-        // #region - - - - - - - - - - - LOGOSHAPE useEffect: RESPONSIVE: WINDOW RESIZE - resizeListener - - - - - - - - - - -
+        // #region - - - - - - - - - - - RESPONSIVE: WINDOW RESIZE - resizeListener - - - - - - - - - - -
 
         let timeoutId = null;
 
@@ -151,7 +231,7 @@ function LogoShape(props) {
             // prevent execution of previous setTimeout
             clearTimeout(timeoutId);
 
-            timeoutId = setTimeout(() => checkWindow(logoShape_Ref.current))
+            timeoutId = setTimeout(() => scaleObject(logoShape_Ref.current))
         }
 
         window.addEventListener('resize', resizeListener);
@@ -160,21 +240,23 @@ function LogoShape(props) {
             window.removeEventListener('resize', resizeListener);
         }
 
-        // #endregion - - - - - - - - - - - LOGOSHAPE useEffect: RESPONSIVE: WINDOW RESIZE - resizeListener - - - - - - - - - - -
+        // #endregion - - - - - - - - - - - RESPONSIVE: WINDOW RESIZE - resizeListener - - - - - - - - - - -
 
 
-    }, []);
+    // }, [])
+    // }, [isMobilePortrait])
+    }, [isMobileLandscape])
 
-    // #endregion -------------------- LOGOSHAPE center - REF: https://muffinman.io/three-js-extrude-svg-path/ --------------------
+    // #endregion ==================== useEffect: LOGOSHAPE position - REF: https://muffinman.io/three-js-extrude-svg-path/ ====================
 
 
-    // #region -------------------- LOGOSHAPE spin --------------------
+    // #region ==================== useFrame: LOGOSHAPE spin ====================
 
     useFrame(() => {
         logoShape_Ref.current.rotation.y += 0.025;
     });
 
-    // #endregion -------------------- LOGOSHAPE spin --------------------
+    // #endregion ==================== useFrame: LOGOSHAPE spin ====================
 
 
     return (
@@ -192,7 +274,6 @@ function LogoShape(props) {
 export default function Logo() {
 
     const logoSVG = remoteGitImageLoc + 'logo/shigeru_logo_extrude_stroke.svg';
-
 
     return (
         <LogoShape id="logoSVGid" url={logoSVG} fillOpacity="0.0625" extrudeDir="positive" />
