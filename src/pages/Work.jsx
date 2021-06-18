@@ -4,6 +4,8 @@ import React from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+// import { Suspense } from 'react';
+// import { lazy } from 'react';
 
 import Isotope from 'isotope-layout';
 import Packery from 'isotope-packery';
@@ -650,7 +652,7 @@ export const Work = (props) => {
             // console.log(promises);
 
 
-            setIsLoading(false);
+            // setIsLoading(false);
 
 
             // -------------------- THIS IS ODD: I shouldn't have to use all three of these to avoid Isotope ovelapping imsges, but this seems to work... MORE RESEARCH, PLEASE! --------------------
@@ -660,6 +662,9 @@ export const Work = (props) => {
             isotope_Ref.current.arrange();
             isotope_Ref.current.arrange({ filter: `*` });
             isotope_Ref.current.layout();
+
+
+            setIsLoading(false);
         };
 
         cacheImages(imgs);
@@ -889,8 +894,8 @@ export const Work = (props) => {
 
         // });
 
-    // }, [filterKey])
-    }, [filterKey, isLoading])
+    }, [filterKey])
+    // }, [filterKey, isLoading])
 
     //#endregion ==================== useEffect: handleFilterKeyChange - handling filter key change ====================
 
@@ -1136,8 +1141,14 @@ export const Work = (props) => {
 
             <div className='galleryContainer' ref={galleryContainer_Ref}>
 
+                {/* {renderElements()} */}
                 {/* <LoaderImage /> */}
+
                 {isLoading ? <LoaderImage /> : renderElements()}
+
+                {/* <Suspense fallback={<LoaderImage />}>
+                    {renderElements()}
+                </Suspense> */}
 
 
             {/* #region ------------------------- BANNERS: REACT ------------------------- */}

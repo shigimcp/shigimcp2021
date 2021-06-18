@@ -40,7 +40,8 @@ export const Home = (props) => {
 
     return (
 
-        <Canvas title='Home' shadowMap>
+        // <Canvas title='Home' shadowMap>
+        <Canvas title='Home' shadowMap pixelRatio={window.devicePixelRatio}>
             <Suspense fallback={null}>
                 <Lights />
                 <Camera />

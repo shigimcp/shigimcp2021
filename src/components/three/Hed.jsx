@@ -33,8 +33,22 @@ const getHeight = () => window.innerHeight
 
 // #region ==================== FUNCTION: Text - REF: https://spectrum.chat/react-three-fiber/general/best-way-to-render-text~8597ed37-45e2-4d9a-998d-7351ad5b08ef ====================
 
-function Text({ children, hAlign = 'center', vAlign = 'center', size = 1, color = '#0000ff', ...props }) {
+const textAlignX = 'left';
+// const textAlignX = 'center';
+// const textAlignX = 'right';
+
+// const textAlignX = isMobilePortrait ? 'center' : 'left';
+
+
+const textAlignY = 'top';
+// const textAlignY = 'center';
+// const textAlignY = 'bottom';
+
+
+// function Text({ children, hAlign = 'left', vAlign = 'top', size = 1, color = '#0000ff', ...props }) {
+// function Text({ children, hAlign = 'center', vAlign = 'center', size = 1, color = '#0000ff', ...props }) {
 // function Text({ children, hAlign = 'right', vAlign = 'center', size = 1, color = '#0000ff', ...props }) {
+function Text({ children, hAlign = textAlignX, vAlign = textAlignY, size = 1, color = '#0000ff', ...props }) {
 
     // console.log('');
     // console.log('==================== FUNCTION: Text ====================');
@@ -71,10 +85,14 @@ function Text({ children, hAlign = 'center', vAlign = 'center', size = 1, color 
 
         self => {
             const size = new THREE.Vector3()
+
             self.geometry.computeBoundingBox()
             self.geometry.boundingBox.getSize(size)
-            self.position.x = hAlign === 'center' ? -size.x / 2 : hAlign === 'right' ? 0 : -size.x
-            self.position.y = vAlign === 'center' ? -size.y / 2 : vAlign === 'top' ? 0 : -size.y
+
+            // self.position.x = hAlign === 'center' ? -size.x / 2 : hAlign === 'right' ? 0 : -size.x
+            // self.position.y = vAlign === 'center' ? -size.y / 2 : vAlign === 'top' ? 0 : -size.y
+            self.position.x = hAlign === 'left' ? 0 : hAlign === 'center' ? -size.x / 2 : hAlign === 'right' ? -size.x : -size.x
+            self.position.y = vAlign === 'top' ? 0 : vAlign === 'center' ? -size.y / 2 : hAlign === 'bottom' ? -size.y : -size.y
         },
 
         [children]
@@ -214,6 +232,10 @@ export default function Hed() {
 
         <group ref={hedRef}>
 
+        {/* #region ==================== Hed OLD ==================== */}
+
+            {/* <HedText /> */}
+
             {/* <Text hAlign="left" position={[0.7625, 1.5, -4]} children="Shigeru McPherson" size={5} />
             <Text hAlign="left" position={[0, 0.8125, -4]} children="digital designer • art director" size={3} />
             <Text hAlign="left" position={[-3.0625, 0.25, -4]} children="(work-in-progress)" size={2} /> */}
@@ -240,11 +262,31 @@ export default function Hed() {
             <Text hAlign="left" position={isMobile ? [getWidth() * 0.18725 / 100, -1.875, -5] : [-2.05, -0.5625, -4]} children="( a work in progress... )" size={isMobile ? 1.2 : 2} />
             <Text hAlign="left" position={isMobile ? [getWidth() * 0.25 / 100, -1.75, -5] : [-1.40375, -0.5625, -4]} children="(dizzy... so very, very dizzy...)" size={isMobile ? 1.2 : 2} /> */}
 
-            <Text hAlign="left" position={isMobilePortrait ? [getWidth() * 0.4125 / 100, -1, -5] : [1.125, 0.75, -4]} children="Shigeru McPherson" size={isMobilePortrait ? 3 : 5} />
+            {/* <Text hAlign="left" position={isMobilePortrait ? [getWidth() * 0.4125 / 100, -1, -5] : [1.125, 0.75, -4]} children="Shigeru McPherson" size={isMobilePortrait ? 3 : 5} />
             <Text hAlign="left" position={isMobilePortrait ? [getWidth() * 0.375 / 100, -1.4375, -5] : [0.4125, 0.03125, -4]} children="digital designer &middot; art director" size={isMobilePortrait ? 1.8 : 3} />
-            <Text hAlign="left" position={isMobilePortrait ? [getWidth() * 0.25 / 100, -1.75, -5] : [-1.40375, -0.5625, -4]} children="(dizzy... so very, very dizzy...)" size={isMobilePortrait ? 1.2 : 2} />
+            <Text hAlign="left" position={isMobilePortrait ? [getWidth() * 0.25 / 100, -1.75, -5] : [-1.40375, -0.5625, -4]} children="(dizzy... so very, very dizzy...)" size={isMobilePortrait ? 1.2 : 2} /> */}
 
-            {/* <HedText /> */}
+            {/* <Text hAlign={textAlignX} position={isMobilePortrait ? [getWidth() * 0.4125 / 100, -1, -5] : [-5, 0, -4]} children="Shigeru McPherson" size={isMobilePortrait ? 3 : 5} />
+            <Text hAlign={textAlignX} position={isMobilePortrait ? [getWidth() * 0.375 / 100, -1.4375, -5] : [-5, -0.6, -4]} children="digital designer &middot; art director" size={isMobilePortrait ? 1.8 : 3} />
+            <Text hAlign={textAlignX} position={isMobilePortrait ? [getWidth() * 0.25 / 100, -1.75, -5] : [-5, -1.125, -4]} children="(and not afraid of writing code...)" size={isMobilePortrait ? 1.2 : 2} /> */}
+
+        {/* #endregion ==================== Hed OLD ==================== */}
+
+            {/* <Text hAlign={textAlignX} position={isMobilePortrait ? [0, -1, -5] : [-5, 0, -4]} size={isMobilePortrait ? 3 : 5} children="Shigeru McPherson" />
+            <Text hAlign={textAlignX} position={isMobilePortrait ? [0, -1.375, -5] : [-5, -0.6, -4]} size={isMobilePortrait ? 1.8 : 3} children="digital designer &middot; art director" />
+            <Text hAlign={textAlignX} position={isMobilePortrait ? [0, -1.6875, -5] : [-5, -1.125, -4]} size={isMobilePortrait ? 1.25 : 2} children="(and not afraid of writing code...)" /> */}
+
+            {/* <Text hAlign={textAlignX} vAlign={textAlignY} position={isMobilePortrait ? [getWidth() * 0.4125 / 100, -1, -5] : [-5, 0, -4]} size={isMobilePortrait ? 3 : 5} children="Shigeru McPherson" />
+            <Text hAlign={textAlignX} vAlign={textAlignY} position={isMobilePortrait ? [getWidth() * 0.375 / 100, -1.4375, -5] : [-5, -0.6, -4]} size={isMobilePortrait ? 1.8 : 3} children="digital designer &middot; art director" />
+            <Text hAlign={textAlignX} vAlign={textAlignY} position={isMobilePortrait ? [getWidth() * 0.25 / 100, -1.75, -5] : [-5, -1.125, -4]} size={isMobilePortrait ? 1.2 : 2} children="(and not afraid of writing code...)" /> */}
+
+            <Text hAlign={isMobilePortrait ? 'center' : textAlignX} position={isMobilePortrait ? [0, -1, -5] : [-5, 0, -4]} size={isMobilePortrait ? 3 : 5} children="Shigeru McPherson" />
+            <Text hAlign={isMobilePortrait ? 'center' : textAlignX} position={isMobilePortrait ? [0, -1.375, -5] : [-5, -0.6, -4]} size={isMobilePortrait ? 1.8 : 3} children="digital designer &middot; art director" />
+            <Text hAlign={isMobilePortrait ? 'center' : textAlignX} position={isMobilePortrait ? [0, -1.7125, -5] : [-5, -1.125, -4]} size={isMobilePortrait ? 1.25 : 2} children="(and not afraid of writing code...)" />
+
+            {/* <Text hAlign={isMobilePortrait ? 'center' : textAlignX} vAlign={textAlignY} position={isMobilePortrait ? [0, -1, -5] : [-5, 0, -4]} size={isMobilePortrait ? 3 : 5} children="Shigeru McPherson" />
+            <Text hAlign={isMobilePortrait ? 'center' : textAlignX} vAlign={textAlignY} position={isMobilePortrait ? [0, -1.375, -5] : [-5, -0.6, -4]} size={isMobilePortrait ? 1.8 : 3} children="digital designer &middot; art director" />
+            <Text hAlign={isMobilePortrait ? 'center' : textAlignX} vAlign={textAlignY} position={isMobilePortrait ? [0, -1.6875, -5] : [-5, -1.125, -4]} size={isMobilePortrait ? 1.25 : 2} children="(and not afraid of writing code...)" /> */}
 
         </group>
 
