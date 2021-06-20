@@ -2,9 +2,9 @@
     "name": "shigimcp2021",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://www.shigimcp.com",
+    "__homepage": "https://www.shigimcp.com",
     "_homepage": "https://www.shigimcp.com/shigimcp2021",
-    "__homepage": "https://shigimcp.github.io/shigimcp2021",
+    "homepage": "https://shigimcp.github.io/shigimcp2021",
     "___homepage": ".",
     "dependencies": {
         "@emotion/react": "^11.4.0",

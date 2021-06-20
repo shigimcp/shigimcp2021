@@ -165,10 +165,10 @@ function LogoShape(props) {
 
     useEffect(() => {
 
-        console.log('');
-        console.log('==================== useEffect: isMobileLandscape ====================');
-        console.log('isMobile = ' + isMobile);
-        console.log('getWidth() = ' + getWidth() + '     getHeight() = ' + getHeight());
+        // console.log('');
+        // console.log('==================== useEffect: isMobileLandscape ====================');
+        // console.log('isMobile = ' + isMobile);
+        // console.log('getWidth() = ' + getWidth() + '     getHeight() = ' + getHeight());
 
         if (isMobile && getHeight() > getWidth()) {
             setIsMobileLandscape(true);
