@@ -51,15 +51,27 @@ function App() {
     //#region ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================
 
     const routes = {
-        '/': () => <Home locID={'homeID'} loadStatus={true} />,
-        '/shigimcp2021': () => <Home locID={'homeID'} loadStatus={true} />,
-        '/shigimcp2021/': () => <Home locID={'homeID'} loadStatus={true} />,
-        '/shigimcp2021/work': () => <Work locID={'workID'} loadStatus={true} />,
-        '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
-        '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
-        // '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
 
-        '/shigimcp2021/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
+        '': () => <Home locID={'homeID'} loadStatus={true} />,
+        '/': () => <Home locID={'homeID'} loadStatus={true} />,
+        // '/shigimcp.com': () => <Home locID={'homeID'} loadStatus={true} />,
+        // '/shigimcp.com/': () => <Home locID={'homeID'} loadStatus={true} />,
+        '/work': () => <Work locID={'workID'} loadStatus={true} />,
+        '/about': () => <About locID={'aboutID'} loadStatus={true} />,
+        '/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
+        // '/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
+
+        '/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
+
+        // '/': () => <Home locID={'homeID'} loadStatus={true} />,
+        // '/shigimcp2021': () => <Home locID={'homeID'} loadStatus={true} />,
+        // '/shigimcp2021/': () => <Home locID={'homeID'} loadStatus={true} />,
+        // '/shigimcp2021/work': () => <Work locID={'workID'} loadStatus={true} />,
+        // '/shigimcp2021/about': () => <About locID={'aboutID'} loadStatus={true} />,
+        // '/shigimcp2021/resume': () => <Resume locID={'resumeID'} loadStatus={true} resumeModalOpen={resumeModalOpen} setResumeModalOpen={setResumeModalOpen} />,
+        // // '/shigimcp2021/contact': () => <Contact locID={'contactID'} loadStatus={true} />,
+
+        // '/shigimcp2021/notfound': () => <NotFound locID={'notFoundID'} loadStatus={true} />,
     }
 
     //#endregion ==================== ROUTES: REF https://blog.logrocket.com/how-react-hooks-can-replace-react-router/ ====================

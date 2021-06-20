@@ -174,6 +174,8 @@ const bannerContent = {
 export const Work = (props) => {
 // export function Work(props) {
 
+    //#region ==================== FINDIN' OUT SH*T ====================
+
     // console.log('');
     // console.log('==================== Work ====================');
     // console.log('props = ' + props);
@@ -185,6 +187,8 @@ export const Work = (props) => {
 
     // console.log('isMobile = ' + isMobile);
     // // console.log(isMobile);
+
+    //#endregion ==================== FINDIN' OUT SH*T ====================
 
 
 
@@ -208,6 +212,112 @@ export const Work = (props) => {
     }
 
     //#endregion -------------------- FUNCTION: getDimensions(thisContainer) --------------------
+
+
+    //#region -------------------- FUNCTION: resizeContent(thisContent) --------------------
+
+    function resizeContent(thisContent) {
+
+        //#region -------------------- FINDIN' OUT SH*T --------------------
+
+        // console.log('');
+        // console.log('-------------------- resizeContent(thisContent) --------------------');
+        // console.log('thisContent = ' + thisContent);
+        // console.log(thisContent);
+
+        // console.log('');
+        // console.log('thisContent.mwidth = ' + thisContent.mwidth + '     thisContent.mheight = ' + thisContent.mheight);
+        // console.log('window.innerWidth = ' + window.innerWidth + '     window.innerHeight = ' + window.innerHeight);
+
+        //#endregion -------------------- FINDIN' OUT SH*T --------------------
+
+
+        let newVidWidth;
+        let newVidHeight;
+        // let vidScale;
+        // let vidScale = 0.5;
+        let vidScale = 0.8;
+        // let vidScale = 1.5;
+
+        switch (true) {
+
+            case thisContent.mwidth >= window.innerWidth && thisContent.mwidth >= thisContent.mheight:
+
+                // console.log('This content is TOO WIDE & LANDSCAPE');
+                // console.log('thisContent.mwidth = ' + thisContent.mwidth + '     thisContent.mheight = ' + thisContent.mheight);
+
+                newVidWidth = window.innerWidth * vidScale;
+                newVidHeight = thisContent.mheight * (newVidWidth / thisContent.mwidth);
+
+                break;
+
+            case thisContent.mwidth >= window.innerWidth && thisContent.mwidth <= thisContent.mheight:
+
+                // console.log('This content is TOO WIDE & PORTRAIT');
+                // console.log('thisContent.mwidth = ' + thisContent.mwidth + '     thisContent.mheight = ' + thisContent.mheight);
+
+                newVidWidth = window.innerWidth * vidScale;
+                newVidHeight = thisContent.mheight * (newVidWidth / thisContent.mwidth);
+
+                break;
+
+            case thisContent.mheight >= window.innerHeight && thisContent.mwidth >= thisContent.mheight:
+
+                // console.log('This content is TOO TALL & LANDSCAPE');
+                // console.log('thisContent.mwidth = ' + thisContent.mwidth + '     thisContent.mheight = ' + thisContent.mheight);
+
+                newVidWidth = thisContent.mwidth * (newVidHeight / thisContent.mheight);
+                newVidHeight = window.innerHeight * vidScale;
+
+                break;
+
+            case thisContent.mheight >= window.innerHeight && thisContent.mwidth <= thisContent.mheight:
+
+                // console.log('This content is TOO TALL & PORTRAIT');
+                // console.log('thisContent.mwidth = ' + thisContent.mwidth + '     thisContent.mheight = ' + thisContent.mheight);
+
+                newVidWidth = thisContent.mwidth * (newVidHeight / thisContent.mheight);
+                newVidHeight = window.innerHeight * vidScale;
+
+                break;
+
+            default:
+
+                // console.log('DEFAULT');
+                // console.log('thisContent.mwidth = ' + thisContent.mwidth + '     thisContent.mheight = ' + thisContent.mheight);
+
+                if (window.innerWidth / window.innerHeight <= thisContent.mwidth / thisContent.mheight) {
+
+                    // console.log('thisContent.mwidth / thisContent.mheight = ' + thisContent.mwidth / thisContent.mheight);
+                    // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+
+                    // console.log('This content FITS and I want it to behave LANDSCAPE');
+
+                    newVidWidth = window.innerWidth * 0.75;
+                    newVidHeight = thisContent.mheight * (newVidWidth / thisContent.mwidth);
+
+                } else {
+
+                    // console.log('thisContent.mwidth / thisContent.mheight = ' + thisContent.mwidth / thisContent.mheight);
+                    // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+
+                    // console.log('This content FITS and I want it to behave PORTRAIT');
+
+                    newVidHeight = window.innerHeight * 0.75;
+                    newVidWidth = thisContent.mwidth * (newVidHeight / thisContent.mheight);
+                }
+
+                break;
+        }
+
+
+        // console.log('');
+        // console.log('newVidWidth = ' + newVidWidth + '     newVidHeight = ' + newVidHeight);
+
+        return ([newVidWidth, newVidHeight]);
+    }
+
+    //#endregion -------------------- FUNCTION: resizeContent(thisContent) --------------------
 
 
     //#region -------------------- FUNCTION: clearContent() --------------------
@@ -253,14 +363,18 @@ export const Work = (props) => {
 
     function loadContent(thisEvent, thisWorkItem) {
 
-        // console.log('');
-        // console.log('-------------------- FUNCTION: loadContent(thisEvent, thisWorkItem) --------------------');
+        console.log('');
+        console.log('-------------------- FUNCTION: loadContent(thisEvent, thisWorkItem) --------------------');
 
         // // console.log('');
         // console.log('thisEvent = ' + thisEvent);
         // console.log(thisEvent);
         // // console.log(thisEvent.target);
         // console.log(thisEvent.currentTarget);
+
+        // console.log('');
+        console.log('thisWorkItem = ' + thisWorkItem);
+        console.log(thisWorkItem);
 
 
         // let thisLocX;
@@ -305,7 +419,10 @@ export const Work = (props) => {
 
                     // console.log('I am an ANIMATE or STANDARD banner: ' + thisWorkItem.format_src);
 
-                    iframeSRC = remoteLoc + thisWorkItem.album_id + '/banners/' + thisWorkItem.link;
+                    // iframeSRC = remoteLoc + thisWorkItem.album_id + '/banners/' + thisWorkItem.link;
+                    iframeSRC = remoteLoc + thisWorkItem.album_id + '/banners/' + thisWorkItem.link + '/index.html';
+
+                    // console.log('iframeSRC = ' + iframeSRC);
 
                     banneriFrame_Ref.current.src = iframeSRC;
                     banneriFrame_Ref.current.style.left = currentTargetDims[0] + 'px';
@@ -326,6 +443,9 @@ export const Work = (props) => {
                     // console.log('I am an HTML5 banner: ' + thisWorkItem.format_src);
 
                     newContent = React.createElement(bannerContent[thisWorkItem.link2]);
+
+                    // console.log('newContent = ' + newContent);
+                    // console.log(newContent);
 
                     // gsap.set([bannerContainer_Ref.current], { x: currentTargetDims[0], y: currentTargetDims[1], width: currentTargetDims[2], height: currentTargetDims[3], transformOrigin: '0 0', immediateRender: true });
                     // gsap.set([bannerContainer_Ref.current], { x: currentTargetDims[0], y: currentTargetDims[1], width: currentTargetDims[2], height: currentTargetDims[3], scale: bannerScale, transformOrigin: '0 0', immediateRender: true });
@@ -355,22 +475,178 @@ export const Work = (props) => {
 
                 //#region -------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------
 
+                // console.log('');
+                // console.log('-------------------- ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) --------------------');
+
                 clearContent();
 
                 // iframeSRC;
 
-                if (thisWorkItem.format_src === 'external') {
-                    iframeSRC = thisWorkItem.link2;
-                } else {
-                    iframeSRC = remoteLoc + thisWorkItem.album_id + '/' + thisWorkItem.link2;
+                // if (thisWorkItem.format_src === 'external') {
+                //     iframeSRC = thisWorkItem.link2;
+                // } else {
+                //     iframeSRC = remoteLoc + thisWorkItem.album_id + '/' + thisWorkItem.link2;
+                // }
+
+                switch (true) {
+
+                    case thisWorkItem.format_src === 'external':
+
+                        iframeSRC = thisWorkItem.link2;
+
+                        // // console.log('');
+                        // console.log('iframeSRC = ' + iframeSRC);
+                        // console.log(iframeSRC);
+
+                        webiFrame_Ref.current.src = iframeSRC;
+                        webiFrame_Ref.current.style.width = thisWorkItem.mwidth + 'px';
+                        webiFrame_Ref.current.style.height = thisWorkItem.mheight + 'px';
+                        webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkItem.mwidth) / 2 + 'px';
+
+                        setWebiFrameOpen(true);
+
+                        break;
+
+                    case thisWorkItem.format_src === 'video':
+
+                        iframeSRC = videoLoc + thisWorkItem.link2;
+
+                        // // console.log('');
+                        // console.log('iframeSRC = ' + iframeSRC);
+                        // console.log(iframeSRC);
+
+                        // let newVidWidth;
+                        // let newVidHeight;
+
+                        // // let vidScale = 0.5;
+                        // let vidScale = 0.8;
+
+
+                        //#region -------------------- SEE: resizeContent(thisContent) --------------------
+
+                        // switch (true) {
+
+                        //     case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth >= thisWorkItem.mheight:
+
+                        //         // console.log('This content is TOO WIDE & LANDSCAPE');
+                        //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        //         newVidWidth = window.innerWidth * vidScale;
+                        //         newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+
+                        //         break;
+
+                        //     case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth <= thisWorkItem.mheight:
+
+                        //         // console.log('This content is TOO WIDE & PORTRAIT');
+                        //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        //         newVidWidth = window.innerWidth * vidScale;
+                        //         newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+
+                        //         break;
+
+                        //     case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth >= thisWorkItem.mheight:
+
+                        //         // console.log('This content is TOO TALL & LANDSCAPE');
+                        //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        //         newVidHeight = window.innerHeight * vidScale;
+                        //         newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
+
+                        //         break;
+
+                        //     case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth <= thisWorkItem.mheight:
+
+                        //         // console.log('This content is TOO TALL & PORTRAIT');
+                        //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        //         newVidHeight = window.innerHeight * vidScale;
+                        //         newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
+
+                        //         break;
+
+                        //     default:
+
+                        //         // console.log('VIDEO: DEFAULT');
+                        //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+
+                        //         // newVidWidth = thisWorkItem.mwidth;
+                        //         // newVidHeight = thisWorkItem.mheight;
+
+                        //         // newVidWidth = window.innerWidth * vidScale;
+                        //         // newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+
+                        //         if (window.innerWidth / window.innerHeight <= thisWorkItem.mwidth / thisWorkItem.mheight) {
+
+                        //             // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
+                        //             // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+
+                        //             // console.log('This content FITS and I want it to behave LANDSCAPE');
+
+                        //             newVidWidth = window.innerWidth * 0.75;
+                        //             newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+
+                        //         } else {
+
+                        //             // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
+                        //             // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+
+                        //             // console.log('This content FITS and I want it to behave PORTRAIT');
+
+                        //             newVidHeight = window.innerHeight * 0.75;
+                        //             newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
+                        //         }
+
+                        //         break;
+                        // }
+
+                        //#endregion -------------------- SEE: resizeContent(thisContent) --------------------
+
+
+                        resizeContent(thisWorkItem);
+
+                        console.log('resizeContent(thisWorkItem) = ' + resizeContent(thisWorkItem));
+                        console.log('resizeContent(thisWorkItem)[0] = ' + resizeContent(thisWorkItem)[0]);
+                        console.log('resizeContent(thisWorkItem)[1] = ' + resizeContent(thisWorkItem)[1]);
+
+
+                        // setVideoWidth(newVidWidth);
+                        // setVideoHeight(newVidHeight);
+                        setVideoWidth(resizeContent(thisWorkItem)[0]);
+                        setVideoHeight(resizeContent(thisWorkItem)[1]);
+
+                        setLoadedVideo(iframeSRC);
+                        setVideoOpen(true);
+
+                        break;
+
+                    default:
+
+                        iframeSRC = remoteLoc + thisWorkItem.album_id + '/' + thisWorkItem.link2;
+
+                        // console.log('');
+                        console.log('iframeSRC = ' + iframeSRC);
+                        console.log(iframeSRC);
+
+                        webiFrame_Ref.current.src = iframeSRC;
+                        webiFrame_Ref.current.style.width = thisWorkItem.mwidth + 'px';
+                        webiFrame_Ref.current.style.height = thisWorkItem.mheight + 'px';
+                        webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkItem.mwidth) / 2 + 'px';
+
+                        setWebiFrameOpen(true);
+
+                        break;
                 }
 
-                webiFrame_Ref.current.src = iframeSRC;
-                webiFrame_Ref.current.style.width = thisWorkItem.mwidth + 'px';
-                webiFrame_Ref.current.style.height = thisWorkItem.mheight + 'px';
-                webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkItem.mwidth) / 2 + 'px';
 
-                setWebiFrameOpen(true);
+                // webiFrame_Ref.current.src = iframeSRC;
+                // webiFrame_Ref.current.style.width = thisWorkItem.mwidth + 'px';
+                // webiFrame_Ref.current.style.height = thisWorkItem.mheight + 'px';
+                // webiFrame_Ref.current.style.left = (window.innerWidth - thisWorkItem.mwidth) / 2 + 'px';
+
+                // setWebiFrameOpen(true);
+
 
                 //#region - - - - - - - - - - - ASSIGN NEW CONTENT: html5, website, mobile (IFRAME) - compensate for oversized / oddly-sized content  - - - - - - - - - - -
 
@@ -423,94 +699,112 @@ export const Work = (props) => {
                 clearContent();
 
                 let videoSRC = videoLoc + thisWorkItem.link2;
-                let newVidWidth;
-                let newVidHeight;
 
-                // let vidScale = 0.5;
-                let vidScale = 0.8;
+                // console.log('');
+                console.log('videoSRC = ' + videoSRC);
+                console.log(videoSRC);
 
-                switch (true) {
+                // let newVidWidth;
+                // let newVidHeight;
 
-                    case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth >= thisWorkItem.mheight:
+                // // let vidScale = 0.5;
+                // let vidScale = 0.8;
 
-                        // console.log('This content is TOO WIDE & LANDSCAPE');
-                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
-                        newVidWidth = window.innerWidth * vidScale;
-                        newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+                //#region -------------------- SEE: resizeContent(thisContent) --------------------
 
-                        break;
+                // switch (true) {
 
-                    case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth <= thisWorkItem.mheight:
+                //     case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth >= thisWorkItem.mheight:
 
-                        // console.log('This content is TOO WIDE & PORTRAIT');
-                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+                //         // console.log('This content is TOO WIDE & LANDSCAPE');
+                //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
-                        newVidWidth = window.innerWidth * vidScale;
-                        newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+                //         newVidWidth = window.innerWidth * vidScale;
+                //         newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
 
-                        break;
+                //         break;
 
-                    case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth >= thisWorkItem.mheight:
+                //     case thisWorkItem.mwidth >= window.innerWidth && thisWorkItem.mwidth <= thisWorkItem.mheight:
 
-                        // console.log('This content is TOO TALL & LANDSCAPE');
-                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+                //         // console.log('This content is TOO WIDE & PORTRAIT');
+                //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
-                        newVidHeight = window.innerHeight * vidScale;
-                        newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
+                //         newVidWidth = window.innerWidth * vidScale;
+                //         newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
 
-                        break;
+                //         break;
 
-                    case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth <= thisWorkItem.mheight:
+                //     case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth >= thisWorkItem.mheight:
 
-                        // console.log('This content is TOO TALL & PORTRAIT');
-                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+                //         // console.log('This content is TOO TALL & LANDSCAPE');
+                //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
-                        newVidHeight = window.innerHeight * vidScale;
-                        newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
+                //         newVidHeight = window.innerHeight * vidScale;
+                //         newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
 
-                        break;
+                //         break;
 
-                    default:
+                //     case thisWorkItem.mheight >= window.innerHeight && thisWorkItem.mwidth <= thisWorkItem.mheight:
 
-                        // console.log('VIDEO: DEFAULT');
-                        // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
+                //         // console.log('This content is TOO TALL & PORTRAIT');
+                //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
-                        // newVidWidth = thisWorkItem.mwidth;
-                        // newVidHeight = thisWorkItem.mheight;
+                //         newVidHeight = window.innerHeight * vidScale;
+                //         newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
 
-                        // newVidWidth = window.innerWidth * vidScale;
-                        // newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+                //         break;
 
-                        if (window.innerWidth / window.innerHeight <= thisWorkItem.mwidth / thisWorkItem.mheight) {
+                //     default:
 
-                            // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
-                            // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+                //         // console.log('VIDEO: DEFAULT');
+                //         // console.log('thisWorkItem.mwidth = ' + thisWorkItem.mwidth + '     thisWorkItem.mheight = ' + thisWorkItem.mheight);
 
-                            // console.log('This content FITS and I want it to behave LANDSCAPE');
+                //         // newVidWidth = thisWorkItem.mwidth;
+                //         // newVidHeight = thisWorkItem.mheight;
 
-                            newVidWidth = window.innerWidth * 0.75;
-                            newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
+                //         // newVidWidth = window.innerWidth * vidScale;
+                //         // newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
 
-                        } else {
+                //         if (window.innerWidth / window.innerHeight <= thisWorkItem.mwidth / thisWorkItem.mheight) {
 
-                            // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
-                            // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+                //             // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
+                //             // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
 
-                            // console.log('This content FITS and I want it to behave PORTRAIT');
+                //             // console.log('This content FITS and I want it to behave LANDSCAPE');
 
-                            newVidHeight = window.innerHeight * 0.75;
-                            newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
-                        }
+                //             newVidWidth = window.innerWidth * 0.75;
+                //             newVidHeight = thisWorkItem.mheight * (newVidWidth / thisWorkItem.mwidth);
 
-                        break;
-                }
+                //         } else {
 
+                //             // console.log('thisWorkItem.mwidth / thisWorkItem.mheight = ' + thisWorkItem.mwidth / thisWorkItem.mheight);
+                //             // console.log('window.innerWidth / window.innerHeight = ' + window.innerWidth / window.innerHeight);
+
+                //             // console.log('This content FITS and I want it to behave PORTRAIT');
+
+                //             newVidHeight = window.innerHeight * 0.75;
+                //             newVidWidth = thisWorkItem.mwidth * (newVidHeight / thisWorkItem.mheight);
+                //         }
+
+                //         break;
+                // }
+
+                //#endregion -------------------- SEE: resizeContent(thisContent) --------------------
+
+
+                resizeContent(thisWorkItem);
+
+                console.log('resizeContent(thisWorkItem) = ' + resizeContent(thisWorkItem));
+                console.log('resizeContent(thisWorkItem)[0] = ' + resizeContent(thisWorkItem)[0]);
+                console.log('resizeContent(thisWorkItem)[1] = ' + resizeContent(thisWorkItem)[1]);
 
                 // console.log('newVidWidth = ' + newVidWidth + '     newVidHeight = ' + newVidHeight);
 
-                setVideoWidth(newVidWidth);
-                setVideoHeight(newVidHeight);
+                // setVideoWidth(newVidWidth);
+                // setVideoHeight(newVidHeight);
+                setVideoWidth(resizeContent(thisWorkItem)[0]);
+                setVideoHeight(resizeContent(thisWorkItem)[1]);
 
                 setLoadedVideo(videoSRC);
                 setVideoOpen(true);

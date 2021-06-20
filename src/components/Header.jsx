@@ -139,39 +139,49 @@ export const Header = (props) => {
         }
 
 
+        // const pathMid = currentPath.substring(
+        //     currentPath.lastIndexOf('react/') + 15,
+        //     currentPath.lastIndexOf('/')
+        // );
+
         const pathEnd = currentPath.split('/').pop();
 
-        const pathMid = currentPath.substring(
-            currentPath.lastIndexOf('react/') + 15,
-            currentPath.lastIndexOf('/')
-        );
+
+        // // console.log('');
+        // console.log('lastChar = ' + lastChar + '     pathMid = ' + pathMid + '     pathEnd = ' + pathEnd);
 
 
-        switch (pathMid) {
+        // switch (pathMid) {
+        switch (pathEnd) {
 
+            case '':
             case '/':
 
-                // console.log('');
-                // console.log('pathMid = /');
+                // // console.log('');
+                // console.log('pathMid = ' + pathMid);
 
-                navLoc = pathEnd + 'ID';
+                // navLoc = pathEnd + 'ID';
+                navLoc = 'homeID';
                 // emplLoc = '';
 
                 break;
 
             case 'work':
+            case 'about':
+            case 'resume':
 
-                // console.log('');
-                // console.log('pathMid = work');
+                // // console.log('');
+                // console.log('pathMid = ' + pathMid);
 
-                navLoc = pathMid + 'ID';
+                // navLoc = pathMid + 'ID';
+                navLoc = pathEnd + 'ID';
                 // emplLoc = pathEnd + 'ID';
 
                 break;
 
             default:
 
-                // console.log('');
+                // // console.log('');
                 // console.log('pathMid = default');
 
                 navLoc = 'homeID';
@@ -184,7 +194,7 @@ export const Header = (props) => {
 
         // console.log('');
         // console.log('navLoc = ' + navLoc);
-        // console.log('emplLoc = ' + emplLoc);
+        // // console.log('emplLoc = ' + emplLoc);
 
 
         const thisNavLocX = document.getElementById(navLoc).offsetLeft;
@@ -282,7 +292,8 @@ export const Header = (props) => {
                 {/* <A href='/shigimcp2021' id='homeID' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}> */}
                 {/* <A href='/shigimcp2021' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, 'homeID'); setMobileNavShow(false); }}> */}
                 {/* <A href='/shigimcp2021' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); setMobileNavShow(false); }}> */}
-                <A href='/shigimcp2021' onClick={(e) => { setMobileNavShow(false); }}>
+                {/* <A href='/shigimcp2021' onClick={(e) => { setMobileNavShow(false); }}> */}
+                <A href='/' onClick={(e) => { setMobileNavShow(false); }}>
 
                     <svg version='1.1' className='logoIcon' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880'>
                     {/* <svg version='1.1' className='logoIcon' id='logoIconID' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1000 880' onClick={(e) => { setWorkNavShow(workNavShow.reverse()); moveObjectTo(activeNavDiv_Ref.current, e.target.id); setMobileNavShow(false); }}> */}
@@ -388,10 +399,18 @@ export const Header = (props) => {
 
                     <div className='activeNavDiv' id='activeNavDivID' ref={activeNavDiv_Ref}></div>
 
-                    <A className='navItem' href='/shigimcp2021' id='homeID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
+                    {/* <A className='navItem' href='' id='homeID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A> */}
+                    <A className='navItem' href='/' id='homeID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
+                    <A className='navItem' href='/work' id='workID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work</A>
+                    <A className='navItem' href='/about' id='aboutID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>About</A>
+                    <A className='navItem' href='/resume' id='resumeID' onClick={() => { setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A>
+                    {/* <A className='navItem' href='/contact' id='contactID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A> */}
+                    {/* <A className='navItem' href='/suspense' id='suspenseID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Suspense</A> */}
+
+                    {/* <A className='navItem' href='/shigimcp2021' id='homeID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Home</A>
                     <A className='navItem' href='/shigimcp2021/work' id='workID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Work</A>
                     <A className='navItem' href='/shigimcp2021/about' id='aboutID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>About</A>
-                    <A className='navItem' href='/shigimcp2021/resume' id='resumeID' onClick={() => { setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A>
+                    <A className='navItem' href='/shigimcp2021/resume' id='resumeID' onClick={() => { setResumeNavShow(resumeNavShow.play()); setMobileNavShow(false); }}>Resume</A> */}
                     {/* <A className='navItem' href='/shigimcp2021/contact' id='contactID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Contact</A> */}
                     {/* <A className='navItem' href='/shigimcp2021/suspense' id='suspenseID' onClick={() => { setResumeNavShow(resumeNavShow.reverse()); setMobileNavShow(false); }}>Suspense</A> */}
 
