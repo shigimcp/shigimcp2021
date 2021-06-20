@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.c516a816.chunk.css",
-    "main.js": "/static/js/main.43c73e7b.chunk.js",
-    "main.js.map": "/static/js/main.43c73e7b.chunk.js.map",
+    "main.js": "/static/js/main.c9c0b1fa.chunk.js",
+    "main.js.map": "/static/js/main.c9c0b1fa.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.dc700f4d.js",
     "runtime-main.js.map": "/static/js/runtime-main.dc700f4d.js.map",
-    "static/js/2.5f51046c.chunk.js": "/static/js/2.5f51046c.chunk.js",
-    "static/js/2.5f51046c.chunk.js.map": "/static/js/2.5f51046c.chunk.js.map",
+    "static/js/2.75338e1b.chunk.js": "/static/js/2.75338e1b.chunk.js",
+    "static/js/2.75338e1b.chunk.js.map": "/static/js/2.75338e1b.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.c516a816.chunk.css.map": "/static/css/main.c516a816.chunk.css.map",
-    "static/js/2.5f51046c.chunk.js.LICENSE.txt": "/static/js/2.5f51046c.chunk.js.LICENSE.txt",
+    "static/js/2.75338e1b.chunk.js.LICENSE.txt": "/static/js/2.75338e1b.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/static/media/ChaleParNinSix.e986494b.svg",
     "static/media/BSPS_bottle.a95786b2.png": "/static/media/BSPS_bottle.a95786b2.png",
     "static/media/BSPS_image.03a1cd3f.jpg": "/static/media/BSPS_image.03a1cd3f.jpg",
@@ -100,8 +100,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.dc700f4d.js",
-    "static/js/2.5f51046c.chunk.js",
+    "static/js/2.75338e1b.chunk.js",
     "static/css/main.c516a816.chunk.css",
-    "static/js/main.43c73e7b.chunk.js"
+    "static/js/main.c9c0b1fa.chunk.js"
   ]
 }
